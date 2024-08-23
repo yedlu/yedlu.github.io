@@ -4,12 +4,8 @@ layout: default
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
+      {{ site.first_name }} {{ site.middle_name }}
+        <span class="font-weight-bold font-italic">{{ site.last_name }}</span> ({{site.chn_name}})
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
   </header>
@@ -51,7 +47,7 @@ layout: default
     <!-- Latest posts -->
     {% if site.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
