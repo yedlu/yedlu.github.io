@@ -83,19 +83,6 @@
         - title: Financial Markets
           contents: Fall 2024, Graduate, for Yaron Leitner
 
-    - title: Research Analyst
-      institution: International Institute of Green Finance, CUFE
-      year: 2022.02-2022.06
-      description:
-        - Opinion Piece - Evaluating Corporate ESG Performance of Diamond Industry
-        - Research Support - Effect of China’s First Carbon Market on Emissions
-
-    - title: Contestant (Honorable Mentions)
-      institution: Interdisciplinary Contest in Modeling
-      year: 2021.02
-      description:
-        - Modeling Sustainable Transformation of Global Food System
-
 - title: Skills
   type: nested_list
   contents:
