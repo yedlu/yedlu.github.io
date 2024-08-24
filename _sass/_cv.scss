@@ -60,11 +60,11 @@ i.icondepartment {
 }
 
 table.institution {
-  margin-bottom: 1rem;
+  margin-bottom: 0px;
 }
 
 td.department {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 div.container-links {
@@ -213,3 +213,20 @@ ul.timeline li::before {
      color: var(--global-text-color);
 }
 */
+
+.cv-title {
+  margin-bottom: 0px;
+}
+
+h1[id],
+h2[id],
+h3[id],
+h4[id],
+h5[id],
+h6[id] {
+  position: relative;
+  padding-top: 70px;
+  /* Add space above the heading */
+  margin-top: -70px;
+  /* Negate the space to avoid shifting content */
+}

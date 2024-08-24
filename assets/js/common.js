@@ -31,6 +31,26 @@ $(document).ready(function () {
     });
   }
 
+  // Add custom scroll adjustment for TOC links
+  $(document).ready(function () {
+    if ($("#toc-sidebar").length) {
+      var navSelector = "#toc-sidebar";
+      $(navSelector).find('a').on('click', function (event) {
+        event.preventDefault();
+        var targetId = $(this).attr('href').substring(1);
+        var targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          var targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 10; // Adjust 40 to your desired offset
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+          });
+        }
+      });
+    }
+  });
+
   // add css to jupyter notebooks
   const cssLink = document.createElement("link");
   cssLink.href = "../css/jupyter.css";
