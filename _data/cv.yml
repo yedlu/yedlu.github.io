@@ -69,6 +69,33 @@
         - Research Support on AMC Digital Transformation
 
 
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Teaching Assistant
+      institution: Olin Business School, Washington University in St. Louis
+      year: 2024.01-Present
+      description:
+        - title: Capital Market and Financial Management
+          contents: Spring 2024, Undergraduate, for Koray Sayili
+        - title: Machine Learning
+          contents: Spring 2024, Graduate, for Durai Sundaramoorthi/Gerald Onwujekwe
+        - title: Financial Markets
+          contents: Fall 2024, Graduate, for Yaron Leitner
+
+    - title: Research Analyst
+      institution: International Institute of Green Finance, CUFE
+      year: 2022.02-2022.06
+      description:
+        - Opinion Piece - Evaluating Corporate ESG Performance of Diamond Industry
+        - Research Support - Effect of China’s First Carbon Market on Emissions
+
+    - title: Contestant (Honorable Mentions)
+      institution: Interdisciplinary Contest in Modeling
+      year: 2021.02
+      description:
+        - Modeling Sustainable Transformation of Global Food System
+
 - title: Skills
   type: nested_list
   contents:
