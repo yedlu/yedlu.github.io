@@ -9,7 +9,7 @@
 - title: Education
   type: time_table
   contents:
-    - title: M.S. in Analytics (Financial Technology)
+    - title: M.S. in Business Analytics (Financial Technology)
       institution: Olin Business School, Washington University in St. Louis
       year: 2023.08-2024.12
     - title: B.S. in Int'l Economics & Financial Risk Management
@@ -79,7 +79,7 @@
         - title: Capital Market and Financial Management
           contents: Spring 2024, Undergraduate, for Koray Sayili
         - title: Machine Learning
-          contents: Spring 2024, Graduate, for Durai Sundaramoorthi/Gerald Onwujekwe
+          contents: Spring/Fall 2024, Graduate, for Durai Sundaramoorthi/Gerald Onwujekwe
         - title: Financial Markets
           contents: Fall 2024, Graduate, for Yaron Leitner
 
@@ -94,13 +94,15 @@
         - MATLAB
         - LaTeX
         - SAS
+        - SQL
+        - Big Data
         - Web Developing
     
     - title: Languages
       items:
         - Mandarin (Native)
         - English (Professional Fluency)
-        - French (Intermediate)
+        - French (Conversational)
 
     - title: Communication
       items:
