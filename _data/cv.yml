@@ -5,6 +5,8 @@
       value: Yanhe Eddie Lu
     - name: Location
       value: St. Louis, MO
+    - name: U.S. Work Authorization
+      value: STEM-OPT (3 years)
 
 - title: Education
   type: time_table
@@ -80,6 +82,8 @@
           contents: Spring 2024, Undergraduate, for Koray Sayili
         - title: Machine Learning
           contents: Spring/Fall 2024, Graduate, for Durai Sundaramoorthi/Gerald Onwujekwe
+        - title: Advanced Corporate Finance II - Financing
+          contents: Fall 2024, Graduate, for Yaron Leitner        
         - title: Financial Markets
           contents: Fall 2024, Graduate, for Yaron Leitner
 
@@ -92,22 +96,23 @@
         - Python
         - Stata
         - MATLAB
-        - LaTeX
-        - SAS
         - SQL
-        - Big Data
+        - SAS
+        - AWS
+        - Hive
+        - LaTeX
         - Web Developing
     
     - title: Languages
       items:
         - Mandarin (Native)
-        - English (Professional Fluency)
+        - English (TOEFL 117/120, GRE 165V/170Q/5W)
         - French (Conversational)
 
     - title: Communication
       items:
-        - National 2nd Prize in Public Speaking (English), China
-        - US Academic Decathlon Bronze Medal (Public Speaking)
+        - National 2nd Prize in English Public Speaking, China
+        - US Academic Decathlon Bronze Medal (Speaking)
 
 - title: Personal Info
   type: list
@@ -115,4 +120,4 @@
     - Guitarist for over 10 years
     - Art and museum enthusiast
     - Passionate home cook
-    - Enjoys running, hiking, and cycling
+    - Enjoys cycling, hiking, and running
