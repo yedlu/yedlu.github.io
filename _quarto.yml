@@ -19,5 +19,6 @@ format:
     toc: true
     include-after-body: footer.html
 
-
+publish:
+  gh-pages: false
 

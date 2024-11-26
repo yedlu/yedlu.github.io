@@ -1,10 +1,31 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "repo/index.html",
+    "href": "repo/index.html",
+    "title": "Repositories",
     "section": "",
-    "text": "About this site"
+    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
+  },
+  {
+    "objectID": "repo/index.html#class-notes",
+    "href": "repo/index.html#class-notes",
+    "title": "Repositories",
+    "section": "",
+    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
+  },
+  {
+    "objectID": "repo/index.html#projects",
+    "href": "repo/index.html#projects",
+    "title": "Repositories",
+    "section": "Projects",
+    "text": "Projects\n\nMeasuring Talents in Labor Forces\n\n\nDevelopment Initiatives on FDI"
+  },
+  {
+    "objectID": "repo/index.html#coding-samples",
+    "href": "repo/index.html#coding-samples",
+    "title": "Repositories",
+    "section": "Coding Samples",
+    "text": "Coding Samples\n\nR\n\n\nPython\n\n\nStata\n\n\nMATLAB\n\n\nDatabase\n\nSQL\nSAS\nAWS/Hive"
   },
   {
     "objectID": "index.html",
@@ -63,20 +84,6 @@
     "text": "Skills\n\nProgramming\nR, Python, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Development\nLanguages\nMandarin: Native\nEnglish: Professional Fluency\nFrench: Conversational\nCommunication\nChinese National 2nd Prize in English Public Speaking\nUS Academic Decathlon Bronze Medal on Speaking"
   },
   {
-    "objectID": "cv.html#personal-information",
-    "href": "cv.html#personal-information",
-    "title": "Curriculum Vitae",
-    "section": "Personal Information",
-    "text": "Personal Information\n\nGuitarist for over 10 years\n\nArt and museum enthusiast\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running"
-  },
-  {
-    "objectID": "cv.html#teaching-experience-1",
-    "href": "cv.html#teaching-experience-1",
-    "title": "Curriculum Vitae",
-    "section": "Teaching Experience",
-    "text": "Teaching Experience\n\nCapital Market and Financial Management\nUndergraduate, Spring 2024\nInstructor: Koray Sayili\nMachine Learning\nGraduate, Spring/Fall 2024\nInstructors: Durai Sundaramoorthi / Gerald Onwujekwe\nAdvanced Corporate Finance II - Financing\nGraduate, Fall 2024\nInstructor: Yaron Leitner\nFinancial Markets\nGraduate, Fall 2024\nInstructor: Yaron Leitner"
-  },
-  {
     "objectID": "cv.html#coursework",
     "href": "cv.html#coursework",
     "title": "Curriculum Vitae",
@@ -84,87 +91,10 @@
     "text": "Coursework\n\nFinance and Economics\nCorporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD), Microeconomic Theory (PhD), Advanced Corporate Finance (Graduate, A+), Econometrics, Macroeconomics\nQuantitative Methods\nStochastic Processes, Probability and Statistics, Matrix Algebra, Calculus\nData and Programming Skills\nDatabase Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R"
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Projects\nExplore my projects and categories below:\n\n\n&lt;a href=\"microeconomics/index.qmd\"&gt;\n  &lt;div class=\"card-header\"&gt;Microeconomics&lt;/div&gt;\n  &lt;div class=\"card-body\"&gt;\n    Insights and notes on microeconomic theory and applications.\n  &lt;/div&gt;\n&lt;/a&gt;\n\n\n&lt;a href=\"macroeconomics/index.qmd\"&gt;\n  &lt;div class=\"card-header\"&gt;Macroeconomics&lt;/div&gt;\n  &lt;div class=\"card-body\"&gt;\n    Explorations of economic systems, policies, and dynamics.\n  &lt;/div&gt;\n&lt;/a&gt;\n\n\n&lt;a href=\"data-analysis/index.qmd\"&gt;\n  &lt;div class=\"card-header\"&gt;Data Analysis&lt;/div&gt;\n  &lt;div class=\"card-body\"&gt;\n    Tools and techniques for statistical and data-driven analysis.\n  &lt;/div&gt;\n&lt;/a&gt;"
-  },
-  {
-    "objectID": "projects.html#projects",
-    "href": "projects.html#projects",
-    "title": "Projects",
-    "section": "",
-    "text": "&lt;h3&gt;Microeconomics&lt;/h3&gt;\n  &lt;p&gt;Notes, research, and resources on microeconomic theory.&lt;/p&gt;\n&lt;/div&gt;\n\n\n\n  &lt;h3&gt;Macroeconomics&lt;/h3&gt;\n  &lt;p&gt;Explorations of economic systems, policies, and dynamics.&lt;/p&gt;\n&lt;/div&gt;\n\n\n\n  &lt;h3&gt;Data Analysis&lt;/h3&gt;\n  &lt;p&gt;Insights and tools for statistical and data-driven analysis.&lt;/p&gt;\n&lt;/div&gt;"
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Repositories",
-    "section": "",
-    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
-  },
-  {
-    "objectID": "projects/index.html#topics",
-    "href": "projects/index.html#topics",
-    "title": "Microeconomics",
-    "section": "",
-    "text": "Introduction to Microeconomic Theory\nConsumer Behavior\nMarket Structures"
-  },
-  {
-    "objectID": "projects/index.html#researches",
-    "href": "projects/index.html#researches",
-    "title": "Projects",
-    "section": "Researches",
-    "text": "Researches\n\nMeasuring Talents in Labor Forces\n\n\nDetecting LLM-generated Texts through Linguistic Dictionaries\n\n\nDevelopment Initiatives on FDI"
-  },
-  {
-    "objectID": "projects/index.html#class-notes",
-    "href": "projects/index.html#class-notes",
-    "title": "Repositories",
-    "section": "",
-    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
-  },
-  {
-    "objectID": "projects/index.html#coding-samples",
-    "href": "projects/index.html#coding-samples",
-    "title": "Repositories",
-    "section": "Coding Samples",
-    "text": "Coding Samples\n\nR\n\n\nPython\n\n\nStata\n\n\nMATLAB\n\n\nDatabase\n\nSQL\nSAS\nAWS/Hive"
-  },
-  {
-    "objectID": "projects/index.html#projects",
-    "href": "projects/index.html#projects",
-    "title": "Repositories",
-    "section": "Projects",
-    "text": "Projects\n\nMeasuring Talents in Labor Forces\n\n\nDevelopment Initiatives on FDI"
-  },
-  {
-    "objectID": "repo/index.html",
-    "href": "repo/index.html",
-    "title": "Repositories",
-    "section": "",
-    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
-  },
-  {
-    "objectID": "repo/index.html#class-notes",
-    "href": "repo/index.html#class-notes",
-    "title": "Repositories",
-    "section": "",
-    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
-  },
-  {
-    "objectID": "repo/index.html#projects",
-    "href": "repo/index.html#projects",
-    "title": "Repositories",
-    "section": "Projects",
-    "text": "Projects\n\nMeasuring Talents in Labor Forces\n\n\nDevelopment Initiatives on FDI"
-  },
-  {
-    "objectID": "repo/index.html#coding-samples",
-    "href": "repo/index.html#coding-samples",
-    "title": "Repositories",
-    "section": "Coding Samples",
-    "text": "Coding Samples\n\nR\n\n\nPython\n\n\nStata\n\n\nMATLAB\n\n\nDatabase\n\nSQL\nSAS\nAWS/Hive"
+    "objectID": "cv.html#personal-information",
+    "href": "cv.html#personal-information",
+    "title": "Curriculum Vitae",
+    "section": "Personal Information",
+    "text": "Personal Information\n\nGuitarist for over 10 years\n\nArt and museum enthusiast\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running"
   }
 ]
