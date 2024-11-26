@@ -1,0 +1,107 @@
+---
+title: "Choices/Preference/Utility over Finite Outcomes"
+---
+
+\* in conjunction with §1 of *Microeconomics Foundation I* (Kreps, 2013)
+
+*yedlu, Fall 2024*
+
+---
+
+## Key Concepts Overview
+
+### 1. Choices
+Choices are observable actions taken when confronted with alternatives. Economists model choices using the following notations:
+
+| **Notation**         | **Definition**                      | **Example**                                                                |
+| -------------------- | ----------------------------------- | -------------------------------------------------------------------------- |
+| $X$                | Finite set of alternatives          | Colleges someone can apply: $X = \{a,b,c\}$                              |
+| $P(X)$             | All **non-empty** subsets of $X$  | $$ P(X) = \{\{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\} $$ |
+| $B \subseteq P(X)$ | Set of feasible choice menus        | $B = \{\{a\}, \{a,b\}, \{a,b,c\}\}$                                      |
+| $c: B \to P(X)$    | Choice function: $c(A) \subset A$ | $c(\{a,b,c\}) = \{a,b\}$                                                 |
+
+
+
+### 2. Preferences
+Preferences reflect internal evaluations of choices, modeled abstractly:
+
+| **Notation**               | **Definition**                                 | **Example**                         |
+| -------------------------- | ---------------------------------------------- | ----------------------------------- |
+| $X$                      | Set of alternatives                            | $X = \{a,b,c\}$                   |
+| $X \times X$             | Cartesian product: pairs of alternatives       | $(a,b), (b,c), \dots$             |
+| $R \subseteq X \times X$ | Binary relation: $(a,b) \in R \iff a \succsim b$ | Preferences: $a \succsim b, b \succsim c$ |
+
+#### Properties of $R$:
+- **Complete**: For all $x, y \in X$, $x \succsim y$ or $y \succsim x$.
+- **Transitive**: $x \succsim y$ and $y \succsim z \implies x \succsim z$.
+- **Rational**: $R$ is complete and transitive.
+
+
+
+### 3. Choices from Preferences
+A rational binary relation $R$ generates a choice function $c_R$:
+
+$$
+c_R(A) := \{x \in A \mid (\forall y \in A) \, (x,y) \in R\}
+$$
+
+
+
+### Proofs
+
+#### **Proposition 1**: If $R$ is rational, then $c_R$ is a choice function.
+
+<details>
+<summary>Proof (Click to Expand)</summary>
+
+By induction. Need to show that $c_R (A) \neq \emptyset$ for all $A \subseteq X$. 
+
+1. **Base Case** ($|A| = 1$):  
+   Let $A = \{x\}$. A complete $R$ implies that $(x,x) \in R$, which in turn implies that $c_R (A) = \{x\} \neq \emptyset$. 
+
+2. **Inductive Step** ($|A| = n + 1$):  
+   Assume true for $|A| = n$. Pick any $x \in A$. By assumption, $c_R (A \setminus \{x\}) \neq \emptyset$.  
+   - By definition, there exists $y \in A \setminus \{x\}$ such that $(y,z) \in R$ for all $z \in A \setminus \{x\}$.
+   - Since $R$ is complete, either $(x,y) \in R$ or $(y,x) \in R$.  
+     - If $(x,y) \in R$, then transitivity implies $(x,z) \in R$ for all $z \in A$, so $x \in c_R(A)$.
+     - If $(y,x) \in R$, then $y \in c_R(A)$.
+
+Thus, $c_R (A) \neq \emptyset$ for all $A \subseteq X$.  
+$\blacksquare$
+</details>
+
+
+
+#### **Proposition 2**: If $c$ satisfies WARP, then $R_c$ is a rational preference relation.
+
+<details>
+<summary>Proof (Click to Expand)</summary>
+
+1. **Completeness**:  
+   Take any $x, y \in X$.  
+   - If $(x,y) \notin R_c$, then $x \notin c(\{x,y\})$.  
+   - By definition, $y \in c(\{x,y\})$, so $(y,x) \in R_c$.  
+   Therefore, $R_c$ is complete.
+
+2. **Transitivity**:  
+   Suppose $(x,y) \in R_c$ and $(y,z) \in R_c$.  
+   - This implies $x \in c(\{x,y\})$ and $y \in c(\{y,z\})$.  
+   - Assume $(x,z) \notin R_c$. Then $z \in c(\{x,z\})$ contradicts WARP.  
+   Hence, $(x,z) \in R_c$, and $R_c$ is transitive.  
+$\blacksquare$
+
+</details>
+
+
+
+### 4. Preferences Revealed by Choices
+Revealed preference relation $R_c$:
+
+$$
+R_c := \{(x,y) \in X \times X \mid x \in c(\{x,y\})\}
+$$
+
+#### Weak Axiom of Revealed Preferences (WARP):
+If $x, y \in A \cap B$, $x \in c(A)$, and $y \in c(B)$, then $x \in c(B)$.
+
+

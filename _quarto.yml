@@ -11,7 +11,41 @@ website:
         text: vitae
       - href: repo/index.qmd
         text: repositories
-
+  back-to-top-navigation: true
+  sidebar:
+      - contents:
+        - section: "Repository"
+          href: repo/index.qmd
+          contents:
+            - text: "Micro I: Utility Theory"
+              href: repo/micro-u/index.qmd
+              contents:
+              - text: "Finite Choices"
+                href: repo/micro-u/u1.qmd
+              - text: "Infinite Choices"
+                href: repo/micro-u/u2.qmd
+              - text: "vNM Axioms"
+                href: repo/micro-u/u3.qmd
+              - text: "Risk Aversion"
+                href: repo/micro-u/u4.qmd
+              - text: "Afriat's Theorem"
+                href: repo/micro-u/u5.qmd
+              - text: "Stochastic Choice"
+                href: repo/micro-u/u6.qmd
+            - text: "Micro II: Game Theory"
+              href: repo/micro-g/index.qmd
+              contents:
+              - text: "Normal-Form Games"
+                href: repo/micro-g/g1.qmd
+              - text: "Extensive-Form Games"
+                href: repo/micro-g/g2.qmd
+              - text: "Repeated Games"
+                href: repo/micro-g/g3.qmd
+              - text: "Bayesian Games"
+                href: repo/micro-g/g4.qmd
+              - text: "Perfect Bayesian Equilibrium"
+                href: repo/micro-g/g5.qmd
+                
 format:
   html:
     theme: cosmo
@@ -20,5 +54,6 @@ format:
     include-after-body: footer.html
 
 publish:
-  gh-pages: false
-
+  gh-pages:
+    branch: gh-pages
+    dir: _site

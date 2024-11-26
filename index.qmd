@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 subtitle: "Yanhe Eddie Lu (鲁 颜赫)"
+sidebar: false
 format:
   html:
     page-layout: full

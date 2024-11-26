@@ -4,35 +4,51 @@
     "href": "repo/index.html",
     "title": "Repositories",
     "section": "",
-    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing",
+    "crumbs": [
+      "me",
+      "Repository"
+    ]
   },
   {
     "objectID": "repo/index.html#class-notes",
     "href": "repo/index.html#class-notes",
     "title": "Repositories",
     "section": "",
-    "text": "Choice, Preferences, and Utility Theories (PhD Level)\nGame Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing"
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing",
+    "crumbs": [
+      "me",
+      "Repository"
+    ]
   },
   {
     "objectID": "repo/index.html#projects",
     "href": "repo/index.html#projects",
     "title": "Repositories",
     "section": "Projects",
-    "text": "Projects\n\nMeasuring Talents in Labor Forces\n\n\nDevelopment Initiatives on FDI"
+    "text": "Projects\n\nMeasuring Talents in Labor Forces\n\n\nDevelopment Initiatives on FDI",
+    "crumbs": [
+      "me",
+      "Repository"
+    ]
   },
   {
     "objectID": "repo/index.html#coding-samples",
     "href": "repo/index.html#coding-samples",
     "title": "Repositories",
     "section": "Coding Samples",
-    "text": "Coding Samples\n\nR\n\n\nPython\n\n\nStata\n\n\nMATLAB\n\n\nDatabase\n\nSQL\nSAS\nAWS/Hive"
+    "text": "Coding Samples\n\nR\n\n\nPython\n\n\nStata\n\n\nMATLAB\n\n\nDatabase\n\nSQL\nSAS\nAWS/Hive",
+    "crumbs": [
+      "me",
+      "Repository"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About Me",
     "section": "",
-    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu"
+    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "cv.html",
@@ -96,5 +112,296 @@
     "title": "Curriculum Vitae",
     "section": "Personal Information",
     "text": "Personal Information\n\nGuitarist for over 10 years\n\nArt and museum enthusiast\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running"
+  },
+  {
+    "objectID": "repo/micro/g/index.html",
+    "href": "repo/micro/g/index.html",
+    "title": "Choice, Preferences, and Utility Theories",
+    "section": "",
+    "text": "{% include 'breadcrumb.html' %}\nHere’s the content."
+  },
+  {
+    "objectID": "repo/micro-g/index.html",
+    "href": "repo/micro-g/index.html",
+    "title": "Game Theory",
+    "section": "",
+    "text": "Salut! You can navigate yourself through one of the following topics:\n\nNormal-Form Games\n\nHow to describe a normal-form game? What are the implications?\n\nExtensive-Form Games\n\nWhat can happen if each player takes its turns?\n\nRepeated Games\n\nHow to evaluate strategies when games are repeated finitely or infinitely?\n\nBayesian Games\n\nPlayers are best-responding to their own types and also their counterparts’.\n\nPerfect Bayesian Equilibrium\n\nA new equilibrium system based on beliefs.\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/index.html",
+    "href": "repo/micro-u/index.html",
+    "title": "Choices, Preferences, and Utility Theories",
+    "section": "",
+    "text": "Hi there and welcome! You can navigate yourself through one of the following topics:\n\nChoices/Preference/Utility over Finite Outcomes\n\nDefinition and properties of choices, preference relations, and representing utility functions.\n\nChoices/Preference/Utility over Infinite Outcomes\n\nBring the concepts to infinite set of consequences.\n\nvon Neumann-Morgenstern Expected Utility\n\nExplore lotteries and expected utility theory.\n\nRisk Aversion\n\nExamining risk aversion and its role in rational decision-making.\n\nAfriat’s Theorem\n\nAn introduction to Afriat’s theorem and its implications.\n\nStochastic Choice\n\nThe theory behind stochastic choices.\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u1.html",
+    "href": "repo/micro-u/u1.html",
+    "title": "Choices/Preference/Utility over Finite Outcomes",
+    "section": "",
+    "text": "* in conjunction with §1 of Microeconomics Foundation I (Kreps, 2013)\nyedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Finite Choices"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u1.html#key-concepts-overview",
+    "href": "repo/micro-u/u1.html#key-concepts-overview",
+    "title": "Choices/Preference/Utility over Finite Outcomes",
+    "section": "Key Concepts Overview",
+    "text": "Key Concepts Overview\n\n1. Choices\nChoices are observable actions taken when confronted with alternatives. Economists model choices using the following notations:\n\n\n\n\n\n\n\n\nNotation\nDefinition\nExample\n\n\n\n\n\\(X\\)\nFinite set of alternatives\nColleges someone can apply: \\(X = \\{a,b,c\\}\\)\n\n\n\\(P(X)\\)\nAll non-empty subsets of \\(X\\)\n\\[ P(X) = \\{\\{a\\}, \\{b\\}, \\{c\\}, \\{a,b\\}, \\{a,c\\}, \\{b,c\\}, \\{a,b,c\\}\\} \\]\n\n\n\\(B \\subseteq P(X)\\)\nSet of feasible choice menus\n\\(B = \\{\\{a\\}, \\{a,b\\}, \\{a,b,c\\}\\}\\)\n\n\n\\(c: B \\to P(X)\\)\nChoice function: \\(c(A) \\subset A\\)\n\\(c(\\{a,b,c\\}) = \\{a,b\\}\\)\n\n\n\n\n\n2. Preferences\nPreferences reflect internal evaluations of choices, modeled abstractly:\n\n\n\n\n\n\n\n\nNotation\nDefinition\nExample\n\n\n\n\n\\(X\\)\nSet of alternatives\n\\(X = \\{a,b,c\\}\\)\n\n\n\\(X \\times X\\)\nCartesian product: pairs of alternatives\n\\((a,b), (b,c), \\dots\\)\n\n\n\\(R \\subseteq X \\times X\\)\nBinary relation: \\((a,b) \\in R \\iff a \\succsim b\\)\nPreferences: \\(a \\succsim b, b \\succsim c\\)\n\n\n\n\nProperties of \\(R\\):\n\nComplete: For all \\(x, y \\in X\\), \\(x \\succsim y\\) or \\(y \\succsim x\\).\nTransitive: \\(x \\succsim y\\) and \\(y \\succsim z \\implies x \\succsim z\\).\nRational: \\(R\\) is complete and transitive.\n\n\n\n\n3. Choices from Preferences\nA rational binary relation \\(R\\) generates a choice function \\(c_R\\):\n\\[\nc_R(A) := \\{x \\in A \\mid (\\forall y \\in A) \\, (x,y) \\in R\\}\n\\]\n\n\nProofs\n\nProposition 1: If \\(R\\) is rational, then \\(c_R\\) is a choice function.\n\n\nProof (Click to Expand)\n\nBy induction. Need to show that \\(c_R (A) \\neq \\emptyset\\) for all \\(A \\subseteq X\\).\n\nBase Case (\\(|A| = 1\\)):\nLet \\(A = \\{x\\}\\). A complete \\(R\\) implies that \\((x,x) \\in R\\), which in turn implies that \\(c_R (A) = \\{x\\} \\neq \\emptyset\\).\nInductive Step (\\(|A| = n + 1\\)):\nAssume true for \\(|A| = n\\). Pick any \\(x \\in A\\). By assumption, \\(c_R (A \\setminus \\{x\\}) \\neq \\emptyset\\).\n\nBy definition, there exists \\(y \\in A \\setminus \\{x\\}\\) such that \\((y,z) \\in R\\) for all \\(z \\in A \\setminus \\{x\\}\\).\nSince \\(R\\) is complete, either \\((x,y) \\in R\\) or \\((y,x) \\in R\\).\n\nIf \\((x,y) \\in R\\), then transitivity implies \\((x,z) \\in R\\) for all \\(z \\in A\\), so \\(x \\in c_R(A)\\).\nIf \\((y,x) \\in R\\), then \\(y \\in c_R(A)\\).\n\n\n\nThus, \\(c_R (A) \\neq \\emptyset\\) for all \\(A \\subseteq X\\).\n\\(\\blacksquare\\)\n\n\n\nProposition 2: If \\(c\\) satisfies WARP, then \\(R_c\\) is a rational preference relation.\n\n\nProof (Click to Expand)\n\n\nCompleteness:\nTake any \\(x, y \\in X\\).\n\nIf \\((x,y) \\notin R_c\\), then \\(x \\notin c(\\{x,y\\})\\).\n\nBy definition, \\(y \\in c(\\{x,y\\})\\), so \\((y,x) \\in R_c\\).\nTherefore, \\(R_c\\) is complete.\n\nTransitivity:\nSuppose \\((x,y) \\in R_c\\) and \\((y,z) \\in R_c\\).\n\nThis implies \\(x \\in c(\\{x,y\\})\\) and \\(y \\in c(\\{y,z\\})\\).\n\nAssume \\((x,z) \\notin R_c\\). Then \\(z \\in c(\\{x,z\\})\\) contradicts WARP.\nHence, \\((x,z) \\in R_c\\), and \\(R_c\\) is transitive.\n\\(\\blacksquare\\)\n\n\n\n\n\n\n4. Preferences Revealed by Choices\nRevealed preference relation \\(R_c\\):\n\\[\nR_c := \\{(x,y) \\in X \\times X \\mid x \\in c(\\{x,y\\})\\}\n\\]\n\nWeak Axiom of Revealed Preferences (WARP):\nIf \\(x, y \\in A \\cap B\\), \\(x \\in c(A)\\), and \\(y \\in c(B)\\), then \\(x \\in c(B)\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Finite Choices"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u2.html",
+    "href": "repo/micro-u/u2.html",
+    "title": "Choices/Preference/Utility over Infinite Outcomes",
+    "section": "",
+    "text": "yedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Infinite Choices"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u2.html#recap-finite-chocices",
+    "href": "repo/micro-u/u2.html#recap-finite-chocices",
+    "title": "Choices/Preference/Utility over Infinite Outcomes",
+    "section": "Recap: Finite Chocices",
+    "text": "Recap: Finite Chocices\n\n\\(X = \\mathbb{R}^n_+\\) be finite choices\n\\(c: P(X) \\to X\\) be the choice function\n\\(\\succsim\\) be the preference relation\n\\(U: \\mathbb{R}^n_+ \\to \\mathbb{R}\\) be the corresponding utility function.\n\n\nWhat if Choices Become Infinite\n\nDifferent Levels of Finite\n\nFinite: there exists a bijection \\(X \\leftrightarrow \\{1, ..., n\\}\\).\n\neach \\(x \\in X\\) is paired with exactly one number in \\(\\{1, ..., n\\}\\)\neach number in \\(\\{1, ..., n\\}\\) is paired with exactly one \\(x \\in X\\)\nnobody is left unpaired\n\nCountably Infinite: there exists a bijection \\(X \\leftrightarrow \\mathbb{N} = \\{1, 2, ...\\}\\). Below are number sets by their finiteness\n\n\\(\\mathbb{Z} = \\{..., -1, 0, 1, ...\\}\\) is countably infinite\n\\(\\mathbb{Q} = \\{a/b: a \\in \\mathbb{Z}, b \\in \\mathbb{N}\\}\\) is countably infinite\n\\(\\mathbb{R}\\) is not countably infinite\n\n\n\n\nCountable Infinite\nProposition. \\(\\succsim\\) be a rational preference and \\(X\\) be a countable set \\(\\Rightarrow\\) there exists \\(U: X \\to \\mathbb{R}\\) representing \\(\\succsim\\).\n\n\nProof (Click to Expand)\n\nConsider:\n\na countable choice set: \\(X = \\{x_1, ..., x_n, ...\\}\\).\na weight indicator: \\(d_j = \\frac{1}{2^j}\\).\n\nWe would have \\[\\begin{aligned}\n      \\Sigma_{j=1}^{\\infty} d_j = \\Sigma_{j=1}^{\\infty} \\frac{1}{2^j} = \\lim_{n \\to \\infty} [\\Sigma_{j = 1}^n \\frac{1}{2^j}] = 1\n\\end{aligned}\\]\nWe can define the utility function \\(U: X \\to \\mathbb{R}\\) as \\[\\begin{aligned}\n      U(z) = \\Sigma_{\\{j \\in \\mathbb{N}: (z, x_j) \\in \\succsim\\}} d_j\n\\end{aligned}\\]\n\\(\\blacksquare\\)\n\n\n\n\nIncountable Infinite\nIt is not always true that there exists a utility function \\(U: X \\to \\mathbb{R}\\) to represent a rational \\(\\succsim\\).\nE.g. Bowser Jr.’s Lexicographic Preferences (\\(X = \\mathbb{R}^2_+\\)).\nWe would need some other properties that \\(\\succsim\\) must satisfy to make the utility function possible.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Infinite Choices"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u2.html#continuous-preference-relation",
+    "href": "repo/micro-u/u2.html#continuous-preference-relation",
+    "title": "Choices/Preference/Utility over Infinite Outcomes",
+    "section": "Continuous Preference Relation",
+    "text": "Continuous Preference Relation\nDefinition: for all pairs \\(x,y \\in X\\) with \\(x \\succ y\\), we can always find \\(\\epsilon &gt; 0\\) such that: - \\(|x - x'| &lt; \\epsilon\\) - \\(|y - y'| &lt; \\epsilon\\)\nimplies \\(x' \\succ y'\\).\nIntuition: a strictly preferred pair should remain their preference status even under a sligtest change in any direction. We would not expect a rational person to freak out if a slightest change takes place.\n\nUtility Representation\nProposition. If \\(\\succsim\\) is complete, transitive, and continuous, then there exists a continuous \\(U: \\mathbb{R}^n_+ \\to \\mathbb{R}\\) that represents \\(\\succsim\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Infinite Choices"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u3.html",
+    "href": "repo/micro-u/u3.html",
+    "title": "Von Neumann-Morgenstern Expected Utility",
+    "section": "",
+    "text": "yedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "vNM Axioms"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g1.html",
+    "href": "repo/micro-g/g1.html",
+    "title": "Normal-Form Games",
+    "section": "",
+    "text": "yedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g5.html",
+    "href": "repo/micro-g/g5.html",
+    "title": "Perfect Bayesian Equilibrium",
+    "section": "",
+    "text": "yedlu, Fall 2024\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Perfect Bayesian Equilibrium"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g3.html",
+    "href": "repo/micro-g/g3.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Repeated Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u5.html",
+    "href": "repo/micro-u/u5.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Afriat's Theorem"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html",
+    "href": "repo/micro-u/u6.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u4.html",
+    "href": "repo/micro-u/u4.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Risk Aversion"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g2.html",
+    "href": "repo/micro-g/g2.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Extensive-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g4.html",
+    "href": "repo/micro-g/g4.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Bayesian Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u3.html#intro-to-lotteries-an-extra-layer-of-uncertainty",
+    "href": "repo/micro-u/u3.html#intro-to-lotteries-an-extra-layer-of-uncertainty",
+    "title": "Von Neumann-Morgenstern Expected Utility",
+    "section": "Intro to Lotteries: an Extra Layer of Uncertainty",
+    "text": "Intro to Lotteries: an Extra Layer of Uncertainty\n\nThe individual must choose an action with uncertain outcomes. The individual has preference over final consequences.\n\\(X = \\{x_1, ..., x_n\\}\\) be the finite set of consequences\n\\(p = (p_1, ..., p_n), p_i \\geq 0, \\Sigma_i p_i = 1\\) be the lottery on \\(X\\)\n\\(\\Delta(X) = \\{p \\in \\mathbb{R}^n_+: \\Sigma_i p_i = 1\\}\\) be the set of lotteries on \\(X\\)\n\\(\\succsim \\subseteq \\Delta(X) \\times \\Delta(X)\\) be the binary preference relations on the set of lotteries \\(\\Delta(X)\\)\n\n\nMixing Lotteries\nGiven two lotteries \\(p, q \\in \\Delta(X)\\) and a weight \\(\\alpha \\in [0,1]\\), define the lottery\n\\[\\alpha p + (1-\\alpha) q := (\\alpha p_1 + (1-\\alpha) q_1, ..., \\alpha p_n + (1-\\alpha) q_n)\\]\n\n\nSpecial Lotteries with Certain Outcomes\nDefine certainty lotteries as \\(\\delta_i = (p_1, ..., p_n)\\) with \\(p_i = 1\\). Specifically, \\(\\delta_1 = (1,...,0)\\) and \\(\\delta_n = (0, ..., 1)\\).\n\n\nExpected Utility Functions\nGiven a utility function over consequences \\(u: X \\to \\mathbb{R}\\), we may evaluate lotteries \\(p = (p_1, ..., p_n)\\) by its expected utility:\n\\[U(p) := p_1 u(x_1) + ... + p_n u(x_n)\\]\n\nThe \\(U: \\Delta(X) \\to \\mathbb{R}\\) is said to have the expected utility form.\nThe \\(u: X \\to \\mathbb{R}\\) is called a Bernoulli payoff function.\n\n\n\nLinear and Expected Utility\nLemma. The following two statements are logically equivalent.\n\n\\(U\\) is linear if for every \\(p, q \\in \\Delta(X)\\) and every \\(\\alpha \\in [0,1]\\): \\[U[\\alpha p + (1-\\alpha)q] = \\alpha U(p) + (1-\\alpha) U(q)\\]\n\\(U\\) is in expected utility form if there exists \\(u: X \\to \\mathbb{R}\\) such that: \\[U(p) = \\sum_{x \\in X} u(x) p(x)\\] for every \\(p \\in \\Delta(X)\\)\n\n\n\nProof (Click to Expand)\n\nParts of proof: \\(2 \\Rightarrow 1\\). \\[\\begin{aligned}\n      U[\\alpha p + (1-\\alpha) q] &= U(\\alpha p_1 + (1-\\alpha) q_1, ..., \\alpha p_n + (1-\\alpha) q_n) \\\\\n      &= \\Sigma_{i=1}^n u(x_1) [\\alpha p_1 + (1-\\alpha) q_1] \\\\\n      &= \\alpha \\Sigma_{i=1}^n u(x_1) p_1 + (1-\\alpha) \\Sigma_{i=1}^n u(x_1) q_1 \\\\\n      &= \\alpha U(p) + (1-\\alpha) U(q)\n\\end{aligned}\\]\n\\(\\blacksquare\\)\n\n\n\nThe von Neumann-Morgenstern (vNM) Axioms\nLet \\(\\succsim\\) be a binary relation on the set of lotteries \\(\\Delta(X)\\). - Axiom 1 (rational): \\(\\succsim\\) is complete and transitive. - Axiom 2 (continuous): for every \\(p, q, r \\in \\Delta(X)\\) with \\(p \\succ q \\succ r\\), there exists \\(\\alpha, \\beta \\in (0,1)\\) such that: \\(\\alpha p + (1-\\alpha) r \\succ q \\succ \\beta p + (1 - \\beta) r\\). - Axiom 3 (independence): for every \\(p, q, r \\in \\Delta(X)\\) and every \\(\\alpha \\in (0,1)\\), we have \\(p \\succ q\\) if and only if:\n\\[\\alpha p + (1-\\alpha) r \\succ \\alpha q + (1-\\alpha) r\\]\n\nThe vNM Representation Theorem\nThe following statements are logically equivalent: 1. \\(\\succsim\\) satisfies Axioms 1, 2, and 3; 2. There exists a linear function \\(U: \\Delta(X) \\to \\mathbb{R}\\) that represents \\(\\succsim\\).\n\n\nThe Uniqueness Proposition\nSuppose \\(U, V: \\Delta(X) \\to \\mathbb{R}\\) are linear functions. Suppose \\(U\\) represents \\(\\succsim\\). Then \\(V\\) also represents \\(\\succsim\\) iif there exists \\(\\alpha &gt; 0\\) and \\(\\beta \\in \\mathbb{R}\\) such that \\(V = \\alpha U + \\beta\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "vNM Axioms"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g1.html#game-theory-an-introduction",
+    "href": "repo/micro-g/g1.html#game-theory-an-introduction",
+    "title": "Normal-Form Games",
+    "section": "Game Theory: An Introduction",
+    "text": "Game Theory: An Introduction\nGame theory can be defined as the study of mathematical models of conflict and cooperation between decision-makers who are - intelligent: players inside the game are aware of their situation just like the researchers studying the game - rational: maximizing some preference or utility functions\nIt is the tool to model situations in which decision-makers interact and influence one another’s welfare.\nThe Expected Utility Theory (with vNM theorem) would come in handy when dealing with games.\n\nGames in Normal-Form\nThis is a model of interactive decision-making in which each decision-maker chooses their plan of action once and for all, and these choices are made simultaneously.\nThree key components of normal-form games:\n\nThe finite set of players: \\(N = \\{1, 2, ..., n\\}\\)\nFor each player the nonempty set of actions: \\(S_i, \\quad i \\in N\\)\nFor each player the preference relation \\(R_i\\) on lotteries: \\(S = S_1 \\times S_2 \\times ... \\times S_n\\)\n\nAll players in normal-form games are expected utility maximizers. A notation for the game, i expected utility form, would be: \\[\\begin{align}\n    G = (N, (S_i: i \\in N), (u_i: i \\in N))\n\\end{align}\\]\nSometimes consequences \\(C\\) are mentioned explicitly.\n\n\\(R_i^*\\) be a preference relation over \\(C\\)\n\\(g: S \\to C\\) maps actions to consequences\n\\(s R_i s'\\) when \\(g(s) R_i^* g(s')\\)\n\nGame theory cannot say about what the preference relation \\(R_i\\) should be. Rather, it has a lot to say about how a game will be played/should be played conditioning on the preference relation.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g1.html#example-ben-polaks-grading-game",
+    "href": "repo/micro-g/g1.html#example-ben-polaks-grading-game",
+    "title": "Normal-Form Games",
+    "section": "Example: Ben Polak’s Grading Game",
+    "text": "Example: Ben Polak’s Grading Game\nIn standard notations, Ben Polak’s Grading Game can be denoted as:\n\n\\(N \\ \\{1,2\\}\\) be the set of players\n\\(S_1 = S_2 = \\{\\alpha, \\beta\\}\\) be the set of actions\n\\(S = S_1 \\times S_2 = \\{(\\alpha, \\alpha), (\\alpha, \\beta), (\\beta, \\alpha), (\\beta, \\beta)\\}\\) be the cartesian product of action sets. This is the set of all possible results.\n\\(u_i: S \\to \\mathbb{R}, i \\in N\\) be the Bernoulli index. Different players might have different Bernoulli indices.\n\nThe outcome matrix is as follows:\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\n\n\n\n\n\\(\\alpha\\)\nB-, B-\nA, C\n\n\n\\(\\beta\\)\nC, A\nB+, B+\n\n\n\nLet’s say, for example, that Bernoulli payoff functions for two types of players in the crowd are as follows:\n\n\n\nTypes\n\\((A, C)\\)\n\\((B+, B+)\\)\n\\((B-, B-)\\)\n\\((C, A)\\)\n\n\n\n\nSelfish\n3\n2\n1\n0\n\n\nIndignant Angel\n0\n2\n1\n-1\n\n\n\nThen we can take a look at outcomes under the scenarios below.\n\nSelfish vs. Selfish\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\n\n\n\n\n\\(\\alpha\\)\n1, 1\n3, 0\n\n\n\\(\\beta\\)\n0, 3\n2, 2\n\n\n\nIt is easy to show that both row and column players have a strictly dominated action: \\[\\begin{aligned}\n    u(\\alpha, \\alpha) & &gt; u(\\beta, \\alpha) \\\\\n    u(\\alpha, \\beta) & &gt; u(\\beta, \\beta)\n\\end{aligned}\\]\n\n\nIndignant Angel vs. Indignant Angel\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\n\n\n\n\n\\(\\alpha\\)\n1, 1\n0, -1\n\n\n\\(\\beta\\)\n-1, 0\n2, 2\n\n\n\nNo strictly dominated actions exist in this case. However, it is inteeresting to notice that both (\\(\\alpha, \\alpha\\)) and (\\(\\beta, \\beta\\)) are locally optimal answers.\n\n\nSelfish vs. Indignant Angel\n\n\n\n\n\\(\\alpha\\)\n\\(\\beta\\)\n\n\n\n\n\\(\\alpha\\)\n1, 1\n3, -1\n\n\n\\(\\beta\\)\n0, 3\n2, 2\n\n\n\nIt is easy to show that row player have a strictly dominated action: \\[\\begin{aligned}\n    u(\\alpha, \\alpha) & &gt; u(\\beta, \\alpha) \\\\\n    u(\\alpha, \\beta) & &gt; u(\\beta, \\beta)\n\\end{aligned}\\]\nSince our agents are intelligent, the column player knows that the row player is guaranteed to play \\(\\alpha\\). Conditioning on this information, the column player would also play \\(\\alpha\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g1.html#rule-1-strictly-dominated-actions",
+    "href": "repo/micro-g/g1.html#rule-1-strictly-dominated-actions",
+    "title": "Normal-Form Games",
+    "section": "Rule 1: Strictly Dominated Actions",
+    "text": "Rule 1: Strictly Dominated Actions\nIn the normal-form game \\(G\\), we say that action \\(s_i^{'} \\in S_1\\) is strictly dominated by action \\(s_i^{''} \\in S_1\\) if, for every \\(s_{-i} \\in S_1 \\times ... \\times S_{i-1} \\times S_{i+1} \\times ... \\times S_n\\): \\[\\begin{aligned}\n    u(s_i^{''}, s_{-i}) &gt; u(s_i^{'}, s_{-i})\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g1.html#iterated-elimination-of-dominated-actions-ieda",
+    "href": "repo/micro-g/g1.html#iterated-elimination-of-dominated-actions-ieda",
+    "title": "Normal-Form Games",
+    "section": "Iterated Elimination of Dominated Actions (IEDA)",
+    "text": "Iterated Elimination of Dominated Actions (IEDA)\nIntuition: eliminate dominated actions round-by-round until no actions dominates other actions.\nFormal definition: let rounds of elimination be \\(t = 1, 2, ..., T\\).\nFor every player \\(i\\), - start with all actions \\(S_i^1 = S_i\\) - eliminate some actions at each round \\(S_i^1 \\supset S_i^2 \\supset ... \\supset S_i^T\\)\nOnly strictly dominated actions are eliminated: if \\(s_i^{''} \\in S_i^T \\setminus S_i^{T+1}\\) then \\(s_i^{''}\\) is strictly dominated by some \\(s_i^{'} \\in S_i^{T+1}\\).\nNobody is left with any strictly actions at the end. The set of consequenses in the end would be \\(S_1^T \\times ... \\times S_n^T\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g1.html#nash-equilibrium-and-mixed-actions",
+    "href": "repo/micro-g/g1.html#nash-equilibrium-and-mixed-actions",
+    "title": "Normal-Form Games",
+    "section": "Nash Equilibrium and Mixed Actions",
+    "text": "Nash Equilibrium and Mixed Actions\n\nMixed Actions\nGiven a game \\(G = (N, (S_i), (u_i))\\) where each player has a finite set of actions \\[\\begin{aligned}\n    S_i = \\{s_i^1, ..., s_i^k\\}\n\\end{aligned}\\]\nA mixed action for player \\(i\\) is a probability \\(\\sigma_i: S_i \\to [0,1]\\) such that: \\[\\begin{aligned}\n    \\sigma_i(s_i^1) + \\sigma_i(s_i^2) + ... + \\sigma_i(s_i^k) = 1\n\\end{aligned}\\]\nWe denote \\(\\Sigma_i\\) be the set of mixed actions for player \\(i\\). The cartesian product \\(\\Sigma = \\Sigma_1 \\times ... \\times \\Sigma_n\\) is the set of mixed action profiles.\nThis corresponds to either a player actually randomizes or a player is perceived by other players to be a randomizer.\n\n\nBest Responses\nAn action \\(\\sigma_i^{'} \\in \\Sigma_i\\) is a best response to \\(\\sigma_{-i} \\in \\Sigma_{-i}\\) when: \\[\\begin{aligned}\n    U_i(\\sigma_i^{'}, \\sigma_{-i} ) \\geq U_i(\\sigma_i^{''}, \\sigma_{-i} )\n\\end{aligned}\\] for all \\(\\sigma_i^{''} \\in \\Sigma_i\\).\n\\(B_i(\\sigma_{-i})\\) denotes the set of all best responses to \\(\\sigma_{-i} \\in \\Sigma_{-i}\\).\n\n\nNash Equilibrium\nA profile of mixed actions \\(\\sigma^* \\in \\Sigma\\) is a Nash Equilibrium if, for all \\(i\\), \\[\\begin{aligned}\n      \\sigma_i^* \\in B_i(\\sigma_{-i}^*)\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Normal-Form Games"
+    ]
   }
 ]

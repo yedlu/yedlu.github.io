@@ -1,0 +1,77 @@
+---
+title: "Von Neumann-Morgenstern Expected Utility"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+*yedlu, Fall 2024*
+
+## Intro to Lotteries: an Extra Layer of Uncertainty
+- The individual must choose an action with uncertain outcomes. The individual has preference over final consequences.
+- $X = \{x_1, ..., x_n\}$ be the finite set of consequences
+- $p = (p_1, ..., p_n), p_i \geq 0, \Sigma_i p_i = 1$ be the lottery on $X$
+- $\Delta(X) = \{p \in \mathbb{R}^n_+: \Sigma_i p_i = 1\}$ be the set of lotteries on $X$
+- $\succsim \subseteq \Delta(X) \times \Delta(X)$ be the binary preference relations on the set of lotteries $\Delta(X)$
+
+### Mixing Lotteries
+Given two lotteries $p, q \in \Delta(X)$ and a weight $\alpha \in [0,1]$, define the lottery 
+
+$$\alpha p + (1-\alpha) q := (\alpha p_1 + (1-\alpha) q_1, ..., \alpha p_n + (1-\alpha) q_n)$$
+
+### Special Lotteries with Certain Outcomes
+Define certainty lotteries as $\delta_i = (p_1, ..., p_n)$ with $p_i = 1$. Specifically, $\delta_1 = (1,...,0)$ and $\delta_n = (0, ..., 1)$.
+
+### Expected Utility Functions
+Given a utility function over consequences $u: X \to \mathbb{R}$, we may evaluate lotteries $p = (p_1, ..., p_n)$ by its expected utility:
+
+$$U(p) := p_1 u(x_1) + ... + p_n u(x_n)$$
+
+- The $U: \Delta(X) \to \mathbb{R}$ is said to have the **expected utility form**.
+- The $u: X \to \mathbb{R}$ is called a Bernoulli payoff function.
+
+
+### Linear and Expected Utility
+**Lemma.** The following two statements are logically equivalent.
+
+1. $U$ is linear if for every $p, q \in \Delta(X)$ and every $\alpha \in [0,1]$:
+$$U[\alpha p + (1-\alpha)q] = \alpha U(p) + (1-\alpha) U(q)$$
+2. $U$ is in expected utility form if there exists $u: X \to \mathbb{R}$ such that:
+$$U(p) = \sum_{x \in X} u(x) p(x)$$ for every $p \in \Delta(X)$
+
+
+<details>
+<summary>Proof (Click to Expand)</summary>
+
+Parts of proof: $2 \Rightarrow 1$.
+$$\begin{aligned}
+      U[\alpha p + (1-\alpha) q] &= U(\alpha p_1 + (1-\alpha) q_1, ..., \alpha p_n + (1-\alpha) q_n) \\
+      &= \Sigma_{i=1}^n u(x_1) [\alpha p_1 + (1-\alpha) q_1] \\
+      &= \alpha \Sigma_{i=1}^n u(x_1) p_1 + (1-\alpha) \Sigma_{i=1}^n u(x_1) q_1 \\
+      &= \alpha U(p) + (1-\alpha) U(q)
+\end{aligned}$$
+
+$\blacksquare$
+</details>
+
+
+
+### The von Neumann-Morgenstern (vNM) Axioms
+Let $\succsim$ be a binary relation on the set of lotteries $\Delta(X)$.
+- Axiom 1 (rational): $\succsim$ is complete and transitive.
+- Axiom 2 (continuous): for every $p, q, r \in \Delta(X)$ with $p \succ q \succ r$, there exists $\alpha, \beta \in (0,1)$ such that:
+$\alpha p + (1-\alpha) r \succ q \succ \beta p + (1 - \beta) r$.
+- Axiom 3 (independence): for every $p, q, r \in \Delta(X)$ and every $\alpha \in (0,1)$, we have $p \succ q$ if and only if:
+
+$$\alpha p + (1-\alpha) r \succ \alpha q + (1-\alpha) r$$
+
+#### The vNM Representation Theorem
+The following statements are logically equivalent:
+1. $\succsim$ satisfies Axioms 1, 2, and 3;
+2. There exists a linear function $U: \Delta(X) \to \mathbb{R}$ that represents $\succsim$.
+
+
+#### The Uniqueness Proposition
+Suppose $U, V: \Delta(X) \to \mathbb{R}$ are linear functions. Suppose $U$ represents $\succsim$. Then $V$ also represents $\succsim$ iif there exists $\alpha > 0$ and $\beta \in \mathbb{R}$ such that $V = \alpha U + \beta$.

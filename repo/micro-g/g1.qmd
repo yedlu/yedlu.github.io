@@ -1,0 +1,157 @@
+---
+title: "Normal-Form Games"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+*yedlu, Fall 2024*
+
+## Game Theory: An Introduction
+Game theory can be defined as the study of mathematical models of conflict and cooperation between decision-makers who are
+- intelligent: players inside the game are aware of their situation just like the researchers studying the game
+- rational: maximizing some preference or utility functions
+
+It is the tool to model situations in which decision-makers interact and influence one another's welfare.
+
+The *Expected Utility Theory* (with vNM theorem) would come in handy when dealing with games. 
+
+### Games in Normal-Form
+This is a model of interactive decision-making in which each decision-maker chooses their plan of action once and for all, and these choices are made simultaneously.
+
+Three key components of normal-form games:
+
+- The finite set of players: $N = \{1, 2, ..., n\}$
+- For each player the nonempty set of actions: $S_i, \quad i \in N$
+- For each player the preference relation $R_i$ on lotteries: $S = S_1 \times S_2 \times ... \times S_n$
+
+All players in normal-form games are expected utility maximizers. A notation for the game, i expected utility form, would be:
+$$\begin{align}
+    G = (N, (S_i: i \in N), (u_i: i \in N))
+\end{align}$$
+
+Sometimes consequences $C$ are mentioned explicitly.
+
+- $R_i^*$ be a preference relation over $C$
+- $g: S \to C$ maps actions to consequences
+- $s R_i s'$ when $g(s) R_i^* g(s')$
+
+Game theory cannot say about what the preference relation $R_i$ should be. Rather, it has a lot to say about how a game will be played/should be played conditioning on the preference relation.
+
+
+## Example: Ben Polak's Grading Game
+In standard notations, Ben Polak's Grading Game can be denoted as:
+
+- $N \ \{1,2\}$ be the set of players
+- $S_1 = S_2 = \{\alpha, \beta\}$ be the set of actions
+- $S = S_1 \times S_2 = \{(\alpha, \alpha), (\alpha, \beta), (\beta, \alpha), (\beta, \beta)\}$ be the cartesian product of action sets. This is the set of all possible results.
+- $u_i: S \to \mathbb{R}, i \in N$ be the Bernoulli index. Different players might have different Bernoulli indices.
+
+The outcome matrix is as follows:
+
+| | $\alpha$ | $\beta$ |
+| --- | --- | --- |
+| $\alpha$ | B-, B- | A, C |
+| $\beta$ | C, A | B+, B+ |
+
+
+Let's say, for example, that Bernoulli payoff functions for two types of players in the crowd are as follows:
+
+| Types | $(A, C)$ | $(B+, B+)$ | $(B-, B-)$ | $(C, A)$ |
+| --- | --- | --- | --- | --- |
+| Selfish | 3 | 2 | 1 | 0 |
+| Indignant Angel | 0 | 2 | 1 | -1 |
+
+Then we can take a look at outcomes under the scenarios below.
+
+#### Selfish vs. Selfish
+
+| | $\alpha$ | $\beta$ |
+| --- | --- | --- |
+| $\alpha$ | 1, 1 | 3, 0 |
+| $\beta$ | 0, 3 | 2, 2 |
+
+It is easy to show that both row and column players have a strictly dominated action:
+$$\begin{aligned}
+    u(\alpha, \alpha) & > u(\beta, \alpha) \\
+    u(\alpha, \beta) & > u(\beta, \beta)
+\end{aligned}$$
+
+
+#### Indignant Angel vs. Indignant Angel
+
+| | $\alpha$ | $\beta$ |
+| --- | --- | --- |
+| $\alpha$ | 1, 1 | 0, -1 |
+| $\beta$ | -1, 0 | 2, 2 |
+
+No strictly dominated actions exist in this case. However, it is inteeresting to notice that both ($\alpha, \alpha$) and ($\beta, \beta$) are locally optimal answers.
+
+#### Selfish vs. Indignant Angel
+
+| | $\alpha$ | $\beta$ |
+| --- | --- | --- |
+| $\alpha$ | 1, 1 | 3, -1 |
+| $\beta$ | 0, 3 | 2, 2 |
+
+It is easy to show that row player have a strictly dominated action:
+$$\begin{aligned}
+    u(\alpha, \alpha) & > u(\beta, \alpha) \\
+    u(\alpha, \beta) & > u(\beta, \beta)
+\end{aligned}$$
+
+Since our agents are intelligent, the column player knows that the row player is guaranteed to play $\alpha$. Conditioning on this information, the column player would also play $\alpha$.
+
+## Rule 1: Strictly Dominated Actions
+In the normal-form game $G$, we say that action $s_i^{'} \in S_1$ is strictly dominated by action $s_i^{''} \in S_1$ if, for every $s_{-i} \in S_1 \times ... \times S_{i-1} \times S_{i+1} \times ... \times S_n$:
+$$\begin{aligned}
+    u(s_i^{''}, s_{-i}) > u(s_i^{'}, s_{-i})
+\end{aligned}$$
+
+## Iterated Elimination of Dominated Actions (IEDA)
+Intuition: eliminate dominated actions round-by-round until no actions dominates other actions.
+
+Formal definition: let rounds of elimination be $t = 1, 2, ..., T$.
+
+For every player $i$,
+- start with all actions $S_i^1 = S_i$
+- eliminate some actions at each round $S_i^1 \supset S_i^2 \supset ... \supset S_i^T$
+
+Only strictly dominated actions are eliminated: if $s_i^{''} \in S_i^T \setminus S_i^{T+1}$ then $s_i^{''}$ is strictly dominated by some $s_i^{'} \in S_i^{T+1}$.
+
+Nobody is left with any strictly actions at the end. The set of consequenses in the end would be $S_1^T \times ... \times S_n^T$.
+
+## Nash Equilibrium and Mixed Actions
+### Mixed Actions
+Given a game $G = (N, (S_i), (u_i))$ where each player has a finite set of actions
+$$\begin{aligned}
+    S_i = \{s_i^1, ..., s_i^k\}
+\end{aligned}$$
+
+A mixed action for player $i$ is a probability $\sigma_i: S_i \to [0,1]$ such that:
+$$\begin{aligned}
+    \sigma_i(s_i^1) + \sigma_i(s_i^2) + ... + \sigma_i(s_i^k) = 1
+\end{aligned}$$
+
+We denote $\Sigma_i$ be the set of mixed actions for player $i$. The cartesian product $\Sigma = \Sigma_1 \times ... \times \Sigma_n$ is the set of mixed action profiles.
+
+This corresponds to either a player actually randomizes or a player is perceived by other players to be a randomizer.
+
+### Best Responses
+
+An action $\sigma_i^{'} \in \Sigma_i$ is a best response to $\sigma_{-i} \in \Sigma_{-i}$ when:
+$$\begin{aligned}
+    U_i(\sigma_i^{'}, \sigma_{-i} ) \geq U_i(\sigma_i^{''}, \sigma_{-i} )
+\end{aligned}$$
+for all $\sigma_i^{''} \in \Sigma_i$.
+
+$B_i(\sigma_{-i})$ denotes the set of all best responses to $\sigma_{-i} \in \Sigma_{-i}$.
+
+
+### Nash Equilibrium
+A profile of mixed actions $\sigma^* \in \Sigma$ is a **Nash Equilibrium** if, for all $i$, 
+$$\begin{aligned}
+      \sigma_i^* \in B_i(\sigma_{-i}^*)
+\end{aligned}$$

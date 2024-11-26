@@ -1,5 +1,6 @@
 ---
 title: "Curriculum Vitae"
+sidebar: false
 format:
   html:
     toc: true # Enables the side navbar

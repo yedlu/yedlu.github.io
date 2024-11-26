@@ -1,0 +1,24 @@
+---
+title: "Choices, Preferences, and Utility Theories"
+---
+
+
+Hi there and welcome! You can navigate yourself through one of the following topics:
+
+1. [Choices/Preference/Utility over Finite Outcomes](u1.qmd)
+   - Definition and properties of choices, preference relations, and representing utility functions.
+
+2. [Choices/Preference/Utility over Infinite Outcomes](u2.qmd)
+   - Bring the concepts to infinite set of consequences.
+
+3. [von Neumann-Morgenstern Expected Utility](u3.qmd)
+   - Explore lotteries and expected utility theory.
+
+4. [Risk Aversion](u4.qmd)
+   - Examining risk aversion and its role in rational decision-making.
+
+5. [Afriat's Theorem](u5.qmd)
+   - An introduction to Afriat's theorem and its implications.
+
+6. [Stochastic Choice](u6.qmd)
+   - The theory behind stochastic choices.

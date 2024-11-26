@@ -1,0 +1,73 @@
+---
+title: "Choices/Preference/Utility over Infinite Outcomes"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+*yedlu, Fall 2024*
+
+## Recap: Finite Chocices
+- $X = \mathbb{R}^n_+$ be finite choices
+- $c: P(X) \to X$ be the choice function
+- $\succsim$ be the preference relation
+- $U: \mathbb{R}^n_+ \to \mathbb{R}$ be the corresponding utility function.
+
+
+### What if Choices Become Infinite
+#### Different Levels of Finite
+- Finite: there exists a bijection $X \leftrightarrow \{1, ..., n\}$.
+  - each $x \in X$ is paired with exactly one number in $\{1, ..., n\}$
+  - each number in $\{1, ..., n\}$ is paired with exactly one $x \in X$
+  - nobody is left unpaired
+- Countably Infinite: there exists a bijection $X \leftrightarrow \mathbb{N} = \{1, 2, ...\}$. Below are number sets by their finiteness
+  - $\mathbb{Z} = \{..., -1, 0, 1, ...\}$ is countably infinite
+  - $\mathbb{Q} = \{a/b: a \in \mathbb{Z}, b \in \mathbb{N}\}$ is countably infinite
+  - $\mathbb{R}$ is not countably infinite
+
+#### Countable Infinite
+**Proposition.** $\succsim$ be a rational preference and $X$ be a countable set $\Rightarrow$ there exists $U: X \to \mathbb{R}$ representing $\succsim$.
+
+<details>
+<summary>Proof (Click to Expand)</summary>
+
+Consider:
+
+
+- a countable choice set: $X = \{x_1, ..., x_n, ...\}$.
+- a weight indicator: $d_j = \frac{1}{2^j}$. 
+
+We would have
+$$\begin{aligned}
+      \Sigma_{j=1}^{\infty} d_j = \Sigma_{j=1}^{\infty} \frac{1}{2^j} = \lim_{n \to \infty} [\Sigma_{j = 1}^n \frac{1}{2^j}] = 1
+\end{aligned}$$
+
+We can define the utility function $U: X \to \mathbb{R}$ as
+$$\begin{aligned}
+      U(z) = \Sigma_{\{j \in \mathbb{N}: (z, x_j) \in \succsim\}} d_j
+\end{aligned}$$
+
+$\blacksquare$
+---
+</details>
+
+#### Incountable Infinite
+It is not always true that there exists a utility function $U: X \to \mathbb{R}$ to represent a rational $\succsim$.
+
+E.g. Bowser Jr.'s Lexicographic Preferences ($X = \mathbb{R}^2_+$).
+
+We would need some other properties that $\succsim$ must satisfy to make the utility function possible.
+
+## Continuous Preference Relation
+Definition: for all pairs $x,y \in X$ with $x \succ y$, we can always find $\epsilon > 0$ such that:
+- $|x - x'| < \epsilon$
+- $|y - y'| < \epsilon$
+
+implies $x' \succ y'$.
+
+Intuition: a strictly preferred pair should remain their preference status even under a sligtest change in any direction. We would not expect a rational person to freak out if a slightest change takes place.
+
+### Utility Representation
+**Proposition.** If $\succsim$ is complete, transitive, and continuous, then there exists a continuous $U: \mathbb{R}^n_+ \to \mathbb{R}$ that represents $\succsim$.

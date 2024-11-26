@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Curriculum Vitae – Yanhe Eddie Lu</title>
+<title>Von Neumann-Morgenstern Expected Utility – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,18 +67,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Yanhe Eddie Lu</span>
     </a>
   </div>
@@ -89,15 +118,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">vitae</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./repo/index.html"> 
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
 <span class="menu-text">repositories</span></a>
   </li>  
 </ul>
@@ -106,23 +135,140 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/u3.html">vNM Axioms</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Choices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Choices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#intro-to-lotteries-an-extra-layer-of-uncertainty" id="toc-intro-to-lotteries-an-extra-layer-of-uncertainty" class="nav-link active" data-scroll-target="#intro-to-lotteries-an-extra-layer-of-uncertainty">Intro to Lotteries: an Extra Layer of Uncertainty</a>
+  <ul>
+  <li><a href="#mixing-lotteries" id="toc-mixing-lotteries" class="nav-link" data-scroll-target="#mixing-lotteries">Mixing Lotteries</a></li>
+  <li><a href="#special-lotteries-with-certain-outcomes" id="toc-special-lotteries-with-certain-outcomes" class="nav-link" data-scroll-target="#special-lotteries-with-certain-outcomes">Special Lotteries with Certain Outcomes</a></li>
+  <li><a href="#expected-utility-functions" id="toc-expected-utility-functions" class="nav-link" data-scroll-target="#expected-utility-functions">Expected Utility Functions</a></li>
+  <li><a href="#linear-and-expected-utility" id="toc-linear-and-expected-utility" class="nav-link" data-scroll-target="#linear-and-expected-utility">Linear and Expected Utility</a></li>
+  <li><a href="#the-von-neumann-morgenstern-vnm-axioms" id="toc-the-von-neumann-morgenstern-vnm-axioms" class="nav-link" data-scroll-target="#the-von-neumann-morgenstern-vnm-axioms">The von Neumann-Morgenstern (vNM) Axioms</a>
   <ul class="collapse">
-  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics">Basics</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#research-experience" id="toc-research-experience" class="nav-link" data-scroll-target="#research-experience">Research Experience</a></li>
-  <li><a href="#professional-experience" id="toc-professional-experience" class="nav-link" data-scroll-target="#professional-experience">Professional Experience</a></li>
-  <li><a href="#teaching-experience" id="toc-teaching-experience" class="nav-link" data-scroll-target="#teaching-experience">Teaching Experience</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
-  <li><a href="#coursework" id="toc-coursework" class="nav-link" data-scroll-target="#coursework">Coursework</a></li>
-  <li><a href="#personal-information" id="toc-personal-information" class="nav-link" data-scroll-target="#personal-information">Personal Information</a></li>
+  <li><a href="#the-vnm-representation-theorem" id="toc-the-vnm-representation-theorem" class="nav-link" data-scroll-target="#the-vnm-representation-theorem">The vNM Representation Theorem</a></li>
+  <li><a href="#the-uniqueness-proposition" id="toc-the-uniqueness-proposition" class="nav-link" data-scroll-target="#the-uniqueness-proposition">The Uniqueness Proposition</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -133,9 +279,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/u3.html">vNM Axioms</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Curriculum Vitae</h1>
+<h1 class="title">Von Neumann-Morgenstern Expected Utility</h1>
 </div>
 
 
@@ -152,148 +298,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div style="text-align: right; margin-bottom: 20px;">
-<p><a href="cv.pdf" target="_blank" style="text-decoration: none;"> <i class="fas fa-file-pdf" style="font-size: 1.5em; color: #d32f2f;"></i> Open PDF </a></p>
-</div>
-<section id="basics" class="level2">
-<h2 class="anchored" data-anchor-id="basics">Basics</h2>
-<table style="border-collapse: collapse; width: 100%;">
-<tbody><tr>
-<td>
-<strong>Name</strong>
-</td>
-<td>
-Yanhe Eddie Lu
-</td>
-</tr>
-<tr>
-<td>
-<strong>Location</strong>
-</td>
-<td>
-St.&nbsp;Louis, MO
-</td>
-</tr>
-<tr>
-<td>
-<strong>U.S. Work Authorization</strong>
-</td>
-<td>
-STEM-OPT (3 years)
-</td>
-</tr>
-</tbody></table>
-</section>
-<section id="education" class="level2">
-<h2 class="anchored" data-anchor-id="education">Education</h2>
+<p><em>yedlu, Fall 2024</em></p>
+<section id="intro-to-lotteries-an-extra-layer-of-uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="intro-to-lotteries-an-extra-layer-of-uncertainty">Intro to Lotteries: an Extra Layer of Uncertainty</h2>
 <ul>
-<li><p><strong>M.S. in Business Analytics (Financial Technology)</strong><br>
-<em>Olin Business School, Washington University in St.&nbsp;Louis</em><br>
-2023.08 - 2024.12</p></li>
-<li><p><strong>B.S. in International Economics &amp; Financial Risk Management</strong><br>
-<em>Central University of Finance and Economics (CUFE)</em><br>
-2019.08 - 2023.06</p></li>
+<li>The individual must choose an action with uncertain outcomes. The individual has preference over final consequences.</li>
+<li><span class="math inline">\(X = \{x_1, ..., x_n\}\)</span> be the finite set of consequences</li>
+<li><span class="math inline">\(p = (p_1, ..., p_n), p_i \geq 0, \Sigma_i p_i = 1\)</span> be the lottery on <span class="math inline">\(X\)</span></li>
+<li><span class="math inline">\(\Delta(X) = \{p \in \mathbb{R}^n_+: \Sigma_i p_i = 1\}\)</span> be the set of lotteries on <span class="math inline">\(X\)</span></li>
+<li><span class="math inline">\(\succsim \subseteq \Delta(X) \times \Delta(X)\)</span> be the binary preference relations on the set of lotteries <span class="math inline">\(\Delta(X)\)</span></li>
+</ul>
+<section id="mixing-lotteries" class="level3">
+<h3 class="anchored" data-anchor-id="mixing-lotteries">Mixing Lotteries</h3>
+<p>Given two lotteries <span class="math inline">\(p, q \in \Delta(X)\)</span> and a weight <span class="math inline">\(\alpha \in [0,1]\)</span>, define the lottery</p>
+<p><span class="math display">\[\alpha p + (1-\alpha) q := (\alpha p_1 + (1-\alpha) q_1, ..., \alpha p_n + (1-\alpha) q_n)\]</span></p>
+</section>
+<section id="special-lotteries-with-certain-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="special-lotteries-with-certain-outcomes">Special Lotteries with Certain Outcomes</h3>
+<p>Define certainty lotteries as <span class="math inline">\(\delta_i = (p_1, ..., p_n)\)</span> with <span class="math inline">\(p_i = 1\)</span>. Specifically, <span class="math inline">\(\delta_1 = (1,...,0)\)</span> and <span class="math inline">\(\delta_n = (0, ..., 1)\)</span>.</p>
+</section>
+<section id="expected-utility-functions" class="level3">
+<h3 class="anchored" data-anchor-id="expected-utility-functions">Expected Utility Functions</h3>
+<p>Given a utility function over consequences <span class="math inline">\(u: X \to \mathbb{R}\)</span>, we may evaluate lotteries <span class="math inline">\(p = (p_1, ..., p_n)\)</span> by its expected utility:</p>
+<p><span class="math display">\[U(p) := p_1 u(x_1) + ... + p_n u(x_n)\]</span></p>
+<ul>
+<li>The <span class="math inline">\(U: \Delta(X) \to \mathbb{R}\)</span> is said to have the <strong>expected utility form</strong>.</li>
+<li>The <span class="math inline">\(u: X \to \mathbb{R}\)</span> is called a Bernoulli payoff function.</li>
 </ul>
 </section>
-<section id="research-experience" class="level2">
-<h2 class="anchored" data-anchor-id="research-experience">Research Experience</h2>
-<ul>
-<li><p><strong>Empirical Corporate Finance</strong><br>
-<em>Research Assistant for Margarita Tsoutsoura, WashU Olin</em><br>
-2024.05 - Present</p></li>
-<li><p><strong>Distinguishing LLM-Generated Texts Using Linguistic Dimensions</strong><br>
-<em>Research Assistant for Gerald Onwujekwe, WashU Olin</em><br>
-2024.01 - 2024.11</p></li>
-<li><p><strong>Effects of Development Initiatives on Foreign Direct Investment</strong><br>
-<em>Senior Thesis at CUFE</em><br>
-2022.11 - 2023.05</p></li>
-<li><p><strong>Mechanisms of China’s National Carbon Market on Emissions</strong><br>
-<em>Research Analyst at International Institute of Green Finance, CUFE</em><br>
-2022.02 - 2022.06</p></li>
-<li><p><strong>Evaluating Corporate ESG Performance in the Diamond Industry</strong><br>
-<em>Research Analyst at International Institute of Green Finance, CUFE</em><br>
-2022.02 - 2022.06</p></li>
-<li><p><strong>Modeling Sustainable Transformation of Global Food Systems</strong><br>
-<em>Contestant (Honorable Mentions) of Interdisciplinary Contest in Modeling</em><br>
-2021.02</p></li>
-</ul>
+<section id="linear-and-expected-utility" class="level3">
+<h3 class="anchored" data-anchor-id="linear-and-expected-utility">Linear and Expected Utility</h3>
+<p><strong>Lemma.</strong> The following two statements are logically equivalent.</p>
+<ol type="1">
+<li><span class="math inline">\(U\)</span> is linear if for every <span class="math inline">\(p, q \in \Delta(X)\)</span> and every <span class="math inline">\(\alpha \in [0,1]\)</span>: <span class="math display">\[U[\alpha p + (1-\alpha)q] = \alpha U(p) + (1-\alpha) U(q)\]</span></li>
+<li><span class="math inline">\(U\)</span> is in expected utility form if there exists <span class="math inline">\(u: X \to \mathbb{R}\)</span> such that: <span class="math display">\[U(p) = \sum_{x \in X} u(x) p(x)\]</span> for every <span class="math inline">\(p \in \Delta(X)\)</span></li>
+</ol>
+<details>
+<summary>
+Proof (Click to Expand)
+</summary>
+<p>Parts of proof: <span class="math inline">\(2 \Rightarrow 1\)</span>. <span class="math display">\[\begin{aligned}
+      U[\alpha p + (1-\alpha) q] &amp;= U(\alpha p_1 + (1-\alpha) q_1, ..., \alpha p_n + (1-\alpha) q_n) \\
+      &amp;= \Sigma_{i=1}^n u(x_1) [\alpha p_1 + (1-\alpha) q_1] \\
+      &amp;= \alpha \Sigma_{i=1}^n u(x_1) p_1 + (1-\alpha) \Sigma_{i=1}^n u(x_1) q_1 \\
+      &amp;= \alpha U(p) + (1-\alpha) U(q)
+\end{aligned}\]</span></p>
+<span class="math inline">\(\blacksquare\)</span>
+</details>
 </section>
-<section id="professional-experience" class="level2">
-<h2 class="anchored" data-anchor-id="professional-experience">Professional Experience</h2>
-<ul>
-<li><p><strong>FICC Product Specialist</strong><br>
-<em>China International Capital Corporation</em><br>
-2023.03 - 2023.06</p></li>
-<li><p><strong>Capital Markets Intern</strong><br>
-<em>China International Capital Corporation</em><br>
-2022.06 - 2022.12</p></li>
-<li><p><strong>Investment Banking Intern</strong><br>
-<em>China Merchants Securities</em><br>
-2022.02 - 2022.06</p></li>
-<li><p><strong>Wealth &amp; Asset Management Consulting Assistant</strong><br>
-<em>Ernst &amp; Young</em><br>
-2021.12 - 2022.01</p></li>
-</ul>
+<section id="the-von-neumann-morgenstern-vnm-axioms" class="level3">
+<h3 class="anchored" data-anchor-id="the-von-neumann-morgenstern-vnm-axioms">The von Neumann-Morgenstern (vNM) Axioms</h3>
+<p>Let <span class="math inline">\(\succsim\)</span> be a binary relation on the set of lotteries <span class="math inline">\(\Delta(X)\)</span>. - Axiom 1 (rational): <span class="math inline">\(\succsim\)</span> is complete and transitive. - Axiom 2 (continuous): for every <span class="math inline">\(p, q, r \in \Delta(X)\)</span> with <span class="math inline">\(p \succ q \succ r\)</span>, there exists <span class="math inline">\(\alpha, \beta \in (0,1)\)</span> such that: <span class="math inline">\(\alpha p + (1-\alpha) r \succ q \succ \beta p + (1 - \beta) r\)</span>. - Axiom 3 (independence): for every <span class="math inline">\(p, q, r \in \Delta(X)\)</span> and every <span class="math inline">\(\alpha \in (0,1)\)</span>, we have <span class="math inline">\(p \succ q\)</span> if and only if:</p>
+<p><span class="math display">\[\alpha p + (1-\alpha) r \succ \alpha q + (1-\alpha) r\]</span></p>
+<section id="the-vnm-representation-theorem" class="level4">
+<h4 class="anchored" data-anchor-id="the-vnm-representation-theorem">The vNM Representation Theorem</h4>
+<p>The following statements are logically equivalent: 1. <span class="math inline">\(\succsim\)</span> satisfies Axioms 1, 2, and 3; 2. There exists a linear function <span class="math inline">\(U: \Delta(X) \to \mathbb{R}\)</span> that represents <span class="math inline">\(\succsim\)</span>.</p>
 </section>
-<section id="teaching-experience" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-experience">Teaching Experience</h2>
-<section id="teaching-assistant" class="level4">
-<h4 class="anchored" data-anchor-id="teaching-assistant">Teaching Assistant</h4>
-<p><em>Olin Business School, Washington University in St.&nbsp;Louis</em></p>
-<ul>
-<li><p><strong>Capital Market and Financial Management</strong><br>
-<em>Undergraduate, Spring 2024</em><br>
-Instructor: Koray Sayili</p></li>
-<li><p><strong>Machine Learning</strong><br>
-<em>Graduate, Spring/Fall 2024</em><br>
-Instructors: Durai Sundaramoorthi / Gerald Onwujekwe</p></li>
-<li><p><strong>Advanced Corporate Finance II - Financing</strong><br>
-<em>Graduate, Fall 2024</em><br>
-Instructor: Yaron Leitner</p></li>
-<li><p><strong>Financial Markets</strong><br>
-<em>Graduate, Fall 2024</em><br>
-Instructor: Yaron Leitner</p></li>
-</ul>
-</section>
-</section>
-<section id="skills" class="level2">
-<h2 class="anchored" data-anchor-id="skills">Skills</h2>
-<ul>
-<li><p><strong>Programming</strong><br>
-R, Python, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Development</p></li>
-<li><p><strong>Languages</strong><br>
-<strong>Mandarin</strong>: Native<br>
-<strong>English</strong>: Professional Fluency<br>
-<strong>French</strong>: Conversational</p></li>
-<li><p><strong>Communication</strong><br>
-Chinese National 2nd Prize in English Public Speaking<br>
-US Academic Decathlon Bronze Medal on Speaking</p></li>
-</ul>
-</section>
-<section id="coursework" class="level2">
-<h2 class="anchored" data-anchor-id="coursework">Coursework</h2>
-<ul>
-<li><p><strong>Finance and Economics</strong><br>
-Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD), Microeconomic Theory (PhD), Advanced Corporate Finance (Graduate, A+), Econometrics, Macroeconomics</p></li>
-<li><p><strong>Quantitative Methods</strong><br>
-Stochastic Processes, Probability and Statistics, Matrix Algebra, Calculus</p></li>
-<li><p><strong>Data and Programming Skills</strong><br>
-Database Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R</p></li>
-</ul>
-</section>
-<section id="personal-information" class="level2">
-<h2 class="anchored" data-anchor-id="personal-information">Personal Information</h2>
-<ul>
-<li>Guitarist for over 10 years<br>
-</li>
-<li>Art and museum enthusiast<br>
-</li>
-<li>Passionate home cook<br>
-</li>
-<li>Enjoys cycling, hiking, and running</li>
-</ul>
+<section id="the-uniqueness-proposition" class="level4">
+<h4 class="anchored" data-anchor-id="the-uniqueness-proposition">The Uniqueness Proposition</h4>
+<p>Suppose <span class="math inline">\(U, V: \Delta(X) \to \mathbb{R}\)</span> are linear functions. Suppose <span class="math inline">\(U\)</span> represents <span class="math inline">\(\succsim\)</span>. Then <span class="math inline">\(V\)</span> also represents <span class="math inline">\(\succsim\)</span> iif there exists <span class="math inline">\(\alpha &gt; 0\)</span> and <span class="math inline">\(\beta \in \mathbb{R}\)</span> such that <span class="math inline">\(V = \alpha U + \beta\)</span>.</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

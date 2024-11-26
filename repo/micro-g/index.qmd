@@ -1,0 +1,20 @@
+---
+title: "Game Theory"
+---
+
+Salut! You can navigate yourself through one of the following topics:
+
+1. [Normal-Form Games](g1.qmd)
+   - How to describe a normal-form game? What are the implications?
+
+2. [Extensive-Form Games](g2.qmd)
+   - What can happen if each player takes its turns?
+
+3. [Repeated Games](g3.qmd)
+   - How to evaluate strategies when games are repeated finitely or infinitely?
+
+4. [Bayesian Games](g4.qmd)
+   - Players are best-responding to their own types and also their counterparts'.
+
+5. [Perfect Bayesian Equilibrium](g5.qmd)
+   - A new equilibrium system based on beliefs.

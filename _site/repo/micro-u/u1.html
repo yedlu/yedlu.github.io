@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Curriculum Vitae – Yanhe Eddie Lu</title>
+<title>Choices/Preference/Utility over Finite Outcomes – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,18 +67,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Yanhe Eddie Lu</span>
     </a>
   </div>
@@ -89,15 +118,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">vitae</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./repo/index.html"> 
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
 <span class="menu-text">repositories</span></a>
   </li>  
 </ul>
@@ -106,36 +135,90 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/u1.html">Finite Choices</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics">Basics</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#research-experience" id="toc-research-experience" class="nav-link" data-scroll-target="#research-experience">Research Experience</a></li>
-  <li><a href="#professional-experience" id="toc-professional-experience" class="nav-link" data-scroll-target="#professional-experience">Professional Experience</a></li>
-  <li><a href="#teaching-experience" id="toc-teaching-experience" class="nav-link" data-scroll-target="#teaching-experience">Teaching Experience</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
-  <li><a href="#coursework" id="toc-coursework" class="nav-link" data-scroll-target="#coursework">Coursework</a></li>
-  <li><a href="#personal-information" id="toc-personal-information" class="nav-link" data-scroll-target="#personal-information">Personal Information</a></li>
-  </ul>
-</nav>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Finite Choices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u2.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Choices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#key-concepts-overview" id="toc-key-concepts-overview" class="nav-link active" data-scroll-target="#key-concepts-overview">Key Concepts Overview</a>
+  <ul class="collapse">
+  <li><a href="#choices" id="toc-choices" class="nav-link" data-scroll-target="#choices">1. Choices</a></li>
+  <li><a href="#preferences" id="toc-preferences" class="nav-link" data-scroll-target="#preferences">2. Preferences</a></li>
+  <li><a href="#choices-from-preferences" id="toc-choices-from-preferences" class="nav-link" data-scroll-target="#choices-from-preferences">3. Choices from Preferences</a></li>
+  <li><a href="#proofs" id="toc-proofs" class="nav-link" data-scroll-target="#proofs">Proofs</a></li>
+  <li><a href="#preferences-revealed-by-choices" id="toc-preferences-revealed-by-choices" class="nav-link" data-scroll-target="#preferences-revealed-by-choices">4. Preferences Revealed by Choices</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/u1.html">Finite Choices</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Curriculum Vitae</h1>
+<h1 class="title">Choices/Preference/Utility over Finite Outcomes</h1>
 </div>
 
 
@@ -152,148 +235,169 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div style="text-align: right; margin-bottom: 20px;">
-<p><a href="cv.pdf" target="_blank" style="text-decoration: none;"> <i class="fas fa-file-pdf" style="font-size: 1.5em; color: #d32f2f;"></i> Open PDF </a></p>
-</div>
-<section id="basics" class="level2">
-<h2 class="anchored" data-anchor-id="basics">Basics</h2>
-<table style="border-collapse: collapse; width: 100%;">
-<tbody><tr>
-<td>
-<strong>Name</strong>
-</td>
-<td>
-Yanhe Eddie Lu
-</td>
+<p>* in conjunction with §1 of <em>Microeconomics Foundation I</em> (Kreps, 2013)</p>
+<p><em>yedlu, Fall 2024</em></p>
+<hr>
+<section id="key-concepts-overview" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts-overview">Key Concepts Overview</h2>
+<section id="choices" class="level3">
+<h3 class="anchored" data-anchor-id="choices">1. Choices</h3>
+<p>Choices are observable actions taken when confronted with alternatives. Economists model choices using the following notations:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 27%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Notation</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Example</strong></th>
 </tr>
-<tr>
-<td>
-<strong>Location</strong>
-</td>
-<td>
-St.&nbsp;Louis, MO
-</td>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(X\)</span></td>
+<td>Finite set of alternatives</td>
+<td>Colleges someone can apply: <span class="math inline">\(X = \{a,b,c\}\)</span></td>
 </tr>
-<tr>
-<td>
-<strong>U.S. Work Authorization</strong>
-</td>
-<td>
-STEM-OPT (3 years)
-</td>
+<tr class="even">
+<td><span class="math inline">\(P(X)\)</span></td>
+<td>All <strong>non-empty</strong> subsets of <span class="math inline">\(X\)</span></td>
+<td><span class="math display">\[ P(X) = \{\{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\} \]</span></td>
 </tr>
-</tbody></table>
+<tr class="odd">
+<td><span class="math inline">\(B \subseteq P(X)\)</span></td>
+<td>Set of feasible choice menus</td>
+<td><span class="math inline">\(B = \{\{a\}, \{a,b\}, \{a,b,c\}\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(c: B \to P(X)\)</span></td>
+<td>Choice function: <span class="math inline">\(c(A) \subset A\)</span></td>
+<td><span class="math inline">\(c(\{a,b,c\}) = \{a,b\}\)</span></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="education" class="level2">
-<h2 class="anchored" data-anchor-id="education">Education</h2>
+<section id="preferences" class="level3">
+<h3 class="anchored" data-anchor-id="preferences">2. Preferences</h3>
+<p>Preferences reflect internal evaluations of choices, modeled abstractly:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 42%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Notation</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(X\)</span></td>
+<td>Set of alternatives</td>
+<td><span class="math inline">\(X = \{a,b,c\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X \times X\)</span></td>
+<td>Cartesian product: pairs of alternatives</td>
+<td><span class="math inline">\((a,b), (b,c), \dots\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R \subseteq X \times X\)</span></td>
+<td>Binary relation: <span class="math inline">\((a,b) \in R \iff a \succsim b\)</span></td>
+<td>Preferences: <span class="math inline">\(a \succsim b, b \succsim c\)</span></td>
+</tr>
+</tbody>
+</table>
+<section id="properties-of-r" class="level4">
+<h4 class="anchored" data-anchor-id="properties-of-r">Properties of <span class="math inline">\(R\)</span>:</h4>
 <ul>
-<li><p><strong>M.S. in Business Analytics (Financial Technology)</strong><br>
-<em>Olin Business School, Washington University in St.&nbsp;Louis</em><br>
-2023.08 - 2024.12</p></li>
-<li><p><strong>B.S. in International Economics &amp; Financial Risk Management</strong><br>
-<em>Central University of Finance and Economics (CUFE)</em><br>
-2019.08 - 2023.06</p></li>
-</ul>
-</section>
-<section id="research-experience" class="level2">
-<h2 class="anchored" data-anchor-id="research-experience">Research Experience</h2>
-<ul>
-<li><p><strong>Empirical Corporate Finance</strong><br>
-<em>Research Assistant for Margarita Tsoutsoura, WashU Olin</em><br>
-2024.05 - Present</p></li>
-<li><p><strong>Distinguishing LLM-Generated Texts Using Linguistic Dimensions</strong><br>
-<em>Research Assistant for Gerald Onwujekwe, WashU Olin</em><br>
-2024.01 - 2024.11</p></li>
-<li><p><strong>Effects of Development Initiatives on Foreign Direct Investment</strong><br>
-<em>Senior Thesis at CUFE</em><br>
-2022.11 - 2023.05</p></li>
-<li><p><strong>Mechanisms of China’s National Carbon Market on Emissions</strong><br>
-<em>Research Analyst at International Institute of Green Finance, CUFE</em><br>
-2022.02 - 2022.06</p></li>
-<li><p><strong>Evaluating Corporate ESG Performance in the Diamond Industry</strong><br>
-<em>Research Analyst at International Institute of Green Finance, CUFE</em><br>
-2022.02 - 2022.06</p></li>
-<li><p><strong>Modeling Sustainable Transformation of Global Food Systems</strong><br>
-<em>Contestant (Honorable Mentions) of Interdisciplinary Contest in Modeling</em><br>
-2021.02</p></li>
-</ul>
-</section>
-<section id="professional-experience" class="level2">
-<h2 class="anchored" data-anchor-id="professional-experience">Professional Experience</h2>
-<ul>
-<li><p><strong>FICC Product Specialist</strong><br>
-<em>China International Capital Corporation</em><br>
-2023.03 - 2023.06</p></li>
-<li><p><strong>Capital Markets Intern</strong><br>
-<em>China International Capital Corporation</em><br>
-2022.06 - 2022.12</p></li>
-<li><p><strong>Investment Banking Intern</strong><br>
-<em>China Merchants Securities</em><br>
-2022.02 - 2022.06</p></li>
-<li><p><strong>Wealth &amp; Asset Management Consulting Assistant</strong><br>
-<em>Ernst &amp; Young</em><br>
-2021.12 - 2022.01</p></li>
-</ul>
-</section>
-<section id="teaching-experience" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-experience">Teaching Experience</h2>
-<section id="teaching-assistant" class="level4">
-<h4 class="anchored" data-anchor-id="teaching-assistant">Teaching Assistant</h4>
-<p><em>Olin Business School, Washington University in St.&nbsp;Louis</em></p>
-<ul>
-<li><p><strong>Capital Market and Financial Management</strong><br>
-<em>Undergraduate, Spring 2024</em><br>
-Instructor: Koray Sayili</p></li>
-<li><p><strong>Machine Learning</strong><br>
-<em>Graduate, Spring/Fall 2024</em><br>
-Instructors: Durai Sundaramoorthi / Gerald Onwujekwe</p></li>
-<li><p><strong>Advanced Corporate Finance II - Financing</strong><br>
-<em>Graduate, Fall 2024</em><br>
-Instructor: Yaron Leitner</p></li>
-<li><p><strong>Financial Markets</strong><br>
-<em>Graduate, Fall 2024</em><br>
-Instructor: Yaron Leitner</p></li>
+<li><strong>Complete</strong>: For all <span class="math inline">\(x, y \in X\)</span>, <span class="math inline">\(x \succsim y\)</span> or <span class="math inline">\(y \succsim x\)</span>.</li>
+<li><strong>Transitive</strong>: <span class="math inline">\(x \succsim y\)</span> and <span class="math inline">\(y \succsim z \implies x \succsim z\)</span>.</li>
+<li><strong>Rational</strong>: <span class="math inline">\(R\)</span> is complete and transitive.</li>
 </ul>
 </section>
 </section>
-<section id="skills" class="level2">
-<h2 class="anchored" data-anchor-id="skills">Skills</h2>
-<ul>
-<li><p><strong>Programming</strong><br>
-R, Python, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Development</p></li>
-<li><p><strong>Languages</strong><br>
-<strong>Mandarin</strong>: Native<br>
-<strong>English</strong>: Professional Fluency<br>
-<strong>French</strong>: Conversational</p></li>
-<li><p><strong>Communication</strong><br>
-Chinese National 2nd Prize in English Public Speaking<br>
-US Academic Decathlon Bronze Medal on Speaking</p></li>
-</ul>
+<section id="choices-from-preferences" class="level3">
+<h3 class="anchored" data-anchor-id="choices-from-preferences">3. Choices from Preferences</h3>
+<p>A rational binary relation <span class="math inline">\(R\)</span> generates a choice function <span class="math inline">\(c_R\)</span>:</p>
+<p><span class="math display">\[
+c_R(A) := \{x \in A \mid (\forall y \in A) \, (x,y) \in R\}
+\]</span></p>
 </section>
-<section id="coursework" class="level2">
-<h2 class="anchored" data-anchor-id="coursework">Coursework</h2>
+<section id="proofs" class="level3">
+<h3 class="anchored" data-anchor-id="proofs">Proofs</h3>
+<section id="proposition-1-if-r-is-rational-then-c_r-is-a-choice-function." class="level4">
+<h4 class="anchored" data-anchor-id="proposition-1-if-r-is-rational-then-c_r-is-a-choice-function."><strong>Proposition 1</strong>: If <span class="math inline">\(R\)</span> is rational, then <span class="math inline">\(c_R\)</span> is a choice function.</h4>
+<details>
+<summary>
+Proof (Click to Expand)
+</summary>
+<p>By induction. Need to show that <span class="math inline">\(c_R (A) \neq \emptyset\)</span> for all <span class="math inline">\(A \subseteq X\)</span>.</p>
+<ol type="1">
+<li><p><strong>Base Case</strong> (<span class="math inline">\(|A| = 1\)</span>):<br>
+Let <span class="math inline">\(A = \{x\}\)</span>. A complete <span class="math inline">\(R\)</span> implies that <span class="math inline">\((x,x) \in R\)</span>, which in turn implies that <span class="math inline">\(c_R (A) = \{x\} \neq \emptyset\)</span>.</p></li>
+<li><p><strong>Inductive Step</strong> (<span class="math inline">\(|A| = n + 1\)</span>):<br>
+Assume true for <span class="math inline">\(|A| = n\)</span>. Pick any <span class="math inline">\(x \in A\)</span>. By assumption, <span class="math inline">\(c_R (A \setminus \{x\}) \neq \emptyset\)</span>.</p>
 <ul>
-<li><p><strong>Finance and Economics</strong><br>
-Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD), Microeconomic Theory (PhD), Advanced Corporate Finance (Graduate, A+), Econometrics, Macroeconomics</p></li>
-<li><p><strong>Quantitative Methods</strong><br>
-Stochastic Processes, Probability and Statistics, Matrix Algebra, Calculus</p></li>
-<li><p><strong>Data and Programming Skills</strong><br>
-Database Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R</p></li>
-</ul>
+<li>By definition, there exists <span class="math inline">\(y \in A \setminus \{x\}\)</span> such that <span class="math inline">\((y,z) \in R\)</span> for all <span class="math inline">\(z \in A \setminus \{x\}\)</span>.</li>
+<li>Since <span class="math inline">\(R\)</span> is complete, either <span class="math inline">\((x,y) \in R\)</span> or <span class="math inline">\((y,x) \in R\)</span>.
+<ul>
+<li>If <span class="math inline">\((x,y) \in R\)</span>, then transitivity implies <span class="math inline">\((x,z) \in R\)</span> for all <span class="math inline">\(z \in A\)</span>, so <span class="math inline">\(x \in c_R(A)\)</span>.</li>
+<li>If <span class="math inline">\((y,x) \in R\)</span>, then <span class="math inline">\(y \in c_R(A)\)</span>.</li>
+</ul></li>
+</ul></li>
+</ol>
+Thus, <span class="math inline">\(c_R (A) \neq \emptyset\)</span> for all <span class="math inline">\(A \subseteq X\)</span>.<br>
+<span class="math inline">\(\blacksquare\)</span>
+</details>
 </section>
-<section id="personal-information" class="level2">
-<h2 class="anchored" data-anchor-id="personal-information">Personal Information</h2>
+<section id="proposition-2-if-c-satisfies-warp-then-r_c-is-a-rational-preference-relation." class="level4">
+<h4 class="anchored" data-anchor-id="proposition-2-if-c-satisfies-warp-then-r_c-is-a-rational-preference-relation."><strong>Proposition 2</strong>: If <span class="math inline">\(c\)</span> satisfies WARP, then <span class="math inline">\(R_c\)</span> is a rational preference relation.</h4>
+<details>
+<summary>
+Proof (Click to Expand)
+</summary>
+<ol type="1">
+<li><strong>Completeness</strong>:<br>
+Take any <span class="math inline">\(x, y \in X\)</span>.
 <ul>
-<li>Guitarist for over 10 years<br>
+<li>If <span class="math inline">\((x,y) \notin R_c\)</span>, then <span class="math inline">\(x \notin c(\{x,y\})\)</span>.<br>
 </li>
-<li>Art and museum enthusiast<br>
+<li>By definition, <span class="math inline">\(y \in c(\{x,y\})\)</span>, so <span class="math inline">\((y,x) \in R_c\)</span>.<br>
+Therefore, <span class="math inline">\(R_c\)</span> is complete.</li>
+</ul></li>
+<li><strong>Transitivity</strong>:<br>
+Suppose <span class="math inline">\((x,y) \in R_c\)</span> and <span class="math inline">\((y,z) \in R_c\)</span>.
+<ul>
+<li>This implies <span class="math inline">\(x \in c(\{x,y\})\)</span> and <span class="math inline">\(y \in c(\{y,z\})\)</span>.<br>
 </li>
-<li>Passionate home cook<br>
-</li>
-<li>Enjoys cycling, hiking, and running</li>
-</ul>
+<li>Assume <span class="math inline">\((x,z) \notin R_c\)</span>. Then <span class="math inline">\(z \in c(\{x,z\})\)</span> contradicts WARP.<br>
+Hence, <span class="math inline">\((x,z) \in R_c\)</span>, and <span class="math inline">\(R_c\)</span> is transitive.<br>
+<span class="math inline">\(\blacksquare\)</span></li>
+</ul></li>
+</ol>
+</details>
+</section>
+</section>
+<section id="preferences-revealed-by-choices" class="level3">
+<h3 class="anchored" data-anchor-id="preferences-revealed-by-choices">4. Preferences Revealed by Choices</h3>
+<p>Revealed preference relation <span class="math inline">\(R_c\)</span>:</p>
+<p><span class="math display">\[
+R_c := \{(x,y) \in X \times X \mid x \in c(\{x,y\})\}
+\]</span></p>
+<section id="weak-axiom-of-revealed-preferences-warp" class="level4">
+<h4 class="anchored" data-anchor-id="weak-axiom-of-revealed-preferences-warp">Weak Axiom of Revealed Preferences (WARP):</h4>
+<p>If <span class="math inline">\(x, y \in A \cap B\)</span>, <span class="math inline">\(x \in c(A)\)</span>, and <span class="math inline">\(y \in c(B)\)</span>, then <span class="math inline">\(x \in c(B)\)</span>.</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
