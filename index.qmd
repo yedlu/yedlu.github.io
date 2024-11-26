@@ -1,0 +1,47 @@
+---
+title: "About Me"
+subtitle: "Yanhe Eddie Lu (鲁 颜赫)"
+format:
+  html:
+    page-layout: full
+    css: styles.css # Optional CSS for additional styling
+    toc: false
+---
+
+<img src="profilepic.jpg" alt="Yanhe Eddie Lu" style="float: right; width: 200px; margin-left: 20px; border-radius: 5px;">
+
+I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.
+
+This website hosts my brief introduction of experiences in [`vitae`](cv.qmd) section. You can also explore my [`repositories`](repo/index.qmd) with concise notes/cheatsheets, projects, and coding samples.
+
+---
+
+### Contact Information
+Feel free to reach out (click to copy):
+
+Email:
+<span onclick="copyToClipboard('eddie.lu@wustl.edu')" style="cursor: pointer; color: navy; text-decoration: underline;">
+  eddie.lu@wustl.edu
+</span>
+
+GitHub:
+<span onclick="copyToClipboard('https://github.com/yedlu')" style="cursor: pointer; color: navy; text-decoration: underline;">
+  github.com/yedlu
+</span>
+
+LinkedIn:
+<span onclick="copyToClipboard('https://linkedin.com/in/yedlu')" style="cursor: pointer; color: navy; text-decoration: underline;">
+  linkedin.com/in/yedlu
+</span>
+
+---
+
+<script>
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    alert('Copied: ' + text);
+  }, function(err) {
+    alert('Failed to copy: ' + err);
+  });
+}
+</script>

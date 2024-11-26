@@ -1,0 +1,151 @@
+---
+title: "Curriculum Vitae"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 2 # Includes up to second-level headings in the TOC
+    css: styles.css # Optional for further styling
+---
+
+<div style="text-align: right; margin-bottom: 20px;">
+  <a href="cv.pdf" target="_blank" style="text-decoration: none;">
+    <i class="fas fa-file-pdf" style="font-size: 1.5em; color: #d32f2f;"></i> Open PDF
+  </a>
+</div>
+
+## Basics
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td><strong>Name</strong></td>
+    <td>Yanhe Eddie Lu</td>
+  </tr>
+  <tr>
+    <td><strong>Location</strong></td>
+    <td>St. Louis, MO</td>
+  </tr>
+  <tr>
+    <td><strong>U.S. Work Authorization</strong></td>
+    <td>STEM-OPT (3 years)</td>
+  </tr>
+</table>
+
+
+
+## Education
+- **M.S. in Business Analytics (Financial Technology)**  
+  *Olin Business School, Washington University in St. Louis*  
+  2023.08 - 2024.12  
+
+- **B.S. in International Economics & Financial Risk Management**  
+  *Central University of Finance and Economics (CUFE)*  
+  2019.08 - 2023.06  
+
+
+
+## Research Experience
+
+- **Empirical Corporate Finance**  
+  *Research Assistant for Margarita Tsoutsoura, WashU Olin*  
+  2024.05 - Present  
+
+- **Distinguishing LLM-Generated Texts Using Linguistic Dimensions**  
+  *Research Assistant for Gerald Onwujekwe, WashU Olin*  
+  2024.01 - 2024.11  
+
+- **Effects of Development Initiatives on Foreign Direct Investment**  
+  *Senior Thesis at CUFE*  
+  2022.11 - 2023.05  
+
+- **Mechanisms of China's National Carbon Market on Emissions**  
+  *Research Analyst at International Institute of Green Finance, CUFE*  
+  2022.02 - 2022.06  
+
+- **Evaluating Corporate ESG Performance in the Diamond Industry**  
+  *Research Analyst at International Institute of Green Finance, CUFE*  
+  2022.02 - 2022.06  
+
+- **Modeling Sustainable Transformation of Global Food Systems**  
+  *Contestant (Honorable Mentions) of Interdisciplinary Contest in Modeling*  
+  2021.02  
+
+
+
+
+## Professional Experience
+
+- **FICC Product Specialist**  
+  *China International Capital Corporation*  
+  2023.03 - 2023.06  
+
+- **Capital Markets Intern**  
+  *China International Capital Corporation*  
+  2022.06 - 2022.12  
+
+- **Investment Banking Intern**  
+  *China Merchants Securities*  
+  2022.02 - 2022.06  
+
+- **Wealth & Asset Management Consulting Assistant**  
+  *Ernst & Young*  
+  2021.12 - 2022.01  
+
+
+
+
+## Teaching Experience
+#### Teaching Assistant  
+*Olin Business School, Washington University in St. Louis*  
+
+- **Capital Market and Financial Management**  
+  *Undergraduate, Spring 2024*  
+  Instructor: Koray Sayili
+
+- **Machine Learning**  
+  *Graduate, Spring/Fall 2024*  
+  Instructors: Durai Sundaramoorthi / Gerald Onwujekwe
+
+- **Advanced Corporate Finance II - Financing**  
+  *Graduate, Fall 2024*  
+  Instructor: Yaron Leitner 
+
+- **Financial Markets**  
+  *Graduate, Fall 2024*  
+  Instructor: Yaron Leitner
+
+
+
+
+## Skills
+
+- **Programming**  
+  R, Python, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Development  
+
+- **Languages**  
+  **Mandarin**: Native  
+  **English**: Professional Fluency  
+  **French**: Conversational  
+
+- **Communication**  
+  Chinese National 2nd Prize in English Public Speaking  
+  US Academic Decathlon Bronze Medal on Speaking  
+
+
+## Coursework
+
+- **Finance and Economics**  
+  Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD), Microeconomic Theory (PhD), Advanced Corporate Finance (Graduate, A+), Econometrics, Macroeconomics  
+
+- **Quantitative Methods**  
+  Stochastic Processes, Probability and Statistics, Matrix Algebra, Calculus  
+
+- **Data and Programming Skills**  
+  Database Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R  
+
+
+
+## Personal Information
+- Guitarist for over 10 years  
+- Art and museum enthusiast  
+- Passionate home cook  
+- Enjoys cycling, hiking, and running  

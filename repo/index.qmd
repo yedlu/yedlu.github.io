@@ -1,0 +1,56 @@
+---
+title: "Repositories"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 2 # Includes up to second-level headings in the TOC
+    css: styles.css # Optional for further styling
+# listing:
+#   - id: gallery
+#     template: gallery.ejs
+#     contents: gallery.yml
+---
+
+## Class Notes
+### Microeconomics
+  - Choice, Preferences, and Utility Theories (PhD Level)
+  - Game Theory (PhD Level)
+
+### Corporate Finance
+  - Corporate Finance Theory (PhD Level)
+  - Corporate Finance Practice (MBA Level)
+    - Valuation
+    - Financing
+
+
+### Asset Pricing
+  - Asset Pricing Theory (PhD Level)
+  - Derivatives Pricing
+
+
+
+## Projects
+### Measuring Talents in Labor Forces
+
+
+### Development Initiatives on FDI
+
+
+
+
+
+
+## Coding Samples
+### R
+
+### Python
+
+### Stata
+
+### MATLAB
+
+### Database
+  - SQL
+  - SAS
+  - AWS/Hive
