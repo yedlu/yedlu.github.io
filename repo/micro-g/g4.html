@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>g4 – Yanhe Eddie Lu</title>
+<title>Bayesian Games – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -227,17 +256,174 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#bayesian-nash-equilibrium" id="toc-bayesian-nash-equilibrium" class="nav-link active" data-scroll-target="#bayesian-nash-equilibrium">Bayesian Nash Equilibrium</a>
+  <ul class="collapse">
+  <li><a href="#bayesian-belief-system" id="toc-bayesian-belief-system" class="nav-link" data-scroll-target="#bayesian-belief-system">Bayesian Belief System</a></li>
+  <li><a href="#bayesian-ne" id="toc-bayesian-ne" class="nav-link" data-scroll-target="#bayesian-ne">Bayesian NE</a></li>
+  <li><a href="#example-cutoff-strategy" id="toc-example-cutoff-strategy" class="nav-link" data-scroll-target="#example-cutoff-strategy">Example: Cutoff Strategy</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/g4.html">Bayesian Games</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/g4.html">Bayesian Games</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Bayesian Games</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<div class="hidden">
+<p><span class="math display">\[
+\def\BB#1{{\mathbb{#1}}}
+\def\BF#1{{\mathbf{#1}}}
+\]</span></p>
+</div>
+<p><em>yedlu, Winter 2024</em></p>
+<section id="bayesian-nash-equilibrium" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-nash-equilibrium">Bayesian Nash Equilibrium</h2>
+<p>A Bayesian normal form game can be described as:</p>
+<p><span class="math display">\[
+G = (N, (S_i), (T_i), (u_i), \BB{P}).
+\]</span></p>
+<ul>
+<li><span class="math inline">\(N = \{1, 2, ..., n\}\)</span> be the set of players.</li>
+<li><span class="math inline">\(S_i\)</span> be the set of actions available to player <span class="math inline">\(i \in N\)</span>.</li>
+<li><span class="math inline">\(T_i\)</span> be the finite set of <strong>types</strong> to player <span class="math inline">\(i \in N\)</span>. This is private information to player <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(u_i: S \times T_i \to \BB{R}\)</span> be <span class="math inline">\(i\)</span>’s utility function representing the preference relation.</li>
+<li><span class="math inline">\(\BB{P}\)</span> be the belief, which is a probability measure over types <span class="math inline">\(\BF{t} = (t_1, t_2, ..., t_n)^T\)</span>.</li>
+</ul>
+<section id="bayesian-belief-system" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-belief-system">Bayesian Belief System</h3>
+<p><strong>Question:</strong> If I only learn my type (<span class="math inline">\(t_i\)</span>), what is the probability that other players’ types are <span class="math inline">\(\BB{t}_{-i}\)</span>?</p>
+<details>
+<summary>
+Answer (Click to Expand)
+</summary>
+<p>By Bayes rule,</p>
+<p><span class="math display">\[\begin{aligned}
+  \BB{P}(t_{-i} \mid t_i) &amp;= \frac{\BB{P}(t_i, t_{-i})}{\BB{P}(t_i)} \\
+  &amp;= \frac{\BB{P}(t_i, t_{-i})}{\sum_{t^{'}_{-i} \in T_{-i}} \BB{P}(t_i \mid t^{'}_{-i})}
+\end{aligned}\]</span></p>
+</details>
+</section>
+<section id="bayesian-ne" class="level3">
+<h3 class="anchored" data-anchor-id="bayesian-ne">Bayesian NE</h3>
+<p><strong>Dfn (1)</strong> A strategy profile <span class="math inline">\(\sigma = (\sigma_1, ..., \sigma_n)\)</span> is a <strong><em>Bayesian NE</em></strong> if</p>
+<ul>
+<li>for each player <span class="math inline">\(i\)</span></li>
+<li>and their each type <span class="math inline">\(t_i \in T_i\)</span></li>
+</ul>
+<p>the strategy maximizes the expected utility:</p>
+<p><span class="math display">\[
+\sum_{t_{-i} \in T_{-i}} u_i(\sigma_i (t_i), \sigma_{-i} (t_{-i}) \times \BB{P}(t_{-i} \mid t_i))
+\]</span></p>
+<p><strong>Dfn (2)</strong> A <strong><em>pure strategy</em></strong> for a player <span class="math inline">\(i\)</span> is a function:</p>
+<p><span class="math display">\[
+\sigma_i: T_i \to S_i
+\]</span></p>
+<p><strong>Dfn (3)</strong> A <strong><em>pooling strategy</em></strong> means that for each and every player, her strategy is fixed regardless of types. In other words, <span class="math inline">\(\sigma_i(t_i) = \sigma_i\)</span> for all <span class="math inline">\(t_i \in T_i\)</span>.</p>
+</section>
+<section id="example-cutoff-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="example-cutoff-strategy">Example: Cutoff Strategy</h3>
+<p>Consider the following normal-form game.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>b</th>
+<th>s</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>B</strong></td>
+<td><span class="math inline">\(2 + t_1, 1\)</span></td>
+<td><span class="math inline">\(0, 0\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>S</strong></td>
+<td><span class="math inline">\(0, 0\)</span></td>
+<td><span class="math inline">\(1, 2 + t_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Suppose <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> are i.i.d. with <span class="math inline">\(t_i \sim U[0,x]\)</span> for some arbitrarily small <span class="math inline">\(x&gt;0\)</span>.</p>
+<details>
+<summary>
+Answer (Click to Expand)
+</summary>
+<p>Consider a cutoff strategy.</p>
+<p><span class="math display">\[
+\sigma_1(t_1) =
+  \begin{cases}
+    B &amp;, t_1 \geq C_1 \\
+    S &amp;, t_1 &lt; C_1
+  \end{cases}
+\]</span></p>
+<p><span class="math display">\[
+\sigma_2(t_2) =
+  \begin{cases}
+    s &amp;, t_2 \geq C_2 \\
+    b &amp;, t_2 &lt; C_2
+  \end{cases}
+\]</span></p>
+<p>Player 2 best-responds to player 1’s expected strategy: <span class="math display">\[\begin{aligned}
+  U_2 (b, \sigma_1, t_2) &amp;= 1 \times \BB{P} \{\sigma_1(t_1) = B\} + 0 \times \BB{P} \{\sigma_1(t_1) = S\} \\
+  &amp;= 1 \times \BB{P} \{t_1 \geq C_1\} + 0 \times \BB{P} \{t_1 &lt; C_1\} \\
+  &amp;= \frac{x - cC_1}{x} \\
+  \\
+  U_2 (s, \sigma_1, t_2) &amp;= 0 \times \BB{P} \{\sigma_1(t_1) = B\} + (2 + t_2) \times \BB{P} \{\sigma_1(t_1) = S\} \\
+  &amp;= 0 \times \BB{P} \{t_1 \geq C_1\} + (2 + t_2) \times \BB{P} \{t_1 &lt; C_1\} \\
+  &amp;= \frac{C_1}{x} \times (2 + t_2)
+\end{aligned}\]</span></p>
+<p>Suppose <span class="math inline">\(\sigma_2 (t_2) = s\)</span>, then: <span class="math display">\[\begin{aligned}
+  U_2 (b, \sigma_1, t_2) &amp; \leq U_2 (s, \sigma_1, t_2) \\
+  \\
+  \frac{x - C_1}{x} &amp; \leq \frac{c_1}{x} \times (2 + t_2) \\
+  t_2 &amp; \geq \frac{x}{C_1} - 3 \\
+  \\
+  \implies C_2 &amp;= \frac{x}{C_1} - 3
+\end{aligned}\]</span></p>
+<p>Similarly for player 1, her cutoff point is: <span class="math display">\[\begin{aligned}
+  C_1 &amp;= \frac{x}{C_2} - 3
+\end{aligned}\]</span></p>
+<p>Solving the system <span class="math display">\[\begin{cases}
+  C_1 &amp;= \frac{x}{C_2} - 3 \\
+  C_2 &amp;= \frac{x}{C_1} - 3
+\end{cases}\]</span></p>
+<p>yields <span class="math display">\[\begin{aligned}
+  C_1 = C_2 = \frac{\sqrt{9 + 4x} - 3}{2}
+\end{aligned}\]</span></p>
+<p>If the maximum payoff shock shrinks to 0, <span class="math display">\[\begin{aligned}
+  \lim_{x \to 0^+} \BB{P} \{\sigma_1 (t_1) = B\} &amp;= \lim_{x \to 0^+} \frac{x - C_1}{x} \\
+  &amp;= \lim_{x \to 0} 1 + \frac{3 - \sqrt{9 + 4x}}{2x} \\
+  &amp;= \frac{2}{3} \quad \text{(L'Hôpital Rule)}
+\end{aligned}\]</span></p>
+</details>
+
+
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
