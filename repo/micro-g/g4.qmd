@@ -1,5 +1,10 @@
 ---
 title: "Bayesian Games"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
 ---
 ::: {.hidden}
 $$
