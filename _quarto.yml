@@ -12,6 +12,7 @@ website:
       - href: repo/index.qmd
         text: repositories
   back-to-top-navigation: true
+  google-analytics: "G-5K3G6929BP"
   sidebar:
       - contents:
         - section: "Repository"
