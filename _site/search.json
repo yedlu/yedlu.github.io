@@ -1,54 +1,132 @@
 [
   {
-    "objectID": "repo/index.html",
-    "href": "repo/index.html",
-    "title": "Repositories",
+    "objectID": "repo/micro-g/index.html",
+    "href": "repo/micro-g/index.html",
+    "title": "Game Theory",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing",
+    "text": "Salut! You can navigate yourself through one of the following topics:\n\nNormal-Form Games\n\nHow to describe a normal-form game? What are the implications?\n\nExtensive-Form Games\n\nWhat can happen if each player takes its turns?\n\nRepeated Games\n\nHow to evaluate strategies when games are repeated finitely or infinitely?\n\nBayesian Games\n\nPlayers are best-responding to their own types and also their counterparts’.\n\nPerfect Bayesian Equilibrium\n\nA new equilibrium system based on beliefs.\n\n\n\n\n\n Back to top",
     "crumbs": [
       "me",
-      "Repository"
+      "Repository",
+      "Micro II: Game Theory"
     ]
   },
   {
-    "objectID": "repo/index.html#class-notes",
-    "href": "repo/index.html#class-notes",
-    "title": "Repositories",
+    "objectID": "repo/micro-g/g4.html",
+    "href": "repo/micro-g/g4.html",
+    "title": "Bayesian Games",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nDerivatives Pricing",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024",
     "crumbs": [
       "me",
-      "Repository"
+      "Repository",
+      "Micro II: Game Theory",
+      "Bayesian Games"
     ]
   },
   {
-    "objectID": "repo/index.html#projects",
-    "href": "repo/index.html#projects",
-    "title": "Repositories",
-    "section": "Projects",
-    "text": "Projects\n\nMeasuring Talents in Labor Forces\n\n\nDevelopment Initiatives on FDI",
-    "crumbs": [
-      "me",
-      "Repository"
-    ]
-  },
-  {
-    "objectID": "repo/index.html#coding-samples",
-    "href": "repo/index.html#coding-samples",
-    "title": "Repositories",
-    "section": "Coding Samples",
-    "text": "Coding Samples\n\nR\n\n\nPython\n\n\nStata\n\n\nMATLAB\n\n\nDatabase\n\nSQL\nSAS\nAWS/Hive",
-    "crumbs": [
-      "me",
-      "Repository"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About Me",
+    "objectID": "repo/micro-g/g2.html",
+    "href": "repo/micro-g/g2.html",
+    "title": "Yanhe Eddie Lu",
     "section": "",
-    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Extensive-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u3.html",
+    "href": "repo/micro-u/u3.html",
+    "title": "Von Neumann-Morgenstern Expected Utility",
+    "section": "",
+    "text": "yedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "vNM Axioms"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u3.html#intro-to-lotteries-an-extra-layer-of-uncertainty",
+    "href": "repo/micro-u/u3.html#intro-to-lotteries-an-extra-layer-of-uncertainty",
+    "title": "Von Neumann-Morgenstern Expected Utility",
+    "section": "Intro to Lotteries: an Extra Layer of Uncertainty",
+    "text": "Intro to Lotteries: an Extra Layer of Uncertainty\n\nThe individual must choose an action with uncertain outcomes. The individual has preference over final consequences.\n\\(X = \\{x_1, ..., x_n\\}\\) be the finite set of consequences\n\\(p = (p_1, ..., p_n), p_i \\geq 0, \\Sigma_i p_i = 1\\) be the lottery on \\(X\\)\n\\(\\Delta(X) = \\{p \\in \\mathbb{R}^n_+: \\Sigma_i p_i = 1\\}\\) be the set of lotteries on \\(X\\)\n\\(\\succsim \\subseteq \\Delta(X) \\times \\Delta(X)\\) be the binary preference relations on the set of lotteries \\(\\Delta(X)\\)\n\n\nMixing Lotteries\nGiven two lotteries \\(p, q \\in \\Delta(X)\\) and a weight \\(\\alpha \\in [0,1]\\), define the lottery\n\\[\\alpha p + (1-\\alpha) q := (\\alpha p_1 + (1-\\alpha) q_1, ..., \\alpha p_n + (1-\\alpha) q_n)\\]\n\n\nSpecial Lotteries with Certain Outcomes\nDefine certainty lotteries as \\(\\delta_i = (p_1, ..., p_n)\\) with \\(p_i = 1\\). Specifically, \\(\\delta_1 = (1,...,0)\\) and \\(\\delta_n = (0, ..., 1)\\).\n\n\nExpected Utility Functions\nGiven a utility function over consequences \\(u: X \\to \\mathbb{R}\\), we may evaluate lotteries \\(p = (p_1, ..., p_n)\\) by its expected utility:\n\\[U(p) := p_1 u(x_1) + ... + p_n u(x_n)\\]\n\nThe \\(U: \\Delta(X) \\to \\mathbb{R}\\) is said to have the expected utility form.\nThe \\(u: X \\to \\mathbb{R}\\) is called a Bernoulli payoff function.\n\n\n\nLinear and Expected Utility\nLemma. The following two statements are logically equivalent.\n\n\\(U\\) is linear if for every \\(p, q \\in \\Delta(X)\\) and every \\(\\alpha \\in [0,1]\\): \\[U[\\alpha p + (1-\\alpha)q] = \\alpha U(p) + (1-\\alpha) U(q)\\]\n\\(U\\) is in expected utility form if there exists \\(u: X \\to \\mathbb{R}\\) such that: \\[U(p) = \\sum_{x \\in X} u(x) p(x)\\] for every \\(p \\in \\Delta(X)\\)\n\n\n\nProof (Click to Expand)\n\nParts of proof: \\(2 \\Rightarrow 1\\). \\[\\begin{aligned}\n      U[\\alpha p + (1-\\alpha) q] &= U(\\alpha p_1 + (1-\\alpha) q_1, ..., \\alpha p_n + (1-\\alpha) q_n) \\\\\n      &= \\Sigma_{i=1}^n u(x_1) [\\alpha p_1 + (1-\\alpha) q_1] \\\\\n      &= \\alpha \\Sigma_{i=1}^n u(x_1) p_1 + (1-\\alpha) \\Sigma_{i=1}^n u(x_1) q_1 \\\\\n      &= \\alpha U(p) + (1-\\alpha) U(q)\n\\end{aligned}\\]\n\\(\\blacksquare\\)\n\n\n\nThe von Neumann-Morgenstern (vNM) Axioms\nLet \\(\\succsim\\) be a binary relation on the set of lotteries \\(\\Delta(X)\\). - Axiom 1 (rational): \\(\\succsim\\) is complete and transitive. - Axiom 2 (continuous): for every \\(p, q, r \\in \\Delta(X)\\) with \\(p \\succ q \\succ r\\), there exists \\(\\alpha, \\beta \\in (0,1)\\) such that: \\(\\alpha p + (1-\\alpha) r \\succ q \\succ \\beta p + (1 - \\beta) r\\). - Axiom 3 (independence): for every \\(p, q, r \\in \\Delta(X)\\) and every \\(\\alpha \\in (0,1)\\), we have \\(p \\succ q\\) if and only if:\n\\[\\alpha p + (1-\\alpha) r \\succ \\alpha q + (1-\\alpha) r\\]\n\nThe vNM Representation Theorem\nThe following statements are logically equivalent: 1. \\(\\succsim\\) satisfies Axioms 1, 2, and 3; 2. There exists a linear function \\(U: \\Delta(X) \\to \\mathbb{R}\\) that represents \\(\\succsim\\).\n\n\nThe Uniqueness Proposition\nSuppose \\(U, V: \\Delta(X) \\to \\mathbb{R}\\) are linear functions. Suppose \\(U\\) represents \\(\\succsim\\). Then \\(V\\) also represents \\(\\succsim\\) iif there exists \\(\\alpha &gt; 0\\) and \\(\\beta \\in \\mathbb{R}\\) such that \\(V = \\alpha U + \\beta\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "vNM Axioms"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u2.html",
+    "href": "repo/micro-u/u2.html",
+    "title": "Choices/Preference/Utility over Infinite Outcomes",
+    "section": "",
+    "text": "yedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Infinite Outcomes"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u2.html#recap-finite-chocices",
+    "href": "repo/micro-u/u2.html#recap-finite-chocices",
+    "title": "Choices/Preference/Utility over Infinite Outcomes",
+    "section": "Recap: Finite Chocices",
+    "text": "Recap: Finite Chocices\n\n\\(X = \\mathbb{R}^n_+\\) be finite choices\n\\(c: P(X) \\to X\\) be the choice function\n\\(\\succsim\\) be the preference relation\n\\(U: \\mathbb{R}^n_+ \\to \\mathbb{R}\\) be the corresponding utility function.\n\n\nWhat if Choices Become Infinite\n\nDifferent Levels of Finite\n\nFinite: there exists a bijection \\(X \\leftrightarrow \\{1, ..., n\\}\\).\n\neach \\(x \\in X\\) is paired with exactly one number in \\(\\{1, ..., n\\}\\)\neach number in \\(\\{1, ..., n\\}\\) is paired with exactly one \\(x \\in X\\)\nnobody is left unpaired\n\nCountably Infinite: there exists a bijection \\(X \\leftrightarrow \\mathbb{N} = \\{1, 2, ...\\}\\). Below are number sets by their finiteness\n\n\\(\\mathbb{Z} = \\{..., -1, 0, 1, ...\\}\\) is countably infinite\n\\(\\mathbb{Q} = \\{a/b: a \\in \\mathbb{Z}, b \\in \\mathbb{N}\\}\\) is countably infinite\n\\(\\mathbb{R}\\) is not countably infinite\n\n\n\n\nCountable Infinite\nProposition. \\(\\succsim\\) be a rational preference and \\(X\\) be a countable set \\(\\Rightarrow\\) there exists \\(U: X \\to \\mathbb{R}\\) representing \\(\\succsim\\).\n\n\nProof (Click to Expand)\n\nConsider:\n\na countable choice set: \\(X = \\{x_1, ..., x_n, ...\\}\\).\na weight indicator: \\(d_j = \\frac{1}{2^j}\\).\n\nWe would have \\[\\begin{aligned}\n      \\Sigma_{j=1}^{\\infty} d_j = \\Sigma_{j=1}^{\\infty} \\frac{1}{2^j} = \\lim_{n \\to \\infty} [\\Sigma_{j = 1}^n \\frac{1}{2^j}] = 1\n\\end{aligned}\\]\nWe can define the utility function \\(U: X \\to \\mathbb{R}\\) as \\[\\begin{aligned}\n      U(z) = \\Sigma_{\\{j \\in \\mathbb{N}: (z, x_j) \\in \\succsim\\}} d_j\n\\end{aligned}\\]\n\\(\\blacksquare\\)\n\n\n\n\nIncountable Infinite\nIt is not always true that there exists a utility function \\(U: X \\to \\mathbb{R}\\) to represent a rational \\(\\succsim\\).\nE.g. Bowser Jr.’s Lexicographic Preferences (\\(X = \\mathbb{R}^2_+\\)).\nWe would need some other properties that \\(\\succsim\\) must satisfy to make the utility function possible.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Infinite Outcomes"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u2.html#continuous-preference-relation",
+    "href": "repo/micro-u/u2.html#continuous-preference-relation",
+    "title": "Choices/Preference/Utility over Infinite Outcomes",
+    "section": "Continuous Preference Relation",
+    "text": "Continuous Preference Relation\nDefinition: for all pairs \\(x,y \\in X\\) with \\(x \\succ y\\), we can always find \\(\\epsilon &gt; 0\\) such that: - \\(|x - x'| &lt; \\epsilon\\) - \\(|y - y'| &lt; \\epsilon\\)\nimplies \\(x' \\succ y'\\).\nIntuition: a strictly preferred pair should remain their preference status even under a sligtest change in any direction. We would not expect a rational person to freak out if a slightest change takes place.\n\nUtility Representation\nProposition. If \\(\\succsim\\) is complete, transitive, and continuous, then there exists a continuous \\(U: \\mathbb{R}^n_+ \\to \\mathbb{R}\\) that represents \\(\\succsim\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Infinite Outcomes"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u5.html",
+    "href": "repo/micro-u/u5.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Afriat's Theorem"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html",
+    "href": "repo/micro-u/u6.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
   },
   {
     "objectID": "cv.html",
@@ -114,177 +192,32 @@
     "text": "Personal Information\n\nGuitarist for over 10 years\n\nArt and museum enthusiast\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running"
   },
   {
-    "objectID": "repo/micro/g/index.html",
-    "href": "repo/micro/g/index.html",
-    "title": "Choice, Preferences, and Utility Theories",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About Me",
     "section": "",
-    "text": "{% include 'breadcrumb.html' %}\nHere’s the content."
+    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "repo/micro-g/index.html",
-    "href": "repo/micro-g/index.html",
-    "title": "Game Theory",
+    "objectID": "repo/index.html",
+    "href": "repo/index.html",
+    "title": "Repositories",
     "section": "",
-    "text": "Salut! You can navigate yourself through one of the following topics:\n\nNormal-Form Games\n\nHow to describe a normal-form game? What are the implications?\n\nExtensive-Form Games\n\nWhat can happen if each player takes its turns?\n\nRepeated Games\n\nHow to evaluate strategies when games are repeated finitely or infinitely?\n\nBayesian Games\n\nPlayers are best-responding to their own types and also their counterparts’.\n\nPerfect Bayesian Equilibrium\n\nA new equilibrium system based on beliefs.\n\n\n\n\n\n Back to top",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)",
     "crumbs": [
       "me",
-      "Repository",
-      "Micro II: Game Theory"
+      "Repository"
     ]
   },
   {
-    "objectID": "repo/micro-u/index.html",
-    "href": "repo/micro-u/index.html",
-    "title": "Choices, Preferences, and Utility Theories",
+    "objectID": "repo/index.html#class-notes",
+    "href": "repo/index.html#class-notes",
+    "title": "Repositories",
     "section": "",
-    "text": "Hi there and welcome! You can navigate yourself through one of the following topics:\n\nChoices/Preference/Utility over Finite Outcomes\n\nDefinition and properties of choices, preference relations, and representing utility functions.\n\nChoices/Preference/Utility over Infinite Outcomes\n\nBring the concepts to infinite set of consequences.\n\nvon Neumann-Morgenstern Expected Utility\n\nExplore lotteries and expected utility theory.\n\nRisk Aversion\n\nExamining risk aversion and its role in rational decision-making.\n\nAfriat’s Theorem\n\nAn introduction to Afriat’s theorem and its implications.\n\nStochastic Choice\n\nThe theory behind stochastic choices.\n\n\n\n\n\n Back to top",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)",
     "crumbs": [
       "me",
-      "Repository",
-      "Micro I: Utility Theory"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u1.html",
-    "href": "repo/micro-u/u1.html",
-    "title": "Choices/Preference/Utility over Finite Outcomes",
-    "section": "",
-    "text": "* in conjunction with §1 of Microeconomics Foundation I (Kreps, 2013)\nyedlu, Fall 2024",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "Finite Choices"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u1.html#key-concepts-overview",
-    "href": "repo/micro-u/u1.html#key-concepts-overview",
-    "title": "Choices/Preference/Utility over Finite Outcomes",
-    "section": "Key Concepts Overview",
-    "text": "Key Concepts Overview\n\n1. Choices\nChoices are observable actions taken when confronted with alternatives. Economists model choices using the following notations:\n\n\n\n\n\n\n\n\nNotation\nDefinition\nExample\n\n\n\n\n\\(X\\)\nFinite set of alternatives\nColleges someone can apply: \\(X = \\{a,b,c\\}\\)\n\n\n\\(P(X)\\)\nAll non-empty subsets of \\(X\\)\n\\[ P(X) = \\{\\{a\\}, \\{b\\}, \\{c\\}, \\{a,b\\}, \\{a,c\\}, \\{b,c\\}, \\{a,b,c\\}\\} \\]\n\n\n\\(B \\subseteq P(X)\\)\nSet of feasible choice menus\n\\(B = \\{\\{a\\}, \\{a,b\\}, \\{a,b,c\\}\\}\\)\n\n\n\\(c: B \\to P(X)\\)\nChoice function: \\(c(A) \\subset A\\)\n\\(c(\\{a,b,c\\}) = \\{a,b\\}\\)\n\n\n\n\n\n2. Preferences\nPreferences reflect internal evaluations of choices, modeled abstractly:\n\n\n\n\n\n\n\n\nNotation\nDefinition\nExample\n\n\n\n\n\\(X\\)\nSet of alternatives\n\\(X = \\{a,b,c\\}\\)\n\n\n\\(X \\times X\\)\nCartesian product: pairs of alternatives\n\\((a,b), (b,c), \\dots\\)\n\n\n\\(R \\subseteq X \\times X\\)\nBinary relation: \\((a,b) \\in R \\iff a \\succsim b\\)\nPreferences: \\(a \\succsim b, b \\succsim c\\)\n\n\n\n\nProperties of \\(R\\):\n\nComplete: For all \\(x, y \\in X\\), \\(x \\succsim y\\) or \\(y \\succsim x\\).\nTransitive: \\(x \\succsim y\\) and \\(y \\succsim z \\implies x \\succsim z\\).\nRational: \\(R\\) is complete and transitive.\n\n\n\n\n3. Choices from Preferences\nA rational binary relation \\(R\\) generates a choice function \\(c_R\\):\n\\[\nc_R(A) := \\{x \\in A \\mid (\\forall y \\in A) \\, (x,y) \\in R\\}\n\\]\n\n\nProofs\n\nProposition 1: If \\(R\\) is rational, then \\(c_R\\) is a choice function.\n\n\nProof (Click to Expand)\n\nBy induction. Need to show that \\(c_R (A) \\neq \\emptyset\\) for all \\(A \\subseteq X\\).\n\nBase Case (\\(|A| = 1\\)):\nLet \\(A = \\{x\\}\\). A complete \\(R\\) implies that \\((x,x) \\in R\\), which in turn implies that \\(c_R (A) = \\{x\\} \\neq \\emptyset\\).\nInductive Step (\\(|A| = n + 1\\)):\nAssume true for \\(|A| = n\\). Pick any \\(x \\in A\\). By assumption, \\(c_R (A \\setminus \\{x\\}) \\neq \\emptyset\\).\n\nBy definition, there exists \\(y \\in A \\setminus \\{x\\}\\) such that \\((y,z) \\in R\\) for all \\(z \\in A \\setminus \\{x\\}\\).\nSince \\(R\\) is complete, either \\((x,y) \\in R\\) or \\((y,x) \\in R\\).\n\nIf \\((x,y) \\in R\\), then transitivity implies \\((x,z) \\in R\\) for all \\(z \\in A\\), so \\(x \\in c_R(A)\\).\nIf \\((y,x) \\in R\\), then \\(y \\in c_R(A)\\).\n\n\n\nThus, \\(c_R (A) \\neq \\emptyset\\) for all \\(A \\subseteq X\\).\n\\(\\blacksquare\\)\n\n\n\nProposition 2: If \\(c\\) satisfies WARP, then \\(R_c\\) is a rational preference relation.\n\n\nProof (Click to Expand)\n\n\nCompleteness:\nTake any \\(x, y \\in X\\).\n\nIf \\((x,y) \\notin R_c\\), then \\(x \\notin c(\\{x,y\\})\\).\n\nBy definition, \\(y \\in c(\\{x,y\\})\\), so \\((y,x) \\in R_c\\).\nTherefore, \\(R_c\\) is complete.\n\nTransitivity:\nSuppose \\((x,y) \\in R_c\\) and \\((y,z) \\in R_c\\).\n\nThis implies \\(x \\in c(\\{x,y\\})\\) and \\(y \\in c(\\{y,z\\})\\).\n\nAssume \\((x,z) \\notin R_c\\). Then \\(z \\in c(\\{x,z\\})\\) contradicts WARP.\nHence, \\((x,z) \\in R_c\\), and \\(R_c\\) is transitive.\n\\(\\blacksquare\\)\n\n\n\n\n\n\n4. Preferences Revealed by Choices\nRevealed preference relation \\(R_c\\):\n\\[\nR_c := \\{(x,y) \\in X \\times X \\mid x \\in c(\\{x,y\\})\\}\n\\]\n\nWeak Axiom of Revealed Preferences (WARP):\nIf \\(x, y \\in A \\cap B\\), \\(x \\in c(A)\\), and \\(y \\in c(B)\\), then \\(x \\in c(B)\\).",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "Finite Choices"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u2.html",
-    "href": "repo/micro-u/u2.html",
-    "title": "Choices/Preference/Utility over Infinite Outcomes",
-    "section": "",
-    "text": "yedlu, Fall 2024",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "Infinite Choices"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u2.html#recap-finite-chocices",
-    "href": "repo/micro-u/u2.html#recap-finite-chocices",
-    "title": "Choices/Preference/Utility over Infinite Outcomes",
-    "section": "Recap: Finite Chocices",
-    "text": "Recap: Finite Chocices\n\n\\(X = \\mathbb{R}^n_+\\) be finite choices\n\\(c: P(X) \\to X\\) be the choice function\n\\(\\succsim\\) be the preference relation\n\\(U: \\mathbb{R}^n_+ \\to \\mathbb{R}\\) be the corresponding utility function.\n\n\nWhat if Choices Become Infinite\n\nDifferent Levels of Finite\n\nFinite: there exists a bijection \\(X \\leftrightarrow \\{1, ..., n\\}\\).\n\neach \\(x \\in X\\) is paired with exactly one number in \\(\\{1, ..., n\\}\\)\neach number in \\(\\{1, ..., n\\}\\) is paired with exactly one \\(x \\in X\\)\nnobody is left unpaired\n\nCountably Infinite: there exists a bijection \\(X \\leftrightarrow \\mathbb{N} = \\{1, 2, ...\\}\\). Below are number sets by their finiteness\n\n\\(\\mathbb{Z} = \\{..., -1, 0, 1, ...\\}\\) is countably infinite\n\\(\\mathbb{Q} = \\{a/b: a \\in \\mathbb{Z}, b \\in \\mathbb{N}\\}\\) is countably infinite\n\\(\\mathbb{R}\\) is not countably infinite\n\n\n\n\nCountable Infinite\nProposition. \\(\\succsim\\) be a rational preference and \\(X\\) be a countable set \\(\\Rightarrow\\) there exists \\(U: X \\to \\mathbb{R}\\) representing \\(\\succsim\\).\n\n\nProof (Click to Expand)\n\nConsider:\n\na countable choice set: \\(X = \\{x_1, ..., x_n, ...\\}\\).\na weight indicator: \\(d_j = \\frac{1}{2^j}\\).\n\nWe would have \\[\\begin{aligned}\n      \\Sigma_{j=1}^{\\infty} d_j = \\Sigma_{j=1}^{\\infty} \\frac{1}{2^j} = \\lim_{n \\to \\infty} [\\Sigma_{j = 1}^n \\frac{1}{2^j}] = 1\n\\end{aligned}\\]\nWe can define the utility function \\(U: X \\to \\mathbb{R}\\) as \\[\\begin{aligned}\n      U(z) = \\Sigma_{\\{j \\in \\mathbb{N}: (z, x_j) \\in \\succsim\\}} d_j\n\\end{aligned}\\]\n\\(\\blacksquare\\)\n\n\n\n\nIncountable Infinite\nIt is not always true that there exists a utility function \\(U: X \\to \\mathbb{R}\\) to represent a rational \\(\\succsim\\).\nE.g. Bowser Jr.’s Lexicographic Preferences (\\(X = \\mathbb{R}^2_+\\)).\nWe would need some other properties that \\(\\succsim\\) must satisfy to make the utility function possible.",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "Infinite Choices"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u2.html#continuous-preference-relation",
-    "href": "repo/micro-u/u2.html#continuous-preference-relation",
-    "title": "Choices/Preference/Utility over Infinite Outcomes",
-    "section": "Continuous Preference Relation",
-    "text": "Continuous Preference Relation\nDefinition: for all pairs \\(x,y \\in X\\) with \\(x \\succ y\\), we can always find \\(\\epsilon &gt; 0\\) such that: - \\(|x - x'| &lt; \\epsilon\\) - \\(|y - y'| &lt; \\epsilon\\)\nimplies \\(x' \\succ y'\\).\nIntuition: a strictly preferred pair should remain their preference status even under a sligtest change in any direction. We would not expect a rational person to freak out if a slightest change takes place.\n\nUtility Representation\nProposition. If \\(\\succsim\\) is complete, transitive, and continuous, then there exists a continuous \\(U: \\mathbb{R}^n_+ \\to \\mathbb{R}\\) that represents \\(\\succsim\\).",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "Infinite Choices"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u3.html",
-    "href": "repo/micro-u/u3.html",
-    "title": "Von Neumann-Morgenstern Expected Utility",
-    "section": "",
-    "text": "yedlu, Fall 2024",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "vNM Axioms"
-    ]
-  },
-  {
-    "objectID": "repo/micro-g/g1.html",
-    "href": "repo/micro-g/g1.html",
-    "title": "Normal-Form Games",
-    "section": "",
-    "text": "yedlu, Fall 2024",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro II: Game Theory",
-      "Normal-Form Games"
-    ]
-  },
-  {
-    "objectID": "repo/micro-g/g5.html",
-    "href": "repo/micro-g/g5.html",
-    "title": "Perfect Bayesian Equilibrium",
-    "section": "",
-    "text": "yedlu, Fall 2024\n\n\n\n Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro II: Game Theory",
-      "Perfect Bayesian Equilibrium"
-    ]
-  },
-  {
-    "objectID": "repo/micro-g/g3.html",
-    "href": "repo/micro-g/g3.html",
-    "title": "Yanhe Eddie Lu",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro II: Game Theory",
-      "Repeated Games"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u5.html",
-    "href": "repo/micro-u/u5.html",
-    "title": "Yanhe Eddie Lu",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "Afriat's Theorem"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u6.html",
-    "href": "repo/micro-u/u6.html",
-    "title": "Yanhe Eddie Lu",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro I: Utility Theory",
-      "Stochastic Choice"
+      "Repository"
     ]
   },
   {
@@ -301,42 +234,54 @@
     ]
   },
   {
-    "objectID": "repo/micro-g/g2.html",
-    "href": "repo/micro-g/g2.html",
-    "title": "Yanhe Eddie Lu",
+    "objectID": "repo/micro-u/u1.html",
+    "href": "repo/micro-u/u1.html",
+    "title": "Choices/Preference/Utility over Finite Outcomes",
     "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro II: Game Theory",
-      "Extensive-Form Games"
-    ]
-  },
-  {
-    "objectID": "repo/micro-g/g4.html",
-    "href": "repo/micro-g/g4.html",
-    "title": "Yanhe Eddie Lu",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro II: Game Theory",
-      "Bayesian Games"
-    ]
-  },
-  {
-    "objectID": "repo/micro-u/u3.html#intro-to-lotteries-an-extra-layer-of-uncertainty",
-    "href": "repo/micro-u/u3.html#intro-to-lotteries-an-extra-layer-of-uncertainty",
-    "title": "Von Neumann-Morgenstern Expected Utility",
-    "section": "Intro to Lotteries: an Extra Layer of Uncertainty",
-    "text": "Intro to Lotteries: an Extra Layer of Uncertainty\n\nThe individual must choose an action with uncertain outcomes. The individual has preference over final consequences.\n\\(X = \\{x_1, ..., x_n\\}\\) be the finite set of consequences\n\\(p = (p_1, ..., p_n), p_i \\geq 0, \\Sigma_i p_i = 1\\) be the lottery on \\(X\\)\n\\(\\Delta(X) = \\{p \\in \\mathbb{R}^n_+: \\Sigma_i p_i = 1\\}\\) be the set of lotteries on \\(X\\)\n\\(\\succsim \\subseteq \\Delta(X) \\times \\Delta(X)\\) be the binary preference relations on the set of lotteries \\(\\Delta(X)\\)\n\n\nMixing Lotteries\nGiven two lotteries \\(p, q \\in \\Delta(X)\\) and a weight \\(\\alpha \\in [0,1]\\), define the lottery\n\\[\\alpha p + (1-\\alpha) q := (\\alpha p_1 + (1-\\alpha) q_1, ..., \\alpha p_n + (1-\\alpha) q_n)\\]\n\n\nSpecial Lotteries with Certain Outcomes\nDefine certainty lotteries as \\(\\delta_i = (p_1, ..., p_n)\\) with \\(p_i = 1\\). Specifically, \\(\\delta_1 = (1,...,0)\\) and \\(\\delta_n = (0, ..., 1)\\).\n\n\nExpected Utility Functions\nGiven a utility function over consequences \\(u: X \\to \\mathbb{R}\\), we may evaluate lotteries \\(p = (p_1, ..., p_n)\\) by its expected utility:\n\\[U(p) := p_1 u(x_1) + ... + p_n u(x_n)\\]\n\nThe \\(U: \\Delta(X) \\to \\mathbb{R}\\) is said to have the expected utility form.\nThe \\(u: X \\to \\mathbb{R}\\) is called a Bernoulli payoff function.\n\n\n\nLinear and Expected Utility\nLemma. The following two statements are logically equivalent.\n\n\\(U\\) is linear if for every \\(p, q \\in \\Delta(X)\\) and every \\(\\alpha \\in [0,1]\\): \\[U[\\alpha p + (1-\\alpha)q] = \\alpha U(p) + (1-\\alpha) U(q)\\]\n\\(U\\) is in expected utility form if there exists \\(u: X \\to \\mathbb{R}\\) such that: \\[U(p) = \\sum_{x \\in X} u(x) p(x)\\] for every \\(p \\in \\Delta(X)\\)\n\n\n\nProof (Click to Expand)\n\nParts of proof: \\(2 \\Rightarrow 1\\). \\[\\begin{aligned}\n      U[\\alpha p + (1-\\alpha) q] &= U(\\alpha p_1 + (1-\\alpha) q_1, ..., \\alpha p_n + (1-\\alpha) q_n) \\\\\n      &= \\Sigma_{i=1}^n u(x_1) [\\alpha p_1 + (1-\\alpha) q_1] \\\\\n      &= \\alpha \\Sigma_{i=1}^n u(x_1) p_1 + (1-\\alpha) \\Sigma_{i=1}^n u(x_1) q_1 \\\\\n      &= \\alpha U(p) + (1-\\alpha) U(q)\n\\end{aligned}\\]\n\\(\\blacksquare\\)\n\n\n\nThe von Neumann-Morgenstern (vNM) Axioms\nLet \\(\\succsim\\) be a binary relation on the set of lotteries \\(\\Delta(X)\\). - Axiom 1 (rational): \\(\\succsim\\) is complete and transitive. - Axiom 2 (continuous): for every \\(p, q, r \\in \\Delta(X)\\) with \\(p \\succ q \\succ r\\), there exists \\(\\alpha, \\beta \\in (0,1)\\) such that: \\(\\alpha p + (1-\\alpha) r \\succ q \\succ \\beta p + (1 - \\beta) r\\). - Axiom 3 (independence): for every \\(p, q, r \\in \\Delta(X)\\) and every \\(\\alpha \\in (0,1)\\), we have \\(p \\succ q\\) if and only if:\n\\[\\alpha p + (1-\\alpha) r \\succ \\alpha q + (1-\\alpha) r\\]\n\nThe vNM Representation Theorem\nThe following statements are logically equivalent: 1. \\(\\succsim\\) satisfies Axioms 1, 2, and 3; 2. There exists a linear function \\(U: \\Delta(X) \\to \\mathbb{R}\\) that represents \\(\\succsim\\).\n\n\nThe Uniqueness Proposition\nSuppose \\(U, V: \\Delta(X) \\to \\mathbb{R}\\) are linear functions. Suppose \\(U\\) represents \\(\\succsim\\). Then \\(V\\) also represents \\(\\succsim\\) iif there exists \\(\\alpha &gt; 0\\) and \\(\\beta \\in \\mathbb{R}\\) such that \\(V = \\alpha U + \\beta\\).",
+    "text": "* in conjunction with §1 of Microeconomics Foundation I (Kreps, 2013)\nyedlu, Fall 2024",
     "crumbs": [
       "me",
       "Repository",
       "Micro I: Utility Theory",
-      "vNM Axioms"
+      "Finite Outcomes"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u1.html#key-concepts-overview",
+    "href": "repo/micro-u/u1.html#key-concepts-overview",
+    "title": "Choices/Preference/Utility over Finite Outcomes",
+    "section": "Key Concepts Overview",
+    "text": "Key Concepts Overview\n\n1. Choices\nChoices are observable actions taken when confronted with alternatives. Economists model choices using the following notations:\n\n\n\n\n\n\n\n\nNotation\nDefinition\nExample\n\n\n\n\n\\(X\\)\nFinite set of alternatives\nColleges someone can apply: \\(X = \\{a,b,c\\}\\)\n\n\n\\(P(X)\\)\nAll non-empty subsets of \\(X\\)\n\\[ P(X) = \\{\\{a\\}, \\{b\\}, \\{c\\}, \\{a,b\\}, \\{a,c\\}, \\{b,c\\}, \\{a,b,c\\}\\} \\]\n\n\n\\(B \\subseteq P(X)\\)\nSet of feasible choice menus\n\\(B = \\{\\{a\\}, \\{a,b\\}, \\{a,b,c\\}\\}\\)\n\n\n\\(c: B \\to P(X)\\)\nChoice function: \\(c(A) \\subset A\\)\n\\(c(\\{a,b,c\\}) = \\{a,b\\}\\)\n\n\n\n\n\n2. Preferences\nPreferences reflect internal evaluations of choices, modeled abstractly:\n\n\n\n\n\n\n\n\nNotation\nDefinition\nExample\n\n\n\n\n\\(X\\)\nSet of alternatives\n\\(X = \\{a,b,c\\}\\)\n\n\n\\(X \\times X\\)\nCartesian product: pairs of alternatives\n\\((a,b), (b,c), \\dots\\)\n\n\n\\(R \\subseteq X \\times X\\)\nBinary relation: \\((a,b) \\in R \\iff a \\succsim b\\)\nPreferences: \\(a \\succsim b, b \\succsim c\\)\n\n\n\n\nProperties of \\(R\\):\n\nComplete: For all \\(x, y \\in X\\), \\(x \\succsim y\\) or \\(y \\succsim x\\).\nTransitive: \\(x \\succsim y\\) and \\(y \\succsim z \\implies x \\succsim z\\).\nRational: \\(R\\) is complete and transitive.\n\n\n\n\n3. Choices from Preferences\nA rational binary relation \\(R\\) generates a choice function \\(c_R\\):\n\\[\nc_R(A) := \\{x \\in A \\mid (\\forall y \\in A) \\, (x,y) \\in R\\}\n\\]\n\n\nProofs\n\nProposition 1: If \\(R\\) is rational, then \\(c_R\\) is a choice function.\n\n\nProof (Click to Expand)\n\nBy induction. Need to show that \\(c_R (A) \\neq \\emptyset\\) for all \\(A \\subseteq X\\).\n\nBase Case (\\(|A| = 1\\)):\nLet \\(A = \\{x\\}\\). A complete \\(R\\) implies that \\((x,x) \\in R\\), which in turn implies that \\(c_R (A) = \\{x\\} \\neq \\emptyset\\).\nInductive Step (\\(|A| = n + 1\\)):\nAssume true for \\(|A| = n\\). Pick any \\(x \\in A\\). By assumption, \\(c_R (A \\setminus \\{x\\}) \\neq \\emptyset\\).\n\nBy definition, there exists \\(y \\in A \\setminus \\{x\\}\\) such that \\((y,z) \\in R\\) for all \\(z \\in A \\setminus \\{x\\}\\).\nSince \\(R\\) is complete, either \\((x,y) \\in R\\) or \\((y,x) \\in R\\).\n\nIf \\((x,y) \\in R\\), then transitivity implies \\((x,z) \\in R\\) for all \\(z \\in A\\), so \\(x \\in c_R(A)\\).\nIf \\((y,x) \\in R\\), then \\(y \\in c_R(A)\\).\n\n\n\nThus, \\(c_R (A) \\neq \\emptyset\\) for all \\(A \\subseteq X\\).\n\\(\\blacksquare\\)\n\n\n\nProposition 2: If \\(c\\) satisfies WARP, then \\(R_c\\) is a rational preference relation.\n\n\nProof (Click to Expand)\n\n\nCompleteness:\nTake any \\(x, y \\in X\\).\n\nIf \\((x,y) \\notin R_c\\), then \\(x \\notin c(\\{x,y\\})\\).\n\nBy definition, \\(y \\in c(\\{x,y\\})\\), so \\((y,x) \\in R_c\\).\nTherefore, \\(R_c\\) is complete.\n\nTransitivity:\nSuppose \\((x,y) \\in R_c\\) and \\((y,z) \\in R_c\\).\n\nThis implies \\(x \\in c(\\{x,y\\})\\) and \\(y \\in c(\\{y,z\\})\\).\n\nAssume \\((x,z) \\notin R_c\\). Then \\(z \\in c(\\{x,z\\})\\) contradicts WARP.\nHence, \\((x,z) \\in R_c\\), and \\(R_c\\) is transitive.\n\\(\\blacksquare\\)\n\n\n\n\n\n\n4. Preferences Revealed by Choices\nRevealed preference relation \\(R_c\\):\n\\[\nR_c := \\{(x,y) \\in X \\times X \\mid x \\in c(\\{x,y\\})\\}\n\\]\n\nWeak Axiom of Revealed Preferences (WARP):\nIf \\(x, y \\in A \\cap B\\), \\(x \\in c(A)\\), and \\(y \\in c(B)\\), then \\(x \\in c(B)\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Finite Outcomes"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/index.html",
+    "href": "repo/micro-u/index.html",
+    "title": "Choices, Preferences, and Utility Theories",
+    "section": "",
+    "text": "Hi there and welcome! You can navigate yourself through one of the following topics:\n\nChoices/Preference/Utility over Finite Outcomes\n\nDefinition and properties of choices, preference relations, and representing utility functions.\n\nChoices/Preference/Utility over Infinite Outcomes\n\nBring the concepts to infinite set of consequences.\n\nvon Neumann-Morgenstern Expected Utility\n\nExplore lotteries and expected utility theory.\n\nRisk Aversion\n\nExamining risk aversion and its role in rational decision-making.\n\nAfriat’s Theorem\n\nAn introduction to Afriat’s theorem and its implications.\n\nStochastic Choice\n\nThe theory behind stochastic choices.\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g1.html",
+    "href": "repo/micro-g/g1.html",
+    "title": "Normal-Form Games",
+    "section": "",
+    "text": "yedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Normal-Form Games"
     ]
   },
   {
@@ -402,6 +347,45 @@
       "Repository",
       "Micro II: Game Theory",
       "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g3.html",
+    "href": "repo/micro-g/g3.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Repeated Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g5.html",
+    "href": "repo/micro-g/g5.html",
+    "title": "Perfect Bayesian Equilibrium",
+    "section": "",
+    "text": "yedlu, Fall 2024\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Perfect Bayesian Equilibrium"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g4.html#bayesian-nash-equilibrium",
+    "href": "repo/micro-g/g4.html#bayesian-nash-equilibrium",
+    "title": "Bayesian Games",
+    "section": "Bayesian Nash Equilibrium",
+    "text": "Bayesian Nash Equilibrium\nA Bayesian normal form game can be described as:\n\\[\nG = (N, (S_i), (T_i), (u_i), \\BB{P}).\n\\]\n\n\\(N = \\{1, 2, ..., n\\}\\) be the set of players.\n\\(S_i\\) be the set of actions available to player \\(i \\in N\\).\n\\(T_i\\) be the finite set of types to player \\(i \\in N\\). This is private information to player \\(i\\).\n\\(u_i: S \\times T_i \\to \\BB{R}\\) be \\(i\\)’s utility function representing the preference relation.\n\\(\\BB{P}\\) be the belief, which is a probability measure over types \\(\\BF{t} = (t_1, t_2, ..., t_n)^T\\).\n\n\nBayesian Belief System\nQuestion: If I only learn my type (\\(t_i\\)), what is the probability that other players’ types are \\(\\BB{t}_{-i}\\)?\n\n\nAnswer (Click to Expand)\n\nBy Bayes rule,\n\\[\\begin{aligned}\n  \\BB{P}(t_{-i} \\mid t_i) &= \\frac{\\BB{P}(t_i, t_{-i})}{\\BB{P}(t_i)} \\\\\n  &= \\frac{\\BB{P}(t_i, t_{-i})}{\\sum_{t^{'}_{-i} \\in T_{-i}} \\BB{P}(t_i \\mid t^{'}_{-i})}\n\\end{aligned}\\]\n\n\n\nBayesian NE\nDfn (1) A strategy profile \\(\\sigma = (\\sigma_1, ..., \\sigma_n)\\) is a Bayesian NE if\n\nfor each player \\(i\\)\nand their each type \\(t_i \\in T_i\\)\n\nthe strategy maximizes the expected utility:\n\\[\n\\sum_{t_{-i} \\in T_{-i}} u_i(\\sigma_i (t_i), \\sigma_{-i} (t_{-i}) \\times \\BB{P}(t_{-i} \\mid t_i))\n\\]\nDfn (2) A pure strategy for a player \\(i\\) is a function:\n\\[\n\\sigma_i: T_i \\to S_i\n\\]\nDfn (3) A pooling strategy means that for each and every player, her strategy is fixed regardless of types. In other words, \\(\\sigma_i(t_i) = \\sigma_i\\) for all \\(t_i \\in T_i\\).\n\n\nExample: Cutoff Strategy\nConsider the following normal-form game.\n\n\n\n\nb\ns\n\n\n\n\nB\n\\(2 + t_1, 1\\)\n\\(0, 0\\)\n\n\nS\n\\(0, 0\\)\n\\(1, 2 + t_2\\)\n\n\n\nSuppose \\(t_1\\) and \\(t_2\\) are i.i.d. with \\(t_i \\sim U[0,x]\\) for some arbitrarily small \\(x&gt;0\\).\n\n\nAnswer (Click to Expand)\n\nConsider a cutoff strategy.\n\\[\n\\sigma_1(t_1) =\n  \\begin{cases}\n    B &, t_1 \\geq C_1 \\\\\n    S &, t_1 &lt; C_1\n  \\end{cases}\n\\]\n\\[\n\\sigma_2(t_2) =\n  \\begin{cases}\n    s &, t_2 \\geq C_2 \\\\\n    b &, t_2 &lt; C_2\n  \\end{cases}\n\\]\nPlayer 2 best-responds to player 1’s expected strategy: \\[\\begin{aligned}\n  U_2 (b, \\sigma_1, t_2) &= 1 \\times \\BB{P} \\{\\sigma_1(t_1) = B\\} + 0 \\times \\BB{P} \\{\\sigma_1(t_1) = S\\} \\\\\n  &= 1 \\times \\BB{P} \\{t_1 \\geq C_1\\} + 0 \\times \\BB{P} \\{t_1 &lt; C_1\\} \\\\\n  &= \\frac{x - cC_1}{x} \\\\\n  \\\\\n  U_2 (s, \\sigma_1, t_2) &= 0 \\times \\BB{P} \\{\\sigma_1(t_1) = B\\} + (2 + t_2) \\times \\BB{P} \\{\\sigma_1(t_1) = S\\} \\\\\n  &= 0 \\times \\BB{P} \\{t_1 \\geq C_1\\} + (2 + t_2) \\times \\BB{P} \\{t_1 &lt; C_1\\} \\\\\n  &= \\frac{C_1}{x} \\times (2 + t_2)\n\\end{aligned}\\]\nSuppose \\(\\sigma_2 (t_2) = s\\), then: \\[\\begin{aligned}\n  U_2 (b, \\sigma_1, t_2) & \\leq U_2 (s, \\sigma_1, t_2) \\\\\n  \\\\\n  \\frac{x - C_1}{x} & \\leq \\frac{c_1}{x} \\times (2 + t_2) \\\\\n  t_2 & \\geq \\frac{x}{C_1} - 3 \\\\\n  \\\\\n  \\implies C_2 &= \\frac{x}{C_1} - 3\n\\end{aligned}\\]\nSimilarly for player 1, her cutoff point is: \\[\\begin{aligned}\n  C_1 &= \\frac{x}{C_2} - 3\n\\end{aligned}\\]\nSolving the system \\[\\begin{cases}\n  C_1 &= \\frac{x}{C_2} - 3 \\\\\n  C_2 &= \\frac{x}{C_1} - 3\n\\end{cases}\\]\nyields \\[\\begin{aligned}\n  C_1 = C_2 = \\frac{\\sqrt{9 + 4x} - 3}{2}\n\\end{aligned}\\]\nIf the maximum payoff shock shrinks to 0, \\[\\begin{aligned}\n  \\lim_{x \\to 0^+} \\BB{P} \\{\\sigma_1 (t_1) = B\\} &= \\lim_{x \\to 0^+} \\frac{x - C_1}{x} \\\\\n  &= \\lim_{x \\to 0} 1 + \\frac{3 - \\sqrt{9 + 4x}}{2x} \\\\\n  &= \\frac{2}{3} \\quad \\text{(L'Hôpital Rule)}\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Bayesian Games"
     ]
   }
 ]

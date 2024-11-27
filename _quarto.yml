@@ -20,9 +20,9 @@ website:
             - text: "Micro I: Utility Theory"
               href: repo/micro-u/index.qmd
               contents:
-              - text: "Finite Choices"
+              - text: "Finite Outcomes"
                 href: repo/micro-u/u1.qmd
-              - text: "Infinite Choices"
+              - text: "Infinite Outcomes"
                 href: repo/micro-u/u2.qmd
               - text: "vNM Axioms"
                 href: repo/micro-u/u3.qmd
@@ -45,7 +45,7 @@ website:
                 href: repo/micro-g/g4.qmd
               - text: "Perfect Bayesian Equilibrium"
                 href: repo/micro-g/g5.qmd
-                
+
 format:
   html:
     theme: cosmo

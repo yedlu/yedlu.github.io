@@ -14,7 +14,7 @@ format:
   - [Micro I: Utility Theories (PhD Level)](micro-u/index.qmd)
   - [Micro II: Game Theory (PhD Level)](micro-g/index.qmd)
 
-### Corporate Finance
+<!-- ### Corporate Finance
   - Corporate Finance Theory (PhD Level)
   - Corporate Finance Practice (MBA Level)
     - Valuation
@@ -50,4 +50,4 @@ format:
 ### Database
   - SQL
   - SAS
-  - AWS/Hive
+  - AWS/Hive -->

@@ -1,0 +1,148 @@
+---
+title: "Bayesian Games"
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
+
+*yedlu, Winter 2024*
+
+## Bayesian Nash Equilibrium
+
+A Bayesian normal form game can be described as:
+
+$$
+G = (N, (S_i), (T_i), (u_i), \BB{P}).
+$$
+
+- $N = \{1, 2, ..., n\}$ be the set of players.
+- $S_i$ be the set of actions available to player $i \in N$.
+- $T_i$ be the finite set of **types** to player $i \in N$. This is private information to player $i$.
+- $u_i: S \times T_i \to \BB{R}$ be $i$'s utility function representing the preference relation.
+- $\BB{P}$ be the belief, which is a probability measure over types $\BF{t} = (t_1, t_2, ..., t_n)^T$.
+
+
+### Bayesian Belief System
+
+**Question:** If I only learn my type ($t_i$), what is the probability that other players' types are $\BB{t}_{-i}$?
+
+<details>
+<summary>Answer (Click to Expand)</summary>
+
+By Bayes rule,
+
+$$\begin{aligned}
+  \BB{P}(t_{-i} \mid t_i) &= \frac{\BB{P}(t_i, t_{-i})}{\BB{P}(t_i)} \\
+  &= \frac{\BB{P}(t_i, t_{-i})}{\sum_{t^{'}_{-i} \in T_{-i}} \BB{P}(t_i \mid t^{'}_{-i})}
+\end{aligned}$$
+
+</details>
+
+### Bayesian NE
+
+**Dfn (1)** A strategy profile $\sigma = (\sigma_1, ..., \sigma_n)$ is a ***Bayesian NE*** if
+
+- for each player $i$
+- and their each type $t_i \in T_i$
+
+the strategy maximizes the expected utility:
+
+$$
+\sum_{t_{-i} \in T_{-i}} u_i(\sigma_i (t_i), \sigma_{-i} (t_{-i}) \times \BB{P}(t_{-i} \mid t_i))
+$$
+
+**Dfn (2)** A ***pure strategy*** for a player $i$ is a function:
+
+$$
+\sigma_i: T_i \to S_i
+$$
+
+
+**Dfn (3)** A ***pooling strategy*** means that for each and every player, her strategy is fixed regardless of types. In other words, $\sigma_i(t_i) = \sigma_i$ for all $t_i \in T_i$.
+
+
+### Example: Cutoff Strategy
+Consider the following normal-form game.
+
+|  | b | s |
+|------|------|------|
+| **B**   | $2 + t_1, 1$ | $0, 0$    |
+| **S**    | $0, 0$ | $1, 2 + t_2$ |
+
+Suppose $t_1$ and $t_2$ are i.i.d. with $t_i \sim U[0,x]$ for some arbitrarily small $x>0$.
+
+<details>
+<summary>Answer (Click to Expand)</summary>
+
+Consider a cutoff strategy.
+
+$$
+\sigma_1(t_1) = 
+  \begin{cases}
+    B &, t_1 \geq C_1 \\
+    S &, t_1 < C_1
+  \end{cases}
+$$
+
+$$
+\sigma_2(t_2) = 
+  \begin{cases}
+    s &, t_2 \geq C_2 \\
+    b &, t_2 < C_2
+  \end{cases}
+$$
+
+Player 2 best-responds to player 1's expected strategy:
+$$\begin{aligned}
+  U_2 (b, \sigma_1, t_2) &= 1 \times \BB{P} \{\sigma_1(t_1) = B\} + 0 \times \BB{P} \{\sigma_1(t_1) = S\} \\
+  &= 1 \times \BB{P} \{t_1 \geq C_1\} + 0 \times \BB{P} \{t_1 < C_1\} \\
+  &= \frac{x - cC_1}{x} \\
+  \\
+  U_2 (s, \sigma_1, t_2) &= 0 \times \BB{P} \{\sigma_1(t_1) = B\} + (2 + t_2) \times \BB{P} \{\sigma_1(t_1) = S\} \\
+  &= 0 \times \BB{P} \{t_1 \geq C_1\} + (2 + t_2) \times \BB{P} \{t_1 < C_1\} \\
+  &= \frac{C_1}{x} \times (2 + t_2)
+\end{aligned}$$
+
+Suppose $\sigma_2 (t_2) = s$, then:
+$$\begin{aligned}
+  U_2 (b, \sigma_1, t_2) & \leq U_2 (s, \sigma_1, t_2) \\
+  \\
+  \frac{x - C_1}{x} & \leq \frac{c_1}{x} \times (2 + t_2) \\
+  t_2 & \geq \frac{x}{C_1} - 3 \\
+  \\
+  \implies C_2 &= \frac{x}{C_1} - 3
+\end{aligned}$$
+
+Similarly for player 1, her cutoff point is:
+$$\begin{aligned}
+  C_1 &= \frac{x}{C_2} - 3
+\end{aligned}$$
+
+Solving the system
+$$\begin{cases}
+  C_1 &= \frac{x}{C_2} - 3 \\
+  C_2 &= \frac{x}{C_1} - 3
+\end{cases}$$
+
+yields
+$$\begin{aligned}
+  C_1 = C_2 = \frac{\sqrt{9 + 4x} - 3}{2} 
+\end{aligned}$$
+
+If the maximum payoff shock shrinks to 0,
+$$\begin{aligned}
+  \lim_{x \to 0^+} \BB{P} \{\sigma_1 (t_1) = B\} &= \lim_{x \to 0^+} \frac{x - C_1}{x} \\
+  &= \lim_{x \to 0} 1 + \frac{3 - \sqrt{9 + 4x}}{2x} \\
+  &= \frac{2}{3} \quad \text{(L'Hôpital Rule)}
+\end{aligned}$$
+
+
+
+</details>
+
+
+

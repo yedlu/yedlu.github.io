@@ -144,13 +144,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/micro-u/u1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Finite Choices</span></a>
+ <span class="menu-text">Finite Outcomes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/micro-u/u2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Infinite Choices</span></a>
+ <span class="menu-text">Infinite Outcomes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -336,7 +336,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yedlu\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

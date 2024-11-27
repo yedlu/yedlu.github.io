@@ -117,8 +117,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#class-notes" id="toc-class-notes" class="nav-link active" data-scroll-target="#class-notes">Class Notes</a></li>
-  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
-  <li><a href="#coding-samples" id="toc-coding-samples" class="nav-link" data-scroll-target="#coding-samples">Coding Samples</a></li>
   </ul>
 </nav>
 </nav>
@@ -156,56 +154,43 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="../repo/micro-u/index.html">Micro I: Utility Theories (PhD Level)</a></li>
 <li><a href="../repo/micro-g/index.html">Micro II: Game Theory (PhD Level)</a></li>
 </ul>
-</section>
-<section id="corporate-finance" class="level3">
-<h3 class="anchored" data-anchor-id="corporate-finance">Corporate Finance</h3>
-<ul>
-<li>Corporate Finance Theory (PhD Level)</li>
-<li>Corporate Finance Practice (MBA Level)
-<ul>
-<li>Valuation</li>
-<li>Financing</li>
-</ul></li>
-</ul>
-</section>
-<section id="asset-pricing" class="level3">
-<h3 class="anchored" data-anchor-id="asset-pricing">Asset Pricing</h3>
-<ul>
-<li>Asset Pricing Theory (PhD Level)</li>
-<li>Derivatives Pricing</li>
-</ul>
-</section>
-</section>
-<section id="projects" class="level2">
-<h2 class="anchored" data-anchor-id="projects">Projects</h2>
-<section id="measuring-talents-in-labor-forces" class="level3">
-<h3 class="anchored" data-anchor-id="measuring-talents-in-labor-forces">Measuring Talents in Labor Forces</h3>
-</section>
-<section id="development-initiatives-on-fdi" class="level3">
-<h3 class="anchored" data-anchor-id="development-initiatives-on-fdi">Development Initiatives on FDI</h3>
-</section>
-</section>
-<section id="coding-samples" class="level2">
-<h2 class="anchored" data-anchor-id="coding-samples">Coding Samples</h2>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-</section>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
-</section>
-<section id="stata" class="level3">
-<h3 class="anchored" data-anchor-id="stata">Stata</h3>
-</section>
-<section id="matlab" class="level3">
-<h3 class="anchored" data-anchor-id="matlab">MATLAB</h3>
-</section>
-<section id="database" class="level3">
-<h3 class="anchored" data-anchor-id="database">Database</h3>
-<ul>
-<li>SQL</li>
-<li>SAS</li>
-<li>AWS/Hive</li>
-</ul>
+<!-- ### Corporate Finance
+  - Corporate Finance Theory (PhD Level)
+  - Corporate Finance Practice (MBA Level)
+    - Valuation
+    - Financing
+
+
+### Asset Pricing
+  - Asset Pricing Theory (PhD Level)
+  - Derivatives Pricing
+
+
+
+## Projects
+### Measuring Talents in Labor Forces
+
+
+### Development Initiatives on FDI
+
+
+
+
+
+
+## Coding Samples
+### R
+
+### Python
+
+### Stata
+
+### MATLAB
+
+### Database
+  - SQL
+  - SAS
+  - AWS/Hive -->
 
 
 </section>
@@ -308,7 +293,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yedlu\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
