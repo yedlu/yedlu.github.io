@@ -276,14 +276,19 @@ window.Quarto = {
   <li><a href="#indignant-angel-vs.-indignant-angel" id="toc-indignant-angel-vs.-indignant-angel" class="nav-link" data-scroll-target="#indignant-angel-vs.-indignant-angel">Indignant Angel vs.&nbsp;Indignant Angel</a></li>
   <li><a href="#selfish-vs.-indignant-angel" id="toc-selfish-vs.-indignant-angel" class="nav-link" data-scroll-target="#selfish-vs.-indignant-angel">Selfish vs.&nbsp;Indignant Angel</a></li>
   </ul></li>
-  <li><a href="#rule-1-strictly-dominated-actions" id="toc-rule-1-strictly-dominated-actions" class="nav-link" data-scroll-target="#rule-1-strictly-dominated-actions">Rule 1: Strictly Dominated Actions</a></li>
+  <li><a href="#strictly-dominated-actions" id="toc-strictly-dominated-actions" class="nav-link" data-scroll-target="#strictly-dominated-actions">Strictly Dominated Actions</a>
+  <ul>
   <li><a href="#iterated-elimination-of-dominated-actions-ieda" id="toc-iterated-elimination-of-dominated-actions-ieda" class="nav-link" data-scroll-target="#iterated-elimination-of-dominated-actions-ieda">Iterated Elimination of Dominated Actions (IEDA)</a></li>
+  </ul></li>
   <li><a href="#nash-equilibrium-and-mixed-actions" id="toc-nash-equilibrium-and-mixed-actions" class="nav-link" data-scroll-target="#nash-equilibrium-and-mixed-actions">Nash Equilibrium and Mixed Actions</a>
   <ul>
   <li><a href="#mixed-actions" id="toc-mixed-actions" class="nav-link" data-scroll-target="#mixed-actions">Mixed Actions</a></li>
   <li><a href="#best-responses" id="toc-best-responses" class="nav-link" data-scroll-target="#best-responses">Best Responses</a></li>
   <li><a href="#nash-equilibrium" id="toc-nash-equilibrium" class="nav-link" data-scroll-target="#nash-equilibrium">Nash Equilibrium</a></li>
   </ul></li>
+  <li><a href="#ieda-and-ne-properties" id="toc-ieda-and-ne-properties" class="nav-link" data-scroll-target="#ieda-and-ne-properties">IEDA and NE: Properties</a></li>
+  <li><a href="#example-cournots-duopoly-model" id="toc-example-cournots-duopoly-model" class="nav-link" data-scroll-target="#example-cournots-duopoly-model">Example: Cournot’s Duopoly Model</a></li>
+  <li><a href="#example-all-pay-auctions" id="toc-example-all-pay-auctions" class="nav-link" data-scroll-target="#example-all-pay-auctions">Example: All-Pay Auctions</a></li>
   </ul>
 </nav>
 </nav>
@@ -313,10 +318,21 @@ window.Quarto = {
 </header>
 
 
+<div class="hidden">
+<p><span class="math display">\[
+\def\BB#1{{\mathbb{#1}}}
+\def\BF#1{{\mathbf{#1}}}
+\]</span></p>
+</div>
 <p><em>yedlu, Fall 2024</em></p>
 <section id="game-theory-an-introduction" class="level2">
 <h2 class="anchored" data-anchor-id="game-theory-an-introduction">Game Theory: An Introduction</h2>
-<p>Game theory can be defined as the study of mathematical models of conflict and cooperation between decision-makers who are - intelligent: players inside the game are aware of their situation just like the researchers studying the game - rational: maximizing some preference or utility functions</p>
+<p>Game theory can be defined as the study of mathematical models of conflict and cooperation between decision-makers who are</p>
+<ul>
+<li>intelligent: players inside the game are aware of their situation just like the researchers studying the game<br>
+</li>
+<li>rational: maximizing some preference or utility functions</li>
+</ul>
 <p>It is the tool to model situations in which decision-makers interact and influence one another’s welfare.</p>
 <p>The <em>Expected Utility Theory</em> (with vNM theorem) would come in handy when dealing with games.</p>
 <section id="games-in-normal-form" class="level3">
@@ -325,10 +341,10 @@ window.Quarto = {
 <p>Three key components of normal-form games:</p>
 <ul>
 <li>The finite set of players: <span class="math inline">\(N = \{1, 2, ..., n\}\)</span></li>
-<li>For each player the nonempty set of actions: <span class="math inline">\(S_i, \quad i \in N\)</span></li>
+<li>For each player the nonempty set of actions: <span class="math inline">\(S_i\)</span> with <span class="math inline">\(i \in N\)</span></li>
 <li>For each player the preference relation <span class="math inline">\(R_i\)</span> on lotteries: <span class="math inline">\(S = S_1 \times S_2 \times ... \times S_n\)</span></li>
 </ul>
-<p>All players in normal-form games are expected utility maximizers. A notation for the game, i expected utility form, would be: <span class="math display">\[\begin{align}
+<p>All players in normal-form games are expected utility maximizers. A notation for the game, in expected utility form, would be: <span class="math display">\[\begin{align}
     G = (N, (S_i: i \in N), (u_i: i \in N))
 \end{align}\]</span></p>
 <p>Sometimes consequences <span class="math inline">\(C\)</span> are mentioned explicitly.</p>
@@ -342,6 +358,11 @@ window.Quarto = {
 </section>
 <section id="example-ben-polaks-grading-game" class="level2">
 <h2 class="anchored" data-anchor-id="example-ben-polaks-grading-game">Example: Ben Polak’s Grading Game</h2>
+<p>This game provides an example of how to understand the payoff matrix. It also shows how to spot strictly dominated strategies and why we should never play them in a normal-form game.</p>
+<details>
+<summary>
+Click to Explore
+</summary>
 <p>In standard notations, Ben Polak’s Grading Game can be denoted as:</p>
 <ul>
 <li><span class="math inline">\(N \ \{1,2\}\)</span> be the set of players</li>
@@ -451,7 +472,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>No strictly dominated actions exist in this case. However, it is inteeresting to notice that both (<span class="math inline">\(\alpha, \alpha\)</span>) and (<span class="math inline">\(\beta, \beta\)</span>) are locally optimal answers.</p>
+<p>No strictly dominated actions exist in this case. However, it is interesting to notice that both (<span class="math inline">\(\alpha, \alpha\)</span>) and (<span class="math inline">\(\beta, \beta\)</span>) are locally optimal answers.</p>
 </section>
 <section id="selfish-vs.-indignant-angel" class="level4">
 <h4 class="anchored" data-anchor-id="selfish-vs.-indignant-angel">Selfish vs.&nbsp;Indignant Angel</h4>
@@ -481,21 +502,27 @@ window.Quarto = {
     u(\alpha, \beta) &amp; &gt; u(\beta, \beta)
 \end{aligned}\]</span></p>
 <p>Since our agents are intelligent, the column player knows that the row player is guaranteed to play <span class="math inline">\(\alpha\)</span>. Conditioning on this information, the column player would also play <span class="math inline">\(\alpha\)</span>.</p>
+</section></details>
 </section>
-</section>
-<section id="rule-1-strictly-dominated-actions" class="level2">
-<h2 class="anchored" data-anchor-id="rule-1-strictly-dominated-actions">Rule 1: Strictly Dominated Actions</h2>
+
+<section id="strictly-dominated-actions" class="level2">
+<h2 class="anchored" data-anchor-id="strictly-dominated-actions">Strictly Dominated Actions</h2>
 <p>In the normal-form game <span class="math inline">\(G\)</span>, we say that action <span class="math inline">\(s_i^{'} \in S_1\)</span> is strictly dominated by action <span class="math inline">\(s_i^{''} \in S_1\)</span> if, for every <span class="math inline">\(s_{-i} \in S_1 \times ... \times S_{i-1} \times S_{i+1} \times ... \times S_n\)</span>: <span class="math display">\[\begin{aligned}
     u(s_i^{''}, s_{-i}) &gt; u(s_i^{'}, s_{-i})
 \end{aligned}\]</span></p>
-</section>
-<section id="iterated-elimination-of-dominated-actions-ieda" class="level2">
-<h2 class="anchored" data-anchor-id="iterated-elimination-of-dominated-actions-ieda">Iterated Elimination of Dominated Actions (IEDA)</h2>
+<section id="iterated-elimination-of-dominated-actions-ieda" class="level3">
+<h3 class="anchored" data-anchor-id="iterated-elimination-of-dominated-actions-ieda">Iterated Elimination of Dominated Actions (IEDA)</h3>
 <p>Intuition: eliminate dominated actions round-by-round until no actions dominates other actions.</p>
 <p>Formal definition: let rounds of elimination be <span class="math inline">\(t = 1, 2, ..., T\)</span>.</p>
-<p>For every player <span class="math inline">\(i\)</span>, - start with all actions <span class="math inline">\(S_i^1 = S_i\)</span> - eliminate some actions at each round <span class="math inline">\(S_i^1 \supset S_i^2 \supset ... \supset S_i^T\)</span></p>
+<p>For every player <span class="math inline">\(i\)</span>,</p>
+<ul>
+<li>start with all actions <span class="math inline">\(S_i^1 = S_i\)</span><br>
+</li>
+<li>eliminate some actions at each round <span class="math inline">\(S_i^1 \supset S_i^2 \supset ... \supset S_i^T\)</span></li>
+</ul>
 <p>Only strictly dominated actions are eliminated: if <span class="math inline">\(s_i^{''} \in S_i^T \setminus S_i^{T+1}\)</span> then <span class="math inline">\(s_i^{''}\)</span> is strictly dominated by some <span class="math inline">\(s_i^{'} \in S_i^{T+1}\)</span>.</p>
 <p>Nobody is left with any strictly actions at the end. The set of consequenses in the end would be <span class="math inline">\(S_1^T \times ... \times S_n^T\)</span>.</p>
+</section>
 </section>
 <section id="nash-equilibrium-and-mixed-actions" class="level2">
 <h2 class="anchored" data-anchor-id="nash-equilibrium-and-mixed-actions">Nash Equilibrium and Mixed Actions</h2>
@@ -504,7 +531,7 @@ window.Quarto = {
 <p>Given a game <span class="math inline">\(G = (N, (S_i), (u_i))\)</span> where each player has a finite set of actions <span class="math display">\[\begin{aligned}
     S_i = \{s_i^1, ..., s_i^k\}
 \end{aligned}\]</span></p>
-<p>A mixed action for player <span class="math inline">\(i\)</span> is a probability <span class="math inline">\(\sigma_i: S_i \to [0,1]\)</span> such that: <span class="math display">\[\begin{aligned}
+<p>A mixed action for player <span class="math inline">\(i\)</span> is a probability measure <span class="math inline">\(\sigma_i: S_i \to [0,1]\)</span> such that: <span class="math display">\[\begin{aligned}
     \sigma_i(s_i^1) + \sigma_i(s_i^2) + ... + \sigma_i(s_i^k) = 1
 \end{aligned}\]</span></p>
 <p>We denote <span class="math inline">\(\Sigma_i\)</span> be the set of mixed actions for player <span class="math inline">\(i\)</span>. The cartesian product <span class="math inline">\(\Sigma = \Sigma_1 \times ... \times \Sigma_n\)</span> is the set of mixed action profiles.</p>
@@ -522,9 +549,165 @@ window.Quarto = {
 <p>A profile of mixed actions <span class="math inline">\(\sigma^* \in \Sigma\)</span> is a <strong>Nash Equilibrium</strong> if, for all <span class="math inline">\(i\)</span>, <span class="math display">\[\begin{aligned}
       \sigma_i^* \in B_i(\sigma_{-i}^*)
 \end{aligned}\]</span></p>
-
-
 </section>
+</section>
+<section id="ieda-and-ne-properties" class="level2">
+<h2 class="anchored" data-anchor-id="ieda-and-ne-properties">IEDA and NE: Properties</h2>
+<p>Iterated Elimination of Dominated Actions (IEDA) and the notion of Nash Equilibrium (NE) are two tools to analyze player strategies in games. Here are some propositions that can be useful in using these two tools.</p>
+<p><strong>Prop (1)</strong><br>
+Every pure strategy Nash Equilibrium <span class="math inline">\(s^* = (s_1^*, ..., s_n^*)\)</span> survives IEDA.</p>
+<p><strong>Prop (2)</strong><br>
+Suppose each <span class="math inline">\(S_i\)</span> is a finite set. If IEDA eliminates all but the strategy profile <span class="math inline">\(s^* = (s_1^*, ..., s_n^*)\)</span>, then <span class="math inline">\(s^*\)</span> is a pure strategy Nash Equilibrium (by Prop (1), the only pure strategy NE).</p>
+</section>
+<section id="example-cournots-duopoly-model" class="level2">
+<h2 class="anchored" data-anchor-id="example-cournots-duopoly-model">Example: Cournot’s Duopoly Model</h2>
+<p>The setting of this model:</p>
+<ul>
+<li>Firm 1 and 2 chooses output <span class="math inline">\(q_1\)</span> and <span class="math inline">\(q_2\)</span> simultaneously (normal-form game) and independently.<br>
+</li>
+<li>Market sets the price based on production level: <span class="math display">\[\begin{aligned}
+  P(q_1, q_2) &amp;= \max[0, 2 - (q_1 + q_2)]
+\end{aligned}\]</span></li>
+<li>When assuming unit production cost is 1, profits are:<br>
+<span class="math display">\[\begin{aligned}
+  \pi_i &amp;= q_i P(q_i, q_j) - q_i \\
+\end{aligned}\]</span></li>
+</ul>
+<p>We can first formally describe this game:</p>
+<ul>
+<li><span class="math inline">\(N = \{1,2\}\)</span> be the set of players;</li>
+<li><span class="math inline">\(S_i = \left[0, +\infty \right)\)</span> be the set of available strategies;</li>
+<li><span class="math inline">\(u_i = q_i (1 - q_i - q_j)\)</span> be the utility function representing preference relations.</li>
+</ul>
+<p>Although we can directly solve this using optimization, it is interesting to try out IEDA in a continuous strategy set.</p>
+<details>
+<summary>
+Click to Explore
+</summary>
+<p>Given the game setting, we would initially specify the first round of IEDA as:</p>
+<p><span class="math display">\[\begin{aligned}
+    S_1^1 = S_2^1 = [0, +\infty)
+\end{aligned}\]</span></p>
+<p>We want to find the upper bound of <span class="math inline">\(S_i\)</span> during the second round of IEDA. Let <span class="math inline">\(\overline{q}_i\)</span> be the upper bound after this round. We would have:</p>
+<p><span class="math display">\[\begin{aligned}
+     \forall k &gt; 0&amp;, \forall q_2 \in \left[0, +\infty \right) \\
+     u_1(\overline{q}_1, q_2) &amp;&gt; u_1(\overline{q}_1 + k, q_2)\\
+     \\
+    \implies \quad \overline{q}_1 (1 - \overline{q}_1 - q_2) &amp;&gt; (\overline{q}_1 + k) (1 - (\overline{q}_1 + k) - q_2) \\
+    \\
+    \implies \quad \overline{q}_1 &amp;&gt; \frac{1 - q_2 - k}{2} \\
+    &amp;\geq \frac{1 - 0 - 0}{2} = \frac{1}{2}
+\end{aligned}\]</span></p>
+<p>Similarly, <span class="math inline">\(\overline{q}_2 \geq 1/2\)</span>.</p>
+<p>Based on this derivation, I will show that in generic steps, the lower bound <span class="math inline">\(l^t\)</span> and upper bound <span class="math inline">\(h^t\)</span> will converges to the Nash equilibrium.</p>
+<p>Given <span class="math inline">\(0 \leq l^t &lt; 1/3 &lt; h^t \leq 1/2\)</span>. First, for upper bound <span class="math inline">\(h^t\)</span>: <span class="math display">\[\begin{aligned}
+     \forall k &gt; 0&amp;, \forall q_2 \in [l^t, h^t] \\
+     u_1(h, q_2) &amp;&gt; u_1(h + k, q_2)\\
+     \\
+    \implies \quad h (1 - h - q_2) &amp;&gt; (h + k) (1 - (h + k) - q_2) \\
+    \\
+    \implies \quad h &amp;&gt; \frac{1 - q_2 - k}{2} \\
+    &amp;\geq \frac{1 - l^t - 0}{2} = \frac{1 - l^t}{2}
+\end{aligned}\]</span></p>
+<p>For lower bound <span class="math inline">\(l^t\)</span>, given that <span class="math inline">\(h^t \leq \frac{1 - l^t}{2}\)</span>, <span class="math display">\[\begin{aligned}
+    \forall k &gt; 0&amp;, \forall q_2 \in [l^t, \frac{1 - l^t}{2}] \\
+    u_1(l, q_2) &amp;&gt; u_1(l - k, q_2)\\
+    \\
+    \implies \quad l (1 - l - q_2) &amp;&gt; (l - k) (1 - (l - k) - q_2) \\
+    \\
+    \implies \quad l &amp;&lt; \frac{1 - q_2 - k}{2} \\
+    &amp;\leq \frac{1 - \frac{1 - l^t}{2} - 0}{2} = \frac{1 + l^t}{4}
+\end{aligned}\]</span></p>
+<p>If <span class="math inline">\(l^t\)</span> converges to <span class="math inline">\(\overline{l}\)</span> when <span class="math inline">\(t \to + \infty\)</span>, then: <span class="math display">\[\begin{aligned}
+    &amp; \overline{l} = \frac{1 + \overline{l}}{4} \\
+    \implies \quad &amp; \overline{l} = \frac{1}{3}
+\end{aligned}\]</span></p>
+<p>If <span class="math inline">\(h^t\)</span> converges to <span class="math inline">\(\overline{h}\)</span> when <span class="math inline">\(t \to + \infty\)</span>, then we would have by substituting <span class="math inline">\(\overline{l} = 1/3\)</span>: <span class="math display">\[\begin{aligned}
+    &amp; \overline{h} = \frac{1 - 1/3}{2} \\
+    \implies \quad &amp; \overline{h} = \frac{1}{3}
+\end{aligned}\]</span></p>
+<p>This is similarly true for <span class="math inline">\(q_2\)</span>. Hence, this gives a Nash equilibrium of: <span class="math display">\[\begin{aligned}
+    q_1^* = q_2^* = 1/3
+\end{aligned}\]</span></p>
+</details>
+</section>
+<section id="example-all-pay-auctions" class="level2">
+<h2 class="anchored" data-anchor-id="example-all-pay-auctions">Example: All-Pay Auctions</h2>
+<p>In all-pay auctions, all bidders pay for its their own bid and the highest bidder wins. Let’s consider this example to see:</p>
+<ul>
+<li>it is strictly dominated that a person bids above its own valuation,</li>
+<li>there are no pure strategy Nash Equilibrium in this game,</li>
+<li>there exists one mixed strategy Nash Equilibrium in this game.</li>
+</ul>
+<p>Setting:</p>
+<ul>
+<li>Player A and player B enters the room with initial balance <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (<span class="math inline">\(a, b &gt; 100\)</span>);</li>
+<li>They are bidding over a one-hundred dollar bill;</li>
+<li>They only care about the amount of cash they will carry when they leave;</li>
+<li>Player A’s vNM utility function for <span class="math inline">\(x\)</span> dollars is <span class="math inline">\(u_A(x)\)</span>, player B’s vNM utility function for <span class="math inline">\(x\)</span> dollars is <span class="math inline">\(u_B(x)\)</span>. Both functions are strictly increasing and concave (<span class="math inline">\(u' &gt; 0, u'' &lt; 0\)</span>).</li>
+</ul>
+<details>
+<summary>
+Click to Explore
+</summary>
+<ol type="1">
+<li>Bidding over $100 is strictly dominated.</li>
+</ol>
+<p>I argue that bidding over ($100 bid $ <span class="math inline">\(100 + k\)</span> where <span class="math inline">\(k &gt; 0\)</span> is arbitrarily small) is strictly dominated by bidding $ 0 for both players. For Ann: <span class="math display">\[\begin{aligned}
+  x &amp;=
+  \begin{cases}
+  a, &amp; b_A = 0\\
+  a - k, &amp; b_A = 100 + k \text{ and A wins}\\
+  a - k - 100, &amp; b_A = 100 + k \text{ and A loses}\\
+  \end{cases}
+  \\
+  &amp; \quad a &gt; a - k &gt; a - 100 - k \quad \forall k &gt; 0 \\
+  u' &gt; 0 \implies &amp; u_A(a) &gt; u_A(a-k) &gt; u_A(a-100-k) \quad \forall k &gt; 0
+\end{aligned}\]</span> Similarly for Bob: <span class="math display">\[\begin{aligned}
+  u' &gt; 0 \implies &amp; u_B(b) &gt; u_B(b-k) &gt; B(b-100-k) \quad \forall k &gt; 0
+\end{aligned}\]</span></p>
+<ol start="2" type="1">
+<li>There are no pure strategy NE.</li>
+</ol>
+<p>I argue that there exists no pure Nash eqilibrium. Try that</p>
+<ul>
+<li><span class="math inline">\(0 &lt; b_A &lt; b_B \leq 100\)</span>. A has a profitable deviation of <span class="math inline">\(b_A' = b_B\)</span> to win the auction.</li>
+<li><span class="math inline">\(0 &lt; b_B \leq b_A \leq 100\)</span>. B has a profitable deviation of <span class="math inline">\(b_B' = 0\)</span> to minimize loss.</li>
+<li><span class="math inline">\(0 = b_A &lt; b_B \leq 100\)</span>. B has a profitable deviation of <span class="math inline">\(b_B' = 0\)</span> to minimize loss.</li>
+<li><span class="math inline">\(0 = b_B &lt; b_A \leq 100\)</span>. A has a profitable deviation of <span class="math inline">\(b_A' = 0\)</span> to win the auction at the lowest cost possible.</li>
+<li><span class="math inline">\(0 = b_B = b_A\)</span>. B has a profitable deviation of <span class="math inline">\(b_B' = b_A + \epsilon, \forall \epsilon &gt; 0\)</span> to win the action.</li>
+</ul>
+<ol start="3" type="1">
+<li>There exists a mixed strategy NE.</li>
+</ol>
+<p>I argue that (<span class="math inline">\(F(b_A), F(b_B)\)</span>), where <span class="math inline">\(F: \BB{R} \to [0,1]\)</span> is an uniform c.d.f. of both player, is the mixed Nash equilibrium.</p>
+<p>The distribution must be uniform throughout the support <span class="math inline">\([0, 100]\)</span> because the indifference condition requires that all bids yield the same expected utility, which is only satisfied when the probability of each bid in the range is spread evenly, ensuring no bid offers a higher or lower payoff than another.</p>
+<p>Since A has <span class="math inline">\(a\)</span> in her pocket already and she is indifferent in placing a bid <span class="math inline">\(b_A \in [0, 100]\)</span>, then she must has a <span class="math inline">\(a\)</span> of expected wealth level. Given that B is randomizing his actions with an uniform distribution <span class="math inline">\(b_B \sim U[0,100]\)</span>: <span class="math display">\[\begin{aligned}
+  U_A(b_A, F) &amp;= u_A(a - b_A) + u_A(100) \BB{P}\{b_B \leq b_A\}\\
+  &amp;= u_A(a - b_A) + u_A(100) F(b_A)
+\end{aligned}\]</span> We need: <span class="math display">\[\begin{aligned}
+  &amp; u_A(a - b_A) + u_A(100) F(b_A) = u_A(a) \\
+  \implies \quad &amp; F(b_A) = \frac{u_A(a) - u_A(a - b_A)}{u_A(100)}
+\end{aligned}\]</span> Hence: <span class="math display">\[\begin{aligned}
+  F(b_A) =
+  \begin{cases}
+      0 &amp;, b_A &lt; 0 \\
+      \frac{u_A(a) - u_A(a - b_A)}{u_A(100)} &amp;, 0 \leq b_A \leq 100 \\
+      1 &amp;, b_A &gt; 100
+  \end{cases}
+\end{aligned}\]</span></p>
+<p>Similarly for B: <span class="math display">\[\begin{aligned}
+  F(b_B) =
+  \begin{cases}
+      0 &amp;, b_B &lt; 0 \\
+      \frac{u_B(b) - u_B(b - b_B)}{u_B(100)} &amp;, 0 \leq b_B \leq 100 \\
+      1 &amp;, b_B &gt; 100
+  \end{cases}
+\end{aligned}\]</span></p>
+<p>Thus, <span class="math inline">\((F(b_A), F(b_B))\)</span> is a mixed strategy Nash Equilibrium.</p>
+</details>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
