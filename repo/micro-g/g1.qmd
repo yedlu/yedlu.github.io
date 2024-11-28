@@ -6,13 +6,21 @@ format:
     toc-location: left # Positions the navbar on the left
     toc-depth: 4 # Includes up to second-level headings in the TOC
 ---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
 
 *yedlu, Fall 2024*
 
 ## Game Theory: An Introduction
 Game theory can be defined as the study of mathematical models of conflict and cooperation between decision-makers who are
-- intelligent: players inside the game are aware of their situation just like the researchers studying the game
-- rational: maximizing some preference or utility functions
+
+- intelligent: players inside the game are aware of their situation just like the researchers studying the game  
+- rational: maximizing some preference or utility functions  
 
 It is the tool to model situations in which decision-makers interact and influence one another's welfare.
 
@@ -24,10 +32,10 @@ This is a model of interactive decision-making in which each decision-maker choo
 Three key components of normal-form games:
 
 - The finite set of players: $N = \{1, 2, ..., n\}$
-- For each player the nonempty set of actions: $S_i, \quad i \in N$
+- For each player the nonempty set of actions: $S_i$ with $i \in N$
 - For each player the preference relation $R_i$ on lotteries: $S = S_1 \times S_2 \times ... \times S_n$
 
-All players in normal-form games are expected utility maximizers. A notation for the game, i expected utility form, would be:
+All players in normal-form games are expected utility maximizers. A notation for the game, in expected utility form, would be:
 $$\begin{align}
     G = (N, (S_i: i \in N), (u_i: i \in N))
 \end{align}$$
@@ -42,6 +50,12 @@ Game theory cannot say about what the preference relation $R_i$ should be. Rathe
 
 
 ## Example: Ben Polak's Grading Game
+This game provides an example of how to understand the payoff matrix. It also shows how to spot strictly dominated strategies and why we should never play them in a normal-form game.
+
+
+<details>
+<summary>Click to Explore</summary>
+
 In standard notations, Ben Polak's Grading Game can be denoted as:
 
 - $N \ \{1,2\}$ be the set of players
@@ -87,7 +101,7 @@ $$\begin{aligned}
 | $\alpha$ | 1, 1 | 0, -1 |
 | $\beta$ | -1, 0 | 2, 2 |
 
-No strictly dominated actions exist in this case. However, it is inteeresting to notice that both ($\alpha, \alpha$) and ($\beta, \beta$) are locally optimal answers.
+No strictly dominated actions exist in this case. However, it is interesting to notice that both ($\alpha, \alpha$) and ($\beta, \beta$) are locally optimal answers.
 
 #### Selfish vs. Indignant Angel
 
@@ -104,20 +118,23 @@ $$\begin{aligned}
 
 Since our agents are intelligent, the column player knows that the row player is guaranteed to play $\alpha$. Conditioning on this information, the column player would also play $\alpha$.
 
-## Rule 1: Strictly Dominated Actions
+</details>
+
+## Strictly Dominated Actions
 In the normal-form game $G$, we say that action $s_i^{'} \in S_1$ is strictly dominated by action $s_i^{''} \in S_1$ if, for every $s_{-i} \in S_1 \times ... \times S_{i-1} \times S_{i+1} \times ... \times S_n$:
 $$\begin{aligned}
     u(s_i^{''}, s_{-i}) > u(s_i^{'}, s_{-i})
 \end{aligned}$$
 
-## Iterated Elimination of Dominated Actions (IEDA)
+### Iterated Elimination of Dominated Actions (IEDA)
 Intuition: eliminate dominated actions round-by-round until no actions dominates other actions.
 
 Formal definition: let rounds of elimination be $t = 1, 2, ..., T$.
 
 For every player $i$,
-- start with all actions $S_i^1 = S_i$
-- eliminate some actions at each round $S_i^1 \supset S_i^2 \supset ... \supset S_i^T$
+
+- start with all actions $S_i^1 = S_i$  
+- eliminate some actions at each round $S_i^1 \supset S_i^2 \supset ... \supset S_i^T$  
 
 Only strictly dominated actions are eliminated: if $s_i^{''} \in S_i^T \setminus S_i^{T+1}$ then $s_i^{''}$ is strictly dominated by some $s_i^{'} \in S_i^{T+1}$.
 
@@ -130,7 +147,7 @@ $$\begin{aligned}
     S_i = \{s_i^1, ..., s_i^k\}
 \end{aligned}$$
 
-A mixed action for player $i$ is a probability $\sigma_i: S_i \to [0,1]$ such that:
+A mixed action for player $i$ is a probability measure $\sigma_i: S_i \to [0,1]$ such that:
 $$\begin{aligned}
     \sigma_i(s_i^1) + \sigma_i(s_i^2) + ... + \sigma_i(s_i^k) = 1
 \end{aligned}$$
@@ -155,3 +172,196 @@ A profile of mixed actions $\sigma^* \in \Sigma$ is a **Nash Equilibrium** if, f
 $$\begin{aligned}
       \sigma_i^* \in B_i(\sigma_{-i}^*)
 \end{aligned}$$
+
+
+## IEDA and NE: Properties
+Iterated Elimination of Dominated Actions (IEDA) and the notion of Nash Equilibrium (NE) are two tools to analyze player strategies in games. Here are some propositions that can be useful in using these two tools.
+
+**Prop (1)**  
+Every pure strategy Nash Equilibrium $s^* = (s_1^*, ..., s_n^*)$ survives IEDA.
+
+
+**Prop (2)**  
+Suppose each $S_i$ is a finite set. If IEDA eliminates all but the strategy profile $s^* = (s_1^*, ..., s_n^*)$, then $s^*$ is a pure strategy Nash Equilibrium (by Prop (1), the only pure strategy NE).
+
+## Example: Cournot's Duopoly Model  
+The setting of this model:  
+
+- Firm 1 and 2 chooses output $q_1$ and $q_2$ simultaneously (normal-form game) and independently.  
+- Market sets the price based on production level:
+$$\begin{aligned}
+    P(q_1, q_2) &= \max[0, 2 - (q_1 + q_2)]
+\end{aligned}$$
+- When assuming unit production cost is 1, profits are:  
+$$\begin{aligned}
+    \pi_i &= q_i P(q_i, q_j) - q_i \\
+\end{aligned}$$
+
+We can first formally describe this game:  
+
+- $N = \{1,2\}$ be the set of players;
+- $S_i = \left[0, +\infty \right)$ be the set of available strategies;
+- $u_i = q_i (1 - q_i - q_j)$ be the utility function representing preference relations.
+
+
+Although we can directly solve this using optimization, it is interesting to try out IEDA in a continuous strategy set.
+
+<details>
+<summary>Click to Explore</summary>
+
+Given the game setting, we would initially specify the first round of IEDA as:
+
+
+$$\begin{aligned}
+    S_1^1 = S_2^1 = [0, +\infty)
+\end{aligned}$$
+
+
+
+We want to find the upper bound of $S_i$ during the second round of IEDA. Let $\overline{q}_i$ be the upper bound after this round. We would have:
+
+$$\begin{aligned}
+     \forall k > 0&, \forall q_2 \in \left[0, +\infty \right) \\
+     u_1(\overline{q}_1, q_2) &> u_1(\overline{q}_1 + k, q_2)\\
+     \\
+    \implies \quad \overline{q}_1 (1 - \overline{q}_1 - q_2) &> (\overline{q}_1 + k) (1 - (\overline{q}_1 + k) - q_2) \\
+    \\
+    \implies \quad \overline{q}_1 &> \frac{1 - q_2 - k}{2} \\
+    &\geq \frac{1 - 0 - 0}{2} = \frac{1}{2}
+\end{aligned}$$
+
+Similarly, $\overline{q}_2 \geq 1/2$.
+
+Based on this derivation, I will show that in generic steps, the lower bound $l^t$ and upper bound $h^t$ will converges to the Nash equilibrium.   
+
+Given $0 \leq l^t < 1/3 < h^t \leq 1/2$. First, for upper bound $h^t$:
+$$\begin{aligned}
+     \forall k > 0&, \forall q_2 \in [l^t, h^t] \\
+     u_1(h, q_2) &> u_1(h + k, q_2)\\
+     \\
+    \implies \quad h (1 - h - q_2) &> (h + k) (1 - (h + k) - q_2) \\
+    \\
+    \implies \quad h &> \frac{1 - q_2 - k}{2} \\
+    &\geq \frac{1 - l^t - 0}{2} = \frac{1 - l^t}{2}
+\end{aligned}$$
+
+For lower bound $l^t$, given that $h^t \leq \frac{1 - l^t}{2}$,
+$$\begin{aligned}
+    \forall k > 0&, \forall q_2 \in [l^t, \frac{1 - l^t}{2}] \\
+    u_1(l, q_2) &> u_1(l - k, q_2)\\
+    \\
+    \implies \quad l (1 - l - q_2) &> (l - k) (1 - (l - k) - q_2) \\
+    \\
+    \implies \quad l &< \frac{1 - q_2 - k}{2} \\
+    &\leq \frac{1 - \frac{1 - l^t}{2} - 0}{2} = \frac{1 + l^t}{4}
+\end{aligned}$$
+
+If $l^t$ converges to $\overline{l}$ when $t \to + \infty$, then:
+$$\begin{aligned}
+    & \overline{l} = \frac{1 + \overline{l}}{4} \\
+    \implies \quad & \overline{l} = \frac{1}{3}
+\end{aligned}$$
+
+If $h^t$ converges to $\overline{h}$ when $t \to + \infty$, then we would have by substituting $\overline{l} = 1/3$:
+$$\begin{aligned}
+    & \overline{h} = \frac{1 - 1/3}{2} \\
+    \implies \quad & \overline{h} = \frac{1}{3}
+\end{aligned}$$
+
+This is similarly true for $q_2$. Hence, this gives a Nash equilibrium of:
+$$\begin{aligned}
+    q_1^* = q_2^* = 1/3
+\end{aligned}$$
+
+</details>
+
+
+## Example: All-Pay Auctions
+
+In all-pay auctions, all bidders pay for its their own bid and the highest bidder wins. Let's consider this example to see:  
+
+- it is strictly dominated that a person bids above its own valuation,
+- there are no pure strategy Nash Equilibrium in this game,
+- there exists one mixed strategy Nash Equilibrium in this game.
+
+Setting:
+
+- Player A and player B enters the room with initial balance $a$ and $b$ ($a, b > 100$);
+- They are bidding over a one-hundred dollar bill;
+- They only care about the amount of cash they will carry when they leave;
+- Player A's vNM utility function for $x$ dollars is $u_A(x)$, player B's vNM utility function for $x$ dollars is $u_B(x)$. Both functions are strictly increasing and concave ($u' > 0, u'' < 0$).
+
+
+<details>
+<summary>Click to Explore</summary>
+1. Bidding over \$100 is strictly dominated.
+
+I argue that bidding over (\$100 bid \$ $100 + k$ where $k > 0$ is arbitrarily small) is strictly dominated by bidding \$ 0 for both players. For Ann:
+$$\begin{aligned}
+  x &= 
+  \begin{cases}
+  a, & b_A = 0\\
+  a - k, & b_A = 100 + k \text{ and A wins}\\
+  a - k - 100, & b_A = 100 + k \text{ and A loses}\\
+  \end{cases}
+  \\
+  & \quad a > a - k > a - 100 - k \quad \forall k > 0 \\
+  u' > 0 \implies & u_A(a) > u_A(a-k) > u_A(a-100-k) \quad \forall k > 0
+\end{aligned}$$
+Similarly for Bob:
+$$\begin{aligned}
+  u' > 0 \implies & u_B(b) > u_B(b-k) > B(b-100-k) \quad \forall k > 0
+\end{aligned}$$
+
+
+2. There are no pure strategy NE.  
+
+I argue that there exists no pure Nash eqilibrium. Try that
+
+- $0 < b_A < b_B \leq 100$. A has a profitable deviation of $b_A' = b_B$ to win the auction.
+- $0 < b_B \leq b_A \leq 100$. B has a profitable deviation of $b_B' = 0$ to minimize loss.
+- $0 = b_A < b_B \leq 100$. B has a profitable deviation of $b_B' = 0$ to minimize loss.
+- $0 = b_B < b_A \leq 100$. A has a profitable deviation of $b_A' = 0$ to win the auction at the lowest cost possible.
+- $0 = b_B = b_A$. B has a profitable deviation of $b_B' = b_A + \epsilon, \forall \epsilon > 0$ to win the action.
+
+
+3. There exists a mixed strategy NE.
+
+I argue that ($F(b_A), F(b_B)$), where $F: \BB{R} \to [0,1]$ is an uniform c.d.f. of both player, is the mixed Nash equilibrium. 
+
+The distribution must be uniform throughout the support $[0, 100]$ because the indifference condition requires that all bids yield the same expected utility, which is only satisfied when the probability of each bid in the range is spread evenly, ensuring no bid offers a higher or lower payoff than another.
+
+Since A has $a$ in her pocket already and she is indifferent in placing a bid $b_A \in [0, 100]$, then she must has a $a$ of expected wealth level. Given that B is randomizing his actions with an uniform distribution $b_B \sim U[0,100]$:
+$$\begin{aligned}
+  U_A(b_A, F) &= u_A(a - b_A) + u_A(100) \BB{P}\{b_B \leq b_A\}\\
+  &= u_A(a - b_A) + u_A(100) F(b_A)
+\end{aligned}$$
+We need:
+$$\begin{aligned}
+  & u_A(a - b_A) + u_A(100) F(b_A) = u_A(a) \\
+  \implies \quad & F(b_A) = \frac{u_A(a) - u_A(a - b_A)}{u_A(100)}
+\end{aligned}$$
+Hence:
+$$\begin{aligned}
+  F(b_A) = 
+  \begin{cases}
+      0 &, b_A < 0 \\
+      \frac{u_A(a) - u_A(a - b_A)}{u_A(100)} &, 0 \leq b_A \leq 100 \\
+      1 &, b_A > 100
+  \end{cases}
+\end{aligned}$$
+
+Similarly for B:
+$$\begin{aligned}
+  F(b_B) = 
+  \begin{cases}
+      0 &, b_B < 0 \\
+      \frac{u_B(b) - u_B(b - b_B)}{u_B(100)} &, 0 \leq b_B \leq 100 \\
+      1 &, b_B > 100
+  \end{cases}
+\end{aligned}$$
+
+Thus, $(F(b_A), F(b_B))$ is a mixed strategy Nash Equilibrium.
+
+
+</details>
