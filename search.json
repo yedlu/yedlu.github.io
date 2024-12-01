@@ -40,9 +40,61 @@
   {
     "objectID": "repo/micro-g/g2.html",
     "href": "repo/micro-g/g2.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Extensive-Form Games",
     "section": "",
-    "text": "Back to top",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024\nNormal-form games are one of the more simple form of games to study. One of the stringent assumption we’re going to relax now is that players simultaneously choose their actions; rather, now players take turns. We will dive into this concept deeper with an example.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Extensive-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g2.html#the-extensive-form-game",
+    "href": "repo/micro-g/g2.html#the-extensive-form-game",
+    "title": "Extensive-Form Games",
+    "section": "The Extensive-Form Game",
+    "text": "The Extensive-Form Game\n\nNotation\nThe game:\n\\[\\begin{aligned}\n  \\Gamma = (N, H, P, (u_i))\n\\end{aligned}\\]\nhas\n\nplayers \\(N = \\{1, ..., n\\}\\).\nset of histories \\(H = \\{\\emptyset, ...\\}\\). \\(Z \\subsetneq H\\) is the set of terminal histories, which are not proper subsequenses of any other history. The game ends at \\(z_j \\in Z\\).\nplayer function \\(P: H \\setminus Z \\to N\\) which decides who moves at this history node conditioning on this specific history.\npreference with a utility function \\(u_i: Z \\to \\BB{R}\\) representing it.\n\nIntuition: now there’s a set \\(H\\) that serves as a memory. The function \\(P\\) sees the current history of the game (what happened in the past) and dictates one of the players that now it’s their turn. The game alternates between players in \\(N\\) and ends when it reaches one of the terminal nodes \\(z \\in Z\\).\n\n\nStrategy Profile\nStrategy profiles in extensive-form games must be a full-contingent plan. In other words, \\(\\sigma_i(h) \\neq \\emptyset\\) as long as \\(P(h) = i\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Extensive-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g2.html#subgame-perfect-nash-equilibrium-spne",
+    "href": "repo/micro-g/g2.html#subgame-perfect-nash-equilibrium-spne",
+    "title": "Extensive-Form Games",
+    "section": "Subgame Perfect Nash Equilibrium (SPNE)",
+    "text": "Subgame Perfect Nash Equilibrium (SPNE)\nWe will see in a later example that a Nash Equilibrium is not always optimal if we zoom in to a subgame.\n\nSubgames\nDefinition\nA subgame starting at a non-terminal history \\(h \\in H\\) of an extensive-form game of perfect information is another game which:\n\nhas same set of players \\(N\\);\nincludes every history \\(h'\\) such that \\((h, h')\\) is a history of the original game;\nplayer function and preferences are “imported” fro the original game.\n\nConsider we truncate the full game tree at one particular node. The new game tree (prune) is a proper subgame.\n\n\nSubgame Perfect NE\nDefinition\nAn NE of an extensive-form game of perfect information is a subgame-perfect Nash Equilibrium if it induces a NE in every one of its subgames.\n\n\nHow to find SPNE?\nWe can use backward induction to find subgame perfect Nash Equilibrium (SPNE). The general algorithms can be written as:\n\nstart with the smallest possible subgame (length \\(l = k\\) where \\(k = 1\\)) and best-respond them,\nmove to subgames with length \\(l = k + 1\\), and best-respond them conditioning on actions chosen when length \\(l = k\\),\nrepeat and end till the initial node is reached.\n\n\n\nProperties of SPNE Solution\nClaim\nEvery backward induction solution is a Nash Equilibrium.\nIntuition: SPNE \\(\\subset\\) NE.\nProposition\nA pure strategy profile is subgame perfect NE i.i.f. it is a backward induction solution.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Extensive-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g2.html#example-bach-or-stravinsky-in-extensive-form",
+    "href": "repo/micro-g/g2.html#example-bach-or-stravinsky-in-extensive-form",
+    "title": "Extensive-Form Games",
+    "section": "Example: Bach or Stravinsky in Extensive Form",
+    "text": "Example: Bach or Stravinsky in Extensive Form\nThis game has\n\nplayers \\(N = \\{1, 2\\}\\).\nset of histories \\(H = \\{\\emptyset, (B), (S), (B, b), (B, s), (S, b'), (S, s')\\}\\)\nplayer function:\n\n\\(P(\\emptyset) = 1\\)\n\\(P(B) = P(S) = 1\\)\n\na Bernoulli utility function representing utility.\n\nWe would have the following payoff matrix. First we attempt to find all pure strategy NE (bold).\n\n\n\n\nbb’\nbs’\nsb’\nss’\n\n\n\n\nB\n2,1\n2,1\n0,0\n0,0\n\n\nS\n0,0\n1,2\n0,0\n1,2\n\n\n\nHowever, after the notion of subgame perfection, we will try to solve the game with one subgame-perfect Nash Equilibrium.\n\n\nClick to Explore\n\nStarting from subgames with length \\(l = 1\\) and let player 2 best-responds to them:\n\\[\\begin{aligned}\n  \\BB{E}[u_2(b \\mid B)] &= 1 &gt; \\BB{E}[u_2(s \\mid B)] = 0 \\\\\n  \\implies B_2(B) &= b \\\\\n  \\\\\n  \\BB{E}[u_2(s' \\mid S)] &= 2 &gt; \\BB{E}[u_2(b' \\mid S)] = 0 \\\\\n  \\implies B_2(S) &= s'\n\\end{aligned}\\]\nConditioning on this information, player 1 best-responds:\n\\[\\begin{aligned}\n   \\BB{E}[u_1(B \\mid B_2(S_1))] &= 2 \\\\\n   &gt; \\BB{E}[u_1(S \\mid B_2(S_1))] &= 1 \\\\\n  \\implies B_1(\\emptyset) &= B\n\\end{aligned}\\]\nHence, the subgame-perfect Nash Equilibrium (and the only SPNE) is:\n\\[\\begin{aligned}\n   (\\sigma_1 = B, (\\sigma_2(B) = b, \\sigma_2(S) = s'))\n\\end{aligned}\\]\nRemember that a strategy is a full-contingent plan: there must be a suggested action \\(\\sigma_i(h)\\) for every possible history that requires player \\(i\\) to make choices.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Extensive-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g2.html#example-cournots-duopoly-in-extensive-form-stackelberg-duopoly",
+    "href": "repo/micro-g/g2.html#example-cournots-duopoly-in-extensive-form-stackelberg-duopoly",
+    "title": "Extensive-Form Games",
+    "section": "Example: Cournot’s Duopoly in Extensive Form (Stackelberg Duopoly)",
+    "text": "Example: Cournot’s Duopoly in Extensive Form (Stackelberg Duopoly)\nNow, instead of two firms simultaneously choose the production level, we arbitrarily let firm 1 chooses first. After firm 2 observes their counterpart’s decision, they will best-response.\nWe will try to find a subgame-perfect NE (SPNE) using backward induction.\n\n\nClick to Explore\n\nFor the sake of simplicity we first assume that \\(q_i \\leq 1\\) for all \\(i\\).\nStarting from the subgame with length \\(l = 1\\) and let firm 2 best-responds:\n\\[\\begin{aligned}\n  u_2 &= q_2 (1 - q_1 - q_2)\n\\end{aligned}\\]\nFirst-Order Condition (FOC) gives that:\n\\[\\begin{aligned}\n  1 - q_1 - 2 q_2^* &= 0 \\\\\n  B_2(q_1) = q_2^* &= \\frac{1 - q_1}{2}\n\\end{aligned}\\]\nThen player 1 is aware of this information and best-responds:\n\\[\\begin{aligned}\n  u_1 &= q_1 (1 - q_1 - q_2) \\\\\n  &= q_1 (1 - q_1 - \\frac{1 - q_1}{2}) \\\\\n  &= \\frac{q_1 (1-q_1)}{2}\n\\end{aligned}\\]\nFirst-Order Condition (FOC) gives that:\n\\[\\begin{aligned}\n  \\frac{1}{2} - q_1^* &= 0 \\\\\n  B_1(q_2) = q_1^* &= \\frac{1}{2}\n\\end{aligned}\\]\nThe subgame-perfect Nash Equilibrium for this game is then:\n\\[\\begin{aligned}\n  (q_1 = \\frac{1}{2}, q_2 = \\frac{1}{4})\n\\end{aligned}\\]",
     "crumbs": [
       "me",
       "Repository",
@@ -289,7 +341,7 @@
     "href": "repo/micro-g/g1.html",
     "title": "Normal-Form Games",
     "section": "",
-    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Fall 2024",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024",
     "crumbs": [
       "me",
       "Repository",

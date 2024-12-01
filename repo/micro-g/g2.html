@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>g2 – Yanhe Eddie Lu</title>
+<title>Extensive-Form Games – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -233,20 +262,224 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-extensive-form-game" id="toc-the-extensive-form-game" class="nav-link active" data-scroll-target="#the-extensive-form-game">The Extensive-Form Game</a>
+  <ul>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#strategy-profile" id="toc-strategy-profile" class="nav-link" data-scroll-target="#strategy-profile">Strategy Profile</a></li>
+  </ul></li>
+  <li><a href="#subgame-perfect-nash-equilibrium-spne" id="toc-subgame-perfect-nash-equilibrium-spne" class="nav-link" data-scroll-target="#subgame-perfect-nash-equilibrium-spne">Subgame Perfect Nash Equilibrium (SPNE)</a>
+  <ul>
+  <li><a href="#subgames" id="toc-subgames" class="nav-link" data-scroll-target="#subgames">Subgames</a></li>
+  <li><a href="#subgame-perfect-ne" id="toc-subgame-perfect-ne" class="nav-link" data-scroll-target="#subgame-perfect-ne">Subgame Perfect NE</a></li>
+  <li><a href="#how-to-find-spne" id="toc-how-to-find-spne" class="nav-link" data-scroll-target="#how-to-find-spne">How to find SPNE?</a></li>
+  <li><a href="#properties-of-spne-solution" id="toc-properties-of-spne-solution" class="nav-link" data-scroll-target="#properties-of-spne-solution">Properties of SPNE Solution</a></li>
+  </ul></li>
+  <li><a href="#example-bach-or-stravinsky-in-extensive-form" id="toc-example-bach-or-stravinsky-in-extensive-form" class="nav-link" data-scroll-target="#example-bach-or-stravinsky-in-extensive-form">Example: Bach or Stravinsky in Extensive Form</a></li>
+  <li><a href="#example-cournots-duopoly-in-extensive-form-stackelberg-duopoly" id="toc-example-cournots-duopoly-in-extensive-form-stackelberg-duopoly" class="nav-link" data-scroll-target="#example-cournots-duopoly-in-extensive-form-stackelberg-duopoly">Example: Cournot’s Duopoly in Extensive Form (Stackelberg Duopoly)</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/g2.html">Extensive-Form Games</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/g2.html">Extensive-Form Games</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Extensive-Form Games</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<div class="hidden">
+<p><span class="math display">\[
+\def\BB#1{{\mathbb{#1}}}
+\def\BF#1{{\mathbf{#1}}}
+\]</span></p>
+</div>
+<p><em>yedlu, Winter 2024</em></p>
+<p>Normal-form games are one of the more simple form of games to study. One of the stringent assumption we’re going to relax now is that players <strong>simultaneously</strong> choose their actions; rather, now players take turns. We will dive into this concept deeper with an example.</p>
+<section id="the-extensive-form-game" class="level2">
+<h2 class="anchored" data-anchor-id="the-extensive-form-game">The Extensive-Form Game</h2>
+<section id="notation" class="level3">
+<h3 class="anchored" data-anchor-id="notation">Notation</h3>
+<p>The game:</p>
+<p><span class="math display">\[\begin{aligned}
+  \Gamma = (N, H, P, (u_i))
+\end{aligned}\]</span></p>
+<p>has</p>
+<ul>
+<li>players <span class="math inline">\(N = \{1, ..., n\}\)</span>.</li>
+<li>set of histories <span class="math inline">\(H = \{\emptyset, ...\}\)</span>. <span class="math inline">\(Z \subsetneq H\)</span> is the set of terminal histories, which are not proper subsequenses of any other history. The game ends at <span class="math inline">\(z_j \in Z\)</span>.</li>
+<li>player function <span class="math inline">\(P: H \setminus Z \to N\)</span> which decides who moves at this history node conditioning on this specific history.</li>
+<li>preference with a utility function <span class="math inline">\(u_i: Z \to \BB{R}\)</span> representing it.</li>
+</ul>
+<p>Intuition: now there’s a set <span class="math inline">\(H\)</span> that serves as a memory. The function <span class="math inline">\(P\)</span> sees the current history of the game (what happened in the past) and dictates one of the players that now it’s their turn. The game alternates between players in <span class="math inline">\(N\)</span> and ends when it reaches one of the terminal nodes <span class="math inline">\(z \in Z\)</span>.</p>
+</section>
+<section id="strategy-profile" class="level3">
+<h3 class="anchored" data-anchor-id="strategy-profile">Strategy Profile</h3>
+<p>Strategy profiles in extensive-form games must be a <strong>full-contingent</strong> plan. In other words, <span class="math inline">\(\sigma_i(h) \neq \emptyset\)</span> as long as <span class="math inline">\(P(h) = i\)</span>.</p>
+</section>
+</section>
+<section id="subgame-perfect-nash-equilibrium-spne" class="level2">
+<h2 class="anchored" data-anchor-id="subgame-perfect-nash-equilibrium-spne">Subgame Perfect Nash Equilibrium (SPNE)</h2>
+<p>We will see in a later example that a Nash Equilibrium is not always optimal if we zoom in to a <strong>subgame</strong>.</p>
+<section id="subgames" class="level3">
+<h3 class="anchored" data-anchor-id="subgames">Subgames</h3>
+<p><strong>Definition</strong><br>
+A subgame starting at a non-terminal history <span class="math inline">\(h \in H\)</span> of an extensive-form game of perfect information is another game which:</p>
+<ul>
+<li>has same set of players <span class="math inline">\(N\)</span>;</li>
+<li>includes every history <span class="math inline">\(h'\)</span> such that <span class="math inline">\((h, h')\)</span> is a history of the original game;</li>
+<li>player function and preferences are “imported” fro the original game.</li>
+</ul>
+<p>Consider we truncate the full game tree at one particular node. The new game tree (prune) is a proper subgame.</p>
+</section>
+<section id="subgame-perfect-ne" class="level3">
+<h3 class="anchored" data-anchor-id="subgame-perfect-ne">Subgame Perfect NE</h3>
+<p><strong>Definition</strong><br>
+An NE of an extensive-form game of perfect information is a <strong><em>subgame-perfect Nash Equilibrium</em></strong> if it induces a NE in <strong>every one of its subgames</strong>.</p>
+</section>
+<section id="how-to-find-spne" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-find-spne">How to find SPNE?</h3>
+<p>We can use backward induction to find subgame perfect Nash Equilibrium (SPNE). The general algorithms can be written as:</p>
+<ul>
+<li>start with the smallest possible subgame (length <span class="math inline">\(l = k\)</span> where <span class="math inline">\(k = 1\)</span>) and best-respond them,</li>
+<li>move to subgames with length <span class="math inline">\(l = k + 1\)</span>, and best-respond them <strong>conditioning on actions chosen when length <span class="math inline">\(l = k\)</span></strong>,</li>
+<li>repeat and end till the initial node is reached.</li>
+</ul>
+</section>
+<section id="properties-of-spne-solution" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-spne-solution">Properties of SPNE Solution</h3>
+<p><strong>Claim</strong><br>
+Every backward induction solution is a Nash Equilibrium.<br>
+Intuition: SPNE <span class="math inline">\(\subset\)</span> NE.</p>
+<p><strong>Proposition</strong><br>
+A pure strategy profile is subgame perfect NE i.i.f. it is a backward induction solution.</p>
+</section>
+</section>
+<section id="example-bach-or-stravinsky-in-extensive-form" class="level2">
+<h2 class="anchored" data-anchor-id="example-bach-or-stravinsky-in-extensive-form">Example: Bach or Stravinsky in Extensive Form</h2>
+<p>This game has</p>
+<ul>
+<li>players <span class="math inline">\(N = \{1, 2\}\)</span>.</li>
+<li>set of histories <span class="math inline">\(H = \{\emptyset, (B), (S), (B, b), (B, s), (S, b'), (S, s')\}\)</span></li>
+<li>player function:
+<ul>
+<li><span class="math inline">\(P(\emptyset) = 1\)</span></li>
+<li><span class="math inline">\(P(B) = P(S) = 1\)</span></li>
+</ul></li>
+<li>a Bernoulli utility function representing utility.</li>
+</ul>
+<p>We would have the following payoff matrix. First we attempt to find all pure strategy NE (bold).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>bb’</th>
+<th>bs’</th>
+<th>sb’</th>
+<th>ss’</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B</td>
+<td><strong>2,1</strong></td>
+<td><strong>2,1</strong></td>
+<td>0,0</td>
+<td>0,0</td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td>0,0</td>
+<td><strong>1,2</strong></td>
+<td>0,0</td>
+<td><strong>1,2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>However, after the notion of subgame perfection, we will try to solve the game with one subgame-perfect Nash Equilibrium.</p>
+<details>
+<summary>
+Click to Explore
+</summary>
+<p>Starting from subgames with length <span class="math inline">\(l = 1\)</span> and let player 2 best-responds to them:</p>
+<p><span class="math display">\[\begin{aligned}
+  \BB{E}[u_2(b \mid B)] &amp;= 1 &gt; \BB{E}[u_2(s \mid B)] = 0 \\
+  \implies B_2(B) &amp;= b \\
+  \\
+  \BB{E}[u_2(s' \mid S)] &amp;= 2 &gt; \BB{E}[u_2(b' \mid S)] = 0 \\
+  \implies B_2(S) &amp;= s'
+\end{aligned}\]</span></p>
+<p>Conditioning on this information, player 1 best-responds:</p>
+<p><span class="math display">\[\begin{aligned}
+   \BB{E}[u_1(B \mid B_2(S_1))] &amp;= 2 \\
+   &gt; \BB{E}[u_1(S \mid B_2(S_1))] &amp;= 1 \\
+  \implies B_1(\emptyset) &amp;= B
+\end{aligned}\]</span></p>
+<p>Hence, the subgame-perfect Nash Equilibrium (and the only SPNE) is:<br>
+<span class="math display">\[\begin{aligned}
+   (\sigma_1 = B, (\sigma_2(B) = b, \sigma_2(S) = s'))
+\end{aligned}\]</span></p>
+<p>Remember that a strategy is a <strong>full-contingent plan</strong>: there must be a suggested action <span class="math inline">\(\sigma_i(h)\)</span> for every possible history that requires player <span class="math inline">\(i\)</span> to make choices.</p>
+</details>
+</section>
+<section id="example-cournots-duopoly-in-extensive-form-stackelberg-duopoly" class="level2">
+<h2 class="anchored" data-anchor-id="example-cournots-duopoly-in-extensive-form-stackelberg-duopoly">Example: Cournot’s Duopoly in Extensive Form (Stackelberg Duopoly)</h2>
+<p>Now, instead of two firms simultaneously choose the production level, we arbitrarily let firm 1 chooses first. After firm 2 observes their counterpart’s decision, they will best-response.</p>
+<p>We will try to find a subgame-perfect NE (SPNE) using backward induction.</p>
+<details>
+<summary>
+Click to Explore
+</summary>
+<p>For the sake of simplicity we first assume that <span class="math inline">\(q_i \leq 1\)</span> for all <span class="math inline">\(i\)</span>.</p>
+<p>Starting from the subgame with length <span class="math inline">\(l = 1\)</span> and let firm 2 best-responds:</p>
+<p><span class="math display">\[\begin{aligned}
+  u_2 &amp;= q_2 (1 - q_1 - q_2)
+\end{aligned}\]</span></p>
+<p>First-Order Condition (FOC) gives that:</p>
+<p><span class="math display">\[\begin{aligned}
+  1 - q_1 - 2 q_2^* &amp;= 0 \\
+  B_2(q_1) = q_2^* &amp;= \frac{1 - q_1}{2}
+\end{aligned}\]</span></p>
+<p>Then player 1 is aware of this information and best-responds:</p>
+<p><span class="math display">\[\begin{aligned}
+  u_1 &amp;= q_1 (1 - q_1 - q_2) \\
+  &amp;= q_1 (1 - q_1 - \frac{1 - q_1}{2}) \\
+  &amp;= \frac{q_1 (1-q_1)}{2}
+\end{aligned}\]</span></p>
+<p>First-Order Condition (FOC) gives that:</p>
+<p><span class="math display">\[\begin{aligned}
+  \frac{1}{2} - q_1^* &amp;= 0 \\
+  B_1(q_2) = q_1^* &amp;= \frac{1}{2}
+\end{aligned}\]</span></p>
+<p>The subgame-perfect Nash Equilibrium for this game is then:</p>
+<p><span class="math display">\[\begin{aligned}
+  (q_1 = \frac{1}{2}, q_2 = \frac{1}{4})
+\end{aligned}\]</span></p>
+</details>
+
+
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
