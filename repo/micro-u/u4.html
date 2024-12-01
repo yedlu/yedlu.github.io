@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>u4 – Yanhe Eddie Lu</title>
+<title>Risk Aversion - Expected Utility over Money – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -233,20 +262,158 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#notations" id="toc-notations" class="nav-link active" data-scroll-target="#notations">Notations</a></li>
+  <li><a href="#evaluating-lotteries" id="toc-evaluating-lotteries" class="nav-link" data-scroll-target="#evaluating-lotteries">Evaluating Lotteries</a>
+  <ul>
+  <li><a href="#first-order-stochastic-dominance-fosd" id="toc-first-order-stochastic-dominance-fosd" class="nav-link" data-scroll-target="#first-order-stochastic-dominance-fosd">First-Order Stochastic Dominance (FOSD)</a></li>
+  <li><a href="#simple-improvements" id="toc-simple-improvements" class="nav-link" data-scroll-target="#simple-improvements">Simple Improvements</a></li>
+  </ul></li>
+  <li><a href="#monotine-vnm-preferences" id="toc-monotine-vnm-preferences" class="nav-link" data-scroll-target="#monotine-vnm-preferences">Monotine vNM Preferences</a></li>
+  <li><a href="#certainty-equivalent" id="toc-certainty-equivalent" class="nav-link" data-scroll-target="#certainty-equivalent">Certainty Equivalent</a></li>
+  <li><a href="#risk-aversion" id="toc-risk-aversion" class="nav-link" data-scroll-target="#risk-aversion">Risk Aversion</a>
+  <ul>
+  <li><a href="#risk-averse-preferences" id="toc-risk-averse-preferences" class="nav-link" data-scroll-target="#risk-averse-preferences">Risk Averse Preferences</a></li>
+  <li><a href="#simple-mean-preserving-spread" id="toc-simple-mean-preserving-spread" class="nav-link" data-scroll-target="#simple-mean-preserving-spread">Simple Mean Preserving Spread</a></li>
+  <li><a href="#risk-aversion-theorems" id="toc-risk-aversion-theorems" class="nav-link" data-scroll-target="#risk-aversion-theorems">Risk Aversion Theorems</a></li>
+  <li><a href="#levels-of-risk-aversion" id="toc-levels-of-risk-aversion" class="nav-link" data-scroll-target="#levels-of-risk-aversion">Levels of Risk Aversion</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/u4.html">Risk Aversion</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/u4.html">Risk Aversion</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Risk Aversion - Expected Utility over Money</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p><em>yedlu, Fall 2024</em></p>
+<section id="notations" class="level2">
+<h2 class="anchored" data-anchor-id="notations">Notations</h2>
+<ul>
+<li><span class="math inline">\(I = [\underline{m}, \overline{m}]\)</span> be the interval of monetary prizes in <span class="math inline">\(\mathbb{R}\)</span>. Consider this as a continuous set of consequences.</li>
+<li><span class="math inline">\(p: I \to [0,1]\)</span> be the simple lottery with finite support.
+<ul>
+<li><span class="math inline">\(\{m \in I: p(m) &gt; 0\}\)</span>: only possible finite monetary prizes are considered.</li>
+</ul></li>
+<li><span class="math inline">\(\mathcal{L}\)</span> be the set of simple lotteries over <span class="math inline">\(I\)</span>.
+<ul>
+<li>The preference relation on monetary simple lotteries is defined as <span class="math inline">\(\succsim \subseteq \mathcal{L} \times \mathcal{L}\)</span> such that <span class="math inline">\(p \succsim q \Leftrightarrow (p,q) \in \succsim \,\, \Leftrightarrow U(p) &gt; U(q)\)</span>.</li>
+</ul></li>
+<li>vNM preferences on <span class="math inline">\(\mathcal{L}\)</span> are represented by an expected utility formed function:</li>
+</ul>
+<p><span class="math display">\[U(p) = \sum_{m \in I} u(m) p(m)\]</span></p>
+</section>
+<section id="evaluating-lotteries" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-lotteries">Evaluating Lotteries</h2>
+<section id="first-order-stochastic-dominance-fosd" class="level3">
+<h3 class="anchored" data-anchor-id="first-order-stochastic-dominance-fosd">First-Order Stochastic Dominance (FOSD)</h3>
+<p>Settings: <span class="math inline">\(F_p\)</span> is the cumulative probability distribution function (cdf) of lottery <span class="math inline">\(p\)</span>.<br>
+<span class="math inline">\(F_p(m) = \sum_{\alpha \leq m} p(\alpha)\)</span> is the probability that one can receive a monetary prize less than equal to <span class="math inline">\(m\)</span>.</p>
+<p><strong>Definition</strong><br>
+Lottery <span class="math inline">\(p\)</span> <strong>first-order stochastically dominates</strong> lottery <span class="math inline">\(q\)</span> if</p>
+<ul>
+<li><span class="math inline">\(p \neq q\)</span>;</li>
+<li><span class="math inline">\(F_p(m) \leq F_q(m)\)</span> for all <span class="math inline">\(m \in \mathbb{R}\)</span>.</li>
+</ul>
+<p>Intuition: lottery <span class="math inline">\(p\)</span> have a lower chance receiving prizes lower than <span class="math inline">\(m\)</span> compare to lottery <span class="math inline">\(q\)</span>. This implies that lottery <span class="math inline">\(p\)</span> have a higher chance receiving prizes higher than <span class="math inline">\(m\)</span> compare to lottery <span class="math inline">\(q\)</span>.</p>
+</section>
+<section id="simple-improvements" class="level3">
+<h3 class="anchored" data-anchor-id="simple-improvements">Simple Improvements</h3>
+<p>Lottery <span class="math inline">\(p\)</span> is a simple improvement over lottery <span class="math inline">\(q\)</span> if</p>
+<ul>
+<li>there exists <span class="math inline">\(\alpha \in (0,1]\)</span>;</li>
+<li><span class="math inline">\(m &gt; m'\)</span>;</li>
+<li>there exists <span class="math inline">\(r \in \mathcal{L}\)</span></li>
+</ul>
+<p>such that<br>
+<span class="math display">\[\begin{aligned}
+      p &amp;= \alpha \delta_m + (1-\alpha) r \\
+      q &amp;= \alpha \delta_{m'} + (1-\alpha) r \\
+\end{aligned}\]</span></p>
+<p>Intuition: we can consider both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> as a mixture of a certain outcome monetary prize (<span class="math inline">\(m\)</span> and <span class="math inline">\(m'\)</span>), and a generic lottery <span class="math inline">\(r\)</span>.<br>
+This is a <strong>special case</strong> of first-order stochastic dominance.</p>
+<p>Utility representation:</p>
+<p><span class="math display">\[\begin{aligned}
+      U(p) = \alpha u(m) + (1-\alpha) u(r)p(r) &gt; \alpha u(m') + (1-\alpha) u(r)p(r) = U(q)
+\end{aligned}\]</span></p>
+</section>
+</section>
+<section id="monotine-vnm-preferences" class="level2">
+<h2 class="anchored" data-anchor-id="monotine-vnm-preferences">Monotine vNM Preferences</h2>
+<p>Let <span class="math inline">\(\succsim \subseteq \mathcal{L} \times \mathcal{L}\)</span> be a vNM prefernce. The following conditions are equivalent:</p>
+<ol type="1">
+<li>If <span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q\)</span>, then <span class="math inline">\(p \succ q\)</span>.</li>
+<li>If <span class="math inline">\(p\)</span> is a simple improvement over <span class="math inline">\(q\)</span>, then <span class="math inline">\(p \succ q\)</span>.</li>
+<li>Every linear <span class="math inline">\(U: \mathcal{L} \to \mathbb{R}\)</span> representing <span class="math inline">\(\succsim\)</span> has a strictly increasing Bernoulli index u.</li>
+</ol>
+<p>When <span class="math inline">\(\succsim\)</span> satisfies three conditions above, we call it a monotone vNM preference.</p>
+</section>
+<section id="certainty-equivalent" class="level2">
+<h2 class="anchored" data-anchor-id="certainty-equivalent">Certainty Equivalent</h2>
+<p>Let <span class="math inline">\(\succsim \subseteq \mathcal{L} \times \mathcal{L}\)</span> be a vNM prefernce represented by an expected utility function with a continuous index <span class="math inline">\(u: I \to \mathbb{R}\)</span>. Then <span class="math inline">\(C: \mathcal{L} \to \mathbb{R}\)</span> given by <span class="math inline">\(\delta_{C(p)} \sim p\)</span> is a well-defined function. <span class="math inline">\(C(p)\)</span> is the certainty equivalent of lottery <span class="math inline">\(p\)</span>.</p>
+</section>
+<section id="risk-aversion" class="level2">
+<h2 class="anchored" data-anchor-id="risk-aversion">Risk Aversion</h2>
+<section id="risk-averse-preferences" class="level3">
+<h3 class="anchored" data-anchor-id="risk-averse-preferences">Risk Averse Preferences</h3>
+<p>Let <span class="math inline">\(\overline{p} = \sum_{x \in I} p(x) x\)</span> be the expected payoff of lottery. The preference <span class="math inline">\(\succsim\)</span> is risk averse when <span class="math inline">\(\delta_{\overline{p}} \succsim p\)</span>.</p>
+</section>
+<section id="simple-mean-preserving-spread" class="level3">
+<h3 class="anchored" data-anchor-id="simple-mean-preserving-spread">Simple Mean Preserving Spread</h3>
+<p><span class="math inline">\(q\)</span> is a simple mean preserving spread of <span class="math inline">\(p\)</span> when for some <span class="math inline">\(\alpha \in (0,1]\)</span>, some <span class="math inline">\(r, r' \in \mathcal{L}\)</span> and <span class="math inline">\(\overline{r'} = m\)</span>.</p>
+<p><span class="math display">\[\begin{aligned}
+      p &amp; = \alpha \delta_{m} + (1-\alpha) r \\
+      q &amp; = \alpha r' + (1-\alpha) r
+\end{aligned}\]</span></p>
+<p>Intuition: <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> yields the same expected payoff, but <span class="math inline">\(q\)</span> has higher variance than of <span class="math inline">\(p\)</span>.</p>
+</section>
+<section id="risk-aversion-theorems" class="level3">
+<h3 class="anchored" data-anchor-id="risk-aversion-theorems">Risk Aversion Theorems</h3>
+<p>Let <span class="math inline">\(\succsim\)</span> be a monotone vNM preference. The following are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(\succsim\)</span> is risk averse;</li>
+<li>If <span class="math inline">\(q\)</span> is a mean preserving spread over <span class="math inline">\(p\)</span> then <span class="math inline">\(p \succ q\)</span>;</li>
+<li>Every linear <span class="math inline">\(U: \mathcal{L} \to \mathbb{R}\)</span> representing <span class="math inline">\(\succsim\)</span> has a <strong>concave</strong> Bernoulli function.</li>
+</ol>
+<p>If <span class="math inline">\(u\)</span> is a concave bernoulli function, we would have:</p>
+<p><span class="math display">\[1/2 u(a) + 1/2 u (b) \leq u(a/2 + b/2)\]</span></p>
+</section>
+<section id="levels-of-risk-aversion" class="level3">
+<h3 class="anchored" data-anchor-id="levels-of-risk-aversion">Levels of Risk Aversion</h3>
+<p><span class="math inline">\(\succsim\)</span> is <strong>more risk averse</strong> than <span class="math inline">\(\succsim'\)</span> when <span class="math inline">\(\delta_m \succsim' p\)</span> implies <span class="math inline">\(\delta_m \succsim p\)</span>.</p>
+<p>Suppose <span class="math inline">\(u, v\)</span> are continuous Bernoulli indices for monotone vNM preferences <span class="math inline">\(\succsim\)</span> and <span class="math inline">\(\succsim'\)</span>. Then the following conditions are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(\succsim\)</span> is more risk averse than <span class="math inline">\(\succsim'\)</span></li>
+<li>there exists a concave, strictly increasing function <span class="math inline">\(f: u(\mathbb{R}) \to \mathbb{R}\)</span> such that <span class="math inline">\(v(m) = f \circ u(m) = f(u(m))\)</span>.</li>
+</ol>
+
+
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">

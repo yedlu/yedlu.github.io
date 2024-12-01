@@ -170,9 +170,74 @@
   {
     "objectID": "repo/micro-u/u5.html",
     "href": "repo/micro-u/u5.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Afriat’s Theorem",
     "section": "",
-    "text": "Back to top",
+    "text": "* in conjunction with §4 of Microeconomics Foundation I (Kreps 2013)\nyedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Afriat's Theorem"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u5.html#notations",
+    "href": "repo/micro-u/u5.html#notations",
+    "title": "Afriat’s Theorem",
+    "section": "Notations",
+    "text": "Notations\n\n\\(X = \\mathbb{R}^{n}_{+}\\) be consumption bundles. A vector with \\(n\\) non-negative elements.\n\\(B(p,m) = \\{x \\in X: p \\cdot x \\leq m\\}\\) be the budget set.\n\\(c(B(p,m))\\) be the demand chosen by the consumer.\n\nKey: what to infer from finite number of actual choices?",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Afriat's Theorem"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u5.html#concepts-and-assumptions",
+    "href": "repo/micro-u/u5.html#concepts-and-assumptions",
+    "title": "Afriat’s Theorem",
+    "section": "Concepts and Assumptions",
+    "text": "Concepts and Assumptions\n\nLocally Insatiable\nFor every bundle \\(x \\in X\\), for every \\(\\epsilon &gt; 0\\), there exists \\(y \\in X\\) with \\(|x-y| &lt; \\epsilon\\) and \\(y \\succ x\\).\nIntuition: a consumer would always accept if they are provided a bundle with slightly more stuff.\nLemma\nIf \\(\\succsim\\) is complete, transitive, locally insatiable; \\(x^*\\) is chosen from the budget set \\(B(p,m)\\), then\n\n\\(x^* \\succsim x\\) for all \\(x\\) with \\(p \\cdot x = m\\)\n\\(x^* \\succ x\\) for all \\(x\\) with \\(p \\cdot x &lt; m\\).\n\n\n\nGARP (Generalized Axioms of Revealed Preferences)\nGiven a finite dataset:\n\np = (\\(p^1, ..., p^n\\)) as the price vector\nm = (\\(m^1, ..., m^n\\)) as the income/budget vector\nx = (\\(x^1, ..., x^n\\)) as the choice vector\n\nwith \\(p^i \\cdot x^i \\leq m^i\\) for each \\(i\\), we say that:\n\n\\(x^i \\succsim^d x^j\\) when \\(p^i \\cdot x^j \\leq m^i\\)\n\\(x^i \\succ^d x^j\\) when \\(p^i \\cdot x^j &lt; m^i\\)\n\\(x^i \\succsim^R x^j\\) when \\(x^i \\succsim^d x \\succsim^d ... \\succsim^d x^j\\)\n\\(x^i \\succ^R x^j\\) when \\(x^i \\succsim^d ... \\succ^d x \\succsim^d ... \\succsim^d x^j\\)\n\nThe dataset satistify GARP if \\(x^i \\not\\succ^R x^i\\) for every \\(i\\).\n\n\nStrictly Increasing Preference\nThe preference \\(\\succsim \\subseteq \\mathbb{R}^n_+ \\times \\mathbb{R}^n_+\\) is strictly increasing if\n\n\\(x_i \\geq y_i\\) for all \\(i\\)\n\\(x \\neq y\\)\n\nimplies \\(x \\succ y\\). This \\(\\succsim\\) is automatically locally insatiable.\n\n\nConvex Preference\nThe preference \\(\\succsim \\subseteq \\mathbb{R}^n_+ \\times \\mathbb{R}^n_+\\) is convex if\n\n\\(x \\succsim y\\)\n\\(\\alpha \\in [0,1]\\)\n\nimplies \\(\\alpha x + (1-\\alpha) y \\succsim y\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Afriat's Theorem"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u5.html#afriats-theorem",
+    "href": "repo/micro-u/u5.html#afriats-theorem",
+    "title": "Afriat’s Theorem",
+    "section": "Afriat’s Theorem",
+    "text": "Afriat’s Theorem\n\nIf dataset violates GARP, then there cannot exist a complete, transitive, and locally insatiable \\(\\succsim\\) with \\(x^i \\in c_{\\succsim}(B(p^i, m^i))\\).\nIf dataset satisfies GARP, then there exists a complete, transitive, locally insatiable, strictly increasing, continuous, convex \\(\\succsim\\) with \\(x^i \\in c_{\\succsim}(B(p^i, m^i))\\).\n\n\n\nProof of 1\n\nSuppose we have a complete, transitive, and locally insatiable \\(\\succsim\\) with \\(x^i \\in c_{\\succsim}(B(p^i, m^i))\\) for each \\(i = 1, ..., n\\).\nIf we had a GARP violation, then \\(x^i \\succ^R x^i\\). This implies that:\n\\[x^i \\succsim^d ... \\succsim^d x^j \\succ^d x^k \\succsim^d ... \\succsim^d x^i\\]\n\\[\\Rightarrow x^i \\succsim ... \\succsim x^j \\succ x^k \\succsim ... \\succsim x^i\\]\n\\(\\Rightarrow x^i \\succ x^i\\), which leads to a contradiction.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Afriat's Theorem"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u5.html#proof-of-2-afriats-approach-to-constructing-utility",
+    "href": "repo/micro-u/u5.html#proof-of-2-afriats-approach-to-constructing-utility",
+    "title": "Afriat’s Theorem",
+    "section": "Proof of 2 (Afriat’s Approach to Constructing Utility)",
+    "text": "Proof of 2 (Afriat’s Approach to Constructing Utility)\nSuppose data \\((p, m, x)\\) satisfies \\(p^i \\cdot x^i \\leq m^i\\) and GARP.\n\n\\(p^i \\cdot x^i = m^i\\) for all \\(i\\).\n\nIntuition: Every choice must be preference-maximizing under budget constraint. If not, then there must be a better choice under this price \\(p\\) and budget constraint \\(m\\).\n\n\nProof\n\nAssume to contrary that \\(p^i \\cdot x^i &lt; m^i\\). Then by GARP, \\(x^i \\succ^d x^i\\), which implies that \\(x^i \\succ^R x^i\\), which creates a contradiction by violates GARP.\n\n\n\\(|\\{x^k: x^i \\succ^R x^k\\}| &lt; |\\{x^k: x^j \\succ^R x^k\\}| \\Rightarrow p^i \\cdot x^j &gt; m^i\\).\n\nIntuition: A choice \\(x^j\\) strictly more superior than the other choice \\(x^i\\) should never be feasible under the condition where \\(x^i\\) was chosen. If not, then the choice should be \\(x^j\\) instead of \\(x^i\\).\n\n\nProof\n\nIf \\(p^i \\cdot x^j \\leq m^i\\), then according to GARP, \\(x^i \\succsim^d x^j\\). Then, \\(\\{x^k: x^j \\succ^R x^k\\} \\subseteq \\{x^k: x^i \\succ^R x^k\\}\\), which contradicts \\(\\{x^k: x^i \\succ^R x^k\\}| &lt; |\\{x^k: x^j \\succ^R x^k\\}|\\).\n\n\n\\(|\\{x^k: x^i \\succ^R x^k\\}| \\leq |\\{x^k: x^j \\succ^R x^k\\}| \\Rightarrow p^i \\cdot x^j \\geq m^i\\).\n\nIntuition: A choice \\(x^j\\) at least as good as the other choice \\(x^i\\) should never be strictly inferior when under price and budget constraint of \\(x^i\\).\n\n\nProof\n\nAssume to contrary that \\(p^i \\cdot x^j &lt; m^i\\). Then it implies that \\(x^i \\succ^d x^j\\). Also by GARP, \\(x^j \\in \\{x^k: x^i \\succ^R x^k\\}\\) and \\(x^j \\in \\{x^k: x^i \\succ^R x^k\\}\\). Thus, \\(\\{x^k: x^j \\succ^R x^k\\} \\subsetneq \\{x^k: x^i \\succ^R x^k\\}\\), contradicting the assumption.\n\n\n\\(\\exists x^k: \\forall i \\quad x^k \\not\\succ^R x^i\\)\n\nIntuition: there must be a lowest-ranking choice that is never strictly prefered to any other choices. If not, there will exist a loop that violates transitivity.\n\n\nProof\n\nSuppoose for all \\(x^k\\), there exists \\(x^i\\) such that \\(x^k \\succ^R x^i\\). Then it must be the case that the following chain with \\(2n+1\\) elements: \\(x^1 \\succ x^{j1} \\succ x^{j2} \\succ ... \\succ x^{j2n}\\). Since we are in a finite set with \\(n\\) choice bundles, there must be somewhere, in between, that \\(x^k \\succ x^k\\) happens, which directly violates GARP.\n\n\n\\(\\exists \\, v^1, ..., v^n \\in \\mathbb{R} \\quad \\exists \\, \\alpha^1, ..., \\alpha^n &gt; 0 \\quad \\forall i, j \\quad v^i \\leq v^j + \\alpha^j [p^j x^i - p^j x^j]\\)\n\nIntuition: we want to use \\(v^j\\) as the baseline of utility. \\(\\alpha^j\\) controls the speed of moving the baseline.\n\n\nProof\n\nBy induction. When \\(n=1\\), let \\(v^1 = 0\\) and \\(\\alpha^1 = 1\\). Suppose this is true when we have \\(n\\) choices. Now, denote \\(x^{n+1}\\) as \\(x^{n+1} \\not\\succ^R x^i\\) for every \\(i\\). We can imply from the assumption that this statement is true for observation \\(1, ..., n\\) that:\n\\[\\exists \\, v^1, ..., v^n \\in \\mathbb{R} \\quad \\exists \\, \\alpha^1, ..., \\alpha^n &gt; 0 \\quad \\forall i, j \\quad v^i \\leq v^j + \\alpha^j [p^j x^i - p^j x^j].\\]\nDefine: \\(v^{n+1} = \\min_{1 \\leq j \\leq n} v^j + \\alpha^j [p^j x^{n+1} - p^j x^j]\\). Since \\(|\\{x^k: x^{n+1} \\succ^R x^k\\}| = 0\\), we can say that \\(p^{n+1} x^j \\geq m^{n+1} = p^{n+1} x^{n+1}\\) for every \\(1 \\leq j \\leq n\\).\nWe assert that for \\(1 \\leq j \\leq n\\), either \\(p^{n+1} x^j &gt; m^{n+1} = p^{n+1} x^{n+1}\\) or \\(p^{n+1} x^j = m^{n+1} = p^{n+1} x^{n+1}\\) holds.\n\nIf \\(p^{n+1} x^j &gt; m^{n+1} = p^{n+1} x^{n+1}\\), \\(p^{n+1} x^j - p^{n+1} x^{n+1} &gt; 0\\). Then there exists \\(\\alpha^{n+1} &gt; 0\\) large enough such that \\(v^j \\leq v^{n+1} + \\alpha^{n+1} [p^{n+1} x^j - p^{n+1} x^{n+1}]\\) holds.\n\nIf \\(p^{n+1} x^j = m^{n+1} = p^{n+1} x^{n+1}\\), \\(p^{n+1} x^j - p^{n+1} x^{n+1} = 0\\).\n\nThen, as long as \\(\\alpha^{n+1} \\in \\mathbb{R}_{++}\\), \\(v^j \\leq v^{n+1} + \\alpha^{n+1} [p^{n+1} x^j - p^{n+1} x^{n+1}] = v^{n+1}\\) holds.\n\n\nLet \\(u(x) := \\min_{1 \\leq j \\leq n} v^i + \\alpha^i [p^i x - p^i x^i]\\).\n\nIntuition: this function yields a concave form.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Afriat's Theorem"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u5.html#application-giffin-goods",
+    "href": "repo/micro-u/u5.html#application-giffin-goods",
+    "title": "Afriat’s Theorem",
+    "section": "Application: Giffin Goods",
+    "text": "Application: Giffin Goods\n\nNormal goods: \\(p_i \\uparrow \\quad \\Rightarrow x^i \\downarrow\\)\nGiffin goods: \\(p_i \\uparrow \\quad \\Rightarrow x^i \\uparrow\\)\n\nOne application of Afriat’s theorem is prooving the existance of Giffin goods. Since an individual with observable Giffin goods purchasing behavior does not necessarily violate GARP, then there exists a preference relation that is complete, transitive, locally insatiable, continuous, strictly increasing, and convex that generates it.",
     "crumbs": [
       "me",
       "Repository",
@@ -183,9 +248,87 @@
   {
     "objectID": "repo/micro-u/u6.html",
     "href": "repo/micro-u/u6.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Stochastic Choice",
     "section": "",
-    "text": "Back to top",
+    "text": "* in conjunction with §5 of Microeconomics Foundation I (Kreps 2013)\nyedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html#stochastic-random-choice",
+    "href": "repo/micro-u/u6.html#stochastic-random-choice",
+    "title": "Stochastic Choice",
+    "section": "Stochastic (Random) Choice",
+    "text": "Stochastic (Random) Choice\n\nBinary Random Choice Rule\n\n\n\\(X \\neq \\emptyset\\) be the universe of alternatives.\n\\(\\rho: X \\times X \\to [0,1]\\) be the binary random choice rule if \\(\\rho(x,y) + \\rho(y,x) = 1\\) for all \\(x,y \\in X\\).\n\n\nRandom Choice Rule\n\n\n\\(P(X)\\) be the nonempty finite subset of \\(X\\).\n\\(\\rho: X \\times P(X) \\to [0,1]\\) be the random choice rule if \\(\\sum_{x \\in A} \\, \\rho(x, A) = 1\\) for all \\(A \\in \\mathcal{A}\\).\n\nNotation \\(\\rho(x, A = \\{x,y\\})\\) is equivalent to \\(\\rho(x,y)\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html#random-utility-and-random-preference",
+    "href": "repo/micro-u/u6.html#random-utility-and-random-preference",
+    "title": "Stochastic Choice",
+    "section": "Random Utility and Random Preference",
+    "text": "Random Utility and Random Preference\n\nRandom Preference Model\n\n\\(X = \\{x_1, x_2, ..., x_n\\}\\) be the set of finite choices\n\\(\\mu\\) be the probability over strict rankings on \\(X\\)\n\n\\(\\rho (x_i, A) = \\mu\\{\\succ: \\forall x_j \\in A \\setminus \\{x_i\\} \\quad x_i \\succ x_j\\}\\)\n\n\n\n\nRandom Utility Model (RUM)\n\n\\(X = \\{x_1, x_2, ..., x_n\\}\\) be the set of finite choices\n(\\(\\Omega, \\mathcal{F}, \\mathbb{P}\\)) be the probability space (triple). A quick recap:\n\nSample space \\(\\Omega\\): a set of all possible outcomes.\nEvent space \\(\\mathcal{F}\\): a set containing events. An event is a set of outcomes in sample space.\nProbability function \\(\\mathbb{P}: \\mathcal{F} \\to [0,1]\\): assign a probability to each event. Specifically, \\(\\mathbb{P}\\{\\Omega\\} = 1\\)\n\n\\(U_1, U_2, ..., U_n: \\Omega \\to \\mathbb{R}\\) be random utilities (r.v.) with \\(\\mathbb{P}\\{\\omega \\in \\Omega: U_i(\\omega) = U_j(\\omega), i \\neq j\\} = 0\\).\n\\(\\rho(x_i, A) = \\mathbb{P}\\{\\omega \\in \\Omega: \\forall j \\in A \\quad U_i(\\omega) \\geq U_j(\\omega)\\}\\)\n\n\\(\\mathbb{P}\\{\\omega \\in \\Omega: U_A(\\omega) &gt; U_B(\\omega) &gt; U_C(\\omega)\\} = \\mu\\{A \\succ B \\succ C\\}\\)\n\n\\(U: \\Omega \\to \\mathbb{R}\\) be the random utility function. Its cumulative distribution function (cdf) is: \\[\\begin{aligned}\nF(t) & = \\mathbb{P}\\{\\omega \\in \\Omega: U(\\omega) \\leq t\\} \\\\\n& = \\mathbb{P} \\{U \\leq t\\}\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html#block-marschak-proposition-1960",
+    "href": "repo/micro-u/u6.html#block-marschak-proposition-1960",
+    "title": "Stochastic Choice",
+    "section": "Block & Marschak Proposition (1960)",
+    "text": "Block & Marschak Proposition (1960)\n\\(\\rho\\) is a random preference model if and only if (iif) \\(\\rho\\) is a random utility model. The Block & Marschak Inequalities states necessarily that:\nIf \\(\\rho\\) is a RUM, then:\n\\[q(x,A) = \\sum_{B \\supseteq A} (-1)^{|B \\setminus A|} \\rho(x,B) \\geq 0\\]\nE.g. 1: Given \\(X = \\{x,y,z\\}\\) and \\(A = \\{x,y\\}\\), \\[\\begin{aligned}\n    q(x,A) & = \\sum_{B \\supseteq A} (-1)^{|B \\setminus A|} \\rho(x,B) \\\\\n    & = (-1)^{|X \\setminus A|} \\rho(x,X) + (-1)^{|A \\setminus A|} \\rho(x,A) \\\\\n    & = (-1)^{|\\{z\\}|} \\rho(x,X) + (-1)^{|\\emptyset|} \\rho(x,A) \\\\\n    & = - \\rho(x,X) + \\rho(x,A) \\geq 0 \\\\\n    \\\\\n    & \\Rightarrow  \\rho(x,A) \\geq \\rho(x,X)\n\\end{aligned}\\]\nIntuition: the possibility of choosing an option cannot become greater when new choices emerge. This implies that every \\(\\mu \\in [0,1]\\) and \\(\\sum \\mu = 1\\).\nE.g. 2: Given \\(X = \\{x,y,z,w\\}\\) and \\(A = \\{x,y\\}\\). \\[\\begin{aligned}\n      q(x, A) &= \\sum_{B \\supseteq A} (-1)^{|B \\setminus A|} \\rho(x,B) \\\\\n      &= (-1)^{|A \\setminus A|} \\rho(x,A) + (-1)^{|\\{x,y,z\\} \\setminus A|} \\rho(x,\\{x,y,z\\}) \\\\\n      & \\quad + (-1)^{|\\{x,y,w\\} \\setminus A|} \\rho(x,\\{x,y,w\\}) + (-1)^{|\\{x,y,z,w\\} \\setminus A|} \\rho(x,\\{x,y,z,w\\}) \\\\\n      &=  \\rho(x,X) - \\rho(x,\\{x,y,z\\}) - \\rho(x, \\{x,y,w\\}) + \\rho(x,A) \\geq 0 \\\\\n      \\\\\n      &\\Rightarrow \\rho(x,A) - \\rho(x, \\{x,y,w\\}) \\geq \\rho(x,\\{x,y,z\\}) - \\rho(x,X)\n\\end{aligned}\\]\nIntuition: if we use \\(\\mu\\) in random preference model to denote the results above:\n\\[\\begin{aligned}\n      \\rho(x,A) - \\rho(x, \\{x,y,w\\}) &\\geq \\rho(x,\\{x,y,z\\}) - \\rho(x,X) \\\\\n      \\mu\\{z \\succ w \\succ x \\succ y\\} + \\mu\\{w \\succ z \\succ x \\succ y\\} & \\\\\n      +\\mu\\{w \\succ x \\succ z \\succ y\\} + \\mu\\{w \\succ x \\succ y \\succ z\\} &\\geq \\mu\\{w \\succ x \\succ y \\succ z\\}\n\\end{aligned}\\]\nThis would hold if \\(\\mu \\in [0,1]\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html#falmagnes-theorem-1978",
+    "href": "repo/micro-u/u6.html#falmagnes-theorem-1978",
+    "title": "Stochastic Choice",
+    "section": "Falmagne’s Theorem (1978)",
+    "text": "Falmagne’s Theorem (1978)\n\\(\\rho\\) is a RUM iif it satisfies the Block-Marschak inequalities (sufficiently).\nInterpretation of the Block-Marschak inequalities: \\(q(x,A)\\) is the probability that:\n\noptions in \\(X \\setminus A\\) are ranked above \\(x\\), and\n\\(x\\)’s ranking is \\(|X \\setminus A| + 1\\).\n\nExample: Consider \\(X = \\{x,y,z\\}\\) and \\(A = \\{x,y\\}\\). Then \\[\\begin{aligned}\n      q(x,A) &= \\rho(x, A) - \\rho(x,X) \\\\\n      &= \\mu\\{z \\succ x \\succ y\\} + \\mu\\{x \\succ z \\succ y\\} + \\mu\\{x \\succ y \\succ z\\} \\\\\n      & \\quad - \\mu\\{x \\succ z \\succ y\\} + \\mu\\{x \\succ y \\succ z\\} \\\\\n      &= \\mu\\{z \\succ x \\succ y\\}\n\\end{aligned}\\]\nThis is:\n\noptions in \\(X \\setminus A\\) are ranked above \\(x\\) (\\(z\\)), and\n\\(x\\)’s ranking is \\(|X \\setminus A| + 1 = 1 + 1 = 2\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html#some-random-utility-models",
+    "href": "repo/micro-u/u6.html#some-random-utility-models",
+    "title": "Stochastic Choice",
+    "section": "Some Random Utility Models",
+    "text": "Some Random Utility Models\n\n1. Logit\n\nForm: \\(U_i = v_i + \\epsilon_i\\), where \\(v_i \\in \\mathbb{R}\\) and \\(\\epsilon_i \\sim\\) Gumbel (iid.)\nGumbel Distribution: - \\(\\mathbb{P} \\{\\epsilon_i \\leq t\\} = F(t) = \\exp[-\\exp(-t)]\\) - Gumbel cdf: \\(F(s) = e^{-e^{-s}} = \\mathbb{P}\\{\\epsilon \\leq s\\}\\) - Gumbel pdf: \\(f(s) = \\frac{d\\,F(s)}{d\\,s} = e^{-s} \\cdot e^{-e^{-s}}\\)\n\nThen, under logit,\n\\[\\begin{aligned}\n  \\rho(x_i, A) & = \\mathbb{P}\\{(\\forall j \\in A, j \\neq i) \\quad U_i &gt; U_j\\} \\\\\n  & = \\mathbb{P}\\{(\\forall j \\in A, j \\neq i) \\quad v_i + \\epsilon_i &gt; v_j + \\epsilon_j\\} \\\\\n  & = \\mathbb{P}\\{\\epsilon_j &lt; (v_i - v_j) + \\epsilon_i\\} \\\\\n  & = \\int_{-\\infty}^{+\\infty} \\Pi_{j \\neq i} \\, F(v_i - v_j + s) f(s)ds \\\\\n  & = \\int_{-\\infty}^{+\\infty} \\Pi_{j \\neq i} e^{-e^{-(v_i - v_j + s)}} \\cdot e^{-s} \\cdot e^{-e^{-s}} ds \\\\\n  & = \\frac{e^{v_i}}{\\sum_{j \\in A} e^{v_j}}\n\\end{aligned}\\]\n\n\n2. Luce\n\\(v: X \\to (0, \\infty)\\) \\(\\rho(x,A) = \\frac{v(s)}{\\sum_{y \\in A} v(y)}\\)",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Stochastic Choice"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u6.html#directly-observable-and-testable-transitivity",
+    "href": "repo/micro-u/u6.html#directly-observable-and-testable-transitivity",
+    "title": "Stochastic Choice",
+    "section": "Directly Observable and Testable Transitivity",
+    "text": "Directly Observable and Testable Transitivity\n\nIn deterministic models, transitivity is a single notion.\n\ne.g. in preference relations, transitivity is \\(x \\succ y\\) and \\(y \\succ z \\Rightarrow x \\succ z\\)\n\nIn random choice models, there are different strengths of transitivity.\n\nIf \\(\\rho(a,b) \\geq 1/2\\) and \\(\\rho(b,c) \\geq 1/2\\), then there exists\n\nweak transitivity if \\(\\rho(a,c) \\geq 1/2\\)\nmoderate transitivity if \\(\\rho(a,c) \\geq \\min\\{\\rho(a,b), \\rho(b,c)\\}\\)\n(He and Natenzon (2020))\nstrong transitivity if \\(\\rho(a,c) \\geq \\max\\{\\rho(a,b), \\rho(b,c)\\}\\)",
     "crumbs": [
       "me",
       "Repository",
@@ -288,9 +431,74 @@
   {
     "objectID": "repo/micro-u/u4.html",
     "href": "repo/micro-u/u4.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Risk Aversion - Expected Utility over Money",
     "section": "",
-    "text": "Back to top",
+    "text": "yedlu, Fall 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Risk Aversion"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u4.html#notations",
+    "href": "repo/micro-u/u4.html#notations",
+    "title": "Risk Aversion - Expected Utility over Money",
+    "section": "Notations",
+    "text": "Notations\n\n\\(I = [\\underline{m}, \\overline{m}]\\) be the interval of monetary prizes in \\(\\mathbb{R}\\). Consider this as a continuous set of consequences.\n\\(p: I \\to [0,1]\\) be the simple lottery with finite support.\n\n\\(\\{m \\in I: p(m) &gt; 0\\}\\): only possible finite monetary prizes are considered.\n\n\\(\\mathcal{L}\\) be the set of simple lotteries over \\(I\\).\n\nThe preference relation on monetary simple lotteries is defined as \\(\\succsim \\subseteq \\mathcal{L} \\times \\mathcal{L}\\) such that \\(p \\succsim q \\Leftrightarrow (p,q) \\in \\succsim \\,\\, \\Leftrightarrow U(p) &gt; U(q)\\).\n\nvNM preferences on \\(\\mathcal{L}\\) are represented by an expected utility formed function:\n\n\\[U(p) = \\sum_{m \\in I} u(m) p(m)\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Risk Aversion"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u4.html#evaluating-lotteries",
+    "href": "repo/micro-u/u4.html#evaluating-lotteries",
+    "title": "Risk Aversion - Expected Utility over Money",
+    "section": "Evaluating Lotteries",
+    "text": "Evaluating Lotteries\n\nFirst-Order Stochastic Dominance (FOSD)\nSettings: \\(F_p\\) is the cumulative probability distribution function (cdf) of lottery \\(p\\).\n\\(F_p(m) = \\sum_{\\alpha \\leq m} p(\\alpha)\\) is the probability that one can receive a monetary prize less than equal to \\(m\\).\nDefinition\nLottery \\(p\\) first-order stochastically dominates lottery \\(q\\) if\n\n\\(p \\neq q\\);\n\\(F_p(m) \\leq F_q(m)\\) for all \\(m \\in \\mathbb{R}\\).\n\nIntuition: lottery \\(p\\) have a lower chance receiving prizes lower than \\(m\\) compare to lottery \\(q\\). This implies that lottery \\(p\\) have a higher chance receiving prizes higher than \\(m\\) compare to lottery \\(q\\).\n\n\nSimple Improvements\nLottery \\(p\\) is a simple improvement over lottery \\(q\\) if\n\nthere exists \\(\\alpha \\in (0,1]\\);\n\\(m &gt; m'\\);\nthere exists \\(r \\in \\mathcal{L}\\)\n\nsuch that\n\\[\\begin{aligned}\n      p &= \\alpha \\delta_m + (1-\\alpha) r \\\\\n      q &= \\alpha \\delta_{m'} + (1-\\alpha) r \\\\\n\\end{aligned}\\]\nIntuition: we can consider both \\(p\\) and \\(q\\) as a mixture of a certain outcome monetary prize (\\(m\\) and \\(m'\\)), and a generic lottery \\(r\\).\nThis is a special case of first-order stochastic dominance.\nUtility representation:\n\\[\\begin{aligned}\n      U(p) = \\alpha u(m) + (1-\\alpha) u(r)p(r) &gt; \\alpha u(m') + (1-\\alpha) u(r)p(r) = U(q)\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Risk Aversion"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u4.html#monotine-vnm-preferences",
+    "href": "repo/micro-u/u4.html#monotine-vnm-preferences",
+    "title": "Risk Aversion - Expected Utility over Money",
+    "section": "Monotine vNM Preferences",
+    "text": "Monotine vNM Preferences\nLet \\(\\succsim \\subseteq \\mathcal{L} \\times \\mathcal{L}\\) be a vNM prefernce. The following conditions are equivalent:\n\nIf \\(p\\) FOSD \\(q\\), then \\(p \\succ q\\).\nIf \\(p\\) is a simple improvement over \\(q\\), then \\(p \\succ q\\).\nEvery linear \\(U: \\mathcal{L} \\to \\mathbb{R}\\) representing \\(\\succsim\\) has a strictly increasing Bernoulli index u.\n\nWhen \\(\\succsim\\) satisfies three conditions above, we call it a monotone vNM preference.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Risk Aversion"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u4.html#certainty-equivalent",
+    "href": "repo/micro-u/u4.html#certainty-equivalent",
+    "title": "Risk Aversion - Expected Utility over Money",
+    "section": "Certainty Equivalent",
+    "text": "Certainty Equivalent\nLet \\(\\succsim \\subseteq \\mathcal{L} \\times \\mathcal{L}\\) be a vNM prefernce represented by an expected utility function with a continuous index \\(u: I \\to \\mathbb{R}\\). Then \\(C: \\mathcal{L} \\to \\mathbb{R}\\) given by \\(\\delta_{C(p)} \\sim p\\) is a well-defined function. \\(C(p)\\) is the certainty equivalent of lottery \\(p\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro I: Utility Theory",
+      "Risk Aversion"
+    ]
+  },
+  {
+    "objectID": "repo/micro-u/u4.html#risk-aversion",
+    "href": "repo/micro-u/u4.html#risk-aversion",
+    "title": "Risk Aversion - Expected Utility over Money",
+    "section": "Risk Aversion",
+    "text": "Risk Aversion\n\nRisk Averse Preferences\nLet \\(\\overline{p} = \\sum_{x \\in I} p(x) x\\) be the expected payoff of lottery. The preference \\(\\succsim\\) is risk averse when \\(\\delta_{\\overline{p}} \\succsim p\\).\n\n\nSimple Mean Preserving Spread\n\\(q\\) is a simple mean preserving spread of \\(p\\) when for some \\(\\alpha \\in (0,1]\\), some \\(r, r' \\in \\mathcal{L}\\) and \\(\\overline{r'} = m\\).\n\\[\\begin{aligned}\n      p & = \\alpha \\delta_{m} + (1-\\alpha) r \\\\\n      q & = \\alpha r' + (1-\\alpha) r\n\\end{aligned}\\]\nIntuition: \\(p\\) and \\(q\\) yields the same expected payoff, but \\(q\\) has higher variance than of \\(p\\).\n\n\nRisk Aversion Theorems\nLet \\(\\succsim\\) be a monotone vNM preference. The following are equivalent:\n\n\\(\\succsim\\) is risk averse;\nIf \\(q\\) is a mean preserving spread over \\(p\\) then \\(p \\succ q\\);\nEvery linear \\(U: \\mathcal{L} \\to \\mathbb{R}\\) representing \\(\\succsim\\) has a concave Bernoulli function.\n\nIf \\(u\\) is a concave bernoulli function, we would have:\n\\[1/2 u(a) + 1/2 u (b) \\leq u(a/2 + b/2)\\]\n\n\nLevels of Risk Aversion\n\\(\\succsim\\) is more risk averse than \\(\\succsim'\\) when \\(\\delta_m \\succsim' p\\) implies \\(\\delta_m \\succsim p\\).\nSuppose \\(u, v\\) are continuous Bernoulli indices for monotone vNM preferences \\(\\succsim\\) and \\(\\succsim'\\). Then the following conditions are equivalent:\n\n\\(\\succsim\\) is more risk averse than \\(\\succsim'\\)\nthere exists a concave, strictly increasing function \\(f: u(\\mathbb{R}) \\to \\mathbb{R}\\) such that \\(v(m) = f \\circ u(m) = f(u(m))\\).",
     "crumbs": [
       "me",
       "Repository",
