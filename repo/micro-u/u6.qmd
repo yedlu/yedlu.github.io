@@ -1,0 +1,144 @@
+---
+title: "Stochastic Choice"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+\* in conjunction with §5 of Microeconomics Foundation I (Kreps 2013)
+
+*yedlu, Fall 2024*
+
+## Stochastic (Random) Choice
+1. Binary Random Choice Rule
+- $X \neq \emptyset$ be the universe of alternatives.
+- $\rho: X \times X \to [0,1]$ be the binary random choice rule if $\rho(x,y) + \rho(y,x) = 1$ for all $x,y \in X$.
+2. Random Choice Rule
+- $P(X)$ be the nonempty finite subset of $X$.
+- $\rho: X \times P(X) \to [0,1]$ be the random choice rule if $\sum_{x \in A} \, \rho(x, A) = 1$ for all $A \in \mathcal{A}$. 
+  - Notation $\rho(x, A = \{x,y\})$ is equivalent to $\rho(x,y)$.
+
+## Random Utility and Random Preference
+### Random Preference Model
+- $X = \{x_1, x_2, ..., x_n\}$ be the set of finite choices
+- $\mu$ be the probability over strict rankings on $X$
+  - $\rho (x_i, A) = \mu\{\succ: \forall x_j \in A \setminus \{x_i\} \quad x_i \succ x_j\}$
+
+### Random Utility Model (RUM)
+- $X = \{x_1, x_2, ..., x_n\}$ be the set of finite choices
+- ($\Omega, \mathcal{F}, \mathbb{P}$) be the probability space (triple). A quick recap:
+  - Sample space $\Omega$: a set of all possible outcomes.
+  - Event space $\mathcal{F}$: a set containing events. An event is a set of outcomes in sample space.
+  - Probability function $\mathbb{P}: \mathcal{F} \to [0,1]$: assign a probability to each event. Specifically, $\mathbb{P}\{\Omega\} = 1$
+- $U_1, U_2, ..., U_n: \Omega \to \mathbb{R}$ be random utilities (r.v.) with $\mathbb{P}\{\omega \in \Omega: U_i(\omega) = U_j(\omega), i \neq j\} = 0$.
+- $\rho(x_i, A) = \mathbb{P}\{\omega \in \Omega: \forall j \in A \quad U_i(\omega) \geq U_j(\omega)\}$
+  - $\mathbb{P}\{\omega \in \Omega: U_A(\omega) > U_B(\omega) > U_C(\omega)\} = \mu\{A \succ B \succ C\}$
+- $U: \Omega \to \mathbb{R}$ be the random utility function. Its cumulative distribution function (cdf) is:
+$$\begin{aligned}
+  F(t) & = \mathbb{P}\{\omega \in \Omega: U(\omega) \leq t\} \\
+  & = \mathbb{P} \{U \leq t\}
+\end{aligned}$$
+
+
+## Block & Marschak Proposition (1960)
+$\rho$ is a random preference model if and only if (iif) $\rho$ is a random utility model. The *Block & Marschak Inequalities* states necessarily that:  
+
+If $\rho$ is a RUM, then:  
+
+$$q(x,A) = \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \geq 0$$
+
+E.g. 1: Given $X = \{x,y,z\}$ and $A = \{x,y\}$, 
+$$\begin{aligned}
+    q(x,A) & = \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \\
+    & = (-1)^{|X \setminus A|} \rho(x,X) + (-1)^{|A \setminus A|} \rho(x,A) \\
+    & = (-1)^{|\{z\}|} \rho(x,X) + (-1)^{|\emptyset|} \rho(x,A) \\
+    & = - \rho(x,X) + \rho(x,A) \geq 0 \\
+    \\
+    & \Rightarrow  \rho(x,A) \geq \rho(x,X)
+\end{aligned}$$
+
+Intuition: the possibility of choosing an option cannot become greater when new choices emerge. This implies that every $\mu \in [0,1]$ and $\sum \mu = 1$.  
+
+E.g. 2: Given $X = \{x,y,z,w\}$ and $A = \{x,y\}$.
+$$\begin{aligned}
+      q(x, A) &= \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \\
+      &= (-1)^{|A \setminus A|} \rho(x,A) + (-1)^{|\{x,y,z\} \setminus A|} \rho(x,\{x,y,z\}) \\
+      & \quad + (-1)^{|\{x,y,w\} \setminus A|} \rho(x,\{x,y,w\}) + (-1)^{|\{x,y,z,w\} \setminus A|} \rho(x,\{x,y,z,w\}) \\
+      &=  \rho(x,X) - \rho(x,\{x,y,z\}) - \rho(x, \{x,y,w\}) + \rho(x,A) \geq 0 \\
+      \\
+      &\Rightarrow \rho(x,A) - \rho(x, \{x,y,w\}) \geq \rho(x,\{x,y,z\}) - \rho(x,X)
+\end{aligned}$$
+
+Intuition: if we use $\mu$ in random preference model to denote the results above:  
+
+$$\begin{aligned}
+      \rho(x,A) - \rho(x, \{x,y,w\}) &\geq \rho(x,\{x,y,z\}) - \rho(x,X) \\
+      \mu\{z \succ w \succ x \succ y\} + \mu\{w \succ z \succ x \succ y\} & \\
+      +\mu\{w \succ x \succ z \succ y\} + \mu\{w \succ x \succ y \succ z\} &\geq \mu\{w \succ x \succ y \succ z\}
+\end{aligned}$$
+
+This would hold if $\mu \in [0,1]$.
+
+
+## Falmagne's Theorem (1978)
+$\rho$ is a RUM iif it satisfies the Block-Marschak inequalities (sufficiently).   
+
+Interpretation of the Block-Marschak inequalities: $q(x,A)$ is the probability that:  
+
+(i) options in $X \setminus A$ are ranked above $x$, and  
+
+(ii) $x$'s ranking is $|X \setminus A| + 1$.  
+
+Example: Consider $X = \{x,y,z\}$ and $A = \{x,y\}$. Then
+$$\begin{aligned}
+      q(x,A) &= \rho(x, A) - \rho(x,X) \\
+      &= \mu\{z \succ x \succ y\} + \mu\{x \succ z \succ y\} + \mu\{x \succ y \succ z\} \\
+      & \quad - \mu\{x \succ z \succ y\} + \mu\{x \succ y \succ z\} \\
+      &= \mu\{z \succ x \succ y\}
+\end{aligned}$$
+
+This is:  
+
+(i) options in $X \setminus A$ are ranked above $x$ ($z$), and  
+
+(ii) $x$'s ranking is $|X \setminus A| + 1 = 1 + 1 = 2$.  
+
+
+## Some Random Utility Models
+### 1. Logit
+
+- Form: $U_i = v_i + \epsilon_i$, where $v_i \in \mathbb{R}$ and $\epsilon_i \sim$ Gumbel (iid.)
+- Gumbel Distribution:
+      - $\mathbb{P} \{\epsilon_i \leq t\} = F(t) = \exp[-\exp(-t)]$
+      - Gumbel cdf: $F(s) = e^{-e^{-s}} = \mathbb{P}\{\epsilon \leq s\}$
+      - Gumbel pdf: $f(s) = \frac{d\,F(s)}{d\,s} = e^{-s} \cdot e^{-e^{-s}}$
+
+Then, under logit,  
+$$\begin{aligned}
+  \rho(x_i, A) & = \mathbb{P}\{(\forall j \in A, j \neq i) \quad U_i > U_j\} \\
+  & = \mathbb{P}\{(\forall j \in A, j \neq i) \quad v_i + \epsilon_i > v_j + \epsilon_j\} \\
+  & = \mathbb{P}\{\epsilon_j < (v_i - v_j) + \epsilon_i\} \\
+  & = \int_{-\infty}^{+\infty} \Pi_{j \neq i} \, F(v_i - v_j + s) f(s)ds \\
+  & = \int_{-\infty}^{+\infty} \Pi_{j \neq i} e^{-e^{-(v_i - v_j + s)}} \cdot e^{-s} \cdot e^{-e^{-s}} ds \\
+  & = \frac{e^{v_i}}{\sum_{j \in A} e^{v_j}}
+\end{aligned}$$
+
+### 2. Luce
+$v: X \to (0, \infty)$
+$\rho(x,A) = \frac{v(s)}{\sum_{y \in A} v(y)}$
+
+
+## Directly Observable and Testable Transitivity
+
+- In deterministic models, transitivity is a single notion. 
+  - e.g. in preference relations, transitivity is $x \succ y$ and $y \succ z \Rightarrow x \succ z$
+- In random choice models, there are different strengths of transitivity.
+
+If $\rho(a,b) \geq 1/2$ and $\rho(b,c) \geq 1/2$, then there exists  
+
+- weak transitivity if $\rho(a,c) \geq 1/2$
+- moderate transitivity if $\rho(a,c) \geq \min\{\rho(a,b), \rho(b,c)\}$   
+  (*He and Natenzon* (2020))
+- strong transitivity if $\rho(a,c) \geq \max\{\rho(a,b), \rho(b,c)\}$

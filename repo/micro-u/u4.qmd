@@ -1,0 +1,105 @@
+---
+title: "Risk Aversion - Expected Utility over Money"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+*yedlu, Fall 2024*
+
+## Notations
+
+- $I = [\underline{m}, \overline{m}]$ be the interval of monetary prizes in $\mathbb{R}$. Consider this as a continuous set of consequences.
+- $p: I \to [0,1]$ be the simple lottery with finite support.
+  - $\{m \in I: p(m) > 0\}$: only possible finite monetary prizes are considered.
+- $\mathcal{L}$ be the set of simple lotteries over $I$.
+  - The preference relation on monetary simple lotteries is defined as $\succsim \subseteq \mathcal{L} \times \mathcal{L}$ such that $p \succsim q \Leftrightarrow (p,q) \in \succsim \,\, \Leftrightarrow U(p) > U(q)$.
+- vNM preferences on $\mathcal{L}$ are represented by an expected utility formed function:
+
+$$U(p) = \sum_{m \in I} u(m) p(m)$$
+
+## Evaluating Lotteries
+### First-Order Stochastic Dominance (FOSD)
+Settings: $F_p$ is the cumulative probability distribution function (cdf) of lottery $p$.  
+$F_p(m) = \sum_{\alpha \leq m} p(\alpha)$ is the probability that one can receive a monetary prize less than equal to $m$. 
+
+**Definition**  
+Lottery $p$ **first-order stochastically dominates** lottery $q$ if  
+
+- $p \neq q$;
+- $F_p(m) \leq F_q(m)$ for all $m \in \mathbb{R}$.
+
+Intuition: lottery $p$ have a lower chance receiving prizes lower than $m$ compare to lottery $q$. This implies that lottery $p$ have a higher chance receiving prizes higher than $m$ compare to lottery $q$.
+
+
+### Simple Improvements
+Lottery $p$ is a simple improvement over lottery $q$ if  
+
+- there exists $\alpha \in (0,1]$;
+- $m > m'$;
+- there exists $r \in \mathcal{L}$
+
+such that  
+$$\begin{aligned}
+      p &= \alpha \delta_m + (1-\alpha) r \\
+      q &= \alpha \delta_{m'} + (1-\alpha) r \\
+\end{aligned}$$
+
+Intuition: we can consider both $p$ and $q$ as a mixture of a certain outcome monetary prize ($m$ and $m'$), and a generic lottery $r$.  
+This is a **special case** of first-order stochastic dominance.
+
+Utility representation:  
+
+$$\begin{aligned}
+      U(p) = \alpha u(m) + (1-\alpha) u(r)p(r) > \alpha u(m') + (1-\alpha) u(r)p(r) = U(q)
+\end{aligned}$$
+
+
+## Monotine vNM Preferences
+Let $\succsim \subseteq \mathcal{L} \times \mathcal{L}$ be a vNM prefernce. The following conditions are equivalent:  
+
+1. If $p$ FOSD $q$, then $p \succ q$.
+2. If $p$ is a simple improvement over $q$, then $p \succ q$.
+3. Every linear $U: \mathcal{L} \to \mathbb{R}$ representing $\succsim$ has a strictly increasing Bernoulli index u.  
+
+When $\succsim$ satisfies three conditions above, we call it a monotone vNM preference.
+
+
+## Certainty Equivalent
+Let $\succsim \subseteq \mathcal{L} \times \mathcal{L}$ be a vNM prefernce represented by an expected utility function with a continuous index $u: I \to \mathbb{R}$. Then $C: \mathcal{L} \to \mathbb{R}$ given by $\delta_{C(p)} \sim p$ is a well-defined function. $C(p)$ is the certainty equivalent of lottery $p$.  
+
+## Risk Aversion
+### Risk Averse Preferences
+Let $\overline{p} = \sum_{x \in I} p(x) x$ be the expected payoff of lottery. The preference $\succsim$ is risk averse when $\delta_{\overline{p}} \succsim p$.  
+
+### Simple Mean Preserving Spread
+$q$ is a simple mean preserving spread of $p$ when for some $\alpha \in (0,1]$, some $r, r' \in \mathcal{L}$ and $\overline{r'} = m$.  
+
+$$\begin{aligned}
+      p & = \alpha \delta_{m} + (1-\alpha) r \\
+      q & = \alpha r' + (1-\alpha) r
+\end{aligned}$$
+
+Intuition: $p$ and $q$ yields the same expected payoff, but $q$ has higher variance than of $p$.  
+
+### Risk Aversion Theorems
+Let $\succsim$ be a monotone vNM preference. The following are equivalent:  
+
+1. $\succsim$ is risk averse;
+2. If $q$ is a mean preserving spread over $p$ then $p \succ q$;
+3. Every linear $U: \mathcal{L} \to \mathbb{R}$ representing $\succsim$ has a **concave** Bernoulli function.
+
+If $u$ is a concave bernoulli function, we would have:
+
+$$1/2 u(a) + 1/2 u (b) \leq u(a/2 + b/2)$$
+
+
+### Levels of Risk Aversion
+$\succsim$ is **more risk averse** than $\succsim'$ when $\delta_m \succsim' p$ implies $\delta_m \succsim p$.
+
+Suppose $u, v$ are continuous Bernoulli indices for monotone vNM preferences $\succsim$ and $\succsim'$. Then the following conditions are equivalent:  
+
+1. $\succsim$ is more risk averse than $\succsim'$
+2. there exists a concave, strictly increasing function $f: u(\mathbb{R}) \to \mathbb{R}$ such that $v(m) = f \circ u(m) = f(u(m))$.  
