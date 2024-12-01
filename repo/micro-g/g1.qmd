@@ -14,7 +14,7 @@ $$
 :::
 
 
-*yedlu, Fall 2024*
+*yedlu, Winter 2024*
 
 ## Game Theory: An Introduction
 Game theory can be defined as the study of mathematical models of conflict and cooperation between decision-makers who are

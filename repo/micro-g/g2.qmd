@@ -1,0 +1,180 @@
+---
+title: "Extensive-Form Games"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
+
+*yedlu, Winter 2024*
+
+
+Normal-form games are one of the more simple form of games to study. One of the stringent assumption we're going to relax now is that players **simultaneously** choose their actions; rather, now players take turns. We will dive into this concept deeper with an example.
+
+
+## The Extensive-Form Game
+### Notation
+The game:
+
+$$\begin{aligned}
+  \Gamma = (N, H, P, (u_i))
+\end{aligned}$$
+
+has  
+
+- players $N = \{1, ..., n\}$.
+- set of histories $H = \{\emptyset, ...\}$. $Z \subsetneq H$ is the set of terminal histories, which are not proper subsequenses of any other history. The game ends at $z_j \in Z$.
+- player function $P: H \setminus Z \to N$ which decides who moves at this history node conditioning on this specific history.
+- preference with a utility function $u_i: Z \to \BB{R}$ representing it.  
+
+Intuition: now there's a set $H$ that serves as a memory. The function $P$ sees the current history of the game (what happened in the past) and dictates one of the players that now it's their turn. The game alternates between players in $N$ and ends when it reaches one of the terminal nodes $z \in Z$.   
+
+
+### Strategy Profile
+Strategy profiles in extensive-form games must be a **full-contingent** plan. In other words, $\sigma_i(h) \neq \emptyset$ as long as $P(h) = i$.
+
+
+## Subgame Perfect Nash Equilibrium (SPNE)
+We will see in a later example that a Nash Equilibrium is not always optimal if we zoom in to a **subgame**.  
+
+### Subgames
+**Definition**  
+A subgame starting at a non-terminal history $h \in H$ of an extensive-form game of perfect information is another game which:  
+
+- has same set of players $N$;
+- includes every history $h'$ such that $(h, h')$ is a history of the original game;
+- player function and preferences are "imported" fro the original game.  
+
+
+Consider we truncate the full game tree at one particular node. The new game tree (prune) is a proper subgame.  
+
+### Subgame Perfect NE
+**Definition**  
+An NE of an extensive-form game of perfect information is a ***subgame-perfect Nash Equilibrium*** if it induces a NE in **every one of its subgames**.
+
+
+### How to find SPNE?
+We can use backward induction to find subgame perfect Nash Equilibrium (SPNE). The general algorithms can be written as:  
+
+- start with the smallest possible subgame (length $l = k$ where $k = 1$) and best-respond them,
+- move to subgames with length $l = k + 1$, and best-respond them **conditioning on actions chosen when length $l = k$**,
+- repeat and end till the initial node is reached.
+
+
+### Properties of SPNE Solution
+**Claim**  
+Every backward induction solution is a Nash Equilibrium.  
+Intuition: SPNE $\subset$ NE.  
+
+**Proposition**  
+A pure strategy profile is subgame perfect NE i.i.f. it is a backward induction solution.
+
+
+
+## Example: Bach or Stravinsky in Extensive Form
+
+This game has  
+
+- players $N = \{1, 2\}$.
+- set of histories $H = \{\emptyset, (B), (S), (B, b), (B, s), (S, b'), (S, s')\}$ 
+- player function:
+  - $P(\emptyset) = 1$
+  - $P(B) = P(S) = 1$
+- a Bernoulli utility function representing utility.
+
+
+We would have the following payoff matrix. First we attempt to find all pure strategy NE (bold). 
+
+| | bb' | bs' | sb' | ss'|
+| - | - | - | - | - |
+| B | **2,1** | **2,1** | 0,0 | 0,0 |
+| S | 0,0 | **1,2** | 0,0 | **1,2** |
+
+
+However, after the notion of subgame perfection, we will try to solve the game with one subgame-perfect Nash Equilibrium.
+
+<details>
+<summary>Click to Explore</summary>
+Starting from subgames with length $l = 1$ and let player 2 best-responds to them:  
+
+$$\begin{aligned}
+  \BB{E}[u_2(b \mid B)] &= 1 > \BB{E}[u_2(s \mid B)] = 0 \\
+  \implies B_2(B) &= b \\
+  \\
+  \BB{E}[u_2(s' \mid S)] &= 2 > \BB{E}[u_2(b' \mid S)] = 0 \\
+  \implies B_2(S) &= s'
+\end{aligned}$$
+
+Conditioning on this information, player 1 best-responds:  
+
+$$\begin{aligned}
+   \BB{E}[u_1(B \mid B_2(S_1))] &= 2 \\
+   > \BB{E}[u_1(S \mid B_2(S_1))] &= 1 \\
+  \implies B_1(\emptyset) &= B
+\end{aligned}$$
+
+Hence, the subgame-perfect Nash Equilibrium (and the only SPNE) is:  
+$$\begin{aligned}
+   (\sigma_1 = B, (\sigma_2(B) = b, \sigma_2(S) = s'))
+\end{aligned}$$
+
+Remember that a strategy is a **full-contingent plan**: there must be a suggested action $\sigma_i(h)$ for every possible history that requires player $i$ to make choices.
+
+</details>
+
+
+
+## Example: Cournot's Duopoly in Extensive Form (Stackelberg Duopoly)
+
+Now, instead of two firms simultaneously choose the production level, we arbitrarily let firm 1 chooses first. After firm 2 observes their counterpart's decision, they will best-response.  
+
+We will try to find a subgame-perfect NE (SPNE) using backward induction.
+
+<details>
+<summary>Click to Explore</summary>
+
+For the sake of simplicity we first assume that $q_i \leq 1$ for all $i$.  
+
+Starting from the subgame with length $l = 1$ and let firm 2 best-responds:  
+
+$$\begin{aligned}
+  u_2 &= q_2 (1 - q_1 - q_2)
+\end{aligned}$$
+
+First-Order Condition (FOC) gives that:  
+
+$$\begin{aligned}
+  1 - q_1 - 2 q_2^* &= 0 \\
+  B_2(q_1) = q_2^* &= \frac{1 - q_1}{2}
+\end{aligned}$$
+
+Then player 1 is aware of this information and best-responds:  
+
+$$\begin{aligned}
+  u_1 &= q_1 (1 - q_1 - q_2) \\
+  &= q_1 (1 - q_1 - \frac{1 - q_1}{2}) \\
+  &= \frac{q_1 (1-q_1)}{2}
+\end{aligned}$$
+
+First-Order Condition (FOC) gives that:  
+
+$$\begin{aligned}
+  \frac{1}{2} - q_1^* &= 0 \\
+  B_1(q_2) = q_1^* &= \frac{1}{2}
+\end{aligned}$$
+
+The subgame-perfect Nash Equilibrium for this game is then:  
+
+$$\begin{aligned}
+  (q_1 = \frac{1}{2}, q_2 = \frac{1}{4})
+\end{aligned}$$
+
+</details>
