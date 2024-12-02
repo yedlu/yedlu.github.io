@@ -662,19 +662,6 @@
     ]
   },
   {
-    "objectID": "repo/micro-g/g5.html",
-    "href": "repo/micro-g/g5.html",
-    "title": "Perfect Bayesian Equilibrium",
-    "section": "",
-    "text": "yedlu, Fall 2024\n\n\n\n Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Micro II: Game Theory",
-      "Perfect Bayesian Equilibrium"
-    ]
-  },
-  {
     "objectID": "repo/micro-g/g3.html#finitely-repeated-games",
     "href": "repo/micro-g/g3.html#finitely-repeated-games",
     "title": "Repeated Games",
@@ -724,6 +711,19 @@
       "Repository",
       "Micro II: Game Theory",
       "Repeated Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g5.html",
+    "href": "repo/micro-g/g5.html",
+    "title": "Perfect Bayesian Equilibrium",
+    "section": "",
+    "text": "yedlu, Fall 2024\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Perfect Bayesian Equilibrium"
     ]
   }
 ]

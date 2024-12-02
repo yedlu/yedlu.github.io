@@ -149,7 +149,7 @@ An example:
 $$\begin{aligned}
   (1 - \delta) [2 + 2 \delta + 2 \delta^2 + ...] &= (1 - \delta) \lim_{n \to \infty} [2 + 2 \delta + ... + 2 \delta^{n}] \\
   &= \lim_{n \to \infty} (1 - \delta) 2 \frac{1 - \delta^n}{1 - \delta} \\
-  \delta \in (0,1) \implies &= \frac{2}{1 - \delta}
+  \delta \in (0,1) \implies &= 2
 \end{aligned}$$
 
 
