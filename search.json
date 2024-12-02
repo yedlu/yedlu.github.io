@@ -651,9 +651,61 @@
   {
     "objectID": "repo/micro-g/g3.html",
     "href": "repo/micro-g/g3.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Repeated Games",
     "section": "",
-    "text": "Back to top",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Repeated Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g3.html#finitely-repeated-games",
+    "href": "repo/micro-g/g3.html#finitely-repeated-games",
+    "title": "Repeated Games",
+    "section": "Finitely Repeated Games",
+    "text": "Finitely Repeated Games\nLet\n\\[G = (N, (S_i), (u_i))\\]\nbe a normal-form game.\nIn repeated games, we call \\(G\\) the stage game.\nWe call \\(G(T)\\) the finitely repeated game in which:\n\nthe stage game \\(G\\) is played \\(T\\) times;\noutcomes of all preceding games are observed before next stage game is played;\npreference of each player \\(i \\in N\\) is represented by the sum of payoffs in each stage.\n\nThe how should we define and describe a strategy for player \\(i\\) in repeated games \\(G(T)\\)?\n\nExample: Prisoner’s Dilemma in Repeat\nConsider the stage game \\(G\\):\n\n\n\n\n\\(C\\)\n\\(D\\)\n\n\n\n\n\\(c\\)\n4,4\n0,5\n\n\n\\(d\\)\n5,0\n1,1\n\n\n\nWhat could be the history set \\(H\\) and a strategy of player 1 looks like?\n\n\nClick to Explore\n\n\\[\\begin{aligned}\n  H &= \\{\\emptyset, (c, C), ... , (d, D), ((c, C), (c, C)), ..., ((d, D), (d, D))\\}\n\\end{aligned}\\]\nOne strategy for player 1:\n\n\n\nHistory\nActions\n\n\n\n\n\\(\\emptyset\\)\n\\(c\\)\n\n\n\\((c, C)\\)\n\\(c\\)\n\n\n\\((c, D)\\)\n\\(d\\)\n\n\n\\((d, C)\\)\n\\(d\\)\n\n\n\\((d, D)\\)\n\\(d\\)\n\n\n\nThere are \\(2^5\\) possible strategies for each player.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Repeated Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g3.html#properties",
+    "href": "repo/micro-g/g3.html#properties",
+    "title": "Repeated Games",
+    "section": "Properties",
+    "text": "Properties\n\nUnique NE for Stage Game\nWhenever the stage game \\(G\\) has a unique NE, the unique subgame perfect outcome of \\(G(T)\\) is that NE player in every stage, for every finite \\(T\\).\n\n\nExample: Non-Unique NE for Stage Game\nConsider this stage game \\(G\\):\n\n\n\n\n\\(C\\)\n\\(D\\)\n\\(X\\)\n\n\n\n\n\\(c\\)\n4,4\n0,5\n-1,-1\n\n\n\\(d\\)\n5,0\n1,1\n-1,-1\n\n\n\\(x\\)\n-1,-1\n-1,-1\n3,3\n\n\n\nOne possible SPNE for \\(G(2)\\) would be:\n\n\nClick to Explore\n\nThe strategy for player 1:\n\n\n\nHistory\nActions\n\n\n\n\n\\(\\emptyset\\)\n\\(c\\)\n\n\n\\((c, C)\\)\n\\(x\\)\n\n\nelse\n\\(d\\)\n\n\n\nThe strategy for player 2:\n\n\n\nHistory\nActions\n\n\n\n\n\\(\\emptyset\\)\n\\(C\\)\n\n\n\\((c, C)\\)\n\\(X\\)\n\n\nelse\n\\(D\\)\n\n\n\nOutcome of this repeated game \\(G(2)\\) is: \\(((c, C), (x, X))\\).\nCheck if anyone has a profitable deviation. Without loss of generality, check player 1:\n\n\n\nAction\nPayoff\n\n\n\n\nOriginal Strategy\n7\n\n\nDeviate to \\(d\\) at 1st step\n6\n\n\nDeviate to \\(x\\) at 1st step\n0\n\n\nDeviate to \\(c\\) at 2nd step\n3\n\n\nDeviate to \\(d\\) at 2nd step\n3\n\n\n\nSimilarily true for player 2. Hence this strategy is SPNE.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Repeated Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g3.html#infinitely-repeated-games",
+    "href": "repo/micro-g/g3.html#infinitely-repeated-games",
+    "title": "Repeated Games",
+    "section": "Infinitely Repeated Games",
+    "text": "Infinitely Repeated Games\nStart with a normal-form stage game\n\\[G = (N, (S_i), (u_i)).\\]\nFor each \\(\\delta \\in (0,1)\\) we will create a new game \\(G(\\infty, \\delta)\\) with:\n\n\n\n\n\n\n\nPlayers\n\\(N = \\{1, ..., n\\}\\) same as \\(G\\)\n\n\nStrategies\n\\(\\sigma_i: H \\to \\Delta(S_i)\\) be a set of instructions that directs an action for every possible element of history\n\n\nPreferences\nrepresented by expected payoffs with \\((1-\\delta) \\sum_{t=1}^{\\infty} \\delta^{t-1} u_i (s^t)\\)\n\n\n\n\nCheatsheet: Geometric Sequence Sum\n\\[S_n = a \\frac{1 - r^n}{1 - r}\\]\nwhere\n\n\\(a\\) is the first term of the sequence\n\\(r\\) is the common ratio\n\\(n\\) is the number of terms in the sequence\n\nWhen \\(r \\in (0,1)\\) and \\(n \\to \\infty\\),\n\\[\\lim_{n \\to \\infty} S_n = \\frac{a}{1 - r}\\]\nAn example:\n\\[\\begin{aligned}\n  (1 - \\delta) [2 + 2 \\delta + 2 \\delta^2 + ...] &= (1 - \\delta) \\lim_{n \\to \\infty} [2 + 2 \\delta + ... + 2 \\delta^{n}] \\\\\n  &= \\lim_{n \\to \\infty} (1 - \\delta) 2 \\frac{1 - \\delta^n}{1 - \\delta} \\\\\n  \\delta \\in (0,1) \\implies &= \\frac{2}{1 - \\delta}\n\\end{aligned}\\]\n\n\nOne-shot Deviation Principle\nProposition\nA strategy profile \\(\\sigma = (\\sigma_i)\\) is a subgame perfect Nash equilibrium of \\(G(\\infty, \\delta)\\) iif there are no profitable one-shot deviations.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Micro II: Game Theory",
+      "Repeated Games"
+    ]
+  },
+  {
+    "objectID": "repo/micro-g/g3.html#common-strategies-for-infinitely-repeated-games",
+    "href": "repo/micro-g/g3.html#common-strategies-for-infinitely-repeated-games",
+    "title": "Repeated Games",
+    "section": "Common Strategies for Infinitely Repeated Games",
+    "text": "Common Strategies for Infinitely Repeated Games\nWe would use the example of Repeated Prisoner’s Dilemma.\n\nGrim Trigger\nFor player 1,\n\n\n\n\n\n\n\nHistory\nActions\n\n\n\n\n\\(\\emptyset\\)\n\\(c\\)\n\n\n\\((c, C), ..., (c, C)\\)\n\\(c\\)\n\n\nelse\n\\(d\\)\n\n\n\nSimilar for player 2.\n\n\nTit-for-Tat\nFor player 1,\n\n\n\n\n\n\n\nHistory\nActions\n\n\n\n\n\\(\\emptyset\\)\n\\(c\\)\n\n\n\\(..., (c, C)\\) or \\(..., (d, C)\\)\n\\(c\\)\n\n\n\\(..., (c, D)\\) or \\(..., (d, D)\\)\n\\(d\\)\n\n\n\nFor player 2,\n\n\n\n\n\n\n\nHistory\nActions\n\n\n\n\n\\(\\emptyset\\)\n\\(C\\)\n\n\n\\(..., (c, C)\\) or \\(..., (c, D)\\)\n\\(C\\)\n\n\n\\(..., (d, C)\\) or \\(..., (d, D)\\)\n\\(D\\)",
     "crumbs": [
       "me",
       "Repository",
