@@ -1,0 +1,193 @@
+---
+title: "Repeated Games"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
+## Finitely Repeated Games
+Let  
+$$G = (N, (S_i), (u_i))$$
+
+be a normal-form game. 
+
+In repeated games, we call $G$ the **stage game**.  
+
+We call $G(T)$ the finitely repeated game in which:  
+
+- the stage game $G$ is played $T$ times;
+- outcomes of all preceding games are observed before next stage game is played;
+- preference of each player $i \in N$ is represented by the **sum of payoffs** in each stage.
+
+The how should we define and describe a strategy for player $i$ in repeated games $G(T)$?
+
+### Example: Prisoner's Dilemma in Repeat
+
+Consider the stage game $G$:  
+
+| | $C$ | $D$ |
+| --- | --- | --- |
+| $c$ | 4,4 | 0,5 |
+| $d$ | 5,0 | 1,1 |
+
+What could be the history set $H$ and a strategy of player 1 looks like?
+
+<details>
+<summary>Click to Explore</summary>
+
+$$\begin{aligned}
+  H &= \{\emptyset, (c, C), ... , (d, D), ((c, C), (c, C)), ..., ((d, D), (d, D))\}
+\end{aligned}$$
+
+One strategy for player 1:  
+
+| History | Actions |
+| ------- | ------- |
+| $\emptyset$ | $c$ |
+| $(c, C)$ | $c$ |
+| $(c, D)$ | $d$ |
+| $(d, C)$ | $d$ |
+| $(d, D)$ | $d$ |
+
+
+There are $2^5$ possible strategies for each player.
+
+***
+
+</details>
+
+## Properties
+### Unique NE for Stage Game
+Whenever the stage game $G$ has a **unique** NE, the unique subgame perfect outcome of $G(T)$ is that NE player in every stage, for every finite $T$.  
+
+### Example: Non-Unique NE for Stage Game
+Consider this stage game $G$:  
+
+|     |  $C$  |  $D$  |  $X$  |
+| --- | ----- | ----- | ----- |
+| $c$ |  4,4  |  0,5  | -1,-1 |
+| $d$ |  5,0  |  1,1  | -1,-1 |
+| $x$ | -1,-1 | -1,-1 |  3,3  |
+
+One possible SPNE for $G(2)$ would be:  
+
+<details>
+<summary>Click to Explore</summary>
+
+The strategy for player 1:  
+
+| History | Actions |
+| ------- | ------- |
+| $\emptyset$ | $c$ |
+| $(c, C)$ | $x$ |
+| else | $d$ |
+
+
+The strategy for player 2:  
+
+| History | Actions |
+| ------- | ------- |
+| $\emptyset$ | $C$ |
+| $(c, C)$ | $X$ |
+| else | $D$ |  
+
+Outcome of this repeated game $G(2)$ is: $((c, C), (x, X))$.  
+
+Check if anyone has a profitable deviation. Without loss of generality, check player 1:  
+
+| Action | Payoff |
+| ------- | ------- |
+| Original Strategy | 7 |
+| Deviate to $d$ at 1st step | 6 |
+| Deviate to $x$ at 1st step | 0 |
+| Deviate to $c$ at 2nd step | 3 |
+| Deviate to $d$ at 2nd step | 3 |
+
+Similarily true for player 2. Hence this strategy is SPNE.
+
+***
+</details>
+
+
+## Infinitely Repeated Games
+Start with a normal-form stage game  
+
+$$G = (N, (S_i), (u_i)).$$
+
+For each $\delta \in (0,1)$ we will create a new game $G(\infty, \delta)$ with:  
+
+|          |          | 
+| -: | :------- |
+| **Players** | $N = \{1, ..., n\}$ same as $G$ |
+| **Strategies** | $\sigma_i: H \to \Delta(S_i)$ be a set of instructions that directs an action for every possible element of history |
+| **Preferences** | represented by expected payoffs with $(1-\delta) \sum_{t=1}^{\infty} \delta^{t-1} u_i (s^t)$ |
+
+### Cheatsheet: Geometric Sequence Sum
+
+$$S_n = a \frac{1 - r^n}{1 - r}$$
+
+where
+
+- $a$ is the first term of the sequence
+- $r$ is the common ratio
+- $n$ is the number of terms in the sequence
+
+When $r \in (0,1)$ and $n \to \infty$,  
+
+$$\lim_{n \to \infty} S_n = \frac{a}{1 - r}$$
+
+An example:  
+
+$$\begin{aligned}
+  (1 - \delta) [2 + 2 \delta + 2 \delta^2 + ...] &= (1 - \delta) \lim_{n \to \infty} [2 + 2 \delta + ... + 2 \delta^{n}] \\
+  &= \lim_{n \to \infty} (1 - \delta) 2 \frac{1 - \delta^n}{1 - \delta} \\
+  \delta \in (0,1) \implies &= \frac{2}{1 - \delta}
+\end{aligned}$$
+
+
+### One-shot Deviation Principle
+**Proposition**  
+A strategy profile $\sigma = (\sigma_i)$ is a subgame perfect Nash equilibrium of $G(\infty, \delta)$ **iif** there are no profitable one-shot deviations.  
+
+
+## Common Strategies for Infinitely Repeated Games
+We would use the example of Repeated Prisoner's Dilemma.
+
+### Grim Trigger
+For player 1,  
+
+| History | Actions |
+| -: | ------- |
+| $\emptyset$ | $c$ |
+| $(c, C), ..., (c, C)$ | $c$ |
+| else | $d$ |
+: {tbl-colwidths="[40,60]"}
+
+Similar for player 2.  
+
+### Tit-for-Tat
+For player 1,
+
+| History | Actions |
+| -: | ------- |
+| $\emptyset$ | $c$ |
+| $..., (c, C)$ or $..., (d, C)$ | $c$ |
+| $..., (c, D)$ or $..., (d, D)$ | $d$ |
+: {tbl-colwidths="[40,60]"}
+
+For player 2,
+
+| History | Actions |
+| -: | ------- |
+| $\emptyset$ | $C$ |
+| $..., (c, C)$ or $..., (c, D)$ | $C$ |
+| $..., (d, C)$ or $..., (d, D)$ | $D$ |
+: {tbl-colwidths="[40,60]"}
