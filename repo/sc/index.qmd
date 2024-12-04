@@ -1,0 +1,7 @@
+---
+title: "Applied Stochastic Calculus"
+---
+
+
+Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets.  
+I want to specifically acknowledge *Prof. Lorenzo Naranjo* for his intuitive lectures on [**Stochastic Foundations for Finance**](https://lorenzonaranjo.com/fin538).

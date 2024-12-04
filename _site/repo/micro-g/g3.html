@@ -568,7 +568,7 @@ Click to Explore
 <p><span class="math display">\[\begin{aligned}
   (1 - \delta) [2 + 2 \delta + 2 \delta^2 + ...] &amp;= (1 - \delta) \lim_{n \to \infty} [2 + 2 \delta + ... + 2 \delta^{n}] \\
   &amp;= \lim_{n \to \infty} (1 - \delta) 2 \frac{1 - \delta^n}{1 - \delta} \\
-  \delta \in (0,1) \implies &amp;= \frac{2}{1 - \delta}
+  \delta \in (0,1) \implies &amp;= 2
 \end{aligned}\]</span></p>
 </section>
 <section id="one-shot-deviation-principle" class="level3">
@@ -769,7 +769,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

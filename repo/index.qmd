@@ -14,6 +14,11 @@ format:
   - [Micro I: Utility Theories (PhD Level)](micro-u/index.qmd)
   - [Micro II: Game Theory (PhD Level)](micro-g/index.qmd)
 
+### Asset Pricing
+  - [Asset Pricing Theory (PhD Level)](ap/index.qmd)
+  - [Applied Stochastic Calculus](sc/index.qmd)
+
+
 <!-- ### Corporate Finance
   - Corporate Finance Theory (PhD Level)
   - Corporate Finance Practice (MBA Level)
@@ -21,9 +26,7 @@ format:
     - Financing
 
 
-### Asset Pricing
-  - Asset Pricing Theory (PhD Level)
-  - Derivatives Pricing
+
 
 
 
