@@ -4,3 +4,13 @@ title: "Asset Pricing Theory (PhD)"
 
 
 Hi! This page hosts my notes on Asset Pricing Theory. 
+
+1. [Consumption-Based Pricing](a1.qmd)
+
+2. [Consumption-Based Pricing Extended](a2.qmd)
+
+3. [Contingent Claims and Market Completeness](a3.qmd)
+
+4. [Linear Factor Models](a4.qmd)
+
+5. [Arrow-Debreu Allocation](a5.qmd)

@@ -1,7 +1,10 @@
 ---
-title: "Applied Stochastic Calculus"
+title: "Stochastic Finance"
 ---
 
 
-Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets.  
-I want to specifically acknowledge *Prof. Lorenzo Naranjo* for his intuitive lectures on [**Stochastic Foundations for Finance**](https://lorenzonaranjo.com/fin538).
+Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets. I want to specifically acknowledge *Prof. Lorenzo Naranjo* for his intuitive lectures on [**Stochastic Foundations for Finance**](https://lorenzonaranjo.com/fin538).  
+
+1. [Discrete-Time Modeling](s1.qmd)
+  Basis for discrete-time modeling.  
+

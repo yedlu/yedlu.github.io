@@ -1,0 +1,177 @@
+---
+title: "Consumption-Based Pricing"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
+## Riskiness of Assets
+We've all heard of the term ***risk-free***/***risky*** assets, but how can we formally define the riskiness of assets?  
+
+Consider the following simple state setting:  
+
+- $S = \{s_1, s_2\}$ be the state space;
+- $p_1, p_2 = 1 - p_1$ be the probability of each state happening;
+- $x_1, x_2$ be the state-contingent payoff of the asset.
+
+We will say an asset to be ***risk-free*** if the said asset pays the same payoff across every possible states in the state space:  
+
+$$\begin{aligned}
+  x_1 = x_2
+\end{aligned}$$
+
+Similarly, an asset is ***risky*** if the payoff is different across states:  
+
+$$\begin{aligned}
+  x_1 \neq x_2
+\end{aligned}$$
+
+## Pricing Through Consumption
+### Settings
+To begin our analysis in the simpliest way possible, we assume that individual living in this economy only enjoys and values consumption over today (time $t$) and tomorrow (time $t+1$).  
+
+Here are the notations useful in the model:  
+
+- $c_t$ be the consumption level at time $t$;
+- $u(\cdot)$ be the utility function over consumption level with the following characteristics.
+  - $u' > 0$: strictly increasing (locally insatiable),
+  - $u'' < 0$: concave (risk averse);
+- $\beta \in (0, 1)$ be the discount factor to future utility (investor impatience);
+- $p_t$ be the asset's price (or more formally **willingness to pay**) at time $t$;
+- $x_{t+1}$ be the asset payoff at time $t+1$;
+- $\xi$ be the arbitratily-small unit of the asset an investor decides to buy;
+- $e_t$ be the endowment level at time $t$;
+- $\BB{E}_t$ be the expected utility conditional on all information available at time $t$:
+$$\begin{aligned}
+  \BB{E}_t[\cdot] &= \BB{E}[\cdot | \text{all information at time }t]
+\end{aligned}$$
+
+
+### The Optimization Problem
+Under this two-period setting, every individual is rational and wishes to maximize **intertemporal** utility through choosing **consumption levels** across the time horizon:  
+
+$$\begin{aligned}
+  \max_{c_t, c_{t+1}} \quad u(c_t) + \beta \BB{E}_t [u(c_{t+1})]
+\end{aligned}$$
+
+With the asset in the economy, we can further break down the consumption level. The optimization problem:  
+
+$$\begin{aligned}
+  \max_{c_t, c_{t+1}} & \quad u(c_t(\xi)) + \beta \BB{E}_t [u(c_{t+1}(\xi))] \\
+  \text{s.t.} \quad c_t(\xi) &= e_t - p_t \xi \\
+  c_{t+1}(\xi) &= e_{t+1} + x_{t+1} \xi
+\end{aligned}$$
+
+now have two budget constraints at both time periods.  
+
+### Solving the Optimization
+Simplify the objective function:  
+$$\begin{aligned}
+  \max_{\xi} & \quad u(e_t - p_t \xi) + \beta \BB{E}_t [u(e_{t+1} + x_{t+1} \xi)] \\
+\end{aligned}$$
+
+Its First-Order Condition (FOC) w.r.t. $\xi$ yields:  
+$$\begin{aligned}
+  -p_t u'(e_t - p_t \xi) + \beta \BB{E}_t [x_{t+1} u'(e_{t+1} + x_{t+1} \xi)] = 0
+\end{aligned}$$
+
+Clean this up and we would have:  
+$$\begin{aligned}
+  \beta \BB{E}_t [x_{t+1} u'(c_{t+1})] = p_t u'(c_t)
+\end{aligned}$$
+
+### Intuition of the FOC 
+The left-hand side:
+$$\begin{aligned}
+  \beta \BB{E}_t [x_{t+1} u'(c_{t+1})]
+\end{aligned}$$
+describes the future marginal utility gain of buying the asset, discounted to today's term by $\beta$.  
+
+The right-hand side:
+$$\begin{aligned}
+  p_t u'(c_t)
+\end{aligned}$$
+describes today's marginal disutility of buying the asset, as we are reducing consumption today.  
+
+The optimization amount of asset bought is then met when the marginal loss equals marginal gain.  
+
+### Intertemporal Asset Pricing Equation
+Solving for $p_t$ of the FOC yields:
+$$\begin{aligned}
+  p_t = \BB{E}_t [\beta \frac{u'(c_{t+1})}{u'(c_t)} x_{t+1}]
+\end{aligned}$$
+where future consumption level $c_{t+1}$ and asset payoff $x_{t+1}$ are all random variables (thus need to stay in the expectation).  
+
+We can see that the asset's price (willingness to pay) is dependent to:  
+
+- investor-specific utility $u(\cdot)$;
+- future states $\BB{E}_t$;
+- endowment level $e$;
+- discount factor $\beta$;
+- state-contingent asset payoff $x_{t+1}$.
+
+
+### Stochastic Discount Factor (SDF)
+We denote the **stochastic discount factor (SDF)** as:
+$$\begin{aligned}
+  & m_{t+1} := \frac{u'(c_{t+1})}{u'(c_t)} \\
+  \implies & p_t = \BB{E}_t [m_{t+1} x_{t+1}]
+\end{aligned}$$
+
+Intuitively, this factor serves as a **risk-adjusted** discount factor on individual level.  
+
+
+## Applications
+### Denoting Returns
+By the definition of asset return, it is the dollar amount of payoff if we were to invest in one dollar of the asset. Transcribing this into our pricing equation:  
+$$\begin{aligned}
+  1 &= \BB{E}_t [m_{t+1} R_{t+1}]
+\end{aligned}$$
+
+### Risk-Free Assets
+Suppose the risk-free rate is $R^f$. Since this rate is not a random variable, we can further derive the pricing equation:  
+$$\begin{aligned}
+  1 &= \BB{E}_t [m_{t+1} R^f] = R^f \BB{E}_t [m_{t+1}]
+\end{aligned}$$
+If we move back for one time period and use the law of iterated expectation:  
+$$\begin{aligned}
+  1 &= R^f \BB{E}_{t-1} [m_t] \\
+  \implies \BB{E}_{t-1} [m_t] &= \frac{1}{R^f} \\
+  \\
+  \BB{E} [m_t] &= \BB{E}[\BB{E}_{t-1} [m_t]] = \BB{E}[\frac{1}{R^f}] \\
+  &= \frac{1}{R^f}
+\end{aligned}$$
+This links the risk-free rate to the stochastic discount factor!
+
+### Risk-Free Rate Determinants
+Suppose our utility function:
+$$\begin{aligned}
+  u(c_t) &= \frac{1}{1-\gamma} c_t^{-\gamma}
+\end{aligned}$$
+with $\gamma > 0$.  
+If future consumption level is not random, then:  
+$$\begin{aligned}
+  m_{t+1} &= \left(\frac{c_{t+1}}{c_t} \right)^{-\gamma} \\
+  \implies m_t &= \beta \left(\frac{c_{t+1}}{c_t} \right)^{-\gamma}
+\end{aligned}$$
+
+Then we can denote the risk-free rate as:  
+$$\begin{aligned}
+  R^f &= \frac{1}{\beta} \left(\frac{c_{t+1}}{c_t} \right)^{\gamma}
+\end{aligned}$$
+
+The following components can shift risk-free rate. Assume risk-free rate is increasing, this can be caused by:  
+
+| Factor | Direction | Intuition | 
+| :-: | :-: | :----------------- |
+| $\beta$ | $\downarrow$ | If investors are more impatient, the risk-free rate must be high enough for them to give up liquidity today. |
+| $c_{t+1}/c_t$ | $\uparrow$ | A high consumption growth in the future deters savings today. This also shifts $p_t$ down as the asset must be more lucrative to attract investment. |
+| $\gamma$ | $\uparrow$ | A higher curvature will leads to a steeper decline to the first derivative. Then, investors are less prone to use asset to smooth consumption *ceteris paribus*. |

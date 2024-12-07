@@ -1,0 +1,115 @@
+---
+title: "Discrete-Time Finance"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
+*yedlu, Winter 2024*  
+
+Modeling evolutions of a variable is at the center of economic disciplines. We will first try to see tools we can use in discrete times and then push them forward in continuous times.  
+
+## Linear Difference Equations
+Consider the following evolution:  
+
+$$\begin{aligned}
+  y_t &= a + b y_{t-1}
+\end{aligned}$$
+
+with $y_0$ being a pre-determined constant.  
+
+Then, we can iterate this over discrete times:  
+
+$$\begin{aligned}
+  y_1 &= a + b y_0 \\
+  y_2 &= a + b y_1 = a + ba + b y_0 \\
+  y_3 &= a + b y_2 = a + ba + b^2 a + b^3 y_0 \\
+  & ... \\
+  y_t &= a (\sum_{i=0}^{t-1} b^i) + b^t y_0
+\end{aligned}$$
+
+We can further derive the geometric sum:  
+
+$$\begin{aligned}
+  y_t &= a (\sum_{i=0}^{t-1} b^i) + b^t y_0 \\
+  &= a (\frac{1 - b^t}{1 - b}) + b^t y_0
+\end{aligned}$$
+
+### Convergence
+This condition   
+
+$$\begin{aligned}
+  \lim_{t \to \infty} \frac{1 - b^t}{1 - b} = c, \quad c \in \BB{R}
+\end{aligned}$$
+
+would be true if    
+
+$$\begin{aligned}
+  \lim_{t \to \infty} b^t &= 0 \\
+  \implies \mid b \mid &< 1
+\end{aligned}$$
+
+::: {.callout-note}
+## Types of Convergence
+
+In financial models we would typically assume the convergence is **monotonic**:  
+$b \in (0,1)$.   
+Nevertheless, **alternating** convergence might be useful in some cases:  
+$b \in (-1,0)$.    
+:::
+
+
+### Solution
+Assuming convergence, the steady-state of $y_t$ would then be:  
+
+$$\begin{aligned}
+  \overline{y} &= \lim_{t \to \infty} = a (\frac{1 - b^t}{1 - b}) + b^t y_0 \\
+  &= \frac{a}{1-b}
+\end{aligned}$$
+
+Another way to find the steady state is to assume existance of $\overline{y}$:  
+
+$$\begin{aligned}
+  \overline{y} &= a + b \overline{y} \\
+  \implies \overline{y} &= \frac{a}{1-b}
+\end{aligned}$$
+
+
+### Exponential Growth
+The general solution  
+$$\begin{aligned}
+  y_t &= \overline{y} + b^t (y_0 - \overline{y})
+\end{aligned}$$
+tells us a story. The discrete-time process begins at $y_0$, converges to $\overline{y}$ in the end exponentially ($b^t$).  
+
+
+## Transversality: Dividend Discount Revisited
+We know that the price of a stock can be denoted by the dividend discount model:  
+
+$$\begin{aligned}
+  p_t &= \frac{d_{t+1}}{1 + r} + \frac{d_{t+2}}{(1 + r)^2} + ... + \frac{d_{t+n}}{(1 + r)^n} + \frac{p_{t+n}}{(1 + r)^n}
+\end{aligned}$$
+
+If we were to allow the time period goes to infinity:  
+$$\begin{aligned}
+  p_t &= \sum_{i = 1}^{n} \frac{d_{t+i}}{(1 + r)^i} + \lim_{n \to \infty} \frac{p_{t+n}}{(1 + r)^n}
+\end{aligned}$$
+
+We can then see that the following assumption makes the price of the stock to be unique (**transversality condition**):  
+$$\begin{aligned}
+  \lim_{n \to \infty} \frac{p_{t+n}}{(1 + r)^n} &= 0
+\end{aligned}$$
+
+If this term explodes, we would not be able to obtain a unique price for this stock.  
+
+::: {.callout-tip}
+This would be an interesting concept in *Asset Pricing* called **market completeness**.
+:::

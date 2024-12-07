@@ -57,8 +57,22 @@ website:
               contents:
               - text: "Asset Pricing Theory"
                 href: repo/ap/index.qmd
-              - text: "Stochastic Calculus"
+                contents: 
+                - text: "Consumption I"
+                  href: repo/ap/a1.qmd
+                - text: "Consumption II"
+                  href: repo/ap/a2.qmd
+                - text: "Contingent Claims"
+                  href: repo/ap/a3.qmd
+                - text: "Factor Models"
+                  href: repo/ap/a4.qmd
+                - text: "Arrow-Debreu Model"
+                  href: repo/ap/a5.qmd
+              - text: "Stochastic Finance"
                 href: repo/sc/index.qmd
+                contents: 
+                - text: "Discrete-Time Finance"
+                  href: repo/sc/s1.qmd
 
 format:
   html:

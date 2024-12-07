@@ -16,7 +16,7 @@ format:
 
 ### Asset Pricing
   - [Asset Pricing Theory (PhD Level)](ap/index.qmd)
-  - [Applied Stochastic Calculus](sc/index.qmd)
+  - [Stochastic Finance](sc/index.qmd)
 
 
 <!-- ### Corporate Finance
