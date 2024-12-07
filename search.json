@@ -393,13 +393,27 @@
     "href": "repo/ap/index.html",
     "title": "Asset Pricing Theory (PhD)",
     "section": "",
-    "text": "Hi! This page hosts my notes on Asset Pricing Theory.\n\n\n\n Back to top",
+    "text": "Hi! This page hosts my notes on Asset Pricing Theory.\n\nConsumption-Based Pricing\nConsumption-Based Pricing Extended\nContingent Claims and Market Completeness\nLinear Factor Models\nArrow-Debreu Allocation\n\n\n\n\n Back to top",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
       "Asset Pricing Theory"
+    ]
+  },
+  {
+    "objectID": "repo/sc/index.html",
+    "href": "repo/sc/index.html",
+    "title": "Stochastic Finance",
+    "section": "",
+    "text": "Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets. I want to specifically acknowledge Prof. Lorenzo Naranjo for his intuitive lectures on Stochastic Foundations for Finance.\n\nDiscrete-Time Modeling Basis for discrete-time modeling.\n\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Stochastic Finance"
     ]
   },
   {
@@ -473,17 +487,108 @@
     "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "repo/sc/index.html",
-    "href": "repo/sc/index.html",
-    "title": "Applied Stochastic Calculus",
+    "objectID": "repo/sc/s1.html",
+    "href": "repo/sc/s1.html",
+    "title": "Discrete-Time Finance",
     "section": "",
-    "text": "Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets.\nI want to specifically acknowledge Prof. Lorenzo Naranjo for his intuitive lectures on Stochastic Foundations for Finance.\n\n\n\n Back to top",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024\nModeling evolutions of a variable is at the center of economic disciplines. We will first try to see tools we can use in discrete times and then push them forward in continuous times.",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
-      "Stochastic Calculus"
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "repo/sc/s1.html#linear-difference-equations",
+    "href": "repo/sc/s1.html#linear-difference-equations",
+    "title": "Discrete-Time Finance",
+    "section": "Linear Difference Equations",
+    "text": "Linear Difference Equations\nConsider the following evolution:\n\\[\\begin{aligned}\n  y_t &= a + b y_{t-1}\n\\end{aligned}\\]\nwith \\(y_0\\) being a pre-determined constant.\nThen, we can iterate this over discrete times:\n\\[\\begin{aligned}\n  y_1 &= a + b y_0 \\\\\n  y_2 &= a + b y_1 = a + ba + b y_0 \\\\\n  y_3 &= a + b y_2 = a + ba + b^2 a + b^3 y_0 \\\\\n  & ... \\\\\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0\n\\end{aligned}\\]\nWe can further derive the geometric sum:\n\\[\\begin{aligned}\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0 \\\\\n  &= a (\\frac{1 - b^t}{1 - b}) + b^t y_0\n\\end{aligned}\\]\n\nConvergence\nThis condition\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} \\frac{1 - b^t}{1 - b} = c, \\quad c \\in \\BB{R}\n\\end{aligned}\\]\nwould be true if\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} b^t &= 0 \\\\\n  \\implies \\mid b \\mid &&lt; 1\n\\end{aligned}\\]\n\n\n\n\n\n\nTypes of Convergence\n\n\n\nIn financial models we would typically assume the convergence is monotonic:\n\\(b \\in (0,1)\\).\nNevertheless, alternating convergence might be useful in some cases:\n\\(b \\in (-1,0)\\).\n\n\n\n\nSolution\nAssuming convergence, the steady-state of \\(y_t\\) would then be:\n\\[\\begin{aligned}\n  \\overline{y} &= \\lim_{t \\to \\infty} = a (\\frac{1 - b^t}{1 - b}) + b^t y_0 \\\\\n  &= \\frac{a}{1-b}\n\\end{aligned}\\]\nAnother way to find the steady state is to assume existance of \\(\\overline{y}\\):\n\\[\\begin{aligned}\n  \\overline{y} &= a + b \\overline{y} \\\\\n  \\implies \\overline{y} &= \\frac{a}{1-b}\n\\end{aligned}\\]\n\n\nExponential Growth\nThe general solution\n\\[\\begin{aligned}\n  y_t &= \\overline{y} + b^t (y_0 - \\overline{y})\n\\end{aligned}\\] tells us a story. The discrete-time process begins at \\(y_0\\), converges to \\(\\overline{y}\\) in the end exponentially (\\(b^t\\)).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "repo/sc/s1.html#transversality-dividend-discount-revisited",
+    "href": "repo/sc/s1.html#transversality-dividend-discount-revisited",
+    "title": "Discrete-Time Finance",
+    "section": "Transversality: Dividend Discount Revisited",
+    "text": "Transversality: Dividend Discount Revisited\nWe know that the price of a stock can be denoted by the dividend discount model:\n\\[\\begin{aligned}\n  p_t &= \\frac{d_{t+1}}{1 + r} + \\frac{d_{t+2}}{(1 + r)^2} + ... + \\frac{d_{t+n}}{(1 + r)^n} + \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nIf we were to allow the time period goes to infinity:\n\\[\\begin{aligned}\n  p_t &= \\sum_{i = 1}^{n} \\frac{d_{t+i}}{(1 + r)^i} + \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nWe can then see that the following assumption makes the price of the stock to be unique (transversality condition):\n\\[\\begin{aligned}\n  \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n} &= 0\n\\end{aligned}\\]\nIf this term explodes, we would not be able to obtain a unique price for this stock.\n\n\n\n\n\n\nTip\n\n\n\nThis would be an interesting concept in Asset Pricing called market completeness.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a1.html",
+    "href": "repo/ap/a1.html",
+    "title": "Consumption-Based Pricing",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption I"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a1.html#riskiness-of-assets",
+    "href": "repo/ap/a1.html#riskiness-of-assets",
+    "title": "Consumption-Based Pricing",
+    "section": "Riskiness of Assets",
+    "text": "Riskiness of Assets\nWe’ve all heard of the term risk-free/risky assets, but how can we formally define the riskiness of assets?\nConsider the following simple state setting:\n\n\\(S = \\{s_1, s_2\\}\\) be the state space;\n\\(p_1, p_2 = 1 - p_1\\) be the probability of each state happening;\n\\(x_1, x_2\\) be the state-contingent payoff of the asset.\n\nWe will say an asset to be risk-free if the said asset pays the same payoff across every possible states in the state space:\n\\[\\begin{aligned}\n  x_1 = x_2\n\\end{aligned}\\]\nSimilarly, an asset is risky if the payoff is different across states:\n\\[\\begin{aligned}\n  x_1 \\neq x_2\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption I"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a1.html#pricing-through-consumption",
+    "href": "repo/ap/a1.html#pricing-through-consumption",
+    "title": "Consumption-Based Pricing",
+    "section": "Pricing Through Consumption",
+    "text": "Pricing Through Consumption\n\nSettings\nTo begin our analysis in the simpliest way possible, we assume that individual living in this economy only enjoys and values consumption over today (time \\(t\\)) and tomorrow (time \\(t+1\\)).\nHere are the notations useful in the model:\n\n\\(c_t\\) be the consumption level at time \\(t\\);\n\\(u(\\cdot)\\) be the utility function over consumption level with the following characteristics.\n\n\\(u' &gt; 0\\): strictly increasing (locally insatiable),\n\\(u'' &lt; 0\\): concave (risk averse);\n\n\\(\\beta \\in (0, 1)\\) be the discount factor to future utility (investor impatience);\n\\(p_t\\) be the asset’s price (or more formally willingness to pay) at time \\(t\\);\n\\(x_{t+1}\\) be the asset payoff at time \\(t+1\\);\n\\(\\xi\\) be the arbitratily-small unit of the asset an investor decides to buy;\n\\(e_t\\) be the endowment level at time \\(t\\);\n\\(\\BB{E}_t\\) be the expected utility conditional on all information available at time \\(t\\): \\[\\begin{aligned}\n\\BB{E}_t[\\cdot] &= \\BB{E}[\\cdot | \\text{all information at time }t]\n\\end{aligned}\\]\n\n\n\nThe Optimization Problem\nUnder this two-period setting, every individual is rational and wishes to maximize intertemporal utility through choosing consumption levels across the time horizon:\n\\[\\begin{aligned}\n  \\max_{c_t, c_{t+1}} \\quad u(c_t) + \\beta \\BB{E}_t [u(c_{t+1})]\n\\end{aligned}\\]\nWith the asset in the economy, we can further break down the consumption level. The optimization problem:\n\\[\\begin{aligned}\n  \\max_{c_t, c_{t+1}} & \\quad u(c_t(\\xi)) + \\beta \\BB{E}_t [u(c_{t+1}(\\xi))] \\\\\n  \\text{s.t.} \\quad c_t(\\xi) &= e_t - p_t \\xi \\\\\n  c_{t+1}(\\xi) &= e_{t+1} + x_{t+1} \\xi\n\\end{aligned}\\]\nnow have two budget constraints at both time periods.\n\n\nSolving the Optimization\nSimplify the objective function:\n\\[\\begin{aligned}\n  \\max_{\\xi} & \\quad u(e_t - p_t \\xi) + \\beta \\BB{E}_t [u(e_{t+1} + x_{t+1} \\xi)] \\\\\n\\end{aligned}\\]\nIts First-Order Condition (FOC) w.r.t. \\(\\xi\\) yields:\n\\[\\begin{aligned}\n  -p_t u'(e_t - p_t \\xi) + \\beta \\BB{E}_t [x_{t+1} u'(e_{t+1} + x_{t+1} \\xi)] = 0\n\\end{aligned}\\]\nClean this up and we would have:\n\\[\\begin{aligned}\n  \\beta \\BB{E}_t [x_{t+1} u'(c_{t+1})] = p_t u'(c_t)\n\\end{aligned}\\]\n\n\nIntuition of the FOC\nThe left-hand side: \\[\\begin{aligned}\n  \\beta \\BB{E}_t [x_{t+1} u'(c_{t+1})]\n\\end{aligned}\\] describes the future marginal utility gain of buying the asset, discounted to today’s term by \\(\\beta\\).\nThe right-hand side: \\[\\begin{aligned}\n  p_t u'(c_t)\n\\end{aligned}\\] describes today’s marginal disutility of buying the asset, as we are reducing consumption today.\nThe optimization amount of asset bought is then met when the marginal loss equals marginal gain.\n\n\nIntertemporal Asset Pricing Equation\nSolving for \\(p_t\\) of the FOC yields: \\[\\begin{aligned}\n  p_t = \\BB{E}_t [\\beta \\frac{u'(c_{t+1})}{u'(c_t)} x_{t+1}]\n\\end{aligned}\\] where future consumption level \\(c_{t+1}\\) and asset payoff \\(x_{t+1}\\) are all random variables (thus need to stay in the expectation).\nWe can see that the asset’s price (willingness to pay) is dependent to:\n\ninvestor-specific utility \\(u(\\cdot)\\);\nfuture states \\(\\BB{E}_t\\);\nendowment level \\(e\\);\ndiscount factor \\(\\beta\\);\nstate-contingent asset payoff \\(x_{t+1}\\).\n\n\n\nStochastic Discount Factor (SDF)\nWe denote the stochastic discount factor (SDF) as: \\[\\begin{aligned}\n  & m_{t+1} := \\frac{u'(c_{t+1})}{u'(c_t)} \\\\\n  \\implies & p_t = \\BB{E}_t [m_{t+1} x_{t+1}]\n\\end{aligned}\\]\nIntuitively, this factor serves as a risk-adjusted discount factor on individual level.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption I"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a1.html#applications",
+    "href": "repo/ap/a1.html#applications",
+    "title": "Consumption-Based Pricing",
+    "section": "Applications",
+    "text": "Applications\n\nDenoting Returns\nBy the definition of asset return, it is the dollar amount of payoff if we were to invest in one dollar of the asset. Transcribing this into our pricing equation:\n\\[\\begin{aligned}\n  1 &= \\BB{E}_t [m_{t+1} R_{t+1}]\n\\end{aligned}\\]\n\n\nRisk-Free Assets\nSuppose the risk-free rate is \\(R^f\\). Since this rate is not a random variable, we can further derive the pricing equation:\n\\[\\begin{aligned}\n  1 &= \\BB{E}_t [m_{t+1} R^f] = R^f \\BB{E}_t [m_{t+1}]\n\\end{aligned}\\] If we move back for one time period and use the law of iterated expectation:\n\\[\\begin{aligned}\n  1 &= R^f \\BB{E}_{t-1} [m_t] \\\\\n  \\implies \\BB{E}_{t-1} [m_t] &= \\frac{1}{R^f} \\\\\n  \\\\\n  \\BB{E} [m_t] &= \\BB{E}[\\BB{E}_{t-1} [m_t]] = \\BB{E}[\\frac{1}{R^f}] \\\\\n  &= \\frac{1}{R^f}\n\\end{aligned}\\] This links the risk-free rate to the stochastic discount factor!\n\n\nRisk-Free Rate Determinants\nSuppose our utility function: \\[\\begin{aligned}\n  u(c_t) &= \\frac{1}{1-\\gamma} c_t^{-\\gamma}\n\\end{aligned}\\] with \\(\\gamma &gt; 0\\).\nIf future consumption level is not random, then:\n\\[\\begin{aligned}\n  m_{t+1} &= \\left(\\frac{c_{t+1}}{c_t} \\right)^{-\\gamma} \\\\\n  \\implies m_t &= \\beta \\left(\\frac{c_{t+1}}{c_t} \\right)^{-\\gamma}\n\\end{aligned}\\]\nThen we can denote the risk-free rate as:\n\\[\\begin{aligned}\n  R^f &= \\frac{1}{\\beta} \\left(\\frac{c_{t+1}}{c_t} \\right)^{\\gamma}\n\\end{aligned}\\]\nThe following components can shift risk-free rate. Assume risk-free rate is increasing, this can be caused by:\n\n\n\n\n\n\n\n\nFactor\nDirection\nIntuition\n\n\n\n\n\\(\\beta\\)\n\\(\\downarrow\\)\nIf investors are more impatient, the risk-free rate must be high enough for them to give up liquidity today.\n\n\n\\(c_{t+1}/c_t\\)\n\\(\\uparrow\\)\nA high consumption growth in the future deters savings today. This also shifts \\(p_t\\) down as the asset must be more lucrative to attract investment.\n\n\n\\(\\gamma\\)\n\\(\\uparrow\\)\nA higher curvature will leads to a steeper decline to the first derivative. Then, investors are less prone to use asset to smooth consumption ceteris paribus.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption I"
     ]
   },
   {
@@ -491,7 +596,7 @@
     "href": "repo/index.html",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nApplied Stochastic Calculus",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance",
     "crumbs": [
       "me",
       "Repository"
@@ -502,7 +607,7 @@
     "href": "repo/index.html#class-notes",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nApplied Stochastic Calculus",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance",
     "crumbs": [
       "me",
       "Repository"
