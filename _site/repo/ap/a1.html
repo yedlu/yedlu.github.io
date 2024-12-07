@@ -372,6 +372,15 @@ window.Quarto = {
   <li><a href="#denoting-returns" id="toc-denoting-returns" class="nav-link" data-scroll-target="#denoting-returns">Denoting Returns</a></li>
   <li><a href="#risk-free-assets" id="toc-risk-free-assets" class="nav-link" data-scroll-target="#risk-free-assets">Risk-Free Assets</a></li>
   <li><a href="#risk-free-rate-determinants" id="toc-risk-free-rate-determinants" class="nav-link" data-scroll-target="#risk-free-rate-determinants">Risk-Free Rate Determinants</a></li>
+  <li><a href="#risk-correction" id="toc-risk-correction" class="nav-link" data-scroll-target="#risk-correction">Risk Correction</a></li>
+  <li><a href="#covariance-of-sdf-and-payoff" id="toc-covariance-of-sdf-and-payoff" class="nav-link" data-scroll-target="#covariance-of-sdf-and-payoff">Covariance of SDF and Payoff</a></li>
+  </ul></li>
+  <li><a href="#on-risk-corrections" id="toc-on-risk-corrections" class="nav-link" data-scroll-target="#on-risk-corrections">On Risk Corrections</a>
+  <ul>
+  <li><a href="#risk-neutral" id="toc-risk-neutral" class="nav-link" data-scroll-target="#risk-neutral">Risk-Neutral</a></li>
+  <li><a href="#constant-consumption" id="toc-constant-consumption" class="nav-link" data-scroll-target="#constant-consumption">Constant Consumption</a></li>
+  <li><a href="#systematicidiosyncratic-risks" id="toc-systematicidiosyncratic-risks" class="nav-link" data-scroll-target="#systematicidiosyncratic-risks">Systematic/Idiosyncratic Risks</a></li>
+  <li><a href="#expected-return-of-risky-assets" id="toc-expected-return-of-risky-assets" class="nav-link" data-scroll-target="#expected-return-of-risky-assets">Expected Return of Risky Assets</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -580,6 +589,85 @@ If future consumption level is not random, then:<br>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="risk-correction" class="level3">
+<h3 class="anchored" data-anchor-id="risk-correction">Risk Correction</h3>
+<p>We will derive and show that the stochastic discount factor is essentially a risk-corrected discount factor.<br>
+By the definition of covariance:<br>
+<span class="math display">\[\begin{aligned}
+  \sigma_{m, x} &amp;= \BB{E}[mx] - \BB{E}[m] \BB{E} [x]
+\end{aligned}\]</span></p>
+<p>Using it we derive:<br>
+<span class="math display">\[\begin{aligned}
+  p &amp;= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma_{m, x} \\
+  &amp;= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x}
+\end{aligned}\]</span></p>
+</section>
+<section id="covariance-of-sdf-and-payoff" class="level3">
+<h3 class="anchored" data-anchor-id="covariance-of-sdf-and-payoff">Covariance of SDF and Payoff</h3>
+<p>On the covariance, assets whose payoff <span class="math inline">\(x\)</span> is <strong>negatively</strong> correlated with the SDF (we will later show that together with convex utility, a higher SDF implies a smaller consumption growth) have a lower price.</p>
+<p>We first further derive the risk-adjusted form of pricing formula:<br>
+<span class="math display">\[\begin{aligned}
+  p &amp;= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x} \\
+  &amp;= \frac{\BB{E}[x]}{R^f} + \sigma_{\beta \frac{u'(c_{t+1})}{u'(c_t)}, x} \\
+  &amp;= \frac{\BB{E}[x]}{R^f} + \frac{\beta \sigma_{u'(c_{t+1}), x}}{u'(c_t)}
+\end{aligned}\]</span></p>
+<p>By the assumption of the utility function, <span class="math inline">\(u''&lt;0\)</span> holds. This implies that <span class="math inline">\(u'(c_1) &gt; u'(c_2)\)</span> whenever <span class="math inline">\(c_1 &lt; c_2\)</span>.<br>
+Then, the covariance <span class="math inline">\(\sigma_{u'(c_{t+1}), x}\)</span> is positive when the payoff of bad states (low consumption growth, higher <span class="math inline">\(u'\)</span>) is high, <em>vice versa</em>.</p>
+</section>
+</section>
+<section id="on-risk-corrections" class="level2">
+<h2 class="anchored" data-anchor-id="on-risk-corrections">On Risk Corrections</h2>
+<section id="risk-neutral" class="level3">
+<h3 class="anchored" data-anchor-id="risk-neutral">Risk-Neutral</h3>
+<p>If investors are risk-neutral in this economy, they only care about the expected consumption level. Hence, their utility function can be assumed to have a linear form:<br>
+<span class="math display">\[\begin{aligned}
+  u(c_t) &amp;= a + b c_t
+\end{aligned}\]</span></p>
+<p>Hence:<br>
+<span class="math display">\[\begin{aligned}
+  u'(c_t) &amp;= b = u'(c_{t+1})
+\end{aligned}\]</span></p>
+<p>Then, with <span class="math inline">\(m_t = \beta\)</span> comes <span class="math inline">\(\sigma_{m, x} = 0\)</span>: there are no risk adjustments to asset pricing:<br>
+<span class="math display">\[\begin{aligned}
+  p &amp;= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x} \\
+  &amp;= \frac{\BB{E}[x]}{R^f}
+\end{aligned}\]</span></p>
+</section>
+<section id="constant-consumption" class="level3">
+<h3 class="anchored" data-anchor-id="constant-consumption">Constant Consumption</h3>
+<p>It is obvious that <span class="math inline">\(u'(c_t) = u'(c_{t+1})\)</span> when <span class="math inline">\(c_t = c_{t+1}\)</span>.</p>
+</section>
+<section id="systematicidiosyncratic-risks" class="level3">
+<h3 class="anchored" data-anchor-id="systematicidiosyncratic-risks">Systematic/Idiosyncratic Risks</h3>
+<p>Assume we have an risky asset:</p>
+<ul>
+<li><strong>idiosyncratic risks</strong> are payoff risks uncorrelated with market conditions (in here the SDF): <span class="math inline">\(\sigma_{m, x} = 0\)</span>. These types of risks do not need to be adjusted by the market-wise SDF, as it is already implied by cash flow across states.</li>
+<li><strong>systematic risks</strong> are payoff risks correlated with market conditions (consumptions). Only systematic risks generate risk correction through SDF.</li>
+</ul>
+</section>
+<section id="expected-return-of-risky-assets" class="level3">
+<h3 class="anchored" data-anchor-id="expected-return-of-risky-assets">Expected Return of Risky Assets</h3>
+<p>From our results above, we have:<br>
+<span class="math display">\[\begin{aligned}
+  1 &amp;= \BB{E}[mR^i] \\
+  &amp;= \BB{E} [m] \BB{E} [R^i] + \sigma_{m, R^i} \\
+  &amp;= \frac{\BB{E} [R^i]}{R^f} + \sigma_{m, R^i} \\
+  \\
+  \implies \BB{E} [R^i] - R^f &amp;= - R^f \sigma_{m, R^i}
+\end{aligned}\]</span> Further expanding <span class="math inline">\(m\)</span> and <span class="math inline">\(R^f\)</span> yields:<br>
+<span class="math display">\[\begin{aligned}
+  \BB{E} [R^i] - R^f &amp;= - \left(\BB{E} [m]\right)^{-1} \sigma_{m, R^i} \\
+  &amp;= - \left(\BB{E} [\beta \frac{u'(c_{t+1})}{u'(c_t)}]\right)^{-1} \sigma_{\beta \frac{u'(c_{t+1})}{u'(c_t)}, R^i} \\
+  &amp;= - \frac{\sigma_{u'(c_{t+1}), R^i}}{\BB{E}[u'(c_{t+1})]}
+\end{aligned}\]</span></p>
+<p>Intuition:</p>
+<ul>
+<li><strong>A higher excess return is required if <span class="math inline">\(\sigma_{u'(c_{t+1}), R^i}\)</span> is negative.</strong><br>
+By convexity of utility, lower <span class="math inline">\(u'\)</span> indicates higher consumption. This means that the asset has a higher return when consumption growth is high (good state) and <em>vice versa</em>. This makes consumption even more volatile and has to compensate investors.</li>
+<li><strong>A lower excess return is required if <span class="math inline">\(\sigma_{u'(c_{t+1}), R^i}\)</span> is positive.</strong><br>
+Consider insurance products that pays when consumption growth is small (bad state) and do not pay <em>vice versa</em>. Since these products smooth consumption, we do not need additional incentive for investors to hold on to this asset.</li>
+</ul>
 
 
 </section>

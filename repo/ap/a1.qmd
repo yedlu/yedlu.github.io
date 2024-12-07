@@ -175,3 +175,80 @@ The following components can shift risk-free rate. Assume risk-free rate is incr
 | $\beta$ | $\downarrow$ | If investors are more impatient, the risk-free rate must be high enough for them to give up liquidity today. |
 | $c_{t+1}/c_t$ | $\uparrow$ | A high consumption growth in the future deters savings today. This also shifts $p_t$ down as the asset must be more lucrative to attract investment. |
 | $\gamma$ | $\uparrow$ | A higher curvature will leads to a steeper decline to the first derivative. Then, investors are less prone to use asset to smooth consumption *ceteris paribus*. |
+
+### Risk Correction
+We will derive and show that the stochastic discount factor is essentially a risk-corrected discount factor.  
+By the definition of covariance:  
+$$\begin{aligned}
+  \sigma_{m, x} &= \BB{E}[mx] - \BB{E}[m] \BB{E} [x]
+\end{aligned}$$
+
+Using it we derive:  
+$$\begin{aligned}
+  p &= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma_{m, x} \\
+  &= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x}
+\end{aligned}$$
+
+
+### Covariance of SDF and Payoff
+On the covariance, assets whose payoff $x$ is **negatively** correlated with the SDF (we will later show that together with convex utility, a higher SDF implies a smaller consumption growth) have a lower price.  
+
+We first further derive the risk-adjusted form of pricing formula:  
+$$\begin{aligned}
+  p &= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x} \\
+  &= \frac{\BB{E}[x]}{R^f} + \sigma_{\beta \frac{u'(c_{t+1})}{u'(c_t)}, x} \\
+  &= \frac{\BB{E}[x]}{R^f} + \frac{\beta \sigma_{u'(c_{t+1}), x}}{u'(c_t)}
+\end{aligned}$$
+
+By the assumption of the utility function, $u''<0$ holds. This implies that $u'(c_1) > u'(c_2)$ whenever $c_1 < c_2$.  
+Then, the covariance $\sigma_{u'(c_{t+1}), x}$ is positive when the payoff of bad states (low consumption growth, higher $u'$) is high, *vice versa*.  
+
+## On Risk Corrections
+### Risk-Neutral
+If investors are risk-neutral in this economy, they only care about the expected consumption level. Hence, their utility function can be assumed to have a linear form:  
+$$\begin{aligned}
+  u(c_t) &= a + b c_t
+\end{aligned}$$
+
+Hence:  
+$$\begin{aligned}
+  u'(c_t) &= b = u'(c_{t+1})
+\end{aligned}$$
+
+Then, with $m_t = \beta$ comes $\sigma_{m, x} = 0$: there are no risk adjustments to asset pricing:  
+$$\begin{aligned}
+  p &= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x} \\
+  &= \frac{\BB{E}[x]}{R^f}
+\end{aligned}$$
+
+### Constant Consumption
+It is obvious that $u'(c_t) = u'(c_{t+1})$ when $c_t = c_{t+1}$.  
+
+### Systematic/Idiosyncratic Risks
+Assume we have an risky asset:  
+
+- **idiosyncratic risks** are payoff risks uncorrelated with market conditions (in here the SDF): $\sigma_{m, x} = 0$. These types of risks do not need to be adjusted by the market-wise SDF, as it is already implied by cash flow across states.
+- **systematic risks** are payoff risks correlated with market conditions (consumptions). Only systematic risks generate risk correction through SDF.
+
+### Expected Return of Risky Assets
+From our results above, we have:  
+$$\begin{aligned}
+  1 &= \BB{E}[mR^i] \\
+  &= \BB{E} [m] \BB{E} [R^i] + \sigma_{m, R^i} \\
+  &= \frac{\BB{E} [R^i]}{R^f} + \sigma_{m, R^i} \\
+  \\
+  \implies \BB{E} [R^i] - R^f &= - R^f \sigma_{m, R^i}
+\end{aligned}$$
+Further expanding $m$ and $R^f$ yields:  
+$$\begin{aligned}
+  \BB{E} [R^i] - R^f &= - \left(\BB{E} [m]\right)^{-1} \sigma_{m, R^i} \\
+  &= - \left(\BB{E} [\beta \frac{u'(c_{t+1})}{u'(c_t)}]\right)^{-1} \sigma_{\beta \frac{u'(c_{t+1})}{u'(c_t)}, R^i} \\
+  &= - \frac{\sigma_{u'(c_{t+1}), R^i}}{\BB{E}[u'(c_{t+1})]}
+\end{aligned}$$
+
+Intuition:  
+
+- **A higher excess return is required if $\sigma_{u'(c_{t+1}), R^i}$ is negative.**  
+  By convexity of utility, lower $u'$ indicates higher consumption. This means that the asset has a higher return when consumption growth is high (good state) and *vice versa*. This makes consumption even more volatile and has to compensate investors.
+- **A lower excess return is required if $\sigma_{u'(c_{t+1}), R^i}$ is positive.**  
+  Consider insurance products that pays when consumption growth is small (bad state) and do not pay *vice versa*. Since these products smooth consumption, we do not need additional incentive for investors to hold on to this asset.
