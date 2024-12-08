@@ -13,6 +13,8 @@ $$
 $$
 :::
 
+*yedlu, Winter 2024*
+
 ## Riskiness of Assets
 We've all heard of the term ***risk-free***/***risky*** assets, but how can we formally define the riskiness of assets?  
 
@@ -40,19 +42,17 @@ To begin our analysis in the simpliest way possible, we assume that individual l
 
 Here are the notations useful in the model:  
 
-- $c_t$ be the consumption level at time $t$;
-- $u(\cdot)$ be the utility function over consumption level with the following characteristics.
-  - $u' > 0$: strictly increasing (locally insatiable),
-  - $u'' < 0$: concave (risk averse);
-- $\beta \in (0, 1)$ be the discount factor to future utility (investor impatience);
-- $p_t$ be the asset's price (or more formally **willingness to pay**) at time $t$;
-- $x_{t+1}$ be the asset payoff at time $t+1$;
-- $\xi$ be the arbitratily-small unit of the asset an investor decides to buy;
-- $e_t$ be the endowment level at time $t$;
-- $\BB{E}_t$ be the expected utility conditional on all information available at time $t$:
-$$\begin{aligned}
-  \BB{E}_t[\cdot] &= \BB{E}[\cdot | \text{all information at time }t]
-\end{aligned}$$
+| Variable| Description |
+| :-: | :-------- |
+| $c_t$ | consumption level at time $t$ |
+| $u(\cdot)$ | utility function over consumption level with $u' > 0$ (strictly increasing) and $u'' < 0$ (concave) |
+| $\beta \in (0, 1)$ | discount factor to future utility (investor impatience) |
+| $p_t$ | asset price (or more formally **willingness to pay**) at time $t$ |
+| $x_{t+1}$ | asset payoff at time $t+1$ |
+| $\xi$ | arbitratily-small unit of the asset an investor decides to buy |
+| $e_t$ | endowment level at time $t$ |
+| $\BB{E}_t$ | expected utility conditional on all information available at time $t$ |
+
 
 
 ### The Optimization Problem
@@ -185,8 +185,8 @@ $$\begin{aligned}
 
 Using it we derive:  
 $$\begin{aligned}
-  p &= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma_{m, x} \\
-  &= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x}
+  p &= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma(m, x) \\
+  &= \frac{\BB{E}[x]}{R^f} + \sigma(m, x)
 \end{aligned}$$
 
 

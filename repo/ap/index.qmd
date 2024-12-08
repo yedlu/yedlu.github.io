@@ -6,8 +6,10 @@ title: "Asset Pricing Theory (PhD)"
 Hi! This page hosts my notes on Asset Pricing Theory. 
 
 1. [Consumption-Based Pricing](a1.qmd)
+   - Using *stochastic discount factor (SDF)* in a 2-period settings.
 
 2. [Consumption-Based Pricing Extended](a2.qmd)
+   - Extending to broader time horizons and more economic settings.
 
 3. [Contingent Claims and Market Completeness](a3.qmd)
 

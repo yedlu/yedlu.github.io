@@ -354,8 +354,14 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 
 <p>Hi! This page hosts my notes on Asset Pricing Theory.</p>
 <ol type="1">
-<li><p><a href="../../repo/ap/a1.html">Consumption-Based Pricing</a></p></li>
-<li><p><a href="a2.qmd">Consumption-Based Pricing Extended</a></p></li>
+<li><p><a href="../../repo/ap/a1.html">Consumption-Based Pricing</a></p>
+<ul>
+<li>Using <em>stochastic discount factor (SDF)</em> in a 2-period settings.</li>
+</ul></li>
+<li><p><a href="a2.qmd">Consumption-Based Pricing Extended</a></p>
+<ul>
+<li>Extending to broader time horizons and more economic settings.</li>
+</ul></li>
 <li><p><a href="a3.qmd">Contingent Claims and Market Completeness</a></p></li>
 <li><p><a href="a4.qmd">Linear Factor Models</a></p></li>
 <li><p><a href="a5.qmd">Arrow-Debreu Allocation</a></p></li>
@@ -460,7 +466,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
