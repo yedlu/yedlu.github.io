@@ -304,7 +304,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a2.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/ap/a2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Consumption II</span></a>
   </div>
 </li>
@@ -417,6 +417,7 @@ window.Quarto = {
 \def\BF#1{{\mathbf{#1}}}
 \]</span></p>
 </div>
+<p><em>yedlu, Winter 2024</em></p>
 <section id="riskiness-of-assets" class="level2">
 <h2 class="anchored" data-anchor-id="riskiness-of-assets">Riskiness of Assets</h2>
 <p>We’ve all heard of the term <strong><em>risk-free</em></strong>/<strong><em>risky</em></strong> assets, but how can we formally define the riskiness of assets?</p>
@@ -441,22 +442,52 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="settings">Settings</h3>
 <p>To begin our analysis in the simpliest way possible, we assume that individual living in this economy only enjoys and values consumption over today (time <span class="math inline">\(t\)</span>) and tomorrow (time <span class="math inline">\(t+1\)</span>).</p>
 <p>Here are the notations useful in the model:</p>
-<ul>
-<li><span class="math inline">\(c_t\)</span> be the consumption level at time <span class="math inline">\(t\)</span>;</li>
-<li><span class="math inline">\(u(\cdot)\)</span> be the utility function over consumption level with the following characteristics.
-<ul>
-<li><span class="math inline">\(u' &gt; 0\)</span>: strictly increasing (locally insatiable),</li>
-<li><span class="math inline">\(u'' &lt; 0\)</span>: concave (risk averse);</li>
-</ul></li>
-<li><span class="math inline">\(\beta \in (0, 1)\)</span> be the discount factor to future utility (investor impatience);</li>
-<li><span class="math inline">\(p_t\)</span> be the asset’s price (or more formally <strong>willingness to pay</strong>) at time <span class="math inline">\(t\)</span>;</li>
-<li><span class="math inline">\(x_{t+1}\)</span> be the asset payoff at time <span class="math inline">\(t+1\)</span>;</li>
-<li><span class="math inline">\(\xi\)</span> be the arbitratily-small unit of the asset an investor decides to buy;</li>
-<li><span class="math inline">\(e_t\)</span> be the endowment level at time <span class="math inline">\(t\)</span>;</li>
-<li><span class="math inline">\(\BB{E}_t\)</span> be the expected utility conditional on all information available at time <span class="math inline">\(t\)</span>: <span class="math display">\[\begin{aligned}
-\BB{E}_t[\cdot] &amp;= \BB{E}[\cdot | \text{all information at time }t]
-\end{aligned}\]</span></li>
-</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(c_t\)</span></td>
+<td style="text-align: left;">consumption level at time <span class="math inline">\(t\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(u(\cdot)\)</span></td>
+<td style="text-align: left;">utility function over consumption level with <span class="math inline">\(u' &gt; 0\)</span> (strictly increasing) and <span class="math inline">\(u'' &lt; 0\)</span> (concave)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\beta \in (0, 1)\)</span></td>
+<td style="text-align: left;">discount factor to future utility (investor impatience)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(p_t\)</span></td>
+<td style="text-align: left;">asset price (or more formally <strong>willingness to pay</strong>) at time <span class="math inline">\(t\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_{t+1}\)</span></td>
+<td style="text-align: left;">asset payoff at time <span class="math inline">\(t+1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\xi\)</span></td>
+<td style="text-align: left;">arbitratily-small unit of the asset an investor decides to buy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(e_t\)</span></td>
+<td style="text-align: left;">endowment level at time <span class="math inline">\(t\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\BB{E}_t\)</span></td>
+<td style="text-align: left;">expected utility conditional on all information available at time <span class="math inline">\(t\)</span></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="the-optimization-problem" class="level3">
 <h3 class="anchored" data-anchor-id="the-optimization-problem">The Optimization Problem</h3>
@@ -599,8 +630,8 @@ By the definition of covariance:<br>
 \end{aligned}\]</span></p>
 <p>Using it we derive:<br>
 <span class="math display">\[\begin{aligned}
-  p &amp;= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma_{m, x} \\
-  &amp;= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x}
+  p &amp;= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma(m, x) \\
+  &amp;= \frac{\BB{E}[x]}{R^f} + \sigma(m, x)
 \end{aligned}\]</span></p>
 </section>
 <section id="covariance-of-sdf-and-payoff" class="level3">

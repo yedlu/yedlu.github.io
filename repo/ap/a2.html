@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Game Theory – Yanhe Eddie Lu</title>
+<title>Consumption-Based Pricing Extended – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -120,7 +149,7 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#microeconomics">Microeconomics</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#asset-pricing">Asset Pricing</a></li><li class="breadcrumb-item"><a href="../../repo/ap/index.html">Asset Pricing Theory</a></li><li class="breadcrumb-item"><a href="../../repo/ap/a2.html">Consumption II</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -154,11 +183,11 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Microeconomics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
@@ -208,13 +237,13 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Micro II: Game Theory</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/micro-g/g1.html" class="sidebar-item-text sidebar-link">
@@ -253,20 +282,20 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Asset Pricing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Asset Pricing Theory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/ap/a1.html" class="sidebar-item-text sidebar-link">
@@ -275,7 +304,7 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/ap/a2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Consumption II</span></a>
   </div>
 </li>
@@ -324,18 +353,43 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#consumption-pricing-characteristics" id="toc-consumption-pricing-characteristics" class="nav-link active" data-scroll-target="#consumption-pricing-characteristics">Consumption Pricing Characteristics</a>
+  <ul>
+  <li><a href="#model-assumption" id="toc-model-assumption" class="nav-link" data-scroll-target="#model-assumption">Model Assumption</a></li>
+  <li><a href="#reaching-equilibrium" id="toc-reaching-equilibrium" class="nav-link" data-scroll-target="#reaching-equilibrium">Reaching Equilibrium</a></li>
+  <li><a href="#interconnected-random-variable" id="toc-interconnected-random-variable" class="nav-link" data-scroll-target="#interconnected-random-variable">Interconnected Random Variable</a></li>
+  </ul></li>
+  <li><a href="#mean-variance-frontier-hansen-jagannathan-bounds" id="toc-mean-variance-frontier-hansen-jagannathan-bounds" class="nav-link" data-scroll-target="#mean-variance-frontier-hansen-jagannathan-bounds">Mean-Variance Frontier (Hansen-Jagannathan Bounds)</a>
+  <ul>
+  <li><a href="#derivation" id="toc-derivation" class="nav-link" data-scroll-target="#derivation">Derivation</a></li>
+  <li><a href="#graphical-illustration" id="toc-graphical-illustration" class="nav-link" data-scroll-target="#graphical-illustration">Graphical Illustration</a></li>
+  <li><a href="#illustration" id="toc-illustration" class="nav-link" data-scroll-target="#illustration">Illustration</a></li>
+  <li><a href="#sharpe-ratio" id="toc-sharpe-ratio" class="nav-link" data-scroll-target="#sharpe-ratio">Sharpe Ratio</a></li>
+  </ul></li>
+  <li><a href="#multi-period-pricing" id="toc-multi-period-pricing" class="nav-link" data-scroll-target="#multi-period-pricing">Multi-Period Pricing</a>
+  <ul>
+  <li><a href="#setting" id="toc-setting" class="nav-link" data-scroll-target="#setting">Setting</a></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#risk-adjusted-form" id="toc-risk-adjusted-form" class="nav-link" data-scroll-target="#risk-adjusted-form">Risk-Adjusted Form</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#microeconomics">Microeconomics</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#asset-pricing">Asset Pricing</a></li><li class="breadcrumb-item"><a href="../../repo/ap/index.html">Asset Pricing Theory</a></li><li class="breadcrumb-item"><a href="../../repo/ap/a2.html">Consumption II</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Game Theory</h1>
+<h1 class="title">Consumption-Based Pricing Extended</h1>
 </div>
 
 
@@ -352,31 +406,217 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </header>
 
 
-<p>Salut! You can navigate yourself through one of the following topics:</p>
-<ol type="1">
-<li><a href="../../repo/micro-g/g1.html">Normal-Form Games</a>
+<div class="hidden">
+<p><span class="math display">\[
+\def\BB#1{{\mathbb{#1}}}
+\def\BF#1{{\mathbf{#1}}}
+\def\E{{\mathbb{E}}}
+\]</span></p>
+</div>
+<p><em>yedlu, Winter 2024</em></p>
+<section id="consumption-pricing-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="consumption-pricing-characteristics">Consumption Pricing Characteristics</h2>
+<section id="model-assumption" class="level3">
+<h3 class="anchored" data-anchor-id="model-assumption">Model Assumption</h3>
+<p>One beauty of consumption-based pricing is that it requires very little assumption. One assumption that has to be satisfied is the investor is able to trade arbitrarily-small <span class="math inline">\(\xi\)</span> units of asset.</p>
+<p>Here’s a list of assumptions that the general consumption-based pricing do not assume:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Assumption</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Complete Markets</td>
+<td style="text-align: left;">Measures individual-level willingness to pay, everyone can have different <span class="math inline">\(p\)</span> under incomplete markets</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Specific Return Distribution</td>
+<td style="text-align: left;">Can take any return distribution</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Representative/Marginal Investor</td>
+<td style="text-align: left;">The SDF can be heterogenous to measure different types of investors</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Specific Utility Functions</td>
+<td style="text-align: left;">Can take any form form of utility functions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Market Equilibrium</td>
+<td style="text-align: left;">Willingness to pay do not need market equilibrium to exist</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2-Period Model</td>
+<td style="text-align: left;">Can be expanded to multi-period form (later on)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Specific Beginning Endowment</td>
+<td style="text-align: left;">Can take any level of endowment</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reaching-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="reaching-equilibrium">Reaching Equilibrium</h3>
+<p>In much rigor terms, <span class="math inline">\(p\)</span> denotes individual investor’s <strong>willingness to pay</strong> to an asset. From above we know that the market does not have to be in eqilibrium for using the consumption-based pricing.<br>
+We will show now that, nevertheless, the market will finally be in congruent with the individual willingness to pay, reaching an equilibrium.<br>
+To begin with, purchasing <span class="math inline">\(\xi\)</span> units of asset in extra will increase the utility in the future by (discounted to today):</p>
+<p><span class="math display">\[\begin{aligned}
+  &amp; \beta \E [u(c_{t+1} + \xi x_{t+1}) - u(c_{t+1})] \\
+  = &amp; \beta \E [u'(c_{t+1}) \, \xi x_{t+1} + ...]
+\end{aligned}\]</span></p>
+<p>For an arbitrarily small <span class="math inline">\(\xi\)</span>, only the first-order Taylor Expansion matters.</p>
+<p>Similarly, purchasing <span class="math inline">\(\xi\)</span> units of asset will decrease today’s consumption. Using first-order Taylor expansion:<br>
+<span class="math display">\[\begin{aligned}
+  &amp; u(c_t - \xi v_t) \\
+  = &amp; u'(c_t) \xi v_t + ...
+\end{aligned}\]</span></p>
+<p>Optimality is reached if the investor is indifferent to buy additional <span class="math inline">\(\xi\)</span> units of asset. How does market reach equilibrium:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th>Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(v_t &gt; p_t\)</span></td>
+<td>Investor buys more asset because it is below valuation, then drives <span class="math inline">\(c_t\)</span> down and <span class="math inline">\(\E [c_{t+1}]\)</span> up. Convexity drives the SDF down, hence <span class="math inline">\(v_t\)</span> dropped till equilibrium.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v_t &lt; p_t\)</span></td>
+<td>Investor buys less asset because it is above valuation, driving <span class="math inline">\(c_t\)</span> up and <span class="math inline">\(\E [c_{t+1}]\)</span> down. Convexity drives the SDF up, hence <span class="math inline">\(v_t\)</span> increased till equilibrium.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(v_t = p_t\)</span></td>
+<td>In equilibrium.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="interconnected-random-variable" class="level3">
+<h3 class="anchored" data-anchor-id="interconnected-random-variable">Interconnected Random Variable</h3>
+<p>From above we know that neither <span class="math inline">\(p\)</span> and <span class="math inline">\(c\)</span> are exogenous. They are linked through the consumption-based pricing model and interact each other. Specifically,</p>
 <ul>
-<li>How to describe a normal-form game? What are the implications?</li>
-</ul></li>
-<li><a href="../../repo/micro-g/g2.html">Extensive-Form Games</a>
+<li>knowing <span class="math inline">\(\E [mx]\)</span> yields the willingness to pay <span class="math inline">\(p\)</span>;</li>
+<li>knowing <span class="math inline">\(p\)</span> yields investment decisions today.</li>
+</ul>
+</section>
+</section>
+<section id="mean-variance-frontier-hansen-jagannathan-bounds" class="level2">
+<h2 class="anchored" data-anchor-id="mean-variance-frontier-hansen-jagannathan-bounds">Mean-Variance Frontier (Hansen-Jagannathan Bounds)</h2>
+<section id="derivation" class="level3">
+<h3 class="anchored" data-anchor-id="derivation">Derivation</h3>
+<p>Given an asset’s riskiness, is there a reasonable bound for the return of the asset? We will try to derive the mean-variance frontier from our consumption pricing model.</p>
+<p><span class="math display">\[\begin{aligned}
+  1 &amp;= \E [mR^i] \\
+  &amp;= \E[m] \E[R^i] + \sigma(m, R^i) \\
+  &amp;= \frac{\E[R^i]}{R^f} + \rho (m, R^i) \sigma(m) \sigma(R^i)
+\end{aligned}\]</span></p>
+<p>Rewriting the equation we would have:<br>
+<span class="math display">\[\begin{aligned}
+  \E [R^i] - R^f &amp;= - R^f \rho (m, R^i) \sigma(m) \sigma(R^i) \\
+  R^f = \frac{1}{\E[m]} \implies \E [R^i] - R^f &amp;= - \rho (m, R^i) \frac{\sigma(m)}{\E[m]} \sigma(R^i)
+\end{aligned}\]</span></p>
+<p>By <em>Cauchy-Schwarz inequality</em>:<br>
+<span class="math display">\[\begin{aligned}
+  \mid \E [R^i] - R^f \mid &amp;\leq \frac{\sigma(m)}{\E[m]} \sigma(R^i)
+\end{aligned}\]</span></p>
+</section>
+<section id="graphical-illustration" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-illustration">Graphical Illustration</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/a2_hj_bound.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Sample Mean-Variance Frontier</figcaption>
+</figure>
+</div>
+<p>Assets on the upper bound:<br>
+<span class="math display">\[\begin{aligned}
+  \E [R^i] &amp;= R^f + \frac{\sigma(m)}{\E[m]} \sigma(R^i)
+\end{aligned}\]</span> implies the correlation <span class="math inline">\(\rho(m, R^i) = -1\)</span>. The asset return has perfect negative correlation with the SDF (hence perfect positive correlation with consumption). These types of asset bring higher volatility to consumption, thus investors would require a much higher excess return. One example would be stocks that goes high when market is bullist and plummets when market is bearish.</p>
+<p>The lower bound, on the opposite,<br>
+<span class="math display">\[\begin{aligned}
+  \E [R^i] &amp;= R^f - \frac{\sigma(m)}{\E[m]} \sigma(R^i)
+\end{aligned}\]</span> describes assets with high returns when consumptions are low. Consider insurances: normal investors would not require a high excess return on insurance products generally, as long as they can use these products to smoothen consumption levels across time and states.</p>
+</section>
+<section id="illustration" class="level3">
+<h3 class="anchored" data-anchor-id="illustration">Illustration</h3>
+<p>We can compare assets within the wedge-shaped mean-variance frontier through two ways:</p>
 <ul>
-<li>What can happen if each player takes its turns?</li>
-</ul></li>
-<li><a href="../../repo/micro-g/g3.html">Repeated Games</a>
-<ul>
-<li>How to evaluate strategies when games are repeated finitely or infinitely?</li>
-</ul></li>
-<li><a href="../../repo/micro-g/g4.html">Bayesian Games</a>
-<ul>
-<li>Players are best-responding to their own types and also their counterparts’.</li>
-</ul></li>
-<li><a href="../../repo/micro-g/g5.html">Perfect Bayesian Equilibrium</a>
-<ul>
-<li>A new equilibrium system based on beliefs.</li>
-</ul></li>
-</ol>
+<li><strong>Horizontally</strong>. If two assets (their corresponding points in the graph) lies under one horizontal line, then they have the same expected returns (<span class="math inline">\(\E[R^i]\)</span>). The asset on the left has lower overall risk (<span class="math inline">\(\sigma(R^i)\)</span>) which can be attributed to idiosyncratic risks.<br>
+</li>
+<li><strong>Vertically</strong>. If two assets (their corresponding points in the graph) lies under one vertical line, then they have the same overall risk. The one that has a higher expected return (on the top) has a higher consumption-payoff correlation.</li>
+</ul>
+</section>
+<section id="sharpe-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="sharpe-ratio">Sharpe Ratio</h3>
+<p>The Sharpe ratio measures the excess return (per unit of risk) and is defined as:<br>
+<span class="math display">\[\begin{aligned}
+  \frac{\E[R^i] - R^f}{\sigma(R^i)}
+\end{aligned}\]</span></p>
+<p>We can connect Sharpe ratio with the mean-variance frontier:<br>
+<span class="math display">\[\begin{aligned}
+  \mid \frac{\E[R^i] - R^f}{\sigma(R^i)} \mid &amp;\leq \frac{\sigma(m)}{\E[m]}
+\end{aligned}\]</span> <strong>Intuition</strong>: the slope of the mean-variance frontier wedge is the maximum Sharpe ratio available.</p>
+</section>
+</section>
+<section id="multi-period-pricing" class="level2">
+<h2 class="anchored" data-anchor-id="multi-period-pricing">Multi-Period Pricing</h2>
+<section id="setting" class="level3">
+<h3 class="anchored" data-anchor-id="setting">Setting</h3>
+<p>Now, the asset pays a stream of cash flows <span class="math inline">\(\{\delta_{t+j}\}\)</span> in the future. How should we price this multi-period asset?</p>
+</section>
+<section id="optimization" class="level3">
+<h3 class="anchored" data-anchor-id="optimization">Optimization</h3>
+<p>Let’s revisit the optimization problem:<br>
+<span class="math display">\[\begin{aligned}
+  \max_{c_{t+j}} &amp; \quad \BB{E}_t \left[\sum_{j = 0}^{\infty} \beta^j u(c_{t+j})\right] \\
+  \text{s.t.} &amp; \quad  c_t(\xi) = e_t - p_t \xi \\
+  &amp; c_{t+j}(\xi) = e_{t+j} + \delta_{t+j} \xi \quad (j \leq 1)
+\end{aligned}\]</span></p>
+<p>Rearranging the objective function:<br>
+<span class="math display">\[\begin{aligned}
+  \max_{\xi} &amp; \quad \left[u(e_t - p_t \xi) + \BB{E}_t \left[ \sum_{j = 1}^{\infty} \beta^j u(e_{t+j} + \delta_{t+j} \xi) \right] \right]
+\end{aligned}\]</span></p>
+<p>The first-order condition (FOC) w.r.t <span class="math inline">\(\xi\)</span> of this objective function be:<br>
+<span class="math display">\[\begin{aligned}
+  - p_t u'(c_t) + \E_t \left[\sum_{j = 1}^{\infty} \beta^j \delta_{t+j} u'(c_{t+j}) \right] = 0
+\end{aligned}\]</span></p>
+</section>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
+<p>Solving for the price (willingness to pay):<br>
+<span class="math display">\[\begin{aligned}
+  p_t &amp;= \E_t \left[\sum_{j = 1}^{\infty} \beta^j \frac{u'(c_{t+j})}{u'(c_t)} \delta_{t+j} \right]
+\end{aligned}\]</span></p>
+<p>We define the multi-period stochastic discount factor (SDF) as:<br>
+<span class="math display">\[\begin{aligned}
+  m_{t+j} &amp;:= \beta^j \frac{u'(c_{t+j})}{u'(c_t)} \quad (j \geq 1)
+\end{aligned}\]</span></p>
+</section>
+<section id="risk-adjusted-form" class="level3">
+<h3 class="anchored" data-anchor-id="risk-adjusted-form">Risk-Adjusted Form</h3>
+<p>As in the two-period model, we can also rewrite prices as it is explicitly risk-adjusted:<br>
+<span class="math display">\[\begin{aligned}
+  p_t &amp;= \sum_{j = 1}^{\infty} \left[ \frac{\E_t [\delta_{t+j}]}{R^f_{t, t+j}} + \sigma(\delta_{t+j}, m_{t, t+j}) \right]
+\end{aligned}\]</span></p>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
