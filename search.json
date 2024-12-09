@@ -403,116 +403,78 @@
     ]
   },
   {
-    "objectID": "repo/ap/a2.html",
-    "href": "repo/ap/a2.html",
-    "title": "Consumption-Based Pricing Extended",
+    "objectID": "repo/ap/a3.html",
+    "href": "repo/ap/a3.html",
+    "title": "Contingent Claims and Market Completeness",
     "section": "",
-    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\def\\E{{\\mathbb{E}}}\n\\]\nyedlu, Winter 2024",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\def\\E{{\\mathbb{E}}}\n\\def\\R{{\\mathbb{R}}}\n\\]\nyedlu, Winter 2024",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
       "Asset Pricing Theory",
-      "Consumption II"
+      "Contingent Claims"
     ]
   },
   {
-    "objectID": "repo/ap/a2.html#consumption-pricing-characteristics",
-    "href": "repo/ap/a2.html#consumption-pricing-characteristics",
-    "title": "Consumption-Based Pricing Extended",
-    "section": "Consumption Pricing Characteristics",
-    "text": "Consumption Pricing Characteristics\n\nModel Assumption\nOne beauty of consumption-based pricing is that it requires very little assumption. One assumption that has to be satisfied is the investor is able to trade arbitrarily-small \\(\\xi\\) units of asset.\nHere’s a list of assumptions that the general consumption-based pricing do not assume:\n\n\n\n\n\n\n\nAssumption\nNotes\n\n\n\n\nComplete Markets\nMeasures individual-level willingness to pay, everyone can have different \\(p\\) under incomplete markets\n\n\nSpecific Return Distribution\nCan take any return distribution\n\n\nRepresentative/Marginal Investor\nThe SDF can be heterogenous to measure different types of investors\n\n\nSpecific Utility Functions\nCan take any form form of utility functions\n\n\nMarket Equilibrium\nWillingness to pay do not need market equilibrium to exist\n\n\n2-Period Model\nCan be expanded to multi-period form (later on)\n\n\nSpecific Beginning Endowment\nCan take any level of endowment\n\n\n\n\n\nReaching Equilibrium\nIn much rigor terms, \\(p\\) denotes individual investor’s willingness to pay to an asset. From above we know that the market does not have to be in eqilibrium for using the consumption-based pricing.\nWe will show now that, nevertheless, the market will finally be in congruent with the individual willingness to pay, reaching an equilibrium.\nTo begin with, purchasing \\(\\xi\\) units of asset in extra will increase the utility in the future by (discounted to today):\n\\[\\begin{aligned}\n  & \\beta \\E [u(c_{t+1} + \\xi x_{t+1}) - u(c_{t+1})] \\\\\n  = & \\beta \\E [u'(c_{t+1}) \\, \\xi x_{t+1} + ...]\n\\end{aligned}\\]\nFor an arbitrarily small \\(\\xi\\), only the first-order Taylor Expansion matters.\nSimilarly, purchasing \\(\\xi\\) units of asset will decrease today’s consumption. Using first-order Taylor expansion:\n\\[\\begin{aligned}\n  & u(c_t - \\xi v_t) \\\\\n  = & u'(c_t) \\xi v_t + ...\n\\end{aligned}\\]\nOptimality is reached if the investor is indifferent to buy additional \\(\\xi\\) units of asset. How does market reach equilibrium:\n\n\n\n\n\n\n\nScenario\nMechanism\n\n\n\n\n\\(v_t &gt; p_t\\)\nInvestor buys more asset because it is below valuation, then drives \\(c_t\\) down and \\(\\E [c_{t+1}]\\) up. Convexity drives the SDF down, hence \\(v_t\\) dropped till equilibrium.\n\n\n\\(v_t &lt; p_t\\)\nInvestor buys less asset because it is above valuation, driving \\(c_t\\) up and \\(\\E [c_{t+1}]\\) down. Convexity drives the SDF up, hence \\(v_t\\) increased till equilibrium.\n\n\n\\(v_t = p_t\\)\nIn equilibrium.\n\n\n\n\n\nInterconnected Random Variable\nFrom above we know that neither \\(p\\) and \\(c\\) are exogenous. They are linked through the consumption-based pricing model and interact each other. Specifically,\n\nknowing \\(\\E [mx]\\) yields the willingness to pay \\(p\\);\nknowing \\(p\\) yields investment decisions today.",
+    "objectID": "repo/ap/a3.html#contingent-claim-markets",
+    "href": "repo/ap/a3.html#contingent-claim-markets",
+    "title": "Contingent Claims and Market Completeness",
+    "section": "Contingent Claim Markets",
+    "text": "Contingent Claim Markets\n\nSettings\nWe have:\n\n\n\nNotation\nDescription\n\n\n\n\n\\(S\\)\nSet of states\n\n\n\\(x \\in \\BB{R}^S\\)\nPayoff vector for every possible states\n\n\n\n\n\nContingent Claim\nWe call a security contingent claim if it pays $1 in one particular future state \\(s^{*} \\in S\\) and zero in all other states.\nIn matrix notation, this is a standard-unit vector in \\(\\BB{R}^S\\). By definition, contingent claims are mutually independent and span the whole payoff space.\nWe use the notation \\(pc(s^*)\\) as the current price of the contingent claim for state \\(s^*\\).\n\n\nComplete Market through Contingent Claims\nIn a complete market, there exists a contingent claim for every possible state, either directly or through synthesizing.\nMarket completeness is an intriguing concept through this view: we are able to hedge any type of risk through contingent claims under market completeness.",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
       "Asset Pricing Theory",
-      "Consumption II"
+      "Contingent Claims"
     ]
   },
   {
-    "objectID": "repo/ap/a2.html#mean-variance-frontier-hansen-jagannathan-bounds",
-    "href": "repo/ap/a2.html#mean-variance-frontier-hansen-jagannathan-bounds",
-    "title": "Consumption-Based Pricing Extended",
-    "section": "Mean-Variance Frontier (Hansen-Jagannathan Bounds)",
-    "text": "Mean-Variance Frontier (Hansen-Jagannathan Bounds)\n\nDerivation\nGiven an asset’s riskiness, is there a reasonable bound for the return of the asset? We will try to derive the mean-variance frontier from our consumption pricing model.\n\\[\\begin{aligned}\n  1 &= \\E [mR^i] \\\\\n  &= \\E[m] \\E[R^i] + \\sigma(m, R^i) \\\\\n  &= \\frac{\\E[R^i]}{R^f} + \\rho (m, R^i) \\sigma(m) \\sigma(R^i)\n\\end{aligned}\\]\nRewriting the equation we would have:\n\\[\\begin{aligned}\n  \\E [R^i] - R^f &= - R^f \\rho (m, R^i) \\sigma(m) \\sigma(R^i) \\\\\n  R^f = \\frac{1}{\\E[m]} \\implies \\E [R^i] - R^f &= - \\rho (m, R^i) \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\]\nBy Cauchy-Schwarz inequality:\n\\[\\begin{aligned}\n  \\mid \\E [R^i] - R^f \\mid &\\leq \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\]\n\n\nGraphical Illustration\n\n\n\nSample Mean-Variance Frontier\n\n\nAssets on the upper bound:\n\\[\\begin{aligned}\n  \\E [R^i] &= R^f + \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\] implies the correlation \\(\\rho(m, R^i) = -1\\). The asset return has perfect negative correlation with the SDF (hence perfect positive correlation with consumption). These types of asset bring higher volatility to consumption, thus investors would require a much higher excess return. One example would be stocks that goes high when market is bullist and plummets when market is bearish.\nThe lower bound, on the opposite,\n\\[\\begin{aligned}\n  \\E [R^i] &= R^f - \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\] describes assets with high returns when consumptions are low. Consider insurances: normal investors would not require a high excess return on insurance products generally, as long as they can use these products to smoothen consumption levels across time and states.\n\n\nIllustration\nWe can compare assets within the wedge-shaped mean-variance frontier through two ways:\n\nHorizontally. If two assets (their corresponding points in the graph) lies under one horizontal line, then they have the same expected returns (\\(\\E[R^i]\\)). The asset on the left has lower overall risk (\\(\\sigma(R^i)\\)) which can be attributed to idiosyncratic risks.\n\nVertically. If two assets (their corresponding points in the graph) lies under one vertical line, then they have the same overall risk. The one that has a higher expected return (on the top) has a higher consumption-payoff correlation.\n\n\n\nSharpe Ratio\nThe Sharpe ratio measures the excess return (per unit of risk) and is defined as:\n\\[\\begin{aligned}\n  \\frac{\\E[R^i] - R^f}{\\sigma(R^i)}\n\\end{aligned}\\]\nWe can connect Sharpe ratio with the mean-variance frontier:\n\\[\\begin{aligned}\n  \\mid \\frac{\\E[R^i] - R^f}{\\sigma(R^i)} \\mid &\\leq \\frac{\\sigma(m)}{\\E[m]}\n\\end{aligned}\\] Intuition: the slope of the mean-variance frontier wedge is the maximum Sharpe ratio available.",
+    "objectID": "repo/ap/a3.html#contingent-claim-pricing",
+    "href": "repo/ap/a3.html#contingent-claim-pricing",
+    "title": "Contingent Claims and Market Completeness",
+    "section": "Contingent Claim Pricing",
+    "text": "Contingent Claim Pricing\n\nHappy Meal Theorem\nIn a complete market, we can price an asset as:\n\\[\\begin{aligned}\n  p(x) &= \\sum_{s \\in S} pc(s) \\cdot x(s)\n\\end{aligned}\\]\nIntuition: the price of a payoff stream (which can be represent by linear combinations of contingent claims) should be the linear combination of contingent claim prices.\n\n\n\n\n\n\nNote\n\n\n\nWe will later discuss the assumption needed for this theorem to hold (namely law of one prices and/or arbitrage-free conditions).\n\n\n\n\nLinks to Consumption Pricing\nWe will derive and show how to link contingent claim pricing to the consumption pricing model.\nLet \\(\\pi(s)\\) be the probability that state \\(s \\in S\\) occurs. Then for the pricing equation:\n\\[\\begin{aligned}\n  p(x) &= \\sum_{s \\in S} \\pi(s) \\frac{pc(s)}{\\pi(s)} x(s)\n\\end{aligned}\\]\nWe define the state-dependent tochastic discount factor (SDF) in this model as:\n\\[\\begin{aligned}\n  m(s) := \\frac{pc(s)}{\\pi(s)}\n\\end{aligned}\\]\nIn this way, the contingent claim pricing equation becomes identical to the consumption pricing model:\n\\[\\begin{aligned}\n  p(x) &= \\sum_{s \\in S} \\pi(s) \\frac{pc(s)}{\\pi(s)} x(s) \\\\\n  &= \\sum_{s \\in S} \\pi(s) m(s) x(s) \\\\\n  &= \\E[mx]\n\\end{aligned}\\]\nIn a complete market, if SDF exists, then it is given by the set of contingent claim prices scaled by probability measures.\nWhat’s different now is that we do not assume investor-specific preferences (including utility functions and discount factors).",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
       "Asset Pricing Theory",
-      "Consumption II"
+      "Contingent Claims"
     ]
   },
   {
-    "objectID": "repo/ap/a2.html#multi-period-pricing",
-    "href": "repo/ap/a2.html#multi-period-pricing",
-    "title": "Consumption-Based Pricing Extended",
-    "section": "Multi-Period Pricing",
-    "text": "Multi-Period Pricing\n\nSetting\nNow, the asset pays a stream of cash flows \\(\\{\\delta_{t+j}\\}\\) in the future. How should we price this multi-period asset?\n\n\nOptimization\nLet’s revisit the optimization problem:\n\\[\\begin{aligned}\n  \\max_{c_{t+j}} & \\quad \\BB{E}_t \\left[\\sum_{j = 0}^{\\infty} \\beta^j u(c_{t+j})\\right] \\\\\n  \\text{s.t.} & \\quad  c_t(\\xi) = e_t - p_t \\xi \\\\\n  & c_{t+j}(\\xi) = e_{t+j} + \\delta_{t+j} \\xi \\quad (j \\leq 1)\n\\end{aligned}\\]\nRearranging the objective function:\n\\[\\begin{aligned}\n  \\max_{\\xi} & \\quad \\left[u(e_t - p_t \\xi) + \\BB{E}_t \\left[ \\sum_{j = 1}^{\\infty} \\beta^j u(e_{t+j} + \\delta_{t+j} \\xi) \\right] \\right]\n\\end{aligned}\\]\nThe first-order condition (FOC) w.r.t \\(\\xi\\) of this objective function be:\n\\[\\begin{aligned}\n  - p_t u'(c_t) + \\E_t \\left[\\sum_{j = 1}^{\\infty} \\beta^j \\delta_{t+j} u'(c_{t+j}) \\right] = 0\n\\end{aligned}\\]\n\n\nSolution\nSolving for the price (willingness to pay):\n\\[\\begin{aligned}\n  p_t &= \\E_t \\left[\\sum_{j = 1}^{\\infty} \\beta^j \\frac{u'(c_{t+j})}{u'(c_t)} \\delta_{t+j} \\right]\n\\end{aligned}\\]\nWe define the multi-period stochastic discount factor (SDF) as:\n\\[\\begin{aligned}\n  m_{t+j} &:= \\beta^j \\frac{u'(c_{t+j})}{u'(c_t)} \\quad (j \\geq 1)\n\\end{aligned}\\]\n\n\nRisk-Adjusted Form\nAs in the two-period model, we can also rewrite prices as it is explicitly risk-adjusted:\n\\[\\begin{aligned}\n  p_t &= \\sum_{j = 1}^{\\infty} \\left[ \\frac{\\E_t [\\delta_{t+j}]}{R^f_{t, t+j}} + \\sigma(\\delta_{t+j}, m_{t, t+j}) \\right]\n\\end{aligned}\\]",
+    "objectID": "repo/ap/a3.html#risk-neutral-probabilities",
+    "href": "repo/ap/a3.html#risk-neutral-probabilities",
+    "title": "Contingent Claims and Market Completeness",
+    "section": "Risk-Neutral Probabilities",
+    "text": "Risk-Neutral Probabilities\n\nRisk-Free Rate\nWe have previously derived the risk-free rate using SDFs in consumption pricing. Now we try to derive it using contingent claim pricing. First, we write down the expected SDF under contingent claim pricing:\n\\[\\begin{aligned}\n  \\E[m] &= \\sum_{s \\in S} \\pi(s) m(s) \\\\\n  &= \\sum_{s \\in S} \\pi(s) \\frac{pc(s)}{\\pi(s)} \\\\\n  &= \\sum_{s \\in S} pc(s)\n\\end{aligned}\\]\nThen, using the finding from consumption pricing on risk-free rate, we have:\n\\[\\begin{aligned}\n  R^f &= \\frac{1}{\\E[m]} \\\\\n  &= \\frac{1}{\\sum_{s \\in S} pc(s)}\n\\end{aligned}\\]\n\n\nIntuition\nWe know from the definition of risk-free asset that its payoff vector would look like:\n\\[\\begin{aligned}\n  \\mathcal{A} &= (1, ..., 1)^{'} \\in \\R^n\n\\end{aligned}\\] given state set \\(S = (s_1, ..., s_n)\\).\nIf we were to assume complete markets, then the risk-free asset with the said payoff would have price:\n\\[\\begin{aligned}\n  p(\\mathcal{A}) &= \\sum_{i = 1}^{n} pc(s_i)\n\\end{aligned}\\] The return of investing this asset would be \\(1/\\sum_{i = 1}^{n} pc(s_i) = R^f\\).\n\n\nDefinition: Risk-Neutral Probabilities\nWe define:\n\\[\\begin{aligned}\n  \\pi^* (s) &:= R^f m(s) \\pi(s) \\\\\n  &= R^f pc(s) \\\\\n  &= \\frac{pc(s)}{\\sum_{s \\in S} pc(s)}\n\\end{aligned}\\] as the risk-neutral probability of state \\(s \\in S\\).\n\n\nRisk-Neutral Pricing\nUnder risk-neutral probabilities, we can derive further the contingent claim pricing model:\n\\[\\begin{aligned}\n  p(x) &= \\sum_{s \\in S} pc(s) x(s) \\\\\n  &= \\sum_{s \\in S} \\frac{\\pi^* (s)}{R^f} x(s) \\\\\n  &= \\frac{\\E^*[x]}{R^f}\n\\end{aligned}\\]\nWhere \\(\\E^*\\) is the expected payoff under risk-neutral probabilities.\n\n\nLinking Two Probabilities\nAlthough investors might have disagreements over the real probability, they must all agree on one set of risk-neutral probabilities. Rationale would be:\n\nall investors observe the same asset price;\nall investors infer and agree the same contingent claim prices\n\nThen, by the definition of risk-neutral probabilities:\n\\[\\begin{aligned}\n  \\pi^* (s) &= \\frac{pc(s)}{\\sum_{s \\in S} pc(s)}\n\\end{aligned}\\]\nall investors must all agree on the same \\(\\pi^* (s)\\).\n\n\nLinking Two Pricing Models\nComparing the consumption pricing model:\n\\[\\begin{aligned}\n  p &= \\E[mx] \\\\\n  &= \\sum_s \\pi(s) m(s) x(s) \\\\\n  &= \\frac{\\E[x]}{R^f} + \\sigma(m,x)\n\\end{aligned}\\]\nWith the contingent claim pricing model:\n\\[\\begin{aligned}\n  p &= \\sum_s pc(s) x(s) \\\\\n  &= \\frac{\\E^* [x]}{R^f}\n\\end{aligned}\\]\n\n\n\n\n\n\nNote\n\n\n\nWe can see that in addition to making risk adjustments to real-world probabilities, we can also discount the payoff directly as if we are in risk-neutral world. This makes sense intuitively if we consider:\n\nthe marginal investor in the economy can shift their risk preferences (hence hypothetically they can be risk-neutral)\nthe asset price has to be unanimously agreed upon (to reach an equilibrium) regardless of the marginal investor’s risk preference\nthus we can calculate directly the asset pricing as if everyone’s in the risk-neutral world",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
       "Asset Pricing Theory",
-      "Consumption II"
+      "Contingent Claims"
     ]
   },
   {
-    "objectID": "repo/sc/s1.html",
-    "href": "repo/sc/s1.html",
-    "title": "Discrete-Time Finance",
+    "objectID": "repo/sc/index.html",
+    "href": "repo/sc/index.html",
+    "title": "Stochastic Finance",
     "section": "",
-    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024\nModeling evolutions of a variable is at the center of economic disciplines. We will first try to see tools we can use in discrete times and then push them forward in continuous times.",
+    "text": "Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets. I want to specifically acknowledge Prof. Lorenzo Naranjo for his intuitive lectures on Stochastic Foundations for Finance.\n\nDiscrete-Time Modeling Basis for discrete-time modeling.\n\n\n\n\n Back to top",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
-      "Stochastic Finance",
-      "Discrete-Time Finance"
+      "Stochastic Finance"
     ]
-  },
-  {
-    "objectID": "repo/sc/s1.html#linear-difference-equations",
-    "href": "repo/sc/s1.html#linear-difference-equations",
-    "title": "Discrete-Time Finance",
-    "section": "Linear Difference Equations",
-    "text": "Linear Difference Equations\nConsider the following evolution:\n\\[\\begin{aligned}\n  y_t &= a + b y_{t-1}\n\\end{aligned}\\]\nwith \\(y_0\\) being a pre-determined constant.\nThen, we can iterate this over discrete times:\n\\[\\begin{aligned}\n  y_1 &= a + b y_0 \\\\\n  y_2 &= a + b y_1 = a + ba + b y_0 \\\\\n  y_3 &= a + b y_2 = a + ba + b^2 a + b^3 y_0 \\\\\n  & ... \\\\\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0\n\\end{aligned}\\]\nWe can further derive the geometric sum:\n\\[\\begin{aligned}\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0 \\\\\n  &= a (\\frac{1 - b^t}{1 - b}) + b^t y_0\n\\end{aligned}\\]\n\nConvergence\nThis condition\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} \\frac{1 - b^t}{1 - b} = c, \\quad c \\in \\BB{R}\n\\end{aligned}\\]\nwould be true if\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} b^t &= 0 \\\\\n  \\implies \\mid b \\mid &&lt; 1\n\\end{aligned}\\]\n\n\n\n\n\n\nTypes of Convergence\n\n\n\nIn financial models we would typically assume the convergence is monotonic:\n\\(b \\in (0,1)\\).\nNevertheless, alternating convergence might be useful in some cases:\n\\(b \\in (-1,0)\\).\n\n\n\n\nSolution\nAssuming convergence, the steady-state of \\(y_t\\) would then be:\n\\[\\begin{aligned}\n  \\overline{y} &= \\lim_{t \\to \\infty} = a (\\frac{1 - b^t}{1 - b}) + b^t y_0 \\\\\n  &= \\frac{a}{1-b}\n\\end{aligned}\\]\nAnother way to find the steady state is to assume existance of \\(\\overline{y}\\):\n\\[\\begin{aligned}\n  \\overline{y} &= a + b \\overline{y} \\\\\n  \\implies \\overline{y} &= \\frac{a}{1-b}\n\\end{aligned}\\]\n\n\nExponential Growth\nThe general solution\n\\[\\begin{aligned}\n  y_t &= \\overline{y} + b^t (y_0 - \\overline{y})\n\\end{aligned}\\] tells us a story. The discrete-time process begins at \\(y_0\\), converges to \\(\\overline{y}\\) in the end exponentially (\\(b^t\\)).",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Asset Pricing",
-      "Stochastic Finance",
-      "Discrete-Time Finance"
-    ]
-  },
-  {
-    "objectID": "repo/sc/s1.html#transversality-dividend-discount-revisited",
-    "href": "repo/sc/s1.html#transversality-dividend-discount-revisited",
-    "title": "Discrete-Time Finance",
-    "section": "Transversality: Dividend Discount Revisited",
-    "text": "Transversality: Dividend Discount Revisited\nWe know that the price of a stock can be denoted by the dividend discount model:\n\\[\\begin{aligned}\n  p_t &= \\frac{d_{t+1}}{1 + r} + \\frac{d_{t+2}}{(1 + r)^2} + ... + \\frac{d_{t+n}}{(1 + r)^n} + \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nIf we were to allow the time period goes to infinity:\n\\[\\begin{aligned}\n  p_t &= \\sum_{i = 1}^{n} \\frac{d_{t+i}}{(1 + r)^i} + \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nWe can then see that the following assumption makes the price of the stock to be unique (transversality condition):\n\\[\\begin{aligned}\n  \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n} &= 0\n\\end{aligned}\\]\nIf this term explodes, we would not be able to obtain a unique price for this stock.\n\n\n\n\n\n\nTip\n\n\n\nThis would be an interesting concept in Asset Pricing called market completeness.",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Asset Pricing",
-      "Stochastic Finance",
-      "Discrete-Time Finance"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About Me",
-    "section": "",
-    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "cv.html",
@@ -578,17 +540,115 @@
     "text": "Personal Information\n\nGuitarist for over 10 years\n\nArt and museum enthusiast\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running"
   },
   {
-    "objectID": "repo/sc/index.html",
-    "href": "repo/sc/index.html",
-    "title": "Stochastic Finance",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About Me",
     "section": "",
-    "text": "Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets. I want to specifically acknowledge Prof. Lorenzo Naranjo for his intuitive lectures on Stochastic Foundations for Finance.\n\nDiscrete-Time Modeling Basis for discrete-time modeling.\n\n\n\n\n Back to top",
+    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "repo/sc/s1.html",
+    "href": "repo/sc/s1.html",
+    "title": "Discrete-Time Finance",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024\nModeling evolutions of a variable is at the center of economic disciplines. We will first try to see tools we can use in discrete times and then push them forward in continuous times.",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
-      "Stochastic Finance"
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "repo/sc/s1.html#linear-difference-equations",
+    "href": "repo/sc/s1.html#linear-difference-equations",
+    "title": "Discrete-Time Finance",
+    "section": "Linear Difference Equations",
+    "text": "Linear Difference Equations\nConsider the following evolution:\n\\[\\begin{aligned}\n  y_t &= a + b y_{t-1}\n\\end{aligned}\\]\nwith \\(y_0\\) being a pre-determined constant.\nThen, we can iterate this over discrete times:\n\\[\\begin{aligned}\n  y_1 &= a + b y_0 \\\\\n  y_2 &= a + b y_1 = a + ba + b y_0 \\\\\n  y_3 &= a + b y_2 = a + ba + b^2 a + b^3 y_0 \\\\\n  & ... \\\\\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0\n\\end{aligned}\\]\nWe can further derive the geometric sum:\n\\[\\begin{aligned}\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0 \\\\\n  &= a (\\frac{1 - b^t}{1 - b}) + b^t y_0\n\\end{aligned}\\]\n\nConvergence\nThis condition\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} \\frac{1 - b^t}{1 - b} = c, \\quad c \\in \\BB{R}\n\\end{aligned}\\]\nwould be true if\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} b^t &= 0 \\\\\n  \\implies \\mid b \\mid &&lt; 1\n\\end{aligned}\\]\n\n\n\n\n\n\nTypes of Convergence\n\n\n\nIn financial models we would typically assume the convergence is monotonic:\n\\(b \\in (0,1)\\).\nNevertheless, alternating convergence might be useful in some cases:\n\\(b \\in (-1,0)\\).\n\n\n\n\nSolution\nAssuming convergence, the steady-state of \\(y_t\\) would then be:\n\\[\\begin{aligned}\n  \\overline{y} &= \\lim_{t \\to \\infty} = a (\\frac{1 - b^t}{1 - b}) + b^t y_0 \\\\\n  &= \\frac{a}{1-b}\n\\end{aligned}\\]\nAnother way to find the steady state is to assume existance of \\(\\overline{y}\\):\n\\[\\begin{aligned}\n  \\overline{y} &= a + b \\overline{y} \\\\\n  \\implies \\overline{y} &= \\frac{a}{1-b}\n\\end{aligned}\\]\n\n\nExponential Growth\nThe general solution\n\\[\\begin{aligned}\n  y_t &= \\overline{y} + b^t (y_0 - \\overline{y})\n\\end{aligned}\\] tells us a story. The discrete-time process begins at \\(y_0\\), converges to \\(\\overline{y}\\) in the end exponentially (\\(b^t\\)).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "repo/sc/s1.html#transversality-dividend-discount-revisited",
+    "href": "repo/sc/s1.html#transversality-dividend-discount-revisited",
+    "title": "Discrete-Time Finance",
+    "section": "Transversality: Dividend Discount Revisited",
+    "text": "Transversality: Dividend Discount Revisited\nWe know that the price of a stock can be denoted by the dividend discount model:\n\\[\\begin{aligned}\n  p_t &= \\frac{d_{t+1}}{1 + r} + \\frac{d_{t+2}}{(1 + r)^2} + ... + \\frac{d_{t+n}}{(1 + r)^n} + \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nIf we were to allow the time period goes to infinity:\n\\[\\begin{aligned}\n  p_t &= \\sum_{i = 1}^{n} \\frac{d_{t+i}}{(1 + r)^i} + \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nWe can then see that the following assumption makes the price of the stock to be unique (transversality condition):\n\\[\\begin{aligned}\n  \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n} &= 0\n\\end{aligned}\\]\nIf this term explodes, we would not be able to obtain a unique price for this stock.\n\n\n\n\n\n\nTip\n\n\n\nThis would be an interesting concept in Asset Pricing called market completeness.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a2.html",
+    "href": "repo/ap/a2.html",
+    "title": "Consumption-Based Pricing Extended",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\def\\E{{\\mathbb{E}}}\n\\]\nyedlu, Winter 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption II"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a2.html#consumption-pricing-characteristics",
+    "href": "repo/ap/a2.html#consumption-pricing-characteristics",
+    "title": "Consumption-Based Pricing Extended",
+    "section": "Consumption Pricing Characteristics",
+    "text": "Consumption Pricing Characteristics\n\nModel Assumption\nOne beauty of consumption-based pricing is that it requires very little assumption. One assumption that has to be satisfied is the investor is able to trade arbitrarily-small \\(\\xi\\) units of asset.\nHere’s a list of assumptions that the general consumption-based pricing do not assume:\n\n\n\n\n\n\n\nAssumption\nNotes\n\n\n\n\nComplete Markets\nMeasures individual-level willingness to pay, everyone can have different \\(p\\) under incomplete markets\n\n\nSpecific Return Distribution\nCan take any return distribution\n\n\nRepresentative/Marginal Investor\nThe SDF can be heterogenous to measure different types of investors\n\n\nSpecific Utility Functions\nCan take any form form of utility functions\n\n\nMarket Equilibrium\nWillingness to pay do not need market equilibrium to exist\n\n\n2-Period Model\nCan be expanded to multi-period form (later on)\n\n\nSpecific Beginning Endowment\nCan take any level of endowment\n\n\n\n\n\nReaching Equilibrium\nIn much rigor terms, \\(p\\) denotes individual investor’s willingness to pay to an asset. From above we know that the market does not have to be in eqilibrium for using the consumption-based pricing.\nWe will show now that, nevertheless, the market will finally be in congruent with the individual willingness to pay, reaching an equilibrium.\nTo begin with, purchasing \\(\\xi\\) units of asset in extra will increase the utility in the future by (discounted to today):\n\\[\\begin{aligned}\n  & \\beta \\E [u(c_{t+1} + \\xi x_{t+1}) - u(c_{t+1})] \\\\\n  = & \\beta \\E [u'(c_{t+1}) \\, \\xi x_{t+1} + ...]\n\\end{aligned}\\]\nFor an arbitrarily small \\(\\xi\\), only the first-order Taylor Expansion matters.\nSimilarly, purchasing \\(\\xi\\) units of asset will decrease today’s consumption. Using first-order Taylor expansion:\n\\[\\begin{aligned}\n  & u(c_t - \\xi v_t) \\\\\n  = & u'(c_t) \\xi v_t + ...\n\\end{aligned}\\]\nOptimality is reached if the investor is indifferent to buy additional \\(\\xi\\) units of asset. How does market reach equilibrium:\n\n\n\n\n\n\n\nScenario\nMechanism\n\n\n\n\n\\(v_t &gt; p_t\\)\nInvestor buys more asset because it is below valuation, then drives \\(c_t\\) down and \\(\\E [c_{t+1}]\\) up. Convexity drives the SDF down, hence \\(v_t\\) dropped till equilibrium.\n\n\n\\(v_t &lt; p_t\\)\nInvestor buys less asset because it is above valuation, driving \\(c_t\\) up and \\(\\E [c_{t+1}]\\) down. Convexity drives the SDF up, hence \\(v_t\\) increased till equilibrium.\n\n\n\\(v_t = p_t\\)\nIn equilibrium.\n\n\n\n\n\nInterconnected Random Variable\nFrom above we know that neither \\(p\\) and \\(c\\) are exogenous. They are linked through the consumption-based pricing model and interact each other. Specifically,\n\nknowing \\(\\E [mx]\\) yields the willingness to pay \\(p\\);\nknowing \\(p\\) yields investment decisions today.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption II"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a2.html#mean-variance-frontier-hansen-jagannathan-bounds",
+    "href": "repo/ap/a2.html#mean-variance-frontier-hansen-jagannathan-bounds",
+    "title": "Consumption-Based Pricing Extended",
+    "section": "Mean-Variance Frontier (Hansen-Jagannathan Bounds)",
+    "text": "Mean-Variance Frontier (Hansen-Jagannathan Bounds)\n\nDerivation\nGiven an asset’s riskiness, is there a reasonable bound for the return of the asset? We will try to derive the mean-variance frontier from our consumption pricing model.\n\\[\\begin{aligned}\n  1 &= \\E [mR^i] \\\\\n  &= \\E[m] \\E[R^i] + \\sigma(m, R^i) \\\\\n  &= \\frac{\\E[R^i]}{R^f} + \\rho (m, R^i) \\sigma(m) \\sigma(R^i)\n\\end{aligned}\\]\nRewriting the equation we would have:\n\\[\\begin{aligned}\n  \\E [R^i] - R^f &= - R^f \\rho (m, R^i) \\sigma(m) \\sigma(R^i) \\\\\n  R^f = \\frac{1}{\\E[m]} \\implies \\E [R^i] - R^f &= - \\rho (m, R^i) \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\]\nBy Cauchy-Schwarz inequality:\n\\[\\begin{aligned}\n  \\mid \\E [R^i] - R^f \\mid &\\leq \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\]\n\n\nGraphical Illustration\n\n\n\nSample Mean-Variance Frontier\n\n\nAssets on the upper bound:\n\\[\\begin{aligned}\n  \\E [R^i] &= R^f + \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\] implies the correlation \\(\\rho(m, R^i) = -1\\). The asset return has perfect negative correlation with the SDF (hence perfect positive correlation with consumption). These types of asset bring higher volatility to consumption, thus investors would require a much higher excess return. One example would be stocks that goes high when market is bullist and plummets when market is bearish.\nThe lower bound, on the opposite,\n\\[\\begin{aligned}\n  \\E [R^i] &= R^f - \\frac{\\sigma(m)}{\\E[m]} \\sigma(R^i)\n\\end{aligned}\\] describes assets with high returns when consumptions are low. Consider insurances: normal investors would not require a high excess return on insurance products generally, as long as they can use these products to smoothen consumption levels across time and states.\n\n\nIllustration\nWe can compare assets within the wedge-shaped mean-variance frontier through two ways:\n\nHorizontally. If two assets (their corresponding points in the graph) lies under one horizontal line, then they have the same expected returns (\\(\\E[R^i]\\)). The asset on the left has lower overall risk (\\(\\sigma(R^i)\\)) which can be attributed to idiosyncratic risks.\n\nVertically. If two assets (their corresponding points in the graph) lies under one vertical line, then they have the same overall risk. The one that has a higher expected return (on the top) has a higher consumption-payoff correlation.\n\n\n\nSharpe Ratio\nThe Sharpe ratio measures the excess return (per unit of risk) and is defined as:\n\\[\\begin{aligned}\n  \\frac{\\E[R^i] - R^f}{\\sigma(R^i)}\n\\end{aligned}\\]\nWe can connect Sharpe ratio with the mean-variance frontier:\n\\[\\begin{aligned}\n  \\mid \\frac{\\E[R^i] - R^f}{\\sigma(R^i)} \\mid &\\leq \\frac{\\sigma(m)}{\\E[m]}\n\\end{aligned}\\] Intuition: the slope of the mean-variance frontier wedge is the maximum Sharpe ratio available.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption II"
+    ]
+  },
+  {
+    "objectID": "repo/ap/a2.html#multi-period-pricing",
+    "href": "repo/ap/a2.html#multi-period-pricing",
+    "title": "Consumption-Based Pricing Extended",
+    "section": "Multi-Period Pricing",
+    "text": "Multi-Period Pricing\n\nSetting\nNow, the asset pays a stream of cash flows \\(\\{\\delta_{t+j}\\}\\) in the future. How should we price this multi-period asset?\n\n\nOptimization\nLet’s revisit the optimization problem:\n\\[\\begin{aligned}\n  \\max_{c_{t+j}} & \\quad \\BB{E}_t \\left[\\sum_{j = 0}^{\\infty} \\beta^j u(c_{t+j})\\right] \\\\\n  \\text{s.t.} & \\quad  c_t(\\xi) = e_t - p_t \\xi \\\\\n  & c_{t+j}(\\xi) = e_{t+j} + \\delta_{t+j} \\xi \\quad (j \\leq 1)\n\\end{aligned}\\]\nRearranging the objective function:\n\\[\\begin{aligned}\n  \\max_{\\xi} & \\quad \\left[u(e_t - p_t \\xi) + \\BB{E}_t \\left[ \\sum_{j = 1}^{\\infty} \\beta^j u(e_{t+j} + \\delta_{t+j} \\xi) \\right] \\right]\n\\end{aligned}\\]\nThe first-order condition (FOC) w.r.t \\(\\xi\\) of this objective function be:\n\\[\\begin{aligned}\n  - p_t u'(c_t) + \\E_t \\left[\\sum_{j = 1}^{\\infty} \\beta^j \\delta_{t+j} u'(c_{t+j}) \\right] = 0\n\\end{aligned}\\]\n\n\nSolution\nSolving for the price (willingness to pay):\n\\[\\begin{aligned}\n  p_t &= \\E_t \\left[\\sum_{j = 1}^{\\infty} \\beta^j \\frac{u'(c_{t+j})}{u'(c_t)} \\delta_{t+j} \\right]\n\\end{aligned}\\]\nWe define the multi-period stochastic discount factor (SDF) as:\n\\[\\begin{aligned}\n  m_{t+j} &:= \\beta^j \\frac{u'(c_{t+j})}{u'(c_t)} \\quad (j \\geq 1)\n\\end{aligned}\\]\n\n\nRisk-Adjusted Form\nAs in the two-period model, we can also rewrite prices as it is explicitly risk-adjusted:\n\\[\\begin{aligned}\n  p_t &= \\sum_{j = 1}^{\\infty} \\left[ \\frac{\\E_t [\\delta_{t+j}]}{R^f_{t, t+j}} + \\sigma(\\delta_{t+j}, m_{t, t+j}) \\right]\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Asset Pricing Theory",
+      "Consumption II"
     ]
   },
   {
