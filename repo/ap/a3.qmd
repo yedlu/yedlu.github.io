@@ -1,0 +1,178 @@
+---
+title: "Contingent Claims and Market Completeness"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+ \def\E{{\mathbb{E}}}
+ \def\R{{\mathbb{R}}}
+$$
+:::
+
+*yedlu, Winter 2024*
+
+## Contingent Claim Markets
+### Settings
+
+We have:  
+
+| Notation | Description | 
+| - | --------- |
+| $S$ | Set of states |
+| $x \in \BB{R}^S$ | Payoff vector for every possible states |
+
+
+### Contingent Claim
+
+We call a security **contingent claim** if it pays \$1 in **one** particular future state $s^{*} \in S$ and zero in all other states.  
+
+In matrix notation, this is a standard-unit vector in $\BB{R}^S$. By definition, contingent claims are mutually independent and span the whole payoff space.  
+
+We use the notation $pc(s^*)$ as the current price of the contingent claim for state $s^*$.  
+
+### Complete Market through Contingent Claims
+
+In a complete market, there exists a contingent claim **for every possible state**, either directly or through synthesizing.  
+
+Market completeness is an intriguing concept through this view: we are able to hedge any type of risk through contingent claims under market completeness.  
+
+
+
+## Contingent Claim Pricing
+
+### Happy Meal Theorem
+
+In a complete market, we can price an asset as:  
+
+$$\begin{aligned}
+  p(x) &= \sum_{s \in S} pc(s) \cdot x(s)
+\end{aligned}$$
+
+**Intuition:** the price of a payoff stream (which can be represent by linear combinations of contingent claims) should be the linear combination of contingent claim prices.  
+
+::: {.callout-note}
+We will later discuss the assumption needed for this theorem to hold (namely law of one prices and/or arbitrage-free conditions).
+:::
+
+
+
+### Links to Consumption Pricing
+
+We will derive and show how to link contingent claim pricing to the consumption pricing model.  
+
+Let $\pi(s)$ be the probability that state $s \in S$ occurs. Then for the pricing equation:  
+
+$$\begin{aligned}
+  p(x) &= \sum_{s \in S} \pi(s) \frac{pc(s)}{\pi(s)} x(s)
+\end{aligned}$$
+
+We define the state-dependent tochastic discount factor (SDF) in this model as:  
+
+$$\begin{aligned}
+  m(s) := \frac{pc(s)}{\pi(s)}
+\end{aligned}$$
+
+In this way, the contingent claim pricing equation becomes identical to the consumption pricing model:  
+
+$$\begin{aligned}
+  p(x) &= \sum_{s \in S} \pi(s) \frac{pc(s)}{\pi(s)} x(s) \\
+  &= \sum_{s \in S} \pi(s) m(s) x(s) \\
+  &= \E[mx]
+\end{aligned}$$
+
+In a complete market, if SDF exists, then it is given by the set of contingent claim prices scaled by probability measures.  
+
+What's different now is that we do not assume investor-specific preferences (including utility functions and discount factors).  
+
+
+## Risk-Neutral Probabilities
+### Risk-Free Rate
+We have previously derived the risk-free rate using SDFs in consumption pricing. Now we try to derive it using contingent claim pricing. First, we write down the expected SDF under contingent claim pricing:  
+
+$$\begin{aligned}
+  \E[m] &= \sum_{s \in S} \pi(s) m(s) \\
+  &= \sum_{s \in S} \pi(s) \frac{pc(s)}{\pi(s)} \\
+  &= \sum_{s \in S} pc(s)
+\end{aligned}$$
+
+Then, using the finding from consumption pricing on risk-free rate, we have:  
+$$\begin{aligned}
+  R^f &= \frac{1}{\E[m]} \\
+  &= \frac{1}{\sum_{s \in S} pc(s)}
+\end{aligned}$$
+
+### Intuition
+We know from the definition of risk-free asset that its payoff vector would look like:  
+$$\begin{aligned}
+  \mathcal{A} &= (1, ..., 1)^{'} \in \R^n
+\end{aligned}$$
+given state set $S = (s_1, ..., s_n)$.  
+
+If we were to assume complete markets, then the risk-free asset with the said payoff would have price:  
+$$\begin{aligned}
+  p(\mathcal{A}) &= \sum_{i = 1}^{n} pc(s_i)
+\end{aligned}$$
+The return of investing this asset would be $1/\sum_{i = 1}^{n} pc(s_i) = R^f$.  
+
+### Definition: Risk-Neutral Probabilities
+We define:  
+$$\begin{aligned}
+  \pi^* (s) &:= R^f m(s) \pi(s) \\
+  &= R^f pc(s) \\
+  &= \frac{pc(s)}{\sum_{s \in S} pc(s)}
+\end{aligned}$$
+as the **risk-neutral probability of state** $s \in S$.
+
+### Risk-Neutral Pricing
+Under risk-neutral probabilities, we can derive further the contingent claim pricing model:  
+$$\begin{aligned}
+  p(x) &= \sum_{s \in S} pc(s) x(s) \\
+  &= \sum_{s \in S} \frac{\pi^* (s)}{R^f} x(s) \\
+  &= \frac{\E^*[x]}{R^f}
+\end{aligned}$$
+
+Where $\E^*$ is the expected payoff under risk-neutral probabilities.
+
+### Linking Two Probabilities
+Although investors might have disagreements over the real probability, they must all agree on one set of **risk-neutral probabilities**. Rationale would be:  
+
+- all investors observe the same asset price;
+- all investors infer and agree the same contingent claim prices
+
+Then, by the definition of risk-neutral probabilities:  
+
+$$\begin{aligned}
+  \pi^* (s) &= \frac{pc(s)}{\sum_{s \in S} pc(s)}
+\end{aligned}$$
+
+all investors must all agree on the same $\pi^* (s)$.
+
+### Linking Two Pricing Models
+Comparing the consumption pricing model:  
+$$\begin{aligned}
+  p &= \E[mx] \\
+  &= \sum_s \pi(s) m(s) x(s) \\
+  &= \frac{\E[x]}{R^f} + \sigma(m,x)
+\end{aligned}$$
+
+With the contingent claim pricing model:  
+$$\begin{aligned}
+  p &= \sum_s pc(s) x(s) \\
+  &= \frac{\E^* [x]}{R^f}
+\end{aligned}$$
+
+::: {.callout-note}
+We can see that in addition to making risk adjustments to real-world probabilities, we can also discount the payoff directly *as if we are in* risk-neutral world. This makes sense intuitively if we consider:  
+
+- the marginal investor in the economy can shift their risk preferences (hence *hypothetically* they can be risk-neutral)
+- the asset price has to be unanimously agreed upon (to reach an equilibrium) regardless of the marginal investor's risk preference
+- thus we can calculate directly the asset pricing *as if* everyone's in the risk-neutral world
+
+:::

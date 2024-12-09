@@ -630,8 +630,8 @@ By the definition of covariance:<br>
 \end{aligned}\]</span></p>
 <p>Using it we derive:<br>
 <span class="math display">\[\begin{aligned}
-  p &amp;= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma_{m, x} \\
-  &amp;= \frac{\BB{E}[x]}{R^f} + \sigma_{m, x}
+  p &amp;= \BB{E} [mx] = \BB{E} [m] \BB{E} [x] + \sigma(m, x) \\
+  &amp;= \frac{\BB{E}[x]}{R^f} + \sigma(m, x)
 \end{aligned}\]</span></p>
 </section>
 <section id="covariance-of-sdf-and-payoff" class="level3">
@@ -801,7 +801,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yedlu\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
