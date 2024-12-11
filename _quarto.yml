@@ -66,7 +66,7 @@ website:
                   href: repo/ap/a3.qmd
                 - text: "Factor Models"
                   href: repo/ap/a4.qmd
-                - text: "Arrow-Debreu Model"
+                - text: "Macroeconomic Allocation"
                   href: repo/ap/a5.qmd
               - text: "Stochastic Finance"
                 href: repo/sc/index.qmd

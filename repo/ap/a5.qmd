@@ -1,0 +1,463 @@
+---
+title: "Macroeconomic Allocation"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+ \def\E{{\mathbb{E}}}
+ \def\R{{\mathbb{R}}}
+$$
+:::
+
+*yedlu, Winter 2024*
+
+## Settings
+
+We are now standing in a macroeconomic view and try to price payoff streams (assets) in this way. Here's some notations and settings used in this model.  
+
+### Time and States
+
+| Notation | Description |
+| - | --------- | 
+| $t = 1, ...$ | discrete infinite time |
+| $s_t \in S$ | state realization at time $t$ |
+| $s^t = (s_0, ..., s_t)$ | set of complete history realizations up until time $t$ |
+| $\pi(s^t)$ | unconditional probability of history $s^t$ (often Markovian) |
+| $\pi(s^t \mid s^j)$ | transition probability of history $s^t$ conditioning on having observed history $s^j, j < t$ |
+
+### Consumers
+
+| Notation | Description |
+| - | --------- |
+| $i \in I$ | set of consumers |
+| $y_t^i (s^t)$ | stochastic endowment at time $t$ depending on history $s^t$ |
+| $s^t$ | set of complete history can be publically observable |
+| $c^i = \left\{c_t^i (s^t) \right\}_{t=0}^{\infty}$ | consumption play of consumer $i$ given the set of history realized $s^t$ |
+| $U_i (c^i)$ | expected utility function of consumer $i$ (*) |
+| $u_i (c)$ | Bernoulli index of utility function over consumption (we assume homogenous utility function across consumers) (**) |
+| $\sum c_t^i \leq \sum y_t^i$ | at every time $t$ and state $s^t$ agents altogether can only consume what they earn |
+
+(*) Utility function of consumer $i$:  
+
+$$\begin{aligned}
+  U_i (c^i) &= \sum_{t = 0}^{\infty} \sum_{s^t} \beta^t u_i\left(c_t^i (s^t)\right) \pi_t(s^t) \\
+  &= \E_0 \left[\sum_{t=0}^{\infty}  \beta^t u_i\left(c_t^i (s^t)\right) \right]
+\end{aligned}$$  
+
+(**) The Bernoulli index utility function over consumption is assumed to be:  
+
+- strictly increasing ($u'>0$)
+- twice continuously differentiable and strictly concave ($u''<0$)
+- satisfies the Inada condition ($\lim_{c \to 0} u_i'(c) = + \infty$)
+
+
+## Social Planner's Pareto Allocation
+### Efficient Allocation
+We need to find an efficient allocation, i.e. any reallocation of resources off this equilibrium will make at least one consumer worse off for any attempt to make another consumer better off.  
+
+### Optimization
+For the social planner's Pareto allocation, here are the elements for the solution:  
+
+1. non-negative (sometime regularized to $(0,1)$) Pareto weights $\lambda_i, i \in I$ to consumer's utility
+2. Planner chooses allocation $c^i$ for each consumer to maximize collective welfare subject to **feasibility constraint**
+$$\begin{aligned}
+  \max_{c^i} & \sum_{i \in I} \lambda_i U_i(c^i) \\
+  \text{s.t.} \quad (\forall t, s^t) \sum_{i \in I} c_t^i (s^t) & \leq \sum_{i \in I} y_t^i (s^t)
+\end{aligned}$$  
+
+### Solution
+Let $\theta_t(s^t) \geq 0$ be the Lagrange multiplier on the feasibility constraint at time $t$ and history $s^t$ (we need one multiplier for every time and history). Then, the Lagrangian of this problem equals:  
+$$\begin{aligned}
+  L =& \sum_{t} \sum_{s^t} \left[\sum_{i} \lambda_i \beta^t u_i \left(c_t^i(s^t) \right) \pi_t(s^t) \right] \\
+  &+ \sum_{t} \sum_{s^t} \left[\theta_t(s^t) \left[\sum_{i} \left(y_t^i (s^t) -  c_t^i (s^t) \right) \right] \right]
+\end{aligned}$$  
+
+The first-order condition (FOC) w.r.t. $c_t^i (s^t)$ for every agent, time, and history, yields:  
+$$\begin{aligned}
+  \beta^t u'_i \left(c_t^i(s^t) \right) \pi_t(s^t) &= \frac{1}{\lambda_i} \theta_t(s^t)
+\end{aligned}$$ 
+
+We can divide consumer $i$'s FOC equation to consumer $1$'s FOC equation, leaving:  
+$$\begin{aligned}
+  \frac{u'_i \left(c_t^i(s^t) \right)}{u'_1 \left(c_t^1(s^t) \right)} &= \frac{\lambda_1}{\lambda_i}
+\end{aligned}$$ 
+
+Solving for consumer $i$'s consumption, we have:  
+$$\begin{aligned}
+  c_t^i(s^t) &= \left(u_i' \right)^{-1} \left(\frac{\lambda_1}{\lambda_i} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}$$ 
+
+We can then use the feasibility constraint (binding) to solve for consumer $1$'s consumption:  
+$$\begin{aligned}
+  \sum_{i} \left(u_i' \right)^{-1} \left(\frac{\lambda_1}{\lambda_i} u'_1 \left(c_t^1(s^t) \right)\right) &= \sum_i y_t^i (s^t)
+\end{aligned}$$ 
+
+### Same Aggregate Endowment
+If the aggregated endowment are identical across two distinct histories:  
+$$\begin{aligned}
+  \sum_{i} y_t^i (s^{t, a}) &= \sum_{i} y_t^i (s^{t, b})
+\end{aligned}$$ 
+
+then also the allocation to every consumer must be the same at both histories:  
+$$\begin{aligned}
+  c_t^i(s^{t, a}) &= \left(u_i' \right)^{-1} \left(\frac{\lambda_1}{\lambda_i} u'_1 \left(c_t^1(s^t) \right)\right) = c_t^i(s^{t, b})
+\end{aligned}$$ 
+
+regardless of endowment contribution $y_t^i(s^{t, a})$ and $y_t^i(s^{t, b})$!  
+
+### Summary
+For given Pareto weights $(\lambda^i)_{i \in I}$, an **efficient allocation** is a function of the **aggregated endowment** and does neither depend separately on history $s^t$ or individual contribution of the endowment $y_t^i(s^t)$. It consists of a set of consumption allocation plan $(c^1, ..., c^I)$ that maximizes the aggregated social welfare determined by Pareto weights and utility functions.  
+
+
+## Arrow-Debreu Allocation
+### Time-Zero Trading
+Now, for this type of allocation (*Arrow-Debreu*), we assume  
+
+- a complete set of time-history contingent claims $\left\{q_t^0(s^t) \right\}$
+- all trade occurs only at time $0$ after $s_0$ is realized (superscript $0$ denotes that all contingent claims are traded only at time $0$)
+- consumers can trade contingent claims on time $t$, history $s^t$ at the price $q_t^0(s^t)$
+- since all trade occurs at time $0$, each agent faces **one single** budget constraint:  
+$$\begin{aligned}
+  \sum_t \sum_{s^t} q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \geq 0
+\end{aligned}$$ 
+- the feasibility constraint of aggregated consumption at time $t$ and history $s^t$ still applies:  
+$$\begin{aligned}
+  \sum_i c_t^i(s^t) \leq \sum_i y_t^i(s^t)
+\end{aligned}$$ 
+
+### Competitive Equilibrium
+Unlike social planner's Pareto allocation, it takes two parts to solve the *Arrow-Debreu* allocation problem:  
+
+- feasible allocation $(c^1, .., c^I)$
+- price system (for contingent claims) $\left\{q_t^0 (s^t) \right\}_{t = 0}^{\infty}$
+
+such that the allocation solves each consumer's problem given the price system.
+
+### Optimization
+We then have the optimization problem formally defined:  
+$$\begin{aligned}
+  \max_{c^i} & \sum_{t} \sum_{s^t} \beta^t u_i\left(c_t^i (s^t) \right) \pi_t(s^t) = \E_0 \left[\sum_{t} \beta^t u_i(c_t^i) \right] \\
+  \\
+  \text{s.t.} \quad & \sum_t \sum_{s^t} q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \geq 0 \\
+  & \sum_i c_t^i(s^t) \leq \sum_i y_t^i(s^t)
+\end{aligned}$$  
+
+### Solution
+Let $\mu_i \leq 0$ be the Lagrange multiplier to consumer $i$'s budget constraint. Then the Lagrangian for consumer $i$ is:  
+$$\begin{aligned}
+  \mathcal{L}^i &= \sum_{t} \sum_{s^t} \left[\beta^t u_i\left(c_t^i (s^t) \right) \pi_t(s^t) + \mu_i q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \right]
+\end{aligned}$$  
+
+:::{.callout-tip}
+We would use the feasibility constraint later on in the solution.
+:::
+
+The first-order condition (FOC) w.r.t. consumption $c_t^i (s^t)$ for every $s^t$ yields,  
+$$\begin{aligned}
+  \beta^t u_i'\left(c_t^i (s^t) \right) \pi_t(s^t) = \mu_i q_t^0(s^t)
+\end{aligned}$$  
+
+Then, we can divide consumer $i$'s FOC equation to consumer $1$'s FOC equation ($i \neq 1$):
+$$\begin{aligned}
+  \frac{u_i'\left(c_t^i(s^t)\right)}{u_1'\left(c_t^1(s^t)\right)} &= \frac{\mu_i}{\mu_1}
+\end{aligned}$$
+
+Then we can represent consumer $i$'s consumption as a function of consumer $1$'s consumption. For all other consumers and all possible histories:  
+$$\begin{aligned}
+  c_t^i(s^t) &= \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}$$
+
+Now, we use the feasibility constraint:  
+$$\begin{aligned}
+  \sum_{i} \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right) &= \sum_i y_t^i (s^t)
+\end{aligned}$$ 
+
+Therefore, the consumption for consumer $1$ only depends on the **aggregated endowment** as well as the ratios of the Lagrange multiplier.
+
+### Summary
+A **competitive equilibrium** allocation under *Arrow-Debreu* securities is a function of the **aggregated endowment** and does neither depend separately on history $s^t$ or individual contribution of the endowment $y_t^i(s^t)$.
+
+## Solution Characteristics
+### Regularization
+Since the price system denomination is arbitrary, tne technique that comes in handy is to regularize the time $0$ price to one:  
+$$\begin{aligned}
+  q_0^0 (s^t = (s_0)) &= \frac{1}{\mu_i} \beta^t u_i'\left(c_0^i(s^t=(s_0))\right) \pi_0(s_0) \\
+  &= \frac{1}{\mu_i} u_i'\left(c_0^i(s^t=(s_0))\right) \\
+  &= 1
+\end{aligned}$$ 
+
+This immediately yields the Lagrange multiplier:  
+$$\begin{aligned}
+  \mu_i = u_i'\left(c_0^i\right)
+\end{aligned}$$ 
+
+### Negishi Algorithm
+Though we must determine the price system and equilibrium allocation simultaneously, we can make use of the *Negishi Algorithm* and pinpoint our solution in a much more logical and simplier way. The algorithm, in a nutshell, does the following:  
+
+- Fix a positive and arbitrary value for $\mu_1$. Then take uneducated guesses for all other $\mu_i$.
+- Solve the allocation equation for $c^1$. For all possible histories $s^t$:  
+$$\begin{aligned}
+  \sum_{i} \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right) &= \sum_i y_t^i (s^t)
+\end{aligned}$$ 
+- Solve all remaining $c^i$ through:
+$$\begin{aligned}
+  c_t^i(s^t) &= \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}$$
+- Then solve the price system using the equilibrium allocation $c^i$ for all $s^t$ through:
+$$\begin{aligned}
+  \beta^t u_i'\left(c_t^i (s^t) \right) \pi_t(s^t) = \mu_i q_t^0(s^t)
+\end{aligned}$$  
+- For all $i \in I$ check the budget constraint:
+$$\begin{aligned}
+  \sum_t \sum_{s^t} q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \geq 0
+\end{aligned}$$ 
+- Raise $\mu_i$ if cost of consumption exceeds endowment, *vice versa*.
+- Reiterate the algorithm until the budget constraint is binding for all consumer and histories.
+
+### CRRA Utility Function
+If we were to assume all consumers in this economy to have CRRA utility function: $u(c) = (1/1-\gamma) c^{1-\gamma}$, then the optimality condition from the FOC implies:  
+$$\begin{aligned}
+  \frac{u_i'\left(c_t^i(s^t)\right)}{u_j'\left(c_t^j(s^t)\right)} &= \frac{\mu_i}{\mu_j} \\
+  \implies \left[c_t^i(s^t)\right]^{-\gamma} &= \left[c_t^j(s^t)\right]^{-\gamma} \frac{\mu_i}{\mu_j} \\
+  \implies c_t^i(s^t) &= c_t^j(s^t) \left[\frac{\mu_i}{\mu_j}\right]^{-\frac{1}[\gamma]}
+\end{aligned}$$
+
+It is surprising that under CRRA utility, agent $i$ consumes the **constant, history-independent** fraction of agent $j$'s consumption! Nevertheless, we still need the feasibility constraint for every :  
+$$\begin{aligned}
+  \sum_i y_t^i(s^t) &= \sum_i c_t^i(s^t) \\
+  &= c_t^i(s^t) \left(1 + \sum_{i} \left[\frac{\mu_{-i}}{\mu_i}\right]^{-\frac{1}{\gamma}}\right)
+\end{aligned}$$
+
+If we denote $\overline{y}_t(s^t) = \sum_i y_t^i(s^t)$, then:  
+$$\begin{aligned}
+  c_t^1(s^t) &= \overline{y}_t(s^t) \left(1 + \sum_{i \in I \setminus \{1\}} \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}}\right)^{-1}
+\end{aligned}$$
+
+If we denote:  
+$$\begin{aligned}
+  Z &:= \left(1 + \sum_{i \in I \setminus \{1\}} \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}}\right)^{-1}
+\end{aligned}$$
+then:
+$$\begin{aligned}
+  c_t^i(s^t) &= c_t^1(s^t) \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}} = \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}} Z \, \overline{y}_t(s^t) \\
+  &= \alpha_i \overline{y}_t(s^t)
+\end{aligned}$$
+where:  
+$$\begin{aligned}
+  \alpha_i &:= \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}} Z
+\end{aligned}$$
+is consumer $i$'s history indenpendent fixed consumption share of the aggregate endowment.
+
+For the price system, we can derive further from the FOC condition:  
+$$\begin{aligned}
+  q_t^0 (s^t) &= \frac{1}{\mu_i} \beta^t \pi_t(s^t) \left[c_t^i(s^t)\right]^{-\gamma} \\
+  &= \frac{1}{\mu_i} \beta^t \pi_t(s^t) \left[\alpha_i \overline{y}_t (s^t) \right]^{-\gamma}
+\end{aligned}$$
+
+After we normalize the time $0$ state price:  
+$$\begin{aligned}
+  q_0^0 (s^0) &= \frac{1}{\mu_i} \left[\alpha_i \overline{y}_t (s^t) \right]^{-\gamma} = 1 
+\end{aligned}$$
+we can have the price system for the competitive equilibrium.  
+
+**But how to solve for $\alpha$?** We can use budget constraint for each consumer to solve for it: 
+$$\begin{aligned}
+  0 &= \sum_t \sum_{s^t} q_t^0 (s^t) \left[y_t^i (s^t) - c_t^i (s^t)\right] \\
+  &= \sum_t \sum_{s^t} q_t^0 (s^t) \left[y_t^i (s^t) - \alpha_i \overline{y}_t(s^t)\right]
+\end{aligned}$$
+The budget constraint yields:  
+$$\begin{aligned}
+  \alpha_i &= \frac{\sum_t \sum_{s^t} q_t^0 (s^t) y_t^i (s^t)}{\sum_t \sum_{s^t} q_t^0 (s^t) \overline{y}_t(s^t)}
+\end{aligned}$$
+
+
+### Riskless Aggregate Endowment
+We will show subsequently that riskless aggregate endowment implies that consumption-per-consumer is time and history independent.  
+
+Starting from the binding feasibility constraint:  
+$$\begin{aligned}
+  \sum_{i} \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right) = \overline{y}_t (s^t)
+\end{aligned}$$ 
+
+Then since $\frac{\mu_i}{\mu_1}$ is time and history independent, a constant $\overline{y}_t (s^t)$ implies a constant $c_t^1(s^t)$. Also from
+
+$$\begin{aligned}
+  c_t^i(s^t) &= \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}$$ 
+
+we know that $c_t^i(s^t)$ is also a constant for $i \in I$. Therefore, the equilibrium allocation satisfies:  
+
+$$\begin{aligned}
+  c_t^i(s^t) &= \overline{c}^i
+\end{aligned}$$
+
+for all possible time and history.
+
+**How to solve the competitive equilibrium then?** We can again start from the FOC:  
+$$\begin{aligned}
+  \beta^t u_i'\left(c_t^i (s^t) \right) \pi_t(s^t) &= \mu_i q_t^0(s^t) \\
+  \implies q_t^0(s^t) &= \frac{1}{\mu_i} \beta^t u_i'\left(\overline{c}^i\right) \pi_t(s^t)
+\end{aligned}$$
+
+After regularization of prices $\mu_i = u_i'(\overline{c}^i)$, we can derive further using the budget constraint:  
+$$\begin{aligned}
+  0 &= \sum_t \sum_{s^t} q_t^0(s^t) \left(\overline{c}^i - y_t^i(s^t)\right) \\
+  &= \sum_t \sum_{s^t} \frac{1}{\mu_i} \beta^t u_i'\left(\overline{c}^i\right) \pi_t(s^t) \left(\overline{c}^i - y_t^i(s^t)\right)
+\end{aligned}$$
+
+Since $\mu_i$ and $u_i'\left(\overline{c}^i\right)$ are strictly positive, we can solve for $\overline{c}^i$:  
+$$\begin{aligned}
+  \overline{c}^i &= \frac{\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)}{\sum_t \sum_{s^t} \beta^t \pi_t(s^t)} \\
+  &= \frac{\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)}{\sum_t \beta^t \sum_{s^t} \pi_t(s^t)} \\
+  &= \frac{\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)}{\sum_t \beta^t \times 1} \\
+  &= (1-\beta) \left[\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)\right] \\
+\end{aligned}$$
+
+It is tedious but straightforward to verify that $\sum_i \overline{c}^i = \overline{y}$.
+
+
+
+
+## Linking Two Allocations: Welfare Theorems
+Though we are assuming completely different settings in the two allocation models, we can easily link these two models using the following two **Welfare Theorems**.
+
+### First Welfare Theorem
+A competitive equilibrium allocation is Pareto efficient.
+
+::: {.callout-note title="Definition"}
+Given a competitive equilibrium with equilibrium allocation $(c^{1*}, ..., c^{I*})$ and price system $\left\{q_t^0 (s^t)\right\}_{t=0}^{\infty}$, we can implement this as a Pareto equilibrium allocation with: 
+$$\begin{aligned}
+  \lambda_i := \frac{1}{\mu_i}, i \in I
+\end{aligned}$$
+:::
+
+
+### Second Welfare Theorem
+There exists a price system and an initial distribution of wealth that can support an efficient allocation as a competitive equilibrium allocation.
+
+::: {.callout-note title="Definition"}
+Given a Pareto equilibrium allocation with Pareto weights $(\lambda_i)_{i \in I}$ and equilibrium allocation $(c^{1*}, ..., c^{I*})$, we can implement this as an *Arrow-Debreu* competitive equilibrium allocation with: 
+$$\begin{aligned}
+  q_t^0 (s^t) := \theta_t(s^t) , \quad \forall s^t
+\end{aligned}$$
+and an allocation of endowment:  
+$$\begin{aligned}
+  q_t^0 (s^t) y_t^i(s^t) = q_t^0 (s^t) c^{i*}
+\end{aligned}$$
+:::
+
+## Application
+### Redundant Asset Pricing
+After market completeness and no-arbitrage are assumed, we can price any redundant (i.e. each component has already been priced via state prices) asset with payoff $d_t(s^t)$ using state prices (contingent claims):  
+$$\begin{aligned}
+  p_0(s_0) &= \sum_t \sum_{s^t} q_t^0(s^t) d_t(s^t)
+\end{aligned}$$
+assuming state prices $q_t^0(s^t)$ are already solved.
+
+## Sequential Trade
+### Setting and Intuition
+In the *Arrow-Debreu* setting, all trade takes place at time $0$. We want to further relax this assumption by introducting trading opportunities across any sequence of time.  
+
+In sequential trading, there's a sequence of markets that trade one-period-ahead state contingent claims.  
+
+<!-- We will see that the equilibrium allocation between *Arrow-Debreu* trade and sequential trade are identical. Furthermore, there exists a pricing relationship between *Arrow-Debreu* state prices $\left\{q_t^0(s^t)\right\}_{t = 0}^{\infty}$ and one-period-ahead sequential pricing kernal $\tilde{Q}(s_{t+1} \mid s^t)$. -->
+
+### (Non) Financial Wealth
+::: {.callout-note title="Definition: Non-Financial Wealth"}
+A consumer's **non-financial wealth** is the continuation value of the consumer's current and future endowment at time $t$ and history $s^t$:  
+$$\begin{aligned}
+  \sum_{\tau = t}^{\infty} \sum_{s^{\tau} \mid s^t} q_{\tau}^t y_{\tau}^i (s^{\tau}) 
+\end{aligned}$$
+:::
+
+::: {.callout-note title="Definition: Financial Wealth"}
+At time $t$ and history $s^t$, the financial wealth of consumer $i$ is given by:
+$$\begin{aligned}
+\Upsilon_t^i(s^t) := \sum_{\tau = t}^\infty \sum_{s^\tau \mid s^t} q_t^\tau \left(c_\tau^i(s^\tau) - y_\tau^i(s^\tau)\right)
+\end{aligned}$$
+where:  
+
+- $q_t^\tau$: Arrow-Debreu state prices,
+- $c_\tau^i$: consumption plan,
+- $y_\tau^i$: endowment.
+
+This wealth reflects the agent's position in Arrow securities contingent on realized states.
+:::
+
+Financial wealth at $t = 0$ is always zero under Arrow-Debreu trade:
+$$\begin{aligned}
+\Upsilon_0^i(s_0) = 0, \quad \forall i.
+\end{aligned}$$
+For $t > 0$, financial wealth can be positive or negative depending on the agent's cross-insurance through Arrow securities.
+
+::: {.callout-tip title="Aggregation Constraint"}
+In any competitive equilibrium, the sum of financial wealth across all agents equals zero:
+$$\begin{aligned}
+\sum_{i=1}^I \Upsilon_t^i(s^t) = 0, \quad \forall t, s^t.
+\end{aligned}$$
+Agents cross-insure across themselves and make sure that their claims on consumption level do not exceed the aggregated endowment at time $t$ and history $s^t$.
+:::
+
+### Natural Debt Limits
+
+To prevent Ponzi schemes, agents face a natural debt limit based on the value of their future endowments.
+
+::: {.callout-note title="Definition: Natural Debt Limit"}
+The natural debt limit $A_t^i(s^t)$ for consumer $i$ at time $t$ and history $s^t$ is:
+$$\begin{aligned}
+A_t^i(s^t) = \sum_{\tau = t}^\infty \sum_{s^\tau \mid s^t} q_t^\tau y_\tau^i(s^\tau),
+\end{aligned}$$
+where $q_t^\tau$ represents the Arrow-Debreu price of future endowments. This is the maximum amount the agent can borrow assuming zero future consumption.
+:::
+
+Borrowing constraints ensure that agents cannot sell claims beyond their natural debt limit:
+$$\begin{aligned}
+-a_{t+1}^i(s^{t+1}, s^t) \leq A_{t+1}^i(s^{t+1}).
+\end{aligned}$$
+For lending ($a_{t+1}^i > 0$), this constraint is naturally satisfied, while for borrowing ($a_{t+1}^i < 0$), it strictly limits over-leverage.
+
+### Consumer's Problem in Sequential Trade
+
+Agents aim to maximize their intertemporal utility subject to budget and borrowing constraints.
+
+$$\begin{aligned}
+  \max_{c^i} \quad & \mathcal{L}_i = \sum_{t=0}^\infty \sum_{s^t} \beta^t u_i(c_t^i(s^t)) \pi_t(s^t) \\
+  \text{s.t.} \quad &c_t^i(s^t) + \sum_{s^{t+1} \mid s^t} Q_t(s^{t+1} \mid s^t) a_{t+1}^i(s^{t+1}, s^t) \leq y_t^i(s^t) + a_t^i(s^t) \quad \text{(Budget)}\\
+  &-a_{t+1}^i(s^{t+1}, s^t) \leq A_{t+1}^i(s^{t+1}), \quad \forall s^{t+1} \quad \text{(Borrowing)}
+\end{aligned}$$
+
+### Solution
+
+The consumer's Lagrangian incorporates multipliers $\eta_t^i(s^t)$ for budget constraints and $\nu_t^i(s^{t+1}, s^t)$ for borrowing constraints:
+$$\begin{aligned}
+  \mathcal{L}_i = & \sum_{t=0}^\infty \sum_{s^t} \Big[\beta^t u_i(c_t^i(s^t)) \pi_t(s^t) \\
+  &+ \eta_t^i(s^t) \left(y_t^i(s^t) + a_t^i(s^t) - c_t^i(s^t) - \sum_{s^{t+1}} Q_t(s^{t+1} \mid s^t) a_{t+1}^i(s^{t+1}, s^t)\right) \\
+  &+ \sum_{s^{t+1} \mid s^t} \nu_t^i(s^{t+1}, s^t) \left(A_{t+1}^i(s^{t+1}) + a_{t+1}^i(s^{t+1}, s^t)\right)\Big].
+\end{aligned}$$
+
+Taking FOC: 
+
+- For $c_t^i(s^t)$:
+$$\begin{aligned}
+\beta^t u'_i(c_t^i(s^t)) \pi_t(s^t) = \eta_t^i(s^t),
+\end{aligned}$$
+- For $a_{t+1}^i(s^{t+1}, s^t)$:
+$$\begin{aligned}
+-\eta_t^i(s^t) Q_t(s^{t+1} \mid s^t) + \nu_t^i(s^{t+1}, s^t) + \eta_{t+1}^i(s^{t+1}) = 0.
+\end{aligned}$$
+
+
+If borrowing limits are non-binding ($\nu_t^i = 0$), the optimal pricing kernel is:
+$$\begin{aligned}
+Q_t(s^{t+1} \mid s^t) = \beta \frac{u'_i(c_{t+1}^i(s^{t+1}))}{u'_i(c_t^i(s^t))} \pi_t(s^{t+1} \mid s^t).
+\end{aligned}$$
+
+
+**Key Insight**: Borrowing limits ensure feasibility without binding constraints under equilibrium, leveraging the Inada condition of utility.

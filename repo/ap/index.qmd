@@ -11,8 +11,9 @@ Hi! This page hosts my notes on Asset Pricing Theory.
 2. [Consumption-Based Pricing Extended](a2.qmd)
    - Extending to broader time horizons and more economic settings.
 
-3. [Contingent Claims and Market Completeness](a3.qmd)
+3. [Contingent Claims](a3.qmd)
+   - Introducing the concept of ***contingent claims*** and connections to previous pricing models.
 
-4. [Linear Factor Models](a4.qmd)
+4. [Factor Models](a4.qmd)
 
-5. [Arrow-Debreu Allocation](a5.qmd)
+5. [Macroeconomic Allocation](a5.qmd)
