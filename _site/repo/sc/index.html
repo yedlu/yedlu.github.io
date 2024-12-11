@@ -287,14 +287,14 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a4.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/ap/a4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Factor Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a5.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arrow-Debreu Model</span></a>
+  <a href="../../repo/ap/a5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
   </div>
 </li>
       </ul>
@@ -354,8 +354,11 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 
 <p>Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets. I want to specifically acknowledge <em>Prof.&nbsp;Lorenzo Naranjo</em> for his intuitive lectures on <a href="https://lorenzonaranjo.com/fin538"><strong>Stochastic Foundations for Finance</strong></a>.</p>
 <ol type="1">
-<li><a href="../../repo/sc/s1.html">Discrete-Time Modeling</a> Basis for discrete-time modeling.</li>
+<li><a href="../../repo/sc/s1.html">Discrete-Time Modeling</a></li>
 </ol>
+<ul>
+<li>Basis for discrete-time modeling.</li>
+</ul>
 
 
 
@@ -456,7 +459,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
