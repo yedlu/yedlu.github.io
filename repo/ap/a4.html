@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Choices, Preferences, and Utility Theories – Yanhe Eddie Lu</title>
+<title>Factor Models – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -120,7 +149,7 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#microeconomics">Microeconomics</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#asset-pricing">Asset Pricing</a></li><li class="breadcrumb-item"><a href="../../repo/ap/index.html">Asset Pricing Theory</a></li><li class="breadcrumb-item"><a href="../../repo/ap/a4.html">Factor Models</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -154,20 +183,20 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Microeconomics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Micro I: Utility Theory</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/micro-u/u1.html" class="sidebar-item-text sidebar-link">
@@ -253,20 +282,20 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Asset Pricing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Asset Pricing Theory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/ap/a1.html" class="sidebar-item-text sidebar-link">
@@ -287,7 +316,7 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/ap/a4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Factor Models</span></a>
   </div>
 </li>
@@ -324,18 +353,18 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#microeconomics">Microeconomics</a></li><li class="breadcrumb-item"><a href="../../repo/micro-u/index.html">Micro I: Utility Theory</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#asset-pricing">Asset Pricing</a></li><li class="breadcrumb-item"><a href="../../repo/ap/index.html">Asset Pricing Theory</a></li><li class="breadcrumb-item"><a href="../../repo/ap/a4.html">Factor Models</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Choices, Preferences, and Utility Theories</h1>
+<h1 class="title">Factor Models</h1>
 </div>
 
 
@@ -352,33 +381,15 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </header>
 
 
-<p>Hi there and welcome! You can navigate yourself through one of the following topics:</p>
-<ol type="1">
-<li><a href="../../repo/micro-u/u1.html">Choices/Preference/Utility over Finite Outcomes</a>
-<ul>
-<li>Definition and properties of choices, preference relations, and representing utility functions.</li>
-</ul></li>
-<li><a href="../../repo/micro-u/u2.html">Choices/Preference/Utility over Infinite Outcomes</a>
-<ul>
-<li>Bring the concepts to infinite set of consequences.</li>
-</ul></li>
-<li><a href="../../repo/micro-u/u3.html">von Neumann-Morgenstern Expected Utility</a>
-<ul>
-<li>Explore lotteries and expected utility theory.</li>
-</ul></li>
-<li><a href="../../repo/micro-u/u4.html">Risk Aversion</a>
-<ul>
-<li>Examining risk aversion and its role in rational decision-making.</li>
-</ul></li>
-<li><a href="../../repo/micro-u/u5.html">Afriat’s Theorem</a>
-<ul>
-<li>An introduction to Afriat’s theorem and its implications.</li>
-</ul></li>
-<li><a href="../../repo/micro-u/u6.html">Stochastic Choice</a>
-<ul>
-<li>The theory behind stochastic choices.</li>
-</ul></li>
-</ol>
+<div class="hidden">
+<p><span class="math display">\[
+\def\BB#1{{\mathbb{#1}}}
+\def\BF#1{{\mathbf{#1}}}
+\def\E{{\mathbb{E}}}
+\def\R{{\mathbb{R}}}
+\]</span></p>
+</div>
+<p><em>yedlu, Winter 2024</em></p>
 
 
 

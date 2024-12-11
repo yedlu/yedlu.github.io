@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Macroeconomic Allocation – Yanhe Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Yanhe Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#asset-pricing">Asset Pricing</a></li><li class="breadcrumb-item"><a href="../../repo/ap/index.html">Asset Pricing Theory</a></li><li class="breadcrumb-item"><a href="../../repo/ap/a5.html">Macroeconomic Allocation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/u6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/g5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/a1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/a2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/a3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/a4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/a5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#settings" id="toc-settings" class="nav-link active" data-scroll-target="#settings">Settings</a>
+  <ul>
+  <li><a href="#time-and-states" id="toc-time-and-states" class="nav-link" data-scroll-target="#time-and-states">Time and States</a></li>
+  <li><a href="#consumers" id="toc-consumers" class="nav-link" data-scroll-target="#consumers">Consumers</a></li>
+  </ul></li>
+  <li><a href="#social-planners-pareto-allocation" id="toc-social-planners-pareto-allocation" class="nav-link" data-scroll-target="#social-planners-pareto-allocation">Social Planner’s Pareto Allocation</a>
+  <ul>
+  <li><a href="#efficient-allocation" id="toc-efficient-allocation" class="nav-link" data-scroll-target="#efficient-allocation">Efficient Allocation</a></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#same-aggregate-endowment" id="toc-same-aggregate-endowment" class="nav-link" data-scroll-target="#same-aggregate-endowment">Same Aggregate Endowment</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  <li><a href="#arrow-debreu-allocation" id="toc-arrow-debreu-allocation" class="nav-link" data-scroll-target="#arrow-debreu-allocation">Arrow-Debreu Allocation</a>
+  <ul>
+  <li><a href="#time-zero-trading" id="toc-time-zero-trading" class="nav-link" data-scroll-target="#time-zero-trading">Time-Zero Trading</a></li>
+  <li><a href="#competitive-equilibrium" id="toc-competitive-equilibrium" class="nav-link" data-scroll-target="#competitive-equilibrium">Competitive Equilibrium</a></li>
+  <li><a href="#optimization-1" id="toc-optimization-1" class="nav-link" data-scroll-target="#optimization-1">Optimization</a></li>
+  <li><a href="#solution-1" id="toc-solution-1" class="nav-link" data-scroll-target="#solution-1">Solution</a></li>
+  <li><a href="#summary-1" id="toc-summary-1" class="nav-link" data-scroll-target="#summary-1">Summary</a></li>
+  </ul></li>
+  <li><a href="#solution-characteristics" id="toc-solution-characteristics" class="nav-link" data-scroll-target="#solution-characteristics">Solution Characteristics</a>
+  <ul>
+  <li><a href="#regularization" id="toc-regularization" class="nav-link" data-scroll-target="#regularization">Regularization</a></li>
+  <li><a href="#negishi-algorithm" id="toc-negishi-algorithm" class="nav-link" data-scroll-target="#negishi-algorithm">Negishi Algorithm</a></li>
+  <li><a href="#crra-utility-function" id="toc-crra-utility-function" class="nav-link" data-scroll-target="#crra-utility-function">CRRA Utility Function</a></li>
+  <li><a href="#riskless-aggregate-endowment" id="toc-riskless-aggregate-endowment" class="nav-link" data-scroll-target="#riskless-aggregate-endowment">Riskless Aggregate Endowment</a></li>
+  </ul></li>
+  <li><a href="#linking-two-allocations-welfare-theorems" id="toc-linking-two-allocations-welfare-theorems" class="nav-link" data-scroll-target="#linking-two-allocations-welfare-theorems">Linking Two Allocations: Welfare Theorems</a>
+  <ul>
+  <li><a href="#first-welfare-theorem" id="toc-first-welfare-theorem" class="nav-link" data-scroll-target="#first-welfare-theorem">First Welfare Theorem</a></li>
+  <li><a href="#second-welfare-theorem" id="toc-second-welfare-theorem" class="nav-link" data-scroll-target="#second-welfare-theorem">Second Welfare Theorem</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a>
+  <ul>
+  <li><a href="#redundant-asset-pricing" id="toc-redundant-asset-pricing" class="nav-link" data-scroll-target="#redundant-asset-pricing">Redundant Asset Pricing</a></li>
+  </ul></li>
+  <li><a href="#sequential-trade" id="toc-sequential-trade" class="nav-link" data-scroll-target="#sequential-trade">Sequential Trade</a>
+  <ul>
+  <li><a href="#setting-and-intuition" id="toc-setting-and-intuition" class="nav-link" data-scroll-target="#setting-and-intuition">Setting and Intuition</a></li>
+  <li><a href="#non-financial-wealth" id="toc-non-financial-wealth" class="nav-link" data-scroll-target="#non-financial-wealth">(Non) Financial Wealth</a></li>
+  <li><a href="#natural-debt-limits" id="toc-natural-debt-limits" class="nav-link" data-scroll-target="#natural-debt-limits">Natural Debt Limits</a></li>
+  <li><a href="#consumers-problem-in-sequential-trade" id="toc-consumers-problem-in-sequential-trade" class="nav-link" data-scroll-target="#consumers-problem-in-sequential-trade">Consumer’s Problem in Sequential Trade</a></li>
+  <li><a href="#solution-2" id="toc-solution-2" class="nav-link" data-scroll-target="#solution-2">Solution</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#asset-pricing">Asset Pricing</a></li><li class="breadcrumb-item"><a href="../../repo/ap/index.html">Asset Pricing Theory</a></li><li class="breadcrumb-item"><a href="../../repo/ap/a5.html">Macroeconomic Allocation</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Macroeconomic Allocation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\def\BB#1{{\mathbb{#1}}}
+\def\BF#1{{\mathbf{#1}}}
+\def\E{{\mathbb{E}}}
+\def\R{{\mathbb{R}}}
+\]</span></p>
+</div>
+<p><em>yedlu, Winter 2024</em></p>
+<section id="settings" class="level2">
+<h2 class="anchored" data-anchor-id="settings">Settings</h2>
+<p>We are now standing in a macroeconomic view and try to price payoff streams (assets) in this way. Here’s some notations and settings used in this model.</p>
+<section id="time-and-states" class="level3">
+<h3 class="anchored" data-anchor-id="time-and-states">Time and States</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(t = 1, ...\)</span></td>
+<td>discrete infinite time</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(s_t \in S\)</span></td>
+<td>state realization at time <span class="math inline">\(t\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(s^t = (s_0, ..., s_t)\)</span></td>
+<td>set of complete history realizations up until time <span class="math inline">\(t\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pi(s^t)\)</span></td>
+<td>unconditional probability of history <span class="math inline">\(s^t\)</span> (often Markovian)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\pi(s^t \mid s^j)\)</span></td>
+<td>transition probability of history <span class="math inline">\(s^t\)</span> conditioning on having observed history <span class="math inline">\(s^j, j &lt; t\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="consumers" class="level3">
+<h3 class="anchored" data-anchor-id="consumers">Consumers</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(i \in I\)</span></td>
+<td>set of consumers</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(y_t^i (s^t)\)</span></td>
+<td>stochastic endowment at time <span class="math inline">\(t\)</span> depending on history <span class="math inline">\(s^t\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(s^t\)</span></td>
+<td>set of complete history can be publically observable</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(c^i = \left\{c_t^i (s^t) \right\}_{t=0}^{\infty}\)</span></td>
+<td>consumption play of consumer <span class="math inline">\(i\)</span> given the set of history realized <span class="math inline">\(s^t\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(U_i (c^i)\)</span></td>
+<td>expected utility function of consumer <span class="math inline">\(i\)</span> (*)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(u_i (c)\)</span></td>
+<td>Bernoulli index of utility function over consumption (we assume homogenous utility function across consumers) (**)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sum c_t^i \leq \sum y_t^i\)</span></td>
+<td>at every time <span class="math inline">\(t\)</span> and state <span class="math inline">\(s^t\)</span> agents altogether can only consume what they earn</td>
+</tr>
+</tbody>
+</table>
+<p>(*) Utility function of consumer <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+  U_i (c^i) &amp;= \sum_{t = 0}^{\infty} \sum_{s^t} \beta^t u_i\left(c_t^i (s^t)\right) \pi_t(s^t) \\
+  &amp;= \E_0 \left[\sum_{t=0}^{\infty}  \beta^t u_i\left(c_t^i (s^t)\right) \right]
+\end{aligned}\]</span></p>
+<p>(**) The Bernoulli index utility function over consumption is assumed to be:</p>
+<ul>
+<li>strictly increasing (<span class="math inline">\(u'&gt;0\)</span>)</li>
+<li>twice continuously differentiable and strictly concave (<span class="math inline">\(u''&lt;0\)</span>)</li>
+<li>satisfies the Inada condition (<span class="math inline">\(\lim_{c \to 0} u_i'(c) = + \infty\)</span>)</li>
+</ul>
+</section>
+</section>
+<section id="social-planners-pareto-allocation" class="level2">
+<h2 class="anchored" data-anchor-id="social-planners-pareto-allocation">Social Planner’s Pareto Allocation</h2>
+<section id="efficient-allocation" class="level3">
+<h3 class="anchored" data-anchor-id="efficient-allocation">Efficient Allocation</h3>
+<p>We need to find an efficient allocation, i.e.&nbsp;any reallocation of resources off this equilibrium will make at least one consumer worse off for any attempt to make another consumer better off.</p>
+</section>
+<section id="optimization" class="level3">
+<h3 class="anchored" data-anchor-id="optimization">Optimization</h3>
+<p>For the social planner’s Pareto allocation, here are the elements for the solution:</p>
+<ol type="1">
+<li>non-negative (sometime regularized to <span class="math inline">\((0,1)\)</span>) Pareto weights <span class="math inline">\(\lambda_i, i \in I\)</span> to consumer’s utility</li>
+<li>Planner chooses allocation <span class="math inline">\(c^i\)</span> for each consumer to maximize collective welfare subject to <strong>feasibility constraint</strong> <span class="math display">\[\begin{aligned}
+  \max_{c^i} &amp; \sum_{i \in I} \lambda_i U_i(c^i) \\
+  \text{s.t.} \quad (\forall t, s^t) \sum_{i \in I} c_t^i (s^t) &amp; \leq \sum_{i \in I} y_t^i (s^t)
+\end{aligned}\]</span></li>
+</ol>
+</section>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
+<p>Let <span class="math inline">\(\theta_t(s^t) \geq 0\)</span> be the Lagrange multiplier on the feasibility constraint at time <span class="math inline">\(t\)</span> and history <span class="math inline">\(s^t\)</span> (we need one multiplier for every time and history). Then, the Lagrangian of this problem equals:<br>
+<span class="math display">\[\begin{aligned}
+  L =&amp; \sum_{t} \sum_{s^t} \left[\sum_{i} \lambda_i \beta^t u_i \left(c_t^i(s^t) \right) \pi_t(s^t) \right] \\
+  &amp;+ \sum_{t} \sum_{s^t} \left[\theta_t(s^t) \left[\sum_{i} \left(y_t^i (s^t) -  c_t^i (s^t) \right) \right] \right]
+\end{aligned}\]</span></p>
+<p>The first-order condition (FOC) w.r.t. <span class="math inline">\(c_t^i (s^t)\)</span> for every agent, time, and history, yields:<br>
+<span class="math display">\[\begin{aligned}
+  \beta^t u'_i \left(c_t^i(s^t) \right) \pi_t(s^t) &amp;= \frac{1}{\lambda_i} \theta_t(s^t)
+\end{aligned}\]</span></p>
+<p>We can divide consumer <span class="math inline">\(i\)</span>’s FOC equation to consumer <span class="math inline">\(1\)</span>’s FOC equation, leaving:<br>
+<span class="math display">\[\begin{aligned}
+  \frac{u'_i \left(c_t^i(s^t) \right)}{u'_1 \left(c_t^1(s^t) \right)} &amp;= \frac{\lambda_1}{\lambda_i}
+\end{aligned}\]</span></p>
+<p>Solving for consumer <span class="math inline">\(i\)</span>’s consumption, we have:<br>
+<span class="math display">\[\begin{aligned}
+  c_t^i(s^t) &amp;= \left(u_i' \right)^{-1} \left(\frac{\lambda_1}{\lambda_i} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}\]</span></p>
+<p>We can then use the feasibility constraint (binding) to solve for consumer <span class="math inline">\(1\)</span>’s consumption:<br>
+<span class="math display">\[\begin{aligned}
+  \sum_{i} \left(u_i' \right)^{-1} \left(\frac{\lambda_1}{\lambda_i} u'_1 \left(c_t^1(s^t) \right)\right) &amp;= \sum_i y_t^i (s^t)
+\end{aligned}\]</span></p>
+</section>
+<section id="same-aggregate-endowment" class="level3">
+<h3 class="anchored" data-anchor-id="same-aggregate-endowment">Same Aggregate Endowment</h3>
+<p>If the aggregated endowment are identical across two distinct histories:<br>
+<span class="math display">\[\begin{aligned}
+  \sum_{i} y_t^i (s^{t, a}) &amp;= \sum_{i} y_t^i (s^{t, b})
+\end{aligned}\]</span></p>
+<p>then also the allocation to every consumer must be the same at both histories:<br>
+<span class="math display">\[\begin{aligned}
+  c_t^i(s^{t, a}) &amp;= \left(u_i' \right)^{-1} \left(\frac{\lambda_1}{\lambda_i} u'_1 \left(c_t^1(s^t) \right)\right) = c_t^i(s^{t, b})
+\end{aligned}\]</span></p>
+<p>regardless of endowment contribution <span class="math inline">\(y_t^i(s^{t, a})\)</span> and <span class="math inline">\(y_t^i(s^{t, b})\)</span>!</p>
+</section>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>For given Pareto weights <span class="math inline">\((\lambda^i)_{i \in I}\)</span>, an <strong>efficient allocation</strong> is a function of the <strong>aggregated endowment</strong> and does neither depend separately on history <span class="math inline">\(s^t\)</span> or individual contribution of the endowment <span class="math inline">\(y_t^i(s^t)\)</span>. It consists of a set of consumption allocation plan <span class="math inline">\((c^1, ..., c^I)\)</span> that maximizes the aggregated social welfare determined by Pareto weights and utility functions.</p>
+</section>
+</section>
+<section id="arrow-debreu-allocation" class="level2">
+<h2 class="anchored" data-anchor-id="arrow-debreu-allocation">Arrow-Debreu Allocation</h2>
+<section id="time-zero-trading" class="level3">
+<h3 class="anchored" data-anchor-id="time-zero-trading">Time-Zero Trading</h3>
+<p>Now, for this type of allocation (<em>Arrow-Debreu</em>), we assume</p>
+<ul>
+<li>a complete set of time-history contingent claims <span class="math inline">\(\left\{q_t^0(s^t) \right\}\)</span></li>
+<li>all trade occurs only at time <span class="math inline">\(0\)</span> after <span class="math inline">\(s_0\)</span> is realized (superscript <span class="math inline">\(0\)</span> denotes that all contingent claims are traded only at time <span class="math inline">\(0\)</span>)</li>
+<li>consumers can trade contingent claims on time <span class="math inline">\(t\)</span>, history <span class="math inline">\(s^t\)</span> at the price <span class="math inline">\(q_t^0(s^t)\)</span></li>
+<li>since all trade occurs at time <span class="math inline">\(0\)</span>, each agent faces <strong>one single</strong> budget constraint:<br>
+<span class="math display">\[\begin{aligned}
+\sum_t \sum_{s^t} q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \geq 0
+\end{aligned}\]</span></li>
+<li>the feasibility constraint of aggregated consumption at time <span class="math inline">\(t\)</span> and history <span class="math inline">\(s^t\)</span> still applies:<br>
+<span class="math display">\[\begin{aligned}
+\sum_i c_t^i(s^t) \leq \sum_i y_t^i(s^t)
+\end{aligned}\]</span></li>
+</ul>
+</section>
+<section id="competitive-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="competitive-equilibrium">Competitive Equilibrium</h3>
+<p>Unlike social planner’s Pareto allocation, it takes two parts to solve the <em>Arrow-Debreu</em> allocation problem:</p>
+<ul>
+<li>feasible allocation <span class="math inline">\((c^1, .., c^I)\)</span></li>
+<li>price system (for contingent claims) <span class="math inline">\(\left\{q_t^0 (s^t) \right\}_{t = 0}^{\infty}\)</span></li>
+</ul>
+<p>such that the allocation solves each consumer’s problem given the price system.</p>
+</section>
+<section id="optimization-1" class="level3">
+<h3 class="anchored" data-anchor-id="optimization-1">Optimization</h3>
+<p>We then have the optimization problem formally defined:<br>
+<span class="math display">\[\begin{aligned}
+  \max_{c^i} &amp; \sum_{t} \sum_{s^t} \beta^t u_i\left(c_t^i (s^t) \right) \pi_t(s^t) = \E_0 \left[\sum_{t} \beta^t u_i(c_t^i) \right] \\
+  \\
+  \text{s.t.} \quad &amp; \sum_t \sum_{s^t} q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \geq 0 \\
+  &amp; \sum_i c_t^i(s^t) \leq \sum_i y_t^i(s^t)
+\end{aligned}\]</span></p>
+</section>
+<section id="solution-1" class="level3">
+<h3 class="anchored" data-anchor-id="solution-1">Solution</h3>
+<p>Let <span class="math inline">\(\mu_i \leq 0\)</span> be the Lagrange multiplier to consumer <span class="math inline">\(i\)</span>’s budget constraint. Then the Lagrangian for consumer <span class="math inline">\(i\)</span> is:<br>
+<span class="math display">\[\begin{aligned}
+  \mathcal{L}^i &amp;= \sum_{t} \sum_{s^t} \left[\beta^t u_i\left(c_t^i (s^t) \right) \pi_t(s^t) + \mu_i q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \right]
+\end{aligned}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We would use the feasibility constraint later on in the solution.</p>
+</div>
+</div>
+<p>The first-order condition (FOC) w.r.t. consumption <span class="math inline">\(c_t^i (s^t)\)</span> for every <span class="math inline">\(s^t\)</span> yields,<br>
+<span class="math display">\[\begin{aligned}
+  \beta^t u_i'\left(c_t^i (s^t) \right) \pi_t(s^t) = \mu_i q_t^0(s^t)
+\end{aligned}\]</span></p>
+<p>Then, we can divide consumer <span class="math inline">\(i\)</span>’s FOC equation to consumer <span class="math inline">\(1\)</span>’s FOC equation (<span class="math inline">\(i \neq 1\)</span>): <span class="math display">\[\begin{aligned}
+  \frac{u_i'\left(c_t^i(s^t)\right)}{u_1'\left(c_t^1(s^t)\right)} &amp;= \frac{\mu_i}{\mu_1}
+\end{aligned}\]</span></p>
+<p>Then we can represent consumer <span class="math inline">\(i\)</span>’s consumption as a function of consumer <span class="math inline">\(1\)</span>’s consumption. For all other consumers and all possible histories:<br>
+<span class="math display">\[\begin{aligned}
+  c_t^i(s^t) &amp;= \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}\]</span></p>
+<p>Now, we use the feasibility constraint:<br>
+<span class="math display">\[\begin{aligned}
+  \sum_{i} \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right) &amp;= \sum_i y_t^i (s^t)
+\end{aligned}\]</span></p>
+<p>Therefore, the consumption for consumer <span class="math inline">\(1\)</span> only depends on the <strong>aggregated endowment</strong> as well as the ratios of the Lagrange multiplier.</p>
+</section>
+<section id="summary-1" class="level3">
+<h3 class="anchored" data-anchor-id="summary-1">Summary</h3>
+<p>A <strong>competitive equilibrium</strong> allocation under <em>Arrow-Debreu</em> securities is a function of the <strong>aggregated endowment</strong> and does neither depend separately on history <span class="math inline">\(s^t\)</span> or individual contribution of the endowment <span class="math inline">\(y_t^i(s^t)\)</span>.</p>
+</section>
+</section>
+<section id="solution-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="solution-characteristics">Solution Characteristics</h2>
+<section id="regularization" class="level3">
+<h3 class="anchored" data-anchor-id="regularization">Regularization</h3>
+<p>Since the price system denomination is arbitrary, tne technique that comes in handy is to regularize the time <span class="math inline">\(0\)</span> price to one:<br>
+<span class="math display">\[\begin{aligned}
+  q_0^0 (s^t = (s_0)) &amp;= \frac{1}{\mu_i} \beta^t u_i'\left(c_0^i(s^t=(s_0))\right) \pi_0(s_0) \\
+  &amp;= \frac{1}{\mu_i} u_i'\left(c_0^i(s^t=(s_0))\right) \\
+  &amp;= 1
+\end{aligned}\]</span></p>
+<p>This immediately yields the Lagrange multiplier:<br>
+<span class="math display">\[\begin{aligned}
+  \mu_i = u_i'\left(c_0^i\right)
+\end{aligned}\]</span></p>
+</section>
+<section id="negishi-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="negishi-algorithm">Negishi Algorithm</h3>
+<p>Though we must determine the price system and equilibrium allocation simultaneously, we can make use of the <em>Negishi Algorithm</em> and pinpoint our solution in a much more logical and simplier way. The algorithm, in a nutshell, does the following:</p>
+<ul>
+<li>Fix a positive and arbitrary value for <span class="math inline">\(\mu_1\)</span>. Then take uneducated guesses for all other <span class="math inline">\(\mu_i\)</span>.</li>
+<li>Solve the allocation equation for <span class="math inline">\(c^1\)</span>. For all possible histories <span class="math inline">\(s^t\)</span>:<br>
+<span class="math display">\[\begin{aligned}
+\sum_{i} \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right) &amp;= \sum_i y_t^i (s^t)
+\end{aligned}\]</span></li>
+<li>Solve all remaining <span class="math inline">\(c^i\)</span> through: <span class="math display">\[\begin{aligned}
+c_t^i(s^t) &amp;= \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}\]</span></li>
+<li>Then solve the price system using the equilibrium allocation <span class="math inline">\(c^i\)</span> for all <span class="math inline">\(s^t\)</span> through: <span class="math display">\[\begin{aligned}
+\beta^t u_i'\left(c_t^i (s^t) \right) \pi_t(s^t) = \mu_i q_t^0(s^t)
+\end{aligned}\]</span><br>
+</li>
+<li>For all <span class="math inline">\(i \in I\)</span> check the budget constraint: <span class="math display">\[\begin{aligned}
+\sum_t \sum_{s^t} q_t^0(s^t) \left(y_t^i (s^t) - c_t^i (s^t) \right) \geq 0
+\end{aligned}\]</span></li>
+<li>Raise <span class="math inline">\(\mu_i\)</span> if cost of consumption exceeds endowment, <em>vice versa</em>.</li>
+<li>Reiterate the algorithm until the budget constraint is binding for all consumer and histories.</li>
+</ul>
+</section>
+<section id="crra-utility-function" class="level3">
+<h3 class="anchored" data-anchor-id="crra-utility-function">CRRA Utility Function</h3>
+<p>If we were to assume all consumers in this economy to have CRRA utility function: <span class="math inline">\(u(c) = (1/1-\gamma) c^{1-\gamma}\)</span>, then the optimality condition from the FOC implies:<br>
+<span class="math display">\[\begin{aligned}
+  \frac{u_i'\left(c_t^i(s^t)\right)}{u_j'\left(c_t^j(s^t)\right)} &amp;= \frac{\mu_i}{\mu_j} \\
+  \implies \left[c_t^i(s^t)\right]^{-\gamma} &amp;= \left[c_t^j(s^t)\right]^{-\gamma} \frac{\mu_i}{\mu_j} \\
+  \implies c_t^i(s^t) &amp;= c_t^j(s^t) \left[\frac{\mu_i}{\mu_j}\right]^{-\frac{1}[\gamma]}
+\end{aligned}\]</span></p>
+<p>It is surprising that under CRRA utility, agent <span class="math inline">\(i\)</span> consumes the <strong>constant, history-independent</strong> fraction of agent <span class="math inline">\(j\)</span>’s consumption! Nevertheless, we still need the feasibility constraint for every :<br>
+<span class="math display">\[\begin{aligned}
+  \sum_i y_t^i(s^t) &amp;= \sum_i c_t^i(s^t) \\
+  &amp;= c_t^i(s^t) \left(1 + \sum_{i} \left[\frac{\mu_{-i}}{\mu_i}\right]^{-\frac{1}{\gamma}}\right)
+\end{aligned}\]</span></p>
+<p>If we denote <span class="math inline">\(\overline{y}_t(s^t) = \sum_i y_t^i(s^t)\)</span>, then:<br>
+<span class="math display">\[\begin{aligned}
+  c_t^1(s^t) &amp;= \overline{y}_t(s^t) \left(1 + \sum_{i \in I \setminus \{1\}} \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}}\right)^{-1}
+\end{aligned}\]</span></p>
+<p>If we denote:<br>
+<span class="math display">\[\begin{aligned}
+  Z &amp;:= \left(1 + \sum_{i \in I \setminus \{1\}} \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}}\right)^{-1}
+\end{aligned}\]</span> then: <span class="math display">\[\begin{aligned}
+  c_t^i(s^t) &amp;= c_t^1(s^t) \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}} = \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}} Z \, \overline{y}_t(s^t) \\
+  &amp;= \alpha_i \overline{y}_t(s^t)
+\end{aligned}\]</span> where:<br>
+<span class="math display">\[\begin{aligned}
+  \alpha_i &amp;:= \left[\frac{\mu_{i}}{\mu_1}\right]^{-\frac{1}{\gamma}} Z
+\end{aligned}\]</span> is consumer <span class="math inline">\(i\)</span>’s history indenpendent fixed consumption share of the aggregate endowment.</p>
+<p>For the price system, we can derive further from the FOC condition:<br>
+<span class="math display">\[\begin{aligned}
+  q_t^0 (s^t) &amp;= \frac{1}{\mu_i} \beta^t \pi_t(s^t) \left[c_t^i(s^t)\right]^{-\gamma} \\
+  &amp;= \frac{1}{\mu_i} \beta^t \pi_t(s^t) \left[\alpha_i \overline{y}_t (s^t) \right]^{-\gamma}
+\end{aligned}\]</span></p>
+<p>After we normalize the time <span class="math inline">\(0\)</span> state price:<br>
+<span class="math display">\[\begin{aligned}
+  q_0^0 (s^0) &amp;= \frac{1}{\mu_i} \left[\alpha_i \overline{y}_t (s^t) \right]^{-\gamma} = 1
+\end{aligned}\]</span> we can have the price system for the competitive equilibrium.</p>
+<p><strong>But how to solve for <span class="math inline">\(\alpha\)</span>?</strong> We can use budget constraint for each consumer to solve for it: <span class="math display">\[\begin{aligned}
+  0 &amp;= \sum_t \sum_{s^t} q_t^0 (s^t) \left[y_t^i (s^t) - c_t^i (s^t)\right] \\
+  &amp;= \sum_t \sum_{s^t} q_t^0 (s^t) \left[y_t^i (s^t) - \alpha_i \overline{y}_t(s^t)\right]
+\end{aligned}\]</span> The budget constraint yields:<br>
+<span class="math display">\[\begin{aligned}
+  \alpha_i &amp;= \frac{\sum_t \sum_{s^t} q_t^0 (s^t) y_t^i (s^t)}{\sum_t \sum_{s^t} q_t^0 (s^t) \overline{y}_t(s^t)}
+\end{aligned}\]</span></p>
+</section>
+<section id="riskless-aggregate-endowment" class="level3">
+<h3 class="anchored" data-anchor-id="riskless-aggregate-endowment">Riskless Aggregate Endowment</h3>
+<p>We will show subsequently that riskless aggregate endowment implies that consumption-per-consumer is time and history independent.</p>
+<p>Starting from the binding feasibility constraint:<br>
+<span class="math display">\[\begin{aligned}
+  \sum_{i} \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right) = \overline{y}_t (s^t)
+\end{aligned}\]</span></p>
+<p>Then since <span class="math inline">\(\frac{\mu_i}{\mu_1}\)</span> is time and history independent, a constant <span class="math inline">\(\overline{y}_t (s^t)\)</span> implies a constant <span class="math inline">\(c_t^1(s^t)\)</span>. Also from</p>
+<p><span class="math display">\[\begin{aligned}
+  c_t^i(s^t) &amp;= \left(u_i' \right)^{-1} \left(\frac{\mu_i}{\mu_1} u'_1 \left(c_t^1(s^t) \right)\right)
+\end{aligned}\]</span></p>
+<p>we know that <span class="math inline">\(c_t^i(s^t)\)</span> is also a constant for <span class="math inline">\(i \in I\)</span>. Therefore, the equilibrium allocation satisfies:</p>
+<p><span class="math display">\[\begin{aligned}
+  c_t^i(s^t) &amp;= \overline{c}^i
+\end{aligned}\]</span></p>
+<p>for all possible time and history.</p>
+<p><strong>How to solve the competitive equilibrium then?</strong> We can again start from the FOC:<br>
+<span class="math display">\[\begin{aligned}
+  \beta^t u_i'\left(c_t^i (s^t) \right) \pi_t(s^t) &amp;= \mu_i q_t^0(s^t) \\
+  \implies q_t^0(s^t) &amp;= \frac{1}{\mu_i} \beta^t u_i'\left(\overline{c}^i\right) \pi_t(s^t)
+\end{aligned}\]</span></p>
+<p>After regularization of prices <span class="math inline">\(\mu_i = u_i'(\overline{c}^i)\)</span>, we can derive further using the budget constraint:<br>
+<span class="math display">\[\begin{aligned}
+  0 &amp;= \sum_t \sum_{s^t} q_t^0(s^t) \left(\overline{c}^i - y_t^i(s^t)\right) \\
+  &amp;= \sum_t \sum_{s^t} \frac{1}{\mu_i} \beta^t u_i'\left(\overline{c}^i\right) \pi_t(s^t) \left(\overline{c}^i - y_t^i(s^t)\right)
+\end{aligned}\]</span></p>
+<p>Since <span class="math inline">\(\mu_i\)</span> and <span class="math inline">\(u_i'\left(\overline{c}^i\right)\)</span> are strictly positive, we can solve for <span class="math inline">\(\overline{c}^i\)</span>:<br>
+<span class="math display">\[\begin{aligned}
+  \overline{c}^i &amp;= \frac{\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)}{\sum_t \sum_{s^t} \beta^t \pi_t(s^t)} \\
+  &amp;= \frac{\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)}{\sum_t \beta^t \sum_{s^t} \pi_t(s^t)} \\
+  &amp;= \frac{\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)}{\sum_t \beta^t \times 1} \\
+  &amp;= (1-\beta) \left[\sum_t \sum_{s^t} \beta^t \pi_t(s^t) y_t^i(s^t)\right] \\
+\end{aligned}\]</span></p>
+<p>It is tedious but straightforward to verify that <span class="math inline">\(\sum_i \overline{c}^i = \overline{y}\)</span>.</p>
+</section>
+</section>
+<section id="linking-two-allocations-welfare-theorems" class="level2">
+<h2 class="anchored" data-anchor-id="linking-two-allocations-welfare-theorems">Linking Two Allocations: Welfare Theorems</h2>
+<p>Though we are assuming completely different settings in the two allocation models, we can easily link these two models using the following two <strong>Welfare Theorems</strong>.</p>
+<section id="first-welfare-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="first-welfare-theorem">First Welfare Theorem</h3>
+<p>A competitive equilibrium allocation is Pareto efficient.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a competitive equilibrium with equilibrium allocation <span class="math inline">\((c^{1*}, ..., c^{I*})\)</span> and price system <span class="math inline">\(\left\{q_t^0 (s^t)\right\}_{t=0}^{\infty}\)</span>, we can implement this as a Pareto equilibrium allocation with: <span class="math display">\[\begin{aligned}
+  \lambda_i := \frac{1}{\mu_i}, i \in I
+\end{aligned}\]</span></p>
+</div>
+</div>
+</section>
+<section id="second-welfare-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="second-welfare-theorem">Second Welfare Theorem</h3>
+<p>There exists a price system and an initial distribution of wealth that can support an efficient allocation as a competitive equilibrium allocation.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a Pareto equilibrium allocation with Pareto weights <span class="math inline">\((\lambda_i)_{i \in I}\)</span> and equilibrium allocation <span class="math inline">\((c^{1*}, ..., c^{I*})\)</span>, we can implement this as an <em>Arrow-Debreu</em> competitive equilibrium allocation with: <span class="math display">\[\begin{aligned}
+  q_t^0 (s^t) := \theta_t(s^t) , \quad \forall s^t
+\end{aligned}\]</span> and an allocation of endowment:<br>
+<span class="math display">\[\begin{aligned}
+  q_t^0 (s^t) y_t^i(s^t) = q_t^0 (s^t) c^{i*}
+\end{aligned}\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="application" class="level2">
+<h2 class="anchored" data-anchor-id="application">Application</h2>
+<section id="redundant-asset-pricing" class="level3">
+<h3 class="anchored" data-anchor-id="redundant-asset-pricing">Redundant Asset Pricing</h3>
+<p>After market completeness and no-arbitrage are assumed, we can price any redundant (i.e.&nbsp;each component has already been priced via state prices) asset with payoff <span class="math inline">\(d_t(s^t)\)</span> using state prices (contingent claims):<br>
+<span class="math display">\[\begin{aligned}
+  p_0(s_0) &amp;= \sum_t \sum_{s^t} q_t^0(s^t) d_t(s^t)
+\end{aligned}\]</span> assuming state prices <span class="math inline">\(q_t^0(s^t)\)</span> are already solved.</p>
+</section>
+</section>
+<section id="sequential-trade" class="level2">
+<h2 class="anchored" data-anchor-id="sequential-trade">Sequential Trade</h2>
+<section id="setting-and-intuition" class="level3">
+<h3 class="anchored" data-anchor-id="setting-and-intuition">Setting and Intuition</h3>
+<p>In the <em>Arrow-Debreu</em> setting, all trade takes place at time <span class="math inline">\(0\)</span>. We want to further relax this assumption by introducting trading opportunities across any sequence of time.</p>
+<p>In sequential trading, there’s a sequence of markets that trade one-period-ahead state contingent claims.</p>
+<!-- We will see that the equilibrium allocation between *Arrow-Debreu* trade and sequential trade are identical. Furthermore, there exists a pricing relationship between *Arrow-Debreu* state prices $\left\{q_t^0(s^t)\right\}_{t = 0}^{\infty}$ and one-period-ahead sequential pricing kernal $\tilde{Q}(s_{t+1} \mid s^t)$. -->
+</section>
+<section id="non-financial-wealth" class="level3">
+<h3 class="anchored" data-anchor-id="non-financial-wealth">(Non) Financial Wealth</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: Non-Financial Wealth">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Non-Financial Wealth
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A consumer’s <strong>non-financial wealth</strong> is the continuation value of the consumer’s current and future endowment at time <span class="math inline">\(t\)</span> and history <span class="math inline">\(s^t\)</span>:<br>
+<span class="math display">\[\begin{aligned}
+  \sum_{\tau = t}^{\infty} \sum_{s^{\tau} \mid s^t} q_{\tau}^t y_{\tau}^i (s^{\tau})
+\end{aligned}\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: Financial Wealth">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Financial Wealth
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At time <span class="math inline">\(t\)</span> and history <span class="math inline">\(s^t\)</span>, the financial wealth of consumer <span class="math inline">\(i\)</span> is given by: <span class="math display">\[\begin{aligned}
+\Upsilon_t^i(s^t) := \sum_{\tau = t}^\infty \sum_{s^\tau \mid s^t} q_t^\tau \left(c_\tau^i(s^\tau) - y_\tau^i(s^\tau)\right)
+\end{aligned}\]</span> where:</p>
+<ul>
+<li><span class="math inline">\(q_t^\tau\)</span>: Arrow-Debreu state prices,</li>
+<li><span class="math inline">\(c_\tau^i\)</span>: consumption plan,</li>
+<li><span class="math inline">\(y_\tau^i\)</span>: endowment.</li>
+</ul>
+<p>This wealth reflects the agent’s position in Arrow securities contingent on realized states.</p>
+</div>
+</div>
+<p>Financial wealth at <span class="math inline">\(t = 0\)</span> is always zero under Arrow-Debreu trade: <span class="math display">\[\begin{aligned}
+\Upsilon_0^i(s_0) = 0, \quad \forall i.
+\end{aligned}\]</span> For <span class="math inline">\(t &gt; 0\)</span>, financial wealth can be positive or negative depending on the agent’s cross-insurance through Arrow securities.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Aggregation Constraint">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aggregation Constraint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In any competitive equilibrium, the sum of financial wealth across all agents equals zero: <span class="math display">\[\begin{aligned}
+\sum_{i=1}^I \Upsilon_t^i(s^t) = 0, \quad \forall t, s^t.
+\end{aligned}\]</span> Agents cross-insure across themselves and make sure that their claims on consumption level do not exceed the aggregated endowment at time <span class="math inline">\(t\)</span> and history <span class="math inline">\(s^t\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="natural-debt-limits" class="level3">
+<h3 class="anchored" data-anchor-id="natural-debt-limits">Natural Debt Limits</h3>
+<p>To prevent Ponzi schemes, agents face a natural debt limit based on the value of their future endowments.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: Natural Debt Limit">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Natural Debt Limit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The natural debt limit <span class="math inline">\(A_t^i(s^t)\)</span> for consumer <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span> and history <span class="math inline">\(s^t\)</span> is: <span class="math display">\[\begin{aligned}
+A_t^i(s^t) = \sum_{\tau = t}^\infty \sum_{s^\tau \mid s^t} q_t^\tau y_\tau^i(s^\tau),
+\end{aligned}\]</span> where <span class="math inline">\(q_t^\tau\)</span> represents the Arrow-Debreu price of future endowments. This is the maximum amount the agent can borrow assuming zero future consumption.</p>
+</div>
+</div>
+<p>Borrowing constraints ensure that agents cannot sell claims beyond their natural debt limit: <span class="math display">\[\begin{aligned}
+-a_{t+1}^i(s^{t+1}, s^t) \leq A_{t+1}^i(s^{t+1}).
+\end{aligned}\]</span> For lending (<span class="math inline">\(a_{t+1}^i &gt; 0\)</span>), this constraint is naturally satisfied, while for borrowing (<span class="math inline">\(a_{t+1}^i &lt; 0\)</span>), it strictly limits over-leverage.</p>
+</section>
+<section id="consumers-problem-in-sequential-trade" class="level3">
+<h3 class="anchored" data-anchor-id="consumers-problem-in-sequential-trade">Consumer’s Problem in Sequential Trade</h3>
+<p>Agents aim to maximize their intertemporal utility subject to budget and borrowing constraints.</p>
+<p><span class="math display">\[\begin{aligned}
+  \max_{c^i} \quad &amp; \mathcal{L}_i = \sum_{t=0}^\infty \sum_{s^t} \beta^t u_i(c_t^i(s^t)) \pi_t(s^t) \\
+  \text{s.t.} \quad &amp;c_t^i(s^t) + \sum_{s^{t+1} \mid s^t} Q_t(s^{t+1} \mid s^t) a_{t+1}^i(s^{t+1}, s^t) \leq y_t^i(s^t) + a_t^i(s^t) \quad \text{(Budget)}\\
+  &amp;-a_{t+1}^i(s^{t+1}, s^t) \leq A_{t+1}^i(s^{t+1}), \quad \forall s^{t+1} \quad \text{(Borrowing)}
+\end{aligned}\]</span></p>
+</section>
+<section id="solution-2" class="level3">
+<h3 class="anchored" data-anchor-id="solution-2">Solution</h3>
+<p>The consumer’s Lagrangian incorporates multipliers <span class="math inline">\(\eta_t^i(s^t)\)</span> for budget constraints and <span class="math inline">\(\nu_t^i(s^{t+1}, s^t)\)</span> for borrowing constraints: <span class="math display">\[\begin{aligned}
+  \mathcal{L}_i = &amp; \sum_{t=0}^\infty \sum_{s^t} \Big[\beta^t u_i(c_t^i(s^t)) \pi_t(s^t) \\
+  &amp;+ \eta_t^i(s^t) \left(y_t^i(s^t) + a_t^i(s^t) - c_t^i(s^t) - \sum_{s^{t+1}} Q_t(s^{t+1} \mid s^t) a_{t+1}^i(s^{t+1}, s^t)\right) \\
+  &amp;+ \sum_{s^{t+1} \mid s^t} \nu_t^i(s^{t+1}, s^t) \left(A_{t+1}^i(s^{t+1}) + a_{t+1}^i(s^{t+1}, s^t)\right)\Big].
+\end{aligned}\]</span></p>
+<p>Taking FOC:</p>
+<ul>
+<li>For <span class="math inline">\(c_t^i(s^t)\)</span>: <span class="math display">\[\begin{aligned}
+\beta^t u'_i(c_t^i(s^t)) \pi_t(s^t) = \eta_t^i(s^t),
+\end{aligned}\]</span></li>
+<li>For <span class="math inline">\(a_{t+1}^i(s^{t+1}, s^t)\)</span>: <span class="math display">\[\begin{aligned}
+-\eta_t^i(s^t) Q_t(s^{t+1} \mid s^t) + \nu_t^i(s^{t+1}, s^t) + \eta_{t+1}^i(s^{t+1}) = 0.
+\end{aligned}\]</span></li>
+</ul>
+<p>If borrowing limits are non-binding (<span class="math inline">\(\nu_t^i = 0\)</span>), the optimal pricing kernel is: <span class="math display">\[\begin{aligned}
+Q_t(s^{t+1} \mid s^t) = \beta \frac{u'_i(c_{t+1}^i(s^{t+1}))}{u'_i(c_t^i(s^t))} \pi_t(s^{t+1} \mid s^t).
+\end{aligned}\]</span></p>
+<p><strong>Key Insight</strong>: Borrowing limits ensure feasibility without binding constraints under equilibrium, leveraging the Inada condition of utility.</p>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © 2024 Yanhe Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #007acc; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
