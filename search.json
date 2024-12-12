@@ -478,18 +478,212 @@
     ]
   },
   {
-    "objectID": "repo/sc/index.html",
-    "href": "repo/sc/index.html",
-    "title": "Stochastic Finance",
+    "objectID": "repo/ma/deal-regulation.html",
+    "href": "repo/ma/deal-regulation.html",
+    "title": "Yanhe Eddie Lu",
     "section": "",
-    "text": "Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets. I want to specifically acknowledge Prof. Lorenzo Naranjo for his intuitive lectures on Stochastic Foundations for Finance.\n\nDiscrete-Time Modeling\n\n\nBasis for discrete-time modeling.\n\n\n\n\n Back to top",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "repo/ma/tax.html",
+    "href": "repo/ma/tax.html",
+    "title": "M&A Taxation",
+    "section": "",
+    "text": "Through acquisition, in general, is defined as the purchase of an existing business, they can be well divided to several categories. In tax treatments, we usually categorize acquisition into:\n\nasset purchase\nstock purchase\nmerger\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nPurchase (all or parts of) target’s assets, may assume some liabilities.\n\n\nTarget\nLiquidate after deal.\n\n\n\nAsset purchase are more commonly found in acquisitions of private companies. During private acquisition, there’s more uncertainty about the liabilities. Hence the buyer can select which assets and liabilities it wants to remain.\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nMake offer (often tender offer) to target shareholders to buy their shares (not typically 100%).\n\n\nTarget\nMinority shareholders still have rights.\n\n\n\nIt is hard to achieve full synergies as minority shareholders still have some word to say about company operations.\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nBuy 100% of the target shares.\n\n\nTarget\nExistence vary depends on deal structure.\n\n\n\nMerger is defined as the transaction that combines two firms into one. It is relatively easy to achieve synergies in merger.\nHowever, it is relatively more difficult to go through a merger process: it typically needs\n\nnegotiation between managements\napproval of target board of directors\napproval of target shareholders (simple/super majority depends on the company charter, abstain usually counted as against votes)\napproval of acquirer shareholders (if issuing more than 20% of shares through stock purchase)",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Taxation"
+    ]
+  },
+  {
+    "objectID": "repo/ma/tax.html#deal-structures",
+    "href": "repo/ma/tax.html#deal-structures",
+    "title": "M&A Taxation",
+    "section": "",
+    "text": "Through acquisition, in general, is defined as the purchase of an existing business, they can be well divided to several categories. In tax treatments, we usually categorize acquisition into:\n\nasset purchase\nstock purchase\nmerger\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nPurchase (all or parts of) target’s assets, may assume some liabilities.\n\n\nTarget\nLiquidate after deal.\n\n\n\nAsset purchase are more commonly found in acquisitions of private companies. During private acquisition, there’s more uncertainty about the liabilities. Hence the buyer can select which assets and liabilities it wants to remain.\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nMake offer (often tender offer) to target shareholders to buy their shares (not typically 100%).\n\n\nTarget\nMinority shareholders still have rights.\n\n\n\nIt is hard to achieve full synergies as minority shareholders still have some word to say about company operations.\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nBuy 100% of the target shares.\n\n\nTarget\nExistence vary depends on deal structure.\n\n\n\nMerger is defined as the transaction that combines two firms into one. It is relatively easy to achieve synergies in merger.\nHowever, it is relatively more difficult to go through a merger process: it typically needs\n\nnegotiation between managements\napproval of target board of directors\napproval of target shareholders (simple/super majority depends on the company charter, abstain usually counted as against votes)\napproval of acquirer shareholders (if issuing more than 20% of shares through stock purchase)",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Taxation"
+    ]
+  },
+  {
+    "objectID": "repo/ma/tax.html#types-of-mergers",
+    "href": "repo/ma/tax.html#types-of-mergers",
+    "title": "M&A Taxation",
+    "section": "Types of Mergers",
+    "text": "Types of Mergers\n\nReverse Triangular\nTarget merges with a subsidiary of the acquirer, with the target as the surviving corporation to the merger.\nThis is the most commonly used type of merger, as it provides:\n\nno change in target’s contracts, titles, leases, etc. to make the deal easier and less costly\nparent company (acquirer) are insulated from target’s liabilities\n\n\n\nForward Triangular\nTarget merges with a subsidiary of the acquirer, with the acquirer subsidiary as the surviving corporation to the merger.\n\n\nStatutory Consolidation\nA direct merger of two entities into a newly-created entity (only entity continues to exist).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Taxation"
+    ]
+  },
+  {
+    "objectID": "repo/ma/tax.html#taxation-101",
+    "href": "repo/ma/tax.html#taxation-101",
+    "title": "M&A Taxation",
+    "section": "Taxation 101",
+    "text": "Taxation 101\n\nTransaction Types\nNontaxable if the transaction predominantly involves stock of one company for the stock of the other. Intuition would be that one company is trading its ownership to the ownership of the other company, instead of “cashing out” and realizing gains. We will analyze three types of acquisition deals for nontaxable transactions:\n\nMerger using stock\n\nI.R.C. \\(\\S\\) 368(a)(1)(A): A Reorganization\n\nStock purchase using stock\n\nI.R.C. \\(\\S\\) 368(a)(1)(B): B Reorganization\n\nAsset purcahse using stock\n\nI.R.C. \\(\\S\\) 368(a)(1)(C): C Reorganization\n\n\nTaxable if cash/debt is used as consideration. Sellers will recognize monetary income and pay taxes the year of the sale. We will be focusing on using cash to go through three types of acquisition deals:\n\nAsset purchase using cash\nStock purchase using cash\n\nwith \\(\\S\\) 338 election\nwithout \\(\\S\\) 338 election\n\nMerger using cash\n\n\n\nTax Basis\nTax basis is the carrying cost of an asset on a firm’s tax balance sheet. (Analogous but fundamentally different to book value on accounting balance sheet.)\nIn most cases, asset are initially recorded at the same value for both book/tax purpose. However, they might diverge over time due to different depreciation/amortization standards.\nThere are two types of tax basis:\n\ninside basis: a company has in its assets\noutside basis: shareholders have in the equity\n\nThe notion of inside/outside tax basis are used in calculating taxes depending on the transaction type.\n\n\nTax Calculation\nTax liabilities are calculating with fixing the tax rate on taxable gain, where taxable gain is the difference between:\n\npurchase price\ntax basis (of asset/stock)",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Taxation"
+    ]
+  },
+  {
+    "objectID": "repo/ma/tax.html#taxable-purchases",
+    "href": "repo/ma/tax.html#taxable-purchases",
+    "title": "M&A Taxation",
+    "section": "Taxable Purchases",
+    "text": "Taxable Purchases\n\nTaxable Asset Purchases (without \\(\\S\\) 338)\nIn this type of purchases, the acquirer purchases assets and/or assume liabilities, paying with cash.\n\nTarget Firm: recognizes a gain/loss on the asset taxable gain (purchase price - asset tax basis). Net Operating Losses (NOL) can be used to offset this gain for tax purposes and cannot be transfered to acquirer.\nAcquirer Firm:\n\nRecognize purchase price as the new tax basis.\nIn turn raises depreciation/amortization expenses (valuable to acquirer).\nNo DTL adjustments because tax/book value are re-aligned.\nGoodwill is amortized over 15 years for tax purposes (but not for book purposes).\n\nTarget Shareholders: are taxed if proceeds from the asset sale are distributed. If all proceeds are distibuted, the taxable gain is then (value distributed - stock tax basis).\n\n*Exception: target subsidiary is more than 80% owned by another corporation.\n\n\nThis creates double taxation on the purchase price by target firm and target shareholder!\n\n\nTaxable Stock Purchases (without \\(\\S\\) 338)\nIn this type of purchases, the acquirer purchases shares directly from target shareholders, paying with cash.\n\nTarget Shareholder\nSeller of target stocks incur capital gains tax (CGT, sale price - outside tax basis) with corresponding tax rate:\n\nlong-term CGT rates: typically 20%\nshort-term CGT rates: marginal ordinary income tax rate\n\n\n\nAcquirer\nAcquirer then establish a new tax basis on the stock equal to the sale price. However, the acquirer cannot step up the tax basis of the target’s assets and cannot attribute any of the purchase price to the tax basis of goodwill.\n\nthis will give rise to a DTL adjustment since book value is stepped-up.\n\n\n\nTarget Firm\nNow as a subsidiary of the bidder, the target does not declare any taxable gain/loss on the sale. Hence, we have avoided double taxation on stock purchases. We will show later that stock purchase dominates asset purchase without electing special tax provisions.\n\n\n\n\\(\\S\\) 338 election\nIf the target is a corporate subsidiary (with at least 80% ownership by a parent) or an S Corp/LLC, an asset sale would not result in double taxation. In this case, stock purchases are no longer dominant strategies.\n\n\nA Numeric Example\nTarget (T) corporation has assets with a tax basis of $ 400, liabilities of $ 100. T’s shareholders’ stock basis is $ 500. Acquirer (A) purchases the asset and assumes all liabilities for a total of $ 1,000. T distributes all proceeds to shareholders and then liqudates.\nSome additional numerical assumptions:\n\n\n\nItem\nAssumption\n\n\n\n\nCorporate Tax\n25%\n\n\nCapital Gains Tax\n20%\n\n\nDiscount Rate\n6%\n\n\nStraight-Line D/A\n5 Years\n\n\n\nNow we try to see what would happen under each type of transaction.\n\nTaxable Asset Purchase w/o \\(\\S\\) 338\n\n\n\n\n($)\nCalculation\n\n\n\n\nPurchase Price\n1,000\nAssumption\n\n\nTax Costs\n\n\n\n\n- Paid by T Corp.\n175\n(1,000-(400-100)) * 0.25\n\n\n- Paid by T Sh.\n65\n[(1,000-175)-500] * 0.2\n\n\nTotal Tax\n240\n\n\n\nTarget Shareholder\n\n\n\n\n- Gross Cost\n825\n1,000 - 175\n\n\n- (-) Tax\n65\n\n\n\n- After-Tax Cash\n760\n\n\n\nAcquirer\n\n\n\n\n- Gross Cost\n1,000\nAssumption\n\n\n- (-) PVTS\n147\nPV(0.06, 10, ((1000-(400-100))/5)*0.25)\n\n\n- After-Tax Cost\n853\n\n\n\nAcquirer Tax Basis\n\n\n\n\n- Stock\nNA\n\n\n\n- Asset\n1,000\n\n\n\n- Step-Up D/A\n700\n1,000 - (400-100)\n\n\n\n\n\nTaxable Stock Purchase w/o \\(\\S\\) 338\n\n\n\n\n($)\nCalculation\n\n\n\n\nPurchase Price\n1,000\nAssumption\n\n\nTax Costs\n\n\n\n\n- Paid by T Corp.\n0\nNot Involved\n\n\n- Paid by T Sh.\n100\n(1,000-500) * 0.2\n\n\nTotal Tax\n100\n\n\n\nTarget Shareholder\n\n\n\n\n- Gross Cost\n1,000\n1,000 - 0\n\n\n- (-) Tax\n100\n\n\n\n- After-Tax Cash\n900\n\n\n\nAcquirer\n\n\n\n\n- Gross Cost\n1,000\nAssumption\n\n\n- (-) PVTS\n0\n\n\n\n- After-Tax Cost\n1,000\n\n\n\nAcquirer Tax Basis\n\n\n\n\n- Stock\n1,000\n\n\n\n- Asset\n300\n400 - 100\n\n\n- Step-Up D/A\n0\nNot Involved\n\n\n\n\n\nTaxable Stock Purchase w \\(\\S\\) 338\nIn a taxable acquisition with a \\(\\S\\) 338 election:\n\nunder stock purchase, the target is treated as asset purchase with CGT exempted\n\n\n\n\n\n($)\nCalculation\n\n\n\n\nPurchase Price\n1,000\nAssumption\n\n\nTax Costs\n\n\n\n\n- Paid by T Corp.\n175\n(1,000-(400-100)) * 0.25\n\n\n- Paid by T Sh.\n0\nExempt under \\(\\S\\) 338\n\n\nTotal Tax\n175\n\n\n\nTarget Shareholder\n\n\n\n\n- Gross Cost\n825\n1,000 - 175\n\n\n- (-) Tax\n0\n\n\n\n- After-Tax Cash\n825\n\n\n\nAcquirer\n\n\n\n\n- Gross Cost\n1,000\nAssumption\n\n\n- (-) PVTS\n147\nPV(0.06, 10, ((1000-(400-100))/5)*0.25)\n\n\n- After-Tax Cost\n853\n\n\n\nAcquirer Tax Basis\n\n\n\n\n- Stock\nNA\n\n\n\n- Asset\n1,000\n\n\n\n- Step-Up D/A\n700\n1,000 - (400-100)\n\n\n\n\n\nSummary Table\n\n\n\n\n\n\n\n\n\n\nAsset\nStock w/o \\(\\S\\) 338\nStock w/ \\(\\S\\) 338\n\n\n\n\nA Pays\nCash\nCash\nCash\n\n\nA Receives\nAssets\nStock\nStock\n\n\nA Tax\nNew Tax Basis\nInherent Basis\nNew Tax Basis\n\n\nT Corp. Tax\nRecognized G/L\nNo G/L recognized\nRecognized G/L\n\n\nT Sh. Tax\nCGT\nCGT\nCGT waived\n\n\nNOL\nCan offset but expires\nMaintain but cannot offset\nCan offset but expires",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Taxation"
+    ]
+  },
+  {
+    "objectID": "repo/ma/tax.html#taxable-mergers",
+    "href": "repo/ma/tax.html#taxable-mergers",
+    "title": "M&A Taxation",
+    "section": "Taxable Mergers",
+    "text": "Taxable Mergers\n\nForward Merger\nIn a forward merger, the acquirer (or its new subsidiary) is the survivor to the merger. The assets and liabilities are transferred to the survivor, and the target’s shareholders get cash.\nFor tax purposes, a forward cash-out merger is treated as asset sale transaction.\n\n\nReverse Triangular Merger\nIn a reverse triangular merger, the target merges with a subsidiary of the acquirer, with the target as the surviving corporation to the merger.\nFor tax purposes, a reverse triangular cash-out merger is treated as stock sale transaction.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Taxation"
+    ]
+  },
+  {
+    "objectID": "repo/ma/tax.html#nontaxable-acquisitions",
+    "href": "repo/ma/tax.html#nontaxable-acquisitions",
+    "title": "M&A Taxation",
+    "section": "Nontaxable Acquisitions",
+    "text": "Nontaxable Acquisitions\nThe most common and dominant nontax structures is the A Reorganization. We will introduce three types of nontaxable acquisitions in this section.\nTo begin with, under nontaxable acquisitions, shares cannot be taxed until capital gains are realized. However, there are parts of offer rendered with cash that constitutes additional tax considerations.\n\nMerger (A Reorganization)\nAn A Reorganization normally features:\n\napproval of target shareholders (typically at least simple majority, depends on state laws and company charter)\ntax-free treatment for target shareholders\ntarget shareholders must receive substantial part consideration for target shares in acquirer stock (of any form, at least 50%)\ntarget shareholders can also receive boot (taxable cash/debt)\n\nWe have to take the taxable boot into account. Under this deal structure, the taxable gain is calculated with:\n\\[\\begin{aligned}\n  \\min\\{\\text{boot}, \\text{realized gain}\\}\n\\end{aligned}\\]\nExample. If T shareholder realize a gain of $ 500 on the acquisition, with the boot in cash of $ 400, the tax basis is then: \\(\\min\\{500, 400\\} = 400\\).\n\n\nSummary Table\nWe won’t be discussing other acquisition types in detail, but here’s a summary table for all types of nontaxable acquisitions.\n\n\n\n\nA Reorg.\nB Reorg.\nC Reorg.\n\n\n\n\nAcq. Type\nMerger\nStock\nAsset\n\n\nA Pays\nStock\nStock\nStock/Cash\n\n\nA Receive\nStock\nStock\nAsset\n\n\nT Corp. Tax\nNA\nNA\nNA\n\n\nT Sh. Tax\nBoot\nNA\nNA\n\n\nNOL\nKeep\nKeep\nKeep\n\n\nBoot\n&lt;50%\n0\n&lt;20%",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Taxation"
+    ]
+  },
+  {
+    "objectID": "repo/ma/takeover.html",
+    "href": "repo/ma/takeover.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Takeover Strategies"
+    ]
+  },
+  {
+    "objectID": "repo/ma/index.html",
+    "href": "repo/ma/index.html",
+    "title": "Mergers & Acquisitions",
+    "section": "",
+    "text": "Hi! You can navigate yourself through one of the following topics:\n\nDeal Design\n\nTypical structure of a deal, especially forms of payments.\n\nDeal Rationale\n\nWhat drives M&A deals.\n\nDeal Process\n\nM&A transaction, deal documents, acquisition structures.\n\nTakeover Strategies\n\nStrategies available to bidders and targets.\n\nMerger Model\n\nModeling merger, evaluating accretion/dilution.\n\nLeverage Buyout (LBO) Model\n\nGeneral assumptions and analysis of leverage buyouts.\n\nDeal Regulation\n\nMerger arbitrages, antitrust regulations.\n\nM&A Taxation\n\nHow to structure M&A deal to benefit from tax treatment.\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html",
+    "href": "repo/ma/deal-process.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/sc/s1.html",
+    "href": "repo/sc/s1.html",
+    "title": "Discrete-Time Finance",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024\nModeling evolutions of a variable is at the center of economic disciplines. We will first try to see tools we can use in discrete times and then push them forward in continuous times.",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
-      "Stochastic Finance"
+      "Stochastic Finance",
+      "Discrete-Time Finance"
     ]
+  },
+  {
+    "objectID": "repo/sc/s1.html#linear-difference-equations",
+    "href": "repo/sc/s1.html#linear-difference-equations",
+    "title": "Discrete-Time Finance",
+    "section": "Linear Difference Equations",
+    "text": "Linear Difference Equations\nConsider the following evolution:\n\\[\\begin{aligned}\n  y_t &= a + b y_{t-1}\n\\end{aligned}\\]\nwith \\(y_0\\) being a pre-determined constant.\nThen, we can iterate this over discrete times:\n\\[\\begin{aligned}\n  y_1 &= a + b y_0 \\\\\n  y_2 &= a + b y_1 = a + ba + b y_0 \\\\\n  y_3 &= a + b y_2 = a + ba + b^2 a + b^3 y_0 \\\\\n  & ... \\\\\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0\n\\end{aligned}\\]\nWe can further derive the geometric sum:\n\\[\\begin{aligned}\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0 \\\\\n  &= a (\\frac{1 - b^t}{1 - b}) + b^t y_0\n\\end{aligned}\\]\n\nConvergence\nThis condition\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} \\frac{1 - b^t}{1 - b} = c, \\quad c \\in \\BB{R}\n\\end{aligned}\\]\nwould be true if\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} b^t &= 0 \\\\\n  \\implies \\mid b \\mid &&lt; 1\n\\end{aligned}\\]\n\n\n\n\n\n\nTypes of Convergence\n\n\n\nIn financial models we would typically assume the convergence is monotonic:\n\\(b \\in (0,1)\\).\nNevertheless, alternating convergence might be useful in some cases:\n\\(b \\in (-1,0)\\).\n\n\n\n\nSolution\nAssuming convergence, the steady-state of \\(y_t\\) would then be:\n\\[\\begin{aligned}\n  \\overline{y} &= \\lim_{t \\to \\infty} = a (\\frac{1 - b^t}{1 - b}) + b^t y_0 \\\\\n  &= \\frac{a}{1-b}\n\\end{aligned}\\]\nAnother way to find the steady state is to assume existance of \\(\\overline{y}\\):\n\\[\\begin{aligned}\n  \\overline{y} &= a + b \\overline{y} \\\\\n  \\implies \\overline{y} &= \\frac{a}{1-b}\n\\end{aligned}\\]\n\n\nExponential Growth\nThe general solution\n\\[\\begin{aligned}\n  y_t &= \\overline{y} + b^t (y_0 - \\overline{y})\n\\end{aligned}\\] tells us a story. The discrete-time process begins at \\(y_0\\), converges to \\(\\overline{y}\\) in the end exponentially (\\(b^t\\)).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "repo/sc/s1.html#transversality-dividend-discount-revisited",
+    "href": "repo/sc/s1.html#transversality-dividend-discount-revisited",
+    "title": "Discrete-Time Finance",
+    "section": "Transversality: Dividend Discount Revisited",
+    "text": "Transversality: Dividend Discount Revisited\nWe know that the price of a stock can be denoted by the dividend discount model:\n\\[\\begin{aligned}\n  p_t &= \\frac{d_{t+1}}{1 + r} + \\frac{d_{t+2}}{(1 + r)^2} + ... + \\frac{d_{t+n}}{(1 + r)^n} + \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nIf we were to allow the time period goes to infinity:\n\\[\\begin{aligned}\n  p_t &= \\sum_{i = 1}^{n} \\frac{d_{t+i}}{(1 + r)^i} + \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nWe can then see that the following assumption makes the price of the stock to be unique (transversality condition):\n\\[\\begin{aligned}\n  \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n} &= 0\n\\end{aligned}\\]\nIf this term explodes, we would not be able to obtain a unique price for this stock.\n\n\n\n\n\n\nTip\n\n\n\nThis would be an interesting concept in Asset Pricing called market completeness.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Asset Pricing",
+      "Stochastic Finance",
+      "Discrete-Time Finance"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "cv.html",
@@ -555,55 +749,77 @@
     "text": "Personal Information\n\nGuitarist for over 10 years\n\nArt and museum enthusiast\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About Me",
+    "objectID": "repo/sc/index.html",
+    "href": "repo/sc/index.html",
+    "title": "Stochastic Finance",
     "section": "",
-    "text": "I am a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance. I am currently seeking to pursue full-time research positions in empirical economic disciplines after my graduation in December 2024.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories with concise notes/cheatsheets, projects, and coding samples.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu \nGitHub:  github.com/yedlu \nLinkedIn:  linkedin.com/in/yedlu \n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "repo/sc/s1.html",
-    "href": "repo/sc/s1.html",
-    "title": "Discrete-Time Finance",
-    "section": "",
-    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2024\nModeling evolutions of a variable is at the center of economic disciplines. We will first try to see tools we can use in discrete times and then push them forward in continuous times.",
+    "text": "Hey! This page serves as a gateway of materials, mostly my notes and cheatsheets. I want to specifically acknowledge Prof. Lorenzo Naranjo for his intuitive lectures on Stochastic Foundations for Finance.\n\nDiscrete-Time Modeling\n\n\nBasis for discrete-time modeling.\n\n\n\n\n Back to top",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Asset Pricing",
-      "Stochastic Finance",
-      "Discrete-Time Finance"
+      "Stochastic Finance"
     ]
   },
   {
-    "objectID": "repo/sc/s1.html#linear-difference-equations",
-    "href": "repo/sc/s1.html#linear-difference-equations",
-    "title": "Discrete-Time Finance",
-    "section": "Linear Difference Equations",
-    "text": "Linear Difference Equations\nConsider the following evolution:\n\\[\\begin{aligned}\n  y_t &= a + b y_{t-1}\n\\end{aligned}\\]\nwith \\(y_0\\) being a pre-determined constant.\nThen, we can iterate this over discrete times:\n\\[\\begin{aligned}\n  y_1 &= a + b y_0 \\\\\n  y_2 &= a + b y_1 = a + ba + b y_0 \\\\\n  y_3 &= a + b y_2 = a + ba + b^2 a + b^3 y_0 \\\\\n  & ... \\\\\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0\n\\end{aligned}\\]\nWe can further derive the geometric sum:\n\\[\\begin{aligned}\n  y_t &= a (\\sum_{i=0}^{t-1} b^i) + b^t y_0 \\\\\n  &= a (\\frac{1 - b^t}{1 - b}) + b^t y_0\n\\end{aligned}\\]\n\nConvergence\nThis condition\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} \\frac{1 - b^t}{1 - b} = c, \\quad c \\in \\BB{R}\n\\end{aligned}\\]\nwould be true if\n\\[\\begin{aligned}\n  \\lim_{t \\to \\infty} b^t &= 0 \\\\\n  \\implies \\mid b \\mid &&lt; 1\n\\end{aligned}\\]\n\n\n\n\n\n\nTypes of Convergence\n\n\n\nIn financial models we would typically assume the convergence is monotonic:\n\\(b \\in (0,1)\\).\nNevertheless, alternating convergence might be useful in some cases:\n\\(b \\in (-1,0)\\).\n\n\n\n\nSolution\nAssuming convergence, the steady-state of \\(y_t\\) would then be:\n\\[\\begin{aligned}\n  \\overline{y} &= \\lim_{t \\to \\infty} = a (\\frac{1 - b^t}{1 - b}) + b^t y_0 \\\\\n  &= \\frac{a}{1-b}\n\\end{aligned}\\]\nAnother way to find the steady state is to assume existance of \\(\\overline{y}\\):\n\\[\\begin{aligned}\n  \\overline{y} &= a + b \\overline{y} \\\\\n  \\implies \\overline{y} &= \\frac{a}{1-b}\n\\end{aligned}\\]\n\n\nExponential Growth\nThe general solution\n\\[\\begin{aligned}\n  y_t &= \\overline{y} + b^t (y_0 - \\overline{y})\n\\end{aligned}\\] tells us a story. The discrete-time process begins at \\(y_0\\), converges to \\(\\overline{y}\\) in the end exponentially (\\(b^t\\)).",
+    "objectID": "repo/ma/deal-rationale.html",
+    "href": "repo/ma/deal-rationale.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
-      "Asset Pricing",
-      "Stochastic Finance",
-      "Discrete-Time Finance"
+      "Corporate Finance",
+      "M&A",
+      "Deal Rationale"
     ]
   },
   {
-    "objectID": "repo/sc/s1.html#transversality-dividend-discount-revisited",
-    "href": "repo/sc/s1.html#transversality-dividend-discount-revisited",
-    "title": "Discrete-Time Finance",
-    "section": "Transversality: Dividend Discount Revisited",
-    "text": "Transversality: Dividend Discount Revisited\nWe know that the price of a stock can be denoted by the dividend discount model:\n\\[\\begin{aligned}\n  p_t &= \\frac{d_{t+1}}{1 + r} + \\frac{d_{t+2}}{(1 + r)^2} + ... + \\frac{d_{t+n}}{(1 + r)^n} + \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nIf we were to allow the time period goes to infinity:\n\\[\\begin{aligned}\n  p_t &= \\sum_{i = 1}^{n} \\frac{d_{t+i}}{(1 + r)^i} + \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n}\n\\end{aligned}\\]\nWe can then see that the following assumption makes the price of the stock to be unique (transversality condition):\n\\[\\begin{aligned}\n  \\lim_{n \\to \\infty} \\frac{p_{t+n}}{(1 + r)^n} &= 0\n\\end{aligned}\\]\nIf this term explodes, we would not be able to obtain a unique price for this stock.\n\n\n\n\n\n\nTip\n\n\n\nThis would be an interesting concept in Asset Pricing called market completeness.",
+    "objectID": "repo/ma/lbo.html",
+    "href": "repo/ma/lbo.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
-      "Asset Pricing",
-      "Stochastic Finance",
-      "Discrete-Time Finance"
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/merger.html",
+    "href": "repo/ma/merger.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Merger Model"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-design.html",
+    "href": "repo/ma/deal-design.html",
+    "title": "Yanhe Eddie Lu",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Design"
     ]
   },
   {
@@ -866,7 +1082,7 @@
     "href": "repo/index.html",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions",
     "crumbs": [
       "me",
       "Repository"
@@ -877,7 +1093,7 @@
     "href": "repo/index.html#class-notes",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions",
     "crumbs": [
       "me",
       "Repository"
