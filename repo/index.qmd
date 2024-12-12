@@ -18,12 +18,15 @@ format:
   - [Asset Pricing Theory (PhD Level)](ap/index.qmd)
   - [Stochastic Finance](sc/index.qmd)
 
-
-<!-- ### Corporate Finance
+### Corporate Finance
   - Corporate Finance Theory (PhD Level)
   - Corporate Finance Practice (MBA Level)
     - Valuation
     - Financing
+    - [Mergers & Acquisitions](ma/index.qmd)
+
+
+<!-- 
 
 
 

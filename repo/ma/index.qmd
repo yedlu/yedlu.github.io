@@ -1,0 +1,29 @@
+---
+title: "Mergers & Acquisitions"
+---
+
+Hi! You can navigate yourself through one of the following topics:
+
+1. [Deal Design](deal-design.qmd)
+   - Typical structure of a deal, especially forms of payments.
+
+2. [Deal Rationale](deal-rationale.qmd)
+   - What drives M&A deals.
+
+3. [Deal Process](deal-process.qmd)
+   - M&A transaction, deal documents, acquisition structures.
+
+4. [Takeover Strategies](takeover.qmd)
+   - Strategies available to bidders and targets.
+
+5. [Merger Model](merger.qmd)
+   - Modeling merger, evaluating accretion/dilution.
+
+6. [Leverage Buyout (LBO) Model](lbo.qmd)
+   - General assumptions and analysis of leverage buyouts.
+
+7. [Deal Regulation](deal-regulation.qmd)
+   - Merger arbitrages, antitrust regulations.
+
+8. [M&A Taxation](tax.qmd)
+   - How to structure M&A deal to benefit from tax treatment.

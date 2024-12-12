@@ -1,0 +1,281 @@
+---
+title: "M&A Taxation"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+## Deal Structures
+Through acquisition, in general, is defined as the purchase of an existing business, they can be well divided to several categories. In tax treatments, we usually categorize acquisition into:  
+
+- asset purchase
+- stock purchase
+- merger
+
+### Asset Purchase
+
+| Parties | Actions |
+| --- | ------- |
+| Acquirer | Purchase (all or parts of) target's assets, may assume some liabilities. |
+| Target | Liquidate after deal. |
+
+Asset purchase are more commonly found in acquisitions of private companies. During private acquisition, there's more uncertainty about the liabilities. Hence the buyer can select which assets and liabilities it wants to remain.
+
+### Stock Purchase
+
+| Parties | Actions |
+| --- | ------- |
+| Acquirer | Make offer (often tender offer) to target shareholders to buy their shares (not typically 100\%). |
+| Target | Minority shareholders still have rights. |
+
+It is hard to achieve full synergies as minority shareholders still have some word to say about company operations.
+
+### Merger
+
+| Parties | Actions |
+| --- | ------- |
+| Acquirer | Buy 100\% of the target shares. |
+| Target | Existence vary depends on deal structure. |
+
+Merger is defined as the transaction that combines two firms into one. It is relatively easy to achieve synergies in merger.   
+
+However, it is relatively more difficult to go through a merger process: it typically needs  
+
+- negotiation between managements
+- approval of target board of directors
+- approval of target shareholders (simple/super majority depends on the company charter, **abstain usually counted as against votes**)
+- approval of acquirer shareholders (if issuing more than 20\% of shares through stock purchase)
+
+## Types of Mergers
+### Reverse Triangular
+Target merges with a subsidiary of the acquirer, with the **target as the surviving corporation** to the merger.  
+
+This is the most commonly used type of merger, as it provides:  
+
+- no change in target's contracts, titles, leases, etc. to make the deal easier and less costly
+- parent company (acquirer) are insulated from target's liabilities
+
+### Forward Triangular
+Target merges with a subsidiary of the acquirer, with the **acquirer subsidiary as the surviving corporation** to the merger.
+
+### Statutory Consolidation
+A direct merger of two entities into a newly-created entity (only entity continues to exist).
+
+
+## Taxation 101
+### Transaction Types
+**Nontaxable** if the transaction *predominantly* involves stock of one company for the stock of the other. Intuition would be that one company is trading its ownership to the ownership of the other company, instead of "cashing out" and realizing gains. We will analyze three types of acquisition deals for nontaxable transactions:  
+
+- Merger using stock
+  - I.R.C. $\S$ 368(a)(1)(A): A Reorganization
+- Stock purchase using stock
+  - I.R.C. $\S$ 368(a)(1)(B): B Reorganization
+- Asset purcahse using stock
+  - I.R.C. $\S$ 368(a)(1)(C): C Reorganization
+
+
+
+**Taxable** if cash/debt is used as consideration. Sellers will recognize monetary income and pay taxes the year of the sale. We will be focusing on using cash to go through three types of acquisition deals:  
+
+- Asset purchase using cash
+- Stock purchase using cash
+  - with $\S$ 338 election
+  - without $\S$ 338 election
+- Merger using cash
+
+### Tax Basis
+**Tax basis** is the carrying cost of an asset on a firm's *tax* balance sheet. (Analogous but fundamentally different to book value on accounting balance sheet.)  
+
+In most cases, asset are initially recorded at the same value for both book/tax purpose. However, they might diverge over time due to different depreciation/amortization standards.  
+
+There are two **types** of tax basis:  
+
+- inside basis: a company has in its assets
+- outside basis: shareholders have in the equity
+
+The notion of inside/outside tax basis are used in calculating taxes depending on the transaction type.  
+
+### Tax Calculation
+Tax liabilities are calculating with fixing the tax rate on taxable gain, where taxable gain is the difference between:  
+
+- purchase price
+- **tax basis** (of asset/stock)
+
+## Taxable Purchases
+### Taxable Asset Purchases (without $\S$ 338)
+In this type of purchases, the acquirer purchases assets and/or assume liabilities, paying with **cash**.  
+
+- Target Firm: recognizes a gain/loss on the asset taxable gain (purchase price - asset tax basis). *Net Operating Losses* (NOL) can be used to offset this gain for tax purposes and cannot be transfered to acquirer.
+- Acquirer Firm: 
+  - Recognize purchase price as the new tax basis.
+  - In turn raises depreciation/amortization expenses (valuable to acquirer).
+  - No DTL adjustments because tax/book value are re-aligned.
+  - Goodwill is amortized over 15 years for tax purposes (but not for book purposes).
+- Target Shareholders: are taxed if proceeds from the asset sale are distributed. If all proceeds are distibuted, the taxable gain is then (value distributed - stock tax basis).
+  - *Exception: target subsidiary is more than 80\% owned by another corporation.
+
+This creates **double taxation** on the purchase price by target firm and target shareholder!
+
+### Taxable Stock Purchases (without $\S$ 338)
+In this type of purchases, the acquirer purchases shares directly from target shareholders, paying with **cash**.  
+
+#### Target Shareholder
+Seller of target stocks incur capital gains tax (CGT, sale price - outside tax basis) with corresponding tax rate:  
+
+- long-term CGT rates: typically 20\%
+- short-term CGT rates: marginal ordinary income tax rate
+
+#### Acquirer
+Acquirer then establish a new tax basis on the stock equal to the sale price. However, the acquirer cannot step up the tax basis of the target's assets and cannot attribute any of the purchase price to the tax basis of goodwill.  
+
+- this will give rise to a DTL adjustment since book value is stepped-up.
+
+#### Target Firm
+Now as a subsidiary of the bidder, the target does not declare any taxable gain/loss on the sale. Hence, we have avoided double taxation on stock purchases. We will show later that stock purchase dominates asset purchase without electing special tax provisions.  
+
+
+### $\S$ 338 election
+If the target is a corporate subsidiary (with at least 80\% ownership by a parent) or an S Corp/LLC, an asset sale would not result in double taxation. In this case, stock purchases are no longer dominant strategies.  
+
+### A Numeric Example
+Target (T) corporation has assets with a tax basis of \$ 400, liabilities of \$ 100. T's shareholders' stock basis is \$ 500. Acquirer (A) purchases the asset and assumes all liabilities for a total of \$ 1,000. T distributes all proceeds to shareholders and then liqudates.  
+
+Some additional numerical assumptions: 
+
+| Item | Assumption | 
+| ----- | --- | 
+| Corporate Tax | 25\% |
+| Capital Gains Tax | 20\% |
+| Discount Rate | 6\% |
+| Straight-Line D/A | 5 Years |
+
+Now we try to see what would happen under each type of transaction.  
+
+#### Taxable Asset Purchase w/o $\S$ 338
+
+| | (\$) | Calculation |
+| :- | -: | :- |
+| Purchase Price | 1,000 | Assumption |
+| **Tax Costs** | | |
+| - Paid by T Corp. | 175 | (1,000-(400-100)) * 0.25 |
+| - Paid by T Sh. | 65 | [(1,000-175)-500] * 0.2 |
+| Total Tax | 240 |  |
+| Target Shareholder | | |
+| - Gross Cost | 825 | 1,000 - 175 |
+| - (-) Tax | 65 | |
+| - After-Tax Cash | 760 |  |
+| **Acquirer** | | |
+| - Gross Cost | 1,000 | Assumption |
+| - (-) PVTS | 147 | PV(0.06, 10, ((1000-(400-100))/5)*0.25) |
+| - After-Tax Cost | 853 |  |
+| **Acquirer Tax Basis** | | |
+| - Stock | NA | | 
+| - Asset | 1,000 | |
+| - Step-Up D/A | 700 | 1,000 - (400-100) |
+
+#### Taxable Stock Purchase w/o $\S$ 338
+
+| | (\$) | Calculation |
+| :- | -: | :- |
+| Purchase Price | 1,000 | Assumption |
+| **Tax Costs** | | |
+| - Paid by T Corp. | 0 | Not Involved |
+| - Paid by T Sh. | 100  | (1,000-500) * 0.2 |
+| Total Tax | 100 |  |
+| Target Shareholder | | |
+| - Gross Cost | 1,000 | 1,000 - 0 |
+| - (-) Tax | 100 | |
+| - After-Tax Cash | 900 |  |
+| **Acquirer** | | |
+| - Gross Cost | 1,000 | Assumption |
+| - (-) PVTS | 0 | |
+| - After-Tax Cost | 1,000 |  |
+| **Acquirer Tax Basis** | | |
+| - Stock | 1,000 | | 
+| - Asset | 300 | 400 - 100 |
+| - Step-Up D/A | 0 | Not Involved |
+
+#### Taxable Stock Purchase w $\S$ 338
+In a taxable acquisition with a $\S$ 338 election:  
+
+- under stock purchase, the target is treated as asset purchase with CGT exempted
+
+| | (\$) | Calculation |
+| :- | -: | :- |
+| Purchase Price | 1,000 | Assumption |
+| **Tax Costs** | | |
+| - Paid by T Corp. | 175 | (1,000-(400-100)) * 0.25 |
+| - Paid by T Sh. | 0 | **Exempt under $\S$ 338** |
+| Total Tax | 175 |  |
+| Target Shareholder | | |
+| - Gross Cost | 825 | 1,000 - 175 |
+| - (-) Tax | 0 | |
+| - After-Tax Cash | 825 |  |
+| **Acquirer** | | |
+| - Gross Cost | 1,000 | Assumption |
+| - (-) PVTS | 147 | PV(0.06, 10, ((1000-(400-100))/5)*0.25) |
+| - After-Tax Cost | 853 |  |
+| **Acquirer Tax Basis** | | |
+| - Stock | NA | | 
+| - Asset | 1,000 | |
+| - Step-Up D/A | 700 | 1,000 - (400-100) | 
+
+#### Summary Table
+
+| | Asset | Stock w/o $\S$ 338 | Stock w/ $\S$ 338 |
+| - | --- | --- | --- |
+| A Pays | Cash | Cash | Cash |
+| A Receives | Assets | Stock | Stock |
+| A Tax | New Tax Basis | Inherent Basis | New Tax Basis |
+| T Corp. Tax | Recognized G/L | No G/L recognized | Recognized G/L |
+| T Sh. Tax | CGT | CGT | CGT waived |
+| NOL | Can offset but expires | Maintain but cannot offset | Can offset but expires |
+
+## Taxable Mergers
+### Forward Merger
+In a forward merger, the acquirer (or its new subsidiary) is the survivor to the merger. The assets and liabilities are transferred to the survivor, and the target's shareholders get cash.  
+
+For tax purposes, a forward cash-out merger is treated as **asset sale transaction**. 
+
+### Reverse Triangular Merger
+In a reverse triangular merger, the target merges with a subsidiary of the acquirer, with the target as the surviving corporation to the merger.  
+
+For tax purposes, a reverse triangular cash-out merger is treated as **stock sale transaction**.  
+
+
+## Nontaxable Acquisitions
+The most common and dominant nontax structures is the *A Reorganization*. We will introduce three types of nontaxable acquisitions in this section.  
+
+To begin with, under nontaxable acquisitions, shares cannot be taxed until capital gains are realized. However, there are parts of offer rendered with cash that constitutes additional tax considerations.  
+
+### Merger (A Reorganization)
+An *A Reorganization* normally features:  
+
+- approval of target shareholders (typically at least simple majority, depends on state laws and company charter)
+- tax-free treatment for target shareholders
+- target shareholders must receive **substantial part** consideration for target shares in acquirer stock (of any form, at least 50\%)
+- target shareholders can also receive boot (taxable cash/debt)
+
+We have to take the taxable boot into account. Under this deal structure, the taxable gain is calculated with:  
+$$\begin{aligned}
+  \min\{\text{boot}, \text{realized gain}\}
+\end{aligned}$$
+
+**Example.** If T shareholder realize a gain of \$ 500 on the acquisition, with the boot in cash of \$ 400, the tax basis is then: $\min\{500, 400\} = 400$.
+
+
+### Summary Table 
+We won't be discussing other acquisition types in detail, but here's a summary table for all types of nontaxable acquisitions.  
+
+| | A Reorg. | B Reorg. | C Reorg. |
+| - | - | - | - |
+| Acq. Type | Merger | Stock | Asset |
+| A Pays | Stock | Stock | Stock/Cash |
+| A Receive | Stock | Stock | Asset |
+| T Corp. Tax | NA | NA | NA |
+| T Sh. Tax | Boot | NA | NA |
+| NOL | Keep | Keep | Keep |
+| Boot | <50\% | 0 | <20\% |

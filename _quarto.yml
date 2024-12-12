@@ -73,6 +73,26 @@ website:
                 contents: 
                 - text: "Discrete-Time Finance"
                   href: repo/sc/s1.qmd
+            - text: "Corporate Finance"
+              href: repo/#corporate-finance
+              contents:
+              - text: "M&A"
+                href: repo/ma/index.qmd
+                contents:
+                - text: "Deal Design"
+                  href: repo/ma/deal-design.qmd
+                - text: "Deal Rationale"
+                  href: repo/ma/deal-rationale.qmd
+                - text: "Deal Process"
+                  href: repo/ma/deal-process.qmd
+                - text: "Takeover Strategies"
+                  href: repo/ma/takeover.qmd
+                - text: "Merger Model"
+                  href: repo/ma/merger.qmd
+                - text: "LBO Modeling"
+                  href: repo/ma/lbo.qmd
+                - text: "Taxation"
+                  href: repo/ma/tax.qmd
 
 format:
   html:
