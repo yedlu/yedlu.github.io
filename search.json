@@ -480,16 +480,37 @@
   {
     "objectID": "repo/ma/deal-regulation.html",
     "href": "repo/ma/deal-regulation.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Deal Regulation",
     "section": "",
-    "text": "Back to top"
+    "text": "yedlu, Winter 2024"
+  },
+  {
+    "objectID": "repo/ma/deal-regulation.html#merger-arbitrage",
+    "href": "repo/ma/deal-regulation.html#merger-arbitrage",
+    "title": "Deal Regulation",
+    "section": "Merger Arbitrage",
+    "text": "Merger Arbitrage\n\nGross Spread\n\nDefined as the difference between the offer price and the current stock price of the target after the deal announcement.\n\nExample: Offer price = $110, Target price = $100, Gross Spread = $10.\n\nRepresents the potential profit arbitrageurs can earn by investing in the target stock until the deal closes.\n\n\n\nRisks\nThe gross spread exists because there is risk the transaction might fail. Key risks include:\n\nRegulatory Intervention: Antitrust reviews by DOJ/FTC (e.g., AT&T and Time Warner delay).\nBuyer’s Remorse: Acquirer backing out (e.g., Elon Musk’s Twitter deal).\nShareholder Dissent: Target shareholders rejecting the deal.\nFinancial Instability: Target or acquirer facing deteriorating performance.\nFinancing Issues: Acquirer fails to secure funds.\nMarket Conditions: Adverse economic events (e.g., COVID-19 causing deal collapse).\n\nIf the deal fails, the target stock price often reverts to pre-announcement levels, causing significant losses for arbitrageurs.\n\n\nStrategies\n\nCash Offers: Arbitrageurs buy the target’s stock and hold until deal completion.\nStock Offers: A more complex strategy where arbitrageurs:\n\nBuy Target Shares: To profit from the gross spread.\nShort Acquirer Shares: Hedge against price fluctuations in the acquirer’s stock, locking in the exchange ratio.\n\n\n\nExample (Stock Offer)\n\nA offers to merge with T, offering 2 shares of A for each share of T.\n\nAcquirer price = $55, Target price = $100.\nImplied value of T = $110, Gross Spread = $10.\n\nArbitrageur:\n\nBuys 1 Target Share at $100.\nShorts 2 Acquirer Shares at $55 each.\nLocks in the $10 gross spread regardless of stock price movements.\n\n\n\n\n\nReturn Analysis\nMerger arbitrageurs calculate expected returns based on:\n\nGross Spread: Value offer – Target stock price.\nNet Spread: Gross spread minus costs (e.g., commissions).\nProbability of Deal Failure:\n\nEstimate based on current price, failure price (pre-announcement price), and expected time to completion.\n\nROI: Net Spread / Investment Cost.\nAnnualized Return: Adjust ROI for the deal duration.\n\n\nExample (Return Analysis)\n\nOffer price = $62, Target price = $61.73, Failure price = $51.02, Time to completion = 40 days.\nGross Spread = $62 – $61.73 = $0.27.\nNet Spread (after costs) = $0.25.\nROI = $0.25 / $61.73 ≈ 0.405%.\nAnnualized Return = (1 + ROI)^(365/40) – 1 ≈ 3.8%.\n\nIf this return exceeds the benchmark (e.g., Treasury bill rate), arbitrageurs invest."
+  },
+  {
+    "objectID": "repo/ma/deal-regulation.html#antitrust-laws",
+    "href": "repo/ma/deal-regulation.html#antitrust-laws",
+    "title": "Deal Regulation",
+    "section": "Antitrust Laws",
+    "text": "Antitrust Laws\n\nOverview\n\nSherman Act: Prevents monopolies and collusion.\nClayton Act: Blocks mergers that reduce competition.\nFTC Act: Polices unfair business practices.\nHart-Scott-Rodino Act: Requires pre-merger notification for deals above thresholds.\n\n\n\nTools\n\nHHI Index: Measures market concentration.\n\nHHI &gt; 2,500: Highly concentrated.\nIncrease &gt; 200 points likely leads to challenges."
+  },
+  {
+    "objectID": "repo/ma/deal-regulation.html#spacs",
+    "href": "repo/ma/deal-regulation.html#spacs",
+    "title": "Deal Regulation",
+    "section": "SPACs",
+    "text": "SPACs\n\nKey Points\n\nShell companies raise capital via IPO to acquire private firms (reverse merger).\nShorter timeline than traditional IPOs; no “quiet period.”\nRedemption rates (&gt;70%) often reduce available capital, requiring PIPE funding to close deals."
   },
   {
     "objectID": "repo/ma/tax.html",
     "href": "repo/ma/tax.html",
     "title": "M&A Taxation",
     "section": "",
-    "text": "Through acquisition, in general, is defined as the purchase of an existing business, they can be well divided to several categories. In tax treatments, we usually categorize acquisition into:\n\nasset purchase\nstock purchase\nmerger\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nPurchase (all or parts of) target’s assets, may assume some liabilities.\n\n\nTarget\nLiquidate after deal.\n\n\n\nAsset purchase are more commonly found in acquisitions of private companies. During private acquisition, there’s more uncertainty about the liabilities. Hence the buyer can select which assets and liabilities it wants to remain.\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nMake offer (often tender offer) to target shareholders to buy their shares (not typically 100%).\n\n\nTarget\nMinority shareholders still have rights.\n\n\n\nIt is hard to achieve full synergies as minority shareholders still have some word to say about company operations.\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nBuy 100% of the target shares.\n\n\nTarget\nExistence vary depends on deal structure.\n\n\n\nMerger is defined as the transaction that combines two firms into one. It is relatively easy to achieve synergies in merger.\nHowever, it is relatively more difficult to go through a merger process: it typically needs\n\nnegotiation between managements\napproval of target board of directors\napproval of target shareholders (simple/super majority depends on the company charter, abstain usually counted as against votes)\napproval of acquirer shareholders (if issuing more than 20% of shares through stock purchase)",
+    "text": "yedlu, Winter 2024",
     "crumbs": [
       "me",
       "Repository",
@@ -503,8 +524,8 @@
     "objectID": "repo/ma/tax.html#deal-structures",
     "href": "repo/ma/tax.html#deal-structures",
     "title": "M&A Taxation",
-    "section": "",
-    "text": "Through acquisition, in general, is defined as the purchase of an existing business, they can be well divided to several categories. In tax treatments, we usually categorize acquisition into:\n\nasset purchase\nstock purchase\nmerger\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nPurchase (all or parts of) target’s assets, may assume some liabilities.\n\n\nTarget\nLiquidate after deal.\n\n\n\nAsset purchase are more commonly found in acquisitions of private companies. During private acquisition, there’s more uncertainty about the liabilities. Hence the buyer can select which assets and liabilities it wants to remain.\n\n\n\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nMake offer (often tender offer) to target shareholders to buy their shares (not typically 100%).\n\n\nTarget\nMinority shareholders still have rights.\n\n\n\nIt is hard to achieve full synergies as minority shareholders still have some word to say about company operations.\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nBuy 100% of the target shares.\n\n\nTarget\nExistence vary depends on deal structure.\n\n\n\nMerger is defined as the transaction that combines two firms into one. It is relatively easy to achieve synergies in merger.\nHowever, it is relatively more difficult to go through a merger process: it typically needs\n\nnegotiation between managements\napproval of target board of directors\napproval of target shareholders (simple/super majority depends on the company charter, abstain usually counted as against votes)\napproval of acquirer shareholders (if issuing more than 20% of shares through stock purchase)",
+    "section": "Deal Structures",
+    "text": "Deal Structures\nThrough acquisition, in general, is defined as the purchase of an existing business, they can be well divided to several categories. In tax treatments, we usually categorize acquisition into:\n\nasset purchase\nstock purchase\nmerger\n\n\nAsset Purchase\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nPurchase (all or parts of) target’s assets, may assume some liabilities.\n\n\nTarget\nLiquidate after deal.\n\n\n\nAsset purchase are more commonly found in acquisitions of private companies. During private acquisition, there’s more uncertainty about the liabilities. Hence the buyer can select which assets and liabilities it wants to remain.\n\n\nStock Purchase\n\n\n\n\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nMake offer (often tender offer) to target shareholders to buy their shares (not typically 100%).\n\n\nTarget\nMinority shareholders still have rights.\n\n\n\nIt is hard to achieve full synergies as minority shareholders still have some word to say about company operations.\n\n\nMerger\n\n\n\nParties\nActions\n\n\n\n\nAcquirer\nBuy 100% of the target shares.\n\n\nTarget\nExistence vary depends on deal structure.\n\n\n\nMerger is defined as the transaction that combines two firms into one. It is relatively easy to achieve synergies in merger.\nHowever, it is relatively more difficult to go through a merger process: it typically needs\n\nnegotiation between managements\napproval of target board of directors\napproval of target shareholders (simple/super majority depends on the company charter, abstain usually counted as against votes)\napproval of acquirer shareholders (if issuing more than 20% of shares through stock purchase)",
     "crumbs": [
       "me",
       "Repository",
@@ -592,9 +613,84 @@
   {
     "objectID": "repo/ma/takeover.html",
     "href": "repo/ma/takeover.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Takeover Strategies",
     "section": "",
-    "text": "Back to top",
+    "text": "yedlu, Winter 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Takeover Strategies"
+    ]
+  },
+  {
+    "objectID": "repo/ma/takeover.html#offensive-takeover-strategies",
+    "href": "repo/ma/takeover.html#offensive-takeover-strategies",
+    "title": "Takeover Strategies",
+    "section": "Offensive Takeover Strategies",
+    "text": "Offensive Takeover Strategies\n\nBuyer-Initiated Deals\n\nFriendly Approach:\n\nBidder approaches the target to negotiate a deal amicably.\n\nMay involve a standstill agreement to restrict the bidder from pursuing the target unfriendly.\n\nBear Hug:\n\nAn unsolicited formal proposal submitted to the target’s board.\n\nExamples:\n\nElon Musk’s $54.20/share offer for Twitter (2022).\n\nKraft Heinz’s $143B offer for Unilever (2017).\n\n\nHostile Tender Offer:\n\nBidder bypasses the target’s board and directly approaches shareholders.\n\nExamples:\n\nJetBlue’s bid for Spirit Airlines (2022).\n\nOracle’s bid for PeopleSoft (2003).\n\n\n\n\n\nTender Offers\n\nDefinition: Direct purchase of shares from shareholders at specified terms.\nKey Features:\n\nOften used in hostile takeovers, though they can be friendly.\n\nAll-cash offers are faster (under one month).\n\nStock or debt-based offers require SEC registration, prolonging the process.\n\nFinding Tender Offer Information:\n\nUse the SEC EDGAR database:\n\nTender offer filings: SC TO-T, SC TO-T/A, TO-I.\n\nTarget responses: SC 14D9.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Takeover Strategies"
+    ]
+  },
+  {
+    "objectID": "repo/ma/takeover.html#structuring-tender-offers",
+    "href": "repo/ma/takeover.html#structuring-tender-offers",
+    "title": "Takeover Strategies",
+    "section": "Structuring Tender Offers",
+    "text": "Structuring Tender Offers\n\nBidding Strategies\n\nKey Considerations:\n\nBid above the current market value but below the break-up value if possible.\n\nA preemptive high bid discourages competitors from entering.\n\nRisks of Lowball Offers:\n\nInvites competing bidders.\n\nMay reduce shareholder confidence.\n\nTender Duration:\n\nLonger offers increase the likelihood of competing bids.\n\n\n\n\nFree-Rider Problem\n\nDefinition: Shareholders may hold out expecting post-acquisition gains without tendering.\nCondition for Profit:\n\\(P_E &gt; P_T\\), where:\n\n\\(P_E\\) = Post-takeover value.\n\n\\(P_T\\) = Tender offer price.\n\nSolution: Use strategies like freeze-outs or two-tiered offers.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Takeover Strategies"
+    ]
+  },
+  {
+    "objectID": "repo/ma/takeover.html#solving-the-free-rider-problem",
+    "href": "repo/ma/takeover.html#solving-the-free-rider-problem",
+    "title": "Takeover Strategies",
+    "section": "Solving the Free-Rider Problem",
+    "text": "Solving the Free-Rider Problem\n\nFreeze-Outs\n\nMechanism:\n\nTender offer followed by a second-step freeze-out merger.\n\nConditional on acquiring enough shares to guarantee merger approval.\n\nEffect:\n\nPrevents non-tendering shareholders from free-riding as their shares will be compulsorily acquired.\n\n\n\n\nTwo-Tiered Offers\n\nMechanism:\n\nHigh price for a portion of shares in the first tier.\n\nLower price for remaining shares in the second tier.\n\nImpact:\n\nCoerces shareholders to tender early to avoid the lower back-end price.\n\nFair Price Provisions:\n\nMany companies now adopt these provisions to prevent coercive offers.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Takeover Strategies"
+    ]
+  },
+  {
+    "objectID": "repo/ma/takeover.html#toehold-strategies",
+    "href": "repo/ma/takeover.html#toehold-strategies",
+    "title": "Takeover Strategies",
+    "section": "Toehold Strategies",
+    "text": "Toehold Strategies\n\nDefinition: Acquirer purchases a small percentage of target shares secretly before announcing a tender offer.\nAdvantages:\n\nAcquire shares at pre-premium prices.\n\nProfit on toehold stake even if another bidder wins.\n\nRegulations:\n\nDisclosure required if stake exceeds 5% (Schedule 13D).\n\nExample:\n\nElon Musk accumulated a 9.6% stake in Twitter before making a tender offer.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Takeover Strategies"
+    ]
+  },
+  {
+    "objectID": "repo/ma/takeover.html#hedge-fund-activism",
+    "href": "repo/ma/takeover.html#hedge-fund-activism",
+    "title": "Takeover Strategies",
+    "section": "Hedge Fund Activism",
+    "text": "Hedge Fund Activism\n\nProxy Fights\n\nDefinition: Efforts to convince shareholders to vote (by proxy) for activist proposals.\nCommon Objectives:\n\nGain board representation or influence decision-making.\n\nPush for divestitures, spin-offs, or company sales.\n\n\n\n\nExamples of Activism\n\nExxonMobil (2021): Engine No. 1 secured three board seats.\n\nMacy’s (2021): JANA Partners pushed for an e-commerce spin-off.\n\nMarathon Petroleum (2019): Elliott Management drove the Speedway spin-off.\n\n\n\nM&A-Driven Activism\n\nKey Themes:\n\nSale of the target (e.g., Aramark by Mantle Ridge).\n\nDivestitures of non-core assets.\n\nOpposition to unfavorable deals (e.g., JANA blocking Zendesk-Momentive).",
     "crumbs": [
       "me",
       "Repository",
@@ -609,7 +705,7 @@
     "href": "repo/ma/index.html",
     "title": "Mergers & Acquisitions",
     "section": "",
-    "text": "Hi! You can navigate yourself through one of the following topics:\n\nDeal Design\n\nTypical structure of a deal, especially forms of payments.\n\nDeal Rationale\n\nWhat drives M&A deals.\n\nDeal Process\n\nM&A transaction, deal documents, acquisition structures.\n\nTakeover Strategies\n\nStrategies available to bidders and targets.\n\nMerger Model\n\nModeling merger, evaluating accretion/dilution.\n\nLeverage Buyout (LBO) Model\n\nGeneral assumptions and analysis of leverage buyouts.\n\nDeal Regulation\n\nMerger arbitrages, antitrust regulations.\n\nM&A Taxation\n\nHow to structure M&A deal to benefit from tax treatment.\n\n\n\n\n\n Back to top",
+    "text": "Hi! You can navigate yourself through one of the following topics:\n\nDeal Design\n\nTypical structure of a deal, especially forms of payments.\n\nDeal Rationale\n\nWhat drives M&A deals.\n\nDeal Process\n\nM&A transaction, deal documents, acquisition structures.\n\nTakeover Strategies\n\nStrategies available to bidders and targets.\n\nMerger Model\n\nModeling merger, evaluating accretion/dilution.\n\nLeverage Buyout (LBO) Model\n\nGeneral assumptions and analysis of leverage buyouts.\n\nDeal Regulation\n\nMerger arbitrages, antitrust regulations.de\n\nM&A Taxation\n\nHow to structure M&A deal to benefit from tax treatment.\n\n\n\n\n\n Back to top",
     "crumbs": [
       "me",
       "Repository",
@@ -621,9 +717,114 @@
   {
     "objectID": "repo/ma/deal-process.html",
     "href": "repo/ma/deal-process.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Deal Process",
     "section": "",
-    "text": "Back to top",
+    "text": "The M&A process involves structured steps to facilitate transactions, ensure fair negotiations, and mitigate risks for buyers and sellers. Each phase requires specific documents and deliverables to advance the deal.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html#overview",
+    "href": "repo/ma/deal-process.html#overview",
+    "title": "Deal Process",
+    "section": "",
+    "text": "The M&A process involves structured steps to facilitate transactions, ensure fair negotiations, and mitigate risks for buyers and sellers. Each phase requires specific documents and deliverables to advance the deal.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html#sell-side-ma",
+    "href": "repo/ma/deal-process.html#sell-side-ma",
+    "title": "Deal Process",
+    "section": "Sell-Side M&A",
+    "text": "Sell-Side M&A\n\nRole of the Sell-Side Banker\n\nObjective: Help the seller maximize value and ensure smooth execution.\nKey Responsibilities:\n\nIdentify potential buyers and assess their financial strength (cash or stock).\nConduct due diligence and prepare a virtual data room for information access.\nCreate marketing materials: Teaser and Confidential Information Memorandum (CIM).\nAddress regulatory and compliance concerns (e.g., antitrust issues).\nAssist in negotiations, including preparing fairness opinions and assessing bids.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html#ma-documents",
+    "href": "repo/ma/deal-process.html#ma-documents",
+    "title": "Deal Process",
+    "section": "M&A Documents",
+    "text": "M&A Documents\n\nDocument Sequence in the Sell-Side Process\n\nTeaser (First Round):\n\nThe first document shared with potential buyers.\n\nProvides a brief, high-level overview of the target, investment highlights, and basic financials.\n\nDesigned to gauge initial buyer interest.\n\nConfidentiality Agreement (NDA):\n\nSent after the teaser to ensure non-public information is kept confidential.\n\nMust be signed by interested buyers to access the CIM.\n\nConfidential Information Memorandum (CIM):\n\nDistributed after the NDA is signed.\n\nProvides a detailed description of the target’s operations, financials, market position, and growth potential.\n\nTypically 50+ pages, this document requires significant preparation.\n\nIndication of Interest (IOI):\n\nA non-binding letter from buyers, submitted after reviewing the CIM.\n\nIncludes a preliminary valuation range and transaction terms.\n\nUsed to shortlist buyers for the second round.\n\nLetter of Intent (LOI) (Second Round):\n\nA non-binding agreement that outlines the structure and intent of the deal.\n\nProvides exclusivity for the buyer to complete due diligence and negotiate terms.\n\nDefinitive Agreement:\n\nThe final, binding agreement specifying the transaction terms.\n\nIncludes conditions precedent, representations and warranties, indemnifications, and consideration.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html#round-process",
+    "href": "repo/ma/deal-process.html#round-process",
+    "title": "Deal Process",
+    "section": "Round Process",
+    "text": "Round Process\n\nFirst Round\n\nPreparation:\n\nCreate the teaser, NDA, and CIM.\n\nDefine the buyer universe and perform a preliminary valuation analysis.\n\nExecution:\n\nShare the teaser with prospective buyers.\n\nExecute NDAs with interested parties.\n\nDistribute the CIM and an initial bid procedures letter.\n\nReceive Indications of Interest (IOIs) from buyers.\n\nSelection:\n\nEvaluate IOIs to identify buyers within the seller’s expected valuation range.\n\nShortlist buyers for the second round.\n\n\n\n\nSecond Round\n\nPreparation:\n\nOrganize management presentations and site visits.\n\nProvide comprehensive data room access for detailed due diligence.\n\nDraft the definitive agreement for review.\n\nExecution:\n\nDistribute final bid procedures letter.\n\nReceive final bids, including financing details and “best and final” offers.\n\nFinalization:\n\nNegotiate and finalize the definitive agreement with the selected buyer.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html#due-diligence",
+    "href": "repo/ma/deal-process.html#due-diligence",
+    "title": "Deal Process",
+    "section": "Due Diligence",
+    "text": "Due Diligence\n\nObjectives\n\nValidate target information and uncover risks or opportunities.\nIdentify leverage points for renegotiation or integration planning.\n\n\n\nAreas of Focus\n\nOperational: Verify business operations, key assets, and contracts.\nFinancial: Analyze historical and projected financials, liabilities, and cash flows.\nMarket: Assess competitive position, market share, and growth potential.\nLegal and Regulatory: Ensure compliance, resolve litigation risks, and identify antitrust concerns.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html#purchase-and-merger-agreements",
+    "href": "repo/ma/deal-process.html#purchase-and-merger-agreements",
+    "title": "Deal Process",
+    "section": "Purchase and Merger Agreements",
+    "text": "Purchase and Merger Agreements\n\nKey Components\n\nConsideration:\n\nDefines price, payment type (cash, stock, or contingent), and adjustments (e.g., working capital).\n\nRepresentations and Warranties:\n\nEnsures accuracy of the target’s information, including financials, assets, and compliance.\n\nCovenants:\n\nDetails restrictions during the interim period (e.g., no new contracts or dividends).\n\nConditions Precedent:\n\nSpecifies requirements for closing (e.g., regulatory approval, no material adverse changes).\n\nIndemnification:\n\nProtects buyers post-closing against breaches or misrepresentations.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Process"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-process.html#acquisition-structures",
+    "href": "repo/ma/deal-process.html#acquisition-structures",
+    "title": "Deal Process",
+    "section": "Acquisition Structures",
+    "text": "Acquisition Structures\n\nAsset Purchase\n\nBuyer acquires selected assets and liabilities.\nCommon in private transactions to minimize unknown liabilities.\n\n\n\nStock Purchase\n\nBuyer acquires shares directly from shareholders.\nFull ownership can be difficult due to minority shareholder rights.\n\n\n\nMerger\n\nCombines two entities, transferring all assets and liabilities to the buyer.\nEasier to achieve synergies compared to stock purchases.",
     "crumbs": [
       "me",
       "Repository",
@@ -765,9 +966,99 @@
   {
     "objectID": "repo/ma/deal-rationale.html",
     "href": "repo/ma/deal-rationale.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Deal Rationale",
     "section": "",
-    "text": "Back to top",
+    "text": "yedlu, Winter 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Rationale"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-rationale.html#drivers-of-ma-activity",
+    "href": "repo/ma/deal-rationale.html#drivers-of-ma-activity",
+    "title": "Deal Rationale",
+    "section": "Drivers of M&A Activity",
+    "text": "Drivers of M&A Activity\nM&A activity is influenced by various external shocks and market dynamics, allowing firms to adapt and maximize value.\n\nExternal Shocks\n\nIndustry Shocks: Demand/supply changes and globalization (e.g., oil industry in the 1990s).\nMacroeconomic Shocks: Low interest rates, capital abundance, high stock valuations.\nGlobal Factors: Regulatory changes, political shifts, technological advances, and social trends.\n\nExample: The oil price collapse in the late 1990s spurred major consolidations, including Exxon-Mobil’s $88 billion merger.\n\n\nIndustry Merger Waves\n\nM&A activity is often concentrated within specific industries due to shocks.\nRecent examples: Pharmaceuticals ($1,380B), Real Estate ($1,100B), Media ($784B).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Rationale"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-rationale.html#strategic-vs.-financial-acquisitions",
+    "href": "repo/ma/deal-rationale.html#strategic-vs.-financial-acquisitions",
+    "title": "Deal Rationale",
+    "section": "Strategic vs. Financial Acquisitions",
+    "text": "Strategic vs. Financial Acquisitions\n\nStrategic Acquisitions\n\nObjective: Create synergies by combining complementary resources or reducing costs.\nSynergies:\n\nCost Reductions: Economies of scale and vertical integration.\nRevenue Enhancements: Market power, cross-selling, and entering new markets.\nTechnology Transfers: Acquiring unique skills or innovations.\n\n\nExamples: Bayer-Monsanto, Facebook-WhatsApp, Amazon-Whole Foods.\n\n\nFinancial Acquisitions\n\nTypically conducted by private equity (PE) firms using leverage buyouts (LBOs).\nPE Strategies:\n\nDivestitures of non-core assets.\nOperational improvements.\nSector consolidation via platform companies.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Rationale"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-rationale.html#expansion-and-contraction-in-ma",
+    "href": "repo/ma/deal-rationale.html#expansion-and-contraction-in-ma",
+    "title": "Deal Rationale",
+    "section": "Expansion and Contraction in M&A",
+    "text": "Expansion and Contraction in M&A\nM&A involves both growth-oriented and contraction-oriented activities.\n\nExpansions\n\nAcquisitions to enter new markets or gain resources.\n\n\n\nContractions\n\nDivestitures: Sale of non-core assets.\nSpin-Offs: Creating independent companies.\nEquity Carve-Outs: Offering minority stakes via IPOs.\n\nExample: Macy’s spin-off of its e-commerce division urged by hedge fund activism.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Rationale"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-rationale.html#value-creation-in-ma",
+    "href": "repo/ma/deal-rationale.html#value-creation-in-ma",
+    "title": "Deal Rationale",
+    "section": "Value Creation in M&A",
+    "text": "Value Creation in M&A\n\nDoes M&A Create Value?\n\nTarget Firms: Evidence overwhelmingly shows value creation through acquisition premiums.\nAcquirers: Mixed results, with returns often near zero or slightly positive.\n\n\n\nDistribution of Value\n\nTarget Shareholders: Most value accrues to them due to competitive bidding and premiums.\nAcquirer Shareholders: Returns depend on synergies, pricing accuracy, and deal structure.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Rationale"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-rationale.html#risks-and-challenges",
+    "href": "repo/ma/deal-rationale.html#risks-and-challenges",
+    "title": "Deal Rationale",
+    "section": "Risks and Challenges",
+    "text": "Risks and Challenges\n\nCommon Pitfalls\n\nOverpayment due to competition or management hubris.\nUnderestimated costs of integration or synergies.\nPoor due diligence and inadequate risk management.\n\n\n\nStrategies for Success\n\nPricing: Avoid overpaying; use accurate valuation models.\nNon-Pricing Aspects: Utilize earnouts, collars, and carefully designed deal clauses.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Rationale"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-rationale.html#conclusion",
+    "href": "repo/ma/deal-rationale.html#conclusion",
+    "title": "Deal Rationale",
+    "section": "Conclusion",
+    "text": "Conclusion\nM&A can create significant value but also carries risks of destruction. The success of an acquisition depends on precise pricing, strategic alignment, and effective deal structuring. Sharpening M&A skills is crucial to becoming a winner in the game.",
     "crumbs": [
       "me",
       "Repository",
@@ -780,9 +1071,114 @@
   {
     "objectID": "repo/ma/lbo.html",
     "href": "repo/ma/lbo.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Leverage Buyout Models (LBO)",
     "section": "",
-    "text": "Back to top",
+    "text": "yedlu, Winter 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/lbo.html#overview",
+    "href": "repo/ma/lbo.html#overview",
+    "title": "Leverage Buyout Models (LBO)",
+    "section": "Overview",
+    "text": "Overview\n\nDefinition: Acquisition of a company primarily using debt, with the remaining portion funded by equity from financial sponsors (e.g., private equity firms).\n\nGoal: Generate high returns (IRR &gt; 20%) upon exit, typically within 5-7 years, via sale or IPO.\n\nDrivers of Success:\n\nEffective use of leverage to amplify equity returns.\n\nOperating improvements, cost reductions, and strategic repositioning.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/lbo.html#sources-and-uses-of-funds-table",
+    "href": "repo/ma/lbo.html#sources-and-uses-of-funds-table",
+    "title": "Leverage Buyout Models (LBO)",
+    "section": "Sources and Uses of Funds Table",
+    "text": "Sources and Uses of Funds Table\n\nPurpose: Tracks how the deal is financed and where the funds are allocated.\n\nStructure:\n\n\n\n\nSources\nUses\n\n\n\n\nSenior debt\nEquity purchase price\n\n\nSubordinated debt\nRefinancing of target debt\n\n\nSponsor equity contribution\nTransaction fees\n\n\nRevolving credit facility\nFinancing fees\n\n\n\n\nKey Considerations:\n\nEnsure that sources = uses.\n\nInclude all transaction costs (e.g., financing fees at 1% of debt, transaction fees at 1.5% of equity purchase price).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/lbo.html#post-closing-balance-sheet",
+    "href": "repo/ma/lbo.html#post-closing-balance-sheet",
+    "title": "Leverage Buyout Models (LBO)",
+    "section": "Post-Closing Balance Sheet",
+    "text": "Post-Closing Balance Sheet\n\nAdjustments:\n\nWrite off target’s existing equity accounts.\n\nRecord new debt and equity contributions.\n\nAdd goodwill and intangible asset write-ups.\n\nCapitalize financing fees and amortize them over debt maturity.\n\nExample:\nFor a $1,000M transaction with $600M debt and $400M equity:\n\nAdd $600M debt (senior + subordinated).\n\nReduce retained earnings for transaction fees.\n\nRecord goodwill:\n\\[\\text{Goodwill} = \\text{Equity Purchase Price} - (\\text{Net Assets} + \\text{Write-Ups})\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/lbo.html#debt-schedule-and-cash-flow-assumptions",
+    "href": "repo/ma/lbo.html#debt-schedule-and-cash-flow-assumptions",
+    "title": "Leverage Buyout Models (LBO)",
+    "section": "Debt Schedule and Cash Flow Assumptions",
+    "text": "Debt Schedule and Cash Flow Assumptions\n\nDebt Hierarchy:\n\nSenior Debt: Includes term loans and revolvers. Priority repayment with lower interest.\n\nSubordinated Debt: Higher interest, paid after senior debt. Often includes Payment-In-Kind (PIK) features.\n\nKey Concepts:\n\nCash Sweep: Excess cash flow is used to repay debt, starting with revolvers.\n\nRevolver Mechanics: Borrow to cover shortfalls; repay first when cash becomes available.\n\nDebt Plug: Balances cash flow using revolving credit or excess cash.\n\nFormulas:\n\nRevolver Drawdown:\n\\[\\text{Revolver Borrowing} = \\max(0, \\text{Cash Deficit})\\]\n\nCADR (Cash Available for Debt Repayment):\n\\[\\text{CADR} = \\text{CF from Operations} + \\text{CF from Investing} - \\Delta \\text{Cash}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/lbo.html#internal-rate-of-return-irr-analysis",
+    "href": "repo/ma/lbo.html#internal-rate-of-return-irr-analysis",
+    "title": "Leverage Buyout Models (LBO)",
+    "section": "Internal Rate of Return (IRR) Analysis",
+    "text": "Internal Rate of Return (IRR) Analysis\n\nDefinition: Measures the annualized return on equity investment, accounting for cash inflows and outflows.\nCalculation: \\[\\text{IRR} = \\text{Discount Rate such that } \\sum_{t=0}^n \\frac{\\text{CF}_t}{(1+\\text{IRR})^t} = 0\\]\nDrivers of IRR:\n\nEntry and Exit Multiples: The purchase price and selling price relative to EBITDA.\n\nLeverage: Amplifies returns by minimizing equity contribution.\n\nOperational Performance: EBITDA growth and cost efficiencies.\n\nExample:\nEntry price = $500M, exit price = $800M, equity contribution = $200M.\nIRR = 25% over 5 years with positive cash flows annually.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/lbo.html#key-financial-metrics-and-benchmarks",
+    "href": "repo/ma/lbo.html#key-financial-metrics-and-benchmarks",
+    "title": "Leverage Buyout Models (LBO)",
+    "section": "Key Financial Metrics and Benchmarks",
+    "text": "Key Financial Metrics and Benchmarks\n\nLeverage Ratios:\n\nSenior Debt/EBITDA ≤ 3.0x.\n\nTotal Debt/EBITDA ≤ 5.5x.\n\nCoverage Ratios:\n\nEBITDA/Interest Expense ≥ 2.0x.\n\n(EBITDA - CAPEX)/Interest Expense ≥ 1.6x.\n\nOther Constraints:\n\nEquity Contribution/Total Capital ≥ 25%.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "LBO Modeling"
+    ]
+  },
+  {
+    "objectID": "repo/ma/lbo.html#sensitivity-analysis",
+    "href": "repo/ma/lbo.html#sensitivity-analysis",
+    "title": "Leverage Buyout Models (LBO)",
+    "section": "Sensitivity Analysis",
+    "text": "Sensitivity Analysis\n\nPurpose: Assess how changes in key variables affect IRR.\nKey Drivers:\n\nExit multiples and timing.\n\nLeverage levels.\n\nRevenue growth and margins.\n\nExample:\nAnalyze IRR for exit multiples ranging from 6x to 8x EBITDA and exit years from 4 to 6 years.",
     "crumbs": [
       "me",
       "Repository",
@@ -795,9 +1191,39 @@
   {
     "objectID": "repo/ma/merger.html",
     "href": "repo/ma/merger.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Merger Models",
     "section": "",
-    "text": "Back to top",
+    "text": "yedlu, Winter 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Merger Model"
+    ]
+  },
+  {
+    "objectID": "repo/ma/merger.html#key-components",
+    "href": "repo/ma/merger.html#key-components",
+    "title": "Merger Models",
+    "section": "Key Components",
+    "text": "Key Components\n\nGoodwill\n\nDefinition: Goodwill is the excess purchase price over the fair value of net identifiable assets.\nSteps to Calculate:\n\nDetermine the purchase price (offer price × target diluted shares).\n\nWrite up tangible and intangible assets to their fair values.\n\nCalculate Deferred Tax Liability (DTL) on asset write-ups.\n\nGoodwill = Residual amount after adjustments.\n\nWrite-Ups:\n\nTangible: PP&E adjusted to market value.\n\nIntangible: Brand names, patents, customer relationships (unrecorded in the target’s books).\n\nExample:\nPurchase price = $600M, fair value of net identifiable assets = $450M, write-ups = $50M, tax rate = 40%.\n\\[\\text{Goodwill} = 600 - (450 + 50 - (50 \\times 0.4)) = 130M\\]\nImpairment: Goodwill is tested annually for impairment and not amortized. Losses reduce the goodwill account and affect the income statement.\n\n\n\nDeferred Tax Liability (DTL)\n\nDefinition: DTL arises from differences between book values (after fair value write-ups) and tax bases of assets.\n\\[\\text{DTL} = \\text{Asset Write-Up} \\times \\text{Tax Rate}\\]\nImpact:\n\nCreates a liability on the opening balance sheet.\n\nReduces over time as the gap between tax depreciation and book depreciation narrows.\n\nReverses fully by the end of the depreciation period.\n\nExample:\nIf the write-up is $50M and the tax rate is 40%,\n\\[\\text{DTL} = 50 \\times 0.4 = 20\\]\nRelevance:\nDTL increases goodwill, as it represents a liability assumed in the transaction.\n\n\n\nOpening Balance Sheet\n\nAdjustments:\n\nConsolidate the acquirer’s and target’s balance sheets.\n\nWrite up target’s assets to fair value.\n\nAdd goodwill and DTL.\n\nRecord transaction financing (e.g., new debt issuance).\n\nSteps:\n\nStart with standalone balance sheets.\n\nAdd purchase price allocation:\n\nWrite-ups for tangible/intangible assets.\n\nGoodwill creation.\n\nDTL adjustment.\n\n\nInclude transaction fees and financing adjustments.\n\nExample:\nAcquirer pays $300M in cash and issues $200M in stock. Target assets: $250M, liabilities: $50M, write-ups: $30M.\n\\[\\text{Goodwill} = 500 - (250 + 30 - 20) = 240\\]\n\n\n\nSources and Uses of Funds Table\n\nPurpose: Details the financing sources and allocation of funds in the transaction.\n\n\n\n\nSources\nUses\n\n\n\n\nCash\nEquity purchase price\n\n\nNew debt\nRepayment of target debt\n\n\nStock consideration\nTransaction fees\n\n\nExisting cash on hand\n\n\n\n\n\nKey Questions:\n\nHow is the deal funded (cash, stock, or debt)?\n\nAre transaction and financing fees included?\n\nHow much debt is refinanced or repaid?\n\nExample:\nFor a $1,000M transaction:\n\nSources: $500M debt, $300M stock, $200M existing cash.\n\nUses: $900M purchase price, $50M target debt repayment, $50M fees.\n\n\n\n\nAccretion/Dilution Analysis\n\nDefinition: Measures the impact of the transaction on acquirer’s Earnings Per Share (EPS).\nPro-Forma EPS:\n\\[\\text{Pro-Forma EPS} = \\frac{\\text{Pro-Forma Net Income}}{\\text{Pro-Forma Shares Outstanding}}\\]\nSteps:\n\nCombine standalone net incomes of acquirer and target.\n\nAdjust for synergies, depreciation, amortization, and new debt interest.\n\nSubtract taxes to calculate pro-forma net income.\n\nCalculate pro-forma shares outstanding (including newly issued shares).\n\nCompare pro-forma EPS with standalone EPS.\n\nResult:\n\nAccretive: Pro-forma EPS &gt; Standalone EPS.\n\nDilutive: Pro-forma EPS &lt; Standalone EPS.\n\nExample:\nAcquirer standalone EPS = $3.50, pro-forma EPS = $3.80.\nResult: Accretive by $0.30 per share.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Merger Model"
+    ]
+  },
+  {
+    "objectID": "repo/ma/merger.html#other-components-of-the-merger-model",
+    "href": "repo/ma/merger.html#other-components-of-the-merger-model",
+    "title": "Merger Models",
+    "section": "Other Components of the Merger Model",
+    "text": "Other Components of the Merger Model\n\nConsolidation of Financial Statements\n\nCombine line-by-line items from acquirer and target balance sheets.\n\nInclude adjustments for fair value, goodwill, and DTL.\n\n\n\nSynergies\n\nRevenue Synergies: Cross-selling, increased pricing power.\n\nCost Synergies: Overhead reduction, supply chain efficiency.\n\nSynergies directly affect accretion/dilution analysis.\n\n\n\nFinancing Adjustments\n\nNew debt issuance adds interest expense, reducing net income.\n\nTransaction fees reduce retained earnings and increase cash outflows.\n\n\n\nContribution Analysis\n\nMeasures relative contributions of acquirer and target to the combined entity.\n\nHelps assess post-merger ownership and value creation.",
     "crumbs": [
       "me",
       "Repository",
@@ -810,9 +1236,99 @@
   {
     "objectID": "repo/ma/deal-design.html",
     "href": "repo/ma/deal-design.html",
-    "title": "Yanhe Eddie Lu",
+    "title": "Deal Design",
     "section": "",
-    "text": "Back to top",
+    "text": "yedlu, Winter 2024",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Design"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-design.html#notation",
+    "href": "repo/ma/deal-design.html#notation",
+    "title": "Deal Design",
+    "section": "Notation",
+    "text": "Notation\n\n\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n\\(P_T\\)\nTarget’s standalone price per share\n\n\n\\(P_B\\)\nBuyer’s standalone price per share\n\n\n\\(S_T\\)\nNumber of target shares outstanding\n\n\n\\(S_B\\)\nNumber of buyer shares outstanding\n\n\n\\(ER\\)\nExchange ratio (buyer shares per target share)\n\n\n\\(PV_B\\)\nPresent value of buyer (standalone)\n\n\n\\(PV_T\\)\nPresent value of target (standalone)\n\n\n\\(PV_{BT}\\)\nPresent value of the combined entity post-merger\n\n\n\\(P^*\\)\nOffer price per target share, including premium/synergies\n\n\n\\(\\alpha\\)\nFraction of combined firm owned by target shareholders\n\n\n\\(PV(\\text{synergies})\\)\nPresent value of synergies from the merger",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Design"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-design.html#choosing-the-form-of-payment",
+    "href": "repo/ma/deal-design.html#choosing-the-form-of-payment",
+    "title": "Deal Design",
+    "section": "Choosing the Form of Payment",
+    "text": "Choosing the Form of Payment\n\nConsiderations\n\nCash:\n\nBuyer pays with cash, often raised via debt.\nTaxable for target shareholders.\nAcquirer benefits from a tax basis step-up for depreciation/amortization.\n\nStock Swaps:\n\nTarget shareholders receive acquirer shares.\nNontaxable if stock exceeds 50% of consideration.\nAvoids immediate tax but can dilute acquirer EPS.\n\nEarnouts/Contingent Payments:\n\nPayments based on future performance metrics (e.g., revenue, EBITDA).\nUseful for bridging valuation gaps in private company deals.\n\n\n\n\nFactors\n\nTaxes: Stock offers are tax-advantaged for targets.\nFinancing: Stock offers avoid additional debt.\nEPS Impact: Stock issuance dilutes acquirer EPS.\nInformation Asymmetry: Stock offers align seller incentives with deal success.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Design"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-design.html#stock-swaps-and-exchange-ratios",
+    "href": "repo/ma/deal-design.html#stock-swaps-and-exchange-ratios",
+    "title": "Deal Design",
+    "section": "Stock Swaps and Exchange Ratios",
+    "text": "Stock Swaps and Exchange Ratios\n\nExchange Ratio (ER)\nDefines the number of acquirer shares exchanged per target share. Key formulas:\n\nER = Acquirer Shares Issued / Target Shares Outstanding.\nFraction Target Owns Post-Merger: \\[\\begin{aligned}\n\\alpha = \\frac{\\text{ER} \\cdot S_T}{\\text{ER} \\cdot S_T + S_B}\n\\end{aligned}\\]\n\n\n\nDetermining ER\n\nMinimum ER (target’s threshold): \\[\\begin{aligned}\n\\text{ER}_{\\text{min}} = \\frac{P_T \\cdot S_B}{PV_{BT} - P_T \\cdot S_T}\n\\end{aligned}\\]\nMaximum ER (acquirer’s threshold): \\[\\begin{aligned}\n\\text{ER}_{\\text{max}} = \\frac{PV_{BT} - P_B \\cdot S_B}{P_B \\cdot S_T}\n\\end{aligned}\\]\nSynergy-Sharing ER (e.g., target receives 30% of synergies): \\[\\begin{aligned}\nP^* = P_T + \\frac{\\% \\text{Synergy} \\cdot PV(\\text{synergies})}{S_T}\n\\end{aligned}\\] \\[\\begin{aligned}\n\\text{ER} = \\frac{P^* \\cdot S_B}{PV_{BT} - P^* \\cdot S_T}\n\\end{aligned}\\]\n\n\n\nKey Insights\n\nA higher ER increases target shareholder ownership, reducing acquirer shareholder control and share price.\nUse post-merger acquirer share price (\\(P_{BT}\\)) to avoid overpayment if stock price fluctuates.\n\n\n\nPractice Problem Example\nSirius-XM Merger:\n\nSirius (buyer): \\(P_B = 3.7\\), \\(S_B = 1,460M\\).\nXM (target): \\(P_T = 14\\), \\(S_T = 314M\\), synergies = $1B.\n\nMinimum ER: \\(3.19\\).\nMaximum ER: \\(4.64\\).\nER (30% synergy to Sirius): \\(4.15\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Design"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-design.html#earnouts",
+    "href": "repo/ma/deal-design.html#earnouts",
+    "title": "Deal Design",
+    "section": "Earnouts",
+    "text": "Earnouts\n\nDefinition\nContingent payments tied to future performance metrics.\n\n\nAdvantages\n\nAligns seller incentives post-acquisition.\nBridges valuation gaps between optimistic sellers and skeptical buyers.\n\n\n\nEarnout Valuation\n\nValued like a call option, sensitive to target performance variability.\nCan resolve disagreements over growth projections and profitability.\n\n\n\nExample\nA target with $10M sales: - Buyer valuation: 5% growth, 5% profit margin = $3M. - Seller valuation: 15% growth, 10% profit margin = $5M. - Earnout terms: $2M upfront, contingent on sales/profit thresholds over five years.",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Design"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-design.html#collars",
+    "href": "repo/ma/deal-design.html#collars",
+    "title": "Deal Design",
+    "section": "Collars",
+    "text": "Collars\n\nPurpose\nHedges against acquirer stock price volatility in stock-for-stock deals.\n\n\nTypes\n\nFixed Exchange Ratio with Collar:\n\nLimits target gains/losses to a floor and cap.\nBelow floor: Adjust ER upwards (more shares issued).\nAbove cap: Adjust ER downwards (fewer shares issued).\n\nFloating Exchange Ratio with Collar:\n\nMaintains fixed value per target share, adjusting ER dynamically.\nStops floating when price hits floor/cap, locking value.\n\n\n\n\nValuation\n\nCollar resembles a combination of options: \\[\\begin{aligned}\n\\text{Value} = \\text{Stock Price} + \\text{Long Put Value} - \\text{Short Call Value}\n\\end{aligned}\\]\n\nExample:\nFixed Value Collar:\n\n\\(P = 20\\), cap = 25, floor = 15.\n\nBelow 15: \\(ER = \\frac{20}{P}\\).\nAbove 25: \\(ER = \\frac{20}{P}\\).",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Corporate Finance",
+      "M&A",
+      "Deal Design"
+    ]
+  },
+  {
+    "objectID": "repo/ma/deal-design.html#risk-management-in-deal-design",
+    "href": "repo/ma/deal-design.html#risk-management-in-deal-design",
+    "title": "Deal Design",
+    "section": "Risk Management in Deal Design",
+    "text": "Risk Management in Deal Design\n\nStrategies\n\nFixed Exchange Ratios: Simpler but exposes targets to acquirer stock risk.\nFloating Ratios: Protect target value but dilute acquirer shares.\nCaps/Floors: Mitigate extreme risks while providing predictable payouts.\n\n\n\nApplication\nCollars ensure a balance between risk sharing, target protection, and acquirer cost predictability.",
     "crumbs": [
       "me",
       "Repository",

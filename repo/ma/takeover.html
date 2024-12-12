@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>takeover – Yanhe Eddie Lu</title>
+<title>Takeover Strategies – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -388,20 +417,256 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#offensive-takeover-strategies" id="toc-offensive-takeover-strategies" class="nav-link active" data-scroll-target="#offensive-takeover-strategies">Offensive Takeover Strategies</a>
+  <ul>
+  <li><a href="#buyer-initiated-deals" id="toc-buyer-initiated-deals" class="nav-link" data-scroll-target="#buyer-initiated-deals">Buyer-Initiated Deals</a></li>
+  <li><a href="#tender-offers" id="toc-tender-offers" class="nav-link" data-scroll-target="#tender-offers">Tender Offers</a></li>
+  </ul></li>
+  <li><a href="#structuring-tender-offers" id="toc-structuring-tender-offers" class="nav-link" data-scroll-target="#structuring-tender-offers">Structuring Tender Offers</a>
+  <ul>
+  <li><a href="#bidding-strategies" id="toc-bidding-strategies" class="nav-link" data-scroll-target="#bidding-strategies">Bidding Strategies</a></li>
+  <li><a href="#free-rider-problem" id="toc-free-rider-problem" class="nav-link" data-scroll-target="#free-rider-problem">Free-Rider Problem</a></li>
+  </ul></li>
+  <li><a href="#solving-the-free-rider-problem" id="toc-solving-the-free-rider-problem" class="nav-link" data-scroll-target="#solving-the-free-rider-problem">Solving the Free-Rider Problem</a>
+  <ul>
+  <li><a href="#freeze-outs" id="toc-freeze-outs" class="nav-link" data-scroll-target="#freeze-outs">Freeze-Outs</a></li>
+  <li><a href="#two-tiered-offers" id="toc-two-tiered-offers" class="nav-link" data-scroll-target="#two-tiered-offers">Two-Tiered Offers</a></li>
+  </ul></li>
+  <li><a href="#toehold-strategies" id="toc-toehold-strategies" class="nav-link" data-scroll-target="#toehold-strategies">Toehold Strategies</a></li>
+  <li><a href="#hedge-fund-activism" id="toc-hedge-fund-activism" class="nav-link" data-scroll-target="#hedge-fund-activism">Hedge Fund Activism</a>
+  <ul>
+  <li><a href="#proxy-fights" id="toc-proxy-fights" class="nav-link" data-scroll-target="#proxy-fights">Proxy Fights</a></li>
+  <li><a href="#examples-of-activism" id="toc-examples-of-activism" class="nav-link" data-scroll-target="#examples-of-activism">Examples of Activism</a></li>
+  <li><a href="#ma-driven-activism" id="toc-ma-driven-activism" class="nav-link" data-scroll-target="#ma-driven-activism">M&amp;A-Driven Activism</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/takeover.html">Takeover Strategies</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/takeover.html">Takeover Strategies</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Takeover Strategies</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p><em>yedlu, Winter 2024</em></p>
+<section id="offensive-takeover-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="offensive-takeover-strategies">Offensive Takeover Strategies</h2>
+<section id="buyer-initiated-deals" class="level3">
+<h3 class="anchored" data-anchor-id="buyer-initiated-deals">Buyer-Initiated Deals</h3>
+<ul>
+<li><strong>Friendly Approach</strong>:
+<ul>
+<li>Bidder approaches the target to negotiate a deal amicably.<br>
+</li>
+<li>May involve a <strong>standstill agreement</strong> to restrict the bidder from pursuing the target unfriendly.</li>
+</ul></li>
+<li><strong>Bear Hug</strong>:
+<ul>
+<li>An unsolicited formal proposal submitted to the target’s board.<br>
+</li>
+<li>Examples:
+<ul>
+<li>Elon Musk’s $54.20/share offer for Twitter (2022).<br>
+</li>
+<li>Kraft Heinz’s $143B offer for Unilever (2017).</li>
+</ul></li>
+</ul></li>
+<li><strong>Hostile Tender Offer</strong>:
+<ul>
+<li>Bidder bypasses the target’s board and directly approaches shareholders.<br>
+</li>
+<li>Examples:
+<ul>
+<li>JetBlue’s bid for Spirit Airlines (2022).<br>
+</li>
+<li>Oracle’s bid for PeopleSoft (2003).</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="tender-offers" class="level3">
+<h3 class="anchored" data-anchor-id="tender-offers">Tender Offers</h3>
+<ul>
+<li><p><strong>Definition</strong>: Direct purchase of shares from shareholders at specified terms.</p></li>
+<li><p><strong>Key Features</strong>:</p>
+<ul>
+<li>Often used in hostile takeovers, though they can be friendly.<br>
+</li>
+<li>All-cash offers are faster (under one month).<br>
+</li>
+<li>Stock or debt-based offers require SEC registration, prolonging the process.</li>
+</ul></li>
+<li><p><strong>Finding Tender Offer Information</strong>:</p>
+<ul>
+<li>Use the <strong>SEC EDGAR database</strong>:
+<ul>
+<li>Tender offer filings: SC TO-T, SC TO-T/A, TO-I.<br>
+</li>
+<li>Target responses: SC 14D9.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="structuring-tender-offers" class="level2">
+<h2 class="anchored" data-anchor-id="structuring-tender-offers">Structuring Tender Offers</h2>
+<section id="bidding-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="bidding-strategies">Bidding Strategies</h3>
+<ul>
+<li><strong>Key Considerations</strong>:
+<ul>
+<li>Bid above the current market value but below the break-up value if possible.<br>
+</li>
+<li>A <strong>preemptive high bid</strong> discourages competitors from entering.</li>
+</ul></li>
+<li><strong>Risks of Lowball Offers</strong>:
+<ul>
+<li>Invites competing bidders.<br>
+</li>
+<li>May reduce shareholder confidence.</li>
+</ul></li>
+<li><strong>Tender Duration</strong>:
+<ul>
+<li>Longer offers increase the likelihood of competing bids.</li>
+</ul></li>
+</ul>
+</section>
+<section id="free-rider-problem" class="level3">
+<h3 class="anchored" data-anchor-id="free-rider-problem">Free-Rider Problem</h3>
+<ul>
+<li><p><strong>Definition</strong>: Shareholders may hold out expecting post-acquisition gains without tendering.</p></li>
+<li><p><strong>Condition for Profit</strong>:<br>
+<span class="math inline">\(P_E &gt; P_T\)</span>, where:</p>
+<ul>
+<li><span class="math inline">\(P_E\)</span> = Post-takeover value.<br>
+</li>
+<li><span class="math inline">\(P_T\)</span> = Tender offer price.</li>
+</ul></li>
+<li><p><strong>Solution</strong>: Use strategies like freeze-outs or two-tiered offers.</p></li>
+</ul>
+</section>
+</section>
+<section id="solving-the-free-rider-problem" class="level2">
+<h2 class="anchored" data-anchor-id="solving-the-free-rider-problem">Solving the Free-Rider Problem</h2>
+<section id="freeze-outs" class="level3">
+<h3 class="anchored" data-anchor-id="freeze-outs">Freeze-Outs</h3>
+<ul>
+<li><strong>Mechanism</strong>:
+<ul>
+<li>Tender offer followed by a second-step freeze-out merger.<br>
+</li>
+<li>Conditional on acquiring enough shares to guarantee merger approval.</li>
+</ul></li>
+<li><strong>Effect</strong>:
+<ul>
+<li>Prevents non-tendering shareholders from free-riding as their shares will be compulsorily acquired.</li>
+</ul></li>
+</ul>
+</section>
+<section id="two-tiered-offers" class="level3">
+<h3 class="anchored" data-anchor-id="two-tiered-offers">Two-Tiered Offers</h3>
+<ul>
+<li><strong>Mechanism</strong>:
+<ul>
+<li>High price for a portion of shares in the first tier.<br>
+</li>
+<li>Lower price for remaining shares in the second tier.</li>
+</ul></li>
+<li><strong>Impact</strong>:
+<ul>
+<li>Coerces shareholders to tender early to avoid the lower back-end price.</li>
+</ul></li>
+<li><strong>Fair Price Provisions</strong>:
+<ul>
+<li>Many companies now adopt these provisions to prevent coercive offers.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="toehold-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="toehold-strategies">Toehold Strategies</h2>
+<ul>
+<li><p><strong>Definition</strong>: Acquirer purchases a small percentage of target shares secretly before announcing a tender offer.</p></li>
+<li><p><strong>Advantages</strong>:</p>
+<ul>
+<li>Acquire shares at pre-premium prices.<br>
+</li>
+<li>Profit on toehold stake even if another bidder wins.</li>
+</ul></li>
+<li><p><strong>Regulations</strong>:</p>
+<ul>
+<li>Disclosure required if stake exceeds 5% (Schedule 13D).</li>
+</ul></li>
+<li><p><strong>Example</strong>:</p>
+<ul>
+<li>Elon Musk accumulated a 9.6% stake in Twitter before making a tender offer.</li>
+</ul></li>
+</ul>
+</section>
+<section id="hedge-fund-activism" class="level2">
+<h2 class="anchored" data-anchor-id="hedge-fund-activism">Hedge Fund Activism</h2>
+<section id="proxy-fights" class="level3">
+<h3 class="anchored" data-anchor-id="proxy-fights">Proxy Fights</h3>
+<ul>
+<li><p><strong>Definition</strong>: Efforts to convince shareholders to vote (by proxy) for activist proposals.</p></li>
+<li><p><strong>Common Objectives</strong>:</p>
+<ul>
+<li>Gain board representation or influence decision-making.<br>
+</li>
+<li>Push for divestitures, spin-offs, or company sales.</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-of-activism" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-activism">Examples of Activism</h3>
+<ul>
+<li><strong>ExxonMobil (2021)</strong>: Engine No.&nbsp;1 secured three board seats.<br>
+</li>
+<li><strong>Macy’s (2021)</strong>: JANA Partners pushed for an e-commerce spin-off.<br>
+</li>
+<li><strong>Marathon Petroleum (2019)</strong>: Elliott Management drove the Speedway spin-off.</li>
+</ul>
+</section>
+<section id="ma-driven-activism" class="level3">
+<h3 class="anchored" data-anchor-id="ma-driven-activism">M&amp;A-Driven Activism</h3>
+<ul>
+<li><strong>Key Themes</strong>:
+<ul>
+<li>Sale of the target (e.g., Aramark by Mantle Ridge).<br>
+</li>
+<li>Divestitures of non-core assets.<br>
+</li>
+<li>Opposition to unfavorable deals (e.g., JANA blocking Zendesk-Momentive).</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">

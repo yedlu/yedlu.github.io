@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>merger – Yanhe Eddie Lu</title>
+<title>Merger Models – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -388,20 +417,254 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#key-components" id="toc-key-components" class="nav-link active" data-scroll-target="#key-components">Key Components</a>
+  <ul>
+  <li><a href="#goodwill" id="toc-goodwill" class="nav-link" data-scroll-target="#goodwill">Goodwill</a></li>
+  <li><a href="#deferred-tax-liability-dtl" id="toc-deferred-tax-liability-dtl" class="nav-link" data-scroll-target="#deferred-tax-liability-dtl">Deferred Tax Liability (DTL)</a></li>
+  <li><a href="#opening-balance-sheet" id="toc-opening-balance-sheet" class="nav-link" data-scroll-target="#opening-balance-sheet">Opening Balance Sheet</a></li>
+  <li><a href="#sources-and-uses-of-funds-table" id="toc-sources-and-uses-of-funds-table" class="nav-link" data-scroll-target="#sources-and-uses-of-funds-table">Sources and Uses of Funds Table</a></li>
+  <li><a href="#accretiondilution-analysis" id="toc-accretiondilution-analysis" class="nav-link" data-scroll-target="#accretiondilution-analysis">Accretion/Dilution Analysis</a></li>
+  </ul></li>
+  <li><a href="#other-components-of-the-merger-model" id="toc-other-components-of-the-merger-model" class="nav-link" data-scroll-target="#other-components-of-the-merger-model">Other Components of the Merger Model</a>
+  <ul>
+  <li><a href="#consolidation-of-financial-statements" id="toc-consolidation-of-financial-statements" class="nav-link" data-scroll-target="#consolidation-of-financial-statements">Consolidation of Financial Statements</a></li>
+  <li><a href="#synergies" id="toc-synergies" class="nav-link" data-scroll-target="#synergies">Synergies</a></li>
+  <li><a href="#financing-adjustments" id="toc-financing-adjustments" class="nav-link" data-scroll-target="#financing-adjustments">Financing Adjustments</a></li>
+  <li><a href="#contribution-analysis" id="toc-contribution-analysis" class="nav-link" data-scroll-target="#contribution-analysis">Contribution Analysis</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/merger.html">Merger Model</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/merger.html">Merger Model</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Merger Models</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p><em>yedlu, Winter 2024</em></p>
+<section id="key-components" class="level2">
+<h2 class="anchored" data-anchor-id="key-components">Key Components</h2>
+<section id="goodwill" class="level3">
+<h3 class="anchored" data-anchor-id="goodwill">Goodwill</h3>
+<ul>
+<li><p><strong>Definition</strong>: Goodwill is the excess purchase price over the fair value of net identifiable assets.</p></li>
+<li><p><strong>Steps to Calculate</strong>:</p>
+<ol type="1">
+<li>Determine the purchase price (offer price × target diluted shares).<br>
+</li>
+<li>Write up tangible and intangible assets to their fair values.<br>
+</li>
+<li>Calculate Deferred Tax Liability (DTL) on asset write-ups.<br>
+</li>
+<li>Goodwill = Residual amount after adjustments.</li>
+</ol></li>
+<li><p><strong>Write-Ups</strong>:</p>
+<ul>
+<li>Tangible: PP&amp;E adjusted to market value.<br>
+</li>
+<li>Intangible: Brand names, patents, customer relationships (unrecorded in the target’s books).</li>
+</ul></li>
+<li><p><strong>Example</strong>:<br>
+Purchase price = $600M, fair value of net identifiable assets = $450M, write-ups = $50M, tax rate = 40%.<br>
+<span class="math display">\[\text{Goodwill} = 600 - (450 + 50 - (50 \times 0.4)) = 130M\]</span></p></li>
+<li><p><strong>Impairment</strong>: Goodwill is tested annually for impairment and not amortized. Losses reduce the goodwill account and affect the income statement.</p></li>
+</ul>
+</section>
+<section id="deferred-tax-liability-dtl" class="level3">
+<h3 class="anchored" data-anchor-id="deferred-tax-liability-dtl">Deferred Tax Liability (DTL)</h3>
+<ul>
+<li><p><strong>Definition</strong>: DTL arises from differences between book values (after fair value write-ups) and tax bases of assets.<br>
+<span class="math display">\[\text{DTL} = \text{Asset Write-Up} \times \text{Tax Rate}\]</span></p></li>
+<li><p><strong>Impact</strong>:</p>
+<ul>
+<li>Creates a liability on the opening balance sheet.<br>
+</li>
+<li>Reduces over time as the gap between tax depreciation and book depreciation narrows.<br>
+</li>
+<li>Reverses fully by the end of the depreciation period.</li>
+</ul></li>
+<li><p><strong>Example</strong>:<br>
+If the write-up is $50M and the tax rate is 40%,<br>
+<span class="math display">\[\text{DTL} = 50 \times 0.4 = 20\]</span></p></li>
+<li><p><strong>Relevance</strong>:<br>
+DTL increases goodwill, as it represents a liability assumed in the transaction.</p></li>
+</ul>
+</section>
+<section id="opening-balance-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="opening-balance-sheet">Opening Balance Sheet</h3>
+<ul>
+<li><p><strong>Adjustments</strong>:</p>
+<ul>
+<li>Consolidate the acquirer’s and target’s balance sheets.<br>
+</li>
+<li>Write up target’s assets to fair value.<br>
+</li>
+<li>Add goodwill and DTL.<br>
+</li>
+<li>Record transaction financing (e.g., new debt issuance).</li>
+</ul></li>
+<li><p><strong>Steps</strong>:</p>
+<ol type="1">
+<li>Start with standalone balance sheets.<br>
+</li>
+<li>Add purchase price allocation:
+<ul>
+<li>Write-ups for tangible/intangible assets.<br>
+</li>
+<li>Goodwill creation.<br>
+</li>
+<li>DTL adjustment.<br>
+</li>
+</ul></li>
+<li>Include transaction fees and financing adjustments.</li>
+</ol></li>
+<li><p><strong>Example</strong>:<br>
+Acquirer pays $300M in cash and issues $200M in stock. Target assets: $250M, liabilities: $50M, write-ups: $30M.<br>
+<span class="math display">\[\text{Goodwill} = 500 - (250 + 30 - 20) = 240\]</span></p></li>
+</ul>
+</section>
+<section id="sources-and-uses-of-funds-table" class="level3">
+<h3 class="anchored" data-anchor-id="sources-and-uses-of-funds-table">Sources and Uses of Funds Table</h3>
+<ul>
+<li><strong>Purpose</strong>: Details the financing sources and allocation of funds in the transaction.</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Sources</strong></th>
+<th><strong>Uses</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cash</td>
+<td>Equity purchase price</td>
+</tr>
+<tr class="even">
+<td>New debt</td>
+<td>Repayment of target debt</td>
+</tr>
+<tr class="odd">
+<td>Stock consideration</td>
+<td>Transaction fees</td>
+</tr>
+<tr class="even">
+<td>Existing cash on hand</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Key Questions</strong>:</p>
+<ul>
+<li>How is the deal funded (cash, stock, or debt)?<br>
+</li>
+<li>Are transaction and financing fees included?<br>
+</li>
+<li>How much debt is refinanced or repaid?</li>
+</ul></li>
+<li><p><strong>Example</strong>:<br>
+For a $1,000M transaction:</p>
+<ul>
+<li><strong>Sources</strong>: $500M debt, $300M stock, $200M existing cash.<br>
+</li>
+<li><strong>Uses</strong>: $900M purchase price, $50M target debt repayment, $50M fees.</li>
+</ul></li>
+</ul>
+</section>
+<section id="accretiondilution-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="accretiondilution-analysis">Accretion/Dilution Analysis</h3>
+<ul>
+<li><p><strong>Definition</strong>: Measures the impact of the transaction on acquirer’s Earnings Per Share (EPS).</p></li>
+<li><p><strong>Pro-Forma EPS</strong>:<br>
+<span class="math display">\[\text{Pro-Forma EPS} = \frac{\text{Pro-Forma Net Income}}{\text{Pro-Forma Shares Outstanding}}\]</span></p></li>
+<li><p><strong>Steps</strong>:</p>
+<ol type="1">
+<li>Combine standalone net incomes of acquirer and target.<br>
+</li>
+<li>Adjust for synergies, depreciation, amortization, and new debt interest.<br>
+</li>
+<li>Subtract taxes to calculate pro-forma net income.<br>
+</li>
+<li>Calculate pro-forma shares outstanding (including newly issued shares).<br>
+</li>
+<li>Compare pro-forma EPS with standalone EPS.</li>
+</ol></li>
+<li><p><strong>Result</strong>:</p>
+<ul>
+<li><strong>Accretive</strong>: Pro-forma EPS &gt; Standalone EPS.<br>
+</li>
+<li><strong>Dilutive</strong>: Pro-forma EPS &lt; Standalone EPS.</li>
+</ul></li>
+<li><p><strong>Example</strong>:<br>
+Acquirer standalone EPS = $3.50, pro-forma EPS = $3.80.<br>
+Result: Accretive by $0.30 per share.</p></li>
+</ul>
+</section>
+</section>
+<section id="other-components-of-the-merger-model" class="level2">
+<h2 class="anchored" data-anchor-id="other-components-of-the-merger-model">Other Components of the Merger Model</h2>
+<section id="consolidation-of-financial-statements" class="level3">
+<h3 class="anchored" data-anchor-id="consolidation-of-financial-statements">Consolidation of Financial Statements</h3>
+<ul>
+<li>Combine line-by-line items from acquirer and target balance sheets.<br>
+</li>
+<li>Include adjustments for fair value, goodwill, and DTL.</li>
+</ul>
+</section>
+<section id="synergies" class="level3">
+<h3 class="anchored" data-anchor-id="synergies">Synergies</h3>
+<ul>
+<li><strong>Revenue Synergies</strong>: Cross-selling, increased pricing power.<br>
+</li>
+<li><strong>Cost Synergies</strong>: Overhead reduction, supply chain efficiency.<br>
+</li>
+<li>Synergies directly affect accretion/dilution analysis.</li>
+</ul>
+</section>
+<section id="financing-adjustments" class="level3">
+<h3 class="anchored" data-anchor-id="financing-adjustments">Financing Adjustments</h3>
+<ul>
+<li>New debt issuance adds interest expense, reducing net income.<br>
+</li>
+<li>Transaction fees reduce retained earnings and increase cash outflows.</li>
+</ul>
+</section>
+<section id="contribution-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="contribution-analysis">Contribution Analysis</h3>
+<ul>
+<li>Measures relative contributions of acquirer and target to the combined entity.<br>
+</li>
+<li>Helps assess post-merger ownership and value creation.</li>
+</ul>
+
+
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
