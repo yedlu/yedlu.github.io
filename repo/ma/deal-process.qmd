@@ -1,0 +1,152 @@
+---
+title: "Deal Process"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+
+## Overview
+
+The M&A process involves structured steps to facilitate transactions, ensure fair negotiations, and mitigate risks for buyers and sellers. Each phase requires specific documents and deliverables to advance the deal.
+
+## Sell-Side M&A
+
+### Role of the Sell-Side Banker
+
+- **Objective**: Help the seller maximize value and ensure smooth execution.
+
+- **Key Responsibilities**:
+  
+  - Identify potential buyers and assess their financial strength (cash or stock).  
+  
+  - Conduct due diligence and prepare a virtual data room for information access.  
+  
+  - Create marketing materials: Teaser and Confidential Information Memorandum (CIM).  
+  
+  - Address regulatory and compliance concerns (e.g., antitrust issues).  
+  
+  - Assist in negotiations, including preparing fairness opinions and assessing bids.
+
+## M&A Documents
+
+### Document Sequence in the Sell-Side Process
+
+1. **Teaser** (First Round):
+   - The first document shared with potential buyers.  
+   - Provides a brief, high-level overview of the target, investment highlights, and basic financials.  
+   - Designed to gauge initial buyer interest.
+
+2. **Confidentiality Agreement (NDA)**:
+   - Sent after the teaser to ensure non-public information is kept confidential.  
+   - Must be signed by interested buyers to access the CIM.
+
+3. **Confidential Information Memorandum (CIM)**:
+   - Distributed after the NDA is signed.  
+   - Provides a detailed description of the target’s operations, financials, market position, and growth potential.  
+   - Typically 50+ pages, this document requires significant preparation.
+
+4. **Indication of Interest (IOI)**:
+   - A non-binding letter from buyers, submitted after reviewing the CIM.  
+   - Includes a preliminary valuation range and transaction terms.  
+   - Used to shortlist buyers for the second round.
+
+5. **Letter of Intent (LOI)** (Second Round):
+   - A non-binding agreement that outlines the structure and intent of the deal.  
+   - Provides exclusivity for the buyer to complete due diligence and negotiate terms.
+
+6. **Definitive Agreement**:
+   - The final, binding agreement specifying the transaction terms.  
+   - Includes conditions precedent, representations and warranties, indemnifications, and consideration.
+
+## Round Process
+
+### First Round
+
+1. **Preparation**:
+   - Create the teaser, NDA, and CIM.  
+   - Define the buyer universe and perform a preliminary valuation analysis.
+
+2. **Execution**:
+   - Share the teaser with prospective buyers.  
+   - Execute NDAs with interested parties.  
+   - Distribute the CIM and an initial bid procedures letter.  
+   - Receive Indications of Interest (IOIs) from buyers.
+
+3. **Selection**:
+   - Evaluate IOIs to identify buyers within the seller's expected valuation range.  
+   - Shortlist buyers for the second round.
+
+### Second Round
+
+1. **Preparation**:
+   - Organize management presentations and site visits.  
+   - Provide comprehensive data room access for detailed due diligence.  
+   - Draft the definitive agreement for review.
+
+2. **Execution**:
+   - Distribute final bid procedures letter.  
+   - Receive final bids, including financing details and “best and final” offers.
+
+3. **Finalization**:
+   - Negotiate and finalize the definitive agreement with the selected buyer.
+
+## Due Diligence
+
+### Objectives
+
+- Validate target information and uncover risks or opportunities.  
+
+- Identify leverage points for renegotiation or integration planning.
+
+### Areas of Focus
+
+1. **Operational**: Verify business operations, key assets, and contracts.  
+
+2. **Financial**: Analyze historical and projected financials, liabilities, and cash flows.  
+
+3. **Market**: Assess competitive position, market share, and growth potential.  
+
+4. **Legal and Regulatory**: Ensure compliance, resolve litigation risks, and identify antitrust concerns.
+
+## Purchase and Merger Agreements
+
+### Key Components
+
+- **Consideration**:
+  - Defines price, payment type (cash, stock, or contingent), and adjustments (e.g., working capital).
+
+- **Representations and Warranties**:
+  - Ensures accuracy of the target’s information, including financials, assets, and compliance.
+
+- **Covenants**:
+  - Details restrictions during the interim period (e.g., no new contracts or dividends).
+
+- **Conditions Precedent**:
+  - Specifies requirements for closing (e.g., regulatory approval, no material adverse changes).
+
+- **Indemnification**:
+  - Protects buyers post-closing against breaches or misrepresentations.
+
+## Acquisition Structures
+
+### Asset Purchase
+
+- Buyer acquires selected assets and liabilities.  
+
+- Common in private transactions to minimize unknown liabilities.
+
+### Stock Purchase
+
+- Buyer acquires shares directly from shareholders.  
+
+- Full ownership can be difficult due to minority shareholder rights.
+
+### Merger
+
+- Combines two entities, transferring all assets and liabilities to the buyer.  
+
+- Easier to achieve synergies compared to stock purchases.

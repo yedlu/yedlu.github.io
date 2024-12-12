@@ -8,6 +8,8 @@ format:
     toc-depth: 4 # Includes up to second-level headings in the TOC
 ---
 
+*yedlu, Winter 2024*
+
 ## Deal Structures
 Through acquisition, in general, is defined as the purchase of an existing business, they can be well divided to several categories. In tax treatments, we usually categorize acquisition into:  
 

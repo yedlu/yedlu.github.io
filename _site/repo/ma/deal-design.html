@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>deal-design – Yanhe Eddie Lu</title>
+<title>Deal Design – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -388,20 +417,297 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#notation" id="toc-notation" class="nav-link active" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#choosing-the-form-of-payment" id="toc-choosing-the-form-of-payment" class="nav-link" data-scroll-target="#choosing-the-form-of-payment">Choosing the Form of Payment</a>
+  <ul>
+  <li><a href="#considerations" id="toc-considerations" class="nav-link" data-scroll-target="#considerations">Considerations</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors">Factors</a></li>
+  </ul></li>
+  <li><a href="#stock-swaps-and-exchange-ratios" id="toc-stock-swaps-and-exchange-ratios" class="nav-link" data-scroll-target="#stock-swaps-and-exchange-ratios">Stock Swaps and Exchange Ratios</a>
+  <ul>
+  <li><a href="#exchange-ratio-er" id="toc-exchange-ratio-er" class="nav-link" data-scroll-target="#exchange-ratio-er">Exchange Ratio (ER)</a></li>
+  <li><a href="#determining-er" id="toc-determining-er" class="nav-link" data-scroll-target="#determining-er">Determining ER</a></li>
+  <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">Key Insights</a></li>
+  <li><a href="#practice-problem-example" id="toc-practice-problem-example" class="nav-link" data-scroll-target="#practice-problem-example">Practice Problem Example</a></li>
+  </ul></li>
+  <li><a href="#earnouts" id="toc-earnouts" class="nav-link" data-scroll-target="#earnouts">Earnouts</a>
+  <ul>
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#advantages" id="toc-advantages" class="nav-link" data-scroll-target="#advantages">Advantages</a></li>
+  <li><a href="#earnout-valuation" id="toc-earnout-valuation" class="nav-link" data-scroll-target="#earnout-valuation">Earnout Valuation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#collars" id="toc-collars" class="nav-link" data-scroll-target="#collars">Collars</a>
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types">Types</a></li>
+  <li><a href="#valuation" id="toc-valuation" class="nav-link" data-scroll-target="#valuation">Valuation</a></li>
+  </ul></li>
+  <li><a href="#risk-management-in-deal-design" id="toc-risk-management-in-deal-design" class="nav-link" data-scroll-target="#risk-management-in-deal-design">Risk Management in Deal Design</a>
+  <ul>
+  <li><a href="#strategies" id="toc-strategies" class="nav-link" data-scroll-target="#strategies">Strategies</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/deal-design.html">Deal Design</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/deal-design.html">Deal Design</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Deal Design</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<p><em>yedlu, Winter 2024</em></p>
+<section id="notation" class="level2">
+<h2 class="anchored" data-anchor-id="notation">Notation</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P_T\)</span></td>
+<td>Target’s standalone price per share</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(P_B\)</span></td>
+<td>Buyer’s standalone price per share</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(S_T\)</span></td>
+<td>Number of target shares outstanding</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(S_B\)</span></td>
+<td>Number of buyer shares outstanding</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(ER\)</span></td>
+<td>Exchange ratio (buyer shares per target share)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(PV_B\)</span></td>
+<td>Present value of buyer (standalone)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(PV_T\)</span></td>
+<td>Present value of target (standalone)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(PV_{BT}\)</span></td>
+<td>Present value of the combined entity post-merger</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P^*\)</span></td>
+<td>Offer price per target share, including premium/synergies</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\alpha\)</span></td>
+<td>Fraction of combined firm owned by target shareholders</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(PV(\text{synergies})\)</span></td>
+<td>Present value of synergies from the merger</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="choosing-the-form-of-payment" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-the-form-of-payment">Choosing the Form of Payment</h2>
+<section id="considerations" class="level3">
+<h3 class="anchored" data-anchor-id="considerations">Considerations</h3>
+<ul>
+<li><strong>Cash</strong>:
+<ul>
+<li>Buyer pays with cash, often raised via debt.</li>
+<li>Taxable for target shareholders.</li>
+<li>Acquirer benefits from a tax basis step-up for depreciation/amortization.</li>
+</ul></li>
+<li><strong>Stock Swaps</strong>:
+<ul>
+<li>Target shareholders receive acquirer shares.</li>
+<li>Nontaxable if stock exceeds 50% of consideration.</li>
+<li>Avoids immediate tax but can dilute acquirer EPS.</li>
+</ul></li>
+<li><strong>Earnouts/Contingent Payments</strong>:
+<ul>
+<li>Payments based on future performance metrics (e.g., revenue, EBITDA).</li>
+<li>Useful for bridging valuation gaps in private company deals.</li>
+</ul></li>
+</ul>
+</section>
+<section id="factors" class="level3">
+<h3 class="anchored" data-anchor-id="factors">Factors</h3>
+<ul>
+<li><strong>Taxes</strong>: Stock offers are tax-advantaged for targets.</li>
+<li><strong>Financing</strong>: Stock offers avoid additional debt.</li>
+<li><strong>EPS Impact</strong>: Stock issuance dilutes acquirer EPS.</li>
+<li><strong>Information Asymmetry</strong>: Stock offers align seller incentives with deal success.</li>
+</ul>
+</section>
+</section>
+<section id="stock-swaps-and-exchange-ratios" class="level2">
+<h2 class="anchored" data-anchor-id="stock-swaps-and-exchange-ratios">Stock Swaps and Exchange Ratios</h2>
+<section id="exchange-ratio-er" class="level3">
+<h3 class="anchored" data-anchor-id="exchange-ratio-er">Exchange Ratio (ER)</h3>
+<p>Defines the number of acquirer shares exchanged per target share. Key formulas:</p>
+<ul>
+<li><strong>ER = Acquirer Shares Issued / Target Shares Outstanding</strong>.</li>
+<li><strong>Fraction Target Owns Post-Merger</strong>: <span class="math display">\[\begin{aligned}
+\alpha = \frac{\text{ER} \cdot S_T}{\text{ER} \cdot S_T + S_B}
+\end{aligned}\]</span></li>
+</ul>
+</section>
+<section id="determining-er" class="level3">
+<h3 class="anchored" data-anchor-id="determining-er">Determining ER</h3>
+<ul>
+<li><strong>Minimum ER</strong> (target’s threshold): <span class="math display">\[\begin{aligned}
+\text{ER}_{\text{min}} = \frac{P_T \cdot S_B}{PV_{BT} - P_T \cdot S_T}
+\end{aligned}\]</span></li>
+<li><strong>Maximum ER</strong> (acquirer’s threshold): <span class="math display">\[\begin{aligned}
+\text{ER}_{\text{max}} = \frac{PV_{BT} - P_B \cdot S_B}{P_B \cdot S_T}
+\end{aligned}\]</span></li>
+<li><strong>Synergy-Sharing ER</strong> (e.g., target receives 30% of synergies): <span class="math display">\[\begin{aligned}
+P^* = P_T + \frac{\% \text{Synergy} \cdot PV(\text{synergies})}{S_T}
+\end{aligned}\]</span> <span class="math display">\[\begin{aligned}
+\text{ER} = \frac{P^* \cdot S_B}{PV_{BT} - P^* \cdot S_T}
+\end{aligned}\]</span></li>
+</ul>
+</section>
+<section id="key-insights" class="level3">
+<h3 class="anchored" data-anchor-id="key-insights">Key Insights</h3>
+<ul>
+<li>A higher ER increases target shareholder ownership, reducing acquirer shareholder control and share price.</li>
+<li>Use post-merger acquirer share price (<span class="math inline">\(P_{BT}\)</span>) to avoid overpayment if stock price fluctuates.</li>
+</ul>
+</section>
+<section id="practice-problem-example" class="level3">
+<h3 class="anchored" data-anchor-id="practice-problem-example">Practice Problem Example</h3>
+<p><strong>Sirius-XM Merger</strong>:</p>
+<ul>
+<li>Sirius (buyer): <span class="math inline">\(P_B = 3.7\)</span>, <span class="math inline">\(S_B = 1,460M\)</span>.</li>
+<li>XM (target): <span class="math inline">\(P_T = 14\)</span>, <span class="math inline">\(S_T = 314M\)</span>, synergies = $1B.
+<ul>
+<li>Minimum ER: <span class="math inline">\(3.19\)</span>.</li>
+<li>Maximum ER: <span class="math inline">\(4.64\)</span>.</li>
+<li>ER (30% synergy to Sirius): <span class="math inline">\(4.15\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="earnouts" class="level2">
+<h2 class="anchored" data-anchor-id="earnouts">Earnouts</h2>
+<section id="definition" class="level3">
+<h3 class="anchored" data-anchor-id="definition">Definition</h3>
+<p>Contingent payments tied to future performance metrics.</p>
+</section>
+<section id="advantages" class="level3">
+<h3 class="anchored" data-anchor-id="advantages">Advantages</h3>
+<ul>
+<li>Aligns seller incentives post-acquisition.</li>
+<li>Bridges valuation gaps between optimistic sellers and skeptical buyers.</li>
+</ul>
+</section>
+<section id="earnout-valuation" class="level3">
+<h3 class="anchored" data-anchor-id="earnout-valuation">Earnout Valuation</h3>
+<ul>
+<li>Valued like a call option, sensitive to target performance variability.</li>
+<li>Can resolve disagreements over growth projections and profitability.</li>
+</ul>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>A target with $10M sales: - Buyer valuation: 5% growth, 5% profit margin = $3M. - Seller valuation: 15% growth, 10% profit margin = $5M. - Earnout terms: $2M upfront, contingent on sales/profit thresholds over five years.</p>
+</section>
+</section>
+<section id="collars" class="level2">
+<h2 class="anchored" data-anchor-id="collars">Collars</h2>
+<section id="purpose" class="level3">
+<h3 class="anchored" data-anchor-id="purpose">Purpose</h3>
+<p>Hedges against acquirer stock price volatility in stock-for-stock deals.</p>
+</section>
+<section id="types" class="level3">
+<h3 class="anchored" data-anchor-id="types">Types</h3>
+<ol type="1">
+<li><strong>Fixed Exchange Ratio with Collar</strong>:
+<ul>
+<li>Limits target gains/losses to a floor and cap.</li>
+<li>Below floor: Adjust ER upwards (more shares issued).</li>
+<li>Above cap: Adjust ER downwards (fewer shares issued).</li>
+</ul></li>
+<li><strong>Floating Exchange Ratio with Collar</strong>:
+<ul>
+<li>Maintains fixed value per target share, adjusting ER dynamically.</li>
+<li>Stops floating when price hits floor/cap, locking value.</li>
+</ul></li>
+</ol>
+</section>
+<section id="valuation" class="level3">
+<h3 class="anchored" data-anchor-id="valuation">Valuation</h3>
+<ul>
+<li>Collar resembles a combination of options: <span class="math display">\[\begin{aligned}
+\text{Value} = \text{Stock Price} + \text{Long Put Value} - \text{Short Call Value}
+\end{aligned}\]</span></li>
+</ul>
+<p><strong>Example</strong>:</p>
+<p>Fixed Value Collar:</p>
+<ul>
+<li><span class="math inline">\(P = 20\)</span>, cap = 25, floor = 15.
+<ul>
+<li>Below 15: <span class="math inline">\(ER = \frac{20}{P}\)</span>.</li>
+<li>Above 25: <span class="math inline">\(ER = \frac{20}{P}\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="risk-management-in-deal-design" class="level2">
+<h2 class="anchored" data-anchor-id="risk-management-in-deal-design">Risk Management in Deal Design</h2>
+<section id="strategies" class="level3">
+<h3 class="anchored" data-anchor-id="strategies">Strategies</h3>
+<ul>
+<li><strong>Fixed Exchange Ratios</strong>: Simpler but exposes targets to acquirer stock risk.</li>
+<li><strong>Floating Ratios</strong>: Protect target value but dilute acquirer shares.</li>
+<li><strong>Caps/Floors</strong>: Mitigate extreme risks while providing predictable payouts.</li>
+</ul>
+</section>
+<section id="application" class="level3">
+<h3 class="anchored" data-anchor-id="application">Application</h3>
+<p>Collars ensure a balance between risk sharing, target protection, and acquirer cost predictability.</p>
+
+
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">

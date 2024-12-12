@@ -23,7 +23,7 @@ Hi! You can navigate yourself through one of the following topics:
    - General assumptions and analysis of leverage buyouts.
 
 7. [Deal Regulation](deal-regulation.qmd)
-   - Merger arbitrages, antitrust regulations.
+   - Merger arbitrages, antitrust regulations.de
 
 8. [M&A Taxation](tax.qmd)
    - How to structure M&A deal to benefit from tax treatment.

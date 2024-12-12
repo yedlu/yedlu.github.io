@@ -1,0 +1,91 @@
+---
+title: "Deal Regulation"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+*yedlu, Winter 2024*
+
+## Merger Arbitrage
+
+### Gross Spread
+
+- Defined as the difference between the **offer price** and the **current stock price** of the target after the deal announcement.
+  - Example: Offer price = $110, Target price = $100, Gross Spread = $10.
+- Represents the potential profit arbitrageurs can earn by investing in the target stock until the deal closes.
+
+### Risks
+The gross spread exists because there is risk the transaction might fail. Key risks include:  
+
+- **Regulatory Intervention**: Antitrust reviews by DOJ/FTC (e.g., AT&T and Time Warner delay).
+- **Buyer’s Remorse**: Acquirer backing out (e.g., Elon Musk’s Twitter deal).
+- **Shareholder Dissent**: Target shareholders rejecting the deal.
+- **Financial Instability**: Target or acquirer facing deteriorating performance.
+- **Financing Issues**: Acquirer fails to secure funds.
+- **Market Conditions**: Adverse economic events (e.g., COVID-19 causing deal collapse).
+
+If the deal fails, the target stock price often reverts to pre-announcement levels, causing significant losses for arbitrageurs.
+
+### Strategies
+
+- **Cash Offers**: Arbitrageurs buy the target's stock and hold until deal completion.
+- **Stock Offers**: A more complex strategy where arbitrageurs:
+  - **Buy Target Shares**: To profit from the gross spread.
+  - **Short Acquirer Shares**: Hedge against price fluctuations in the acquirer’s stock, locking in the exchange ratio.
+
+#### Example (Stock Offer)
+- A offers to merge with T, offering 2 shares of A for each share of T.
+  - Acquirer price = $55, Target price = $100.
+  - Implied value of T = $110, Gross Spread = $10.
+- Arbitrageur:
+  - **Buys 1 Target Share** at $100.
+  - **Shorts 2 Acquirer Shares** at $55 each.
+  - Locks in the $10 gross spread regardless of stock price movements.
+
+### Return Analysis
+Merger arbitrageurs calculate **expected returns** based on:  
+
+1. **Gross Spread**: Value offer – Target stock price.
+2. **Net Spread**: Gross spread minus costs (e.g., commissions).
+3. **Probability of Deal Failure**:
+   - Estimate based on current price, failure price (pre-announcement price), and expected time to completion.
+4. **ROI**: Net Spread / Investment Cost.
+5. **Annualized Return**: Adjust ROI for the deal duration.
+
+#### Example (Return Analysis)
+
+- Offer price = $62, Target price = $61.73, Failure price = $51.02, Time to completion = 40 days.
+- Gross Spread = $62 – $61.73 = $0.27.
+- Net Spread (after costs) = $0.25.
+- ROI = $0.25 / $61.73 ≈ 0.405%.
+- Annualized Return = (1 + ROI)^(365/40) – 1 ≈ 3.8%.
+
+If this return exceeds the benchmark (e.g., Treasury bill rate), arbitrageurs invest.
+
+
+
+## Antitrust Laws
+
+### Overview
+- **Sherman Act**: Prevents monopolies and collusion.
+- **Clayton Act**: Blocks mergers that reduce competition.
+- **FTC Act**: Polices unfair business practices.
+- **Hart-Scott-Rodino Act**: Requires pre-merger notification for deals above thresholds.
+
+### Tools
+- **HHI Index**: Measures market concentration. 
+  - HHI > 2,500: Highly concentrated.
+  - Increase > 200 points likely leads to challenges.
+
+
+
+## SPACs
+
+### Key Points
+- Shell companies raise capital via IPO to acquire private firms (reverse merger).
+- Shorter timeline than traditional IPOs; no "quiet period."
+- Redemption rates (>70%) often reduce available capital, requiring PIPE funding to close deals.

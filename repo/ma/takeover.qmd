@@ -1,0 +1,141 @@
+---
+title: "Takeover Strategies"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+*yedlu, Winter 2024*
+
+
+
+## Offensive Takeover Strategies
+
+### Buyer-Initiated Deals
+
+- **Friendly Approach**:  
+  - Bidder approaches the target to negotiate a deal amicably.  
+  - May involve a **standstill agreement** to restrict the bidder from pursuing the target unfriendly.  
+
+- **Bear Hug**:  
+  - An unsolicited formal proposal submitted to the target's board.  
+  - Examples:  
+    - Elon Musk’s $54.20/share offer for Twitter (2022).  
+    - Kraft Heinz’s $143B offer for Unilever (2017).  
+
+- **Hostile Tender Offer**:  
+  - Bidder bypasses the target’s board and directly approaches shareholders.  
+  - Examples:  
+    - JetBlue’s bid for Spirit Airlines (2022).  
+    - Oracle’s bid for PeopleSoft (2003).
+
+### Tender Offers
+
+- **Definition**: Direct purchase of shares from shareholders at specified terms.  
+
+- **Key Features**:  
+  - Often used in hostile takeovers, though they can be friendly.  
+  - All-cash offers are faster (under one month).  
+  - Stock or debt-based offers require SEC registration, prolonging the process.  
+
+- **Finding Tender Offer Information**:  
+  - Use the **SEC EDGAR database**:
+    - Tender offer filings: SC TO-T, SC TO-T/A, TO-I.  
+    - Target responses: SC 14D9.  
+
+
+
+## Structuring Tender Offers
+
+### Bidding Strategies
+
+- **Key Considerations**:  
+  - Bid above the current market value but below the break-up value if possible.  
+  - A **preemptive high bid** discourages competitors from entering.  
+
+- **Risks of Lowball Offers**:  
+  - Invites competing bidders.  
+  - May reduce shareholder confidence.
+
+- **Tender Duration**:  
+  - Longer offers increase the likelihood of competing bids.  
+
+### Free-Rider Problem
+
+- **Definition**: Shareholders may hold out expecting post-acquisition gains without tendering.  
+
+- **Condition for Profit**:  
+  $P_E > P_T$, where:  
+  - $P_E$ = Post-takeover value.  
+  - $P_T$ = Tender offer price.  
+
+- **Solution**: Use strategies like freeze-outs or two-tiered offers.  
+
+
+
+## Solving the Free-Rider Problem
+
+### Freeze-Outs
+
+- **Mechanism**:  
+  - Tender offer followed by a second-step freeze-out merger.  
+  - Conditional on acquiring enough shares to guarantee merger approval.  
+
+- **Effect**:  
+  - Prevents non-tendering shareholders from free-riding as their shares will be compulsorily acquired.  
+
+### Two-Tiered Offers
+
+- **Mechanism**:  
+  - High price for a portion of shares in the first tier.  
+  - Lower price for remaining shares in the second tier.  
+
+- **Impact**:  
+  - Coerces shareholders to tender early to avoid the lower back-end price.  
+
+- **Fair Price Provisions**:  
+  - Many companies now adopt these provisions to prevent coercive offers.
+
+
+
+## Toehold Strategies
+
+- **Definition**: Acquirer purchases a small percentage of target shares secretly before announcing a tender offer.  
+
+- **Advantages**:  
+  - Acquire shares at pre-premium prices.  
+  - Profit on toehold stake even if another bidder wins.  
+
+- **Regulations**:  
+  - Disclosure required if stake exceeds 5% (Schedule 13D).  
+
+- **Example**:  
+  - Elon Musk accumulated a 9.6% stake in Twitter before making a tender offer.
+
+
+
+## Hedge Fund Activism
+
+### Proxy Fights
+
+- **Definition**: Efforts to convince shareholders to vote (by proxy) for activist proposals.  
+
+- **Common Objectives**:  
+  - Gain board representation or influence decision-making.  
+  - Push for divestitures, spin-offs, or company sales.  
+
+### Examples of Activism
+
+- **ExxonMobil (2021)**: Engine No. 1 secured three board seats.  
+- **Macy’s (2021)**: JANA Partners pushed for an e-commerce spin-off.  
+- **Marathon Petroleum (2019)**: Elliott Management drove the Speedway spin-off.
+
+### M&A-Driven Activism
+
+- **Key Themes**:  
+  - Sale of the target (e.g., Aramark by Mantle Ridge).  
+  - Divestitures of non-core assets.  
+  - Opposition to unfavorable deals (e.g., JANA blocking Zendesk-Momentive).

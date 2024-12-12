@@ -1,0 +1,125 @@
+---
+title: "Leverage Buyout Models (LBO)"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+
+*yedlu, Winter 2024*
+
+## Overview 
+
+- **Definition**: Acquisition of a company primarily using debt, with the remaining portion funded by equity from financial sponsors (e.g., private equity firms).  
+- **Goal**: Generate high returns (IRR > 20%) upon exit, typically within 5-7 years, via sale or IPO.  
+- **Drivers of Success**:
+  
+  - Effective use of leverage to amplify equity returns.  
+  - Operating improvements, cost reductions, and strategic repositioning.  
+
+
+
+## Sources and Uses of Funds Table
+
+- **Purpose**: Tracks how the deal is financed and where the funds are allocated.  
+- **Structure**:
+
+| **Sources**                 | **Uses**                           |
+|-----------------------------|------------------------------------|
+| Senior debt                 | Equity purchase price             |
+| Subordinated debt           | Refinancing of target debt         |
+| Sponsor equity contribution | Transaction fees                  |
+| Revolving credit facility   | Financing fees                    |
+
+- **Key Considerations**:
+  
+  - Ensure that **sources = uses**.  
+  - Include all transaction costs (e.g., financing fees at 1% of debt, transaction fees at 1.5% of equity purchase price).  
+
+
+
+## Post-Closing Balance Sheet
+
+- **Adjustments**:
+  
+  - Write off target’s existing equity accounts.  
+  - Record new debt and equity contributions.  
+  - Add goodwill and intangible asset write-ups.  
+  - Capitalize financing fees and amortize them over debt maturity.  
+
+- **Example**:  
+  For a \$1,000M transaction with \$600M debt and \$400M equity:
+  - Add \$600M debt (senior + subordinated).  
+  - Reduce retained earnings for transaction fees.  
+  - Record goodwill:  
+    $$\text{Goodwill} = \text{Equity Purchase Price} - (\text{Net Assets} + \text{Write-Ups})$$  
+
+
+
+## Debt Schedule and Cash Flow Assumptions
+
+- **Debt Hierarchy**:  
+  - **Senior Debt**: Includes term loans and revolvers. Priority repayment with lower interest.  
+  - **Subordinated Debt**: Higher interest, paid after senior debt. Often includes Payment-In-Kind (PIK) features.  
+
+- **Key Concepts**:
+  
+  - **Cash Sweep**: Excess cash flow is used to repay debt, starting with revolvers.  
+  - **Revolver Mechanics**: Borrow to cover shortfalls; repay first when cash becomes available.  
+  - **Debt Plug**: Balances cash flow using revolving credit or excess cash.  
+
+- **Formulas**:
+  - Revolver Drawdown:  
+    $$\text{Revolver Borrowing} = \max(0, \text{Cash Deficit})$$  
+  - CADR (Cash Available for Debt Repayment):  
+    $$\text{CADR} = \text{CF from Operations} + \text{CF from Investing} - \Delta \text{Cash}$$  
+
+
+
+## Internal Rate of Return (IRR) Analysis
+
+- **Definition**: Measures the annualized return on equity investment, accounting for cash inflows and outflows.  
+
+- **Calculation**:
+  $$\text{IRR} = \text{Discount Rate such that } \sum_{t=0}^n \frac{\text{CF}_t}{(1+\text{IRR})^t} = 0$$  
+
+- **Drivers of IRR**:
+  
+  - **Entry and Exit Multiples**: The purchase price and selling price relative to EBITDA.  
+  - **Leverage**: Amplifies returns by minimizing equity contribution.  
+  - **Operational Performance**: EBITDA growth and cost efficiencies.  
+
+- **Example**:  
+  Entry price = \$500M, exit price = \$800M, equity contribution = \$200M.  
+  IRR = 25% over 5 years with positive cash flows annually.
+
+
+
+## Key Financial Metrics and Benchmarks
+
+- **Leverage Ratios**:  
+  - Senior Debt/EBITDA ≤ 3.0x.  
+  - Total Debt/EBITDA ≤ 5.5x.  
+
+- **Coverage Ratios**:  
+  - EBITDA/Interest Expense ≥ 2.0x.  
+  - (EBITDA - CAPEX)/Interest Expense ≥ 1.6x.  
+
+- **Other Constraints**:  
+  - Equity Contribution/Total Capital ≥ 25%.  
+
+
+
+## Sensitivity Analysis
+
+- **Purpose**: Assess how changes in key variables affect IRR.  
+
+- **Key Drivers**:  
+  - Exit multiples and timing.  
+  - Leverage levels.  
+  - Revenue growth and margins.  
+
+- **Example**:  
+  Analyze IRR for exit multiples ranging from 6x to 8x EBITDA and exit years from 4 to 6 years.
