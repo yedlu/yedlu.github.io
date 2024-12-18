@@ -1,0 +1,26 @@
+---
+title: "Corporate Finance Theory (PhD)"
+---
+
+Hi! I host notes on theory (mostly classic models and literature frameworks) of Corporate Finance. This is an extremely interesting topic and I will constantly update contents through my own learning process. Hope you like it.  
+
+1. [Capital Structure](capital-structure.qmd)
+   - Revisiting classical theories like M&M.
+
+2. [Agency Problems](agency.qmd)
+   - Introduction of the *Tirole* model and literature frameworks.
+
+3. [Asymmetric Information](asym-info.qmd)
+   - How asymmetric information affect capital structure and payout policies.
+
+4. [Financing under Asymmetric Information](fin-asym-info.qmd)
+   - Ways to alleviate information hurdles and distinguishing between types.
+
+5. [Price Formation](price.qmd)
+   - What would happen to financial markets if agents are in information asymmetry.
+
+6. [Corporate Monitoring](corp-monitor.qmd)
+   - How corporate monitoring (especially takeover threats) plays a role in corporate governance and performances.
+
+7. [Contracting](contract.qmd)
+   - How financial contracts and right of asset ownership affect corporate incentives.

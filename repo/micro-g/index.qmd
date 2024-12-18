@@ -4,17 +4,17 @@ title: "Game Theory"
 
 Salut! You can navigate yourself through one of the following topics:
 
-1. [Normal-Form Games](g1.qmd)
+1. [Normal-Form Games](normal.qmd)
    - How to describe a normal-form game? What are the implications?
 
-2. [Extensive-Form Games](g2.qmd)
+2. [Extensive-Form Games](extensive.qmd)
    - What can happen if each player takes its turns?
 
-3. [Repeated Games](g3.qmd)
+3. [Repeated Games](repeated.qmd)
    - How to evaluate strategies when games are repeated finitely or infinitely?
 
-4. [Bayesian Games](g4.qmd)
+4. [Bayesian Games](bayesian.qmd)
    - Players are best-responding to their own types and also their counterparts'.
 
-5. [Perfect Bayesian Equilibrium](g5.qmd)
+5. [Perfect Bayesian Equilibrium](pbe.qmd)
    - A new equilibrium system based on beliefs.

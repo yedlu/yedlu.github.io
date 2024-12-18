@@ -1,0 +1,206 @@
+---
+title: "Capital Structure"
+format:
+  html:
+    code-fold: true
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+ \def\E{{\mathbb{E}}}
+ \def\R{{\mathbb{R}}}
+$$
+:::
+
+*yedlu, Winter 2024*
+
+## Intro and Motivation
+Consider you're a CFO of a firm. Two fundamental questions that you must face are:  
+
+- how much should my firm finance?
+- how to finance my firm out of all the possible sources/channels/products?
+
+Capital structure theories are here to try to answer these fundamental questions. We will introduce several classical and/or salient capital structure theories that can shed some lights on the issue:  
+
+- [*Modigliani-Miller*](#modigliani-miller): irrelevance of capital structure. 
+- [*Trade-Off Theory*](#trade-off-theory): balancing between tax benefits and the expected cost of bankruptcy.
+
+## Modigliani-Miller  
+Modigliani and Miller (M&M) were pioneers when they proposed the theory of capital-structure irrelevance: total market value of the firm is unaffected by the firm's capital structure under M&M assumptions.  
+
+This is counter-intuitive for practitioners and researchers back then, who believed that capital structure design matters a lot. Of course this is true in a world with plenty of market frictions.  
+
+What M&M has showed and contributed, nevertheless, is that we can pinpoint the friction and its mechanism of affecting firm value through capital structure adjustments.  
+
+In other words, M&M assumes a market without some market frictions and showed financing structure is irrelevant to firm value. It provided a perfect framework (or I would say playground) that we can add/adjust/relax assumptions and see how it might affect firm values. This is astonishing!  
+
+Now let's try to understand M&M propositions in depth and get ourselves familiarized.  
+
+### M&M Proposition 1  
+Suppose that:  
+
+- **Fixing Investment Opportunity:** a firm's total cash flow to debt/equity holders are not affected by financing behavior.
+- **Frictionless:** there are no transaction costs:
+  - taxes,
+  - bankruptcy costs,
+  - bid-ask spreads.
+- **Perfect Market**.
+- **Arbitrage-Free** .
+
+Under such assumptions, the **total market value of the firm**, equal to the sum of market values of current debt and equity (see *Happy Meal Theorem* at [Asset Pricing Theory](/repo/ap/cc.qmd#happy-meal-theorem)), is **not affected** by how it is financed.  
+
+Firm value is then ***independent*** of its capital structure.  
+
+### M&M Proposition 2
+
+$$\begin{aligned}
+  r_E &= r_U + (r_U - r_D) \frac{D}{E}
+\end{aligned}$$
+
+where:  
+
+| Notation | Description |
+| -: | :--------- |
+| $r_E$ | (Levered) cost of equity |
+| $\frac{D}{E}$ | (Levered) debt-equity ratio |
+| $r_U$ | (Unlevered) cost of capital/equity |
+| $r_D$ | (Levered) cost of debt
+
+<details>
+<summary>Click to explore proof:</summary>
+
+
+First we take a look at the unlevered firm. By definition, the market value of the unlevered firm is the value of the discounted cash flow sum:  
+
+$$\begin{aligned}
+  V_U &= \sum_{t = 1}^{\infty} \frac{\E[x]}{(1 + r_U)^{t}} \\
+  &= \frac{\E[x]}{r_U} \\
+  \\
+  \implies \E[x] &= r_U V_U
+\end{aligned}$$
+
+Under similar approach, the market value of the levered equity is:  
+
+$$\begin{aligned}
+  E &= \sum_{t = 1}^{\infty} \frac{\E[x] - rD}{(1 + r_E)^{t}} \\
+  &= \frac{\E[x] - rD}{r_E} \\
+  \\
+  \implies r_E &= \frac{\E[x] - rD}{E}
+\end{aligned}$$
+
+By M&M Proposition 1, we have:  
+
+$$\begin{aligned}
+  V_U &= V_L = E + D \\
+  \\
+  \implies \E[x] &= r_U V_U = r_U (E + D)
+\end{aligned}$$
+
+Plugging back to $r_E$ we have:  
+
+$$\begin{aligned}
+  r_E &= \frac{\E[x] - rD}{E} \\
+  &= \frac{r_U (E + D) - rD}{E} \\
+  &= r_U + (r_U - r) \frac{D}{E}
+\end{aligned}$$
+
+$\blacksquare$
+
+
+</details>
+
+**Intuition:** leverage makes equity return riskier.  
+
+
+### M&M Proposition 3  
+The investment (assets) and financing (liabilities and equities) decisions are separate and unrelated. It is only reasonable for firm to take investments with positive NPV discounted with the firm's aggregated cost of capital $r_U$.  
+
+We will revisit this proposition when the M&M assumptions are relaxed in further notes. For now, however, this proposition gives a seemingly shocking result of the **dividend irrelevance theorem**:  
+
+*Firm's total market value is independent of its dividend policy.*  
+
+
+But how to use M&M to show that payout policies are irrelevant of firm value? We will show by proving the following valuation model (known as *Bird in the Hand* theory) is wrong:  
+
+$$\begin{aligned}
+  V_0 &= \sum_{t = 1}^{\infty} \frac{\E[d_t]}{(1+r_t)^t}
+\end{aligned}$$
+
+
+<details>
+<summary>Click to explore proof:</summary>
+
+Let's work on the intuition first:  
+
+- Suppose a firm decides to pay a lump-sum special dividend to its shareholders. By *Bird in the Hand* theory, this increases the firm's market value.  
+- Nevertheless, to make sure that assumption **Fixing Investment Opportunity** still holds, the firm needs to make sure that the investment level stays fixed.
+- Suppose the firm is, and intends to stay unlevered. Then, the firm will issue more equity to raise capital and maintain previous level.
+- New equity issuance will dilute current shareholder value, counterbalance the positive shock of the special dividend.
+
+***Proof.***  
+
+By dividend discount model (DDM), firm's equity price at time $t$ equals the discounted future dividend $d$ and equity price $p$:  
+
+$$\begin{aligned}
+  p_t &= \frac{d_{t+1} + p_{t+1}}{1 + r_U}
+\end{aligned}$$
+
+Let $q$ be the time-dependent number of shares of the firm with the following dynamics:  
+
+$$\begin{aligned}
+  q_{t+1} &= q_t + m_{t+1}
+\end{aligned}$$
+
+where $m_{t+1}$ is the number of new share issued at time $t+1$. We also specify that:  
+
+- $D_{t+1} = q_t d_{t+1}$ be the total amount of dividend paid at time $t+1$;
+- $V_t = q_t p_t$ be the total market value of the firm;
+  - then $V_{t+1} = q_{t+1} p_{t+1}$
+- $\Delta E_{t+1} = m_{t+1} p_{t+1}$ be the total amount of incremental cash flow from financing
+
+We can first denote the firm's total market value with:  
+
+$$\begin{aligned}
+  V_t &= q_t p_t \\
+  &= q_t \frac{d_{t+1} + p_{t+1}}{1 + r_U} \\
+  &= \frac{D_{t+1} + q_t p_{t+1}}{1 + r_U}
+\end{aligned}$$
+
+Further dissecting and deriving:  
+
+$$\begin{aligned}
+  q_t p_{t+1} &= (q_{t+1} - m_{t+1}) p_{t+1} \\
+  &= q_{t+1} p_{t+1} - m_{t+1} p_{t+1} \\
+  &= V_{t+1} - \Delta E_{t+1} \\
+  \\
+  \implies V_t &= \frac{D_{t+1} + V_{t+1} - \Delta E_{t+1}}{1 + r_U}
+\end{aligned}$$
+
+Under M&M assumption on the **fixed investment opportunity**, we have this relationship with firm's cash flow $X$ and investment scale $I$: **decrease of cash from special dividends should be counterbalanced by increase of cash from equity issuance**  
+
+$$\begin{aligned}
+  \Delta E_{t+1} &= I_{t+1} - (X_{t+1} - D_{t+1})
+\end{aligned}$$
+
+Thus:  
+
+$$\begin{aligned}
+  V_t &= \frac{D_{t+1} + V_{t+1} - I_{t+1} + X_{t+1} - D_{t+1}}{1 + r_U} \\
+  &= \frac{V_{t+1} - I_{t+1} + X_{t+1}}{1 + r_U}
+\end{aligned}$$
+
+Through iteration we have:  
+
+$$\begin{aligned}
+  V_t &= \sum_{\tau = 0}^{\infty} \frac{X_{t + \tau} - I_{t + \tau}}{(1 + r_U)^{\tau}}
+\end{aligned}$$
+
+which shows that firm value is irrelevant of payout policies.  
+
+$\blacksquare$
+
+</details>

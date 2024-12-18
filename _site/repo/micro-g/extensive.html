@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Deal Rationale – Yanhe Eddie Lu</title>
+<title>Extensive-Form Games – Yanhe Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,35 @@ gtag('js', new Date());
 gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -120,7 +149,7 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/deal-rationale.html">Deal Rationale</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#microeconomics">Microeconomics</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/extensive.html">Extensive-Form Games</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -154,11 +183,11 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Microeconomics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
@@ -170,37 +199,37 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-u/u1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Finite Outcomes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-u/u2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Infinite Outcomes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-u/u3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">vNM Axioms</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-u/u4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Risk Aversion</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-u/u5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Afriat’s Theorem</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-u/u6.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Stochastic Choice</span></a>
   </div>
 </li>
@@ -210,108 +239,39 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Micro II: Game Theory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-g/g1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Normal-Form Games</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-g/g2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Extensive-Form Games</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-g/g3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Repeated Games</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-g/g4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bayesian Games</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/micro-g/g5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Asset Pricing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Asset Pricing Theory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consumption I</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Consumption II</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contingent Claims</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Factor Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../repo/ap/a5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Macroeconomic Allocation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Stochastic Finance</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Discrete-Time Finance</span></a>
   </div>
 </li>
       </ul>
@@ -322,20 +282,73 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Corporate Finance</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/agency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agency Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/asym-info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asymmetric Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/fin-asym-info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Financing under Asym. Info.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/price.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Price Formation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/corp-monitor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Monitoring</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contracting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">M&amp;A</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
@@ -344,7 +357,7 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Deal Rationale</span></a>
   </div>
 </li>
@@ -374,8 +387,83 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
   </div>
 </li>
       </ul>
@@ -392,32 +480,20 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#drivers-of-ma-activity" id="toc-drivers-of-ma-activity" class="nav-link active" data-scroll-target="#drivers-of-ma-activity">Drivers of M&amp;A Activity</a>
+  <li><a href="#the-extensive-form-game" id="toc-the-extensive-form-game" class="nav-link active" data-scroll-target="#the-extensive-form-game">The Extensive-Form Game</a>
   <ul>
-  <li><a href="#external-shocks" id="toc-external-shocks" class="nav-link" data-scroll-target="#external-shocks">External Shocks</a></li>
-  <li><a href="#industry-merger-waves" id="toc-industry-merger-waves" class="nav-link" data-scroll-target="#industry-merger-waves">Industry Merger Waves</a></li>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#strategy-profile" id="toc-strategy-profile" class="nav-link" data-scroll-target="#strategy-profile">Strategy Profile</a></li>
   </ul></li>
-  <li><a href="#strategic-vs.-financial-acquisitions" id="toc-strategic-vs.-financial-acquisitions" class="nav-link" data-scroll-target="#strategic-vs.-financial-acquisitions">Strategic vs.&nbsp;Financial Acquisitions</a>
+  <li><a href="#subgame-perfect-nash-equilibrium-spne" id="toc-subgame-perfect-nash-equilibrium-spne" class="nav-link" data-scroll-target="#subgame-perfect-nash-equilibrium-spne">Subgame Perfect Nash Equilibrium (SPNE)</a>
   <ul>
-  <li><a href="#strategic-acquisitions" id="toc-strategic-acquisitions" class="nav-link" data-scroll-target="#strategic-acquisitions">Strategic Acquisitions</a></li>
-  <li><a href="#financial-acquisitions" id="toc-financial-acquisitions" class="nav-link" data-scroll-target="#financial-acquisitions">Financial Acquisitions</a></li>
+  <li><a href="#subgames" id="toc-subgames" class="nav-link" data-scroll-target="#subgames">Subgames</a></li>
+  <li><a href="#subgame-perfect-ne" id="toc-subgame-perfect-ne" class="nav-link" data-scroll-target="#subgame-perfect-ne">Subgame Perfect NE</a></li>
+  <li><a href="#how-to-find-spne" id="toc-how-to-find-spne" class="nav-link" data-scroll-target="#how-to-find-spne">How to find SPNE?</a></li>
+  <li><a href="#properties-of-spne-solution" id="toc-properties-of-spne-solution" class="nav-link" data-scroll-target="#properties-of-spne-solution">Properties of SPNE Solution</a></li>
   </ul></li>
-  <li><a href="#expansion-and-contraction-in-ma" id="toc-expansion-and-contraction-in-ma" class="nav-link" data-scroll-target="#expansion-and-contraction-in-ma">Expansion and Contraction in M&amp;A</a>
-  <ul>
-  <li><a href="#expansions" id="toc-expansions" class="nav-link" data-scroll-target="#expansions">Expansions</a></li>
-  <li><a href="#contractions" id="toc-contractions" class="nav-link" data-scroll-target="#contractions">Contractions</a></li>
-  </ul></li>
-  <li><a href="#value-creation-in-ma" id="toc-value-creation-in-ma" class="nav-link" data-scroll-target="#value-creation-in-ma">Value Creation in M&amp;A</a>
-  <ul>
-  <li><a href="#does-ma-create-value" id="toc-does-ma-create-value" class="nav-link" data-scroll-target="#does-ma-create-value">Does M&amp;A Create Value?</a></li>
-  <li><a href="#distribution-of-value" id="toc-distribution-of-value" class="nav-link" data-scroll-target="#distribution-of-value">Distribution of Value</a></li>
-  </ul></li>
-  <li><a href="#risks-and-challenges" id="toc-risks-and-challenges" class="nav-link" data-scroll-target="#risks-and-challenges">Risks and Challenges</a>
-  <ul>
-  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls">Common Pitfalls</a></li>
-  <li><a href="#strategies-for-success" id="toc-strategies-for-success" class="nav-link" data-scroll-target="#strategies-for-success">Strategies for Success</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#example-bach-or-stravinsky-in-extensive-form" id="toc-example-bach-or-stravinsky-in-extensive-form" class="nav-link" data-scroll-target="#example-bach-or-stravinsky-in-extensive-form">Example: Bach or Stravinsky in Extensive Form</a></li>
+  <li><a href="#example-cournots-duopoly-in-extensive-form-stackelberg-duopoly" id="toc-example-cournots-duopoly-in-extensive-form-stackelberg-duopoly" class="nav-link" data-scroll-target="#example-cournots-duopoly-in-extensive-form-stackelberg-duopoly">Example: Cournot’s Duopoly in Extensive Form (Stackelberg Duopoly)</a></li>
   </ul>
 </nav>
 </nav>
@@ -428,9 +504,9 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/ma/index.html">M&amp;A</a></li><li class="breadcrumb-item"><a href="../../repo/ma/deal-rationale.html">Deal Rationale</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#microeconomics">Microeconomics</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/index.html">Micro II: Game Theory</a></li><li class="breadcrumb-item"><a href="../../repo/micro-g/extensive.html">Extensive-Form Games</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Deal Rationale</h1>
+<h1 class="title">Extensive-Form Games</h1>
 </div>
 
 
@@ -447,112 +523,174 @@ gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
 </header>
 
 
+<div class="hidden">
+<p><span class="math display">\[
+\def\BB#1{{\mathbb{#1}}}
+\def\BF#1{{\mathbf{#1}}}
+\]</span></p>
+</div>
 <p><em>yedlu, Winter 2024</em></p>
-<section id="drivers-of-ma-activity" class="level2">
-<h2 class="anchored" data-anchor-id="drivers-of-ma-activity">Drivers of M&amp;A Activity</h2>
-<p>M&amp;A activity is influenced by various external shocks and market dynamics, allowing firms to adapt and maximize value.</p>
-<section id="external-shocks" class="level3">
-<h3 class="anchored" data-anchor-id="external-shocks">External Shocks</h3>
+<p>Normal-form games are one of the more simple form of games to study. One of the stringent assumption we’re going to relax now is that players <strong>simultaneously</strong> choose their actions; rather, now players take turns. We will dive into this concept deeper with an example.</p>
+<section id="the-extensive-form-game" class="level2">
+<h2 class="anchored" data-anchor-id="the-extensive-form-game">The Extensive-Form Game</h2>
+<section id="notation" class="level3">
+<h3 class="anchored" data-anchor-id="notation">Notation</h3>
+<p>The game:</p>
+<p><span class="math display">\[\begin{aligned}
+  \Gamma = (N, H, P, (u_i))
+\end{aligned}\]</span></p>
+<p>has</p>
 <ul>
-<li><p><strong>Industry Shocks</strong>: Demand/supply changes and globalization (e.g., oil industry in the 1990s).</p></li>
-<li><p><strong>Macroeconomic Shocks</strong>: Low interest rates, capital abundance, high stock valuations.</p></li>
-<li><p><strong>Global Factors</strong>: Regulatory changes, political shifts, technological advances, and social trends.</p></li>
+<li>players <span class="math inline">\(N = \{1, ..., n\}\)</span>.</li>
+<li>set of histories <span class="math inline">\(H = \{\emptyset, ...\}\)</span>. <span class="math inline">\(Z \subsetneq H\)</span> is the set of terminal histories, which are not proper subsequenses of any other history. The game ends at <span class="math inline">\(z_j \in Z\)</span>.</li>
+<li>player function <span class="math inline">\(P: H \setminus Z \to N\)</span> which decides who moves at this history node conditioning on this specific history.</li>
+<li>preference with a utility function <span class="math inline">\(u_i: Z \to \BB{R}\)</span> representing it.</li>
 </ul>
-<p>Example: The oil price collapse in the late 1990s spurred major consolidations, including Exxon-Mobil’s $88 billion merger.</p>
+<p>Intuition: now there’s a set <span class="math inline">\(H\)</span> that serves as a memory. The function <span class="math inline">\(P\)</span> sees the current history of the game (what happened in the past) and dictates one of the players that now it’s their turn. The game alternates between players in <span class="math inline">\(N\)</span> and ends when it reaches one of the terminal nodes <span class="math inline">\(z \in Z\)</span>.</p>
 </section>
-<section id="industry-merger-waves" class="level3">
-<h3 class="anchored" data-anchor-id="industry-merger-waves">Industry Merger Waves</h3>
+<section id="strategy-profile" class="level3">
+<h3 class="anchored" data-anchor-id="strategy-profile">Strategy Profile</h3>
+<p>Strategy profiles in extensive-form games must be a <strong>full-contingent</strong> plan. In other words, <span class="math inline">\(\sigma_i(h) \neq \emptyset\)</span> as long as <span class="math inline">\(P(h) = i\)</span>.</p>
+</section>
+</section>
+<section id="subgame-perfect-nash-equilibrium-spne" class="level2">
+<h2 class="anchored" data-anchor-id="subgame-perfect-nash-equilibrium-spne">Subgame Perfect Nash Equilibrium (SPNE)</h2>
+<p>We will see in a later example that a Nash Equilibrium is not always optimal if we zoom in to a <strong>subgame</strong>.</p>
+<section id="subgames" class="level3">
+<h3 class="anchored" data-anchor-id="subgames">Subgames</h3>
+<p><strong>Definition</strong><br>
+A subgame starting at a non-terminal history <span class="math inline">\(h \in H\)</span> of an extensive-form game of perfect information is another game which:</p>
 <ul>
-<li><p>M&amp;A activity is often concentrated within specific industries due to shocks.</p></li>
-<li><p>Recent examples: Pharmaceuticals ($1,380B), Real Estate ($1,100B), Media ($784B).</p></li>
+<li>has same set of players <span class="math inline">\(N\)</span>;</li>
+<li>includes every history <span class="math inline">\(h'\)</span> such that <span class="math inline">\((h, h')\)</span> is a history of the original game;</li>
+<li>player function and preferences are “imported” fro the original game.</li>
+</ul>
+<p>Consider we truncate the full game tree at one particular node. The new game tree (prune) is a proper subgame.</p>
+</section>
+<section id="subgame-perfect-ne" class="level3">
+<h3 class="anchored" data-anchor-id="subgame-perfect-ne">Subgame Perfect NE</h3>
+<p><strong>Definition</strong><br>
+An NE of an extensive-form game of perfect information is a <strong><em>subgame-perfect Nash Equilibrium</em></strong> if it induces a NE in <strong>every one of its subgames</strong>.</p>
+</section>
+<section id="how-to-find-spne" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-find-spne">How to find SPNE?</h3>
+<p>We can use backward induction to find subgame perfect Nash Equilibrium (SPNE). The general algorithms can be written as:</p>
+<ul>
+<li>start with the smallest possible subgame (length <span class="math inline">\(l = k\)</span> where <span class="math inline">\(k = 1\)</span>) and best-respond them,</li>
+<li>move to subgames with length <span class="math inline">\(l = k + 1\)</span>, and best-respond them <strong>conditioning on actions chosen when length <span class="math inline">\(l = k\)</span></strong>,</li>
+<li>repeat and end till the initial node is reached.</li>
 </ul>
 </section>
+<section id="properties-of-spne-solution" class="level3">
+<h3 class="anchored" data-anchor-id="properties-of-spne-solution">Properties of SPNE Solution</h3>
+<p><strong>Claim</strong><br>
+Every backward induction solution is a Nash Equilibrium.<br>
+Intuition: SPNE <span class="math inline">\(\subset\)</span> NE.</p>
+<p><strong>Proposition</strong><br>
+A pure strategy profile is subgame perfect NE i.i.f. it is a backward induction solution.</p>
 </section>
-<section id="strategic-vs.-financial-acquisitions" class="level2">
-<h2 class="anchored" data-anchor-id="strategic-vs.-financial-acquisitions">Strategic vs.&nbsp;Financial Acquisitions</h2>
-<section id="strategic-acquisitions" class="level3">
-<h3 class="anchored" data-anchor-id="strategic-acquisitions">Strategic Acquisitions</h3>
+</section>
+<section id="example-bach-or-stravinsky-in-extensive-form" class="level2">
+<h2 class="anchored" data-anchor-id="example-bach-or-stravinsky-in-extensive-form">Example: Bach or Stravinsky in Extensive Form</h2>
+<p>This game has</p>
 <ul>
-<li><p><strong>Objective</strong>: Create synergies by combining complementary resources or reducing costs.</p></li>
-<li><p><strong>Synergies</strong>:</p>
+<li>players <span class="math inline">\(N = \{1, 2\}\)</span>.</li>
+<li>set of histories <span class="math inline">\(H = \{\emptyset, (B), (S), (B, b), (B, s), (S, b'), (S, s')\}\)</span></li>
+<li>player function:
 <ul>
-<li><p><strong>Cost Reductions</strong>: Economies of scale and vertical integration.</p></li>
-<li><p><strong>Revenue Enhancements</strong>: Market power, cross-selling, and entering new markets.</p></li>
-<li><p><strong>Technology Transfers</strong>: Acquiring unique skills or innovations.</p></li>
+<li><span class="math inline">\(P(\emptyset) = 1\)</span></li>
+<li><span class="math inline">\(P(B) = P(S) = 1\)</span></li>
 </ul></li>
+<li>a Bernoulli utility function representing utility.</li>
 </ul>
-<p>Examples: Bayer-Monsanto, Facebook-WhatsApp, Amazon-Whole Foods.</p>
+<p>We would have the following payoff matrix. First we attempt to find all pure strategy NE (bold).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>bb’</th>
+<th>bs’</th>
+<th>sb’</th>
+<th>ss’</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>B</td>
+<td><strong>2,1</strong></td>
+<td><strong>2,1</strong></td>
+<td>0,0</td>
+<td>0,0</td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td>0,0</td>
+<td><strong>1,2</strong></td>
+<td>0,0</td>
+<td><strong>1,2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>However, after the notion of subgame perfection, we will try to solve the game with one subgame-perfect Nash Equilibrium.</p>
+<details>
+<summary>
+Click to Explore
+</summary>
+<p>Starting from subgames with length <span class="math inline">\(l = 1\)</span> and let player 2 best-responds to them:</p>
+<p><span class="math display">\[\begin{aligned}
+  \BB{E}[u_2(b \mid B)] &amp;= 1 &gt; \BB{E}[u_2(s \mid B)] = 0 \\
+  \implies B_2(B) &amp;= b \\
+  \\
+  \BB{E}[u_2(s' \mid S)] &amp;= 2 &gt; \BB{E}[u_2(b' \mid S)] = 0 \\
+  \implies B_2(S) &amp;= s'
+\end{aligned}\]</span></p>
+<p>Conditioning on this information, player 1 best-responds:</p>
+<p><span class="math display">\[\begin{aligned}
+   \BB{E}[u_1(B \mid B_2(S_1))] &amp;= 2 \\
+   &gt; \BB{E}[u_1(S \mid B_2(S_1))] &amp;= 1 \\
+  \implies B_1(\emptyset) &amp;= B
+\end{aligned}\]</span></p>
+<p>Hence, the subgame-perfect Nash Equilibrium (and the only SPNE) is:<br>
+<span class="math display">\[\begin{aligned}
+   (\sigma_1 = B, (\sigma_2(B) = b, \sigma_2(S) = s'))
+\end{aligned}\]</span></p>
+<p>Remember that a strategy is a <strong>full-contingent plan</strong>: there must be a suggested action <span class="math inline">\(\sigma_i(h)\)</span> for every possible history that requires player <span class="math inline">\(i\)</span> to make choices.</p>
+</details>
 </section>
-<section id="financial-acquisitions" class="level3">
-<h3 class="anchored" data-anchor-id="financial-acquisitions">Financial Acquisitions</h3>
-<ul>
-<li><p>Typically conducted by private equity (PE) firms using leverage buyouts (LBOs).</p></li>
-<li><p><strong>PE Strategies</strong>:</p>
-<ul>
-<li><p>Divestitures of non-core assets.</p></li>
-<li><p>Operational improvements.</p></li>
-<li><p>Sector consolidation via platform companies.</p></li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="expansion-and-contraction-in-ma" class="level2">
-<h2 class="anchored" data-anchor-id="expansion-and-contraction-in-ma">Expansion and Contraction in M&amp;A</h2>
-<p>M&amp;A involves both growth-oriented and contraction-oriented activities.</p>
-<section id="expansions" class="level3">
-<h3 class="anchored" data-anchor-id="expansions">Expansions</h3>
-<ul>
-<li>Acquisitions to enter new markets or gain resources.</li>
-</ul>
-</section>
-<section id="contractions" class="level3">
-<h3 class="anchored" data-anchor-id="contractions">Contractions</h3>
-<ul>
-<li><p><strong>Divestitures</strong>: Sale of non-core assets.</p></li>
-<li><p><strong>Spin-Offs</strong>: Creating independent companies.</p></li>
-<li><p><strong>Equity Carve-Outs</strong>: Offering minority stakes via IPOs.</p></li>
-</ul>
-<p>Example: Macy’s spin-off of its e-commerce division urged by hedge fund activism.</p>
-</section>
-</section>
-<section id="value-creation-in-ma" class="level2">
-<h2 class="anchored" data-anchor-id="value-creation-in-ma">Value Creation in M&amp;A</h2>
-<section id="does-ma-create-value" class="level3">
-<h3 class="anchored" data-anchor-id="does-ma-create-value">Does M&amp;A Create Value?</h3>
-<ul>
-<li><p><strong>Target Firms</strong>: Evidence overwhelmingly shows value creation through acquisition premiums.</p></li>
-<li><p><strong>Acquirers</strong>: Mixed results, with returns often near zero or slightly positive.</p></li>
-</ul>
-</section>
-<section id="distribution-of-value" class="level3">
-<h3 class="anchored" data-anchor-id="distribution-of-value">Distribution of Value</h3>
-<ul>
-<li><p><strong>Target Shareholders</strong>: Most value accrues to them due to competitive bidding and premiums.</p></li>
-<li><p><strong>Acquirer Shareholders</strong>: Returns depend on synergies, pricing accuracy, and deal structure.</p></li>
-</ul>
-</section>
-</section>
-<section id="risks-and-challenges" class="level2">
-<h2 class="anchored" data-anchor-id="risks-and-challenges">Risks and Challenges</h2>
-<section id="common-pitfalls" class="level3">
-<h3 class="anchored" data-anchor-id="common-pitfalls">Common Pitfalls</h3>
-<ul>
-<li><p>Overpayment due to competition or management hubris.</p></li>
-<li><p>Underestimated costs of integration or synergies.</p></li>
-<li><p>Poor due diligence and inadequate risk management.</p></li>
-</ul>
-</section>
-<section id="strategies-for-success" class="level3">
-<h3 class="anchored" data-anchor-id="strategies-for-success">Strategies for Success</h3>
-<ul>
-<li><p><strong>Pricing</strong>: Avoid overpaying; use accurate valuation models.</p></li>
-<li><p><strong>Non-Pricing Aspects</strong>: Utilize earnouts, collars, and carefully designed deal clauses.</p></li>
-</ul>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>M&amp;A can create significant value but also carries risks of destruction. The success of an acquisition depends on precise pricing, strategic alignment, and effective deal structuring. Sharpening M&amp;A skills is crucial to becoming a winner in the game.</p>
+<section id="example-cournots-duopoly-in-extensive-form-stackelberg-duopoly" class="level2">
+<h2 class="anchored" data-anchor-id="example-cournots-duopoly-in-extensive-form-stackelberg-duopoly">Example: Cournot’s Duopoly in Extensive Form (Stackelberg Duopoly)</h2>
+<p>Now, instead of two firms simultaneously choose the production level, we arbitrarily let firm 1 chooses first. After firm 2 observes their counterpart’s decision, they will best-response.</p>
+<p>We will try to find a subgame-perfect NE (SPNE) using backward induction.</p>
+<details>
+<summary>
+Click to Explore
+</summary>
+<p>For the sake of simplicity we first assume that <span class="math inline">\(q_i \leq 1\)</span> for all <span class="math inline">\(i\)</span>.</p>
+<p>Starting from the subgame with length <span class="math inline">\(l = 1\)</span> and let firm 2 best-responds:</p>
+<p><span class="math display">\[\begin{aligned}
+  u_2 &amp;= q_2 (1 - q_1 - q_2)
+\end{aligned}\]</span></p>
+<p>First-Order Condition (FOC) gives that:</p>
+<p><span class="math display">\[\begin{aligned}
+  1 - q_1 - 2 q_2^* &amp;= 0 \\
+  B_2(q_1) = q_2^* &amp;= \frac{1 - q_1}{2}
+\end{aligned}\]</span></p>
+<p>Then player 1 is aware of this information and best-responds:</p>
+<p><span class="math display">\[\begin{aligned}
+  u_1 &amp;= q_1 (1 - q_1 - q_2) \\
+  &amp;= q_1 (1 - q_1 - \frac{1 - q_1}{2}) \\
+  &amp;= \frac{q_1 (1-q_1)}{2}
+\end{aligned}\]</span></p>
+<p>First-Order Condition (FOC) gives that:</p>
+<p><span class="math display">\[\begin{aligned}
+  \frac{1}{2} - q_1^* &amp;= 0 \\
+  B_1(q_2) = q_1^* &amp;= \frac{1}{2}
+\end{aligned}\]</span></p>
+<p>The subgame-perfect Nash Equilibrium for this game is then:</p>
+<p><span class="math display">\[\begin{aligned}
+  (q_1 = \frac{1}{2}, q_2 = \frac{1}{4})
+\end{aligned}\]</span></p>
+</details>
 
 
 </section>
@@ -654,7 +792,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

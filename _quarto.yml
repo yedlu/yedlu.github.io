@@ -28,54 +28,50 @@ website:
                   href: repo/micro-u/index.qmd
                   contents:
                   - text: "Finite Outcomes"
-                    href: repo/micro-u/u1.qmd
+                    href: repo/micro-u/cpu1.qmd
                   - text: "Infinite Outcomes"
-                    href: repo/micro-u/u2.qmd
+                    href: repo/micro-u/cpu2.qmd
                   - text: "vNM Axioms"
-                    href: repo/micro-u/u3.qmd
+                    href: repo/micro-u/vnm.qmd
                   - text: "Risk Aversion"
-                    href: repo/micro-u/u4.qmd
+                    href: repo/micro-u/risk.qmd
                   - text: "Afriat's Theorem"
-                    href: repo/micro-u/u5.qmd
+                    href: repo/micro-u/afriat.qmd
                   - text: "Stochastic Choice"
-                    href: repo/micro-u/u6.qmd
+                    href: repo/micro-u/stochastic.qmd
                 - text: "Micro II: Game Theory"
                   href: repo/micro-g/index.qmd
                   contents:
                   - text: "Normal-Form Games"
-                    href: repo/micro-g/g1.qmd
+                    href: repo/micro-g/normal.qmd
                   - text: "Extensive-Form Games"
-                    href: repo/micro-g/g2.qmd
+                    href: repo/micro-g/extensive.qmd
                   - text: "Repeated Games"
-                    href: repo/micro-g/g3.qmd
+                    href: repo/micro-g/repeated.qmd
                   - text: "Bayesian Games"
-                    href: repo/micro-g/g4.qmd
+                    href: repo/micro-g/bayesian.qmd
                   - text: "Perfect Bayesian Equilibrium"
-                    href: repo/micro-g/g5.qmd
-            - text: "Asset Pricing"
-              href: repo/#asset-pricing
-              contents:
-              - text: "Asset Pricing Theory"
-                href: repo/ap/index.qmd
-                contents: 
-                - text: "Consumption I"
-                  href: repo/ap/a1.qmd
-                - text: "Consumption II"
-                  href: repo/ap/a2.qmd
-                - text: "Contingent Claims"
-                  href: repo/ap/a3.qmd
-                - text: "Factor Models"
-                  href: repo/ap/a4.qmd
-                - text: "Macroeconomic Allocation"
-                  href: repo/ap/a5.qmd
-              - text: "Stochastic Finance"
-                href: repo/sc/index.qmd
-                contents: 
-                - text: "Discrete-Time Finance"
-                  href: repo/sc/s1.qmd
+                    href: repo/micro-g/pbe.qmd
             - text: "Corporate Finance"
               href: repo/#corporate-finance
               contents:
+              - text: "Corporate Finance Theory"
+                href: repo/cf/index.qmd
+                contents: 
+                - text: "Capital Structure"
+                  href: repo/cf/capital-structure.qmd
+                - text: "Agency Problems"
+                  href: repo/cf/agency.qmd
+                - text: "Asymmetric Information"
+                  href: repo/cf/asym-info.qmd
+                - text: "Financing under Asym. Info."
+                  href: repo/cf/fin-asym-info.qmd
+                - text: "Price Formation"
+                  href: repo/cf/price.qmd
+                - text: "Corporate Monitoring"
+                  href: repo/cf/corp-monitor.qmd
+                - text: "Contracting"
+                  href: repo/cf/contract.qmd
               - text: "M&A"
                 href: repo/ma/index.qmd
                 contents:
@@ -91,8 +87,31 @@ website:
                   href: repo/ma/merger.qmd
                 - text: "LBO Modeling"
                   href: repo/ma/lbo.qmd
+                - text: "Deal Regulation"
+                  href: repo/ma/deal-regulation.qmd
                 - text: "Taxation"
                   href: repo/ma/tax.qmd
+            - text: "Asset Pricing"
+              href: repo/#asset-pricing
+              contents:
+              - text: "Asset Pricing Theory"
+                href: repo/ap/index.qmd
+                contents: 
+                - text: "Consumption I"
+                  href: repo/ap/cp1.qmd
+                - text: "Consumption II"
+                  href: repo/ap/cp2.qmd
+                - text: "Contingent Claims"
+                  href: repo/ap/cc.qmd
+                - text: "Factor Models"
+                  href: repo/ap/factor.qmd
+                - text: "Macroeconomic Allocation"
+                  href: repo/ap/allocation.qmd
+              - text: "Stochastic Finance"
+                href: repo/sc/index.qmd
+                contents: 
+                - text: "Discrete-Time Finance"
+                  href: repo/sc/s1.qmd
 
 format:
   html:
