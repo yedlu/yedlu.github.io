@@ -60,18 +60,18 @@ website:
                 contents: 
                 - text: "Capital Structure"
                   href: repo/cf/capital-structure.qmd
-                - text: "Agency Problems"
-                  href: repo/cf/agency.qmd
-                - text: "Asymmetric Information"
-                  href: repo/cf/asym-info.qmd
-                - text: "Financing under Asym. Info."
-                  href: repo/cf/fin-asym-info.qmd
-                - text: "Price Formation"
-                  href: repo/cf/price.qmd
-                - text: "Corporate Monitoring"
-                  href: repo/cf/corp-monitor.qmd
-                - text: "Contracting"
-                  href: repo/cf/contract.qmd
+                # - text: "Agency Problems"
+                #   href: repo/cf/agency.qmd
+                # - text: "Asymmetric Information"
+                #   href: repo/cf/asym-info.qmd
+                # - text: "Financing under Asym. Info."
+                #   href: repo/cf/fin-asym-info.qmd
+                # - text: "Price Formation"
+                #   href: repo/cf/price.qmd
+                # - text: "Corporate Monitoring"
+                #   href: repo/cf/corp-monitor.qmd
+                # - text: "Contracting"
+                #   href: repo/cf/contract.qmd
               - text: "M&A"
                 href: repo/ma/index.qmd
                 contents:

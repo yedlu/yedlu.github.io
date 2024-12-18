@@ -7,7 +7,7 @@ Hi! I host notes on theory (mostly classic models and literature frameworks) of 
 1. [Capital Structure](capital-structure.qmd)
    - Revisiting classical theories like M&M.
 
-2. [Agency Problems](agency.qmd)
+<!-- 2. [Agency Problems](agency.qmd)
    - Introduction of the *Tirole* model and literature frameworks.
 
 3. [Asymmetric Information](asym-info.qmd)
@@ -23,4 +23,4 @@ Hi! I host notes on theory (mostly classic models and literature frameworks) of 
    - How corporate monitoring (especially takeover threats) plays a role in corporate governance and performances.
 
 7. [Contracting](contract.qmd)
-   - How financial contracts and right of asset ownership affect corporate incentives.
+   - How financial contracts and right of asset ownership affect corporate incentives. -->

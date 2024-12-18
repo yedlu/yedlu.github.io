@@ -15,7 +15,7 @@ format:
   - [Micro II: Game Theory (PhD Level)](micro-g/index.qmd)
 
 ### Corporate Finance
-  - Corporate Finance Theory (PhD Level)
+  - [Corporate Finance Theory (PhD Level)](cf/index.qmd)
   - Corporate Finance Practice (MBA Level)
     - Valuation
     - Financing
