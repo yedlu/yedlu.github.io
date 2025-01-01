@@ -11,7 +11,7 @@ format:
 
 <img src="profilepic.jpg" alt="Yanhe Eddie Lu" style="float: right; width: 200px; margin-left: 20px; border-radius: 5px;">
 
-I am a full-time pre-doctoral research professional. I was a graduate student at Washington University in St. Louis (WashU) Olin Business School, specializing in Analytics and Finance. My academic interest is in empirical corporate finance.
+I am currently a full-time research professional. I have graduated from [WashU Olin Business School](https://olin.wustl.edu) and [Central University of Finance and Economics](https://www.cufe.edu.cn), specializing in Analytics and Economic Disciplines. My academic interest is in empirical corporate finance and labor economics.
 
 This website hosts my brief introduction of experiences in [`vitae`](cv.qmd) section. You can also explore my [`repositories`](repo/index.qmd) with concise notes/cheatsheets, projects, and coding samples.
 
