@@ -37,7 +37,7 @@ format:
 - **M.S. in Business Analytics (Financial Technology)**  
   *Olin Business School, Washington University in St. Louis*  
   2023.08 - 2024.12  
-  **GPA: 3.97/4.00**  
+  **GPA: 3.96/4.00**  
   Honors: Beta Gamma Sigma, Outstanding Student Award
 
 - **B.S. in International Economics & Financial Risk Management**  
@@ -138,7 +138,7 @@ format:
 ## Coursework
 
 - **Finance and Economics**  
-  Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD), Microeconomic Theory (PhD), Advanced Corporate Finance (Graduate, A+), Econometrics, Macroeconomics  
+  Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD, A), Microeconomic Theory (PhD, A), Advanced Corporate Finance (MBA, A+), Econometrics, Macroeconomics  
 
 - **Quantitative Methods**  
   Stochastic Processes, Probability and Statistics, Matrix Algebra, Calculus  
