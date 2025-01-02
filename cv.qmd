@@ -19,10 +19,14 @@ format:
 <table style="border-collapse: collapse; width: 100%;">
   <tr>
     <td><strong>Name</strong></td>
-    <td>Yanhe Eddie Lu</td>
+    <td>Yanhe <strong>Eddie *Lu*</strong></td>
   </tr>
   <tr>
-    <td><strong>Location</strong></td>
+    <td><strong></strong></td>
+    <td>(*Ian-Huh Eh-Dee Lu*)</td>
+  </tr>
+  <tr>
+    <td><strong>Residence</strong></td>
     <td>St. Louis, MO</td>
   </tr>
   <tr>
@@ -38,7 +42,11 @@ format:
   *Olin Business School, Washington University in St. Louis*  
   2023.08 - 2024.12  
   **GPA: 3.96/4.00**  
-  Honors: Beta Gamma Sigma, Outstanding Student Award
+  Honors:  
+  - Beta Gamma Sigma  
+  - Olin Business School Outstanding Student Award  
+  
+
 
 - **B.S. in International Economics & Financial Risk Management**  
   *Central University of Finance and Economics (CUFE)*  
