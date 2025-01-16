@@ -1,0 +1,68 @@
+---
+title: "Real and Complex Number Systems"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
+*yedlu, Winter 2025*
+
+## Introduction and Rationale  
+
+The introduction of real (and complex) numbers arises from the discovery that the rational number system ($\BB{Q}$) is inadequate in many scenarios. "Irrational numbers" is then introduced to fill the gap and is often approximated by rational numbers.  
+
+Here's an example that shows the need of extension from the rational number system.  
+
+::: {.callout-tip title="Example 1"}
+We now show that    
+
+$$\begin{aligned}
+  p^2 &= 2
+\end{aligned}$$
+
+is not satisfied by **any** rational $p$.
+:::
+
+::: {.callout-warning collapse="true" title="Example 1 Solution"}
+
+
+Assume such $p$ exists. Since $p \in \BB{Q}$, we can denote this as $p = m/n$ where $m, n$ are integers that are not both even and $n \neq 0$.  
+
+Rewrite the equation:  
+
+$$\begin{aligned}
+  m^2 &= 2 n^2
+\end{aligned}$$
+
+This shows that $m^2$ is even. $m$ is therefore even. It follows that both sides are divisible by $4$, hence $n^2$ and eventually $n$ is even.  
+
+It all leads to a contradiction! Hence the equation is not satisfied by **any** $p \in \BB{Q}$. $\blacksquare$
+
+___
+
+One lovely extension of this proof is to show the following.  
+
+Let $A$ be the set of $p \in \BB{Q}_+$ with $p^2 < 2$. Let $B$ be the set of $p \in \BB{Q}_+$ with $p^2 > 2$. Show that there exists a $q \in \BB{Q}_+$ such that:  
+
+- $p < q$ for every $p \in A$
+- $p > q$ for every $p \in B$
+
+**Solution.** We just simply associate every $p > 0$ with:  
+
+$$\begin{aligned}
+  q &= p - \frac{p^2 - 2}{p + 2}
+\end{aligned}$$
+
+
+:::
+
+
+## Set-Theoretic Definitions

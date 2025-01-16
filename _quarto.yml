@@ -112,6 +112,14 @@ website:
                 contents: 
                 - text: "Discrete-Time Finance"
                   href: repo/sc/s1.qmd
+            - text: "Math Foundations"
+              href: repo/#math-foundations
+              contents:
+              - text: "Math Analysis (Baby Rudin)"
+                href: repo/babyrudin/index.qmd
+                contents:
+                - text: "Real and Complex Number Systems"
+                  href: repo/babyrudin/c1.qmd
 
 format:
   html:

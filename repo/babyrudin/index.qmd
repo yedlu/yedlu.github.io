@@ -1,0 +1,10 @@
+---
+title: "Principles of Mathematical Analysis (W. Rudin)"
+---
+
+
+Hi! This page hosts my notes on Mathematical Analysis. 
+
+1. [Real and Complex Number Systems](c1.qmd)
+   - Foundations for mathematical analysis.
+

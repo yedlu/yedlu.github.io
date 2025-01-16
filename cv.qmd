@@ -109,21 +109,33 @@ format:
 #### Teaching Assistant  
 *Olin Business School, Washington University in St. Louis*  
 
-- **Capital Market and Financial Management**  
-  *Undergraduate, Spring 2024*  
-  Instructor: Koray Sayili
+- **Advanced Financial Management**  
+  *Undergraduate, Spring 2025*  
+  Instructor: Margarita Tsoutsoura
+
+- **Advanced Corporate Finance I - Valuation**  
+  *Graduate, Spring 2025*  
+  Instructor: Yaron Leitner 
+
+- **A/B Testing in Business and Social Science**  
+  *Graduate, Spring 2025*  
+  Instructor: Xiang Hui 
+
+- **Advanced Corporate Finance II - Financing**  
+  *Graduate, Fall 2024*  
+  Instructor: Yaron Leitner
+
+- **Financial Markets**  
+  *Graduate, Fall 2024*  
+  Instructor: Yaron Leitner
 
 - **Machine Learning**  
   *Graduate, Spring/Fall 2024*  
   Instructors: Durai Sundaramoorthi / Gerald Onwujekwe
 
-- **Advanced Corporate Finance II - Financing**  
-  *Graduate, Fall 2024*  
-  Instructor: Yaron Leitner 
-
-- **Financial Markets**  
-  *Graduate, Fall 2024*  
-  Instructor: Yaron Leitner
+- **Capital Market and Financial Management**  
+  *Undergraduate, Spring 2024*  
+  Instructor: Koray Sayili
 
 
 
@@ -146,13 +158,13 @@ format:
 ## Coursework
 
 - **Finance and Economics**  
-  Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD, A), Microeconomic Theory (PhD, A), Advanced Corporate Finance (MBA, A+), Econometrics, Macroeconomics  
+  Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD, A), Microeconomic Theory (PhD, A), Advanced Corporate Finance (A+), Econometrics, Macroeconomics  
 
 - **Quantitative Methods**  
   Stochastic Processes, Probability and Statistics, Matrix Algebra, Calculus  
 
-- **Data and Programming Skills**  
-  Database Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R  
+<!-- - **Data and Programming Skills**  
+  Database Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R   -->
 
 
 
