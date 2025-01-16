@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yedlu.com/repo/babyrudin/c1.html</loc>
+    <lastmod>2025-01-16T14:51:05.063Z</lastmod>
+  </url>
+  <url>
     <loc>https://yedlu.com/repo/micro-g/bayesian.html</loc>
     <lastmod>2024-11-27T14:44:44.529Z</lastmod>
   </url>
@@ -86,7 +90,7 @@
   </url>
   <url>
     <loc>https://yedlu.com/cv.html</loc>
-    <lastmod>2025-01-02T22:26:25.527Z</lastmod>
+    <lastmod>2025-01-16T15:19:00.607Z</lastmod>
   </url>
   <url>
     <loc>https://yedlu.com/repo/sc/index.html</loc>
@@ -138,7 +142,7 @@
   </url>
   <url>
     <loc>https://yedlu.com/repo/index.html</loc>
-    <lastmod>2024-12-18T04:21:27.526Z</lastmod>
+    <lastmod>2025-01-14T17:56:40.904Z</lastmod>
   </url>
   <url>
     <loc>https://yedlu.com/repo/micro-u/index.html</loc>
@@ -163,5 +167,9 @@
   <url>
     <loc>https://yedlu.com/repo/micro-g/normal.html</loc>
     <lastmod>2024-12-01T22:24:54.075Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yedlu.com/repo/babyrudin/index.html</loc>
+    <lastmod>2025-01-14T17:59:39.563Z</lastmod>
   </url>
 </urlset>

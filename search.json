@@ -1,5 +1,50 @@
 [
   {
+    "objectID": "repo/babyrudin/c1.html",
+    "href": "repo/babyrudin/c1.html",
+    "title": "Real and Complex Number Systems",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2025",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis (Baby Rudin)",
+      "Real and Complex Number Systems"
+    ]
+  },
+  {
+    "objectID": "repo/babyrudin/c1.html#introduction-and-rationale",
+    "href": "repo/babyrudin/c1.html#introduction-and-rationale",
+    "title": "Real and Complex Number Systems",
+    "section": "Introduction and Rationale",
+    "text": "Introduction and Rationale\nThe introduction of real (and complex) numbers arises from the discovery that the rational number system (\\(\\BB{Q}\\)) is inadequate in many scenarios. “Irrational numbers” is then introduced to fill the gap and is often approximated by rational numbers.\nHere’s an example that shows the need of extension from the rational number system.\n\n\n\n\n\n\nExample 1\n\n\n\nWe now show that\n\\[\\begin{aligned}\n  p^2 &= 2\n\\end{aligned}\\]\nis not satisfied by any rational \\(p\\).\n\n\n\n\n\n\n\n\nExample 1 Solution\n\n\n\n\n\nAssume such \\(p\\) exists. Since \\(p \\in \\BB{Q}\\), we can denote this as \\(p = m/n\\) where \\(m, n\\) are integers that are not both even and \\(n \\neq 0\\).\nRewrite the equation:\n\\[\\begin{aligned}\n  m^2 &= 2 n^2\n\\end{aligned}\\]\nThis shows that \\(m^2\\) is even. \\(m\\) is therefore even. It follows that both sides are divisible by \\(4\\), hence \\(n^2\\) and eventually \\(n\\) is even.\nIt all leads to a contradiction! Hence the equation is not satisfied by any \\(p \\in \\BB{Q}\\). \\(\\blacksquare\\)\n\nOne lovely extension of this proof is to show the following.\nLet \\(A\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &lt; 2\\). Let \\(B\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &gt; 2\\). Show that there exists a \\(q \\in \\BB{Q}_+\\) such that:\n\n\\(p &lt; q\\) for every \\(p \\in A\\)\n\\(p &gt; q\\) for every \\(p \\in B\\)\n\nSolution. We just simply associate every \\(p &gt; 0\\) with:\n\\[\\begin{aligned}\n  q &= p - \\frac{p^2 - 2}{p + 2}\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis (Baby Rudin)",
+      "Real and Complex Number Systems"
+    ]
+  },
+  {
+    "objectID": "repo/babyrudin/c1.html#set-theoretic-definitions",
+    "href": "repo/babyrudin/c1.html#set-theoretic-definitions",
+    "title": "Real and Complex Number Systems",
+    "section": "Set-Theoretic Definitions",
+    "text": "Set-Theoretic Definitions",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis (Baby Rudin)",
+      "Real and Complex Number Systems"
+    ]
+  },
+  {
     "objectID": "repo/micro-g/bayesian.html",
     "href": "repo/micro-g/bayesian.html",
     "title": "Bayesian Games",
@@ -1130,7 +1175,7 @@
     "href": "cv.html#teaching-experience",
     "title": "Curriculum Vitae",
     "section": "Teaching Experience",
-    "text": "Teaching Experience\n\nTeaching Assistant\nOlin Business School, Washington University in St. Louis\n\nCapital Market and Financial Management\nUndergraduate, Spring 2024\nInstructor: Koray Sayili\nMachine Learning\nGraduate, Spring/Fall 2024\nInstructors: Durai Sundaramoorthi / Gerald Onwujekwe\nAdvanced Corporate Finance II - Financing\nGraduate, Fall 2024\nInstructor: Yaron Leitner\nFinancial Markets\nGraduate, Fall 2024\nInstructor: Yaron Leitner"
+    "text": "Teaching Experience\n\nTeaching Assistant\nOlin Business School, Washington University in St. Louis\n\nAdvanced Financial Management\nUndergraduate, Spring 2025\nInstructor: Margarita Tsoutsoura\nAdvanced Corporate Finance I - Valuation\nGraduate, Spring 2025\nInstructor: Yaron Leitner\nA/B Testing in Business and Social Science\nGraduate, Spring 2025\nInstructor: Xiang Hui\nAdvanced Corporate Finance II - Financing\nGraduate, Fall 2024\nInstructor: Yaron Leitner\nFinancial Markets\nGraduate, Fall 2024\nInstructor: Yaron Leitner\nMachine Learning\nGraduate, Spring/Fall 2024\nInstructors: Durai Sundaramoorthi / Gerald Onwujekwe\nCapital Market and Financial Management\nUndergraduate, Spring 2024\nInstructor: Koray Sayili"
   },
   {
     "objectID": "cv.html#skills",
@@ -1144,7 +1189,7 @@
     "href": "cv.html#coursework",
     "title": "Curriculum Vitae",
     "section": "Coursework",
-    "text": "Coursework\n\nFinance and Economics\nCorporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD, A), Microeconomic Theory (PhD, A), Advanced Corporate Finance (MBA, A+), Econometrics, Macroeconomics\nQuantitative Methods\nStochastic Processes, Probability and Statistics, Matrix Algebra, Calculus\nData and Programming Skills\nDatabase Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R"
+    "text": "Coursework\n\nFinance and Economics\nCorporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD, A), Microeconomic Theory (PhD, A), Advanced Corporate Finance (A+), Econometrics, Macroeconomics\nQuantitative Methods\nStochastic Processes, Probability and Statistics, Matrix Algebra, Calculus"
   },
   {
     "objectID": "cv.html#personal-information",
@@ -1717,7 +1762,7 @@
     "href": "repo/index.html",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nReal Analysis\n\nPrinciple of Mathematical Analysis (Baby Rudin)",
     "crumbs": [
       "me",
       "Repository"
@@ -1728,7 +1773,7 @@
     "href": "repo/index.html#class-notes",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nReal Analysis\n\nPrinciple of Mathematical Analysis (Baby Rudin)",
     "crumbs": [
       "me",
       "Repository"
@@ -2090,6 +2135,20 @@
       "Microeconomics",
       "Micro II: Game Theory",
       "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/babyrudin/index.html",
+    "href": "repo/babyrudin/index.html",
+    "title": "Principles of Mathematical Analysis (W. Rudin)",
+    "section": "",
+    "text": "Hi! This page hosts my notes on Mathematical Analysis.\n\nReal and Complex Number Systems\n\nFoundations for mathematical analysis.\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis (Baby Rudin)"
     ]
   }
 ]
