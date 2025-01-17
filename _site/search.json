@@ -1,5 +1,50 @@
 [
   {
+    "objectID": "repo/babyrudin/c1.html",
+    "href": "repo/babyrudin/c1.html",
+    "title": "Real and Complex Number Systems",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2025",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis (Baby Rudin)",
+      "Real and Complex Number Systems"
+    ]
+  },
+  {
+    "objectID": "repo/babyrudin/c1.html#introduction-and-rationale",
+    "href": "repo/babyrudin/c1.html#introduction-and-rationale",
+    "title": "Real and Complex Number Systems",
+    "section": "Introduction and Rationale",
+    "text": "Introduction and Rationale\nThe introduction of real (and complex) numbers arises from the discovery that the rational number system (\\(\\BB{Q}\\)) is inadequate in many scenarios. “Irrational numbers” is then introduced to fill the gap and is often approximated by rational numbers.\nHere’s an example that shows the need of extension from the rational number system.\n\n\n\n\n\n\nExample 1\n\n\n\nWe now show that\n\\[\\begin{aligned}\n  p^2 &= 2\n\\end{aligned}\\]\nis not satisfied by any rational \\(p\\).\n\n\n\n\n\n\n\n\nExample 1 Solution\n\n\n\n\n\nAssume such \\(p\\) exists. Since \\(p \\in \\BB{Q}\\), we can denote this as \\(p = m/n\\) where \\(m, n\\) are integers that are not both even and \\(n \\neq 0\\).\nRewrite the equation:\n\\[\\begin{aligned}\n  m^2 &= 2 n^2\n\\end{aligned}\\]\nThis shows that \\(m^2\\) is even. \\(m\\) is therefore even. It follows that both sides are divisible by \\(4\\), hence \\(n^2\\) and eventually \\(n\\) is even.\nIt all leads to a contradiction! Hence the equation is not satisfied by any \\(p \\in \\BB{Q}\\). \\(\\blacksquare\\)\n\nOne lovely extension of this proof is to show the following.\nLet \\(A\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &lt; 2\\). Let \\(B\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &gt; 2\\). Show that there exists a \\(q \\in \\BB{Q}_+\\) such that:\n\n\\(p &lt; q\\) for every \\(p \\in A\\)\n\\(p &gt; q\\) for every \\(p \\in B\\)\n\nSolution. We just simply associate every \\(p &gt; 0\\) with:\n\\[\\begin{aligned}\n  q &= p - \\frac{p^2 - 2}{p + 2}\n\\end{aligned}\\]",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis (Baby Rudin)",
+      "Real and Complex Number Systems"
+    ]
+  },
+  {
+    "objectID": "repo/babyrudin/c1.html#set-theoretic-definitions",
+    "href": "repo/babyrudin/c1.html#set-theoretic-definitions",
+    "title": "Real and Complex Number Systems",
+    "section": "Set-Theoretic Definitions",
+    "text": "Set-Theoretic Definitions",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis (Baby Rudin)",
+      "Real and Complex Number Systems"
+    ]
+  },
+  {
     "objectID": "repo/micro-g/bayesian.html",
     "href": "repo/micro-g/bayesian.html",
     "title": "Bayesian Games",
@@ -1109,7 +1154,7 @@
     "href": "cv.html#education",
     "title": "Curriculum Vitae",
     "section": "Education",
-    "text": "Education\n\nM.S. in Business Analytics (Financial Technology)\nOlin Business School, Washington University in St. Louis\n2023.08 - 2024.12\nGPA: 3.96/4.00\nHonors:\n\nBeta Gamma Sigma\n\nOlin Business School Outstanding Student Award\n\nB.S. in International Economics & Financial Risk Management\nCentral University of Finance and Economics (CUFE)\n2019.08 - 2023.06\nGPA: 3.84/4.00"
+    "text": "Education\n\nM.S. in Business Analytics (Financial Technology)\nOlin Business School, Washington University in St. Louis\n2023.08 - 2024.12\nGPA: 3.96/4.00\nHonors:\n\nBeta Gamma Sigma\n\nOlin Business School Outstanding Student Award\n\nCharles F. Knight Scholar\n\nB.S. in International Economics & Financial Risk Management\nCentral University of Finance and Economics (CUFE)\n2019.08 - 2023.06\nGPA: 3.84/4.00"
   },
   {
     "objectID": "cv.html#research-experience",
@@ -2093,21 +2138,6 @@
     ]
   },
   {
-    "objectID": "repo/babyrudin/c1.html",
-    "href": "repo/babyrudin/c1.html",
-    "title": "Real and Complex Number Systems",
-    "section": "",
-    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Winter 2025",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Math Foundations",
-      "Math Analysis (Baby Rudin)",
-      "Real and Complex Number Systems"
-    ]
-  },
-  {
     "objectID": "repo/babyrudin/index.html",
     "href": "repo/babyrudin/index.html",
     "title": "Principles of Mathematical Analysis (W. Rudin)",
@@ -2119,36 +2149,6 @@
       "Class Notes",
       "Math Foundations",
       "Math Analysis (Baby Rudin)"
-    ]
-  },
-  {
-    "objectID": "repo/babyrudin/c1.html#introduction-and-rationale",
-    "href": "repo/babyrudin/c1.html#introduction-and-rationale",
-    "title": "Real and Complex Number Systems",
-    "section": "Introduction and Rationale",
-    "text": "Introduction and Rationale\nThe introduction of real (and complex) numbers arises from the discovery that the rational number system (\\(\\BB{Q}\\)) is inadequate in many scenarios. “Irrational numbers” is then introduced to fill the gap and is often approximated by rational numbers.\nHere’s an example that shows the need of extension from the rational number system.\n\n\n\n\n\n\nExample 1\n\n\n\nWe now show that\n\\[\\begin{aligned}\n  p^2 &= 2\n\\end{aligned}\\]\nis not satisfied by any rational \\(p\\).\n\n\n\n\n\n\n\n\nExample 1 Solution\n\n\n\n\n\nAssume such \\(p\\) exists. Since \\(p \\in \\BB{Q}\\), we can denote this as \\(p = m/n\\) where \\(m, n\\) are integers that are not both even and \\(n \\neq 0\\).\nRewrite the equation:\n\\[\\begin{aligned}\n  m^2 &= 2 n^2\n\\end{aligned}\\]\nThis shows that \\(m^2\\) is even. \\(m\\) is therefore even. It follows that both sides are divisible by \\(4\\), hence \\(n^2\\) and eventually \\(n\\) is even.\nIt all leads to a contradiction! Hence the equation is not satisfied by any \\(p \\in \\BB{Q}\\). \\(\\blacksquare\\)\n\nOne lovely extension of this proof is to show the following.\nLet \\(A\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &lt; 2\\). Let \\(B\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &gt; 2\\). Show that there exists a \\(q \\in \\BB{Q}_+\\) such that:\n\n\\(p &lt; q\\) for every \\(p \\in A\\)\n\\(p &gt; q\\) for every \\(p \\in B\\)\n\nSolution. We just simply associate every \\(p &gt; 0\\) with:\n\\[\\begin{aligned}\n  q &= p - \\frac{p^2 - 2}{p + 2}\n\\end{aligned}\\]",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Math Foundations",
-      "Math Analysis (Baby Rudin)",
-      "Real and Complex Number Systems"
-    ]
-  },
-  {
-    "objectID": "repo/babyrudin/c1.html#set-theoretic-definitions",
-    "href": "repo/babyrudin/c1.html#set-theoretic-definitions",
-    "title": "Real and Complex Number Systems",
-    "section": "Set-Theoretic Definitions",
-    "text": "Set-Theoretic Definitions",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Math Foundations",
-      "Math Analysis (Baby Rudin)",
-      "Real and Complex Number Systems"
     ]
   }
 ]

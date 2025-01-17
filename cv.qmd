@@ -44,7 +44,8 @@ format:
   **GPA: 3.96/4.00**  
   Honors:  
   - Beta Gamma Sigma  
-  - Olin Business School Outstanding Student Award  
+  - Outstanding Student Award  
+  - Charles F. Knight Scholar
   
 
 
@@ -106,8 +107,7 @@ format:
 
 
 ## Teaching Experience
-#### Teaching Assistant  
-*Olin Business School, Washington University in St. Louis*  
+#### Teaching Assistant, WashU Olin    
 
 - **Advanced Financial Management**  
   *Undergraduate, Spring 2025*  
