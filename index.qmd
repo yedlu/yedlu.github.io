@@ -21,13 +21,13 @@ This website hosts my brief introduction of experiences in [`vitae`](cv.qmd) sec
 Feel free to reach out (click to copy):
 
 Email:
-<span onclick="copyToClipboard('eddie.lu@wustl.edu')" style="cursor: pointer; color: navy; text-decoration: underline;">
+<span onclick="copyToClipboard('eddie.lu@wustl.edu')" style="cursor: pointer; color: #18BC9C; text-decoration: underline;">
   eddie.lu@wustl.edu
 </span>
 
 
 LinkedIn:
-<span onclick="copyToClipboard('https://linkedin.com/in/yedlu')" style="cursor: pointer; color: navy; text-decoration: underline;">
+<span onclick="copyToClipboard('https://linkedin.com/in/yedlu')" style="cursor: pointer; color: #18BC9C; text-decoration: underline;">
   linkedin.com/in/yedlu
 </span>
 

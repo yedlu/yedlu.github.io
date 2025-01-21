@@ -59,27 +59,27 @@ format:
 ## Research Experience
 
 - **Empirical Corporate Finance**  
-  *Research Assistant for Margarita Tsoutsoura, WashU Olin*  
+  *Research Assistant* for Margarita Tsoutsoura, WashU Olin  
   2024.05 - Present  
 
 - **Distinguishing LLM-Generated Texts Using Linguistic Dimensions**  
-  *Research Assistant for Gerald Onwujekwe, WashU Olin*  
+  *Research Assistant* for Gerald Onwujekwe, WashU Olin  
   2024.01 - 2024.11  
 
 - **Effects of Development Initiatives on Foreign Direct Investment**  
-  *Senior Thesis at CUFE*  
+  *Senior Thesis* at CUFE  
   2022.11 - 2023.05  
 
 - **Mechanisms of China's National Carbon Market on Emissions**  
-  *Research Analyst at International Institute of Green Finance, CUFE*  
+  *Research Analyst* at International Institute of Green Finance, CUFE  
   2022.02 - 2022.06  
 
 - **Evaluating Corporate ESG Performance in the Diamond Industry**  
-  *Research Analyst at International Institute of Green Finance, CUFE*  
+  *Research Analyst* at International Institute of Green Finance, CUFE  
   2022.02 - 2022.06  
 
 - **Modeling Sustainable Transformation of Global Food Systems**  
-  *Contestant (Honorable Mentions) of Interdisciplinary Contest in Modeling*  
+  *Contestant* (Honorable Mentions) of Interdisciplinary Contest in Modeling  
   2021.02  
 
 
@@ -107,7 +107,8 @@ format:
 
 
 ## Teaching Experience
-#### Teaching Assistant, WashU Olin    
+#### Teaching Assistant
+Olin Business School, Washington University  
 
 - **Advanced Financial Management**  
   *Undergraduate, Spring 2025*  

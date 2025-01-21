@@ -4,6 +4,8 @@ project:
 website:
   title: "Yanhe Eddie Lu"
   navbar:
+    background: light
+    search: true
     left:
       - href: index.qmd
         text: me
@@ -123,7 +125,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
     include-after-body: footer.html
