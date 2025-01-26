@@ -472,7 +472,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#notations" id="toc-notations" class="nav-link active" data-scroll-target="#notations">Notations</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link active" data-scroll-target="#recap">Recap</a></li>
   <li><a href="#concepts-and-assumptions" id="toc-concepts-and-assumptions" class="nav-link" data-scroll-target="#concepts-and-assumptions">Concepts and Assumptions</a>
   <ul>
   <li><a href="#locally-insatiable" id="toc-locally-insatiable" class="nav-link" data-scroll-target="#locally-insatiable">Locally Insatiable</a></li>
@@ -513,31 +513,76 @@ window.Quarto = {
 
 
 <p>* in conjunction with §4 of Microeconomics Foundation I (Kreps 2013)</p>
-<p><em>yedlu, Fall 2024</em></p>
-<section id="notations" class="level2">
-<h2 class="anchored" data-anchor-id="notations">Notations</h2>
+<p><em>Y. Eddie Lu</em>, Fall 2024</p>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Notations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notations
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(X = \mathbb{R}^{n}_{+}\)</span> be consumption bundles. A vector with <span class="math inline">\(n\)</span> non-negative elements.</li>
 <li><span class="math inline">\(B(p,m) = \{x \in X: p \cdot x \leq m\}\)</span> be the budget set.</li>
 <li><span class="math inline">\(c(B(p,m))\)</span> be the demand chosen by the consumer.</li>
 </ul>
+</div>
+</div>
 <p>Key: what to infer from <strong>finite</strong> number of actual choices?</p>
 </section>
 <section id="concepts-and-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="concepts-and-assumptions">Concepts and Assumptions</h2>
 <section id="locally-insatiable" class="level3">
 <h3 class="anchored" data-anchor-id="locally-insatiable">Locally Insatiable</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Dfn: Locally Insatiable">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn: Locally Insatiable
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>For every bundle <span class="math inline">\(x \in X\)</span>, for every <span class="math inline">\(\epsilon &gt; 0\)</span>, there exists <span class="math inline">\(y \in X\)</span> with <span class="math inline">\(|x-y| &lt; \epsilon\)</span> and <span class="math inline">\(y \succ x\)</span>.</p>
 <p>Intuition: a consumer would always accept if they are provided a bundle with slightly more stuff.</p>
-<p><strong><em>Lemma</em></strong><br>
-If <span class="math inline">\(\succsim\)</span> is complete, transitive, locally insatiable; <span class="math inline">\(x^*\)</span> is chosen from the budget set <span class="math inline">\(B(p,m)\)</span>, then</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Lemma">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(\succsim\)</span> is complete, transitive, locally insatiable; <span class="math inline">\(x^*\)</span> is chosen from the budget set <span class="math inline">\(B(p,m)\)</span>, then</p>
 <ul>
 <li><span class="math inline">\(x^* \succsim x\)</span> for all <span class="math inline">\(x\)</span> with <span class="math inline">\(p \cdot x = m\)</span></li>
 <li><span class="math inline">\(x^* \succ x\)</span> for all <span class="math inline">\(x\)</span> with <span class="math inline">\(p \cdot x &lt; m\)</span>.</li>
 </ul>
+</div>
+</div>
 </section>
 <section id="garp-generalized-axioms-of-revealed-preferences" class="level3">
 <h3 class="anchored" data-anchor-id="garp-generalized-axioms-of-revealed-preferences">GARP (Generalized Axioms of Revealed Preferences)</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Dfn: GARP">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn: GARP
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Given a finite dataset:</p>
 <ul>
 <li>p = (<span class="math inline">\(p^1, ..., p^n\)</span>) as the price vector</li>
@@ -552,42 +597,91 @@ If <span class="math inline">\(\succsim\)</span> is complete, transitive, locall
 <li><span class="math inline">\(x^i \succ^R x^j\)</span> when <span class="math inline">\(x^i \succsim^d ... \succ^d x \succsim^d ... \succsim^d x^j\)</span></li>
 </ul>
 <p>The dataset satistify <strong>GARP</strong> if <span class="math inline">\(x^i \not\succ^R x^i\)</span> for every <span class="math inline">\(i\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="strictly-increasing-preference" class="level3">
 <h3 class="anchored" data-anchor-id="strictly-increasing-preference">Strictly Increasing Preference</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Dfn: Strictly Increasing Preference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn: Strictly Increasing Preference
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The preference <span class="math inline">\(\succsim \subseteq \mathbb{R}^n_+ \times \mathbb{R}^n_+\)</span> is strictly increasing if</p>
 <ul>
 <li><span class="math inline">\(x_i \geq y_i\)</span> for all <span class="math inline">\(i\)</span></li>
 <li><span class="math inline">\(x \neq y\)</span></li>
 </ul>
 <p>implies <span class="math inline">\(x \succ y\)</span>. This <span class="math inline">\(\succsim\)</span> is automatically locally insatiable.</p>
+</div>
+</div>
 </section>
 <section id="convex-preference" class="level3">
 <h3 class="anchored" data-anchor-id="convex-preference">Convex Preference</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Dfn: Convex Preference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn: Convex Preference
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The preference <span class="math inline">\(\succsim \subseteq \mathbb{R}^n_+ \times \mathbb{R}^n_+\)</span> is convex if</p>
 <ul>
 <li><span class="math inline">\(x \succsim y\)</span></li>
 <li><span class="math inline">\(\alpha \in [0,1]\)</span></li>
 </ul>
 <p>implies <span class="math inline">\(\alpha x + (1-\alpha) y \succsim y\)</span>.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="afriats-theorem" class="level2">
 <h2 class="anchored" data-anchor-id="afriats-theorem">Afriat’s Theorem</h2>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Afriat's Theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Afriat’s Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>If dataset <strong>violates</strong> GARP, then there cannot exist a complete, transitive, and locally insatiable <span class="math inline">\(\succsim\)</span> with <span class="math inline">\(x^i \in c_{\succsim}(B(p^i, m^i))\)</span>.</li>
 <li>If dataset <strong>satisfies</strong> GARP, then there exists a complete, transitive, locally insatiable, <strong>strictly increasing, continuous, convex</strong> <span class="math inline">\(\succsim\)</span> with <span class="math inline">\(x^i \in c_{\succsim}(B(p^i, m^i))\)</span>.</li>
 </ol>
-<details>
-<summary>
-Proof of 1
-</summary>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof of (1)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof of (1)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Suppose we have a complete, transitive, and locally insatiable <span class="math inline">\(\succsim\)</span> with <span class="math inline">\(x^i \in c_{\succsim}(B(p^i, m^i))\)</span> for each <span class="math inline">\(i = 1, ..., n\)</span>.</p>
 <p>If we had a GARP violation, then <span class="math inline">\(x^i \succ^R x^i\)</span>. This implies that:</p>
 <p><span class="math display">\[x^i \succsim^d ... \succsim^d x^j \succ^d x^k \succsim^d ... \succsim^d x^i\]</span></p>
 <p><span class="math display">\[\Rightarrow x^i \succsim ... \succsim x^j \succ x^k \succsim ... \succsim x^i\]</span></p>
 <p><span class="math inline">\(\Rightarrow x^i \succ x^i\)</span>, which leads to a contradiction.</p>
-</details>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="proof-of-2-afriats-approach-to-constructing-utility" class="level2">
 <h2 class="anchored" data-anchor-id="proof-of-2-afriats-approach-to-constructing-utility">Proof of 2 (Afriat’s Approach to Constructing Utility)</h2>
@@ -595,51 +689,159 @@ Proof of 1
 <ol type="1">
 <li><span class="math inline">\(p^i \cdot x^i = m^i\)</span> for all <span class="math inline">\(i\)</span>.</li>
 </ol>
-<p>Intuition: Every choice must be preference-maximizing under budget constraint. If not, then there must be a better choice under this price <span class="math inline">\(p\)</span> and budget constraint <span class="math inline">\(m\)</span>.</p>
-<details>
-<summary>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every choice must be preference-maximizing under budget constraint. If not, then there must be a better choice under this price <span class="math inline">\(p\)</span> and budget constraint <span class="math inline">\(m\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Proof
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Assume to contrary that <span class="math inline">\(p^i \cdot x^i &lt; m^i\)</span>. Then by GARP, <span class="math inline">\(x^i \succ^d x^i\)</span>, which implies that <span class="math inline">\(x^i \succ^R x^i\)</span>, which creates a contradiction by violates GARP.</p>
-</details>
+</div>
+</div>
+</div>
 <ol start="2" type="1">
 <li><span class="math inline">\(|\{x^k: x^i \succ^R x^k\}| &lt; |\{x^k: x^j \succ^R x^k\}| \Rightarrow p^i \cdot x^j &gt; m^i\)</span>.</li>
 </ol>
-<p>Intuition: A choice <span class="math inline">\(x^j\)</span> strictly more superior than the other choice <span class="math inline">\(x^i\)</span> should never be feasible under the condition where <span class="math inline">\(x^i\)</span> was chosen. If not, then the choice should be <span class="math inline">\(x^j\)</span> instead of <span class="math inline">\(x^i\)</span>.</p>
-<details>
-<summary>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A choice <span class="math inline">\(x^j\)</span> strictly more superior than the other choice <span class="math inline">\(x^i\)</span> should never be feasible under the condition where <span class="math inline">\(x^i\)</span> was chosen. If not, then the choice should be <span class="math inline">\(x^j\)</span> instead of <span class="math inline">\(x^i\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Proof
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>If <span class="math inline">\(p^i \cdot x^j \leq m^i\)</span>, then according to GARP, <span class="math inline">\(x^i \succsim^d x^j\)</span>. Then, <span class="math inline">\(\{x^k: x^j \succ^R x^k\} \subseteq \{x^k: x^i \succ^R x^k\}\)</span>, which contradicts <span class="math inline">\(\{x^k: x^i \succ^R x^k\}| &lt; |\{x^k: x^j \succ^R x^k\}|\)</span>.</p>
-</details>
+</div>
+</div>
+</div>
 <ol start="3" type="1">
 <li><span class="math inline">\(|\{x^k: x^i \succ^R x^k\}| \leq |\{x^k: x^j \succ^R x^k\}| \Rightarrow p^i \cdot x^j \geq m^i\)</span>.</li>
 </ol>
-<p>Intuition: A choice <span class="math inline">\(x^j\)</span> at least as good as the other choice <span class="math inline">\(x^i\)</span> should never be strictly inferior when under price and budget constraint of <span class="math inline">\(x^i\)</span>.</p>
-<details>
-<summary>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A choice <span class="math inline">\(x^j\)</span> at least as good as the other choice <span class="math inline">\(x^i\)</span> should never be strictly inferior when under price and budget constraint of <span class="math inline">\(x^i\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Proof
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Assume to contrary that <span class="math inline">\(p^i \cdot x^j &lt; m^i\)</span>. Then it implies that <span class="math inline">\(x^i \succ^d x^j\)</span>. Also by GARP, <span class="math inline">\(x^j \in \{x^k: x^i \succ^R x^k\}\)</span> and <span class="math inline">\(x^j \in \{x^k: x^i \succ^R x^k\}\)</span>. Thus, <span class="math inline">\(\{x^k: x^j \succ^R x^k\} \subsetneq \{x^k: x^i \succ^R x^k\}\)</span>, contradicting the assumption.</p>
-</details>
+</div>
+</div>
+</div>
 <ol start="4" type="1">
 <li><span class="math inline">\(\exists x^k: \forall i \quad x^k \not\succ^R x^i\)</span></li>
 </ol>
-<p>Intuition: there must be a lowest-ranking choice that is never strictly prefered to any other choices. If not, there will exist a loop that violates transitivity.</p>
-<details>
-<summary>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There must be a lowest-ranking choice that is never strictly prefered to any other choices. If not, there will exist a loop that violates transitivity.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Proof
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Suppoose for all <span class="math inline">\(x^k\)</span>, there exists <span class="math inline">\(x^i\)</span> such that <span class="math inline">\(x^k \succ^R x^i\)</span>. Then it must be the case that the following chain with <span class="math inline">\(2n+1\)</span> elements: <span class="math inline">\(x^1 \succ x^{j1} \succ x^{j2} \succ ... \succ x^{j2n}\)</span>. Since we are in a finite set with <span class="math inline">\(n\)</span> choice bundles, there must be somewhere, in between, that <span class="math inline">\(x^k \succ x^k\)</span> happens, which directly violates GARP.</p>
-</details>
+</div>
+</div>
+</div>
 <ol start="5" type="1">
 <li><span class="math inline">\(\exists \, v^1, ..., v^n \in \mathbb{R} \quad \exists \, \alpha^1, ..., \alpha^n &gt; 0 \quad \forall i, j \quad v^i \leq v^j + \alpha^j [p^j x^i - p^j x^j]\)</span></li>
 </ol>
-<p>Intuition: we want to use <span class="math inline">\(v^j\)</span> as the baseline of utility. <span class="math inline">\(\alpha^j\)</span> controls the speed of moving the baseline.</p>
-<details>
-<summary>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We want to use <span class="math inline">\(v^j\)</span> as the baseline of utility. <span class="math inline">\(\alpha^j\)</span> controls the speed of moving the baseline.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Proof
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>By induction. When <span class="math inline">\(n=1\)</span>, let <span class="math inline">\(v^1 = 0\)</span> and <span class="math inline">\(\alpha^1 = 1\)</span>. Suppose this is true when we have <span class="math inline">\(n\)</span> choices. Now, denote <span class="math inline">\(x^{n+1}\)</span> as <span class="math inline">\(x^{n+1} \not\succ^R x^i\)</span> for every <span class="math inline">\(i\)</span>. We can imply from the assumption that this statement is true for observation <span class="math inline">\(1, ..., n\)</span> that:</p>
 <p><span class="math display">\[\exists \, v^1, ..., v^n \in \mathbb{R} \quad \exists \, \alpha^1, ..., \alpha^n &gt; 0 \quad \forall i, j \quad v^i \leq v^j + \alpha^j [p^j x^i - p^j x^j].\]</span></p>
 <p>Define: <span class="math inline">\(v^{n+1} = \min_{1 \leq j \leq n} v^j + \alpha^j [p^j x^{n+1} - p^j x^j]\)</span>. Since <span class="math inline">\(|\{x^k: x^{n+1} \succ^R x^k\}| = 0\)</span>, we can say that <span class="math inline">\(p^{n+1} x^j \geq m^{n+1} = p^{n+1} x^{n+1}\)</span> for every <span class="math inline">\(1 \leq j \leq n\)</span>.</p>
@@ -650,11 +852,25 @@ Proof
 <li>If <span class="math inline">\(p^{n+1} x^j = m^{n+1} = p^{n+1} x^{n+1}\)</span>, <span class="math inline">\(p^{n+1} x^j - p^{n+1} x^{n+1} = 0\)</span>.</li>
 </ul>
 <p>Then, as long as <span class="math inline">\(\alpha^{n+1} \in \mathbb{R}_{++}\)</span>, <span class="math inline">\(v^j \leq v^{n+1} + \alpha^{n+1} [p^{n+1} x^j - p^{n+1} x^{n+1}] = v^{n+1}\)</span> holds.</p>
-</details>
+</div>
+</div>
+</div>
 <ol start="6" type="1">
 <li>Let <span class="math inline">\(u(x) := \min_{1 \leq j \leq n} v^i + \alpha^i [p^i x - p^i x^i]\)</span>.</li>
 </ol>
-<p>Intuition: this function yields a concave form.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This function yields a concave form.</p>
+</div>
+</div>
 </section>
 <section id="application-giffin-goods" class="level2">
 <h2 class="anchored" data-anchor-id="application-giffin-goods">Application: Giffin Goods</h2>
@@ -671,7 +887,7 @@ Proof
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
   © 2024 Yanhe Eddie Lu | Last updated:
   <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
-  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #007acc; font-weight: bold;">Made
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
     with Quarto</a>
 </footer>
 <script id="quarto-html-after-body" type="application/javascript">
