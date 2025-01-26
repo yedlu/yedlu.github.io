@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -513,7 +513,7 @@ window.Quarto = {
 </header>
 
 
-<p><em>yedlu, Fall 2024</em></p>
+<p><em>Y. Eddie Lu</em>, Fall 2024</p>
 <section id="intro-to-lotteries-an-extra-layer-of-uncertainty" class="level2">
 <h2 class="anchored" data-anchor-id="intro-to-lotteries-an-extra-layer-of-uncertainty">Intro to Lotteries: an Extra Layer of Uncertainty</h2>
 <ul>
@@ -525,17 +525,53 @@ window.Quarto = {
 </ul>
 <section id="mixing-lotteries" class="level3">
 <h3 class="anchored" data-anchor-id="mixing-lotteries">Mixing Lotteries</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Given two lotteries <span class="math inline">\(p, q \in \Delta(X)\)</span> and a weight <span class="math inline">\(\alpha \in [0,1]\)</span>, define the lottery</p>
 <p><span class="math display">\[\alpha p + (1-\alpha) q := (\alpha p_1 + (1-\alpha) q_1, ..., \alpha p_n + (1-\alpha) q_n)\]</span></p>
+</div>
+</div>
 </section>
 <section id="special-lotteries-with-certain-outcomes" class="level3">
 <h3 class="anchored" data-anchor-id="special-lotteries-with-certain-outcomes">Special Lotteries with Certain Outcomes</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Define certainty lotteries as <span class="math inline">\(\delta_i = (p_1, ..., p_n)\)</span> with <span class="math inline">\(p_i = 1\)</span>. Specifically, <span class="math inline">\(\delta_1 = (1,...,0)\)</span> and <span class="math inline">\(\delta_n = (0, ..., 1)\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="expected-utility-functions" class="level3">
 <h3 class="anchored" data-anchor-id="expected-utility-functions">Expected Utility Functions</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Given a utility function over consequences <span class="math inline">\(u: X \to \mathbb{R}\)</span>, we may evaluate lotteries <span class="math inline">\(p = (p_1, ..., p_n)\)</span> by its expected utility:</p>
 <p><span class="math display">\[U(p) := p_1 u(x_1) + ... + p_n u(x_n)\]</span></p>
+</div>
+</div>
 <ul>
 <li>The <span class="math inline">\(U: \Delta(X) \to \mathbb{R}\)</span> is said to have the <strong>expected utility form</strong>.</li>
 <li>The <span class="math inline">\(u: X \to \mathbb{R}\)</span> is called a Bernoulli payoff function.</li>
@@ -543,35 +579,102 @@ window.Quarto = {
 </section>
 <section id="linear-and-expected-utility" class="level3">
 <h3 class="anchored" data-anchor-id="linear-and-expected-utility">Linear and Expected Utility</h3>
-<p><strong>Lemma.</strong> The following two statements are logically equivalent.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Lemma">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following two statements are logically equivalent.</p>
 <ol type="1">
 <li><span class="math inline">\(U\)</span> is linear if for every <span class="math inline">\(p, q \in \Delta(X)\)</span> and every <span class="math inline">\(\alpha \in [0,1]\)</span>: <span class="math display">\[U[\alpha p + (1-\alpha)q] = \alpha U(p) + (1-\alpha) U(q)\]</span></li>
 <li><span class="math inline">\(U\)</span> is in expected utility form if there exists <span class="math inline">\(u: X \to \mathbb{R}\)</span> such that: <span class="math display">\[U(p) = \sum_{x \in X} u(x) p(x)\]</span> for every <span class="math inline">\(p \in \Delta(X)\)</span></li>
 </ol>
-<details>
-<summary>
-Proof (Click to Expand)
-</summary>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Parts of proof: <span class="math inline">\(2 \Rightarrow 1\)</span>. <span class="math display">\[\begin{aligned}
       U[\alpha p + (1-\alpha) q] &amp;= U(\alpha p_1 + (1-\alpha) q_1, ..., \alpha p_n + (1-\alpha) q_n) \\
       &amp;= \Sigma_{i=1}^n u(x_1) [\alpha p_1 + (1-\alpha) q_1] \\
       &amp;= \alpha \Sigma_{i=1}^n u(x_1) p_1 + (1-\alpha) \Sigma_{i=1}^n u(x_1) q_1 \\
       &amp;= \alpha U(p) + (1-\alpha) U(q)
 \end{aligned}\]</span></p>
-<span class="math inline">\(\blacksquare\)</span>
-</details>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="the-von-neumann-morgenstern-vnm-axioms" class="level3">
 <h3 class="anchored" data-anchor-id="the-von-neumann-morgenstern-vnm-axioms">The von Neumann-Morgenstern (vNM) Axioms</h3>
-<p>Let <span class="math inline">\(\succsim\)</span> be a binary relation on the set of lotteries <span class="math inline">\(\Delta(X)\)</span>. - Axiom 1 (rational): <span class="math inline">\(\succsim\)</span> is complete and transitive. - Axiom 2 (continuous): for every <span class="math inline">\(p, q, r \in \Delta(X)\)</span> with <span class="math inline">\(p \succ q \succ r\)</span>, there exists <span class="math inline">\(\alpha, \beta \in (0,1)\)</span> such that: <span class="math inline">\(\alpha p + (1-\alpha) r \succ q \succ \beta p + (1 - \beta) r\)</span>. - Axiom 3 (independence): for every <span class="math inline">\(p, q, r \in \Delta(X)\)</span> and every <span class="math inline">\(\alpha \in (0,1)\)</span>, we have <span class="math inline">\(p \succ q\)</span> if and only if:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\succsim\)</span> be a binary relation on the set of lotteries <span class="math inline">\(\Delta(X)\)</span>.</p>
+<ul>
+<li>Axiom 1 (rational): <span class="math inline">\(\succsim\)</span> is complete and transitive.</li>
+<li>Axiom 2 (continuous): for every <span class="math inline">\(p, q, r \in \Delta(X)\)</span> with <span class="math inline">\(p \succ q \succ r\)</span>, there exists <span class="math inline">\(\alpha, \beta \in (0,1)\)</span> such that: <span class="math inline">\(\alpha p + (1-\alpha) r \succ q \succ \beta p + (1 - \beta) r\)</span>.</li>
+<li>Axiom 3 (independence): for every <span class="math inline">\(p, q, r \in \Delta(X)\)</span> and every <span class="math inline">\(\alpha \in (0,1)\)</span>, we have <span class="math inline">\(p \succ q\)</span> if and only if:</li>
+</ul>
 <p><span class="math display">\[\alpha p + (1-\alpha) r \succ \alpha q + (1-\alpha) r\]</span></p>
+</div>
+</div>
 <section id="the-vnm-representation-theorem" class="level4">
 <h4 class="anchored" data-anchor-id="the-vnm-representation-theorem">The vNM Representation Theorem</h4>
-<p>The following statements are logically equivalent: 1. <span class="math inline">\(\succsim\)</span> satisfies Axioms 1, 2, and 3; 2. There exists a linear function <span class="math inline">\(U: \Delta(X) \to \mathbb{R}\)</span> that represents <span class="math inline">\(\succsim\)</span>.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following statements are logically equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(\succsim\)</span> satisfies Axioms 1, 2, and 3;</li>
+<li>There exists a linear function <span class="math inline">\(U: \Delta(X) \to \mathbb{R}\)</span> that represents <span class="math inline">\(\succsim\)</span>.</li>
+</ol>
+</div>
+</div>
 </section>
 <section id="the-uniqueness-proposition" class="level4">
 <h4 class="anchored" data-anchor-id="the-uniqueness-proposition">The Uniqueness Proposition</h4>
+<div class="callout callout-style-default callout-important callout-titled" title="Proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Suppose <span class="math inline">\(U, V: \Delta(X) \to \mathbb{R}\)</span> are linear functions. Suppose <span class="math inline">\(U\)</span> represents <span class="math inline">\(\succsim\)</span>. Then <span class="math inline">\(V\)</span> also represents <span class="math inline">\(\succsim\)</span> iif there exists <span class="math inline">\(\alpha &gt; 0\)</span> and <span class="math inline">\(\beta \in \mathbb{R}\)</span> such that <span class="math inline">\(V = \alpha U + \beta\)</span>.</p>
+</div>
+</div>
 
 
 </section>
@@ -675,7 +778,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

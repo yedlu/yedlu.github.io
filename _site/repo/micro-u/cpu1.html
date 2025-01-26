@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -474,21 +474,11 @@ window.Quarto = {
   <ul>
   <li><a href="#key-concepts-overview" id="toc-key-concepts-overview" class="nav-link active" data-scroll-target="#key-concepts-overview">Key Concepts Overview</a>
   <ul>
-  <li><a href="#choices" id="toc-choices" class="nav-link" data-scroll-target="#choices">1. Choices</a></li>
-  <li><a href="#preferences" id="toc-preferences" class="nav-link" data-scroll-target="#preferences">2. Preferences</a>
-  <ul class="collapse">
-  <li><a href="#properties-of-r" id="toc-properties-of-r" class="nav-link" data-scroll-target="#properties-of-r">Properties of <span class="math inline">\(R\)</span>:</a></li>
-  </ul></li>
-  <li><a href="#choices-from-preferences" id="toc-choices-from-preferences" class="nav-link" data-scroll-target="#choices-from-preferences">3. Choices from Preferences</a></li>
-  <li><a href="#proofs" id="toc-proofs" class="nav-link" data-scroll-target="#proofs">Proofs</a>
-  <ul class="collapse">
-  <li><a href="#proposition-1-if-r-is-rational-then-c_r-is-a-choice-function." id="toc-proposition-1-if-r-is-rational-then-c_r-is-a-choice-function." class="nav-link" data-scroll-target="#proposition-1-if-r-is-rational-then-c_r-is-a-choice-function."><strong>Proposition 1</strong>: If <span class="math inline">\(R\)</span> is rational, then <span class="math inline">\(c_R\)</span> is a choice function.</a></li>
-  <li><a href="#proposition-2-if-c-satisfies-warp-then-r_c-is-a-rational-preference-relation." id="toc-proposition-2-if-c-satisfies-warp-then-r_c-is-a-rational-preference-relation." class="nav-link" data-scroll-target="#proposition-2-if-c-satisfies-warp-then-r_c-is-a-rational-preference-relation."><strong>Proposition 2</strong>: If <span class="math inline">\(c\)</span> satisfies WARP, then <span class="math inline">\(R_c\)</span> is a rational preference relation.</a></li>
-  </ul></li>
-  <li><a href="#preferences-revealed-by-choices" id="toc-preferences-revealed-by-choices" class="nav-link" data-scroll-target="#preferences-revealed-by-choices">4. Preferences Revealed by Choices</a>
-  <ul class="collapse">
-  <li><a href="#weak-axiom-of-revealed-preferences-warp" id="toc-weak-axiom-of-revealed-preferences-warp" class="nav-link" data-scroll-target="#weak-axiom-of-revealed-preferences-warp">Weak Axiom of Revealed Preferences (WARP):</a></li>
-  </ul></li>
+  <li><a href="#choices" id="toc-choices" class="nav-link" data-scroll-target="#choices">Choices</a></li>
+  <li><a href="#preferences" id="toc-preferences" class="nav-link" data-scroll-target="#preferences">Preferences</a></li>
+  <li><a href="#choices-from-preferences" id="toc-choices-from-preferences" class="nav-link" data-scroll-target="#choices-from-preferences">Choices from Preferences</a></li>
+  <li><a href="#proofs" id="toc-proofs" class="nav-link" data-scroll-target="#proofs">Proofs</a></li>
+  <li><a href="#preferences-revealed-by-choices" id="toc-preferences-revealed-by-choices" class="nav-link" data-scroll-target="#preferences-revealed-by-choices">Preferences Revealed by Choices</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -520,52 +510,51 @@ window.Quarto = {
 
 
 <p>* in conjunction with §1 of <em>Microeconomics Foundation I</em> (Kreps, 2013)</p>
-<p><em>yedlu, Fall 2024</em></p>
-<hr>
+<p><em>Y. Eddie Lu</em>, Fall 2024</p>
 <section id="key-concepts-overview" class="level2">
 <h2 class="anchored" data-anchor-id="key-concepts-overview">Key Concepts Overview</h2>
 <section id="choices" class="level3">
-<h3 class="anchored" data-anchor-id="choices">1. Choices</h3>
+<h3 class="anchored" data-anchor-id="choices">Choices</h3>
 <p>Choices are observable actions taken when confronted with alternatives. Economists model choices using the following notations:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 27%">
-<col style="width: 57%">
+<col style="width: 22%">
+<col style="width: 55%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Notation</strong></th>
+<th style="text-align: right;"><strong>Notation</strong></th>
 <th><strong>Definition</strong></th>
-<th><strong>Example</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(X\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(X\)</span></td>
 <td>Finite set of alternatives</td>
-<td>Colleges someone can apply: <span class="math inline">\(X = \{a,b,c\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(X = \{a,b,c\}\)</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(P(X)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(X)\)</span></td>
 <td>All <strong>non-empty</strong> subsets of <span class="math inline">\(X\)</span></td>
-<td><span class="math display">\[ P(X) = \{\{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\} \]</span></td>
+<td style="text-align: left;"><span class="math inline">\(P(X) = \{\{a\}, \{b\}, \{c\},\)</span> <span class="math inline">\(\{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}\)</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(B \subseteq P(X)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(B \subseteq P(X)\)</span></td>
 <td>Set of feasible choice menus</td>
-<td><span class="math inline">\(B = \{\{a\}, \{a,b\}, \{a,b,c\}\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(B = \{\{a\}, \{a,b\}, \{a,b,c\}\}\)</span></td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(c: B \to P(X)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(c: B \to P(X)\)</span></td>
 <td>Choice function: <span class="math inline">\(c(A) \subset A\)</span></td>
-<td><span class="math inline">\(c(\{a,b,c\}) = \{a,b\}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(c(\{a,b,c\}) = \{a,b\}\)</span></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="preferences" class="level3">
-<h3 class="anchored" data-anchor-id="preferences">2. Preferences</h3>
+<h3 class="anchored" data-anchor-id="preferences">Preferences</h3>
 <p>Preferences reflect internal evaluations of choices, modeled abstractly:</p>
 <table class="caption-top table">
 <colgroup>
@@ -598,17 +587,26 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<section id="properties-of-r" class="level4">
-<h4 class="anchored" data-anchor-id="properties-of-r">Properties of <span class="math inline">\(R\)</span>:</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Properties of $R$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Properties of <span class="math inline">\(R\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><strong>Complete</strong>: For all <span class="math inline">\(x, y \in X\)</span>, <span class="math inline">\(x \succsim y\)</span> or <span class="math inline">\(y \succsim x\)</span>.</li>
 <li><strong>Transitive</strong>: <span class="math inline">\(x \succsim y\)</span> and <span class="math inline">\(y \succsim z \implies x \succsim z\)</span>.</li>
 <li><strong>Rational</strong>: <span class="math inline">\(R\)</span> is complete and transitive.</li>
 </ul>
-</section>
+</div>
+</div>
 </section>
 <section id="choices-from-preferences" class="level3">
-<h3 class="anchored" data-anchor-id="choices-from-preferences">3. Choices from Preferences</h3>
+<h3 class="anchored" data-anchor-id="choices-from-preferences">Choices from Preferences</h3>
 <p>A rational binary relation <span class="math inline">\(R\)</span> generates a choice function <span class="math inline">\(c_R\)</span>:</p>
 <p><span class="math display">\[
 c_R(A) := \{x \in A \mid (\forall y \in A) \, (x,y) \in R\}
@@ -616,13 +614,32 @@ c_R(A) := \{x \in A \mid (\forall y \in A) \, (x,y) \in R\}
 </section>
 <section id="proofs" class="level3">
 <h3 class="anchored" data-anchor-id="proofs">Proofs</h3>
-<section id="proposition-1-if-r-is-rational-then-c_r-is-a-choice-function." class="level4">
-<h4 class="anchored" data-anchor-id="proposition-1-if-r-is-rational-then-c_r-is-a-choice-function."><strong>Proposition 1</strong>: If <span class="math inline">\(R\)</span> is rational, then <span class="math inline">\(c_R\)</span> is a choice function.</h4>
-<details>
-<summary>
-Proof (Click to Expand)
-</summary>
-<p>By induction. Need to show that <span class="math inline">\(c_R (A) \neq \emptyset\)</span> for all <span class="math inline">\(A \subseteq X\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Proposition 1">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(R\)</span> is rational, then <span class="math inline">\(c_R\)</span> is a choice function.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Proof of Proposition 1">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof of Proposition 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By mathematical induction. Need to show that <span class="math inline">\(c_R (A) \neq \emptyset\)</span> for all <span class="math inline">\(A \subseteq X\)</span>.</p>
 <ol type="1">
 <li><p><strong>Base Case</strong> (<span class="math inline">\(|A| = 1\)</span>):<br>
 Let <span class="math inline">\(A = \{x\}\)</span>. A complete <span class="math inline">\(R\)</span> implies that <span class="math inline">\((x,x) \in R\)</span>, which in turn implies that <span class="math inline">\(c_R (A) = \{x\} \neq \emptyset\)</span>.</p></li>
@@ -637,16 +654,35 @@ Assume true for <span class="math inline">\(|A| = n\)</span>. Pick any <span cla
 </ul></li>
 </ul></li>
 </ol>
-Thus, <span class="math inline">\(c_R (A) \neq \emptyset\)</span> for all <span class="math inline">\(A \subseteq X\)</span>.<br>
-<span class="math inline">\(\blacksquare\)</span>
-</details>
-</section>
-<section id="proposition-2-if-c-satisfies-warp-then-r_c-is-a-rational-preference-relation." class="level4">
-<h4 class="anchored" data-anchor-id="proposition-2-if-c-satisfies-warp-then-r_c-is-a-rational-preference-relation."><strong>Proposition 2</strong>: If <span class="math inline">\(c\)</span> satisfies WARP, then <span class="math inline">\(R_c\)</span> is a rational preference relation.</h4>
-<details>
-<summary>
-Proof (Click to Expand)
-</summary>
+<p>Thus, <span class="math inline">\(c_R (A) \neq \emptyset\)</span> for all <span class="math inline">\(A \subseteq X\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Proposition 2">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(c\)</span> satisfies WARP, then <span class="math inline">\(R_c\)</span> is a rational preference relation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Proof of Proposition 2">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof of Proposition 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li><strong>Completeness</strong>:<br>
 Take any <span class="math inline">\(x, y \in X\)</span>.
@@ -662,25 +698,34 @@ Suppose <span class="math inline">\((x,y) \in R_c\)</span> and <span class="math
 <li>This implies <span class="math inline">\(x \in c(\{x,y\})\)</span> and <span class="math inline">\(y \in c(\{y,z\})\)</span>.<br>
 </li>
 <li>Assume <span class="math inline">\((x,z) \notin R_c\)</span>. Then <span class="math inline">\(z \in c(\{x,z\})\)</span> contradicts WARP.<br>
-Hence, <span class="math inline">\((x,z) \in R_c\)</span>, and <span class="math inline">\(R_c\)</span> is transitive.<br>
-<span class="math inline">\(\blacksquare\)</span></li>
+Hence, <span class="math inline">\((x,z) \in R_c\)</span>, and <span class="math inline">\(R_c\)</span> is transitive. <span class="math inline">\(\blacksquare\)</span></li>
 </ul></li>
 </ol>
-</details>
-</section>
+</div>
+</div>
+</div>
 </section>
 <section id="preferences-revealed-by-choices" class="level3">
-<h3 class="anchored" data-anchor-id="preferences-revealed-by-choices">4. Preferences Revealed by Choices</h3>
+<h3 class="anchored" data-anchor-id="preferences-revealed-by-choices">Preferences Revealed by Choices</h3>
 <p>Revealed preference relation <span class="math inline">\(R_c\)</span>:</p>
 <p><span class="math display">\[
 R_c := \{(x,y) \in X \times X \mid x \in c(\{x,y\})\}
 \]</span></p>
-<section id="weak-axiom-of-revealed-preferences-warp" class="level4">
-<h4 class="anchored" data-anchor-id="weak-axiom-of-revealed-preferences-warp">Weak Axiom of Revealed Preferences (WARP):</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Weak Axiom of Revealed Preferences (WARP)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Weak Axiom of Revealed Preferences (WARP)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If <span class="math inline">\(x, y \in A \cap B\)</span>, <span class="math inline">\(x \in c(A)\)</span>, and <span class="math inline">\(y \in c(B)\)</span>, then <span class="math inline">\(x \in c(B)\)</span>.</p>
+</div>
+</div>
 
 
-</section>
 </section>
 </section>
 
@@ -781,7 +826,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

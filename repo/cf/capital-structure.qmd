@@ -6,6 +6,9 @@ format:
     toc: true # Enables the side navbar
     toc-location: left # Positions the navbar on the left
     toc-depth: 4 # Includes up to second-level headings in the TOC
+reference-location: margin
+citation-location: margin
+bibliography: capital-structure.bib
 ---
 ::: {.hidden}
 $$
@@ -51,15 +54,18 @@ Suppose that:
 - **Perfect Market**.
 - **Arbitrage-Free** .
 
+::: {.callout-note title="Proposition 1"}
 Under such assumptions, the **total market value of the firm**, equal to the sum of market values of current debt and equity (see *Happy Meal Theorem* at [Asset Pricing Theory](/repo/ap/cc.qmd#happy-meal-theorem)), is **not affected** by how it is financed.  
 
 Firm value is then ***independent*** of its capital structure.  
+:::
 
 ### M&M Proposition 2
-
+::: {.callout-note title="Proposition 2"}
 $$\begin{aligned}
   r_E &= r_U + (r_U - r_D) \frac{D}{E}
 \end{aligned}$$
+:::
 
 where:  
 
@@ -70,9 +76,8 @@ where:
 | $r_U$ | (Unlevered) cost of capital/equity |
 | $r_D$ | (Levered) cost of debt
 
-<details>
-<summary>Click to explore proof:</summary>
 
+::: {.callout-caution collapse="true" title="Proof"}
 
 First we take a look at the unlevered firm. By definition, the market value of the unlevered firm is the value of the discounted cash flow sum:  
 
@@ -111,13 +116,18 @@ $$\begin{aligned}
 $\blacksquare$
 
 
-</details>
+:::
 
-**Intuition:** leverage makes equity return riskier.  
-
+::: {.callout-tip title="Intuition"}
+Leverage makes equity return riskier.  
+:::
 
 ### M&M Proposition 3  
-The investment (assets) and financing (liabilities and equities) decisions are separate and unrelated. It is only reasonable for firm to take investments with positive NPV discounted with the firm's aggregated cost of capital $r_U$.  
+::: {.callout-note title="Proposition 3"}
+The investment (assets) and financing (liabilities and equities) decisions are separate and unrelated.  
+:::
+
+It is only reasonable for firm to take investments with positive NPV discounted with the firm's aggregated cost of capital $r_U$.  
 
 We will revisit this proposition when the M&M assumptions are relaxed in further notes. For now, however, this proposition gives a seemingly shocking result of the **dividend irrelevance theorem**:  
 
@@ -131,9 +141,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-<details>
-<summary>Click to explore proof:</summary>
-
+::: {.callout-caution collapse="true" title="Discussion and Proof"}
 Let's work on the intuition first:  
 
 - Suppose a firm decides to pay a lump-sum special dividend to its shareholders. By *Bird in the Hand* theory, this increases the firm's market value.  
@@ -203,4 +211,83 @@ which shows that firm value is irrelevant of payout policies.
 
 $\blacksquare$
 
-</details>
+:::
+
+## Relaxing M&M
+
+M&M is not only elegant at constructing the theoretical framework of capital structure irrelevance, it is also **the** backbone where corporate finance research rely on.  
+
+
+
+Though the assumptions assumed are considered to be unrealistic, the M&M Proposition can be a perfect framework point of studying market frictions. Here are some examples.
+
+
+| Assumptions Relaxed | Research Agenda |
+| - | --- |
+| Taxes | Tax Benefits |
+| Imperfect Markets | Cost of Financial Distress (Bankruptcy Cost) |
+| Fixing Investment Opportunity | Agency Costs/Asymmetric Information/... |
+| Arbitrage-Free | Limited Arbitrage Models |
+
+## Optimal Debt Level - Tradeoff Theory
+
+Under classic M&M framework, leverage ratio ($D/V$) should have no effect on a company's market value. This implies that firms under these sets of assumption should be **indifferent** to assume any given debt level.  
+
+Nonetheless, we will now relax two assumptions under the M&M framework and introduce the static tradeoff theory.  
+
+### Tax Benefits
+It is not hard to notice that **debt** and **equity** are taxed differently for a company. Cash flows to    
+
+- debts are tax-exempt at company level (and thus reduce tax basis);
+- equity are taxed under corporate rate at company level.  
+
+Modigliani and Miller introduced corporate taxes in their subsequent works -@mm_1963. Under the new settings, the capital structure is no longer **irrelevant** to a firm's value. We will show that corporate taxes bring benefits to the firm.  
+
+::: {.callout-tip title="Example"}
+Let:  
+
+- $\tau_c$ be the non-zero corporate tax rate;
+- $\tilde{x}$ be the perpetual static cash flow (annual);
+- $r$ be the debt interest rate.
+- debt level is non-zero and deterministic (hence discountable at $r$);
+- $rD \tau_c \leq \E[\tilde{x}](\tau_c)$, i.e. tax benefits should not exceed unlevered firm payable taxes.
+
+We would like to show that the levered firm has a *higher* firm value than the unlevered firm, all else being equal.
+:::
+
+::: {.callout-caution collapse="true" title="Proof"}
+The **unlevered** firm value would then be:  
+$$\begin{aligned}
+  V_U &= \sum_{t} \frac{\E[\tilde{x}](1-\tau_c)}{[1 + r_u]^t} \\
+  &= \frac{\E[\tilde{x}](1-\tau_c)}{r_u}
+\end{aligned}$$
+
+As for the **levered** firm, we would first dissect cash flows. For equity and debt holders,  
+$$\begin{aligned}
+  \tilde{x}_E &= \E[\tilde{x} - rD](1-\tau_c) \\
+  \tilde{x}_D &= rD \\
+\end{aligned}$$
+
+Total cash flow to firm is then:  
+$$\begin{aligned}
+  \tilde{x} &= \E[\tilde{x}](1-\tau_c) + rD \tau_c
+\end{aligned}$$
+
+Firm's current market value then would be:  
+$$\begin{aligned}
+  V_L &= V_U + \BB{PV}(rD \tau_c) \\
+  &= V_U + \sum_t \frac{rD \tau_c}{r} \\
+  &= V_U + D \tau_c \\
+  &> V_U
+\end{aligned}$$
+
+$\blacksquare$
+:::
+
+We call $D \tau_c$ the **interest tax shield**. Under such setting, 100\% would be the optimal debt level. We, however, never observe this in real life: there are also costs of debt that we must account for and strike a balance.    
+
+### Cost of Financial Distress
+Having way too much debt is intuitively and theoretically dangerous for a firm -- the risk of bankruptcy and relative costs (direct/indirect) are scaled-up.  
+
+**Direct** costs of financial distress are the costs directly related to the event of bankruptcy, such as attorney fees, filing fees. **Indirect** costs, however, arise from different sources and are often hard to quantify.  
+

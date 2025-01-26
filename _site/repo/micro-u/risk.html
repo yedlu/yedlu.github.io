@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -516,9 +516,19 @@ window.Quarto = {
 </header>
 
 
-<p><em>yedlu, Fall 2024</em></p>
+<p><em>Y. Eddie Lu</em>, Fall 2024</p>
 <section id="notations" class="level2">
 <h2 class="anchored" data-anchor-id="notations">Notations</h2>
+<div class="callout callout-style-default callout-caution callout-titled" title="Notations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notations
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(I = [\underline{m}, \overline{m}]\)</span> be the interval of monetary prizes in <span class="math inline">\(\mathbb{R}\)</span>. Consider this as a continuous set of consequences.</li>
 <li><span class="math inline">\(p: I \to [0,1]\)</span> be the simple lottery with finite support.
@@ -532,23 +542,62 @@ window.Quarto = {
 <li>vNM preferences on <span class="math inline">\(\mathcal{L}\)</span> are represented by an expected utility formed function:</li>
 </ul>
 <p><span class="math display">\[U(p) = \sum_{m \in I} u(m) p(m)\]</span></p>
+</div>
+</div>
 </section>
 <section id="evaluating-lotteries" class="level2">
 <h2 class="anchored" data-anchor-id="evaluating-lotteries">Evaluating Lotteries</h2>
 <section id="first-order-stochastic-dominance-fosd" class="level3">
 <h3 class="anchored" data-anchor-id="first-order-stochastic-dominance-fosd">First-Order Stochastic Dominance (FOSD)</h3>
-<p>Settings: <span class="math inline">\(F_p\)</span> is the cumulative probability distribution function (cdf) of lottery <span class="math inline">\(p\)</span>.<br>
-<span class="math inline">\(F_p(m) = \sum_{\alpha \leq m} p(\alpha)\)</span> is the probability that one can receive a monetary prize less than equal to <span class="math inline">\(m\)</span>.</p>
-<p><strong>Definition</strong><br>
-Lottery <span class="math inline">\(p\)</span> <strong>first-order stochastically dominates</strong> lottery <span class="math inline">\(q\)</span> if</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Under:</p>
+<ul>
+<li><span class="math inline">\(F_p\)</span> is the cumulative probability distribution function (cdf) of lottery <span class="math inline">\(p\)</span>;<br>
+</li>
+<li><span class="math inline">\(F_p(m) = \sum_{\alpha \leq m} p(\alpha)\)</span> is the probability that one can receive a monetary prize less than equal to <span class="math inline">\(m\)</span>,</li>
+</ul>
+<p>lottery <span class="math inline">\(p\)</span> <strong>first-order stochastically dominates</strong> lottery <span class="math inline">\(q\)</span> if:</p>
 <ul>
 <li><span class="math inline">\(p \neq q\)</span>;</li>
 <li><span class="math inline">\(F_p(m) \leq F_q(m)\)</span> for all <span class="math inline">\(m \in \mathbb{R}\)</span>.</li>
 </ul>
-<p>Intuition: lottery <span class="math inline">\(p\)</span> have a lower chance receiving prizes lower than <span class="math inline">\(m\)</span> compare to lottery <span class="math inline">\(q\)</span>. This implies that lottery <span class="math inline">\(p\)</span> have a higher chance receiving prizes higher than <span class="math inline">\(m\)</span> compare to lottery <span class="math inline">\(q\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lottery <span class="math inline">\(p\)</span> have a lower chance receiving prizes lower than <span class="math inline">\(m\)</span> compare to lottery <span class="math inline">\(q\)</span>. This implies that lottery <span class="math inline">\(p\)</span> have a higher chance receiving prizes higher than <span class="math inline">\(m\)</span> compare to lottery <span class="math inline">\(q\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="simple-improvements" class="level3">
 <h3 class="anchored" data-anchor-id="simple-improvements">Simple Improvements</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Lottery <span class="math inline">\(p\)</span> is a simple improvement over lottery <span class="math inline">\(q\)</span> if</p>
 <ul>
 <li>there exists <span class="math inline">\(\alpha \in (0,1]\)</span>;</li>
@@ -560,16 +609,40 @@ Lottery <span class="math inline">\(p\)</span> <strong>first-order stochasticall
       p &amp;= \alpha \delta_m + (1-\alpha) r \\
       q &amp;= \alpha \delta_{m'} + (1-\alpha) r \\
 \end{aligned}\]</span></p>
-<p>Intuition: we can consider both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> as a mixture of a certain outcome monetary prize (<span class="math inline">\(m\)</span> and <span class="math inline">\(m'\)</span>), and a generic lottery <span class="math inline">\(r\)</span>.<br>
-This is a <strong>special case</strong> of first-order stochastic dominance.</p>
 <p>Utility representation:</p>
 <p><span class="math display">\[\begin{aligned}
       U(p) = \alpha u(m) + (1-\alpha) u(r)p(r) &gt; \alpha u(m') + (1-\alpha) u(r)p(r) = U(q)
 \end{aligned}\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can consider both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> as a mixture of a certain outcome monetary prize (<span class="math inline">\(m\)</span> and <span class="math inline">\(m'\)</span>), and a generic lottery <span class="math inline">\(r\)</span>.<br>
+This is a <strong>special case</strong> of first-order stochastic dominance.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="monotine-vnm-preferences" class="level2">
 <h2 class="anchored" data-anchor-id="monotine-vnm-preferences">Monotine vNM Preferences</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\succsim \subseteq \mathcal{L} \times \mathcal{L}\)</span> be a vNM prefernce. The following conditions are equivalent:</p>
 <ol type="1">
 <li>If <span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q\)</span>, then <span class="math inline">\(p \succ q\)</span>.</li>
@@ -577,45 +650,131 @@ This is a <strong>special case</strong> of first-order stochastic dominance.</p>
 <li>Every linear <span class="math inline">\(U: \mathcal{L} \to \mathbb{R}\)</span> representing <span class="math inline">\(\succsim\)</span> has a strictly increasing Bernoulli index u.</li>
 </ol>
 <p>When <span class="math inline">\(\succsim\)</span> satisfies three conditions above, we call it a monotone vNM preference.</p>
+</div>
+</div>
 </section>
 <section id="certainty-equivalent" class="level2">
 <h2 class="anchored" data-anchor-id="certainty-equivalent">Certainty Equivalent</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\succsim \subseteq \mathcal{L} \times \mathcal{L}\)</span> be a vNM prefernce represented by an expected utility function with a continuous index <span class="math inline">\(u: I \to \mathbb{R}\)</span>. Then <span class="math inline">\(C: \mathcal{L} \to \mathbb{R}\)</span> given by <span class="math inline">\(\delta_{C(p)} \sim p\)</span> is a well-defined function. <span class="math inline">\(C(p)\)</span> is the certainty equivalent of lottery <span class="math inline">\(p\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="risk-aversion" class="level2">
 <h2 class="anchored" data-anchor-id="risk-aversion">Risk Aversion</h2>
 <section id="risk-averse-preferences" class="level3">
 <h3 class="anchored" data-anchor-id="risk-averse-preferences">Risk Averse Preferences</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\overline{p} = \sum_{x \in I} p(x) x\)</span> be the expected payoff of lottery. The preference <span class="math inline">\(\succsim\)</span> is risk averse when <span class="math inline">\(\delta_{\overline{p}} \succsim p\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="simple-mean-preserving-spread" class="level3">
 <h3 class="anchored" data-anchor-id="simple-mean-preserving-spread">Simple Mean Preserving Spread</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math inline">\(q\)</span> is a simple mean preserving spread of <span class="math inline">\(p\)</span> when for some <span class="math inline">\(\alpha \in (0,1]\)</span>, some <span class="math inline">\(r, r' \in \mathcal{L}\)</span> and <span class="math inline">\(\overline{r'} = m\)</span>.</p>
 <p><span class="math display">\[\begin{aligned}
       p &amp; = \alpha \delta_{m} + (1-\alpha) r \\
       q &amp; = \alpha r' + (1-\alpha) r
 \end{aligned}\]</span></p>
-<p>Intuition: <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> yields the same expected payoff, but <span class="math inline">\(q\)</span> has higher variance than of <span class="math inline">\(p\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> yields the same expected payoff, but <span class="math inline">\(q\)</span> has higher variance than of <span class="math inline">\(p\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="risk-aversion-theorems" class="level3">
 <h3 class="anchored" data-anchor-id="risk-aversion-theorems">Risk Aversion Theorems</h3>
+<div class="callout callout-style-default callout-important callout-titled" title="Proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\succsim\)</span> be a monotone vNM preference. The following are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(\succsim\)</span> is risk averse;</li>
 <li>If <span class="math inline">\(q\)</span> is a mean preserving spread over <span class="math inline">\(p\)</span> then <span class="math inline">\(p \succ q\)</span>;</li>
 <li>Every linear <span class="math inline">\(U: \mathcal{L} \to \mathbb{R}\)</span> representing <span class="math inline">\(\succsim\)</span> has a <strong>concave</strong> Bernoulli function.</li>
 </ol>
+</div>
+</div>
 <p>If <span class="math inline">\(u\)</span> is a concave bernoulli function, we would have:</p>
 <p><span class="math display">\[1/2 u(a) + 1/2 u (b) \leq u(a/2 + b/2)\]</span></p>
 </section>
 <section id="levels-of-risk-aversion" class="level3">
 <h3 class="anchored" data-anchor-id="levels-of-risk-aversion">Levels of Risk Aversion</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math inline">\(\succsim\)</span> is <strong>more risk averse</strong> than <span class="math inline">\(\succsim'\)</span> when <span class="math inline">\(\delta_m \succsim' p\)</span> implies <span class="math inline">\(\delta_m \succsim p\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Suppose <span class="math inline">\(u, v\)</span> are continuous Bernoulli indices for monotone vNM preferences <span class="math inline">\(\succsim\)</span> and <span class="math inline">\(\succsim'\)</span>. Then the following conditions are equivalent:</p>
 <ol type="1">
 <li><span class="math inline">\(\succsim\)</span> is more risk averse than <span class="math inline">\(\succsim'\)</span></li>
 <li>there exists a concave, strictly increasing function <span class="math inline">\(f: u(\mathbb{R}) \to \mathbb{R}\)</span> such that <span class="math inline">\(v(m) = f \circ u(m) = f(u(m))\)</span>.</li>
 </ol>
+</div>
+</div>
 
 
 </section>
@@ -718,7 +877,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -38,7 +58,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,7 +129,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -479,6 +499,12 @@ window.Quarto = {
   <li><a href="#mm-proposition-2" id="toc-mm-proposition-2" class="nav-link" data-scroll-target="#mm-proposition-2">M&amp;M Proposition 2</a></li>
   <li><a href="#mm-proposition-3" id="toc-mm-proposition-3" class="nav-link" data-scroll-target="#mm-proposition-3">M&amp;M Proposition 3</a></li>
   </ul></li>
+  <li><a href="#relaxing-mm" id="toc-relaxing-mm" class="nav-link" data-scroll-target="#relaxing-mm">Relaxing M&amp;M</a></li>
+  <li><a href="#optimal-debt-level---tradeoff-theory" id="toc-optimal-debt-level---tradeoff-theory" class="nav-link" data-scroll-target="#optimal-debt-level---tradeoff-theory">Optimal Debt Level - Tradeoff Theory</a>
+  <ul>
+  <li><a href="#tax-benefits" id="toc-tax-benefits" class="nav-link" data-scroll-target="#tax-benefits">Tax Benefits</a></li>
+  <li><a href="#cost-of-financial-distress" id="toc-cost-of-financial-distress" class="nav-link" data-scroll-target="#cost-of-financial-distress">Cost of Financial Distress</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -487,7 +513,7 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#corporate-finance">Corporate Finance</a></li><li class="breadcrumb-item"><a href="../../repo/cf/index.html">Corporate Finance Theory</a></li><li class="breadcrumb-item"><a href="../../repo/cf/capital-structure.html">Capital Structure</a></li></ol></nav>
 <div class="quarto-title">
@@ -551,14 +577,38 @@ window.Quarto = {
 <li><strong>Perfect Market</strong>.</li>
 <li><strong>Arbitrage-Free</strong> .</li>
 </ul>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Proposition 1">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Under such assumptions, the <strong>total market value of the firm</strong>, equal to the sum of market values of current debt and equity (see <em>Happy Meal Theorem</em> at <a href="../../repo/ap/cc.html#happy-meal-theorem">Asset Pricing Theory</a>), is <strong>not affected</strong> by how it is financed.</p>
 <p>Firm value is then <strong><em>independent</em></strong> of its capital structure.</p>
+</div>
+</div>
 </section>
 <section id="mm-proposition-2" class="level3">
 <h3 class="anchored" data-anchor-id="mm-proposition-2">M&amp;M Proposition 2</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Proposition 2">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math display">\[\begin{aligned}
   r_E &amp;= r_U + (r_U - r_D) \frac{D}{E}
 \end{aligned}\]</span></p>
+</div>
+</div>
 <p>where:</p>
 <table class="caption-top table">
 <thead>
@@ -586,10 +636,18 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<details>
-<summary>
-Click to explore proof:
-</summary>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>First we take a look at the unlevered firm. By definition, the market value of the unlevered firm is the value of the discounted cash flow sum:</p>
 <p><span class="math display">\[\begin{aligned}
   V_U &amp;= \sum_{t = 1}^{\infty} \frac{\E[x]}{(1 + r_U)^{t}} \\
@@ -617,22 +675,57 @@ Click to explore proof:
   &amp;= r_U + (r_U - r) \frac{D}{E}
 \end{aligned}\]</span></p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
-</details>
-<p><strong>Intuition:</strong> leverage makes equity return riskier.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Leverage makes equity return riskier.</p>
+</div>
+</div>
 </section>
 <section id="mm-proposition-3" class="level3">
 <h3 class="anchored" data-anchor-id="mm-proposition-3">M&amp;M Proposition 3</h3>
-<p>The investment (assets) and financing (liabilities and equities) decisions are separate and unrelated. It is only reasonable for firm to take investments with positive NPV discounted with the firm’s aggregated cost of capital <span class="math inline">\(r_U\)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Proposition 3">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The investment (assets) and financing (liabilities and equities) decisions are separate and unrelated.</p>
+</div>
+</div>
+<p>It is only reasonable for firm to take investments with positive NPV discounted with the firm’s aggregated cost of capital <span class="math inline">\(r_U\)</span>.</p>
 <p>We will revisit this proposition when the M&amp;M assumptions are relaxed in further notes. For now, however, this proposition gives a seemingly shocking result of the <strong>dividend irrelevance theorem</strong>:</p>
 <p><em>Firm’s total market value is independent of its dividend policy.</em></p>
 <p>But how to use M&amp;M to show that payout policies are irrelevant of firm value? We will show by proving the following valuation model (known as <em>Bird in the Hand</em> theory) is wrong:</p>
 <p><span class="math display">\[\begin{aligned}
   V_0 &amp;= \sum_{t = 1}^{\infty} \frac{\E[d_t]}{(1+r_t)^t}
 \end{aligned}\]</span></p>
-<details>
-<summary>
-Click to explore proof:
-</summary>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Discussion and Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Discussion and Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Let’s work on the intuition first:</p>
 <ul>
 <li>Suppose a firm decides to pay a lump-sum special dividend to its shareholders. By <em>Bird in the Hand</em> theory, this increases the firm’s market value.<br>
@@ -688,7 +781,125 @@ Click to explore proof:
 \end{aligned}\]</span></p>
 <p>which shows that firm value is irrelevant of payout policies.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
-</details>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="relaxing-mm" class="level2">
+<h2 class="anchored" data-anchor-id="relaxing-mm">Relaxing M&amp;M</h2>
+<p>M&amp;M is not only elegant at constructing the theoretical framework of capital structure irrelevance, it is also <strong>the</strong> backbone where corporate finance research rely on.</p>
+<p>Though the assumptions assumed are considered to be unrealistic, the M&amp;M Proposition can be a perfect framework point of studying market frictions. Here are some examples.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumptions Relaxed</th>
+<th>Research Agenda</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Taxes</td>
+<td>Tax Benefits</td>
+</tr>
+<tr class="even">
+<td>Imperfect Markets</td>
+<td>Cost of Financial Distress (Bankruptcy Cost)</td>
+</tr>
+<tr class="odd">
+<td>Fixing Investment Opportunity</td>
+<td>Agency Costs/Asymmetric Information/…</td>
+</tr>
+<tr class="even">
+<td>Arbitrage-Free</td>
+<td>Limited Arbitrage Models</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="optimal-debt-level---tradeoff-theory" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="optimal-debt-level---tradeoff-theory">Optimal Debt Level - Tradeoff Theory</h2>
+<p>Under classic M&amp;M framework, leverage ratio (<span class="math inline">\(D/V\)</span>) should have no effect on a company’s market value. This implies that firms under these sets of assumption should be <strong>indifferent</strong> to assume any given debt level.</p>
+<p>Nonetheless, we will now relax two assumptions under the M&amp;M framework and introduce the static tradeoff theory.</p>
+<section id="tax-benefits" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="tax-benefits">Tax Benefits</h3>
+<p>It is not hard to notice that <strong>debt</strong> and <strong>equity</strong> are taxed differently for a company. Cash flows to</p>
+<ul>
+<li>debts are tax-exempt at company level (and thus reduce tax basis);</li>
+<li>equity are taxed under corporate rate at company level.</li>
+</ul>
+<p>Modigliani and Miller introduced corporate taxes in their subsequent works <span class="citation" data-cites="mm_1963">(<a href="#ref-mm_1963" role="doc-biblioref">1963</a>)</span>. Under the new settings, the capital structure is no longer <strong>irrelevant</strong> to a firm’s value. We will show that corporate taxes bring benefits to the firm.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-mm_1963" class="csl-entry" role="listitem">
+Modigliani, Franco, and Merton H. Miller. 1963. <span>“Corporate <span>Income</span> <span>Taxes</span> and the <span>Cost</span> of <span>Capital</span>: <span>A</span> <span>Correction</span>.”</span> <em>The American Economic Review</em> 53 (3): 433–43. <a href="https://www.jstor.org/stable/1809167">https://www.jstor.org/stable/1809167</a>.
+</div></div><div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(\tau_c\)</span> be the non-zero corporate tax rate;</li>
+<li><span class="math inline">\(\tilde{x}\)</span> be the perpetual static cash flow (annual);</li>
+<li><span class="math inline">\(r\)</span> be the debt interest rate.</li>
+<li>debt level is non-zero and deterministic (hence discountable at <span class="math inline">\(r\)</span>);</li>
+<li><span class="math inline">\(rD \tau_c \leq \E[\tilde{x}](\tau_c)\)</span>, i.e.&nbsp;tax benefits should not exceed unlevered firm payable taxes.</li>
+</ul>
+<p>We would like to show that the levered firm has a <em>higher</em> firm value than the unlevered firm, all else being equal.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The <strong>unlevered</strong> firm value would then be:<br>
+<span class="math display">\[\begin{aligned}
+  V_U &amp;= \sum_{t} \frac{\E[\tilde{x}](1-\tau_c)}{[1 + r_u]^t} \\
+  &amp;= \frac{\E[\tilde{x}](1-\tau_c)}{r_u}
+\end{aligned}\]</span></p>
+<p>As for the <strong>levered</strong> firm, we would first dissect cash flows. For equity and debt holders,<br>
+<span class="math display">\[\begin{aligned}
+  \tilde{x}_E &amp;= \E[\tilde{x} - rD](1-\tau_c) \\
+  \tilde{x}_D &amp;= rD \\
+\end{aligned}\]</span></p>
+<p>Total cash flow to firm is then:<br>
+<span class="math display">\[\begin{aligned}
+  \tilde{x} &amp;= \E[\tilde{x}](1-\tau_c) + rD \tau_c
+\end{aligned}\]</span></p>
+<p>Firm’s current market value then would be:<br>
+<span class="math display">\[\begin{aligned}
+  V_L &amp;= V_U + \BB{PV}(rD \tau_c) \\
+  &amp;= V_U + \sum_t \frac{rD \tau_c}{r} \\
+  &amp;= V_U + D \tau_c \\
+  &amp;&gt; V_U
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</div>
+</div>
+<p>We call <span class="math inline">\(D \tau_c\)</span> the <strong>interest tax shield</strong>. Under such setting, 100% would be the optimal debt level. We, however, never observe this in real life: there are also costs of debt that we must account for and strike a balance.</p>
+</section>
+<section id="cost-of-financial-distress" class="level3">
+<h3 class="anchored" data-anchor-id="cost-of-financial-distress">Cost of Financial Distress</h3>
+<p>Having way too much debt is intuitively and theoretically dangerous for a firm – the risk of bankruptcy and relative costs (direct/indirect) are scaled-up.</p>
+<p><strong>Direct</strong> costs of financial distress are the costs directly related to the event of bankruptcy, such as attorney fees, filing fees. <strong>Indirect</strong> costs, however, arise from different sources and are often hard to quantify.</p>
+
 
 
 </section>
@@ -698,7 +909,7 @@ Click to explore proof:
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
   © 2024 Yanhe Eddie Lu | Last updated:
   <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
-  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #007acc; font-weight: bold;">Made
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
     with Quarto</a>
 </footer>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -791,7 +1002,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

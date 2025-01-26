@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -472,7 +472,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#stochastic-random-choice" id="toc-stochastic-random-choice" class="nav-link active" data-scroll-target="#stochastic-random-choice">Stochastic (Random) Choice</a></li>
+  <li><a href="#settings" id="toc-settings" class="nav-link active" data-scroll-target="#settings">Settings</a></li>
   <li><a href="#random-utility-and-random-preference" id="toc-random-utility-and-random-preference" class="nav-link" data-scroll-target="#random-utility-and-random-preference">Random Utility and Random Preference</a>
   <ul>
   <li><a href="#random-preference-model" id="toc-random-preference-model" class="nav-link" data-scroll-target="#random-preference-model">Random Preference Model</a></li>
@@ -516,26 +516,42 @@ window.Quarto = {
 
 
 <p>* in conjunction with §5 of Microeconomics Foundation I (Kreps 2013)</p>
-<p><em>yedlu, Fall 2024</em></p>
-<section id="stochastic-random-choice" class="level2">
-<h2 class="anchored" data-anchor-id="stochastic-random-choice">Stochastic (Random) Choice</h2>
-<ol type="1">
-<li>Binary Random Choice Rule</li>
-</ol>
+<p><em>Y. Eddie Lu</em>, Fall 2024</p>
+<section id="settings" class="level2">
+<h2 class="anchored" data-anchor-id="settings">Settings</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn: Binary Random Choice Rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn: Binary Random Choice Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(X \neq \emptyset\)</span> be the universe of alternatives.</li>
 <li><span class="math inline">\(\rho: X \times X \to [0,1]\)</span> be the binary random choice rule if <span class="math inline">\(\rho(x,y) + \rho(y,x) = 1\)</span> for all <span class="math inline">\(x,y \in X\)</span>.</li>
 </ul>
-<ol start="2" type="1">
-<li>Random Choice Rule</li>
-</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Dfn: Random Choice Rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dfn: Random Choice Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(P(X)\)</span> be the nonempty finite subset of <span class="math inline">\(X\)</span>.</li>
-<li><span class="math inline">\(\rho: X \times P(X) \to [0,1]\)</span> be the random choice rule if <span class="math inline">\(\sum_{x \in A} \, \rho(x, A) = 1\)</span> for all <span class="math inline">\(A \in \mathcal{A}\)</span>.
-<ul>
-<li>Notation <span class="math inline">\(\rho(x, A = \{x,y\})\)</span> is equivalent to <span class="math inline">\(\rho(x,y)\)</span>.</li>
-</ul></li>
+<li><span class="math inline">\(\rho: X \times P(X) \to [0,1]\)</span> be the random choice rule if <span class="math inline">\(\sum_{x \in A} \, \rho(x, A) = 1\)</span> for all <span class="math inline">\(A \in \mathcal{A}\)</span>.</li>
 </ul>
+<p>Notation <span class="math inline">\(\rho(x, A = \{x,y\})\)</span> is equivalent to <span class="math inline">\(\rho(x,y)\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="random-utility-and-random-preference" class="level2">
 <h2 class="anchored" data-anchor-id="random-utility-and-random-preference">Random Utility and Random Preference</h2>
@@ -576,7 +592,19 @@ F(t) &amp; = \mathbb{P}\{\omega \in \Omega: U(\omega) \leq t\} \\
 <p><span class="math inline">\(\rho\)</span> is a random preference model if and only if (iif) <span class="math inline">\(\rho\)</span> is a random utility model. The <em>Block &amp; Marschak Inequalities</em> states necessarily that:</p>
 <p>If <span class="math inline">\(\rho\)</span> is a RUM, then:</p>
 <p><span class="math display">\[q(x,A) = \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \geq 0\]</span></p>
-<p>E.g. 1: Given <span class="math inline">\(X = \{x,y,z\}\)</span> and <span class="math inline">\(A = \{x,y\}\)</span>, <span class="math display">\[\begin{aligned}
+<div class="callout callout-style-default callout-tip callout-titled" title="Example 1">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Given <span class="math inline">\(X = \{x,y,z\}\)</span> and <span class="math inline">\(A = \{x,y\}\)</span>, <span class="math display">\[\begin{aligned}
     q(x,A) &amp; = \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \\
     &amp; = (-1)^{|X \setminus A|} \rho(x,X) + (-1)^{|A \setminus A|} \rho(x,A) \\
     &amp; = (-1)^{|\{z\}|} \rho(x,X) + (-1)^{|\emptyset|} \rho(x,A) \\
@@ -584,8 +612,35 @@ F(t) &amp; = \mathbb{P}\{\omega \in \Omega: U(\omega) \leq t\} \\
     \\
     &amp; \Rightarrow  \rho(x,A) \geq \rho(x,X)
 \end{aligned}\]</span></p>
-<p>Intuition: the possibility of choosing an option cannot become greater when new choices emerge. This implies that every <span class="math inline">\(\mu \in [0,1]\)</span> and <span class="math inline">\(\sum \mu = 1\)</span>.</p>
-<p>E.g. 2: Given <span class="math inline">\(X = \{x,y,z,w\}\)</span> and <span class="math inline">\(A = \{x,y\}\)</span>. <span class="math display">\[\begin{aligned}
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The possibility of choosing an option cannot become greater when new choices emerge. This implies that every <span class="math inline">\(\mu \in [0,1]\)</span> and <span class="math inline">\(\sum \mu = 1\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example 2">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Given <span class="math inline">\(X = \{x,y,z,w\}\)</span> and <span class="math inline">\(A = \{x,y\}\)</span>. <span class="math display">\[\begin{aligned}
       q(x, A) &amp;= \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \\
       &amp;= (-1)^{|A \setminus A|} \rho(x,A) + (-1)^{|\{x,y,z\} \setminus A|} \rho(x,\{x,y,z\}) \\
       &amp; \quad + (-1)^{|\{x,y,w\} \setminus A|} \rho(x,\{x,y,w\}) + (-1)^{|\{x,y,z,w\} \setminus A|} \rho(x,\{x,y,z,w\}) \\
@@ -593,13 +648,28 @@ F(t) &amp; = \mathbb{P}\{\omega \in \Omega: U(\omega) \leq t\} \\
       \\
       &amp;\Rightarrow \rho(x,A) - \rho(x, \{x,y,w\}) \geq \rho(x,\{x,y,z\}) - \rho(x,X)
 \end{aligned}\]</span></p>
-<p>Intuition: if we use <span class="math inline">\(\mu\)</span> in random preference model to denote the results above:</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If we use <span class="math inline">\(\mu\)</span> in random preference model to denote the results above:</p>
 <p><span class="math display">\[\begin{aligned}
       \rho(x,A) - \rho(x, \{x,y,w\}) &amp;\geq \rho(x,\{x,y,z\}) - \rho(x,X) \\
       \mu\{z \succ w \succ x \succ y\} + \mu\{w \succ z \succ x \succ y\} &amp; \\
       +\mu\{w \succ x \succ z \succ y\} + \mu\{w \succ x \succ y \succ z\} &amp;\geq \mu\{w \succ x \succ y \succ z\}
 \end{aligned}\]</span></p>
 <p>This would hold if <span class="math inline">\(\mu \in [0,1]\)</span>.</p>
+</div>
+</div>
 </section>
 <section id="falmagnes-theorem-1978" class="level2">
 <h2 class="anchored" data-anchor-id="falmagnes-theorem-1978">Falmagne’s Theorem (1978)</h2>
@@ -761,7 +831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

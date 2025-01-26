@@ -9,29 +9,37 @@ format:
 
 \* in conjunction with §4 of Microeconomics Foundation I (Kreps 2013)
 
-*yedlu, Fall 2024*
+*Y. Eddie Lu*, Fall 2024
 
-## Notations
+## Recap
 
+:::{.callout-caution title="Notations"}
 - $X = \mathbb{R}^{n}_{+}$ be consumption bundles. A vector with $n$ non-negative elements.
 - $B(p,m) = \{x \in X: p \cdot x \leq m\}$ be the budget set.
 - $c(B(p,m))$ be the demand chosen by the consumer.
+:::
 
 Key: what to infer from **finite** number of actual choices?
 
 ## Concepts and Assumptions
 ### Locally Insatiable
+::: {.callout-note title="Dfn: Locally Insatiable"}
 For every bundle $x \in X$, for every $\epsilon > 0$, there exists $y \in X$ with $|x-y| < \epsilon$ and $y \succ x$.  
 
-Intuition: a consumer would always accept if they are provided a bundle with slightly more stuff.  
+Intuition: a consumer would always accept if they are provided a bundle with slightly more stuff. 
+::: 
 
-***Lemma***  
+::: {.callout-tip title="Lemma"}
+
 If $\succsim$ is complete, transitive, locally insatiable; $x^*$ is chosen from the budget set $B(p,m)$, then  
 
 - $x^* \succsim x$ for all $x$ with $p \cdot x = m$
 - $x^* \succ x$ for all $x$ with $p \cdot x < m$.
 
+:::
+
 ### GARP (Generalized Axioms of Revealed Preferences)
+::: {.callout-note title="Dfn: GARP"}
 Given a finite dataset:  
 
 - p = ($p^1, ..., p^n$) as the price vector
@@ -46,31 +54,35 @@ with $p^i \cdot x^i \leq m^i$ for each $i$, we say that:
 - $x^i \succ^R x^j$ when $x^i \succsim^d ... \succ^d x \succsim^d ... \succsim^d x^j$  
 
 The dataset satistify **GARP** if $x^i \not\succ^R x^i$ for every $i$.
+:::
 
 ### Strictly Increasing Preference
+::: {.callout-note title="Dfn: Strictly Increasing Preference"}
 The preference $\succsim \subseteq \mathbb{R}^n_+ \times \mathbb{R}^n_+$ is strictly increasing if  
 
 - $x_i \geq y_i$ for all $i$
 - $x \neq y$
 
 implies $x \succ y$. This $\succsim$ is automatically locally insatiable.
+:::
 
 ### Convex Preference
+::: {.callout-note title="Dfn: Convex Preference"}
 The preference $\succsim \subseteq \mathbb{R}^n_+ \times \mathbb{R}^n_+$ is convex if  
 
 - $x \succsim y$
 - $\alpha \in [0,1]$
 
 implies $\alpha x + (1-\alpha) y \succsim y$.
-
+:::
 
 ## Afriat's Theorem
-
+::: {.callout-important title="Afriat's Theorem"}
 1. If dataset **violates** GARP, then there cannot exist a complete, transitive, and locally insatiable  $\succsim$ with $x^i \in c_{\succsim}(B(p^i, m^i))$.
 2. If dataset **satisfies** GARP, then there exists a complete, transitive, locally insatiable, **strictly increasing, continuous, convex** $\succsim$ with $x^i \in c_{\succsim}(B(p^i, m^i))$.
+:::
 
-<details>
-<summary>Proof of 1</summary>
+::: {.callout-caution collapse="true" title="Proof of (1)"}
 
 Suppose we have a complete, transitive, and locally insatiable $\succsim$ with $x^i \in c_{\succsim}(B(p^i, m^i))$ for each $i = 1, ..., n$.
 
@@ -80,9 +92,10 @@ $$x^i \succsim^d ... \succsim^d x^j \succ^d x^k \succsim^d ... \succsim^d x^i$$
 
 $$\Rightarrow x^i \succsim ... \succsim x^j \succ x^k \succsim ... \succsim x^i$$
 
-$\Rightarrow x^i \succ x^i$, which leads to a contradiction.
+$\Rightarrow x^i \succ x^i$, which leads to a contradiction.  
 
-</details>
+$\blacksquare$
+:::
 
 
 ## Proof of 2 (Afriat's Approach to Constructing Utility)
@@ -90,54 +103,59 @@ Suppose data $(p, m, x)$ satisfies $p^i \cdot x^i \leq m^i$ and GARP.
 
 1. $p^i \cdot x^i = m^i$ for all $i$. 
 
-Intuition: Every choice must be preference-maximizing under budget constraint. If not, then there must be a better choice under this price $p$ and budget constraint $m$.
+::: {.callout-tip title="Intuition"}
+Every choice must be preference-maximizing under budget constraint. If not, then there must be a better choice under this price $p$ and budget constraint $m$.
+:::
 
-<details>
-<summary>Proof</summary> 
+::: {.callout-caution collapse="true" title="Proof"}
 
 Assume to contrary that $p^i \cdot x^i < m^i$. Then by GARP, $x^i \succ^d x^i$, which implies that $x^i \succ^R x^i$, which creates a contradiction by violates GARP.  
 
-</details>
+:::
 
 2. $|\{x^k: x^i \succ^R x^k\}| < |\{x^k: x^j \succ^R x^k\}| \Rightarrow p^i \cdot x^j > m^i$. 
 
-Intuition: A choice $x^j$ strictly more superior than the other choice $x^i$ should never be feasible under the condition where $x^i$ was chosen. If not, then the choice should be $x^j$ instead of $x^i$.
+::: {.callout-tip title="Intuition"}
+A choice $x^j$ strictly more superior than the other choice $x^i$ should never be feasible under the condition where $x^i$ was chosen. If not, then the choice should be $x^j$ instead of $x^i$.
+:::
 
-<details>
-<summary>Proof</summary> 
+::: {.callout-caution collapse="true" title="Proof"}
 
 If $p^i \cdot x^j \leq m^i$, then according to GARP, $x^i \succsim^d x^j$. Then, $\{x^k: x^j \succ^R x^k\} \subseteq \{x^k: x^i \succ^R x^k\}$, which contradicts $\{x^k: x^i \succ^R x^k\}| < |\{x^k: x^j \succ^R x^k\}|$.
 
-</details>
+:::
 
 3. $|\{x^k: x^i \succ^R x^k\}| \leq |\{x^k: x^j \succ^R x^k\}| \Rightarrow p^i \cdot x^j \geq m^i$. 
 
-Intuition: A choice $x^j$ at least as good as the other choice $x^i$ should never be strictly inferior when under price and budget constraint of $x^i$.
+::: {.callout-tip title="Intuition"}
+A choice $x^j$ at least as good as the other choice $x^i$ should never be strictly inferior when under price and budget constraint of $x^i$.
+:::
 
-<details>
-<summary>Proof</summary> 
+::: {.callout-caution collapse="true" title="Proof"}
 
 Assume to contrary that $p^i \cdot x^j < m^i$. Then it implies that $x^i \succ^d x^j$. Also by GARP, $x^j \in \{x^k: x^i \succ^R x^k\}$ and $x^j \in \{x^k: x^i \succ^R x^k\}$. Thus, $\{x^k: x^j \succ^R x^k\} \subsetneq \{x^k: x^i \succ^R x^k\}$, contradicting the assumption. 
 
-</details>
+:::
 
 4. $\exists x^k: \forall i \quad x^k \not\succ^R x^i$
 
-Intuition: there must be a lowest-ranking choice that is never strictly prefered to any other choices. If not, there will exist a loop that violates transitivity.
+::: {.callout-tip title="Intuition"}
+There must be a lowest-ranking choice that is never strictly prefered to any other choices. If not, there will exist a loop that violates transitivity.
+:::
 
-<details>
-<summary>Proof</summary> 
+::: {.callout-caution collapse="true" title="Proof"}
 
 Suppoose for all $x^k$, there exists $x^i$ such that $x^k \succ^R x^i$. Then it must be the case that the following chain with $2n+1$ elements: $x^1 \succ x^{j1} \succ x^{j2} \succ ... \succ x^{j2n}$. Since we are in a finite set with $n$ choice bundles, there must be somewhere, in between, that $x^k \succ x^k$ happens, which directly violates GARP.
 
-</details>
+:::
 
 5. $\exists \, v^1, ..., v^n \in \mathbb{R} \quad \exists \, \alpha^1, ..., \alpha^n > 0 \quad \forall i, j \quad v^i \leq v^j + \alpha^j [p^j x^i - p^j x^j]$
 
-Intuition: we want to use $v^j$ as the baseline of utility. $\alpha^j$ controls the speed of moving the baseline.
+::: {.callout-tip title="Intuition"}
+We want to use $v^j$ as the baseline of utility. $\alpha^j$ controls the speed of moving the baseline.
+:::
 
-<details>
-<summary>Proof</summary> 
+::: {.callout-caution collapse="true" title="Proof"}
 
 By induction. When $n=1$, let $v^1 = 0$ and $\alpha^1 = 1$. Suppose this is true when we have $n$ choices. Now, denote $x^{n+1}$ as $x^{n+1} \not\succ^R x^i$ for every $i$. We can imply from the assumption that this statement is true for observation $1, ..., n$ that: 
 
@@ -152,11 +170,13 @@ We assert that for $1 \leq j \leq n$, either $p^{n+1} x^j > m^{n+1} = p^{n+1} x^
 
 Then, as long as $\alpha^{n+1} \in \mathbb{R}_{++}$, $v^j \leq v^{n+1} + \alpha^{n+1} [p^{n+1} x^j - p^{n+1} x^{n+1}] = v^{n+1}$ holds.
 
-</details>
+:::
 
 6. Let $u(x) := \min_{1 \leq j \leq n} v^i + \alpha^i [p^i x - p^i x^i]$.  
 
-Intuition: this function yields a concave form.
+::: {.callout-tip title="Intuition"}
+This function yields a concave form.
+:::
 
 ## Application: Giffin Goods
 - Normal goods: $p_i \uparrow \quad \Rightarrow x^i \downarrow$

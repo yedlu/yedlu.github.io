@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1322888c997fad56b0b4d776d35cf542.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -472,14 +472,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#recap-finite-chocices" id="toc-recap-finite-chocices" class="nav-link active" data-scroll-target="#recap-finite-chocices">Recap: Finite Chocices</a>
+  <li><a href="#recap-finite-chocices" id="toc-recap-finite-chocices" class="nav-link active" data-scroll-target="#recap-finite-chocices">Recap: Finite Chocices</a></li>
+  <li><a href="#what-if-choices-become-infinite" id="toc-what-if-choices-become-infinite" class="nav-link" data-scroll-target="#what-if-choices-become-infinite">What if Choices Become Infinite?</a>
   <ul>
-  <li><a href="#what-if-choices-become-infinite" id="toc-what-if-choices-become-infinite" class="nav-link" data-scroll-target="#what-if-choices-become-infinite">What if Choices Become Infinite</a>
-  <ul class="collapse">
-  <li><a href="#different-levels-of-finite" id="toc-different-levels-of-finite" class="nav-link" data-scroll-target="#different-levels-of-finite">Different Levels of Finite</a></li>
+  <li><a href="#different-levels-of-finiteness" id="toc-different-levels-of-finiteness" class="nav-link" data-scroll-target="#different-levels-of-finiteness">Different Levels of Finiteness</a></li>
   <li><a href="#countable-infinite" id="toc-countable-infinite" class="nav-link" data-scroll-target="#countable-infinite">Countable Infinite</a></li>
   <li><a href="#incountable-infinite" id="toc-incountable-infinite" class="nav-link" data-scroll-target="#incountable-infinite">Incountable Infinite</a></li>
-  </ul></li>
   </ul></li>
   <li><a href="#continuous-preference-relation" id="toc-continuous-preference-relation" class="nav-link" data-scroll-target="#continuous-preference-relation">Continuous Preference Relation</a>
   <ul>
@@ -514,41 +512,86 @@ window.Quarto = {
 </header>
 
 
-<p><em>yedlu, Fall 2024</em></p>
+<p><em>Y. Eddie Lu</em>, Fall 2024</p>
 <section id="recap-finite-chocices" class="level2">
 <h2 class="anchored" data-anchor-id="recap-finite-chocices">Recap: Finite Chocices</h2>
+<p>In finite choice sets, we have the following notation:</p>
 <ul>
 <li><span class="math inline">\(X = \mathbb{R}^n_+\)</span> be finite choices</li>
 <li><span class="math inline">\(c: P(X) \to X\)</span> be the choice function</li>
 <li><span class="math inline">\(\succsim\)</span> be the preference relation</li>
 <li><span class="math inline">\(U: \mathbb{R}^n_+ \to \mathbb{R}\)</span> be the corresponding utility function.</li>
 </ul>
-<section id="what-if-choices-become-infinite" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-choices-become-infinite">What if Choices Become Infinite</h3>
-<section id="different-levels-of-finite" class="level4">
-<h4 class="anchored" data-anchor-id="different-levels-of-finite">Different Levels of Finite</h4>
-<ul>
-<li>Finite: there exists a bijection <span class="math inline">\(X \leftrightarrow \{1, ..., n\}\)</span>.
+</section>
+<section id="what-if-choices-become-infinite" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-choices-become-infinite">What if Choices Become Infinite?</h2>
+<section id="different-levels-of-finiteness" class="level3">
+<h3 class="anchored" data-anchor-id="different-levels-of-finiteness">Different Levels of Finiteness</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="Finite">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Finite
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There exists a bijection <span class="math inline">\(X \leftrightarrow \{1, ..., n\}\)</span>.</p>
 <ul>
 <li>each <span class="math inline">\(x \in X\)</span> is paired with exactly one number in <span class="math inline">\(\{1, ..., n\}\)</span></li>
 <li>each number in <span class="math inline">\(\{1, ..., n\}\)</span> is paired with exactly one <span class="math inline">\(x \in X\)</span></li>
 <li>nobody is left unpaired</li>
-</ul></li>
-<li>Countably Infinite: there exists a bijection <span class="math inline">\(X \leftrightarrow \mathbb{N} = \{1, 2, ...\}\)</span>. Below are number sets by their finiteness
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Countrably Infinite">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Countrably Infinite
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There exists a bijection <span class="math inline">\(X \leftrightarrow \mathbb{N} = \{1, 2, ...\}\)</span>.<br>
+Below are number sets by their finiteness:</p>
 <ul>
 <li><span class="math inline">\(\mathbb{Z} = \{..., -1, 0, 1, ...\}\)</span> is countably infinite</li>
 <li><span class="math inline">\(\mathbb{Q} = \{a/b: a \in \mathbb{Z}, b \in \mathbb{N}\}\)</span> is countably infinite</li>
 <li><span class="math inline">\(\mathbb{R}\)</span> is not countably infinite</li>
-</ul></li>
 </ul>
+</div>
+</div>
 </section>
-<section id="countable-infinite" class="level4">
-<h4 class="anchored" data-anchor-id="countable-infinite">Countable Infinite</h4>
-<p><strong>Proposition.</strong> <span class="math inline">\(\succsim\)</span> be a rational preference and <span class="math inline">\(X\)</span> be a countable set <span class="math inline">\(\Rightarrow\)</span> there exists <span class="math inline">\(U: X \to \mathbb{R}\)</span> representing <span class="math inline">\(\succsim\)</span>.</p>
-<details>
-<summary>
-Proof (Click to Expand)
-</summary>
+<section id="countable-infinite" class="level3">
+<h3 class="anchored" data-anchor-id="countable-infinite">Countable Infinite</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\succsim\)</span> be a rational preference and <span class="math inline">\(X\)</span> be a countable set <span class="math inline">\(\Rightarrow\)</span> there exists <span class="math inline">\(U: X \to \mathbb{R}\)</span> representing <span class="math inline">\(\succsim\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Proof of Proposition">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof of Proposition
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Consider:</p>
 <ul>
 <li>a countable choice set: <span class="math inline">\(X = \{x_1, ..., x_n, ...\}\)</span>.</li>
@@ -559,27 +602,83 @@ Proof (Click to Expand)
 \end{aligned}\]</span></p>
 <p>We can define the utility function <span class="math inline">\(U: X \to \mathbb{R}\)</span> as <span class="math display">\[\begin{aligned}
       U(z) = \Sigma_{\{j \in \mathbb{N}: (z, x_j) \in \succsim\}} d_j
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
-<hr>
-</details>
+\end{aligned}\]</span> <span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="incountable-infinite" class="level4">
-<h4 class="anchored" data-anchor-id="incountable-infinite">Incountable Infinite</h4>
+<section id="incountable-infinite" class="level3">
+<h3 class="anchored" data-anchor-id="incountable-infinite">Incountable Infinite</h3>
 <p>It is not always true that there exists a utility function <span class="math inline">\(U: X \to \mathbb{R}\)</span> to represent a rational <span class="math inline">\(\succsim\)</span>.</p>
-<p>E.g. Bowser Jr.’s Lexicographic Preferences (<span class="math inline">\(X = \mathbb{R}^2_+\)</span>).</p>
-<p>We would need some other properties that <span class="math inline">\(\succsim\)</span> must satisfy to make the utility function possible.</p>
-</section>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lexicographic Preferences (<span class="math inline">\(X = \mathbb{R}^2_+\)</span>):</p>
+<ul>
+<li>there are two goods in the economy;</li>
+<li>the consumer would always prefer the bundle where the quantity of good <span class="math inline">\(A\)</span> is more than it in any other bundles;</li>
+<li>if two bundles have the same quantity of good <span class="math inline">\(A\)</span>, the consumer would always prefer the bundle where the quantity of <strong>good <span class="math inline">\(B\)</span></strong> is more than it in the other bundle.</li>
+</ul>
+</div>
+</div>
+<p>We would need some other properties that <span class="math inline">\(\succsim\)</span> must satisfy to make the utility function possible (namely <strong><em>continuity</em></strong>).</p>
 </section>
 </section>
 <section id="continuous-preference-relation" class="level2">
 <h2 class="anchored" data-anchor-id="continuous-preference-relation">Continuous Preference Relation</h2>
-<p>Definition: for all pairs <span class="math inline">\(x,y \in X\)</span> with <span class="math inline">\(x \succ y\)</span>, we can always find <span class="math inline">\(\epsilon &gt; 0\)</span> such that: - <span class="math inline">\(|x - x'| &lt; \epsilon\)</span> - <span class="math inline">\(|y - y'| &lt; \epsilon\)</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: Continuity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: Continuity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all pairs <span class="math inline">\(x,y \in X\)</span> with <span class="math inline">\(x \succ y\)</span>, we can always find <span class="math inline">\(\epsilon &gt; 0\)</span> such that:</p>
+<ul>
+<li><span class="math inline">\(|x - x'| &lt; \epsilon\)</span></li>
+<li><span class="math inline">\(|y - y'| &lt; \epsilon\)</span></li>
+</ul>
 <p>implies <span class="math inline">\(x' \succ y'\)</span>.</p>
-<p>Intuition: a strictly preferred pair should remain their preference status even under a sligtest change in any direction. We would not expect a rational person to freak out if a slightest change takes place.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Intuition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intuition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A strictly preferred pair should remain their preference status even under a sligtest change in any direction. We would not expect a rational person to freak out if a slightest change takes place.</p>
+</div>
+</div>
 <section id="utility-representation" class="level3">
 <h3 class="anchored" data-anchor-id="utility-representation">Utility Representation</h3>
-<p><strong>Proposition.</strong> If <span class="math inline">\(\succsim\)</span> is complete, transitive, and continuous, then there exists a continuous <span class="math inline">\(U: \mathbb{R}^n_+ \to \mathbb{R}\)</span> that represents <span class="math inline">\(\succsim\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Proposition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(\succsim\)</span> is complete, transitive, and continuous, then there exists a continuous <span class="math inline">\(U: \mathbb{R}^n_+ \to \mathbb{R}\)</span> that represents <span class="math inline">\(\succsim\)</span>.</p>
+</div>
+</div>
 
 
 </section>
@@ -682,7 +781,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

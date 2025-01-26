@@ -9,22 +9,27 @@ format:
 
 \* in conjunction with §5 of Microeconomics Foundation I (Kreps 2013)
 
-*yedlu, Fall 2024*
+*Y. Eddie Lu*, Fall 2024
 
-## Stochastic (Random) Choice
-1. Binary Random Choice Rule
+## Settings
+::: {.callout-note title="Dfn: Binary Random Choice Rule"}
 - $X \neq \emptyset$ be the universe of alternatives.
 - $\rho: X \times X \to [0,1]$ be the binary random choice rule if $\rho(x,y) + \rho(y,x) = 1$ for all $x,y \in X$.
-2. Random Choice Rule
+:::
+
+::: {.callout-note title="Dfn: Random Choice Rule"}
 - $P(X)$ be the nonempty finite subset of $X$.
-- $\rho: X \times P(X) \to [0,1]$ be the random choice rule if $\sum_{x \in A} \, \rho(x, A) = 1$ for all $A \in \mathcal{A}$. 
-  - Notation $\rho(x, A = \{x,y\})$ is equivalent to $\rho(x,y)$.
+- $\rho: X \times P(X) \to [0,1]$ be the random choice rule if $\sum_{x \in A} \, \rho(x, A) = 1$ for all $A \in \mathcal{A}$.  
+
+Notation $\rho(x, A = \{x,y\})$ is equivalent to $\rho(x,y)$.
+:::
 
 ## Random Utility and Random Preference
 ### Random Preference Model
 - $X = \{x_1, x_2, ..., x_n\}$ be the set of finite choices
 - $\mu$ be the probability over strict rankings on $X$
   - $\rho (x_i, A) = \mu\{\succ: \forall x_j \in A \setminus \{x_i\} \quad x_i \succ x_j\}$
+
 
 ### Random Utility Model (RUM)
 - $X = \{x_1, x_2, ..., x_n\}$ be the set of finite choices
@@ -42,6 +47,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
+
 ## Block & Marschak Proposition (1960)
 $\rho$ is a random preference model if and only if (iif) $\rho$ is a random utility model. The *Block & Marschak Inequalities* states necessarily that:  
 
@@ -49,7 +55,8 @@ If $\rho$ is a RUM, then:
 
 $$q(x,A) = \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \geq 0$$
 
-E.g. 1: Given $X = \{x,y,z\}$ and $A = \{x,y\}$, 
+::: {.callout-tip title="Example 1" collapse="true"}
+Given $X = \{x,y,z\}$ and $A = \{x,y\}$, 
 $$\begin{aligned}
     q(x,A) & = \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \\
     & = (-1)^{|X \setminus A|} \rho(x,X) + (-1)^{|A \setminus A|} \rho(x,A) \\
@@ -58,10 +65,14 @@ $$\begin{aligned}
     \\
     & \Rightarrow  \rho(x,A) \geq \rho(x,X)
 \end{aligned}$$
+:::
 
-Intuition: the possibility of choosing an option cannot become greater when new choices emerge. This implies that every $\mu \in [0,1]$ and $\sum \mu = 1$.  
+::: {.callout-warning title="Intuition"}
+The possibility of choosing an option cannot become greater when new choices emerge. This implies that every $\mu \in [0,1]$ and $\sum \mu = 1$.
+:::  
 
-E.g. 2: Given $X = \{x,y,z,w\}$ and $A = \{x,y\}$.
+::: {.callout-tip title="Example 2" collapse="true"}
+Given $X = \{x,y,z,w\}$ and $A = \{x,y\}$.
 $$\begin{aligned}
       q(x, A) &= \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \\
       &= (-1)^{|A \setminus A|} \rho(x,A) + (-1)^{|\{x,y,z\} \setminus A|} \rho(x,\{x,y,z\}) \\
@@ -70,8 +81,10 @@ $$\begin{aligned}
       \\
       &\Rightarrow \rho(x,A) - \rho(x, \{x,y,w\}) \geq \rho(x,\{x,y,z\}) - \rho(x,X)
 \end{aligned}$$
+:::
 
-Intuition: if we use $\mu$ in random preference model to denote the results above:  
+::: {.callout-warning title="Intuition"}
+If we use $\mu$ in random preference model to denote the results above:  
 
 $$\begin{aligned}
       \rho(x,A) - \rho(x, \{x,y,w\}) &\geq \rho(x,\{x,y,z\}) - \rho(x,X) \\
@@ -80,6 +93,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 This would hold if $\mu \in [0,1]$.
+:::
 
 
 ## Falmagne's Theorem (1978)
