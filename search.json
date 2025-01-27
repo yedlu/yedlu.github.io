@@ -10,7 +10,7 @@
       "Repository",
       "Class Notes",
       "Math Foundations",
-      "Math Analysis (Baby Rudin)",
+      "Math Analysis",
       "Real and Complex Number Systems"
     ]
   },
@@ -19,28 +19,43 @@
     "href": "repo/babyrudin/c1.html#introduction-and-rationale",
     "title": "Real and Complex Number Systems",
     "section": "Introduction and Rationale",
-    "text": "Introduction and Rationale\nThe introduction of real (and complex) numbers arises from the discovery that the rational number system (\\(\\BB{Q}\\)) is inadequate in many scenarios. “Irrational numbers” is then introduced to fill the gap and is often approximated by rational numbers.\nHere’s an example that shows the need of extension from the rational number system.\n\n\n\n\n\n\nExample 1\n\n\n\nWe now show that\n\\[\\begin{aligned}\n  p^2 &= 2\n\\end{aligned}\\]\nis not satisfied by any rational \\(p\\).\n\n\n\n\n\n\n\n\nExample 1 Solution\n\n\n\n\n\nAssume such \\(p\\) exists. Since \\(p \\in \\BB{Q}\\), we can denote this as \\(p = m/n\\) where \\(m, n\\) are integers that are not both even and \\(n \\neq 0\\).\nRewrite the equation:\n\\[\\begin{aligned}\n  m^2 &= 2 n^2\n\\end{aligned}\\]\nThis shows that \\(m^2\\) is even. \\(m\\) is therefore even. It follows that both sides are divisible by \\(4\\), hence \\(n^2\\) and eventually \\(n\\) is even.\nIt all leads to a contradiction! Hence the equation is not satisfied by any \\(p \\in \\BB{Q}\\). \\(\\blacksquare\\)\n\nOne lovely extension of this proof is to show the following.\nLet \\(A\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &lt; 2\\). Let \\(B\\) be the set of \\(p \\in \\BB{Q}_+\\) with \\(p^2 &gt; 2\\). Show that there exists a \\(q \\in \\BB{Q}_+\\) such that:\n\n\\(p &lt; q\\) for every \\(p \\in A\\)\n\\(p &gt; q\\) for every \\(p \\in B\\)\n\nSolution. We just simply associate every \\(p &gt; 0\\) with:\n\\[\\begin{aligned}\n  q &= p - \\frac{p^2 - 2}{p + 2}\n\\end{aligned}\\]",
+    "text": "Introduction and Rationale\nThe introduction of real number set \\(\\BB{R}\\) arises from the discovery that the rational number system (\\(\\BB{Q}\\)) is inadequate in many scenarios. “Irrational numbers” is then introduced to fill the gap and is often approximated by rational numbers.\n(Complex number set \\(\\BB{C}\\) is introduced to fill the gap of algebraic calculations on real numbers.)\nHere’s an example that shows the need of extension from the rational number system.\n\n\n\n\n\n\nExample 1 - Algebraic Imcompleteness\n\n\n\nWe now show that\n\\[\\begin{aligned}\n  p^2 &= 2\n\\end{aligned}\\]\nis not satisfied by any \\(p \\in \\BB{Q}\\).\n\n\n\n\n\n\n\n\nExample 1 Solution\n\n\n\n\n\nProof. Assume such \\(p\\) exists. Since \\(p \\in \\BB{Q}\\), we can denote this as \\(p = m/n\\) where \\(m, n\\) are integers that are not both even and \\(n \\neq 0\\).\nRewrite the equation:\n\\[\\begin{aligned}\n  m^2 &= 2 n^2\n\\end{aligned}\\]\nThis shows that \\(m^2\\) is even.\nThen, our first conjecture would be that \\(m\\) is even:\nIf \\(m\\) is odd, then we can use\n\\[\\begin{aligned}\n  m &= 2k + 1, k \\in \\BB{N} \\\\\n  \\implies m^2 &= 4k^2 + 4k + 1\n\\end{aligned}\\]\nto show the contrapositive statement (if \\(m^2\\) is even then \\(m\\) is even) is true.\nIt follows that both sides are divisible by \\(4\\) (if \\(m = 2k\\) is divisible by 2 then \\(m^2 = 4k^2\\) is divisible by 4), hence \\(n^2\\) (divisible by 2) and eventually \\(n\\) is even (using conjecture above).\nIt all leads to a contradiction! Hence the equation is not satisfied by any \\(p \\in \\BB{Q}\\). \\(\\blacksquare\\)\n\n\n\n\n\n\n\n\n\nExample 2 - Analytic Imcompleteness\n\n\n\nThe set\n\\[\\begin{aligned}\n  A = \\left\\{p \\in \\BB{Q} \\mid p &gt; 0, p^2 &lt; 2\\right\\}\n\\end{aligned}\\]\ncontains no largest number.\n\n\n\n\n\n\n\n\nExample 2 Solution\n\n\n\n\n\nProof. Given any \\(p \\in A\\), let\n\\[\\begin{aligned}\n  q &= p - \\frac{p^2 - 2}{p + 2}\n\\end{aligned}\\]\nWe first show that \\(q &gt; p\\) holds when \\(p \\in A\\). Observe that \\(p^2 - 2 &lt; 0\\) and \\(p + 2 &gt; 0\\). Therefore \\(\\frac{p^2 - 2}{p + 2}\\) &lt; 0 and \\(q &gt; p\\) holds.\nNow we show that \\(q^2 &lt; 2\\):\n\\[\\begin{aligned}\n  q^2 - 2 &= (p^2 - \\frac{2p(p^2 - 2)}{p+2} + \\frac{(p^2 - 2)^2}{(p+2)^2}) - 2 \\\\\n  &= \\frac{2(p^2 - 2)}{(p+2)^2} &lt; 0\n\\end{aligned}\\]\nThus \\(q \\in A\\) and \\(q &gt; p\\) always hold.\n\\(\\blacksquare\\)",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Math Foundations",
-      "Math Analysis (Baby Rudin)",
+      "Math Analysis",
       "Real and Complex Number Systems"
     ]
   },
   {
-    "objectID": "repo/babyrudin/c1.html#set-theoretic-definitions",
-    "href": "repo/babyrudin/c1.html#set-theoretic-definitions",
+    "objectID": "repo/babyrudin/c1.html#conceptual-background",
+    "href": "repo/babyrudin/c1.html#conceptual-background",
     "title": "Real and Complex Number Systems",
-    "section": "Set-Theoretic Definitions",
-    "text": "Set-Theoretic Definitions",
+    "section": "Conceptual Background",
+    "text": "Conceptual Background\nWe have shown that the real number set \\(\\BB{R}\\) is needed to solve some problems in rational number “calculations”. Nevertheless, we would need some building blocks in order to rigorously define what real number set is.\n\nSet Notations\nLet \\(A, B\\) be sets.\n\n\n\nNotation\nExplanation\n\n\n\n\n\\(A = \\emptyset\\)\nEmpty Set: \\(A\\) has no elements.\n\n\n\\(x \\in A\\)\n\\(x\\) is an element of \\(A\\).\n\n\n\\(x \\notin A\\)\n\\(x\\) is not an element of \\(A\\).\n\n\n\\(A \\subset B\\)\n\\(\\forall x \\in A \\implies x \\in B\\)\n\n\n\\(A = B\\)\n\\(A \\subset B \\wedge B \\subset A\\)\n\n\n\n\n\nOrdered Sets\nThis is a basic concept that can been seen anywhere (and is usually assumed to be a common fact). We will show how to define ordered sets rigorously.\n\n\n\n\n\n\nDefinition - Ordered Sets\n\n\n\nLet \\(S\\) be a set and \\(&lt;\\) be a binary relation. If\n\n\\(\\forall x, y \\in S\\), one and only one of the following statements is true:\n\n\\(x &lt; y\\)\n\\(x = y\\)\n\\(y &lt; x\\);\n\n\\(\\forall x, y, z \\in S\\), \\(x &lt; z\\) is true when:\n\n\\(x &lt; y\\) and\n\\(y &lt; z\\).\n\n\nWe call \\(&lt;\\) an order of \\(S\\) and \\((S, &lt;)\\) an ordered set.\n\n\n\n\nBoundness\nWe here define several (upper) bound properties in a rigorous way. Same arguments for lower bound properties.\n\n\n\n\n\n\nDefinition - Bounds\n\n\n\nLet \\(E \\subset S\\). If there is \\(\\beta \\in S\\) such that\n\\[\\begin{aligned}\n  \\beta \\geq x, \\quad \\forall x \\in E,\n\\end{aligned}\\]\nwe say that \\(\\beta\\) is an upper bound of \\(E\\). Set \\(E\\) is bounded above by \\(\\beta\\).\n\n\n\n\n\n\n\n\nLeast Upper Bound\n\n\n\nSay \\(\\beta\\) is an upper bound of \\(E \\subset S\\). If for any upper bound of \\(E\\), \\(\\gamma\\), we have\n\\[\\begin{aligned}\n  \\beta \\leq \\gamma,\n\\end{aligned}\\]\nthen \\(\\beta\\) is the least upper bound of set \\(E\\).\n(Another way to define the least upper bound is to say any \\(b &lt; \\beta\\) is not an upper bound of \\(E\\).)",
     "crumbs": [
       "me",
       "Repository",
       "Class Notes",
       "Math Foundations",
-      "Math Analysis (Baby Rudin)",
+      "Math Analysis",
+      "Real and Complex Number Systems"
+    ]
+  },
+  {
+    "objectID": "repo/babyrudin/c1.html#least-upper-bound-lub-property",
+    "href": "repo/babyrudin/c1.html#least-upper-bound-lub-property",
+    "title": "Real and Complex Number Systems",
+    "section": "Least-Upper-Bound (LUB) Property",
+    "text": "Least-Upper-Bound (LUB) Property",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Math Foundations",
+      "Math Analysis",
       "Real and Complex Number Systems"
     ]
   },
@@ -2193,7 +2208,7 @@
       "Repository",
       "Class Notes",
       "Math Foundations",
-      "Math Analysis (Baby Rudin)"
+      "Math Analysis"
     ]
   }
 ]
