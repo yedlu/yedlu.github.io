@@ -519,10 +519,10 @@ window.Quarto = {
 <p><em>Y. Eddie Lu</em>, Fall 2024</p>
 <section id="settings" class="level2">
 <h2 class="anchored" data-anchor-id="settings">Settings</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Dfn: Binary Random Choice Rule">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Dfn: Binary Random Choice Rule">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Dfn: Binary Random Choice Rule
@@ -535,10 +535,10 @@ Dfn: Binary Random Choice Rule
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Dfn: Random Choice Rule">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Dfn: Random Choice Rule">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Dfn: Random Choice Rule
@@ -592,10 +592,10 @@ F(t) &amp; = \mathbb{P}\{\omega \in \Omega: U(\omega) \leq t\} \\
 <p><span class="math inline">\(\rho\)</span> is a random preference model if and only if (iif) <span class="math inline">\(\rho\)</span> is a random utility model. The <em>Block &amp; Marschak Inequalities</em> states necessarily that:</p>
 <p>If <span class="math inline">\(\rho\)</span> is a RUM, then:</p>
 <p><span class="math display">\[q(x,A) = \sum_{B \supseteq A} (-1)^{|B \setminus A|} \rho(x,B) \geq 0\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Example 1">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 1">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Example 1
@@ -615,10 +615,10 @@ Example 1
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled" title="Intuition">
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Intuition">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Intuition
@@ -628,10 +628,10 @@ Intuition
 <p>The possibility of choosing an option cannot become greater when new choices emerge. This implies that every <span class="math inline">\(\mu \in [0,1]\)</span> and <span class="math inline">\(\sum \mu = 1\)</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Example 2">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 2">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Example 2
@@ -651,10 +651,10 @@ Example 2
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled" title="Intuition">
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Intuition">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Intuition
@@ -738,7 +738,7 @@ Intuition
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
   © 2024 Yanhe Eddie Lu | Last updated:
   <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
-  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #007acc; font-weight: bold;">Made
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
     with Quarto</a>
 </footer>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -831,7 +831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yedlu\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

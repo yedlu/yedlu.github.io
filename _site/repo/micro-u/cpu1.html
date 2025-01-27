@@ -587,10 +587,10 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled" title="Properties of $R$">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Properties of $R$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Properties of <span class="math inline">\(R\)</span>
@@ -614,10 +614,10 @@ c_R(A) := \{x \in A \mid (\forall y \in A) \, (x,y) \in R\}
 </section>
 <section id="proofs" class="level3">
 <h3 class="anchored" data-anchor-id="proofs">Proofs</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Proposition 1">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Proposition 1">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Proposition 1
@@ -627,10 +627,10 @@ Proposition 1
 <p>If <span class="math inline">\(R\)</span> is rational, then <span class="math inline">\(c_R\)</span> is a choice function.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Proof of Proposition 1">
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof of Proposition 1">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Proof of Proposition 1
@@ -658,10 +658,10 @@ Assume true for <span class="math inline">\(|A| = n\)</span>. Pick any <span cla
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Proposition 2">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Proposition 2">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Proposition 2
@@ -671,10 +671,10 @@ Proposition 2
 <p>If <span class="math inline">\(c\)</span> satisfies WARP, then <span class="math inline">\(R_c\)</span> is a rational preference relation.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Proof of Proposition 2">
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof of Proposition 2">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Proof of Proposition 2
@@ -711,10 +711,10 @@ Hence, <span class="math inline">\((x,z) \in R_c\)</span>, and <span class="math
 <p><span class="math display">\[
 R_c := \{(x,y) \in X \times X \mid x \in c(\{x,y\})\}
 \]</span></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Weak Axiom of Revealed Preferences (WARP)">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Weak Axiom of Revealed Preferences (WARP)">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Weak Axiom of Revealed Preferences (WARP)
@@ -733,7 +733,7 @@ Weak Axiom of Revealed Preferences (WARP)
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
   © 2024 Yanhe Eddie Lu | Last updated:
   <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
-  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #007acc; font-weight: bold;">Made
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
     with Quarto</a>
 </footer>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -826,7 +826,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yedlu\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

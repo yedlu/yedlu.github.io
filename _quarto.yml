@@ -117,7 +117,7 @@ website:
             - text: "Math Foundations"
               href: repo/#math-foundations
               contents:
-              - text: "Math Analysis (Baby Rudin)"
+              - text: "Math Analysis"
                 href: repo/babyrudin/index.qmd
                 contents:
                 - text: "Real and Complex Number Systems"

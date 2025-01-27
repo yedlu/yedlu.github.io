@@ -473,7 +473,13 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction-and-rationale" id="toc-introduction-and-rationale" class="nav-link active" data-scroll-target="#introduction-and-rationale">Introduction and Rationale</a></li>
-  <li><a href="#set-theoretic-definitions" id="toc-set-theoretic-definitions" class="nav-link" data-scroll-target="#set-theoretic-definitions">Set-Theoretic Definitions</a></li>
+  <li><a href="#conceptual-background" id="toc-conceptual-background" class="nav-link" data-scroll-target="#conceptual-background">Conceptual Background</a>
+  <ul>
+  <li><a href="#set-notations" id="toc-set-notations" class="nav-link" data-scroll-target="#set-notations">Set Notations</a></li>
+  <li><a href="#ordered-sets" id="toc-ordered-sets" class="nav-link" data-scroll-target="#ordered-sets">Ordered Sets</a></li>
+  <li><a href="#boundness" id="toc-boundness" class="nav-link" data-scroll-target="#boundness">Boundness</a></li>
+  </ul></li>
+  <li><a href="#least-upper-bound-lub-property" id="toc-least-upper-bound-lub-property" class="nav-link" data-scroll-target="#least-upper-bound-lub-property">Least-Upper-Bound (LUB) Property</a></li>
   </ul>
 </nav>
 </nav>
@@ -512,15 +518,16 @@ window.Quarto = {
 <p><em>yedlu, Winter 2025</em></p>
 <section id="introduction-and-rationale" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-rationale">Introduction and Rationale</h2>
-<p>The introduction of real (and complex) numbers arises from the discovery that the rational number system (<span class="math inline">\(\BB{Q}\)</span>) is inadequate in many scenarios. “Irrational numbers” is then introduced to fill the gap and is often approximated by rational numbers.</p>
+<p>The introduction of real number set <span class="math inline">\(\BB{R}\)</span> arises from the discovery that the rational number system (<span class="math inline">\(\BB{Q}\)</span>) is inadequate in many scenarios. “Irrational numbers” is then introduced to fill the gap and is often approximated by rational numbers.</p>
+<p>(Complex number set <span class="math inline">\(\BB{C}\)</span> is introduced to fill the gap of algebraic calculations on real numbers.)</p>
 <p>Here’s an example that shows the need of extension from the rational number system.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Example 1">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 1 - Algebraic Imcompleteness">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 1
+Example 1 - Algebraic Imcompleteness
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -528,13 +535,13 @@ Example 1
 <p><span class="math display">\[\begin{aligned}
   p^2 &amp;= 2
 \end{aligned}\]</span></p>
-<p>is not satisfied by <strong>any</strong> rational <span class="math inline">\(p\)</span>.</p>
+<p>is not satisfied by <strong>any</strong> <span class="math inline">\(p \in \BB{Q}\)</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled" title="Example 1 Solution">
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Example 1 Solution">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Example 1 Solution
@@ -543,30 +550,179 @@ Example 1 Solution
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Assume such <span class="math inline">\(p\)</span> exists. Since <span class="math inline">\(p \in \BB{Q}\)</span>, we can denote this as <span class="math inline">\(p = m/n\)</span> where <span class="math inline">\(m, n\)</span> are integers that are not both even and <span class="math inline">\(n \neq 0\)</span>.</p>
+<p><strong>Proof.</strong> Assume such <span class="math inline">\(p\)</span> exists. Since <span class="math inline">\(p \in \BB{Q}\)</span>, we can denote this as <span class="math inline">\(p = m/n\)</span> where <span class="math inline">\(m, n\)</span> are integers that are not both even and <span class="math inline">\(n \neq 0\)</span>.</p>
 <p>Rewrite the equation:</p>
 <p><span class="math display">\[\begin{aligned}
   m^2 &amp;= 2 n^2
 \end{aligned}\]</span></p>
-<p>This shows that <span class="math inline">\(m^2\)</span> is even. <span class="math inline">\(m\)</span> is therefore even. It follows that both sides are divisible by <span class="math inline">\(4\)</span>, hence <span class="math inline">\(n^2\)</span> and eventually <span class="math inline">\(n\)</span> is even.</p>
+<p>This shows that <span class="math inline">\(m^2\)</span> is even.</p>
+<p>Then, our first conjecture would be that <span class="math inline">\(m\)</span> is even:</p>
+<p>If <span class="math inline">\(m\)</span> is <strong>odd</strong>, then we can use</p>
+<p><span class="math display">\[\begin{aligned}
+  m &amp;= 2k + 1, k \in \BB{N} \\
+  \implies m^2 &amp;= 4k^2 + 4k + 1
+\end{aligned}\]</span></p>
+<p>to show the contrapositive statement (if <span class="math inline">\(m^2\)</span> is even then <span class="math inline">\(m\)</span> is even) is true.</p>
+<p>It follows that both sides are divisible by <span class="math inline">\(4\)</span> (if <span class="math inline">\(m = 2k\)</span> is divisible by 2 then <span class="math inline">\(m^2 = 4k^2\)</span> is divisible by 4), hence <span class="math inline">\(n^2\)</span> (divisible by 2) and eventually <span class="math inline">\(n\)</span> is even (using conjecture above).</p>
 <p>It all leads to a contradiction! Hence the equation is not satisfied by <strong>any</strong> <span class="math inline">\(p \in \BB{Q}\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
-<hr>
-<p>One lovely extension of this proof is to show the following.</p>
-<p>Let <span class="math inline">\(A\)</span> be the set of <span class="math inline">\(p \in \BB{Q}_+\)</span> with <span class="math inline">\(p^2 &lt; 2\)</span>. Let <span class="math inline">\(B\)</span> be the set of <span class="math inline">\(p \in \BB{Q}_+\)</span> with <span class="math inline">\(p^2 &gt; 2\)</span>. Show that there exists a <span class="math inline">\(q \in \BB{Q}_+\)</span> such that:</p>
-<ul>
-<li><span class="math inline">\(p &lt; q\)</span> for every <span class="math inline">\(p \in A\)</span></li>
-<li><span class="math inline">\(p &gt; q\)</span> for every <span class="math inline">\(p \in B\)</span></li>
-</ul>
-<p><strong>Solution.</strong> We just simply associate every <span class="math inline">\(p &gt; 0\)</span> with:</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 2 - Analytic Imcompleteness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 2 - Analytic Imcompleteness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The set</p>
+<p><span class="math display">\[\begin{aligned}
+  A = \left\{p \in \BB{Q} \mid p &gt; 0, p^2 &lt; 2\right\}
+\end{aligned}\]</span></p>
+<p>contains no largest number.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Example 2 Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 2 Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof.</strong> Given any <span class="math inline">\(p \in A\)</span>, let</p>
 <p><span class="math display">\[\begin{aligned}
   q &amp;= p - \frac{p^2 - 2}{p + 2}
 \end{aligned}\]</span></p>
+<p>We first show that <span class="math inline">\(q &gt; p\)</span> holds when <span class="math inline">\(p \in A\)</span>. Observe that <span class="math inline">\(p^2 - 2 &lt; 0\)</span> and <span class="math inline">\(p + 2 &gt; 0\)</span>. Therefore <span class="math inline">\(\frac{p^2 - 2}{p + 2}\)</span> &lt; 0 and <span class="math inline">\(q &gt; p\)</span> holds.</p>
+<p>Now we show that <span class="math inline">\(q^2 &lt; 2\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+  q^2 - 2 &amp;= (p^2 - \frac{2p(p^2 - 2)}{p+2} + \frac{(p^2 - 2)^2}{(p+2)^2}) - 2 \\
+  &amp;= \frac{2(p^2 - 2)}{(p+2)^2} &lt; 0
+\end{aligned}\]</span></p>
+<p>Thus <span class="math inline">\(q \in A\)</span> and <span class="math inline">\(q &gt; p\)</span> always hold.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="set-theoretic-definitions" class="level2">
-<h2 class="anchored" data-anchor-id="set-theoretic-definitions">Set-Theoretic Definitions</h2>
+<section id="conceptual-background" class="level2">
+<h2 class="anchored" data-anchor-id="conceptual-background">Conceptual Background</h2>
+<p>We have shown that the real number set <span class="math inline">\(\BB{R}\)</span> is needed to solve some problems in rational number “calculations”. Nevertheless, we would need some building blocks in order to <strong>rigorously</strong> define what real number set is.</p>
+<section id="set-notations" class="level3">
+<h3 class="anchored" data-anchor-id="set-notations">Set Notations</h3>
+<p>Let <span class="math inline">\(A, B\)</span> be sets.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A = \emptyset\)</span></td>
+<td><strong>Empty Set</strong>: <span class="math inline">\(A\)</span> has no elements.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x \in A\)</span></td>
+<td><span class="math inline">\(x\)</span> is an element of <span class="math inline">\(A\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x \notin A\)</span></td>
+<td><span class="math inline">\(x\)</span> is not an element of <span class="math inline">\(A\)</span>.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \subset B\)</span></td>
+<td><span class="math inline">\(\forall x \in A \implies x \in B\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A = B\)</span></td>
+<td><span class="math inline">\(A \subset B \wedge B \subset A\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ordered-sets" class="level3">
+<h3 class="anchored" data-anchor-id="ordered-sets">Ordered Sets</h3>
+<p>This is a basic concept that can been seen anywhere (and is usually assumed to be a common fact). We will show how to define ordered sets rigorously.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition - Ordered Sets">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition - Ordered Sets
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(S\)</span> be a set and <span class="math inline">\(&lt;\)</span> be a binary relation. If</p>
+<ol type="1">
+<li><span class="math inline">\(\forall x, y \in S\)</span>, one and only one of the following statements is true:
+<ul>
+<li><span class="math inline">\(x &lt; y\)</span></li>
+<li><span class="math inline">\(x = y\)</span></li>
+<li><span class="math inline">\(y &lt; x\)</span>;</li>
+</ul></li>
+<li><span class="math inline">\(\forall x, y, z \in S\)</span>, <span class="math inline">\(x &lt; z\)</span> is true when:
+<ul>
+<li><span class="math inline">\(x &lt; y\)</span> and</li>
+<li><span class="math inline">\(y &lt; z\)</span>.</li>
+</ul></li>
+</ol>
+<p>We call <span class="math inline">\(&lt;\)</span> an <strong>order</strong> of <span class="math inline">\(S\)</span> and <span class="math inline">\((S, &lt;)\)</span> an <strong>ordered set</strong>.</p>
+</div>
+</div>
+</section>
+<section id="boundness" class="level3">
+<h3 class="anchored" data-anchor-id="boundness">Boundness</h3>
+<p>We here define several (upper) bound properties in a rigorous way. Same arguments for lower bound properties.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition - Bounds">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition - Bounds
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(E \subset S\)</span>. If there is <span class="math inline">\(\beta \in S\)</span> such that</p>
+<p><span class="math display">\[\begin{aligned}
+  \beta \geq x, \quad \forall x \in E,
+\end{aligned}\]</span></p>
+<p>we say that <span class="math inline">\(\beta\)</span> is an <strong>upper bound</strong> of <span class="math inline">\(E\)</span>. Set <span class="math inline">\(E\)</span> is bounded above by <span class="math inline">\(\beta\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Least Upper Bound">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Least Upper Bound
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Say <span class="math inline">\(\beta\)</span> is an upper bound of <span class="math inline">\(E \subset S\)</span>. If for <em>any</em> upper bound of <span class="math inline">\(E\)</span>, <span class="math inline">\(\gamma\)</span>, we have</p>
+<p><span class="math display">\[\begin{aligned}
+  \beta \leq \gamma,
+\end{aligned}\]</span></p>
+<p>then <span class="math inline">\(\beta\)</span> is the <strong>least upper bound</strong> of set <span class="math inline">\(E\)</span>.</p>
+<p>(Another way to define the least upper bound is to say any <span class="math inline">\(b &lt; \beta\)</span> is not an upper bound of <span class="math inline">\(E\)</span>.)</p>
+</div>
+</div>
+</section>
+</section>
+<section id="least-upper-bound-lub-property" class="level2">
+<h2 class="anchored" data-anchor-id="least-upper-bound-lub-property">Least-Upper-Bound (LUB) Property</h2>
 
 
 </section>
@@ -575,7 +731,7 @@ Example 1 Solution
 <footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
   © 2024 Yanhe Eddie Lu | Last updated:
   <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
-  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #007acc; font-weight: bold;">Made
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
     with Quarto</a>
 </footer>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -668,7 +824,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yedlu\.com");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

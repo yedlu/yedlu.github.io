@@ -17,24 +17,25 @@ $$
 
 ## Introduction and Rationale  
 
-The introduction of real (and complex) numbers arises from the discovery that the rational number system ($\BB{Q}$) is inadequate in many scenarios. "Irrational numbers" is then introduced to fill the gap and is often approximated by rational numbers.  
+The introduction of real number set $\BB{R}$ arises from the discovery that the rational number system ($\BB{Q}$) is inadequate in many scenarios. "Irrational numbers" is then introduced to fill the gap and is often approximated by rational numbers.  
+
+(Complex number set $\BB{C}$ is introduced to fill the gap of algebraic calculations on real numbers.)  
 
 Here's an example that shows the need of extension from the rational number system.  
 
-::: {.callout-tip title="Example 1"}
+::: {.callout-tip title="Example 1 - Algebraic Imcompleteness"}
 We now show that    
 
 $$\begin{aligned}
   p^2 &= 2
 \end{aligned}$$
 
-is not satisfied by **any** rational $p$.
+is not satisfied by **any** $p \in \BB{Q}$.
 :::
 
 ::: {.callout-warning collapse="true" title="Example 1 Solution"}
 
-
-Assume such $p$ exists. Since $p \in \BB{Q}$, we can denote this as $p = m/n$ where $m, n$ are integers that are not both even and $n \neq 0$.  
+**Proof.** Assume such $p$ exists. Since $p \in \BB{Q}$, we can denote this as $p = m/n$ where $m, n$ are integers that are not both even and $n \neq 0$.  
 
 Rewrite the equation:  
 
@@ -42,27 +43,115 @@ $$\begin{aligned}
   m^2 &= 2 n^2
 \end{aligned}$$
 
-This shows that $m^2$ is even. $m$ is therefore even. It follows that both sides are divisible by $4$, hence $n^2$ and eventually $n$ is even.  
+This shows that $m^2$ is even.
+
+Then, our first conjecture would be that $m$ is even:  
+
+If $m$ is **odd**, then we can use
+
+$$\begin{aligned}
+  m &= 2k + 1, k \in \BB{N} \\
+  \implies m^2 &= 4k^2 + 4k + 1
+\end{aligned}$$
+
+to show the contrapositive statement (if $m^2$ is even then $m$ is even) is true.
+
+It follows that both sides are divisible by $4$ (if $m = 2k$ is divisible by 2 then $m^2 = 4k^2$ is divisible by 4), hence $n^2$ (divisible by 2) and eventually $n$ is even (using conjecture above).  
 
 It all leads to a contradiction! Hence the equation is not satisfied by **any** $p \in \BB{Q}$. $\blacksquare$
+:::
 
-___
 
-One lovely extension of this proof is to show the following.  
+::: {.callout-tip title="Example 2 - Analytic Imcompleteness"}
+The set
 
-Let $A$ be the set of $p \in \BB{Q}_+$ with $p^2 < 2$. Let $B$ be the set of $p \in \BB{Q}_+$ with $p^2 > 2$. Show that there exists a $q \in \BB{Q}_+$ such that:  
+$$\begin{aligned}
+  A = \left\{p \in \BB{Q} \mid p > 0, p^2 < 2\right\}
+\end{aligned}$$
 
-- $p < q$ for every $p \in A$
-- $p > q$ for every $p \in B$
+contains no largest number.
+:::
 
-**Solution.** We just simply associate every $p > 0$ with:  
+::: {.callout-warning collapse="true" title="Example 2 Solution"}
+**Proof.** Given any $p \in A$, let 
 
 $$\begin{aligned}
   q &= p - \frac{p^2 - 2}{p + 2}
 \end{aligned}$$
 
+We first show that $q > p$ holds when $p \in A$. Observe that $p^2 - 2 < 0$ and $p + 2 > 0$. Therefore $\frac{p^2 - 2}{p + 2}$ < 0 and $q > p$ holds.  
+
+Now we show that $q^2 < 2$:  
+
+$$\begin{aligned}
+  q^2 - 2 &= (p^2 - \frac{2p(p^2 - 2)}{p+2} + \frac{(p^2 - 2)^2}{(p+2)^2}) - 2 \\
+  &= \frac{2(p^2 - 2)}{(p+2)^2} < 0
+\end{aligned}$$
+
+Thus $q \in A$ and $q > p$ always hold.  
+
+$\blacksquare$
+:::
+
+## Conceptual Background  
+
+We have shown that the real number set $\BB{R}$ is needed to solve some problems in rational number "calculations". Nevertheless, we would need some building blocks in order to **rigorously** define what real number set is.  
+
+### Set Notations 
+Let $A, B$ be sets.  
+
+| Notation | Explanation |
+| - | ------------------ |
+| $A = \emptyset$ | **Empty Set**: $A$ has no elements. |
+| $x \in A$ | $x$ is an element of $A$. |
+| $x \notin A$ | $x$ is not an element of $A$. |
+| $A \subset B$ | $\forall x \in A \implies x \in B$ |
+| $A = B$ | $A \subset B \wedge B \subset A$ |
+
+
+### Ordered Sets
+This is a basic concept that can been seen anywhere (and is usually assumed to be a common fact). We will show how to define ordered sets rigorously.  
+
+::: {.callout-note title="Definition - Ordered Sets"}
+Let $S$ be a set and $<$ be a binary relation. If  
+
+1. $\forall x, y \in S$, one and only one of the following statements is true:  
+   - $x < y$
+   - $x = y$
+   - $y < x$;  
+
+2. $\forall x, y, z \in S$, $x < z$ is true when:
+   - $x < y$ and
+   - $y < z$. 
+
+We call $<$ an **order** of $S$ and $(S, <)$ an **ordered set**.
 
 :::
 
 
-## Set-Theoretic Definitions
+### Boundness
+We here define several (upper) bound properties in a rigorous way. Same arguments for lower bound properties.
+
+::: {.callout-note title="Definition - Bounds"}
+Let $E \subset S$. If there is $\beta \in S$ such that  
+
+$$\begin{aligned}
+  \beta \geq x, \quad \forall x \in E,
+\end{aligned}$$
+
+we say that $\beta$ is an **upper bound** of $E$. Set $E$ is bounded above by $\beta$.
+:::
+
+::: {.callout-note title="Least Upper Bound"}
+Say $\beta$ is an upper bound of $E \subset S$. If for *any* upper bound of $E$, $\gamma$, we have  
+
+$$\begin{aligned}
+  \beta \leq \gamma,
+\end{aligned}$$
+
+then $\beta$ is the **least upper bound** of set $E$.  
+
+(Another way to define the least upper bound is to say any $b < \beta$ is not an upper bound of $E$.)
+:::
+
+## Least-Upper-Bound (LUB) Property
