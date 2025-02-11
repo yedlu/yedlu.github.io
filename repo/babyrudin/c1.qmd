@@ -149,9 +149,133 @@ $$\begin{aligned}
   \beta \leq \gamma,
 \end{aligned}$$
 
-then $\beta$ is the **least upper bound** of set $E$.  
+then $\beta$ is the **least upper bound** of set $E$.
 
 (Another way to define the least upper bound is to say any $b < \beta$ is not an upper bound of $E$.)
 :::
 
+::: {.callout-important title="Supremum/Infimum"}
+The *least upper bound* of set $E$ can be also called as the **supremum** of $E$:
+
+$$\begin{aligned}
+  \sup E
+\end{aligned}$$
+
+The *greatest lower bound* of set $E$ can be also called as the **infimum** of $E$:  
+
+$$\begin{aligned}
+  \inf E
+\end{aligned}$$
+:::
+
+
 ## Least-Upper-Bound (LUB) Property
+This property turns out to be useful in defining and understanding $\BB{R}$.  
+
+::: {.callout-note title="Definition - LUB Property"}
+Let $S$ be an ordered set. 
+
+We say $S$ has LUB property if for any non-empty $E \subset S$ that has an upper bound, there is:
+
+$$\begin{aligned}
+  \sup E \in S
+\end{aligned}$$
+
+:::
+
+Using our findings above, we can show that $\BB{Q}$ does not have the LUB property:  
+
+::: {.callout-tip title="Example: LUB Property and $\BB{Q}$"}
+Let  
+
+$$\begin{aligned}
+  A = \left\{p \in \BB{Q} \mid p > 0, p^2 < 2 \right\}
+\end{aligned}$$
+
+The non-empty set $A \subset \BB{Q}$ does not have a supremum in $\BB{Q}$.
+
+:::
+
+### Symmetry in Least-Upper-Boundness
+::: {.callout-important title="Theorem"}
+$S$ has the least-upper-bound property implies that $S$ also has the greatest-lower-bound property.  
+
+This is equivalent to:  
+
+Suppose $S$ is an ordered set with the LUB property. $B$ is an non-empty subset of $S$ which is bounded below (in $S$).  
+
+Let $L$ be the set of *all* lower bounds of $B$.  
+
+Then, 
+
+$$\begin{aligned}
+  \alpha &= \sup L
+\end{aligned}$$
+
+exists in $S$, and $\alpha = \inf B$. In particular, $\inf B \in S$.
+
+:::
+
+::: {.callout-caution collapse="true" title="Proof of Theorem"}
+**Proof.** 
+1. Existence of $\alpha = \sup L$.
+Since $B$ is bounded below in $S$, $L \neq \emptyset$. 
+
+Every $x \in B$ is an upper bound of $L$, hence $L$ is bounded above. By the LUB property, $\exists \alpha = \sup L \in L \subset S$.  
+
+2. $\alpha$ is a lower bound of $B$.
+Suppose, for the sake of contradiction, that $\alpha$ is *not* a lower bound of $B$. Then $\exists x \in B$ with $x < \alpha$.  
+
+However, $x \in B$ is an upper bound of $L$ (from 1), so $\alpha \leq x$. This contradicts $x < \alpha$. 
+
+Hence, $\alpha$ *must be* a lower bound of $B$ ($\alpha \in L$).
+
+3. $\alpha$ is the greatest lower bound of $B$.
+Let $\gamma$ be any lower bound of $B$ ($\gamma \in L$). Since $\alpha = \sup L$, we have $\gamma \leq \alpha$ always true.  
+
+Therefore, $\alpha$ is the greatest element in $L$. By the definition, $\alpha = \inf B$.
+
+4. Since $\alpha = \sup L \in S$ and $\alpha = \inf B$, $S$ also has the greatest-lower-bound property. $\blacksquare$.
+:::
+
+## Fields
+We've learnt rules on additions and multiplications since ages. But how to properly define operations and other related topics? The concept of fields comes in. 
+
+::: {.callout-note title="Definition - Fields"}
+A **field** is a set $F$ with two operations:  
+
+- addition (+),
+- multiplication ($\cdot$),
+  
+which satisfy "field axioms" (A)(M)(D).
+:::
+
+### Field Axioms
+##### \(A\) Addition
+
+|\# | Name | Description |
+| --- | --- | ---------- |
+| A1 | Closure | $x, y \in F \implies x+y \in F$ |
+| A2 | Commutativity | $(\forall x,y \in F) \quad x+y = y+x$ |
+| A3 | Associativity | $(\forall x,y,z \in F) \quad (x+y)+z = x+(y+z)$ |
+| A4 | Identity | $(\exists 0 \in F)(\forall x \in F) \quad 0+x = x$ |
+| A5 | Inverse | $(\forall x \in F)(\exists -x \in F)x+(-x) = 0$ |
+
+##### \(M\) Multiplication
+
+|\# | Name | Description |
+| --- | --- | ---------- |
+| M1 | Closure | $x, y \in F \implies xy \in F$ |
+| M2 | Commutativity | $(\forall x,y \in F) \quad xy=yx$ |
+| M3 | Associativity | $(\forall x,y,z \in F) \quad (xy)z = x(yz)$ |
+| M4 | Identity | $(\exists 1 \in F)(\forall x \in F) \quad 1x = x$ |
+| M5 | Inverse | $(\forall x \in F)(\exists \, 1/x \in F) \quad x \cdot 1/x = 1$ |
+
+##### \(D\) The Distributive Law
+
+For all $x,y,z \in F$:  
+
+$$\begin{aligned}
+  x(y+z) &= xy + xz
+\end{aligned}$$
+
