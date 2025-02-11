@@ -218,24 +218,22 @@ exists in $S$, and $\alpha = \inf B$. In particular, $\inf B \in S$.
 
 ::: {.callout-caution collapse="true" title="Proof of Theorem"}
 **Proof.** 
-1. Existence of $\alpha = \sup L$.
+
 Since $B$ is bounded below in $S$, $L \neq \emptyset$. 
 
 Every $x \in B$ is an upper bound of $L$, hence $L$ is bounded above. By the LUB property, $\exists \alpha = \sup L \in L \subset S$.  
 
-2. $\alpha$ is a lower bound of $B$.
 Suppose, for the sake of contradiction, that $\alpha$ is *not* a lower bound of $B$. Then $\exists x \in B$ with $x < \alpha$.  
 
 However, $x \in B$ is an upper bound of $L$ (from 1), so $\alpha \leq x$. This contradicts $x < \alpha$. 
 
 Hence, $\alpha$ *must be* a lower bound of $B$ ($\alpha \in L$).
 
-3. $\alpha$ is the greatest lower bound of $B$.
 Let $\gamma$ be any lower bound of $B$ ($\gamma \in L$). Since $\alpha = \sup L$, we have $\gamma \leq \alpha$ always true.  
 
 Therefore, $\alpha$ is the greatest element in $L$. By the definition, $\alpha = \inf B$.
 
-4. Since $\alpha = \sup L \in S$ and $\alpha = \inf B$, $S$ also has the greatest-lower-bound property. $\blacksquare$.
+Since $\alpha = \sup L \in S$ and $\alpha = \inf B$, $S$ also has the greatest-lower-bound property. $\blacksquare$
 :::
 
 ## Fields
