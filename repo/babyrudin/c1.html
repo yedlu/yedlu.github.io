@@ -479,7 +479,14 @@ window.Quarto = {
   <li><a href="#ordered-sets" id="toc-ordered-sets" class="nav-link" data-scroll-target="#ordered-sets">Ordered Sets</a></li>
   <li><a href="#boundness" id="toc-boundness" class="nav-link" data-scroll-target="#boundness">Boundness</a></li>
   </ul></li>
-  <li><a href="#least-upper-bound-lub-property" id="toc-least-upper-bound-lub-property" class="nav-link" data-scroll-target="#least-upper-bound-lub-property">Least-Upper-Bound (LUB) Property</a></li>
+  <li><a href="#least-upper-bound-lub-property" id="toc-least-upper-bound-lub-property" class="nav-link" data-scroll-target="#least-upper-bound-lub-property">Least-Upper-Bound (LUB) Property</a>
+  <ul>
+  <li><a href="#symmetry-in-least-upper-boundness" id="toc-symmetry-in-least-upper-boundness" class="nav-link" data-scroll-target="#symmetry-in-least-upper-boundness">Symmetry in Least-Upper-Boundness</a></li>
+  </ul></li>
+  <li><a href="#fields" id="toc-fields" class="nav-link" data-scroll-target="#fields">Fields</a>
+  <ul>
+  <li><a href="#field-axioms" id="toc-field-axioms" class="nav-link" data-scroll-target="#field-axioms">Field Axioms</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -719,12 +726,236 @@ Least Upper Bound
 <p>(Another way to define the least upper bound is to say any <span class="math inline">\(b &lt; \beta\)</span> is not an upper bound of <span class="math inline">\(E\)</span>.)</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Supremum/Infimum">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supremum/Infimum
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>least upper bound</em> of set <span class="math inline">\(E\)</span> can be also called as the <strong>supremum</strong> of <span class="math inline">\(E\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+  \sup E
+\end{aligned}\]</span></p>
+<p>The <em>greatest lower bound</em> of set <span class="math inline">\(E\)</span> can be also called as the <strong>infimum</strong> of <span class="math inline">\(E\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+  \inf E
+\end{aligned}\]</span></p>
+</div>
+</div>
 </section>
 </section>
 <section id="least-upper-bound-lub-property" class="level2">
 <h2 class="anchored" data-anchor-id="least-upper-bound-lub-property">Least-Upper-Bound (LUB) Property</h2>
+<p>This property turns out to be useful in defining and understanding <span class="math inline">\(\BB{R}\)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition - LUB Property">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition - LUB Property
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(S\)</span> be an ordered set.</p>
+<p>We say <span class="math inline">\(S\)</span> has LUB property if for any non-empty <span class="math inline">\(E \subset S\)</span> that has an upper bound, there is:</p>
+<p><span class="math display">\[\begin{aligned}
+  \sup E \in S
+\end{aligned}\]</span></p>
+</div>
+</div>
+<p>Using our findings above, we can show that <span class="math inline">\(\BB{Q}\)</span> does not have the LUB property:</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: LUB Property and $\BB{Q}$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: LUB Property and <span class="math inline">\(\BB{Q}\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let</p>
+<p><span class="math display">\[\begin{aligned}
+  A = \left\{p \in \BB{Q} \mid p &gt; 0, p^2 &lt; 2 \right\}
+\end{aligned}\]</span></p>
+<p>The non-empty set <span class="math inline">\(A \subset \BB{Q}\)</span> does not have a supremum in <span class="math inline">\(\BB{Q}\)</span>.</p>
+</div>
+</div>
+<section id="symmetry-in-least-upper-boundness" class="level3">
+<h3 class="anchored" data-anchor-id="symmetry-in-least-upper-boundness">Symmetry in Least-Upper-Boundness</h3>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(S\)</span> has the least-upper-bound property implies that <span class="math inline">\(S\)</span> also has the greatest-lower-bound property.</p>
+<p>This is equivalent to:</p>
+<p>Suppose <span class="math inline">\(S\)</span> is an ordered set with the LUB property. <span class="math inline">\(B\)</span> is an non-empty subset of <span class="math inline">\(S\)</span> which is bounded below (in <span class="math inline">\(S\)</span>).</p>
+<p>Let <span class="math inline">\(L\)</span> be the set of <em>all</em> lower bounds of <span class="math inline">\(B\)</span>.</p>
+<p>Then,</p>
+<p><span class="math display">\[\begin{aligned}
+  \alpha &amp;= \sup L
+\end{aligned}\]</span></p>
+<p>exists in <span class="math inline">\(S\)</span>, and <span class="math inline">\(\alpha = \inf B\)</span>. In particular, <span class="math inline">\(\inf B \in S\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Proof of Theorem">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof of Theorem
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof.</strong> 1. Existence of <span class="math inline">\(\alpha = \sup L\)</span>. Since <span class="math inline">\(B\)</span> is bounded below in <span class="math inline">\(S\)</span>, <span class="math inline">\(L \neq \emptyset\)</span>.</p>
+<p>Every <span class="math inline">\(x \in B\)</span> is an upper bound of <span class="math inline">\(L\)</span>, hence <span class="math inline">\(L\)</span> is bounded above. By the LUB property, <span class="math inline">\(\exists \alpha = \sup L \in L \subset S\)</span>.</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(\alpha\)</span> is a lower bound of <span class="math inline">\(B\)</span>. Suppose, for the sake of contradiction, that <span class="math inline">\(\alpha\)</span> is <em>not</em> a lower bound of <span class="math inline">\(B\)</span>. Then <span class="math inline">\(\exists x \in B\)</span> with <span class="math inline">\(x &lt; \alpha\)</span>.</li>
+</ol>
+<p>However, <span class="math inline">\(x \in B\)</span> is an upper bound of <span class="math inline">\(L\)</span> (from 1), so <span class="math inline">\(\alpha \leq x\)</span>. This contradicts <span class="math inline">\(x &lt; \alpha\)</span>.</p>
+<p>Hence, <span class="math inline">\(\alpha\)</span> <em>must be</em> a lower bound of <span class="math inline">\(B\)</span> (<span class="math inline">\(\alpha \in L\)</span>).</p>
+<ol start="3" type="1">
+<li><span class="math inline">\(\alpha\)</span> is the greatest lower bound of <span class="math inline">\(B\)</span>. Let <span class="math inline">\(\gamma\)</span> be any lower bound of <span class="math inline">\(B\)</span> (<span class="math inline">\(\gamma \in L\)</span>). Since <span class="math inline">\(\alpha = \sup L\)</span>, we have <span class="math inline">\(\gamma \leq \alpha\)</span> always true.</li>
+</ol>
+<p>Therefore, <span class="math inline">\(\alpha\)</span> is the greatest element in <span class="math inline">\(L\)</span>. By the definition, <span class="math inline">\(\alpha = \inf B\)</span>.</p>
+<ol start="4" type="1">
+<li>Since <span class="math inline">\(\alpha = \sup L \in S\)</span> and <span class="math inline">\(\alpha = \inf B\)</span>, <span class="math inline">\(S\)</span> also has the greatest-lower-bound property. <span class="math inline">\(\blacksquare\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="fields" class="level2">
+<h2 class="anchored" data-anchor-id="fields">Fields</h2>
+<p>We’ve learnt rules on additions and multiplications since ages. But how to properly define operations and other related topics? The concept of fields comes in.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition - Fields">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition - Fields
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>field</strong> is a set <span class="math inline">\(F\)</span> with two operations:</p>
+<ul>
+<li>addition (+),</li>
+<li>multiplication (<span class="math inline">\(\cdot\)</span>),</li>
+</ul>
+<p>which satisfy “field axioms” (A)(M)(D).</p>
+</div>
+</div>
+<section id="field-axioms" class="level3">
+<h3 class="anchored" data-anchor-id="field-axioms">Field Axioms</h3>
+<section id="a-addition" class="level5">
+<h5 class="anchored" data-anchor-id="a-addition">(A) Addition</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1</td>
+<td>Closure</td>
+<td><span class="math inline">\(x, y \in F \implies x+y \in F\)</span></td>
+</tr>
+<tr class="even">
+<td>A2</td>
+<td>Commutativity</td>
+<td><span class="math inline">\((\forall x,y \in F) \quad x+y = y+x\)</span></td>
+</tr>
+<tr class="odd">
+<td>A3</td>
+<td>Associativity</td>
+<td><span class="math inline">\((\forall x,y,z \in F) \quad (x+y)+z = x+(y+z)\)</span></td>
+</tr>
+<tr class="even">
+<td>A4</td>
+<td>Identity</td>
+<td><span class="math inline">\((\exists 0 \in F)(\forall x \in F) \quad 0+x = x\)</span></td>
+</tr>
+<tr class="odd">
+<td>A5</td>
+<td>Inverse</td>
+<td><span class="math inline">\((\forall x \in F)(\exists -x \in F)x+(-x) = 0\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m-multiplication" class="level5">
+<h5 class="anchored" data-anchor-id="m-multiplication">(M) Multiplication</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M1</td>
+<td>Closure</td>
+<td><span class="math inline">\(x, y \in F \implies xy \in F\)</span></td>
+</tr>
+<tr class="even">
+<td>M2</td>
+<td>Commutativity</td>
+<td><span class="math inline">\((\forall x,y \in F) \quad xy=yx\)</span></td>
+</tr>
+<tr class="odd">
+<td>M3</td>
+<td>Associativity</td>
+<td><span class="math inline">\((\forall x,y,z \in F) \quad (xy)z = x(yz)\)</span></td>
+</tr>
+<tr class="even">
+<td>M4</td>
+<td>Identity</td>
+<td><span class="math inline">\((\exists 1 \in F)(\forall x \in F) \quad 1x = x\)</span></td>
+</tr>
+<tr class="odd">
+<td>M5</td>
+<td>Inverse</td>
+<td><span class="math inline">\((\forall x \in F)(\exists \, 1/x \in F) \quad x \cdot 1/x = 1\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="d-the-distributive-law" class="level5">
+<h5 class="anchored" data-anchor-id="d-the-distributive-law">(D) The Distributive Law</h5>
+<p>For all <span class="math inline">\(x,y,z \in F\)</span>:</p>
+<p><span class="math display">\[\begin{aligned}
+  x(y+z) &amp;= xy + xz
+\end{aligned}\]</span></p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
