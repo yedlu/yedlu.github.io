@@ -277,3 +277,11 @@ $$\begin{aligned}
   x(y+z) &= xy + xz
 \end{aligned}$$
 
+::: {.callout-tip title='Consequences of the Field Axioms'}
+- $x + y = x + z \implies y = z$
+- $x + y = x \implies y = 0$
+- $x + y = 0 \implies y = -x$
+- $-(-x) = x$
+:::
+
+

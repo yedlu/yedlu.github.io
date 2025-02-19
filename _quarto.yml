@@ -15,6 +15,7 @@ website:
         text: repositories
   back-to-top-navigation: true
   google-analytics: "G-5K3G6929BP"
+  favicon: my-notion-face-transparent.png
   sidebar:
       - contents:
         - section: "Repository"
