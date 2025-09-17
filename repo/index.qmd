@@ -29,6 +29,10 @@ format:
   - Real Analysis
     - [Principle of Mathematical Analysis (Baby Rudin)](babyrudin/index.qmd)
 
+### Causal Inference
+  - [Mostly Harmless Econometrics](harmless/index.qmd)
+  <!-- - [Causal Inference: The Mixtape](mixtape/index.qmd) -->
+
 <!-- 
 
 

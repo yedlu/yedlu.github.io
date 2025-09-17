@@ -1,0 +1,18 @@
+---
+title: "Notes - Mostly Harmless Econometrics (Angrist & Pischke, 2008)"
+---
+
+
+Hi! This page hosts my study notes on (probably) one of the most renowned book in causal inference. 
+
+### Part I - Introduction
+
+C1. [Questions about Questions](c1.qmd)
+
+C2. [The Experimental Ideal](c2.qmd)
+
+### Part II - The Core
+
+C3. [Making Regression Make Sense](c3.qmd)
+
+

@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-subtitle: "Yanhe Eddie Lu (*Ian-Huh Eh-Dee Lu*, 鲁 颜赫)"
+subtitle: "Y. Eddie Lu (鲁颜赫)"
 sidebar: false
 format:
   html:
@@ -11,7 +11,10 @@ format:
 
 <img src="profilepic.jpg" alt="Yanhe Eddie Lu" style="float: right; width: 200px; margin-left: 20px; border-radius: 5px;">
 
-I am currently a full-time research professional. I have graduated from [WashU Olin Business School](https://olin.wustl.edu) and [Central University of Finance and Economics](https://www.cufe.edu.cn), specializing in Analytics and Economic Disciplines. My academic interest is in empirical corporate finance and labor economics.
+I am currently conducting research and preparing to apply for PhD programs for the Fall '26 admission cycle. I have graduated from [WashU Olin Business School](https://olin.wustl.edu) and [Central University of Finance and Economics](https://www.cufe.edu.cn), with training in analytics and economics.  
+
+I'm broadly interested in how frictions and incentives shape micro-level decision-making. My research interests include corporate governance, financial contracting, M&A, real estate finance, political economics, and labor economics. I work with both empirical causal inferences and theoretical modeling.
+
 
 This website hosts my brief introduction of experiences in [`vitae`](cv.qmd) section. You can also explore my [`repositories`](repo/index.qmd) with concise notes/cheatsheets, projects, and coding samples.
 
@@ -23,6 +26,8 @@ Feel free to reach out (click to copy):
 Email:
 <span onclick="copyToClipboard('eddie.lu@wustl.edu')" style="cursor: pointer; color: #18BC9C; text-decoration: underline;">
   eddie.lu@wustl.edu
+</span>/<span onclick="copyToClipboard('y.eddie.lu@gmail.com')" style="cursor: pointer; color: #18BC9C; text-decoration: underline;">
+  y.eddie.lu@gmail.com
 </span>
 
 

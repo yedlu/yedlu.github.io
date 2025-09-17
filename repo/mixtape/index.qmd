@@ -1,0 +1,10 @@
+---
+title: "Causal Inference (Based on S. Cunningham)"
+---
+
+
+Hi! This page hosts my study notes on causal inference. 
+
+1. [The Basics](101.qmd)
+   - Foundations for causal analysis - statistics, probabilities, regressions, etc.
+

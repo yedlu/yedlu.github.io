@@ -1,0 +1,51 @@
+---
+title: "Causal Inference - The Basics"
+format:
+  html:
+    toc: true # Enables the side navbar
+    toc-location: left # Positions the navbar on the left
+    toc-depth: 4 # Includes up to second-level headings in the TOC
+---
+::: {.hidden}
+$$
+ \def\BB#1{{\mathbb{#1}}}
+ \def\BF#1{{\mathbf{#1}}}
+$$
+:::
+
+*yedlu, Spring 2025*
+
+# Regression
+We begin with cross-sectional analysis (i.e. data on certain observables in one given period).
+
+## The Linear Model
+Suppose we want to study the effect of *education* on *wages* (very cliche but classic). Let's denote education level as $x$ and annual wages as $y$. Then, we need to think about the following questions before moving forward:  
+
+::: {.callout-important title="Questions to Think About..."}
+
+- **Q1:** What if $y$ is affected by factors other than $x$?  
+- **Q2:** What could be the mathematical function that connects $y$ with $x$?
+- **Q3:** How to infer and distinguish causal relationship from regression analysis?
+
+:::
+
+We aim to provide simple yet intuitive answers in this section. Let's start with an extremely simple linear function (or model) that we expected to be true for the *whole population:*
+
+::: {.callout-note title="Univariate Linear Regression Model"}
+$$\begin{aligned}
+  y = \beta_0 + \beta_1 x + u
+\end{aligned}$$
+
+where  
+
+- $y$ (wages) is considered *the effect*  
+- $x$ is considered as *the causes*  
+- $u$, the **error term**, includes the effect of *other factors* on $y$ 
+- $\beta_0$ is the intercept
+- $\beta_1$ is the slope
+
+:::
+
+If we were to assume this to be true for the whole population, our goal of the empirical work is then to use a *sample* (for most cases we can only access information on a subset of the population) to estimate these aforementioned values. (It is impossible to **observe** the parameters in real life, we can only try to estimate them.)  
+
+### Assumptions

@@ -19,19 +19,19 @@ format:
 <table style="border-collapse: collapse; width: 100%;">
   <tr>
     <td><strong>Name</strong></td>
-    <td>Yanhe <strong>Eddie *Lu*</strong></td>
+    <td>Yanhe <strong>Eddie *Lu*</strong> (鲁颜赫)</td>
   </tr>
-  <tr>
-    <td><strong></strong></td>
-    <td>(*Ian-Huh Eh-Dee Lu*)</td>
+    <tr>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
     <td><strong>Residence</strong></td>
     <td>St. Louis, MO</td>
   </tr>
   <tr>
-    <td><strong>U.S. Work Authorization</strong></td>
-    <td>STEM-OPT (3 years)</td>
+    <td><strong>Status</strong></td>
+    <td>Post-Completion Opt</td>
   </tr>
 </table>
 
@@ -58,12 +58,24 @@ format:
 
 ## Research Experience
 
+- **Theoretical Corporate Finance**  
+  *Research Assistant* for Prof. Armando Gomes, WashU Olin  
+  2025.01 - Present  
+
+- **M\&A Due Diligence**  
+  *Research Assistant* for Prof. Brett Green, WashU Olin  
+  2025.01 - Present    
+
 - **Empirical Corporate Finance**  
-  *Research Assistant* for Margarita Tsoutsoura, WashU Olin  
+  *Research Assistant* for Prof. Margarita Tsoutsoura, WashU Olin  
   2024.05 - Present  
 
-- **Distinguishing LLM-Generated Texts Using Linguistic Dimensions**  
-  *Research Assistant* for Gerald Onwujekwe, WashU Olin  
+
+---
+
+
+- **Distinguishing LLM Authorship Using Linguistic Dimensions**  
+  *Research Assistant* for Dr. Gerald Onwujekwe, WashU Olin  
   2024.01 - 2024.11  
 
 - **Effects of Development Initiatives on Foreign Direct Investment**  
@@ -112,14 +124,18 @@ Olin Business School, Washington University
 
 - **Advanced Financial Management**  
   *Undergraduate, Spring 2025*  
-  Instructor: Margarita Tsoutsoura
+  Instructor: Margarita Tsoutsoura / Grant Clayton
 
 - **Advanced Corporate Finance I - Valuation**  
   *Graduate, Spring 2025*  
   Instructor: Yaron Leitner 
 
 - **A/B Testing in Business and Social Science**  
-  *Graduate, Spring 2025*  
+  *Undergraduate/Graduate, Spring 2025*  
+  Instructor: Xiang Hui 
+
+- **Understanding & Conducting Business Experiments**  
+  *Undergraduate, Spring 2025*  
   Instructor: Xiang Hui 
 
 - **Advanced Corporate Finance II - Financing**  
@@ -144,7 +160,7 @@ Olin Business School, Washington University
 ## Skills
 
 - **Programming**  
-  R, Python, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Development  
+  Python, R, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Dev  
 
 - **Languages**  
   **Mandarin**: Native  
@@ -171,6 +187,6 @@ Olin Business School, Washington University
 
 ## Personal Information
 - Guitarist for over 10 years  
-- Art and museum enthusiast  
 - Passionate home cook  
 - Enjoys cycling, hiking, and running  
+- Cat and Dog Parent
