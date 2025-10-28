@@ -79,14 +79,7 @@
     "href": "repo/mixtape/index.html",
     "title": "Causal Inference (Based on S. Cunningham)",
     "section": "",
-    "text": "Hi! This page hosts my study notes on causal inference.\n\nThe Basics\n\nFoundations for causal analysis - statistics, probabilities, regressions, etc.\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Causal Inference",
-      "The Mixtape"
-    ]
+    "text": "Hi! This page hosts my study notes on causal inference.\n\nThe Basics\n\nFoundations for causal analysis - statistics, probabilities, regressions, etc.\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "repo/micro-g/bayesian.html",
@@ -1235,21 +1228,14 @@
     "href": "cv.html#education",
     "title": "Curriculum Vitae",
     "section": "Education",
-    "text": "Education\n\nM.S. in Business Analytics (Financial Technology)\nOlin Business School, Washington University in St. Louis\n2023.08 - 2024.12\nGPA: 3.96/4.00\nHonors:\n\nBeta Gamma Sigma\n\nOutstanding Student Award\n\nCharles F. Knight Scholar\n\nB.S. in International Economics & Financial Risk Management\nCentral University of Finance and Economics (CUFE)\n2019.08 - 2023.06\nGPA: 3.84/4.00"
+    "text": "Education\n\nM.S. in Business Analytics (Financial Technology)\nOlin Business School, Washington University in St. Louis\n2023.08 - 2024.12\nGPA: 3.96/4.00 (1st)\nHonors:\n\nBeta Gamma Sigma\n\nOutstanding Student Award for highest academic achievement\n\nCharles F. Knight Scholar PhD Courseworks:\nCorporate Finance Theory (A, ranked 1/5)\nAsset Pricing (A)\nMicroeconomic Theory (A)\n\nB.S. in International Economics & Financial Risk Management\nCentral University of Finance and Economics (CUFE)\n2019.08 - 2023.06\nGPA: 90.25/100 Senior Thesis: Effects of Development Initiatives on Foreign Direct Investments"
   },
   {
     "objectID": "cv.html#research-experience",
     "href": "cv.html#research-experience",
     "title": "Curriculum Vitae",
     "section": "Research Experience",
-    "text": "Research Experience\n\nTheoretical Corporate Finance\nResearch Assistant for Prof. Armando Gomes, WashU Olin\n2025.01 - Present\nM&A Due Diligence\nResearch Assistant for Prof. Brett Green, WashU Olin\n2025.01 - Present\nEmpirical Corporate Finance\nResearch Assistant for Prof. Margarita Tsoutsoura, WashU Olin\n2024.05 - Present\n\n\n\nDistinguishing LLM Authorship Using Linguistic Dimensions\nResearch Assistant for Dr. Gerald Onwujekwe, WashU Olin\n2024.01 - 2024.11\nEffects of Development Initiatives on Foreign Direct Investment\nSenior Thesis at CUFE\n2022.11 - 2023.05\nMechanisms of China’s National Carbon Market on Emissions\nResearch Analyst at International Institute of Green Finance, CUFE\n2022.02 - 2022.06\nEvaluating Corporate ESG Performance in the Diamond Industry\nResearch Analyst at International Institute of Green Finance, CUFE\n2022.02 - 2022.06\nModeling Sustainable Transformation of Global Food Systems\nContestant (Honorable Mentions) of Interdisciplinary Contest in Modeling\n2021.02"
-  },
-  {
-    "objectID": "cv.html#professional-experience",
-    "href": "cv.html#professional-experience",
-    "title": "Curriculum Vitae",
-    "section": "Professional Experience",
-    "text": "Professional Experience\n\nFICC Product Specialist\nChina International Capital Corporation\n2023.03 - 2023.06\nCapital Markets Intern\nChina International Capital Corporation\n2022.06 - 2022.12\nInvestment Banking Intern\nChina Merchants Securities\n2022.02 - 2022.06\nWealth & Asset Management Consulting Assistant\nErnst & Young\n2021.12 - 2022.01"
+    "text": "Research Experience\n\nEconomics of Credit Products\nResearch Assistant for Prof. Armando Gomes, WashU Olin\n2025.01 - Present\nEmpirical Mergers & Acquisitions Dynamics\nResearch Assistant for Prof. Brett Green, WashU Olin\n2025.01 - Present\nEmpirical Corporate Finance\nResearch Assistant for Prof. Margarita Tsoutsoura, WashU Olin\n2024.05 - Present\nDistinguishing LLM Authorship Using Linguistic Dimensions\nResearch Assistant for Dr. Gerald Onwujekwe, WashU Olin\n2024.01 - 2024.11\nInternational Institute of Green Finance, CUFE\nResearch Analyst\n2022.02 - 2022.06"
   },
   {
     "objectID": "cv.html#teaching-experience",
@@ -1259,18 +1245,18 @@
     "text": "Teaching Experience\n\nTeaching Assistant\nOlin Business School, Washington University\n\nAdvanced Financial Management\nUndergraduate, Spring 2025\nInstructor: Margarita Tsoutsoura / Grant Clayton\nAdvanced Corporate Finance I - Valuation\nGraduate, Spring 2025\nInstructor: Yaron Leitner\nA/B Testing in Business and Social Science\nUndergraduate/Graduate, Spring 2025\nInstructor: Xiang Hui\nUnderstanding & Conducting Business Experiments\nUndergraduate, Spring 2025\nInstructor: Xiang Hui\nAdvanced Corporate Finance II - Financing\nGraduate, Fall 2024\nInstructor: Yaron Leitner\nFinancial Markets\nGraduate, Fall 2024\nInstructor: Yaron Leitner\nMachine Learning\nGraduate, Spring/Fall 2024\nInstructors: Durai Sundaramoorthi / Gerald Onwujekwe\nCapital Market and Financial Management\nUndergraduate, Spring 2024\nInstructor: Koray Sayili"
   },
   {
+    "objectID": "cv.html#professional-experience",
+    "href": "cv.html#professional-experience",
+    "title": "Curriculum Vitae",
+    "section": "Professional Experience",
+    "text": "Professional Experience\n\nFICC Product Specialist\nChina International Capital Corporation\n2023.03 - 2023.06\nCapital Markets Intern\nChina International Capital Corporation\n2022.06 - 2022.12\nInvestment Banking Intern\nChina Merchants Securities\n2022.02 - 2022.06\nWealth & Asset Management Consulting Assistant\nErnst & Young\n2021.12 - 2022.01"
+  },
+  {
     "objectID": "cv.html#skills",
     "href": "cv.html#skills",
     "title": "Curriculum Vitae",
     "section": "Skills",
     "text": "Skills\n\nProgramming\nPython, R, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Dev\nLanguages\nMandarin: Native\nEnglish: Professional Fluency\nFrench: Conversational\nCommunication\nChinese National 2nd Prize in English Public Speaking\nUS Academic Decathlon Bronze Medal on Speaking"
-  },
-  {
-    "objectID": "cv.html#coursework",
-    "href": "cv.html#coursework",
-    "title": "Curriculum Vitae",
-    "section": "Coursework",
-    "text": "Coursework\n\nFinance and Economics\nCorporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD, A), Microeconomic Theory (PhD, A), Advanced Corporate Finance (A+), Econometrics, Macroeconomics\nQuantitative Methods\nStochastic Processes, Probability and Statistics, Matrix Algebra, Calculus"
   },
   {
     "objectID": "cv.html#personal-information",
@@ -2245,30 +2231,14 @@
     "href": "repo/mixtape/101.html",
     "title": "Causal Inference - The Basics",
     "section": "",
-    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Spring 2025",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Causal Inference",
-      "The Mixtape",
-      "The Basics"
-    ]
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Spring 2025"
   },
   {
     "objectID": "repo/mixtape/101.html#the-linear-model",
     "href": "repo/mixtape/101.html#the-linear-model",
     "title": "Causal Inference - The Basics",
     "section": "The Linear Model",
-    "text": "The Linear Model\nSuppose we want to study the effect of education on wages (very cliche but classic). Let’s denote education level as \\(x\\) and annual wages as \\(y\\). Then, we need to think about the following questions before moving forward:\n\n\n\n\n\n\nQuestions to Think About…\n\n\n\n\nQ1: What if \\(y\\) is affected by factors other than \\(x\\)?\n\nQ2: What could be the mathematical function that connects \\(y\\) with \\(x\\)?\nQ3: How to infer and distinguish causal relationship from regression analysis?\n\n\n\nWe aim to provide simple yet intuitive answers in this section. Let’s start with an extremely simple linear function (or model) that we expected to be true for the whole population:\n\n\n\n\n\n\nUnivariate Linear Regression Model\n\n\n\n\\[\\begin{aligned}\n  y = \\beta_0 + \\beta_1 x + u\n\\end{aligned}\\]\nwhere\n\n\\(y\\) (wages) is considered the effect\n\n\\(x\\) is considered as the causes\n\n\\(u\\), the error term, includes the effect of other factors on \\(y\\)\n\\(\\beta_0\\) is the intercept\n\\(\\beta_1\\) is the slope\n\n\n\nIf we were to assume this to be true for the whole population, our goal of the empirical work is then to use a sample (for most cases we can only access information on a subset of the population) to estimate these aforementioned values. (It is impossible to observe the parameters in real life, we can only try to estimate them.)\n\nAssumptions",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Causal Inference",
-      "The Mixtape",
-      "The Basics"
-    ]
+    "text": "The Linear Model\nSuppose we want to study the effect of education on wages (very cliche but classic). Let’s denote education level as \\(x\\) and annual wages as \\(y\\). Then, we need to think about the following questions before moving forward:\n\n\n\n\n\n\nQuestions to Think About…\n\n\n\n\nQ1: What if \\(y\\) is affected by factors other than \\(x\\)?\n\nQ2: What could be the mathematical function that connects \\(y\\) with \\(x\\)?\nQ3: How to infer and distinguish causal relationship from regression analysis?\n\n\n\nWe aim to provide simple yet intuitive answers in this section. Let’s start with an extremely simple linear function (or model) that we expected to be true for the whole population:\n\n\n\n\n\n\nUnivariate Linear Regression Model\n\n\n\n\\[\\begin{aligned}\n  y = \\beta_0 + \\beta_1 x + u\n\\end{aligned}\\]\nwhere\n\n\\(y\\) (wages) is considered the effect\n\n\\(x\\) is considered as the causes\n\n\\(u\\), the error term, includes the effect of other factors on \\(y\\)\n\\(\\beta_0\\) is the intercept\n\\(\\beta_1\\) is the slope\n\n\n\nIf we were to assume this to be true for the whole population, our goal of the empirical work is then to use a sample (for most cases we can only access information on a subset of the population) to estimate these aforementioned values. (It is impossible to observe the parameters in real life, we can only try to estimate them.)\n\nAssumptions"
   },
   {
     "objectID": "repo/babyrudin/index.html",
