@@ -75,6 +75,20 @@
     ]
   },
   {
+    "objectID": "repo/mixtape/index.html",
+    "href": "repo/mixtape/index.html",
+    "title": "Causal Inference (Based on S. Cunningham)",
+    "section": "",
+    "text": "Hi! This page hosts my study notes on causal inference.\n\nThe Basics\n\nFoundations for causal analysis - statistics, probabilities, regressions, etc.\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Causal Inference",
+      "The Mixtape"
+    ]
+  },
+  {
     "objectID": "repo/micro-g/bayesian.html",
     "href": "repo/micro-g/bayesian.html",
     "title": "Bayesian Games",
@@ -450,6 +464,13 @@
     ]
   },
   {
+    "objectID": "repo/harmless/c3.html",
+    "href": "repo/harmless/c3.html",
+    "title": "C3 - Making Regression Make Sense",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\n\nyedlu, Fall 2025\n\n\n\n Back to top"
+  },
+  {
     "objectID": "repo/cf/fin-asym-info.html",
     "href": "repo/cf/fin-asym-info.html",
     "title": "Y. Eddie Lu",
@@ -544,20 +565,6 @@
     "title": "Y. Eddie Lu",
     "section": "",
     "text": "Back to top"
-  },
-  {
-    "objectID": "repo/causal/index.html",
-    "href": "repo/causal/index.html",
-    "title": "Causal Inference (Based on S. Cunningham)",
-    "section": "",
-    "text": "Hi! This page hosts my study notes on causal inference.\n\nThe Basics\n\nFoundations for causal analysis - statistics, probabilities, regressions, etc.\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Econometrics",
-      "Causal Inference"
-    ]
   },
   {
     "objectID": "repo/ap/allocation.html",
@@ -1270,7 +1277,7 @@
     "href": "cv.html#personal-information",
     "title": "Curriculum Vitae",
     "section": "Personal Information",
-    "text": "Personal Information\n\nGuitarist for over 10 years\n\nArt and museum enthusiast\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running"
+    "text": "Personal Information\n\nGuitarist for over 10 years\n\nPassionate home cook\n\nEnjoys cycling, hiking, and running\n\nCat and Dog Parent"
   },
   {
     "objectID": "repo/sc/index.html",
@@ -1797,36 +1804,6 @@
     ]
   },
   {
-    "objectID": "repo/causal/101.html",
-    "href": "repo/causal/101.html",
-    "title": "Causal Inference - The Basics",
-    "section": "",
-    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Spring 2025",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Econometrics",
-      "Causal Inference",
-      "The Basics"
-    ]
-  },
-  {
-    "objectID": "repo/causal/101.html#the-linear-model",
-    "href": "repo/causal/101.html#the-linear-model",
-    "title": "Causal Inference - The Basics",
-    "section": "The Linear Model",
-    "text": "The Linear Model\nSuppose we want to study the effect of education on wages (very cliche but classic). Let’s denote education level as \\(x\\) and annual wages as \\(y\\). Then, we need to think about the following questions before moving forward:\n\n\n\n\n\n\nQuestions to Think About…\n\n\n\n\nQ1: What if \\(y\\) is affected by factors other than \\(x\\)?\n\nQ2: What could be the mathematical function that connects \\(y\\) with \\(x\\)?\nQ3: How to infer and distinguish causal relationship from regression analysis?\n\n\n\nWe aim to provide simple yet intuitive answers in this section. Let’s start with an extremely simple linear function (or model) that we expected to be true for the whole population:\n\n\n\n\n\n\nUnivariate Linear Regression Model\n\n\n\n\\[\\begin{aligned}\n  y = \\beta_0 + \\beta_1 x + u\n\\end{aligned}\\]\nwhere\n\n\\(y\\) (wages) is considered the effect\n\n\\(x\\) is considered as the causes\n\n\\(u\\), the error term, includes the effect of other factors on \\(y\\)\n\\(\\beta_0\\) is the intercept\n\\(\\beta_1\\) is the slope\n\n\n\nIf we were to assume this to be true for the whole population, our goal of the empirical work is then to use a sample (for most cases we can only access information on a subset of the population) to estimate these aforementioned values. (It is impossible to observe the parameters in real life, we can only try to estimate them.)\n\nAssumptions",
-    "crumbs": [
-      "me",
-      "Repository",
-      "Class Notes",
-      "Econometrics",
-      "Causal Inference",
-      "The Basics"
-    ]
-  },
-  {
     "objectID": "repo/cf/corp-monitor.html",
     "href": "repo/cf/corp-monitor.html",
     "title": "Y. Eddie Lu",
@@ -1862,11 +1839,18 @@
     "text": "Back to top"
   },
   {
+    "objectID": "repo/harmless/index.html",
+    "href": "repo/harmless/index.html",
+    "title": "Notes - Mostly Harmless Econometrics (Angrist & Pischke, 2008)",
+    "section": "",
+    "text": "Hi! This page hosts my study notes on (probably) one of the most renowned book in causal inference.\n\nPart I - Introduction\nC1. Questions about Questions\nC2. The Experimental Ideal\n\n\nPart II - The Core\nC3. Making Regression Make Sense\n\n\n\n\n Back to top"
+  },
+  {
     "objectID": "repo/index.html",
     "href": "repo/index.html",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nReal Analysis\n\nPrinciple of Mathematical Analysis (Baby Rudin)\n\n\n\n\n\n\nCausal Inference",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nReal Analysis\n\nPrinciple of Mathematical Analysis (Baby Rudin)\n\n\n\n\n\n\nMostly Harmless Econometrics",
     "crumbs": [
       "me",
       "Repository"
@@ -1877,7 +1861,7 @@
     "href": "repo/index.html#class-notes",
     "title": "Repositories",
     "section": "",
-    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nReal Analysis\n\nPrinciple of Mathematical Analysis (Baby Rudin)\n\n\n\n\n\n\nCausal Inference",
+    "text": "Micro I: Utility Theories (PhD Level)\nMicro II: Game Theory (PhD Level)\n\n\n\n\n\nCorporate Finance Theory (PhD Level)\nCorporate Finance Practice (MBA Level)\n\nValuation\nFinancing\nMergers & Acquisitions\n\n\n\n\n\n\nAsset Pricing Theory (PhD Level)\nStochastic Finance\n\n\n\n\n\nReal Analysis\n\nPrinciple of Mathematical Analysis (Baby Rudin)\n\n\n\n\n\n\nMostly Harmless Econometrics",
     "crumbs": [
       "me",
       "Repository"
@@ -2254,6 +2238,36 @@
       "Microeconomics",
       "Micro II: Game Theory",
       "Normal-Form Games"
+    ]
+  },
+  {
+    "objectID": "repo/mixtape/101.html",
+    "href": "repo/mixtape/101.html",
+    "title": "Causal Inference - The Basics",
+    "section": "",
+    "text": "\\[\n\\def\\BB#1{{\\mathbb{#1}}}\n\\def\\BF#1{{\\mathbf{#1}}}\n\\]\nyedlu, Spring 2025",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Causal Inference",
+      "The Mixtape",
+      "The Basics"
+    ]
+  },
+  {
+    "objectID": "repo/mixtape/101.html#the-linear-model",
+    "href": "repo/mixtape/101.html#the-linear-model",
+    "title": "Causal Inference - The Basics",
+    "section": "The Linear Model",
+    "text": "The Linear Model\nSuppose we want to study the effect of education on wages (very cliche but classic). Let’s denote education level as \\(x\\) and annual wages as \\(y\\). Then, we need to think about the following questions before moving forward:\n\n\n\n\n\n\nQuestions to Think About…\n\n\n\n\nQ1: What if \\(y\\) is affected by factors other than \\(x\\)?\n\nQ2: What could be the mathematical function that connects \\(y\\) with \\(x\\)?\nQ3: How to infer and distinguish causal relationship from regression analysis?\n\n\n\nWe aim to provide simple yet intuitive answers in this section. Let’s start with an extremely simple linear function (or model) that we expected to be true for the whole population:\n\n\n\n\n\n\nUnivariate Linear Regression Model\n\n\n\n\\[\\begin{aligned}\n  y = \\beta_0 + \\beta_1 x + u\n\\end{aligned}\\]\nwhere\n\n\\(y\\) (wages) is considered the effect\n\n\\(x\\) is considered as the causes\n\n\\(u\\), the error term, includes the effect of other factors on \\(y\\)\n\\(\\beta_0\\) is the intercept\n\\(\\beta_1\\) is the slope\n\n\n\nIf we were to assume this to be true for the whole population, our goal of the empirical work is then to use a sample (for most cases we can only access information on a subset of the population) to estimate these aforementioned values. (It is impossible to observe the parameters in real life, we can only try to estimate them.)\n\nAssumptions",
+    "crumbs": [
+      "me",
+      "Repository",
+      "Class Notes",
+      "Causal Inference",
+      "The Mixtape",
+      "The Basics"
     ]
   },
   {

@@ -41,28 +41,31 @@ format:
 - **M.S. in Business Analytics (Financial Technology)**  
   *Olin Business School, Washington University in St. Louis*  
   2023.08 - 2024.12  
-  **GPA: 3.96/4.00**  
+  **GPA: 3.96/4.00** (1st)  
   Honors:  
   - Beta Gamma Sigma  
-  - Outstanding Student Award  
+  - Outstanding Student Award for highest academic achievement  
   - Charles F. Knight Scholar
-  
+  PhD Courseworks:
+  - Corporate Finance Theory (A, ranked 1/5)
+  - Asset Pricing (A)
+  - Microeconomic Theory (A)
 
 
 - **B.S. in International Economics & Financial Risk Management**  
   *Central University of Finance and Economics (CUFE)*  
   2019.08 - 2023.06  
-  **GPA: 3.84/4.00**
-
+  **GPA: 90.25/100**
+  Senior Thesis: Effects of Development Initiatives on Foreign Direct Investments
 
 
 ## Research Experience
 
-- **Theoretical Corporate Finance**  
+- **Economics of Credit Products**  
   *Research Assistant* for Prof. Armando Gomes, WashU Olin  
   2025.01 - Present  
 
-- **M\&A Due Diligence**  
+- **Empirical Mergers \& Acquisitions Dynamics**  
   *Research Assistant* for Prof. Brett Green, WashU Olin  
   2025.01 - Present    
 
@@ -71,51 +74,14 @@ format:
   2024.05 - Present  
 
 
----
-
-
 - **Distinguishing LLM Authorship Using Linguistic Dimensions**  
   *Research Assistant* for Dr. Gerald Onwujekwe, WashU Olin  
   2024.01 - 2024.11  
 
-- **Effects of Development Initiatives on Foreign Direct Investment**  
-  *Senior Thesis* at CUFE  
-  2022.11 - 2023.05  
 
-- **Mechanisms of China's National Carbon Market on Emissions**  
-  *Research Analyst* at International Institute of Green Finance, CUFE  
+- **International Institute of Green Finance, CUFE**  
+  *Research Analyst*  
   2022.02 - 2022.06  
-
-- **Evaluating Corporate ESG Performance in the Diamond Industry**  
-  *Research Analyst* at International Institute of Green Finance, CUFE  
-  2022.02 - 2022.06  
-
-- **Modeling Sustainable Transformation of Global Food Systems**  
-  *Contestant* (Honorable Mentions) of Interdisciplinary Contest in Modeling  
-  2021.02  
-
-
-
-
-## Professional Experience
-
-- **FICC Product Specialist**  
-  *China International Capital Corporation*  
-  2023.03 - 2023.06  
-
-- **Capital Markets Intern**  
-  *China International Capital Corporation*  
-  2022.06 - 2022.12  
-
-- **Investment Banking Intern**  
-  *China Merchants Securities*  
-  2022.02 - 2022.06  
-
-- **Wealth & Asset Management Consulting Assistant**  
-  *Ernst & Young*  
-  2021.12 - 2022.01  
-
-
 
 
 ## Teaching Experience
@@ -156,6 +122,27 @@ Olin Business School, Washington University
 
 
 
+## Professional Experience
+
+- **FICC Product Specialist**  
+  *China International Capital Corporation*  
+  2023.03 - 2023.06  
+
+- **Capital Markets Intern**  
+  *China International Capital Corporation*  
+  2022.06 - 2022.12  
+
+- **Investment Banking Intern**  
+  *China Merchants Securities*  
+  2022.02 - 2022.06  
+
+- **Wealth & Asset Management Consulting Assistant**  
+  *Ernst & Young*  
+  2021.12 - 2022.01  
+
+
+
+
 
 ## Skills
 
@@ -170,18 +157,6 @@ Olin Business School, Washington University
 - **Communication**  
   Chinese National 2nd Prize in English Public Speaking  
   US Academic Decathlon Bronze Medal on Speaking  
-
-
-## Coursework
-
-- **Finance and Economics**  
-  Corporate Finance Theory (PhD, Top of Class), Asset Pricing (PhD, A), Microeconomic Theory (PhD, A), Advanced Corporate Finance (A+), Econometrics, Macroeconomics  
-
-- **Quantitative Methods**  
-  Stochastic Processes, Probability and Statistics, Matrix Algebra, Calculus  
-
-<!-- - **Data and Programming Skills**  
-  Database Design and SQL (A+), Big Data Analytics (A+), Text Mining (A+), Data Visualization (A+), Machine Learning, Python, R   -->
 
 
 

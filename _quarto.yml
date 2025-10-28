@@ -123,14 +123,14 @@ website:
                 contents:
                 - text: "Real and Complex Number Systems"
                   href: repo/babyrudin/c1.qmd
-            - text: "Causal Inference"
-              href: repo/#causal-inference
-              contents:
-                - text: "The Mixtape"
-                  href: repo/mixtape/index.qmd
-                  contents:
-                  - text: "The Basics"
-                    href: repo/mixtape/101.qmd
+            # - text: "Causal Inference"
+            #   href: repo/#causal-inference
+            #   contents:
+            #     - text: "The Mixtape"
+            #       href: repo/mixtape/index.qmd
+            #       contents:
+            #       - text: "The Basics"
+            #         href: repo/mixtape/101.qmd
 
 format:
   html:
