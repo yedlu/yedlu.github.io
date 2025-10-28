@@ -45,7 +45,8 @@ format:
   Honors:  
   - Beta Gamma Sigma  
   - Outstanding Student Award for highest academic achievement  
-  - Charles F. Knight Scholar
+  - Charles F. Knight Scholar   
+  
   PhD Courseworks:
   - Corporate Finance Theory (A, ranked 1/5)
   - Asset Pricing (A)
