@@ -26,135 +26,102 @@ format:
     <td></td>
   </tr>
   <tr>
-    <td><strong>Residence</strong></td>
+    <td><strong>Currently In</strong></td>
     <td>St. Louis, MO</td>
-  </tr>
-  <tr>
-    <td><strong>Status</strong></td>
-    <td>Post-Completion Opt</td>
   </tr>
 </table>
 
+## Current Affiliation
 
+- **Ph.D. student in Finance**  
+  *Washington University in St. Louis, Olin School of Business*  
+  Incoming 2026
 
 ## Education
 - **M.S. in Business Analytics (Financial Technology)**  
-  *Olin Business School, Washington University in St. Louis*  
-  2023.08 - 2024.12  
-  **GPA: 3.96/4.00** (1st)  
-  **Honors:** Beta Gamma Sigma, Outstanding Student Award, Charles F. Knight Scholar  
-  **PhD Courseworks:** Corporate Finance Theory (A, 1/5), Asset Pricing (A), Microeconomic Theory (A)
+  *Washington University in St. Louis, Olin School of Business (WashU Olin)*  
+  2023.08 - 2024.12
 
 - **B.S. in International Economics & Financial Risk Management**  
   *Central University of Finance and Economics (CUFE)*  
-  2019.08 - 2023.06  
-  **GPA: 90.25/100**  
-  Senior Thesis: Effects of Development Initiatives on Foreign Direct Investments
-
+  2019.09 - 2023.06
 
 ## Research Experience
 
-- **Economics of Credit Products**  
-  *Research Assistant* for Prof. Armando Gomes, WashU Olin  
-  2025.01 - Present  
+- **Post-Grad Faculty Assistant (Research)**  
+  *Washington University in St. Louis, Olin School of Business*  
+  2025.01 - 2026.01
 
-- **Empirical Mergers \& Acquisitions Dynamics**  
-  *Research Assistant* for Prof. Brett Green, WashU Olin  
-  2025.01 - Present    
-
-- **Empirical Corporate Finance**  
-  *Research Assistant* for Prof. Margarita Tsoutsoura, WashU Olin  
-  2024.05 - Present  
-
-
-- **Distinguishing LLM Authorship Using Linguistic Dimensions**  
-  *Research Assistant* for Dr. Gerald Onwujekwe, WashU Olin  
-  2024.01 - 2024.11  
-
-
-- **International Institute of Green Finance, CUFE**  
-  *Research Analyst*  
-  2022.02 - 2022.06  
-
+- **Graduate Research Assistant**  
+  *Washington University in St. Louis, Olin School of Business*  
+  2024.01 - 2024.12
 
 ## Teaching Experience
-#### Teaching Assistant
-Olin Business School, Washington University  
+#### Assistant in Instruction (AI), WashU Olin
 
 - **Advanced Financial Management**  
-  *Undergraduate, Spring 2025*  
-  Instructor: Margarita Tsoutsoura / Grant Clayton
+  *Undergraduate, for Margarita Tsoutsoura*  
+  Spring 2025
 
 - **Advanced Corporate Finance I - Valuation**  
-  *Graduate, Spring 2025*  
-  Instructor: Yaron Leitner 
+  *Graduate, for Yaron Leitner*  
+  Spring 2025
 
-- **A/B Testing in Business and Social Science**  
-  *Undergraduate/Graduate, Spring 2025*  
-  Instructor: Xiang Hui 
-
-- **Understanding & Conducting Business Experiments**  
-  *Undergraduate, Spring 2025*  
-  Instructor: Xiang Hui 
+- **A/B Testing**  
+  *Undergraduate & Graduate, for Xiang Hui*  
+  Spring 2025
 
 - **Advanced Corporate Finance II - Financing**  
-  *Graduate, Fall 2024*  
-  Instructor: Yaron Leitner
+  *Graduate, for Yaron Leitner*  
+  Fall 2024
 
 - **Financial Markets**  
-  *Graduate, Fall 2024*  
-  Instructor: Yaron Leitner
+  *Graduate, for Yaron Leitner*  
+  Fall 2024
 
 - **Machine Learning**  
-  *Graduate, Spring/Fall 2024*  
-  Instructors: Durai Sundaramoorthi / Gerald Onwujekwe
+  *Graduate, for Durai Sundaramoorthi & Gerald Onwujekwe*  
+  Spring/Fall 2024
 
 - **Capital Market and Financial Management**  
-  *Undergraduate, Spring 2024*  
-  Instructor: Koray Sayili
-
-
+  *Undergraduate, for Koray Sayili*  
+  Spring 2024
 
 ## Professional Experience
 
 - **FICC Product Specialist**  
-  *China International Capital Corporation*  
-  2023.03 - 2023.06  
+  *China International Capital Corporation (CICC)*  
+  2023.03 - 2023.06
 
 - **Capital Markets Intern**  
-  *China International Capital Corporation*  
-  2022.06 - 2022.12  
+  *China International Capital Corporation (CICC)*  
+  2022.06 - 2022.12
+
+- **Research Analyst**  
+  *International Institute of Green Finance, CUFE*  
+  2022.02 - 2022.06
 
 - **Investment Banking Intern**  
   *China Merchants Securities*  
-  2022.02 - 2022.06  
+  2022.02 - 2022.06
 
 - **Wealth & Asset Management Consulting Assistant**  
-  *Ernst & Young*  
-  2021.12 - 2022.01  
+  *Ernst & Young (EY)*  
+  2021.12 - 2022.01
 
+## Honors
 
-
-
+- 2024, Outstanding Student Award, Washington University in St. Louis
+- 2024, Charles F. Knight Scholar, Washington University in St. Louis
+- 2024, Beta Gamma Sigma
+- 2021, Honorable Mentions, Interdisciplinary Contest in Modeling (ICM)
 
 ## Skills
 
-- **Programming**  
-  Python, R, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, Web Dev  
+- **Programming Proficiency**  
+  Python, R, Stata, MATLAB, SQL, SAS, AWS, Hive, LaTeX, WebDev
 
 - **Languages**  
   **Mandarin**: Native  
-  **English**: Professional Fluency  
-  **French**: Conversational  
-
-- **Communication**  
-  Chinese National 2nd Prize in English Public Speaking  
-  US Academic Decathlon Bronze Medal on Speaking  
-
-
-
-## Personal Information
-- Guitarist for over 10 years  
-- Passionate home cook  
-- Enjoys cycling, hiking, and running  
-- Cat and Dog Parent
+  **English**: Professional  
+  **French**: Conversational

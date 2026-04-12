@@ -11,12 +11,12 @@ format:
 
 <img src="profilepic.jpg" alt="Yanhe Eddie Lu" style="float: right; width: 200px; margin-left: 20px; border-radius: 5px;">
 
-I am currently conducting research and preparing to apply for PhD programs for the Fall '26 admission cycle. I have graduated from [WashU Olin Business School](https://olin.wustl.edu) and [Central University of Finance and Economics](https://www.cufe.edu.cn), with training in analytics and economics.  
+I am joining [Washington University Olin Business School](https://olin.washu.edu) as a Finance PhD student in 2026.
 
-I'm broadly interested in how frictions and incentives shape micro-level decision-making. My research interests include corporate governance, financial contracting, M&A, real estate finance, political economics, and labor economics. I work with both empirical causal inferences and theoretical modeling.
+My main research interest is in corporate finance. I'm broadly interested in how frictions and incentives shape decision-making across agents. I work with both empirical causal inferences and theoretical modeling.
 
 
-This website hosts my brief introduction of experiences in [`vitae`](cv.qmd) section. You can also explore my [`repositories`](repo/index.qmd) with concise notes/cheatsheets, projects, and coding samples.
+This website hosts my brief introduction of experiences in [`vitae`](cv.qmd) section. You can also explore my [`repositories`](repo/index.qmd).
 
 ---
 
@@ -32,8 +32,8 @@ Email:
 
 
 LinkedIn:
-<span onclick="copyToClipboard('https://linkedin.com/in/yedlu')" style="cursor: pointer; color: #18BC9C; text-decoration: underline;">
-  linkedin.com/in/yedlu
+<span onclick="copyToClipboard('https://linkedin.com/in/yeddielu')" style="cursor: pointer; color: #18BC9C; text-decoration: underline;">
+  linkedin.com/in/yeddielu
 </span>
 
 ---
