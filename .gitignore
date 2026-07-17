@@ -1,1 +1,9 @@
+# Quarto
 /.quarto/
+/_site/
+
+# macOS
+.DS_Store
+
+# Editor / tooling config
+.claude/
