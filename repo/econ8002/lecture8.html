@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Weak Convergence of Distributions – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/econ8002/lecture9.html" rel="next">
+<link href="../../repo/econ8002/lecture7.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="econ8002.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture8.html">Lecture 8: Characteristic Functions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
+  <li><a href="#tightness-and-subsequential-limits" id="toc-tightness-and-subsequential-limits" class="nav-link" data-scroll-target="#tightness-and-subsequential-limits">Tightness and subsequential limits</a></li>
+  <li><a href="#the-portmanteau-equivalences" id="toc-the-portmanteau-equivalences" class="nav-link" data-scroll-target="#the-portmanteau-equivalences">The Portmanteau equivalences</a></li>
+  <li><a href="#characteristic-functions-and-vector-limits" id="toc-characteristic-functions-and-vector-limits" class="nav-link" data-scroll-target="#characteristic-functions-and-vector-limits">Characteristic functions and vector limits</a></li>
+  <li><a href="#density-convergence-and-the-delta-method" id="toc-density-convergence-and-the-delta-method" class="nav-link" data-scroll-target="#density-convergence-and-the-delta-method">Density convergence and the delta method</a></li>
+  <li><a href="#synthesis-and-retrieval" id="toc-synthesis-and-retrieval" class="nav-link" data-scroll-target="#synthesis-and-retrieval">Synthesis and retrieval</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture8.html">Lecture 8: Characteristic Functions</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Weak Convergence of Distributions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8002/index.html">ECON 8002 course index</a> · Lecture 8 of 9</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<section id="how-to-use-this-page" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-this-page">How to use this page</h3>
+<p>Read every theorem in three passes: identify the objects, separate assumptions from conclusions, then rebuild the proof map without looking.</p>
+<p>Answer each quiz aloud before opening it. Exposure is not retrieval.</p>
+<div class="source-note">
+Primary source: ECON 8002 Lecture 8, pp.&nbsp;44–49. This page completes omitted proof steps and repairs the Lévy-Cramér and Scheffé arguments.
+</div>
+</section>
+<section id="how-should-i-think-about-lecture-8" class="level3">
+<h3 class="anchored" data-anchor-id="how-should-i-think-about-lecture-8">How should I think about Lecture 8?</h3>
+<div class="mindmap">
+<div class="mind-col">
+<div class="mind-leaf">
+<p>Mass must not drift to infinity.</p>
+</div>
+<div class="mind-leaf">
+<p>Sets and test functions detect laws.</p>
+</div>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-center">
+<p>Weak convergence asks whether probability laws approach a genuine limiting law.</p>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-col">
+<div class="mind-leaf">
+<p>Tightness produces subsequences.</p>
+</div>
+<div class="mind-leaf">
+<p>Characteristic functions identify limits.</p>
+</div>
+<div class="mind-leaf">
+<p>The delta method transforms fluctuations.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="course-map" class="level3">
+<h3 class="anchored" data-anchor-id="course-map">Course map</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th><strong>8</strong></th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>measure spaces</td>
+<td>integration and RN</td>
+<td>distribution properties</td>
+<td>conditioning</td>
+<td>convergence modes</td>
+<td>CMT and Slutsky</td>
+<td>LLN</td>
+<td><strong>weak limits and delta method</strong></td>
+<td>CLT and inference</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example or application
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lecture 8 supplies the compactness and identification tools used to prove the central limit theorems in Lecture 9.</p>
+</div>
+</div>
+</section>
+<section id="prerequisite-retrieval" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h3>
+<p>Before proceeding, retrieve these facts:</p>
+<ol type="1">
+<li><span class="math inline">\(X_n\xrightarrow{d}X\)</span> means c.d.f. convergence at continuity points.</li>
+<li><span class="math inline">\(X_n\xrightarrow{d}c\)</span> iff <span class="math inline">\(X_n\xrightarrow{p}c\)</span> for a constant <span class="math inline">\(c\)</span>.</li>
+<li>CMT preserves the convergence mode under continuity at the limiting value.</li>
+<li><span class="math inline">\(R_n=o_p(1)\)</span> and <span class="math inline">\(Z_n=O_p(1)\)</span> imply <span class="math inline">\(R_nZ_n=o_p(1)\)</span>.</li>
+<li>A characteristic function is <span class="math inline">\(\varphi_X(t)=E[e^{it^\top X}]\)</span>.</li>
+</ol>
+</section>
+</section>
+<section id="tightness-and-subsequential-limits" class="level2">
+<h2 class="anchored" data-anchor-id="tightness-and-subsequential-limits">Tightness and subsequential limits</h2>
+<section id="weak-convergence-compares-laws" class="level3">
+<h3 class="anchored" data-anchor-id="weak-convergence-compares-laws">Weak convergence compares laws</h3>
+<p>For random vectors <span class="math inline">\(X_n,X\in\mathbb R^k\)</span>,</p>
+<p><span class="math display">\[
+X_n\xrightarrow{d}X
+\iff
+F_{X_n}(x)\to F_X(x)
+\]</span></p>
+<p>at every continuity point <span class="math inline">\(x\)</span> of <span class="math inline">\(F_X\)</span>.</p>
+<div class="intuition-box">
+<p>The variables need not share a probability space. Weak convergence compares the probabilities they assign, not outcome-by-outcome numerical errors.</p>
+</div>
+<p><strong>Retrieval check.</strong></p>
+<p>Must <span class="math inline">\(X_n\)</span> and <span class="math inline">\(X\)</span> be defined on one probability space for <span class="math inline">\(X_n\xrightarrow{d}X\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;Their laws are being compared. A common space is required for <span class="math inline">\(X_n\xrightarrow{p}X\)</span> or <span class="math inline">\(X_n\xrightarrow{\mathrm{a.s.}}X\)</span> as ordinarily defined.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="motivation-a-valid-c.d.f.-sequence-can-lose-all-mass" class="level3">
+<h3 class="anchored" data-anchor-id="motivation-a-valid-c.d.f.-sequence-can-lose-all-mass">Motivation: a valid c.d.f. sequence can lose all mass</h3>
+<p>Let <span class="math inline">\(X_n=n\)</span> surely. Its c.d.f. is</p>
+<p><span class="math display">\[F_n(x)=\mathbf 1\{x\ge n\}.\]</span></p>
+<p>For every fixed <span class="math inline">\(x\)</span>, <span class="math inline">\(F_n(x)\to0\)</span>. But the zero function is not a c.d.f. on <span class="math inline">\(\mathbb R\)</span>: its limit at <span class="math inline">\(+\infty\)</span> is not one.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pointwise limits of c.d.f.s need not be probability distributions. The mass can move beyond every fixed bounded region.</p>
+</div>
+</div>
+</section>
+<section id="definition-31-tightness" class="level3">
+<h3 class="anchored" data-anchor-id="definition-31-tightness">Definition 31: tightness</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sequence of probability measures <span class="math inline">\(\{P_n\}\)</span> on <span class="math inline">\((\mathbb R^k,\mathcal B^k)\)</span> is <strong>tight</strong> if</p>
+<p><span class="math display">\[
+\forall\varepsilon&gt;0\ \exists K_\varepsilon\subset\mathbb R^k\text{ compact}:
+\inf_n P_n(K_\varepsilon)\ge1-\varepsilon.
+\]</span></p>
+</div>
+</div>
+<p>One compact set must contain almost all mass for every member of the sequence.</p>
+</section>
+<section id="tightness-is-stochastic-boundedness" class="level3">
+<h3 class="anchored" data-anchor-id="tightness-is-stochastic-boundedness">Tightness is stochastic boundedness</h3>
+<p>For random vectors <span class="math inline">\(X_n\in\mathbb R^k\)</span>,</p>
+<p><span class="math display">\[
+\{P_{X_n}\}\text{ tight}
+\iff
+\forall\varepsilon&gt;0\ \exists M_\varepsilon&lt;\infty:
+\sup_nP(\|X_n\|&gt;M_\varepsilon)&lt;\varepsilon.
+\]</span></p>
+<p>This is the uniform form of <span class="math inline">\(\|X_n\|=O_p(1)\)</span>. Closed Euclidean balls are compact.</p>
+<div class="intuition-box">
+<p>Tightness plays the role that boundedness plays for deterministic sequences. It prevents escape, but it does not choose a unique limit.</p>
+</div>
+</section>
+<section id="examples-nonexamples-and-a-boundary-case" class="level3">
+<h3 class="anchored" data-anchor-id="examples-nonexamples-and-a-boundary-case">Examples, nonexamples, and a boundary case</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 40%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sequence</th>
+<th style="text-align: right;">Tight?</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(X_n\sim N(0,1+n^{-1})\)</span></td>
+<td style="text-align: right;">yes</td>
+<td>one large interval controls all normal tails</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X_n=n\)</span> surely</td>
+<td style="text-align: right;">no</td>
+<td>every compact set eventually misses all mass</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(X_n\sim N((-1)^n,1)\)</span></td>
+<td style="text-align: right;">yes</td>
+<td>means and variances remain bounded</td>
+</tr>
+</tbody>
+</table>
+<p>The last sequence is tight but does not converge. Its even and odd subsequences have different limits.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Let <span class="math inline">\(X_n=0\)</span> surely for even <span class="math inline">\(n\)</span> and <span class="math inline">\(X_n=1\)</span> surely for odd <span class="math inline">\(n\)</span>. Is the sequence tight? Does it converge in distribution?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It is tight because all mass lies in <span class="math inline">\([0,1]\)</span>. It does not converge: the even and odd subsequences converge to different point masses.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="proposition-8.1-tightness-produces-subsequences" class="level3">
+<h3 class="anchored" data-anchor-id="proposition-8.1-tightness-produces-subsequences">Proposition 8.1: tightness produces subsequences</h3>
+<div class="theorem-box">
+<p>For probability measures <span class="math inline">\(\{P_n\}\)</span> on <span class="math inline">\(\mathbb R^k\)</span>:</p>
+<ol type="1">
+<li>Every subsequence has a further weakly convergent subsequence iff <span class="math inline">\(\{P_n\}\)</span> is tight.</li>
+<li>If <span class="math inline">\(\{P_n\}\)</span> is tight and every weakly convergent subsequence has the same limit <span class="math inline">\(P\)</span>, then <span class="math inline">\(P_n\Rightarrow P\)</span>.</li>
+</ol>
+</div>
+<p>Part 1 is the finite-dimensional form of Prokhorov’s theorem.</p>
+</section>
+<section id="why-one-subsequential-limit-is-enough" class="level3">
+<h3 class="anchored" data-anchor-id="why-one-subsequential-limit-is-enough">Why one subsequential limit is enough</h3>
+<p>Suppose <span class="math inline">\(P_n\)</span> did not converge weakly to <span class="math inline">\(P\)</span>. Then some weak neighborhood <span class="math inline">\(U\)</span> of <span class="math inline">\(P\)</span> would contain infinitely few <span class="math inline">\(P_n\)</span>.</p>
+<ol type="1">
+<li>Extract a subsequence entirely outside <span class="math inline">\(U\)</span>.</li>
+<li>Tightness gives a weakly convergent further subsequence.</li>
+<li>Its limit must be <span class="math inline">\(P\)</span> by hypothesis.</li>
+<li>A sequence converging to <span class="math inline">\(P\)</span> must eventually lie in <span class="math inline">\(U\)</span>, a contradiction.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example or application
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lecture 9 will use this pattern: prove tightness, identify every possible subsequential limit, then conclude convergence of the full sequence.</p>
+</div>
+</div>
+</section>
+<section id="theorem-8.2-helly-selection" class="level3">
+<h3 class="anchored" data-anchor-id="theorem-8.2-helly-selection">Theorem 8.2: Helly selection</h3>
+<div class="theorem-box">
+<p>For every sequence of one-dimensional c.d.f.s <span class="math inline">\(\{F_n\}\)</span>, there is a subsequence <span class="math inline">\(\{F_{n_j}\}\)</span> and a nondecreasing, right-continuous function <span class="math inline">\(F:\mathbb R\to[0,1]\)</span> such that</p>
+<p><span class="math display">\[F_{n_j}(x)\to F(x)\]</span></p>
+<p>at every continuity point of <span class="math inline">\(F\)</span>.</p>
+</div>
+<p>The multivariate compactness result requires the corresponding multivariate extension, not scalar Helly alone.</p>
+</section>
+<section id="a-helly-limit-may-be-defective" class="level3">
+<h3 class="anchored" data-anchor-id="a-helly-limit-may-be-defective">A Helly limit may be defective</h3>
+<p>For <span class="math inline">\(F_n(x)=\mathbf1\{x\ge n\}\)</span>, every subsequence has the same pointwise limit <span class="math inline">\(F(x)=0\)</span>.</p>
+<p>The limit is nondecreasing and right-continuous, but</p>
+<p><span class="math display">\[\lim_{x\to\infty}F(x)=0\ne1.\]</span></p>
+<p>Tightness supplies the missing tail condition and forces the selected limit to be a genuine c.d.f.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Which c.d.f. property can fail in Helly’s theorem when the sequence is not tight?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Total mass can be lost: the selected limit need not approach one as <span class="math inline">\(x\to+\infty\)</span> or zero as <span class="math inline">\(x\to-\infty\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-portmanteau-equivalences" class="level2">
+<h2 class="anchored" data-anchor-id="the-portmanteau-equivalences">The Portmanteau equivalences</h2>
+<section id="portmanteau-seven-views-of-one-limit" class="level3">
+<h3 class="anchored" data-anchor-id="portmanteau-seven-views-of-one-limit">Portmanteau: seven views of one limit</h3>
+<p>For random vectors <span class="math inline">\(X_n,X\in\mathbb R^k\)</span>, the following are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(X_n\xrightarrow{d}X\)</span>.</li>
+<li><span class="math inline">\(E[f(X_n)]\to E[f(X)]\)</span> for every bounded continuous <span class="math inline">\(f\)</span>.</li>
+<li>The same for every bounded Lipschitz <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(\liminf_nE[f(X_n)]\ge E[f(X)]\)</span> for every nonnegative continuous <span class="math inline">\(f\)</span>.</li>
+</ol>
+<p>The remaining set formulations come next.</p>
+</section>
+<section id="portmanteau-the-set-formulations" class="level3">
+<h3 class="anchored" data-anchor-id="portmanteau-the-set-formulations">Portmanteau: the set formulations</h3>
+<p>The preceding statements are also equivalent to:</p>
+<ol start="5" type="1">
+<li>For every open <span class="math inline">\(G\)</span>, <span class="math display">\[\liminf_nP(X_n\in G)\ge P(X\in G).\]</span></li>
+<li>For every closed <span class="math inline">\(C\)</span>, <span class="math display">\[\limsup_nP(X_n\in C)\le P(X\in C).\]</span></li>
+<li>For every Borel <span class="math inline">\(B\)</span> with <span class="math inline">\(P(X\in\partial B)=0\)</span>, <span class="math display">\[P(X_n\in B)\to P(X\in B).\]</span></li>
+</ol>
+</section>
+<section id="why-inequalities-point-in-opposite-directions" class="level3">
+<h3 class="anchored" data-anchor-id="why-inequalities-point-in-opposite-directions">Why inequalities point in opposite directions</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="intuition-box">
+<p><strong>Open set.</strong> Points on the boundary are excluded. Approximating laws may place less mass inside than the limit, hence a lower bound through <span class="math inline">\(\liminf\)</span>.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="intuition-box">
+<p><strong>Closed set.</strong> Boundary points are included. Approximating laws may carry extra mass there, hence an upper bound through <span class="math inline">\(\limsup\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Equality is recovered when the limiting law assigns zero probability to the boundary.</p>
+</section>
+<section id="boundary-mass-is-the-obstruction" class="level3">
+<h3 class="anchored" data-anchor-id="boundary-mass-is-the-obstruction">Boundary mass is the obstruction</h3>
+<p>Let <span class="math inline">\(X_n=1/n\)</span> and <span class="math inline">\(X=0\)</span> surely.</p>
+<ul>
+<li>For <span class="math inline">\(B=(-1,1)\)</span>, <span class="math inline">\(P(X\in\partial B)=0\)</span> and both probabilities equal one eventually.</li>
+<li>For <span class="math inline">\(B=\{0\}\)</span>, <span class="math inline">\(P(X\in\partial B)=1\)</span> but <span class="math display">\[P(X_n\in B)=0\not\to1=P(X\in B).\]</span></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The geometry of <span class="math inline">\(B\)</span> alone does not decide convergence. The limiting probability of its boundary does.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(X\sim N(0,1)\)</span>, is <span class="math inline">\(B=(-\infty,2]\)</span> a continuity set of <span class="math inline">\(P_X\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Yes. Its boundary is <span class="math inline">\(\{2\}\)</span>, and a continuous distribution assigns zero probability to every singleton.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="complete-portmanteau-proof-map" class="level3">
+<h3 class="anchored" data-anchor-id="complete-portmanteau-proof-map">Complete Portmanteau proof map</h3>
+<div class="theorem-box">
+<p>One complete implication architecture is</p>
+<p><span class="math display">\[
+(1)\Rightarrow(2)\Rightarrow(3)\Rightarrow(5)
+\Longleftrightarrow(6)\Rightarrow(7)\Rightarrow(1),
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[ (2)\Rightarrow(4)\Rightarrow(5). \]</span></p>
+</div>
+<p>The source proves only selected arrows. The next sections supply the missing links.</p>
+</section>
+<section id="from-weak-convergence-to-test-functions" class="level3">
+<h3 class="anchored" data-anchor-id="from-weak-convergence-to-test-functions">From weak convergence to test functions</h3>
+<p>Because <span class="math inline">\(\mathbb R^k\)</span> is Polish, Skorokhod’s representation theorem gives random vectors <span class="math inline">\(Y_n,Y\)</span> on one probability space such that</p>
+<p><span class="math display">\[P_{Y_n}=P_{X_n},\qquad P_Y=P_X,qquad Y_n\xrightarrow{\mathrm{a.s.}}Y.\]</span></p>
+<p>For bounded continuous <span class="math inline">\(f\)</span>, CMT and bounded convergence yield</p>
+<p><span class="math display">\[E[f(X_n)]=E[f(Y_n)]\to E[f(Y)]=E[f(X)].\]</span></p>
+<p>Bounded Lipschitz functions are a subclass, so <span class="math inline">\((2)\Rightarrow(3)\)</span> is immediate.</p>
+</section>
+<section id="bounded-lipschitz-functions-detect-open-sets" class="level3">
+<h3 class="anchored" data-anchor-id="bounded-lipschitz-functions-detect-open-sets">Bounded Lipschitz functions detect open sets</h3>
+<p>For open <span class="math inline">\(G\)</span>, define</p>
+<p><span class="math display">\[f_m(x)=\min\{1,m\,d(x,G^c)\}.\]</span></p>
+<p>Then <span class="math inline">\(f_m\)</span> is bounded and Lipschitz, <span class="math inline">\(0\le f_m\le\mathbf1_G\)</span>, and <span class="math inline">\(f_m(x)\uparrow\mathbf1_G(x)\)</span>.</p>
+<p>Thus, for fixed <span class="math inline">\(m\)</span>,</p>
+<p><span class="math display">\[E[f_m(X)]=\lim_nE[f_m(X_n)]\le\liminf_nP(X_n\in G).\]</span></p>
+<p>Let <span class="math inline">\(m\to\infty\)</span> and use monotone convergence to obtain the open-set inequality.</p>
+</section>
+<section id="nonnegative-functions-and-truncation" class="level3">
+<h3 class="anchored" data-anchor-id="nonnegative-functions-and-truncation">Nonnegative functions and truncation</h3>
+<p>If <span class="math inline">\(f\ge0\)</span> is continuous, then <span class="math inline">\(f_M=f\wedge M\)</span> is bounded and continuous. Hence</p>
+<p><span class="math display">\[E[f_M(X)]=\lim_nE[f_M(X_n)]\le\liminf_nE[f(X_n)].\]</span></p>
+<p>Let <span class="math inline">\(M\to\infty\)</span>. Monotone convergence gives</p>
+<p><span class="math display">\[E[f(X)]\le\liminf_nE[f(X_n)].\]</span></p>
+<p>Conversely, applying this result to continuous approximations of <span class="math inline">\(\mathbf1_G\)</span> recovers the open-set inequality.</p>
+</section>
+<section id="open-and-closed-sets-are-complements" class="level3">
+<h3 class="anchored" data-anchor-id="open-and-closed-sets-are-complements">Open and closed sets are complements</h3>
+<p>For closed <span class="math inline">\(C\)</span>, its complement <span class="math inline">\(C^c\)</span> is open. Therefore</p>
+<p><span class="math display">\[
+\begin{aligned}
+\limsup_nP(X_n\in C)
+&amp;=1-\liminf_nP(X_n\in C^c)\\
+&amp;\le1-P(X\in C^c)=P(X\in C).
+\end{aligned}
+\]</span></p>
+<p>The same calculation in reverse shows <span class="math inline">\((5)\Longleftrightarrow(6)\)</span>.</p>
+</section>
+<section id="closed-and-open-bounds-give-continuity-sets" class="level3">
+<h3 class="anchored" data-anchor-id="closed-and-open-bounds-give-continuity-sets">Closed and open bounds give continuity sets</h3>
+<p>For a Borel set <span class="math inline">\(B\)</span>,</p>
+<p><span class="math display">\[B^\circ\subseteq B\subseteq\overline B.\]</span></p>
+<p>Portmanteau gives</p>
+<p><span class="math display">\[
+P(X\in B^\circ)\le\liminf_nP(X_n\in B)
+\le\limsup_nP(X_n\in B)\le P(X\in\overline B).
+\]</span></p>
+<p>If <span class="math inline">\(P(X\in\partial B)=0\)</span>, the two outside probabilities equal <span class="math inline">\(P(X\in B)\)</span>, so the middle sequence converges.</p>
+</section>
+<section id="continuity-rectangles-recover-c.d.f.s" class="level3">
+<h3 class="anchored" data-anchor-id="continuity-rectangles-recover-c.d.f.s">Continuity rectangles recover c.d.f.s</h3>
+<p>Let <span class="math inline">\(B_x=(-\infty,x_1]\times\cdots\times(-\infty,x_k]\)</span>. Then <span class="math inline">\(F_X(x)=P(X\in B_x)\)</span>.</p>
+<p>If <span class="math inline">\(x\)</span> is a continuity point of the multivariate c.d.f., then <span class="math inline">\(P_X(\partial B_x)=0\)</span>. Thus <span class="math inline">\(B_x\)</span> is a <span class="math inline">\(P_X\)</span>-continuity set. Starting from condition (7), convergence on continuity sets gives</p>
+<p><span class="math display">\[F_{X_n}(x)\to F_X(x).\]</span></p>
+<p>This is exactly c.d.f. convergence at every continuity point, condition (1), so it proves the promised arrow <span class="math inline">\((7)\Rightarrow(1)\)</span> and closes the cycle.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(C\)</span> is closed, complete the statement: <span class="math inline">\(\limsup_nP(X_n\in C)\ \square\ P(X\in C)\)</span>.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The symbol is <span class="math inline">\(\le\)</span>. Closed sets may retain boundary mass that disappears in the limit, so Portmanteau gives an upper bound.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="why-boundedness-cannot-be-dropped" class="level3">
+<h3 class="anchored" data-anchor-id="why-boundedness-cannot-be-dropped">Why boundedness cannot be dropped</h3>
+<p>Let <span class="math inline">\(X_n=n\)</span> with probability <span class="math inline">\(1/n\)</span> and <span class="math inline">\(X_n=0\)</span> otherwise. Then <span class="math inline">\(X_n\xrightarrow{p}0\)</span>, hence <span class="math inline">\(X_n\xrightarrow{d}0\)</span>, but</p>
+<p><span class="math display">\[E[X_n]=1\not\to0.\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled" title="Counterexample or invalid inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample or invalid inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Weak convergence controls bounded continuous test functions. Unbounded payoffs need additional tail control, such as uniform integrability.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="characteristic-functions-and-vector-limits" class="level2">
+<h2 class="anchored" data-anchor-id="characteristic-functions-and-vector-limits">Characteristic functions and vector limits</h2>
+<section id="characteristic-functions-encode-laws" class="level3">
+<h3 class="anchored" data-anchor-id="characteristic-functions-encode-laws">Characteristic functions encode laws</h3>
+<p>For <span class="math inline">\(X\in\mathbb R^k\)</span>,</p>
+<p><span class="math display">\[\varphi_X(t)=E[e^{it^\top X}],\qquad t\in\mathbb R^k.\]</span></p>
+<p>They satisfy <span class="math inline">\(|\varphi_X(t)|\le1\)</span>, <span class="math inline">\(\varphi_X(0)=1\)</span>, and continuity at zero. The law of <span class="math inline">\(X\)</span> uniquely determines <span class="math inline">\(\varphi_X\)</span>, and the characteristic function uniquely determines the law.</p>
+<p>For <span class="math inline">\(Y=A^\top X+v\)</span>,</p>
+<p><span class="math display">\[\varphi_Y(u)=e^{iu^\top v}\varphi_X(Au).\]</span></p>
+</section>
+<section id="theorem-8.4-lévy-cramér-continuity-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="theorem-8.4-lévy-cramér-continuity-theorem">Theorem 8.4: Lévy-Cramér continuity theorem</h3>
+<div class="theorem-box">
+<p>For random vectors <span class="math inline">\(X_n,X\in\mathbb R^k\)</span>,</p>
+<p><span class="math display">\[
+X_n\xrightarrow{d}X
+\iff
+\varphi_{X_n}(t)\to\varphi_X(t)
+\quad\forall t\in\mathbb R^k.
+\]</span></p>
+</div>
+<p>Necessity is an application of Portmanteau. Sufficiency requires showing that pointwise Fourier convergence cannot hide mass escaping to infinity.</p>
+</section>
+<section id="lévy-necessity-use-real-test-functions" class="level3">
+<h3 class="anchored" data-anchor-id="lévy-necessity-use-real-test-functions">Lévy necessity: use real test functions</h3>
+<p>For fixed <span class="math inline">\(t\)</span>,</p>
+<p><span class="math display">\[e^{it^\top x}=\cos(t^\top x)+i\sin(t^\top x).\]</span></p>
+<p>Both real functions are bounded and continuous. Portmanteau therefore gives</p>
+<p><span class="math display">\[E[\cos(t^\top X_n)]\to E[\cos(t^\top X)],\]</span> <span class="math display">\[E[\sin(t^\top X_n)]\to E[\sin(t^\top X)].\]</span></p>
+<p>Combining real and imaginary parts yields <span class="math inline">\(\varphi_{X_n}(t)\to\varphi_X(t)\)</span>.</p>
+</section>
+<section id="lévy-sufficiency-proof-map" class="level3">
+<h3 class="anchored" data-anchor-id="lévy-sufficiency-proof-map">Lévy sufficiency: proof map</h3>
+<ol class="proof-map">
+<li>
+Use a symmetric Fourier average near zero to prove tightness.
+</li>
+<li>
+Extract a weakly convergent further subsequence.
+</li>
+<li>
+Apply the necessity direction to its characteristic functions.
+</li>
+<li>
+Use uniqueness to identify the subsequential limit as <span class="math inline">\(P_X\)</span>.
+</li>
+<li>
+Use Proposition 8.1(ii) to recover convergence of the full sequence.
+</li>
+</ol>
+<p>The delicate step is uniform tail control.</p>
+</section>
+<section id="the-fourier-average-controls-tails" class="level3">
+<h3 class="anchored" data-anchor-id="the-fourier-average-controls-tails">The Fourier average controls tails</h3>
+<p>For the scalar proof and <span class="math inline">\(u&gt;0\)</span>, Fubini gives</p>
+<p><span class="math display">\[
+\frac1u\int_{-u}^{u}[1-\varphi_{X_n}(t)]\,dt
+=2\int\left(1-\frac{\sin(ux)}{ux}\right)dP_{X_n}(x).
+\]</span></p>
+<p>If <span class="math inline">\(|x|&gt;2/u\)</span>, then the integrand on the right is at least <span class="math inline">\(1/2\)</span>. Hence</p>
+<p><span class="math display">\[
+P(|X_n|&gt;2/u)
+\le \frac1u\int_{-u}^{u}[1-\varphi_{X_n}(t)]\,dt.
+\]</span></p>
+<p>The symmetric integral is real even though each characteristic function is complex.</p>
+<p>For <span class="math inline">\(\mathbb R^k\)</span>, apply the scalar bound to each coordinate projection <span class="math inline">\(e_\ell^\top X_n\)</span>, then use a union bound to control the complement of one compact box.</p>
+</section>
+<section id="repairing-the-uniform-tightness-step" class="level3">
+<h3 class="anchored" data-anchor-id="repairing-the-uniform-tightness-step">Repairing the uniform-tightness step</h3>
+<p>Continuity of <span class="math inline">\(\varphi_X\)</span> at zero lets us choose <span class="math inline">\(u\)</span> so the corresponding integral for <span class="math inline">\(X\)</span> is below <span class="math inline">\(\varepsilon/2\)</span>.</p>
+<p>Pointwise convergence and boundedness permit DCT on <span class="math inline">\([-u,u]\)</span>, so the same bound holds for all <span class="math inline">\(n\ge N\)</span>. It does <strong>not</strong> directly hold uniformly over every <span class="math inline">\(n\)</span>.</p>
+<p>Enlarge the compact interval to control the finitely many laws <span class="math inline">\(P_{X_1},\ldots,P_{X_{N-1}}\)</span>. This produces one compact set controlling all <span class="math inline">\(n\)</span> and proves tightness.</p>
+</section>
+<section id="identify-every-subsequential-limit" class="level3">
+<h3 class="anchored" data-anchor-id="identify-every-subsequential-limit">Identify every subsequential limit</h3>
+<p>Tightness gives <span class="math inline">\(P_{X_{n_j}}\Rightarrow P\)</span> along a further subsequence. Let <span class="math inline">\(\varphi_P\)</span> be the characteristic function of <span class="math inline">\(P\)</span>.</p>
+<p>By Lévy necessity,</p>
+<p><span class="math display">\[\varphi_{X_{n_j}}(t)\to\varphi_P(t).\]</span></p>
+<p>The original hypothesis gives the same limit <span class="math inline">\(\varphi_X(t)\)</span>. Thus <span class="math inline">\(\varphi_P=\varphi_X\)</span>, and uniqueness implies <span class="math inline">\(P=P_X\)</span>.</p>
+<p>Every convergent subsequence has limit <span class="math inline">\(P_X\)</span>, so <span class="math inline">\(X_n\xrightarrow{d}X\)</span>.</p>
+</section>
+<section id="quick-quiz-6-locate-tightness" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-6-locate-tightness">Quick quiz 6: locate tightness</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Why does pointwise convergence of characteristic functions not finish the sufficiency proof immediately?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>One must first ensure that the sequence has a weakly convergent subsequence. The Fourier bound supplies tightness, which supplies that subsequence.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="theorem-8.5-cramér-wold-device" class="level3">
+<h3 class="anchored" data-anchor-id="theorem-8.5-cramér-wold-device">Theorem 8.5: Cramér-Wold device</h3>
+<div class="theorem-box">
+<p>For random vectors <span class="math inline">\(X_n,X\in\mathbb R^k\)</span>,</p>
+<p><span class="math display">\[
+X_n\xrightarrow{d}X
+\iff
+c^\top X_n\xrightarrow{d}c^\top X
+\quad\forall c\in\mathbb R^k.
+\]</span></p>
+</div>
+<p>Every one-dimensional direction must converge. Checking only the coordinates does not identify the dependence structure.</p>
+</section>
+<section id="cramér-wold-proof" class="level3">
+<h3 class="anchored" data-anchor-id="cramér-wold-proof">Cramér-Wold proof</h3>
+<p>For <span class="math inline">\(u\in\mathbb R\)</span> and <span class="math inline">\(c\in\mathbb R^k\)</span>,</p>
+<p><span class="math display">\[\varphi_{c^\top X_n}(u)=\varphi_{X_n}(uc).\]</span></p>
+<ul>
+<li>Vector convergence implies projection convergence by CMT.</li>
+<li>Conversely, projection convergence and Lévy give convergence of <span class="math inline">\(\varphi_{X_n}(uc)\)</span> for every <span class="math inline">\(u,c\)</span>.</li>
+<li>Set <span class="math inline">\(u=1\)</span> and <span class="math inline">\(c=t\)</span> to obtain convergence at every <span class="math inline">\(t\in\mathbb R^k\)</span>.</li>
+<li>Lévy-Cramér then gives <span class="math inline">\(X_n\xrightarrow{d}X\)</span>.</li>
+</ul>
+</section>
+<section id="coordinates-alone-are-not-enough" class="level3">
+<h3 class="anchored" data-anchor-id="coordinates-alone-are-not-enough">Coordinates alone are not enough</h3>
+<p>Let <span class="math inline">\(Z\sim N(0,1)\)</span>. Compare</p>
+<p><span class="math display">\[X=(Z,Z),\qquad Y=(Z,-Z).\]</span></p>
+<p>Both vectors have standard-normal first and second coordinates. But for <span class="math inline">\(c=(1,1)^\top\)</span>,</p>
+<p><span class="math display">\[c^\top X=2Z,\qquad c^\top Y=0.\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled" title="Counterexample or invalid inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample or invalid inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Marginal convergence of each coordinate is weaker than joint convergence.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong></p>
+<p>To apply Cramér-Wold in <span class="math inline">\(\mathbb R^3\)</span>, is it enough to check <span class="math inline">\(c=e_1,e_2,e_3\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;Those directions identify only the marginals. The theorem requires every fixed <span class="math inline">\(c\in\mathbb R^3\)</span> to recover the joint law.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="density-convergence-and-the-delta-method" class="level2">
+<h2 class="anchored" data-anchor-id="density-convergence-and-the-delta-method">Density convergence and the delta method</h2>
+<section id="theorem-8.6-scheffés-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="theorem-8.6-scheffés-theorem">Theorem 8.6: Scheffé’s theorem</h3>
+<div class="theorem-box">
+<p>Let <span class="math inline">\(f_n\)</span> and <span class="math inline">\(f\)</span> be densities with respect to the same measure <span class="math inline">\(\lambda\)</span>. If</p>
+<p><span class="math display">\[f_n(x)\to f(x)\quad\lambda\text{-a.e.}\]</span></p>
+<p>and <span class="math inline">\(f\)</span> is itself a density, then</p>
+<p><span class="math display">\[\int|f_n-f|\,d\lambda\to0.\]</span></p>
+</div>
+<p>The condition that <span class="math inline">\(f\)</span> integrate to one prevents mass from disappearing.</p>
+</section>
+<section id="scheffé-the-corrected-proof" class="level3">
+<h3 class="anchored" data-anchor-id="scheffé-the-corrected-proof">Scheffé: the corrected proof</h3>
+<p>Since <span class="math inline">\((f-f_n)^+\le f\)</span> and <span class="math inline">\((f-f_n)^+\to0\)</span> almost everywhere, DCT gives</p>
+<p><span class="math display">\[\int(f-f_n)^+\,d\lambda\to0.\]</span></p>
+<p>Both densities integrate to one, so</p>
+<p><span class="math display">\[\int(f_n-f)^+\,d\lambda=\int(f-f_n)^+\,d\lambda.\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[
+\int|f_n-f|\,d\lambda
+=2\int(f-f_n)^+\,d\lambda\to0.
+\]</span></p>
+</section>
+<section id="scheffé-is-stronger-than-weak-convergence" class="level3">
+<h3 class="anchored" data-anchor-id="scheffé-is-stronger-than-weak-convergence">Scheffé is stronger than weak convergence</h3>
+<p>For any Borel set <span class="math inline">\(B\)</span>,</p>
+<p><span class="math display">\[
+|P_{X_n}(B)-P_X(B)|
+\le\int_B|f_n-f|\,d\lambda
+\le\int|f_n-f|\,d\lambda\to0.
+\]</span></p>
+<p>Thus probabilities converge uniformly over all Borel sets, not only continuity sets. In particular, <span class="math inline">\(X_n\xrightarrow{d}X\)</span>.</p>
+<p>If <span class="math inline">\(f_n(x)\to0\)</span> pointwise while each <span class="math inline">\(f_n\)</span> integrates to one, Scheffé does not apply because zero is not a density.</p>
+</section>
+<section id="quick-quiz-8-conserved-mass" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-8-conserved-mass">Quick quiz 8: conserved mass</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Why is the assumption “<span class="math inline">\(f\)</span> is a density” essential in Scheffé’s theorem?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Pointwise convergence can lose mass. Equality of the total integrals forces the positive and negative errors to balance and makes <span class="math inline">\(L^1\)</span> convergence possible.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="cmt-versus-the-delta-method" class="level3">
+<h3 class="anchored" data-anchor-id="cmt-versus-the-delta-method">CMT versus the delta method</h3>
+<p>If <span class="math inline">\(X_n\xrightarrow{p}c\)</span> and <span class="math inline">\(g\)</span> is continuous, CMT gives only</p>
+<p><span class="math display">\[g(X_n)\xrightarrow{p}g(c).\]</span></p>
+<p>If a scaled error has a nondegenerate limit,</p>
+<p><span class="math display">\[a_n(X_n-c)\xrightarrow{d}Y,\]</span></p>
+<p>the delta method finds the first-order limit of <span class="math inline">\(a_n[g(X_n)-g(c)]\)</span>.</p>
+<div class="intuition-box">
+<p>CMT transforms a level. The delta method transforms a local fluctuation.</p>
+</div>
+</section>
+<section id="theorem-8.7i-first-order-delta-method" class="level3">
+<h3 class="anchored" data-anchor-id="theorem-8.7i-first-order-delta-method">Theorem 8.7(i): first-order delta method</h3>
+<div class="theorem-box">
+<p>Let <span class="math inline">\(X_n,Y\in\mathbb R^k\)</span>, <span class="math inline">\(c\in\mathbb R^k\)</span>, and <span class="math inline">\(a_n&gt;0\)</span> with <span class="math inline">\(a_n\to\infty\)</span>. If</p>
+<p><span class="math display">\[a_n(X_n-c)\xrightarrow{d}Y\]</span></p>
+<p>and <span class="math inline">\(g:\mathbb R^k\to\mathbb R\)</span> is differentiable at <span class="math inline">\(c\)</span>, then</p>
+<p><span class="math display">\[
+a_n[g(X_n)-g(c)]
+\xrightarrow{d}\nabla g(c)^\top Y.
+\]</span></p>
+</div>
+</section>
+<section id="differentiability-supplies-the-exact-remainder" class="level3">
+<h3 class="anchored" data-anchor-id="differentiability-supplies-the-exact-remainder">Differentiability supplies the exact remainder</h3>
+<p>Differentiability at <span class="math inline">\(c\)</span> means</p>
+<p><span class="math display">\[g(c+h)-g(c)=\nabla g(c)^\top h+r(h),\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\frac{r(h)}{\|h\|}\to0\qquad\text{as }h\to0.\]</span></p>
+<p>Substitute <span class="math inline">\(h=X_n-c\)</span> and multiply by <span class="math inline">\(a_n\)</span>:</p>
+<p><span class="math display">\[
+a_n[g(X_n)-g(c)]
+=\nabla g(c)^\top a_n(X_n-c)+a_nr(X_n-c).
+\]</span></p>
+</section>
+<section id="delta-proof-the-remainder-vanishes" class="level3">
+<h3 class="anchored" data-anchor-id="delta-proof-the-remainder-vanishes">Delta proof: the remainder vanishes</h3>
+<p>From <span class="math inline">\(a_n(X_n-c)\xrightarrow{d}Y\)</span>,</p>
+<p><span class="math display">\[a_n\|X_n-c\|=O_p(1).\]</span></p>
+<p>Since <span class="math inline">\(a_n^{-1}\to0\)</span>, Slutsky gives <span class="math inline">\(X_n\xrightarrow{p}c\)</span>. Therefore</p>
+<p><span class="math display">\[
+\frac{r(X_n-c)}{\|X_n-c\|}=o_p(1).
+\]</span></p>
+<p>Define the quotient as zero when <span class="math inline">\(X_n=c\)</span>.</p>
+<p>Hence</p>
+<p><span class="math display">\[a_nr(X_n-c)=O_p(1)o_p(1)=o_p(1).\]</span></p>
+<p>Cramér-Wold handles the linear term; Slutsky adds the negligible remainder.</p>
+</section>
+<section id="quick-quiz-9-first-order-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-9-first-order-transformation">Quick quiz 9: first-order transformation</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(\sqrt n(\hat\theta_n-\theta)\xrightarrow{d}N(0,V)\)</span> and <span class="math inline">\(\theta&gt;0\)</span>, find the limit of <span class="math inline">\(\sqrt n(\log\hat\theta_n-\log\theta)\)</span>.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Since <span class="math inline">\(g'(\theta)=1/\theta\)</span>, <span class="math inline">\(\sqrt n(\log\hat\theta_n-\log\theta)\xrightarrow{d}N(0,V/\theta^2)\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="theorem-8.7ii-higher-order-delta-method" class="level3">
+<h3 class="anchored" data-anchor-id="theorem-8.7ii-higher-order-delta-method">Theorem 8.7(ii): higher-order delta method</h3>
+<p>Suppose <span class="math inline">\(g\)</span> admits an order-<span class="math inline">\(m\)</span> Taylor expansion near <span class="math inline">\(c\)</span> with</p>
+<p><span class="math display">\[D^jg(c)=0\quad(j=1,\ldots,m-1),\]</span></p>
+<p>and remainder <span class="math inline">\(o(\|h\|^m)\)</span>. Then</p>
+<p><span class="math display">\[
+a_n^m[g(X_n)-g(c)]
+\xrightarrow{d}
+\frac1{m!}D^mg(c)[Y,\ldots,Y].
+\]</span></p>
+<p>Continuous <span class="math inline">\(m\)</span>th partial derivatives on a neighborhood are a standard sufficient condition for the required remainder. A nonzero <span class="math inline">\(D^mg(c)\)</span> makes the leading term nontrivial.</p>
+</section>
+<section id="higher-order-remainder-proof" class="level3">
+<h3 class="anchored" data-anchor-id="higher-order-remainder-proof">Higher-order remainder proof</h3>
+<p>Put <span class="math inline">\(H_n=a_n(X_n-c)\)</span>. Weak convergence gives <span class="math inline">\(H_n=O_p(1)\)</span>, and <span class="math inline">\(X_n\xrightarrow{p}c\)</span>. With the quotient defined as zero at <span class="math inline">\(h=0\)</span>,</p>
+<p><span class="math display">\[
+a_n^m r(X_n-c)
+=\|H_n\|^m
+\frac{r(X_n-c)}{\|X_n-c\|^m}
+=O_p(1)o_p(1)=o_p(1).
+\]</span></p>
+<p>CMT sends the continuous <span class="math inline">\(m\)</span>-linear leading term to <span class="math inline">\(m!^{-1}D^mg(c)[Y,\ldots,Y]\)</span>. Slutsky adds the negligible remainder.</p>
+</section>
+<section id="zero-gradient-first-order-can-say-nothing" class="level3">
+<h3 class="anchored" data-anchor-id="zero-gradient-first-order-can-say-nothing">Zero gradient: first order can say nothing</h3>
+<p>Let <span class="math inline">\(g(x)=x^2\)</span>, <span class="math inline">\(c=0\)</span>, and</p>
+<p><span class="math display">\[\sqrt nX_n\xrightarrow{d}Z.\]</span></p>
+<p>The first-order derivative is <span class="math inline">\(g'(0)=0\)</span>, so the ordinary delta method gives the degenerate limit zero. The second-order result gives</p>
+<p><span class="math display">\[nX_n^2=(\sqrt nX_n)^2\xrightarrow{d}Z^2.\]</span></p>
+<p>If <span class="math inline">\(Z\sim N(0,1)\)</span>, the limit is <span class="math inline">\(\chi_1^2\)</span>.</p>
+</section>
+<section id="quick-quiz-10-choose-the-order" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-10-choose-the-order">Quick quiz 10: choose the order</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(g'(c)=0\)</span> but <span class="math inline">\(g''(c)\ne0\)</span>, what scaling is suggested when <span class="math inline">\(\sqrt n(X_n-c)=O_p(1)\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use <span class="math inline">\(n\)</span>, because <span class="math inline">\((X_n-c)^2=O_p(n^{-1})\)</span>. The second-order delta method produces <span class="math inline">\(\tfrac12g''(c)Y^2\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="corollary-8.8-normal-delta-method" class="level3">
+<h3 class="anchored" data-anchor-id="corollary-8.8-normal-delta-method">Corollary 8.8: normal delta method</h3>
+<p>If</p>
+<p><span class="math display">\[a_n(X_n-c)\xrightarrow{d}Y,\qquad Y\sim N_k(\mu,\Sigma),\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+a_n[g(X_n)-g(c)]
+\xrightarrow{d}
+N\!\left(\nabla g(c)^\top\mu,
+\nabla g(c)^\top\Sigma\nabla g(c)\right).
+\]</span></p>
+<p>The covariance matrix may be singular. If the asymptotic variance is zero, the first-order limit is degenerate.</p>
+</section>
+<section id="econometric-use-a-ratio-estimator" class="level3">
+<h3 class="anchored" data-anchor-id="econometric-use-a-ratio-estimator">Econometric use: a ratio estimator</h3>
+<p>Let <span class="math inline">\(g(\mu_1,\mu_2)=\mu_1/\mu_2\)</span> with <span class="math inline">\(\mu_2\ne0\)</span>. Then</p>
+<p><span class="math display">\[
+\nabla g(\mu_1,\mu_2)
+=\begin{pmatrix}\mu_2^{-1}\\-\mu_1\mu_2^{-2}\end{pmatrix}.
+\]</span></p>
+<p>If</p>
+<p><span class="math display">\[\sqrt n(\hat\mu-\mu)\xrightarrow{d}N_2(0,\Sigma),\]</span></p>
+<p>then the asymptotic variance of <span class="math inline">\(\hat\mu_1/\hat\mu_2\)</span> is <span class="math inline">\(\nabla g(\mu)^\top\Sigma\nabla g(\mu)\)</span>.</p>
+<p>This covers ratios, elasticities, and scaled performance measures.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Denominator audit.</strong> The condition <span class="math inline">\(\mu_2\ne0\)</span> is structural: the ratio is undefined at zero, and the derivative needed by the delta method is not finite there.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="synthesis-and-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="synthesis-and-retrieval">Synthesis and retrieval</h2>
+<section id="assumption-audit" class="level3">
+<h3 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Assumption doing the work</th>
+<th>Failure without it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tightness</td>
+<td>one compact set controls all laws</td>
+<td>mass can escape</td>
+</tr>
+<tr class="even">
+<td>Portmanteau equality</td>
+<td><span class="math inline">\(P(X\in\partial B)=0\)</span></td>
+<td>boundary probabilities may jump</td>
+</tr>
+<tr class="odd">
+<td>Lévy sufficiency</td>
+<td>continuity at zero and uniqueness</td>
+<td>candidate need not be a law</td>
+</tr>
+<tr class="even">
+<td>Scheffé</td>
+<td><span class="math inline">\(f\)</span> is a density</td>
+<td>total mass may disappear</td>
+</tr>
+<tr class="odd">
+<td>Delta method</td>
+<td>differentiability plus a valid remainder</td>
+<td>linear approximation may fail</td>
+</tr>
+<tr class="even">
+<td>Ratio delta method</td>
+<td>denominator limit nonzero</td>
+<td>statistic may explode</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-errors-and-false-converses" class="level3">
+<h3 class="anchored" data-anchor-id="common-errors-and-false-converses">Common errors and false converses</h3>
+<ul>
+<li>Tightness gives subsequential limits, not a unique limit.</li>
+<li>Weak convergence does not imply convergence of unbounded expectations.</li>
+<li>Coordinatewise convergence does not imply joint convergence.</li>
+<li>Pointwise density convergence does not imply <span class="math inline">\(L^1\)</span> convergence unless the limiting function is a density.</li>
+<li>CMT does not supply a rate or asymptotic variance.</li>
+<li>A zero gradient does not prove the transformed statistic has no uncertainty.</li>
+<li>Nonsingularity of <span class="math inline">\(\Sigma\)</span> is not required for a linear normal image.</li>
+</ul>
+</section>
+<section id="proof-blueprints" class="level3">
+<h3 class="anchored" data-anchor-id="proof-blueprints">Proof blueprints</h3>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><strong>Portmanteau</strong></p>
+<p>test functions <span class="math inline">\(\to\)</span> open/closed bounds <span class="math inline">\(\to\)</span> continuity sets <span class="math inline">\(\to\)</span> c.d.f.s</p>
+</div><div class="column" style="width:33%;">
+<p><strong>Lévy</strong></p>
+<p>Fourier tail bound <span class="math inline">\(\to\)</span> tightness <span class="math inline">\(\to\)</span> subsequence <span class="math inline">\(\to\)</span> uniqueness</p>
+</div><div class="column" style="width:33%;">
+<p><strong>Delta</strong></p>
+<p>Taylor expansion <span class="math inline">\(\to\)</span> <span class="math inline">\(O_p(1)o_p(1)\)</span> remainder <span class="math inline">\(\to\)</span> Slutsky</p>
+</div>
+</div>
+</section>
+<section id="quick-quiz-12-theorem-selection" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-12-theorem-selection">Quick quiz 12: theorem selection</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Match each task to a theorem: identify a vector limit from every projection; upgrade density convergence to uniform probability approximation; transform a <span class="math inline">\(\sqrt n\)</span>-scaled estimator through a smooth nonlinear map.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Cramér-Wold; Scheffé; the delta method, respectively.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-1-state-portmanteau" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-1-state-portmanteau">Exit ticket 1: state Portmanteau</h3>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>State c.d.f. convergence, bounded-continuous expectation convergence, the open-set <span class="math inline">\(\liminf\)</span> inequality, and the closed-set <span class="math inline">\(\limsup\)</span> inequality. For probability convergence on a Borel set, add <span class="math inline">\(P(X\in\partial B)=0\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-2-rebuild-lévy-sufficiency" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-2-rebuild-lévy-sufficiency">Exit ticket 2: rebuild Lévy sufficiency</h3>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Fourier averaging proves eventual tail control; finitely many early laws are absorbed into a larger compact set; tightness gives a convergent subsequence; characteristic-function uniqueness identifies its limit; the subsequence criterion gives convergence of the full sequence.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-3-prove-the-delta-remainder-is-negligible" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-3-prove-the-delta-remainder-is-negligible">Exit ticket 3: prove the delta remainder is negligible</h3>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Write</p>
+<p><span class="math display">\[a_nr(X_n-c)=a_n\|X_n-c\|\frac{r(X_n-c)}{\|X_n-c\|}.\]</span></p>
+<p>The first factor is <span class="math inline">\(O_p(1)\)</span>, the second is <span class="math inline">\(o_p(1)\)</span> by differentiability and <span class="math inline">\(X_n\xrightarrow{p}c\)</span>, so their product is <span class="math inline">\(o_p(1)\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mastery-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h3>
+<p>You should now be able to:</p>
+<ul>
+<li>define tightness and distinguish it from convergence;</li>
+<li>state all seven Portmanteau equivalents and prove the main implication cycle;</li>
+<li>explain the tightness and uniqueness steps in Lévy-Cramér;</li>
+<li>use Cramér-Wold without confusing marginals with joint convergence;</li>
+<li>prove Scheffé with positive and negative parts;</li>
+<li>derive first- and second-order delta limits;</li>
+<li>identify the assumption that fails in each counterexample.</li>
+</ul>
+<div class="lecture-nav">
+<p><a href="../../repo/econ8002/lecture7.html">← Lecture 7</a></p>
+<p><a href="../../repo/econ8002/index.html">Course index</a></p>
+<p><a href="../../repo/econ8002/lecture9.html">Lecture 9 →</a></p>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8002/lecture7.html" class="pagination-link" aria-label="Lecture 7: Laws of Large Numbers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lecture 7: Laws of Large Numbers</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/econ8002/lecture9.html" class="pagination-link" aria-label="Lecture 9: Central Limit Theorems">
+        <span class="nav-page-text">Lecture 9: Central Limit Theorems</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

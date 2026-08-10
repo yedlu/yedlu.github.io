@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Basics of Measure Theory – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/econ8002/lecture2.html" rel="next">
+<link href="../../repo/econ8002/index.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="econ8002.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture1.html">Lecture 1: Measure Theory</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
+  <li><a href="#sigma-algebras-and-measurable-spaces" id="toc-sigma-algebras-and-measurable-spaces" class="nav-link" data-scroll-target="#sigma-algebras-and-measurable-spaces">Sigma-algebras and measurable spaces</a></li>
+  <li><a href="#measures-and-distribution-functions" id="toc-measures-and-distribution-functions" class="nav-link" data-scroll-target="#measures-and-distribution-functions">Measures and distribution functions</a></li>
+  <li><a href="#product-spaces-and-joint-laws" id="toc-product-spaces-and-joint-laws" class="nav-link" data-scroll-target="#product-spaces-and-joint-laws">Product spaces and joint laws</a></li>
+  <li><a href="#measurable-functions-and-probability-laws" id="toc-measurable-functions-and-probability-laws" class="nav-link" data-scroll-target="#measurable-functions-and-probability-laws">Measurable functions and probability laws</a></li>
+  <li><a href="#synthesis-and-retrieval" id="toc-synthesis-and-retrieval" class="nav-link" data-scroll-target="#synthesis-and-retrieval">Synthesis and retrieval</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture1.html">Lecture 1: Measure Theory</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Basics of Measure Theory</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8002/index.html">ECON 8002 course index</a> · Lecture 1 of 9</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<section id="how-to-use-this-page" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-this-page">How to use this page</h3>
+<p>Answer each quiz before opening it. For every theorem, name the objects, then the assumption, then the conclusion. Do not confuse an event, its indicator, and its probability.</p>
+</section>
+<section id="how-should-i-think-about-this-lecture" class="level3">
+<h3 class="anchored" data-anchor-id="how-should-i-think-about-this-lecture">How should I think about this lecture?</h3>
+<div class="mindmap">
+<div class="mind-col">
+<div class="mind-leaf">
+<p>Which subsets are legitimate events?</p>
+</div>
+<div class="mind-leaf">
+<p>How can a numerical variable be defined from a state?</p>
+</div>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-center">
+<p>Probability = a measure on observable events; random variables = measurable maps</p>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-col">
+<div class="mind-leaf">
+<p>CDFs and joint laws</p>
+</div>
+<div class="mind-leaf">
+<p>Expectation and integration next lecture</p>
+</div>
+</div>
+</div>
+</section>
+<section id="course-map" class="level3">
+<h3 class="anchored" data-anchor-id="course-map">Course map</h3>
+<div class="course-sequence current-first">
+<ol type="1">
+<li><strong>Measure spaces</strong> <em>(current lecture)</em></li>
+<li>Integration and Radon–Nikodym derivatives</li>
+<li>Properties of probability distributions</li>
+<li>Conditional expectation and independence</li>
+<li>Convergence modes and stochastic orders</li>
+<li>Continuous mapping and Slutsky’s theorem</li>
+<li>Laws of large numbers</li>
+<li>Weak convergence and the delta method</li>
+<li>Central limit theorems and inference</li>
+</ol>
+</div>
+<p>Today supplies the sample spaces, events, laws, and random variables used everywhere else.</p>
+</section>
+<section id="prerequisite-retrieval" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h3>
+<p>Let <span class="math inline">\(A,B\subseteq\Omega\)</span>. Recall <span class="math inline">\(A\setminus B=A\cap B^c\)</span> and <span class="math inline">\((\bigcup_n A_n)^c=\bigcap_n A_n^c\)</span>. A function <span class="math inline">\(f:\Omega\to S\)</span> sends a state to a value; <span class="math inline">\(f^{-1}(C)=\{\omega:f(\omega)\in C\}\)</span> sends a set of values back to states.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(f(x)=x^2\)</span>, what is <span class="math inline">\(f^{-1}([1,4])\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\([-2,-1]\cup[1,2]\)</span>. This is a preimage, so <span class="math inline">\(f\)</span> need not have an inverse function.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sigma-algebras-and-measurable-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="sigma-algebras-and-measurable-spaces">Sigma-algebras and measurable spaces</h2>
+<section id="motivation-a-two-state-asset-payoff" class="level3">
+<h3 class="anchored" data-anchor-id="motivation-a-two-state-asset-payoff">Motivation: a two-state asset payoff</h3>
+<p>Let <span class="math inline">\(\Omega=\{u,d\}\)</span> denote tomorrow’s market state. An event is, for example, <span class="math inline">\(A=\{u\}\)</span>. A payoff <span class="math inline">\(X\)</span> might satisfy <span class="math inline">\(X(u)=1.10\)</span> and <span class="math inline">\(X(d)=0.90\)</span>. Probability assigns numbers to events, while <span class="math inline">\(X\)</span> maps states to numbers.</p>
+<div class="intuition-box">
+<p>The triple <span class="math inline">\((\Omega,\mathcal F,P)\)</span> says what can happen, which questions about it are meaningful, and how likely those questions are.</p>
+</div>
+</section>
+<section id="why-not-use-every-subset" class="level3">
+<h3 class="anchored" data-anchor-id="why-not-use-every-subset">Why not use every subset?</h3>
+<p>For finite <span class="math inline">\(\Omega\)</span>, we usually can take <span class="math inline">\(\mathcal F=2^\Omega\)</span>. For uncountable spaces such as <span class="math inline">\(\mathbb R\)</span>, requiring probabilities for every subset conflicts with desirable translation-invariant length properties. We therefore specify a tractable collection of measurable subsets.</p>
+</section>
+<section id="definition-sigma-algebra" class="level3">
+<h3 class="anchored" data-anchor-id="definition-sigma-algebra">Definition: <span class="math inline">\(\sigma\)</span>-algebra</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A collection <span class="math inline">\(\mathcal F\subseteq2^\Omega\)</span> is a <strong><span class="math inline">\(\sigma\)</span>-algebra</strong> if:</p>
+<ol type="1">
+<li><span class="math inline">\(\varnothing\in\mathcal F\)</span>;</li>
+<li><span class="math inline">\(A\in\mathcal F\Rightarrow A^c\in\mathcal F\)</span>;</li>
+<li><span class="math inline">\(A_1,A_2,\ldots\in\mathcal F\Rightarrow\bigcup_{n=1}^\infty A_n\in\mathcal F\)</span>.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="consequences-of-the-definition" class="level3">
+<h3 class="anchored" data-anchor-id="consequences-of-the-definition">Consequences of the definition</h3>
+<p>Because <span class="math inline">\(\varnothing\in\mathcal F\)</span>, also <span class="math inline">\(\Omega=\varnothing^c\in\mathcal F\)</span>. By De Morgan, <span class="math display">\[\bigcap_{n=1}^\infty A_n=\left(\bigcup_{n=1}^\infty A_n^c\right)^c\in\mathcal F.\]</span> Thus <span class="math inline">\(\mathcal F\)</span> is closed under countable intersections and finite unions/intersections.</p>
+</section>
+<section id="example-and-nonexample" class="level3">
+<h3 class="anchored" data-anchor-id="example-and-nonexample">Example and nonexample</h3>
+<p>For <span class="math inline">\(A\subseteq\Omega\)</span>, <span class="math inline">\(\{\varnothing,A,A^c,\Omega\}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra. By contrast, <span class="math inline">\(\{\varnothing,\{1\},\{2\}\}\)</span> on <span class="math inline">\(\Omega=\{1,2\}\)</span> is not: the countable union <span class="math inline">\(\{1\}\cup\{2\}=\Omega\)</span> is missing.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Why is closure under <em>countable</em> unions stronger than closure under finite unions?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Every finite union is a countable union: for <span class="math inline">\(A_1\cup\cdots\cup A_m\)</span>, set <span class="math inline">\(A_{m+1}=A_{m+2}=\cdots=\varnothing\)</span>. Closure under countable unions therefore includes closure under finite unions and additionally permits countably infinite unions. The converse need not hold.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="measurable-spaces-and-generated-information" class="level3">
+<h3 class="anchored" data-anchor-id="measurable-spaces-and-generated-information">Measurable spaces and generated information</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\((\Omega,\mathcal F)\)</span> is a <strong>measurable space</strong>. Elements of <span class="math inline">\(\mathcal F\)</span> are measurable sets or events. For any collection <span class="math inline">\(\mathcal C\subseteq2^\Omega\)</span>, <span class="math inline">\(\sigma(\mathcal C)\)</span> is the smallest <span class="math inline">\(\sigma\)</span>-algebra containing <span class="math inline">\(\mathcal C\)</span>.</p>
+</div>
+</div>
+<p>The smallest and largest choices are <span class="math inline">\(\{\varnothing,\Omega\}\)</span> and <span class="math inline">\(2^\Omega\)</span>.</p>
+</section>
+<section id="borel-sets" class="level3">
+<h3 class="anchored" data-anchor-id="borel-sets">Borel sets</h3>
+<p>On <span class="math inline">\(\mathbb R\)</span>, the <strong>Borel <span class="math inline">\(\sigma\)</span>-algebra</strong> is <span class="math display">\[\mathcal B(\mathbb R)=\sigma\bigl(\{(a,b):a&lt;b\}\bigr).\]</span> It contains open and closed sets and all usual intervals. On <span class="math inline">\(\mathbb R^d\)</span>, use <span class="math inline">\(\mathcal B(\mathbb R^d)\)</span>.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not say “all subsets of <span class="math inline">\(\mathbb R\)</span> are Borel.” They are not.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: a non-Borel set">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: a non-Borel set
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>Vitali set</strong> <span class="math inline">\(V\subseteq[0,1]\)</span> is formed by selecting one representative from each equivalence class modulo <span class="math inline">\(\mathbb Q\)</span>. It is not Lebesgue measurable. Every Borel set is Lebesgue measurable, so <span class="math inline">\(V\)</span> is not Borel.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="measures-and-distribution-functions" class="level2">
+<h2 class="anchored" data-anchor-id="measures-and-distribution-functions">Measures and distribution functions</h2>
+<section id="definition-measure" class="level3">
+<h3 class="anchored" data-anchor-id="definition-measure">Definition: measure</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On <span class="math inline">\((\Omega,\mathcal F)\)</span>, a <strong>measure</strong> is a map <span class="math inline">\(\mu:\mathcal F\to[0,\infty]\)</span> satisfying <span class="math inline">\(\mu(\varnothing)=0\)</span> and, for pairwise disjoint <span class="math inline">\(A_n\in\mathcal F\)</span>, <span class="math display">\[\mu\left(\bigcup_{n=1}^\infty A_n\right)=\sum_{n=1}^\infty\mu(A_n).\]</span> A <strong>probability measure</strong> has <span class="math inline">\(P(\Omega)=1\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="countable-additivity-is-the-central-restriction" class="level3">
+<h3 class="anchored" data-anchor-id="countable-additivity-is-the-central-restriction">Countable additivity is the central restriction</h3>
+<p>Disjoint pieces do not double-count. The range includes <span class="math inline">\(\infty\)</span>, so counting measure on an infinite set is legitimate. But <span class="math inline">\(\infty-\infty\)</span> and <span class="math inline">\(\infty/\infty\)</span> remain undefined.</p>
+</section>
+<section id="three-measures" class="level3">
+<h3 class="anchored" data-anchor-id="three-measures">Three measures</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Space</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Counting</td>
+<td><span class="math inline">\((\mathbb N,2^{\mathbb N})\)</span></td>
+<td><span class="math inline">\(\#A\)</span></td>
+</tr>
+<tr class="even">
+<td>Lebesgue <span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\((\mathbb R,\mathcal B)\)</span></td>
+<td>interval length</td>
+</tr>
+<tr class="odd">
+<td>Dirac <span class="math inline">\(\delta_{x_0}\)</span></td>
+<td><span class="math inline">\((\mathbb R,\mathcal B)\)</span></td>
+<td><span class="math inline">\(\delta_{x_0}(A)=\mathbf1\{x_0\in A\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Retrieval check.</strong></p>
+<p>Can normalized counting measure give a uniform probability distribution on all of <span class="math inline">\(\mathbb N\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;Each singleton would need equal mass; positive mass sums to <span class="math inline">\(\infty\)</span>, while zero mass sums to <span class="math inline">\(0\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="proposition-1.1-three-workhorses" class="level3">
+<h3 class="anchored" data-anchor-id="proposition-1.1-three-workhorses">Proposition 1.1: three workhorses</h3>
+<p>For a measure <span class="math inline">\(\mu\)</span>:</p>
+<ol type="1">
+<li><span class="math inline">\(A\subseteq B\Rightarrow\mu(A)\leq\mu(B)\)</span>.</li>
+<li><span class="math inline">\(\mu(\bigcup_nA_n)\leq\sum_n\mu(A_n)\)</span>.</li>
+<li>If <span class="math inline">\(A_n\uparrow A\)</span>, then <span class="math inline">\(\mu(A_n)\uparrow\mu(A)\)</span>.</li>
+</ol>
+</section>
+<section id="proof-map-monotonicity-and-subadditivity" class="level3">
+<h3 class="anchored" data-anchor-id="proof-map-monotonicity-and-subadditivity">Proof map: monotonicity and subadditivity</h3>
+<div class="proof-map">
+<ol type="1">
+<li>Write <span class="math inline">\(B=A\sqcup(B\setminus A)\)</span>, where <span class="math inline">\(\sqcup\)</span> denotes a disjoint union.</li>
+<li>Apply additivity and nonnegativity to get <span class="math inline">\(\mu(B)\geq\mu(A)\)</span>.</li>
+<li>For arbitrary <span class="math inline">\(A_n\)</span>, disjointify: <span class="math inline">\(C_n=A_n\setminus\bigcup_{j&lt;n}A_j\)</span>.</li>
+<li>Then <span class="math inline">\(\bigcup_nC_n=\bigcup_nA_n\)</span> and <span class="math inline">\(\mu(C_n)\leq\mu(A_n)\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="proof-map-continuity-from-below" class="level3">
+<h3 class="anchored" data-anchor-id="proof-map-continuity-from-below">Proof map: continuity from below</h3>
+<p>Set <span class="math inline">\(C_1=A_1\)</span> and <span class="math inline">\(C_n=A_n\setminus A_{n-1}\)</span>. The <span class="math inline">\(C_n\)</span> are disjoint and <span class="math inline">\(A_n=\bigcup_{j\le n}C_j\)</span>, so countable additivity gives <span class="math display">\[\mu\left(\bigcup_nA_n\right)=\sum_n\mu(C_n)=\lim_n\mu(A_n).\]</span></p>
+</section>
+<section id="continuity-from-above" class="level3">
+<h3 class="anchored" data-anchor-id="continuity-from-above">Continuity from above</h3>
+<p>If <span class="math inline">\(A_n\downarrow A\)</span> and <span class="math inline">\(\mu(A_1)&lt;\infty\)</span>, then <span class="math display">\[\mu(A_n)\downarrow\mu(A).\]</span> Apply continuity from below to <span class="math inline">\(A_1\setminus A_n\uparrow A_1\setminus A\)</span>, then subtract from the finite number <span class="math inline">\(\mu(A_1)\)</span>. The finiteness condition prevents an undefined <span class="math inline">\(\infty-\infty\)</span> argument.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Which assumption is missing from <span class="math inline">\(\mu(A\cup B)=\mu(A)+\mu(B)\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Disjointness. Otherwise the intersection is counted twice.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="cdf-a-probability-measure-summarized-on-half-lines" class="level3">
+<h3 class="anchored" data-anchor-id="cdf-a-probability-measure-summarized-on-half-lines">CDF: a probability measure summarized on half-lines</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a probability measure <span class="math inline">\(P\)</span> on <span class="math inline">\((\mathbb R,\mathcal B)\)</span>, <span class="math display">\[F(x)=P(( -\infty,x])\]</span> is its cumulative distribution function.</p>
+</div>
+</div>
+</section>
+<section id="cdf-characterization" class="level3">
+<h3 class="anchored" data-anchor-id="cdf-characterization">CDF characterization</h3>
+<p>A CDF is nondecreasing and right-continuous, and <span class="math display">\[\lim_{x\to-\infty}F(x)=0,\qquad \lim_{x\to+\infty}F(x)=1.\]</span> Conversely, any function with these four properties is the CDF of a unique probability measure on <span class="math inline">\((\mathbb R,\mathcal B)\)</span>.</p>
+<div class="intuition-box">
+<p>Right continuity follows from measuring decreasing half-lines <span class="math inline">\(( -\infty,x+1/n] \downarrow( -\infty,x]\)</span>.</p>
+</div>
+<p><strong>Retrieval check.</strong></p>
+<p>Can a CDF jump? What does a jump at <span class="math inline">\(x\)</span> equal?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Yes. The jump is <span class="math inline">\(P(X=x)\)</span>, an atom of the distribution.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="product-spaces-and-joint-laws" class="level2">
+<h2 class="anchored" data-anchor-id="product-spaces-and-joint-laws">Product spaces and joint laws</h2>
+<section id="product-sigma-algebras" class="level3">
+<h3 class="anchored" data-anchor-id="product-sigma-algebras">Product <span class="math inline">\(\sigma\)</span>-algebras</h3>
+<p>For measurable spaces <span class="math inline">\((\Omega_j,\mathcal F_j)\)</span>, the product <span class="math inline">\(\sigma\)</span>-algebra is <span class="math display">\[\bigotimes_{j=1}^d\mathcal F_j
+=\sigma\{A_1\times\cdots\times A_d:A_j\in\mathcal F_j\}\]</span> on <span class="math inline">\(\prod_{j=1}^d\Omega_j\)</span>. The Cartesian product of the collections <span class="math inline">\(\mathcal F_j\)</span> is not itself generally a <span class="math inline">\(\sigma\)</span>-algebra.</p>
+</section>
+<section id="sigma-finiteness-and-product-measures" class="level3">
+<h3 class="anchored" data-anchor-id="sigma-finiteness-and-product-measures"><span class="math inline">\(\sigma\)</span>-finiteness and product measures</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A measure <span class="math inline">\(\mu\)</span> is <strong><span class="math inline">\(\sigma\)</span>-finite</strong> if there are <span class="math inline">\(E_1,E_2,\ldots\in\mathcal F\)</span> with <span class="math inline">\(\Omega=\bigcup_nE_n\)</span> and <span class="math inline">\(\mu(E_n)&lt;\infty\)</span> for every <span class="math inline">\(n\)</span>.</p>
+</div>
+</div>
+<p>If each <span class="math inline">\(\mu_j\)</span> is <span class="math inline">\(\sigma\)</span>-finite, there exists a unique product measure <span class="math inline">\(\mu_1\otimes\cdots\otimes\mu_d\)</span> on <span class="math inline">\(\bigotimes_j\mathcal F_j\)</span> satisfying <span class="math display">\[ (\mu_1\otimes\cdots\otimes\mu_d)(A_1\times\cdots\times A_d)=\prod_{j=1}^d\mu_j(A_j).\]</span></p>
+</section>
+<section id="joint-and-marginal-cdfs" class="level3">
+<h3 class="anchored" data-anchor-id="joint-and-marginal-cdfs">Joint and marginal CDFs</h3>
+<p>For <span class="math inline">\(X=(X_1,\ldots,X_d)\)</span>, <span class="math display">\[F_X(x_1,\ldots,x_d)=P(X_1\le x_1,\ldots,X_d\le x_d).\]</span> The <span class="math inline">\(j\)</span>th marginal follows by sending every other coordinate to <span class="math inline">\(+\infty\)</span>.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Marginals do not determine the joint law. <span class="math inline">\(Y=X\)</span> and <span class="math inline">\(Y=-X\)</span> can both have standard-normal marginals.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(X,Y\sim N(0,1)\)</span> marginally, does that determine <span class="math inline">\(P(XY&gt;0)\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;Dependence, hence the joint distribution, is still unspecified.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="measurable-functions-and-probability-laws" class="level2">
+<h2 class="anchored" data-anchor-id="measurable-functions-and-probability-laws">Measurable functions and probability laws</h2>
+<section id="inverse-images" class="level3">
+<h3 class="anchored" data-anchor-id="inverse-images">Inverse images</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(f:\Omega\to S\)</span> and <span class="math inline">\(B\subseteq S\)</span>, <span class="math display">\[f^{-1}(B)=\{\omega\in\Omega:f(\omega)\in B\}.\]</span> It obeys <span class="math inline">\(f^{-1}(B^c)=[f^{-1}(B)]^c\)</span> and <span class="math inline">\(f^{-1}(\bigcup_nB_n)=\bigcup_nf^{-1}(B_n)\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="measurable-maps" class="level3">
+<h3 class="anchored" data-anchor-id="measurable-maps">Measurable maps</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A map <span class="math inline">\(f:(\Omega,\mathcal F)\to(S,\mathcal G)\)</span> is <strong>measurable</strong> if <span class="math inline">\(f^{-1}(B)\in\mathcal F\)</span> for every <span class="math inline">\(B\in\mathcal G\)</span>. For <span class="math inline">\(S=\mathbb R\)</span> and <span class="math inline">\(\mathcal G=\mathcal B(\mathbb R)\)</span>, <span class="math inline">\(f\)</span> is Borel measurable.</p>
+</div>
+</div>
+</section>
+<section id="random-variables-and-information" class="level3">
+<h3 class="anchored" data-anchor-id="random-variables-and-information">Random variables and information</h3>
+<p>On <span class="math inline">\((\Omega,\mathcal F,P)\)</span>, a measurable map <span class="math inline">\(X:(\Omega,\mathcal F)\to(\mathbb R,\mathcal B)\)</span> is a random variable. A measurable map into <span class="math inline">\(\mathbb R^d\)</span> is a random vector. The collection <span class="math display">\[\sigma(X)=\{X^{-1}(B):B\in\mathcal B(\mathbb R)\}\]</span> is the information revealed by <span class="math inline">\(X\)</span>.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(A\in\mathcal F\)</span>, why is <span class="math inline">\(\mathbf1_A\)</span> a random variable?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Preimages of Borel subsets of <span class="math inline">\(\{0,1\}\)</span> are among <span class="math inline">\(\varnothing,A,A^c,\Omega\)</span>, all in <span class="math inline">\(\mathcal F\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="closure-how-measurable-functions-are-built" class="level3">
+<h3 class="anchored" data-anchor-id="closure-how-measurable-functions-are-built">Closure: how measurable functions are built</h3>
+<p>Let <span class="math inline">\(f,g:(\Omega,\mathcal F)\to(\mathbb R,\mathcal B)\)</span> be finite-valued and measurable, and let <span class="math inline">\(a,b\in\mathbb R\)</span>. Then <span class="math inline">\(af+bg\)</span> and <span class="math inline">\(fg\)</span> are measurable; <span class="math inline">\(f/g\)</span> is measurable on the measurable set <span class="math inline">\(\{g\ne0\}\)</span>. If <span class="math inline">\(f_n:\Omega\to\overline{\mathbb R}\)</span> are measurable, then <span class="math inline">\(\sup_nf_n\)</span>, <span class="math inline">\(\inf_nf_n\)</span>, <span class="math inline">\(\limsup_nf_n\)</span>, and <span class="math inline">\(\liminf_nf_n\)</span> are extended-real measurable. The set <span class="math inline">\(A=\{\omega:\lim_nf_n(\omega)\text{ exists in }\mathbb R\}\)</span> is measurable, and the real-valued map equal to <span class="math inline">\(\lim_nf_n\)</span> on <span class="math inline">\(A\)</span> and <span class="math inline">\(f_1\)</span> on <span class="math inline">\(A^c\)</span> is measurable.</p>
+<p>If <span class="math inline">\(f:(\Omega,\mathcal F)\to(S,\mathcal G)\)</span> and <span class="math inline">\(h:(S,\mathcal G)\to(T,\mathcal H)\)</span> are measurable, then <span class="math inline">\(h\circ f:(\Omega,\mathcal F)\to(T,\mathcal H)\)</span> is measurable. A continuous map between Borel subsets of Euclidean spaces is Borel measurable.</p>
+</section>
+<section id="indicators-and-simple-functions" class="level3">
+<h3 class="anchored" data-anchor-id="indicators-and-simple-functions">Indicators and simple functions</h3>
+<p>For <span class="math inline">\(A\in\mathcal F\)</span>, an indicator is <span class="math inline">\(\mathbf1_A(\omega)=1\)</span> on <span class="math inline">\(A\)</span> and <span class="math inline">\(0\)</span> elsewhere. A measurable simple function has finite range and a representation <span class="math display">\[s(\omega)=\sum_{j=1}^m a_j\mathbf1_{A_j}(\omega).\]</span> with every <span class="math inline">\(A_j\in\mathcal F\)</span>. Nonnegative measurable functions can be approximated from below by increasing nonnegative simple functions. This is the construction of the Lebesgue integral.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>What is <span class="math inline">\(\sigma(\mathbf1_A)\)</span> when <span class="math inline">\(A\notin\{\varnothing,\Omega\}\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\{\varnothing,A,A^c,\Omega\}\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="distribution-or-law" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-or-law">Distribution or law</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>law</strong> of a random element <span class="math inline">\(X:(\Omega,\mathcal F,P)\to(S,\mathcal G)\)</span> is the pushforward measure <span class="math display">\[P_X(B)=P(X\in B)=P(X^{-1}(B)),\qquad B\in\mathcal G.\]</span></p>
+</div>
+</div>
+<p>The law lives on the value space. It lets us study a return, estimator, or payoff without retaining the entire latent state space.</p>
+</section>
+</section>
+<section id="synthesis-and-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="synthesis-and-retrieval">Synthesis and retrieval</h2>
+<section id="economic-bridge" class="level3">
+<h3 class="anchored" data-anchor-id="economic-bridge">Economic bridge</h3>
+<p>An estimator <span class="math inline">\(\widehat\theta_n\)</span> is a measurable function of the sample. A statement such as <span class="math inline">\(\widehat\theta_n\xrightarrow{p}\theta_0\)</span> is therefore a claim about the sequence of induced laws and probabilities on the sample space. Joint laws, not marginal summaries alone, govern portfolio risk and multivariate asymptotics.</p>
+</section>
+<section id="assumption-audit" class="level3">
+<h3 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumption</th>
+<th>Job</th>
+<th>Failure without it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal F\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra</td>
+<td>events survive countable operations</td>
+<td>probabilities of limit events need not exist</td>
+</tr>
+<tr class="even">
+<td>countable additivity</td>
+<td>links finite and infinite partitions</td>
+<td>CDF/limit arguments break</td>
+</tr>
+<tr class="odd">
+<td>measurability of <span class="math inline">\(X\)</span></td>
+<td><span class="math inline">\(\{X\in B\}\)</span> is an event</td>
+<td>law of <span class="math inline">\(X\)</span> is undefined</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma\)</span>-finiteness</td>
+<td>product/RN theorems</td>
+<td>standard existence results can fail</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="proof-blueprints" class="level3">
+<h3 class="anchored" data-anchor-id="proof-blueprints">Proof blueprints</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Claim</th>
+<th>Reusable proof pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>measure inequality</td>
+<td>decompose into disjoint pieces</td>
+</tr>
+<tr class="even">
+<td>preimage identity</td>
+<td>fix <span class="math inline">\(\omega\)</span> and use iff statements</td>
+</tr>
+<tr class="odd">
+<td>generated information</td>
+<td>verify the three <span class="math inline">\(\sigma\)</span>-algebra axioms</td>
+</tr>
+<tr class="even">
+<td>CDF property</td>
+<td>translate half-lines into nested events</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-errors" class="level3">
+<h3 class="anchored" data-anchor-id="common-errors">Common errors</h3>
+<div class="callout callout-style-default callout-important callout-titled" title="Counterexample or invalid inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample or invalid inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not write <span class="math inline">\(P(x)\)</span> for a continuously valued realization. Do not call a preimage an inverse. Do not infer a joint law from marginals. Do not treat every function as a random variable without checking measurability.</p>
+</div>
+</div>
+</section>
+<section id="exit-ticket-1" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-1">Exit ticket 1</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>State the three axioms of a <span class="math inline">\(\sigma\)</span>-algebra.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It contains <span class="math inline">\(\varnothing\)</span>, is closed under complements, and under countable unions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-2" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-2">Exit ticket 2</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Prove <span class="math inline">\(A\subseteq B\Rightarrow\mu(A)\leq\mu(B)\)</span>.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(B=A\sqcup(B\setminus A)\)</span>, so <span class="math inline">\(\mu(B)=\mu(A)+\mu(B\setminus A)\ge\mu(A)\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-3" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-3">Exit ticket 3</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>For a return <span class="math inline">\(R\)</span>, explain the difference between <span class="math inline">\(R\)</span>, <span class="math inline">\(\{R\le0\}\)</span>, and <span class="math inline">\(P_R\)</span>.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(R\)</span> is a measurable map, <span class="math inline">\(\{R\le0\}\)</span> is an event in <span class="math inline">\(\mathcal F\)</span>, and <span class="math inline">\(P_R\)</span> is the probability measure on return values induced by <span class="math inline">\(R\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mastery-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h3>
+<p>You should now be able to define a measure space, probability space, Borel random variable, law, and joint CDF; prove the basic measure inequalities; calculate preimages; and explain why a joint law contains information absent from its marginals.</p>
+<div class="source-note">
+<p>Built from ECON 8002 Lecture 1, with corrected notation and expanded examples. The source labels a few duplicated proposition parts; this page uses the standard statements.</p>
+</div>
+<div class="lecture-nav">
+<p><a href="../../repo/econ8002/index.html">← Course index</a></p>
+<p><a href="../../repo/econ8002/index.html">Course index</a></p>
+<p><a href="../../repo/econ8002/lecture2.html">Lecture 2 →</a></p>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8002/index.html" class="pagination-link" aria-label="Probability &amp; Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Probability &amp; Statistics</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/econ8002/lecture2.html" class="pagination-link" aria-label="Lecture 2: Integration">
+        <span class="nav-page-text">Lecture 2: Integration</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

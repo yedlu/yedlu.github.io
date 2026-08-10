@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Laws of Large Numbers – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/econ8002/lecture8.html" rel="next">
+<link href="../../repo/econ8002/lecture6.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="econ8002.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture7.html">Lecture 7: Laws of Large Numbers</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
+  <li><a href="#what-an-lln-claims" id="toc-what-an-lln-claims" class="nav-link" data-scroll-target="#what-an-lln-claims">What an LLN claims</a></li>
+  <li><a href="#iid-laws-of-large-numbers" id="toc-iid-laws-of-large-numbers" class="nav-link" data-scroll-target="#iid-laws-of-large-numbers">IID laws of large numbers</a></li>
+  <li><a href="#independent-heterogeneous-sequences" id="toc-independent-heterogeneous-sequences" class="nav-link" data-scroll-target="#independent-heterogeneous-sequences">Independent heterogeneous sequences</a></li>
+  <li><a href="#rates-and-the-clt-connection" id="toc-rates-and-the-clt-connection" class="nav-link" data-scroll-target="#rates-and-the-clt-connection">Rates and the CLT connection</a></li>
+  <li><a href="#applications-synthesis-and-retrieval" id="toc-applications-synthesis-and-retrieval" class="nav-link" data-scroll-target="#applications-synthesis-and-retrieval">Applications, synthesis, and retrieval</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture7.html">Lecture 7: Laws of Large Numbers</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Laws of Large Numbers</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8002/index.html">ECON 8002 course index</a> · Lecture 7 of 9</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<section id="laws-of-large-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="laws-of-large-numbers">Laws of large numbers</h3>
+<p>Why can sample averages estimate population objects, and exactly what dependence and tail assumptions make that statement true?</p>
+<div class="source-note">
+Source: ECON 8002 Lecture 7, pp.&nbsp;41–43. Example 20’s necessity argument is repaired using a subsequence.
+</div>
+</section>
+<section id="how-to-use-this-page" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-this-page">How to use this page</h3>
+<p>For every LLN, name the average, its centering target, the convergence mode, and the assumption that shrinks dispersion.</p>
+</section>
+<section id="how-should-i-think-about-lecture-7" class="level3">
+<h3 class="anchored" data-anchor-id="how-should-i-think-about-lecture-7">How should I think about Lecture 7?</h3>
+<div class="mindmap">
+<div class="mind-col">
+<div class="mind-leaf">
+<p>Independence lets variances add.</p>
+</div>
+<div class="mind-leaf">
+<p>Integrability makes the population target meaningful.</p>
+</div>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-center">
+<p>An average suppresses idiosyncratic noise and reveals a population mean.</p>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-col">
+<div class="mind-leaf">
+<p>WLLN gives consistency in probability.</p>
+</div>
+<div class="mind-leaf">
+<p>SLLN gives pathwise long-run regularity.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="course-map" class="level3">
+<h3 class="anchored" data-anchor-id="course-map">Course map</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>1–4</th>
+<th>5</th>
+<th>6</th>
+<th><strong>7</strong></th>
+<th>8–9</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>probability and conditioning</td>
+<td>modes</td>
+<td>transformations</td>
+<td><strong>LLNs</strong></td>
+<td>CLTs and inference</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="prerequisite-retrieval" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h3>
+<p>You need <span class="math inline">\(X_n\to_pX\)</span>, <span class="math inline">\(X_n\to X\)</span> a.s., independence, <span class="math inline">\(\operatorname{Var}(\sum_iX_i)\)</span>, Chebyshev’s inequality, and Slutsky’s theorem. Define <span class="math inline">\(S_n=\sum_{i=1}^nX_i\)</span>.</p>
+</section>
+</section>
+<section id="what-an-lln-claims" class="level2">
+<h2 class="anchored" data-anchor-id="what-an-lln-claims">What an LLN claims</h2>
+<section id="concrete-opening-default-frequency" class="level3">
+<h3 class="anchored" data-anchor-id="concrete-opening-default-frequency">Concrete opening: default frequency</h3>
+<p>If <span class="math inline">\(X_i\in\{0,1\}\)</span> records default on loan <span class="math inline">\(i\)</span>, then</p>
+<p><span class="math display">\[\bar X_n=\frac1n\sum_{i=1}^nX_i\]</span></p>
+<p>is the empirical default rate. The LLN says when it approaches a population probability.</p>
+</section>
+<section id="the-average-not-the-observation" class="level3">
+<h3 class="anchored" data-anchor-id="the-average-not-the-observation">The average, not the observation</h3>
+<p>The LLN is not <span class="math inline">\(X_n\to E[X_1]\)</span>. It concerns</p>
+<p><span class="math display">\[\bar X_n=\frac{S_n}{n}.\]</span></p>
+<p>Individual returns or defaults can remain highly random forever while their average stabilizes.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>What random object is claimed to converge in an IID LLN?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The sample average <span class="math inline">\(n^{-1}\sum_{i=1}^nX_i\)</span>, not the final observation <span class="math inline">\(X_n\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="strong-and-weak-laws" class="level3">
+<h3 class="anchored" data-anchor-id="strong-and-weak-laws">Strong and weak laws</h3>
+<p><span class="math display">\[\bar X_n\xrightarrow{\mathrm{a.s.}}\mu\quad\text{(SLLN)},\qquad
+\bar X_n\xrightarrow{p}\mu\quad\text{(WLLN)}.\]</span></p>
+<p>SLLN implies WLLN and is a stronger pathwise statement. In the source’s exact IID results, the truncated-centering WLLN is more permissive than the ordinary SLLN; sufficient conditions need not always differ in other formulations.</p>
+</section>
+<section id="kroneckers-lemma" class="level3">
+<h3 class="anchored" data-anchor-id="kroneckers-lemma">Kronecker’s lemma</h3>
+<p>If <span class="math inline">\(0&lt;a_n\uparrow\infty\)</span> and <span class="math inline">\(\sum_{n\ge1}x_n/a_n\)</span> converges, then</p>
+<p><span class="math display">\[\frac1{a_n}\sum_{i=1}^nx_i\to0.\]</span></p>
+<p>It converts a controlled weighted series into a vanishing average. Treat it as a bridge in SLLN proofs.</p>
+</section>
+</section>
+<section id="iid-laws-of-large-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="iid-laws-of-large-numbers">IID laws of large numbers</h2>
+<section id="iid-wlln-sources-exact-form" class="level3">
+<h3 class="anchored" data-anchor-id="iid-wlln-sources-exact-form">IID WLLN: source’s exact form</h3>
+<p>For IID <span class="math inline">\(X_i\)</span>, there exists a centering sequence <span class="math inline">\(\tau_n\)</span> with</p>
+<p><span class="math display">\[\frac1n\sum_{i=1}^n(X_i-\tau_n)\xrightarrow{p}0\]</span></p>
+<p>iff <span class="math inline">\(nP(|X_1|&gt;n)\to0\)</span>, where</p>
+<p><span class="math display">\[\tau_n=E[X_1\mathbf1_{\{|X_1|\le n\}}].\]</span></p>
+</section>
+<section id="why-truncated-centering" class="level3">
+<h3 class="anchored" data-anchor-id="why-truncated-centering">Why truncated centering?</h3>
+<p>The exact WLLN permits some heavy tails. When <span class="math inline">\(E|X_1|&lt;\infty\)</span>, truncation becomes asymptotically harmless and <span class="math inline">\(\tau_n\to E[X_1]\)</span>.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Why should we not automatically replace <span class="math inline">\(\tau_n\)</span> by <span class="math inline">\(E[X_1]\)</span> in the source’s WLLN?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The theorem permits cases in which the ordinary mean may not be available; its target is explicitly truncated.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="iid-slln" class="level3">
+<h3 class="anchored" data-anchor-id="iid-slln">IID SLLN</h3>
+<p>For IID <span class="math inline">\(X_i\)</span>,</p>
+<p><span class="math display">\[\bar X_n\xrightarrow{\mathrm{a.s.}}\mu\ \text{for some finite }\mu
+\quad\Longleftrightarrow\quad E|X_1|&lt;\infty,\]</span></p>
+<p>and then <span class="math inline">\(\mu=E[X_1]\)</span>. This is an exact iff result for the IID case.</p>
+</section>
+<section id="weighted-iid-consequence" class="level3">
+<h3 class="anchored" data-anchor-id="weighted-iid-consequence">Weighted IID consequence</h3>
+<p>If <span class="math inline">\(E|X_1|&lt;\infty\)</span> and deterministic weights <span class="math inline">\(|a_i|\le C\)</span>, then</p>
+<p><span class="math display">\[\frac1n\sum_{i=1}^na_i(X_i-E[X_1])\xrightarrow{\mathrm{a.s.}}0.\]</span></p>
+<p>Bounded weights cannot amplify an individual shock without limit.</p>
+</section>
+<section id="bernoulli-frequency" class="level3">
+<h3 class="anchored" data-anchor-id="bernoulli-frequency">Bernoulli frequency</h3>
+<p>For IID <span class="math inline">\(X_i\sim\operatorname{Bernoulli}(p)\)</span>,</p>
+<p><span class="math display">\[\bar X_n\xrightarrow{\mathrm{a.s.}}p.\]</span></p>
+<p>Because <span class="math inline">\(E|X_1|=p&lt;\infty\)</span>. This is the frequentist frequency interpretation, not a definition of probability.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Does this result say the next draw becomes equal to <span class="math inline">\(p\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;Each <span class="math inline">\(X_i\)</span> remains binary; only the running frequency converges.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="independent-heterogeneous-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="independent-heterogeneous-sequences">Independent heterogeneous sequences</h2>
+<section id="independent-but-heterogeneous-observations" class="level3">
+<h3 class="anchored" data-anchor-id="independent-but-heterogeneous-observations">Independent but heterogeneous observations</h3>
+<p>When distributions differ, the natural centered average is</p>
+<p><span class="math display">\[\frac1n\sum_{i=1}^n(X_i-E[X_i]).\]</span></p>
+<p>Do not write a common <span class="math inline">\(\mu\)</span> unless the average of the means has a relevant limit.</p>
+</section>
+<section id="independent-sequence-slln" class="level3">
+<h3 class="anchored" data-anchor-id="independent-sequence-slln">Independent-sequence SLLN</h3>
+<p>If independent <span class="math inline">\(X_i\)</span> satisfy <span class="math inline">\(E|X_i|&lt;\infty\)</span> and, for some <span class="math inline">\(\alpha\in[1,2]\)</span>,</p>
+<p><span class="math display">\[\sum_{i=1}^\infty i^{-\alpha}E|X_i|^\alpha&lt;\infty,\]</span></p>
+<p>then <span class="math inline">\(n^{-1}\sum_{i=1}^n(X_i-E[X_i])\to0\)</span> a.s.</p>
+</section>
+<section id="independent-sequence-wlln" class="level3">
+<h3 class="anchored" data-anchor-id="independent-sequence-wlln">Independent-sequence WLLN</h3>
+<p>If independent <span class="math inline">\(X_i\)</span> satisfy</p>
+<p><span class="math display">\[\sup_i\operatorname{Var}(X_i)\le C&lt;\infty,\]</span></p>
+<p>then</p>
+<p><span class="math display">\[\frac1n\sum_{i=1}^n(X_i-E[X_i])\xrightarrow{p}0.\]</span></p>
+<p>This is a sufficient condition, not a necessary one.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>What centering appears in the non-IID WLLN?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(n^{-1}\sum_{i=1}^nE[X_i]\)</span>, not automatically <span class="math inline">\(E[X_1]\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="proof-strategy-make-dispersion-vanish" class="level3">
+<h3 class="anchored" data-anchor-id="proof-strategy-make-dispersion-vanish">Proof strategy: make dispersion vanish</h3>
+<p>Set <span class="math inline">\(S_n=\sum_{i=1}^nX_i\)</span>. Chebyshev reduces the task to showing</p>
+<p><span class="math display">\[\operatorname{Var}(S_n)/n^2\to0.\]</span></p>
+<p>Independence and uniformly bounded variances make <span class="math inline">\(\operatorname{Var}(S_n)=O(n)\)</span>.</p>
+</section>
+<section id="proof-chebyshev" class="level3">
+<h3 class="anchored" data-anchor-id="proof-chebyshev">Proof: Chebyshev</h3>
+<p>For every <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
+<p><span class="math display">\[P\left(\left|\frac{S_n-E[S_n]}n\right|&gt;\varepsilon\right)
+\le\frac{\operatorname{Var}(S_n)}{\varepsilon^2n^2}.\]</span></p>
+</section>
+<section id="proof-where-independence-enters" class="level3">
+<h3 class="anchored" data-anchor-id="proof-where-independence-enters">Proof: where independence enters</h3>
+<p><span class="math display">\[\operatorname{Var}(S_n)=\sum_{i=1}^n\operatorname{Var}(X_i)
+\le nC,\]</span></p>
+<p>because covariances vanish under independence. Therefore the preceding probability is at most <span class="math inline">\(C/(\varepsilon^2n)\to0\)</span>.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Which equality fails if the observations are correlated?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\operatorname{Var}(S_n)=\sum_i\operatorname{Var}(X_i)\)</span>; covariance terms remain.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="nonexample-perfect-dependence" class="level3">
+<h3 class="anchored" data-anchor-id="nonexample-perfect-dependence">Nonexample: perfect dependence</h3>
+<p>Let <span class="math inline">\(X_i=Z\)</span> for every <span class="math inline">\(i\)</span>, with integrable, nondegenerate <span class="math inline">\(Z\)</span>, such as <span class="math inline">\(Z\sim N(0,1)\)</span>. Then <span class="math inline">\(\bar X_n=Z\)</span> for every <span class="math inline">\(n\)</span>, so it does not converge to <span class="math inline">\(E[Z]\)</span> in probability. A large sample alone does not diversify common shocks.</p>
+</section>
+<section id="nonexample-no-finite-target" class="level3">
+<h3 class="anchored" data-anchor-id="nonexample-no-finite-target">Nonexample: no finite target</h3>
+<p>For IID Pareto <span class="math inline">\(X_i\)</span> with tail index at most <span class="math inline">\(1\)</span>, <span class="math inline">\(E|X_1|=\infty\)</span>. The ordinary SLLN conclusion <span class="math inline">\(\bar X_n\to E[X_1]\)</span> cannot even be stated with a finite target.</p>
+</section>
+<section id="lln-versus-clt" class="level3">
+<h3 class="anchored" data-anchor-id="lln-versus-clt">LLN versus CLT</h3>
+<p><span class="math display">\[\bar X_n-\mu=o_p(1)\]</span></p>
+<p>is consistency. A CLT instead describes the nonvanishing normalized fluctuation <span class="math inline">\(\sqrt n(\bar X_n-\mu)\)</span>. LLN gives no root-<span class="math inline">\(n\)</span> rate on its own.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Does a WLLN by itself imply <span class="math inline">\(\sqrt n(\bar X_n-\mu)=O_p(1)\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;That is a rate claim requiring stronger information, often a CLT.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="rates-and-the-clt-connection" class="level2">
+<h2 class="anchored" data-anchor-id="rates-and-the-clt-connection">Rates and the CLT connection</h2>
+<section id="example-20-clt-scaled-averages" class="level3">
+<h3 class="anchored" data-anchor-id="example-20-clt-scaled-averages">Example 20: CLT-scaled averages</h3>
+<p>Suppose independent <span class="math inline">\(X_i\)</span> satisfy</p>
+<p><span class="math display">\[\frac{\sum_{i=1}^n(X_i-E[X_i])}{\sigma_n}\xrightarrow{d}N(0,1),
+\qquad \sigma_n^2=\operatorname{Var}(S_n).\]</span></p>
+<p>Then the centered average converges in probability to zero iff <span class="math inline">\(\sigma_n/n\to0\)</span>.</p>
+</section>
+<section id="sufficiency-use-slutsky" class="level3">
+<h3 class="anchored" data-anchor-id="sufficiency-use-slutsky">Sufficiency: use Slutsky</h3>
+<p>If <span class="math inline">\(\sigma_n/n\to0\)</span>, then</p>
+<p><span class="math display">\[\frac{S_n-E[S_n]}n=
+\frac{\sigma_n}{n}\frac{S_n-E[S_n]}{\sigma_n}\xrightarrow{d}0.\]</span></p>
+<p>Since the limit is constant, it also converges in probability to zero.</p>
+</section>
+<section id="necessity-the-source-needs-a-subsequence-repair" class="level3">
+<h3 class="anchored" data-anchor-id="necessity-the-source-needs-a-subsequence-repair">Necessity: the source needs a subsequence repair</h3>
+<p>The source says “without loss of generality” that <span class="math inline">\(\sigma_n/n\to\psi\)</span>. That does not follow from failure to converge to zero. Correct approach: if <span class="math inline">\(\sigma_n/n\not\to0\)</span>, choose a subsequence <span class="math inline">\(n_k\)</span> with <span class="math inline">\(\sigma_{n_k}/n_k\ge\varepsilon&gt;0\)</span>.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>What compactness step is needed after selecting <span class="math inline">\(n_k\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Extract a further subsequence on which <span class="math inline">\(\sigma_{n_k}/n_k\to\psi\in[\varepsilon,\infty]\)</span> in the extended nonnegative line.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="necessity-finite-positive-subsequential-limit" class="level3">
+<h3 class="anchored" data-anchor-id="necessity-finite-positive-subsequential-limit">Necessity: finite positive subsequential limit</h3>
+<p>If <span class="math inline">\(\sigma_{n_k}/n_k\to\psi\in(0,\infty)\)</span>, Slutsky yields</p>
+<p><span class="math display">\[\frac{S_{n_k}-E[S_{n_k}]}{n_k}\xrightarrow{d}\psi Z,
+\qquad Z\sim N(0,1),\]</span></p>
+<p>which cannot converge in probability to zero.</p>
+</section>
+<section id="necessity-infinite-subsequential-limit" class="level3">
+<h3 class="anchored" data-anchor-id="necessity-infinite-subsequential-limit">Necessity: infinite subsequential limit</h3>
+<p>If <span class="math inline">\(\sigma_{n_k}/n_k\to\infty\)</span>, choose <span class="math inline">\(M&gt;0\)</span> with <span class="math inline">\(P(|Z|&gt;2M)&gt;0\)</span>. By c.d.f. convergence, the standardized sums exceed <span class="math inline">\(M\)</span> in magnitude with probability bounded away from zero eventually; multiplying by the diverging scale rules out convergence in probability to zero.</p>
+</section>
+<section id="why-this-repair-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-repair-matters">Why this repair matters</h3>
+<p>A global sequence need not converge merely because it fails to converge to zero. Asymptotic contradictions are often proved on a carefully chosen subsequence.</p>
+</section>
+</section>
+<section id="applications-synthesis-and-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="applications-synthesis-and-retrieval">Applications, synthesis, and retrieval</h2>
+<section id="econometric-connection-sample-moments" class="level3">
+<h3 class="anchored" data-anchor-id="econometric-connection-sample-moments">Econometric connection: sample moments</h3>
+<p>If <span class="math inline">\(W_i\)</span> are IID and <span class="math inline">\(E\|g(W_i,\theta_0)\|&lt;\infty\)</span>, then</p>
+<p><span class="math display">\[\frac1n\sum_{i=1}^ng(W_i,\theta_0)\xrightarrow{p}E[g(W,\theta_0)]\]</span></p>
+<p>is the first consistency step for method of moments, GMM, and many extremum estimators.</p>
+<p>Dependent-data versions replace IID sampling with an appropriate stationary, ergodic, mixing, or other weak-dependence LLN.</p>
+</section>
+<section id="finance-connection-diversification-needs-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="finance-connection-diversification-needs-assumptions">Finance connection: diversification needs assumptions</h3>
+<p>An equally weighted portfolio average becomes stable only if dependence is weak enough for its variance to shrink. Perfect common shocks are the counterexample.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>In the Chebyshev proof, what order must <span class="math inline">\(\operatorname{Var}(S_n)\)</span> have relative to <span class="math inline">\(n^2\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It must be <span class="math inline">\(o(n^2)\)</span>. Uniformly bounded individual variances under independence give the stronger <span class="math inline">\(O(n)\)</span> bound.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="assumption-audit" class="level3">
+<h3 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>claim</th>
+<th>assumption doing the work</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IID SLLN</td>
+<td>IID and <span class="math inline">\(E|X_1|&lt;\infty\)</span></td>
+</tr>
+<tr class="even">
+<td>heterogeneous WLLN</td>
+<td>independence and <span class="math inline">\(\sup_i\operatorname{Var}(X_i)&lt;\infty\)</span></td>
+</tr>
+<tr class="odd">
+<td>Chebyshev proof</td>
+<td>variance additivity</td>
+</tr>
+<tr class="even">
+<td>CLT-to-LLN scale result</td>
+<td>CLT plus <span class="math inline">\(\sigma_n/n\to0\)</span></td>
+</tr>
+<tr class="odd">
+<td>necessity repair</td>
+<td>subsequence extraction</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-errors" class="level3">
+<h3 class="anchored" data-anchor-id="common-errors">Common errors</h3>
+<div class="callout callout-style-default callout-important callout-titled" title="Counterexample or invalid inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample or invalid inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Do not claim <span class="math inline">\(X_n\to E[X_1]\)</span>.</li>
+<li>Do not replace non-IID centering by a fixed mean without justification.</li>
+<li>Bounded variance is sufficient, not necessary.</li>
+<li>A CLT alone is not an LLN.</li>
+<li><span class="math inline">\(\sigma_n\)</span> is deterministic: it is a population standard deviation.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="lln-proof-blueprint" class="level3">
+<h3 class="anchored" data-anchor-id="lln-proof-blueprint">LLN proof blueprint</h3>
+<ol type="1">
+<li>State the average and its centering.</li>
+<li>Choose the convergence mode.</li>
+<li>Bound its deviation probability, often by Chebyshev.</li>
+<li>Compute the variance, naming the independence step.</li>
+<li>Check its order relative to <span class="math inline">\(n^2\)</span>.</li>
+<li>For a CLT argument, separate the normalized random term from its deterministic scale.</li>
+</ol>
+</section>
+<section id="exit-ticket-1" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-1">Exit ticket 1</h3>
+<p>State the finite-mean IID SLLN in one line, including its mode.</p>
+</section>
+<section id="exit-ticket-2" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-2">Exit ticket 2</h3>
+<p>Prove the independent bounded-variance WLLN using Chebyshev.</p>
+</section>
+<section id="exit-ticket-3" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-3">Exit ticket 3</h3>
+<p>Explain why the subsequence is needed in Example 20’s necessity argument.</p>
+</section>
+<section id="mastery-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h3>
+<ul>
+<li>I can distinguish WLLN and SLLN.</li>
+<li>I can state the source’s exact IID WLLN and SLLN.</li>
+<li>I can prove the bounded-variance independent WLLN.</li>
+<li>I can identify when dependence breaks variance additivity.</li>
+<li>I can connect LLN consistency, CLT scaling, and the corrected subsequence argument.</li>
+</ul>
+<div class="lecture-nav">
+<p><a href="../../repo/econ8002/lecture6.html">← Lecture 6</a></p>
+<p><a href="../../repo/econ8002/index.html">Course index</a></p>
+<p><a href="../../repo/econ8002/lecture8.html">Lecture 8 →</a></p>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8002/lecture6.html" class="pagination-link" aria-label="Lecture 6: Convergence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lecture 6: Convergence</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/econ8002/lecture8.html" class="pagination-link" aria-label="Lecture 8: Characteristic Functions">
+        <span class="nav-page-text">Lecture 8: Characteristic Functions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

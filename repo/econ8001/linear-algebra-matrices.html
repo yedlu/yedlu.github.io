@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Linear Algebra: Matrices, Eigenvalues, and Quadratic Forms – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/econ8001/topology.html" rel="next">
+<link href="../../repo/econ8001/linear-algebra-objects.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../repo.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed econ8001-study">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/linear-algebra-matrices.html">Linear Algebra: Matrices</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a>
+  <ul class="collapse">
+  <li><a href="#what-problem-do-matrices-solve" id="toc-what-problem-do-matrices-solve" class="nav-link" data-scroll-target="#what-problem-do-matrices-solve">What problem do matrices solve?</a></li>
+  </ul></li>
+  <li><a href="#where-this-sits" id="toc-where-this-sits" class="nav-link" data-scroll-target="#where-this-sits">Where this sits</a></li>
+  <li><a href="#matrices-are-coordinate-descriptions-of-maps" id="toc-matrices-are-coordinate-descriptions-of-maps" class="nav-link" data-scroll-target="#matrices-are-coordinate-descriptions-of-maps">1. Matrices are coordinate descriptions of maps</a>
+  <ul class="collapse">
+  <li><a href="#operations-and-conformability" id="toc-operations-and-conformability" class="nav-link" data-scroll-target="#operations-and-conformability">Operations and conformability</a></li>
+  <li><a href="#transpose" id="toc-transpose" class="nav-link" data-scroll-target="#transpose">Transpose</a></li>
+  </ul></li>
+  <li><a href="#rank-measures-surviving-directions" id="toc-rank-measures-surviving-directions" class="nav-link" data-scroll-target="#rank-measures-surviving-directions">2. Rank measures surviving directions</a></li>
+  <li><a href="#square-matrices-determinant-and-inverse" id="toc-square-matrices-determinant-and-inverse" class="nav-link" data-scroll-target="#square-matrices-determinant-and-inverse">3. Square matrices: determinant and inverse</a></li>
+  <li><a href="#eigenvalues-and-changes-of-basis" id="toc-eigenvalues-and-changes-of-basis" class="nav-link" data-scroll-target="#eigenvalues-and-changes-of-basis">4. Eigenvalues and changes of basis</a>
+  <ul class="collapse">
+  <li><a href="#orthogonality-and-the-spectral-theorem" id="toc-orthogonality-and-the-spectral-theorem" class="nav-link" data-scroll-target="#orthogonality-and-the-spectral-theorem">Orthogonality and the spectral theorem</a></li>
+  </ul></li>
+  <li><a href="#quadratic-forms-and-definiteness" id="toc-quadratic-forms-and-definiteness" class="nav-link" data-scroll-target="#quadratic-forms-and-definiteness">5. Quadratic forms and definiteness</a></li>
+  <li><a href="#assumption-audit-and-proof-blueprint" id="toc-assumption-audit-and-proof-blueprint" class="nav-link" data-scroll-target="#assumption-audit-and-proof-blueprint">Assumption audit and proof blueprint</a></li>
+  <li><a href="#exit-tickets" id="toc-exit-tickets" class="nav-link" data-scroll-target="#exit-tickets">Exit tickets</a></li>
+  <li><a href="#mastery-checklist" id="toc-mastery-checklist" class="nav-link" data-scroll-target="#mastery-checklist">Mastery checklist</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/linear-algebra-matrices.html">Linear Algebra: Matrices</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Linear Algebra: Matrices, Eigenvalues, and Quadratic Forms</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Lecture 3 of 8</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<section id="what-problem-do-matrices-solve" class="level3">
+<h3 class="anchored" data-anchor-id="what-problem-do-matrices-solve">What problem do matrices solve?</h3>
+<p>A linear map is an abstract rule. Once bases have been chosen, a matrix makes the rule computable: it records the image of every basis vector, composes maps, detects information loss, and identifies directions of pure scaling. Those last two jobs are the bridge to identification, covariance matrices, and curvature in optimization.</p>
+</section>
+</section>
+<section id="where-this-sits" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-sits">Where this sits</h2>
+<p>This page follows <a href="../../repo/econ8001/linear-algebra-objects.html">Linear algebra: objects</a>. Its matrix calculations and quadratic forms are used in <a href="../../repo/econ8001/differentiation.html">Differentiation</a> and <a href="../../repo/econ8001/optimization.html">Optimization</a>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Notation used throughout">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notation used throughout
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\mathbb F\)</span> be <span class="math inline">\(\mathbb R\)</span> or <span class="math inline">\(\mathbb C\)</span>. Vectors are columns. An <span class="math inline">\(m\times n\)</span> matrix <span class="math inline">\(A=(a_{ij})\)</span> has <span class="math inline">\(m\)</span> rows, <span class="math inline">\(n\)</span> columns, and entries in <span class="math inline">\(\mathbb F\)</span>; write <span class="math inline">\(A\in M_{m\times n}(\mathbb F)\)</span>. If <span class="math inline">\(x\in\mathbb F^n\)</span>, then <span class="math inline">\(Ax\in\mathbb F^m\)</span>. The <span class="math inline">\(j\)</span>th column of <span class="math inline">\(A\)</span> is <span class="math inline">\(A e_j\)</span>, where <span class="math inline">\(e_j\in\mathbb F^n\)</span> is the <span class="math inline">\(j\)</span>th standard basis vector.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong> If <span class="math inline">\(A\)</span> is <span class="math inline">\(3\times5\)</span>, what are the dimensions of its input and output vectors?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It maps <span class="math inline">\(\mathbb F^5\)</span> to <span class="math inline">\(\mathbb F^3\)</span>: five input coordinates and three output coordinates.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="matrices-are-coordinate-descriptions-of-maps" class="level2">
+<h2 class="anchored" data-anchor-id="matrices-are-coordinate-descriptions-of-maps">1. Matrices are coordinate descriptions of maps</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.3.1: matrix">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.3.1: matrix
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <span class="math inline">\(m\times n\)</span> matrix is a rectangular array <span class="math display">\[
+A=\begin{pmatrix}
+a_{11}&amp;\cdots&amp;a_{1n}\\
+\vdots&amp;\ddots&amp;\vdots\\
+a_{m1}&amp;\cdots&amp;a_{mn}
+\end{pmatrix},\qquad a_{ij}\in\mathbb F.
+\]</span> For the linear map represented by <span class="math inline">\(A\)</span>, the column rule gives <span class="math display">\[Ax=x_1Ae_1+\cdots+x_nAe_n\]</span> for every <span class="math inline">\(x=(x_1,\ldots,x_n)^\mathsf T\in\mathbb F^n\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: reading columns">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: reading columns
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(A=\begin{pmatrix}1&amp;1\\1&amp;1\\0&amp;0\end{pmatrix}\)</span>, both <span class="math inline">\(e_1\)</span> and <span class="math inline">\(e_2\)</span> map to <span class="math inline">\((1,1,0)^\mathsf T\)</span>. Hence <span class="math inline">\(A(x_1,x_2)^\mathsf T=(x_1+x_2)(1,1,0)^\mathsf T\)</span>: two input directions are compressed to one output direction.</p>
+</div>
+</div>
+<section id="operations-and-conformability" class="level3">
+<h3 class="anchored" data-anchor-id="operations-and-conformability">Operations and conformability</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definitions 1.3.3, 1.3.5, and 1.3.7">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definitions 1.3.3, 1.3.5, and 1.3.7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A,B\in M_{m\times n}(\mathbb F)\)</span>, define <span class="math inline">\((A+B)_{ij}=a_{ij}+b_{ij}\)</span>. For <span class="math inline">\(c\in\mathbb F\)</span>, define <span class="math inline">\((cA)_{ij}=ca_{ij}\)</span>. If <span class="math inline">\(A\in M_{m\times n}(\mathbb F)\)</span> and <span class="math inline">\(B\in M_{n\times k}(\mathbb F)\)</span>, their product is the <span class="math inline">\(m\times k\)</span> matrix <span class="math display">\[
+(AB)_{ij}=\sum_{\ell=1}^{n}a_{i\ell}b_{\ell j}.
+\]</span> The repeated inner dimension <span class="math inline">\(n\)</span> is required. Addition requires identical dimensions; multiplication does not.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Dimension check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dimension check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A\)</span> is <span class="math inline">\(m\times n\)</span> and <span class="math inline">\(B\)</span> is <span class="math inline">\(n\times k\)</span>, then <span class="math inline">\(AB\)</span> is <span class="math inline">\(m\times k\)</span>. Read <span class="math inline">\(ABx\)</span> from right to left: <span class="math inline">\(x\in\mathbb F^k\)</span>, then <span class="math inline">\(Bx\in\mathbb F^n\)</span>, then <span class="math inline">\(A(Bx)\in\mathbb F^m\)</span>. In general <span class="math inline">\(BA\)</span> is not defined, and when it is defined it need not equal <span class="math inline">\(AB\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked calculation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Worked calculation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\0&amp;1\end{pmatrix}\)</span> and <span class="math inline">\(B=\begin{pmatrix}3&amp;0\\1&amp;4\end{pmatrix}\)</span>. Then <span class="math display">\[
+AB=\begin{pmatrix}5&amp;8\\1&amp;4\end{pmatrix},\qquad
+BA=\begin{pmatrix}3&amp;6\\1&amp;6\end{pmatrix}.
+\]</span> Both products exist, but they differ. The first applies <span class="math inline">\(B\)</span> before <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong> Why is <span class="math inline">\((AB)C=A(BC)\)</span> dimensionally natural?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Both expressions apply <span class="math inline">\(C\)</span>, then <span class="math inline">\(B\)</span>, then <span class="math inline">\(A\)</span> to an input vector. The entries also agree after expanding the two finite double sums.</p>
+</div>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 1.3.9: algebra of matrices">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.3.9: algebra of matrices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Whenever the displayed operations are conformable, matrix addition is commutative and associative; multiplication is associative; and multiplication distributes over addition on either side: <span class="math display">\[
+(AB)C=A(BC),\qquad A(B+C)=AB+AC,\qquad (A+B)C=AC+BC.
+\]</span> Matrix multiplication is not generally commutative.</p>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> Check an arbitrary <span class="math inline">\((i,j)\)</span> entry. Associativity is the only part that needs care: both sides become the same finite sum <span class="math inline">\(\sum_{r}\sum_s a_{ir}b_{rs}c_{sj}\)</span>, merely grouped differently.</p>
+</section>
+<section id="transpose" class="level3">
+<h3 class="anchored" data-anchor-id="transpose">Transpose</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.3.10: transpose">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.3.10: transpose
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(A\in M_{m\times n}(\mathbb F)\)</span>, the transpose <span class="math inline">\(A^\mathsf T\in M_{n\times m}(\mathbb F)\)</span> is defined by <span class="math inline">\((A^\mathsf T)_{ij}=a_{ji}\)</span>. It exchanges rows and columns.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 1.3.12: transpose identities">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.3.12: transpose identities
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For conformable matrices, <span class="math display">\[
+(A+B)^\mathsf T=A^\mathsf T+B^\mathsf T,\qquad (AB)^\mathsf T=B^\mathsf TA^\mathsf T.
+\]</span></p>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> The <span class="math inline">\((i,j)\)</span> entry of <span class="math inline">\((AB)^\mathsf T\)</span> is <span class="math inline">\((AB)_{ji}\)</span>, the dot product of row <span class="math inline">\(j\)</span> of <span class="math inline">\(A\)</span> with column <span class="math inline">\(i\)</span> of <span class="math inline">\(B\)</span>. Rewriting the same scalar product gives the <span class="math inline">\((i,j)\)</span> entry of <span class="math inline">\(B^\mathsf TA^\mathsf T\)</span>. The reversal of order is not a mnemonic: it follows from exchanging rows and columns.</p>
+</section>
+</section>
+<section id="rank-measures-surviving-directions" class="level2">
+<h2 class="anchored" data-anchor-id="rank-measures-surviving-directions">2. Rank measures surviving directions</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.3.13: row rank and column rank">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.3.13: row rank and column rank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(A\in M_{m\times n}(\mathbb F)\)</span>, the <strong>column rank</strong> is the dimension of the span of its <span class="math inline">\(n\)</span> columns in <span class="math inline">\(\mathbb F^m\)</span>. The <strong>row rank</strong> is the dimension of the span of its <span class="math inline">\(m\)</span> rows in <span class="math inline">\(\mathbb F^n\)</span>.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorems 1.3.15--1.3.16: rank">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorems 1.3.15–1.3.16: rank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(L:\mathbb F^n\to\mathbb F^m\)</span> be represented by <span class="math inline">\(A\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\dim(\operatorname{im}L)\)</span> equals the column rank of <span class="math inline">\(A\)</span>.</li>
+<li>The row rank and column rank of every matrix <span class="math inline">\(A\)</span> are equal. Their common value is <span class="math inline">\(\operatorname{rank}(A)\)</span>.</li>
+</ul>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> The first statement is immediate from the column rule: <span class="math inline">\(\operatorname{im}L\)</span> is exactly the span of the columns. For row rank, reduce <span class="math inline">\(A\)</span> by elementary row operations. These preserve the dimension of the row space and preserve the linear dependence relations among columns. In reduced row-echelon form, the nonzero rows and pivot columns are both counted by the number of pivots.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: rank and nullity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: rank and nullity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The matrix <span class="math inline">\(A=\begin{pmatrix}1&amp;1\\1&amp;1\\0&amp;0\end{pmatrix}\)</span> has one independent column, so <span class="math inline">\(\operatorname{rank}(A)=1\)</span>. Its kernel is <span class="math display">\[
+\ker A=\{(t,-t)^\mathsf T:t\in\mathbb F\},
+\]</span> which has dimension <span class="math inline">\(1\)</span>. One input direction survives; one is lost.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Matrix form of rank--nullity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Matrix form of rank–nullity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A\in M_{m\times n}(\mathbb F)\)</span> represents <span class="math inline">\(L:\mathbb F^n\to\mathbb F^m\)</span>, then <span class="math display">\[
+n=\operatorname{rank}(A)+\dim(\ker A).
+\]</span> The <span class="math inline">\(n\)</span> on the left is the dimension of the <strong>domain</strong>, not the number of rows.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Assumption audit: rank is not an inverse">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption audit: rank is not an inverse
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a rectangular <span class="math inline">\(m\times n\)</span> matrix, full column rank means <span class="math inline">\(\operatorname{rank}(A)=n\)</span> and injectivity; full row rank means <span class="math inline">\(\operatorname{rank}(A)=m\)</span> and surjectivity. Only when <span class="math inline">\(m=n\)</span> can either condition give an ordinary two-sided inverse.</p>
+</div>
+</div>
+</section>
+<section id="square-matrices-determinant-and-inverse" class="level2">
+<h2 class="anchored" data-anchor-id="square-matrices-determinant-and-inverse">3. Square matrices: determinant and inverse</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.1: named square matrices">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.1: named square matrices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An <span class="math inline">\(n\times n\)</span> matrix is square. It is symmetric when <span class="math inline">\(A=A^\mathsf T\)</span>; upper (lower) triangular when <span class="math inline">\(a_{ij}=0\)</span> for <span class="math inline">\(i&gt;j\)</span> (<span class="math inline">\(i&lt;j\)</span>); diagonal when <span class="math inline">\(a_{ij}=0\)</span> for <span class="math inline">\(i\ne j\)</span>; and the identity <span class="math inline">\(I_n\)</span> when diagonal entries equal <span class="math inline">\(1\)</span> and all off-diagonal entries equal <span class="math inline">\(0\)</span>. A triangular matrix is either upper or lower triangular.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.2 and Theorem 1.4.4: trace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.2 and Theorem 1.4.4: trace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(A=(a_{ij})\in M_{n\times n}(\mathbb F)\)</span>, <span class="math display">\[\operatorname{tr}(A)=\sum_{i=1}^n a_{ii}.\]</span> The trace is additive, satisfies <span class="math inline">\(\operatorname{tr}(AB)=\operatorname{tr}(BA)\)</span> for <span class="math inline">\(A\in M_{m\times n}\)</span> and <span class="math inline">\(B\in M_{n\times m}\)</span>, and satisfies <span class="math inline">\(\operatorname{tr}(A)=\operatorname{tr}(A^\mathsf T)\)</span>.</p>
+</div>
+</div>
+<p><strong>Proof strategy for <span class="math inline">\(\operatorname{tr}(AB)=\operatorname{tr}(BA)\)</span>.</strong> Expand both sides. Each is <span class="math inline">\(\sum_{i=1}^m\sum_{j=1}^n a_{ij}b_{ji}\)</span>; only the order of the two finite sums changes. Notice that <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> can have different dimensions, but both traces are defined and equal.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.5: determinant">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.5: determinant
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a <span class="math inline">\(1\times1\)</span> matrix, <span class="math inline">\(\det(a_{11})=a_{11}\)</span>. For <span class="math inline">\(n\ge2\)</span>, let <span class="math inline">\(A_{ij}\)</span> be the <span class="math inline">\((n-1)\times(n-1)\)</span> matrix obtained by deleting row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>. Define the determinant recursively by expansion along the first row: <span class="math display">\[
+\det A=\sum_{j=1}^n(-1)^{1+j}a_{1j}\det(A_{1j}).
+\]</span> The minor is <span class="math inline">\(M_{ij}=\det(A_{ij})\)</span> and the cofactor is <span class="math inline">\(C_{ij}=(-1)^{i+j}M_{ij}\)</span>. For <span class="math inline">\(A=\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}\)</span>, <span class="math inline">\(\det A=ad-bc\)</span>.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Cofactor expansion theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cofactor expansion theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For every fixed row <span class="math inline">\(i\)</span> of a square matrix, <span class="math display">\[\det A=\sum_{j=1}^n(-1)^{i+j}a_{ij}\det(A_{ij}),\]</span> and the analogous expansion holds along every fixed column. Thus the recursive first-row definition agrees with every cofactor expansion.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 1.4.7: determinant rules">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4.7: determinant rules
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a square matrix, swapping two rows or columns changes the determinant’s sign; multiplying one row or column by <span class="math inline">\(k\)</span> multiplies it by <span class="math inline">\(k\)</span>; and adding a multiple of one row or column to another leaves it unchanged. Also, <span class="math display">\[
+\det(AB)=\det(A)\det(B),\qquad \det(A^\mathsf T)=\det(A).
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Geometric reading">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Geometric reading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a real square <span class="math inline">\(A\)</span>, <span class="math inline">\(|\det A|\)</span> is its factor of volume scaling. Thus <span class="math inline">\(\det A=0\)</span> means some positive-dimensional collection has been flattened, which is exactly the obstruction to inversion.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.8: invertibility">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.8: invertibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A square matrix <span class="math inline">\(A\in M_{n\times n}(\mathbb F)\)</span> is invertible, or nonsingular, if there is <span class="math inline">\(A^{-1}\in M_{n\times n}(\mathbb F)\)</span> such that <span class="math display">\[AA^{-1}=A^{-1}A=I_n.\]</span></p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 1.4.9: invertibility criteria">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4.9: invertibility criteria
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(A\in M_{n\times n}(\mathbb F)\)</span>, <span class="math display">\[
+A\text{ invertible}\ \Longleftrightarrow\ \operatorname{rank}(A)=n
+\ \Longleftrightarrow\ \det(A)\ne0.
+\]</span> If <span class="math inline">\(A\)</span> is triangular, it is invertible exactly when every diagonal entry is nonzero. If <span class="math inline">\(A^{-1}\)</span> exists, it is unique.</p>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> A zero determinant is preserved under the row operations that reveal a zero pivot, so it identifies a failure of full rank. Full rank for a square map means no kernel and every output is reached, hence a bijection with an inverse. For uniqueness, if <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are both inverses, then <span class="math inline">\(B=BI=B(AC)=(BA)C=C\)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Adjugate formula and Theorem 1.4.11">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adjugate formula and Theorem 1.4.11
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The adjugate is the transpose of the cofactor matrix, <span class="math inline">\(\operatorname{adj}(A)=(C_{ji})_{ij}\)</span>. If <span class="math inline">\(\det A\ne0\)</span>, then <span class="math display">\[A^{-1}=\frac{1}{\det A}\operatorname{adj}(A).\]</span> For invertible conformable square matrices, <span class="math display">\[
+(A^{-1})^{-1}=A,\quad (A^\mathsf T)^{-1}=(A^{-1})^\mathsf T,\quad
+(AB)^{-1}=B^{-1}A^{-1},\quad \det(A^{-1})=(\det A)^{-1}.
+\]</span> The inverse of an upper (lower) triangular invertible matrix is upper (lower) triangular.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Invalid inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Invalid inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\det(A)=0\)</span> does not mean that every vector maps to zero. It means that at least one nonzero vector maps to zero, so distinct inputs can have the same output. The map in the earlier rank example has a nonzero image but determinant is not even defined because the matrix is rectangular.</p>
+</div>
+</div>
+</section>
+<section id="eigenvalues-and-changes-of-basis" class="level2">
+<h2 class="anchored" data-anchor-id="eigenvalues-and-changes-of-basis">4. Eigenvalues and changes of basis</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.12: eigenvalue and eigenvector">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.12: eigenvalue and eigenvector
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(A\in M_{n\times n}(\mathbb F)\)</span>. A scalar <span class="math inline">\(\lambda\in\mathbb F\)</span> is an eigenvalue if there is a <strong>nonzero</strong> <span class="math inline">\(v\in\mathbb F^n\)</span> such that <span class="math display">\[Av=\lambda v.\]</span> Such a <span class="math inline">\(v\)</span> is an eigenvector corresponding to <span class="math inline">\(\lambda\)</span>. Equivalently, <span class="math inline">\(\lambda\)</span> is an eigenvalue exactly when <span class="math display">\[\det(A-\lambda I_n)=0.\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: invariant directions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: invariant directions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(A=\begin{pmatrix}2&amp;1\\1&amp;2\end{pmatrix}\)</span>, <span class="math display">\[A(1,1)^\mathsf T=3(1,1)^\mathsf T,\qquad A(1,-1)^\mathsf T=(1,-1)^\mathsf T.\]</span> The equal-coordinate direction is scaled by <span class="math inline">\(3\)</span>; the difference direction is unchanged. A negative eigenvalue would preserve the line but reverse its orientation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definitions 1.4.15--1.4.16: similarity and diagonalization">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definitions 1.4.15–1.4.16: similarity and diagonalization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Square matrices <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar if <span class="math inline">\(B=P^{-1}AP\)</span> for some invertible <span class="math inline">\(P\)</span>. A square matrix <span class="math inline">\(A\)</span> is diagonalizable if it is similar to a diagonal matrix <span class="math inline">\(\Lambda\)</span>: <span class="math inline">\(P^{-1}AP=\Lambda\)</span>. Similar matrices represent the same linear map in different coordinate systems.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 1.4.17: diagonalization criterion">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4.17: diagonalization criterion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(A\in M_{n\times n}(\mathbb F)\)</span>, the following are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(A\)</span> is diagonalizable.</li>
+<li><span class="math inline">\(A\)</span> has <span class="math inline">\(n\)</span> linearly independent eigenvectors.</li>
+</ol>
+<p>If <span class="math inline">\(v_1,\ldots,v_n\)</span> are independent eigenvectors and <span class="math inline">\(P=(v_1\ \cdots\ v_n)\)</span>, then <span class="math inline">\(P^{-1}AP\)</span> is diagonal. Its diagonal entries are the corresponding eigenvalues; conversely, any diagonal matrix similar to <span class="math inline">\(A\)</span> has eigenvalues of <span class="math inline">\(A\)</span> on its diagonal.</p>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> Put the eigenvector equations side by side: <span class="math inline">\(AP=P\Lambda\)</span>. Since the columns of <span class="math inline">\(P\)</span> are independent, <span class="math inline">\(P\)</span> is invertible; multiplying by <span class="math inline">\(P^{-1}\)</span> gives <span class="math inline">\(P^{-1}AP=\Lambda\)</span>. Conversely, read that identity as <span class="math inline">\(AP=P\Lambda\)</span>: each column of <span class="math inline">\(P\)</span> is an eigenvector.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Boundary case">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boundary case
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Having repeated eigenvalues is neither sufficient nor fatal. <span class="math inline">\(I_n\)</span> has one repeated eigenvalue and every nonzero vector is an eigenvector, so it is diagonalizable. In contrast, <span class="math inline">\(\begin{pmatrix}1&amp;1\\0&amp;1\end{pmatrix}\)</span> has only one independent eigenvector, so it is not diagonalizable.</p>
+</div>
+</div>
+<section id="orthogonality-and-the-spectral-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="orthogonality-and-the-spectral-theorem">Orthogonality and the spectral theorem</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.20: orthogonal and orthonormal">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.20: orthogonal and orthonormal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vectors <span class="math inline">\(v_1,\ldots,v_m\in\mathbb R^n\)</span> are orthogonal when <span class="math inline">\(v_i^\mathsf Tv_j=0\)</span> for <span class="math inline">\(i\ne j\)</span>. A nonzero vector <span class="math inline">\(v\)</span> is normalized when <span class="math inline">\(\|v\|=1\)</span>. An orthogonal list of normalized vectors is orthonormal. A real square matrix <span class="math inline">\(P\)</span> is orthogonal, or orthonormal, when its columns are an orthonormal basis; equivalently <span class="math inline">\(P^\mathsf TP=I_n\)</span>.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorems 1.4.21--1.4.22">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorems 1.4.21–1.4.22
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(P\)</span> is orthogonal, then <span class="math inline">\(P^\mathsf T=P^{-1}\)</span>. If <span class="math inline">\(A\in M_{n\times n}(\mathbb R)\)</span> is symmetric, then there exist an orthogonal <span class="math inline">\(P\)</span> and a diagonal <span class="math inline">\(\Lambda\)</span> such that <span class="math display">\[A=P\Lambda P^\mathsf T,\]</span> where the columns of <span class="math inline">\(P\)</span> are eigenvectors of <span class="math inline">\(A\)</span> and the diagonal entries of <span class="math inline">\(\Lambda\)</span> are the associated real eigenvalues.</p>
+</div>
+</div>
+<p><strong>Proof.</strong> For the first statement, the <span class="math inline">\((i,j)\)</span> entry of <span class="math inline">\(P^\mathsf TP\)</span> is the inner product of columns <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. For the spectral theorem, first establish a real eigenpair. The Rayleigh quotient <span class="math inline">\(q(x)=x^\mathsf TAx\)</span> is continuous on the compact unit sphere <span class="math inline">\(S^{n-1}\)</span>, so it attains a maximum at some <span class="math inline">\(v_1\in S^{n-1}\)</span>. For every <span class="math inline">\(w\perp v_1\)</span>, the curve</p>
+<p><span class="math display">\[
+\gamma(t)=\frac{v_1+tw}{\|v_1+tw\|}
+\]</span></p>
+<p>lies on <span class="math inline">\(S^{n-1}\)</span> and has <span class="math inline">\(\gamma'(0)=w\)</span>. Since <span class="math inline">\(q\circ\gamma\)</span> has a maximum at <span class="math inline">\(0\)</span>,</p>
+<p><span class="math display">\[
+0=(q\circ\gamma)'(0)=2w^\mathsf TAv_1,
+\]</span></p>
+<p>where symmetry of <span class="math inline">\(A\)</span> gives the final equality. Thus <span class="math inline">\(Av_1\)</span> is orthogonal to every <span class="math inline">\(w\in v_1^\perp\)</span>, so <span class="math inline">\(Av_1\in(v_1^\perp)^\perp
+=\operatorname{span}\{v_1\}\)</span>. Hence <span class="math inline">\(Av_1=\lambda_1v_1\)</span> for the real scalar <span class="math inline">\(\lambda_1=v_1^\mathsf TAv_1\)</span>.</p>
+<p>Now <span class="math inline">\(v_1^\perp\)</span> is invariant under <span class="math inline">\(A\)</span>: if <span class="math inline">\(w\in v_1^\perp\)</span>, then <span class="math inline">\(v_1^\mathsf TAw=(Av_1)^\mathsf Tw=\lambda_1v_1^\mathsf Tw=0\)</span>. The restriction of <span class="math inline">\(A\)</span> to <span class="math inline">\(v_1^\perp\)</span> is again real and symmetric. Induction on dimension, starting from <span class="math inline">\(n=1\)</span>, gives an orthonormal eigenbasis of <span class="math inline">\(v_1^\perp\)</span>; adjoining <span class="math inline">\(v_1\)</span> gives an orthonormal eigenbasis of <span class="math inline">\(\mathbb R^n\)</span> and hence <span class="math inline">\(A=P\Lambda P^\mathsf T\)</span>.</p>
+</section>
+</section>
+<section id="quadratic-forms-and-definiteness" class="level2">
+<h2 class="anchored" data-anchor-id="quadratic-forms-and-definiteness">5. Quadratic forms and definiteness</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.24: quadratic form">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.24: quadratic form
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(A=(a_{ij})\in M_{n\times n}(\mathbb R)\)</span> be symmetric. Its quadratic form is the scalar-valued function <span class="math display">\[
+Q_A(x)=x^\mathsf TAx=\sum_{i=1}^n\sum_{j=1}^n a_{ij}x_ix_j,
+\qquad x\in\mathbb R^n.
+\]</span> The dimensions are <span class="math inline">\((1\times n)(n\times n)(n\times1)=1\times1\)</span>. Thus <span class="math inline">\(x^\mathsf TAx\)</span> is a scalar, not a vector or matrix-valued curvature object.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 1.4.25: definiteness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 1.4.25: definiteness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For real symmetric <span class="math inline">\(A\)</span>, quantify over every <span class="math inline">\(x\in\mathbb R^n\setminus\{0\}\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Requirement on <span class="math inline">\(x^\mathsf TAx\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>positive definite</td>
+<td><span class="math inline">\(&gt;0\)</span></td>
+</tr>
+<tr class="even">
+<td>positive semidefinite</td>
+<td><span class="math inline">\(\ge0\)</span></td>
+</tr>
+<tr class="odd">
+<td>negative definite</td>
+<td><span class="math inline">\(&lt;0\)</span></td>
+</tr>
+<tr class="even">
+<td>negative semidefinite</td>
+<td><span class="math inline">\(\le0\)</span></td>
+</tr>
+<tr class="odd">
+<td>indefinite</td>
+<td>positive for some nonzero <span class="math inline">\(x\)</span> and negative for another</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 1.4.26: eigenvalue test for definiteness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4.26: eigenvalue test for definiteness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(A\in M_{n\times n}(\mathbb R)\)</span> be symmetric. It is positive definite, positive semidefinite, negative definite, negative semidefinite, or indefinite exactly when, respectively, all its eigenvalues are positive, nonnegative, negative, nonpositive, or include both signs.</p>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> Use the spectral theorem. If <span class="math inline">\(A=P\Lambda P^\mathsf T\)</span> and <span class="math inline">\(z=P^\mathsf Tx\)</span>, then <span class="math inline">\(z\ne0\)</span> whenever <span class="math inline">\(x\ne0\)</span>, and <span class="math display">\[x^\mathsf TAx=z^\mathsf T\Lambda z=\sum_{i=1}^n\lambda_i z_i^2.\]</span> The signs of the eigenvalues therefore control the sign in every direction.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Two uses of the same scalar">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two uses of the same scalar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A=D^2f(x)\)</span> for a <span class="math inline">\(C^2\)</span> scalar function, then <span class="math inline">\(A\)</span> is symmetric and <span class="math inline">\(v^\mathsf TAv\)</span> is its second-order curvature in direction <span class="math inline">\(v\in\mathbb R^n\)</span>. For a nonsymmetric matrix, <span class="math inline">\(v^\mathsf TAv\)</span> depends only on its symmetric part. Let <span class="math inline">\(X\in\mathbb R^n\)</span> be a random vector with covariance matrix <span class="math inline">\(\Sigma\)</span>. For <span class="math inline">\(w\in\mathbb R^n\)</span>, <span class="math inline">\(w^\mathsf T\Sigma w=\operatorname{Var}(w^\mathsf TX)\)</span> is the variance of a linear portfolio. Both expressions are scalars, and both require conformable column vectors.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Counterexample: diagonal entries do not settle definiteness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample: diagonal entries do not settle definiteness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The symmetric matrix <span class="math inline">\(A=\begin{pmatrix}1&amp;2\\2&amp;1\end{pmatrix}\)</span> has positive diagonal entries, but its eigenvalues are <span class="math inline">\(3\)</span> and <span class="math inline">\(-1\)</span>. Indeed, <span class="math inline">\((1,1)A(1,1)^\mathsf T=6\)</span> while <span class="math inline">\((1,-1)A(1,-1)^\mathsf T=-2\)</span>. Hence <span class="math inline">\(A\)</span> is indefinite. Checking only coordinate directions misses the saddle direction.</p>
+</div>
+</div>
+</section>
+<section id="assumption-audit-and-proof-blueprint" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-audit-and-proof-blueprint">Assumption audit and proof blueprint</h2>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Assumption audit">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption audit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Matrix multiplication needs matching inner dimensions. Rank–nullity uses the domain dimension <span class="math inline">\(n\)</span>.</li>
+<li>Determinants, inverses, eigenvalues, and diagonalization here concern square matrices. <span class="math inline">\(A^{-1}\)</span> requires <span class="math inline">\(\det A\ne0\)</span>.</li>
+<li>Orthogonal diagonalization and the eigenvalue test for definiteness require a <strong>real symmetric</strong> matrix. A general real matrix need not have real eigenvalues or an orthonormal eigenbasis.</li>
+<li>Definiteness is a statement about every nonzero direction. A merely semidefinite, but not definite, matrix can have flat directions and does not give a strict curvature conclusion.</li>
+</ul>
+</div>
+</div>
+<p><strong>Blueprint: classify a symmetric quadratic form.</strong></p>
+<ol type="1">
+<li>Check that <span class="math inline">\(A\)</span> is real, square, and symmetric.</li>
+<li>Solve <span class="math inline">\(\det(A-\lambda I)=0\)</span> for its eigenvalues.</li>
+<li>Record their signs, including zeros.</li>
+<li>Apply Theorem 1.4.26. Do not infer a strict sign from a nonnegative one.</li>
+</ol>
+</section>
+<section id="exit-tickets" class="level2">
+<h2 class="anchored" data-anchor-id="exit-tickets">Exit tickets</h2>
+<ol type="1">
+<li>A <span class="math inline">\(4\times6\)</span> matrix has rank <span class="math inline">\(4\)</span>. State its nullity and whether it is injective or surjective as a map <span class="math inline">\(\mathbb R^6\to\mathbb R^4\)</span>.</li>
+<li>Explain in one line why <span class="math inline">\((AB)^{-1}\)</span> has the reverse order.</li>
+<li>State exactly which hypothesis lets eigenvalue signs classify a quadratic form.</li>
+</ol>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Nullity is <span class="math inline">\(6-4=2\)</span>; it is surjective but not injective. 2. Multiplication gives <span class="math inline">\((AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=I\)</span>, and similarly on the other side. 3. <span class="math inline">\(A\)</span> must be a real symmetric matrix.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="mastery-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">I can state the dimensions of <span class="math inline">\(A\)</span>, <span class="math inline">\(x\)</span>, and <span class="math inline">\(Ax\)</span> before multiplying.</label></li>
+<li><label><input type="checkbox">I can use column spans, rank–nullity, and determinant to diagnose loss of information.</label></li>
+<li><label><input type="checkbox">I can distinguish an eigenvector from an arbitrary nonzero vector.</label></li>
+<li><label><input type="checkbox">I can state diagonalization and the spectral theorem with their distinct assumptions.</label></li>
+<li><label><input type="checkbox">I can explain why <span class="math inline">\(x^\mathsf TAx\)</span> is scalar and classify definiteness using all eigenvalue signs.</label></li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8001/linear-algebra-objects.html" class="pagination-link" aria-label="Linear Algebra: Spaces and Maps">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linear Algebra: Spaces and Maps</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/econ8001/topology.html" class="pagination-link" aria-label="Topology">
+        <span class="nav-page-text">Topology</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

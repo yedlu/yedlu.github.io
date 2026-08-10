@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Convexity, Concavity, and Global Optimization – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/babyrudin/index.html" rel="next">
+<link href="../../repo/econ8001/maximum-envelope.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../repo.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed econ8001-study">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/convexity.html">Convexity</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
+  <li><a href="#course-map" id="toc-course-map" class="nav-link" data-scroll-target="#course-map">Course map</a></li>
+  <li><a href="#prerequisite-retrieval" id="toc-prerequisite-retrieval" class="nav-link" data-scroll-target="#prerequisite-retrieval">Prerequisite retrieval</a></li>
+  <li><a href="#convex-sets-and-mixtures" id="toc-convex-sets-and-mixtures" class="nav-link" data-scroll-target="#convex-sets-and-mixtures">1. Convex sets and mixtures</a>
+  <ul class="collapse">
+  <li><a href="#finite-mixtures-are-the-operational-form" id="toc-finite-mixtures-are-the-operational-form" class="nav-link" data-scroll-target="#finite-mixtures-are-the-operational-form">1.1 Finite mixtures are the operational form</a></li>
+  </ul></li>
+  <li><a href="#convex-and-concave-functions" id="toc-convex-and-concave-functions" class="nav-link" data-scroll-target="#convex-and-concave-functions">2. Convex and concave functions</a>
+  <ul class="collapse">
+  <li><a href="#jensens-inequality-for-finite-mixtures" id="toc-jensens-inequality-for-finite-mixtures" class="nav-link" data-scroll-target="#jensens-inequality-for-finite-mixtures">2.1 Jensen’s inequality for finite mixtures</a></li>
+  </ul></li>
+  <li><a href="#geometry-in-one-dimension-higher" id="toc-geometry-in-one-dimension-higher" class="nav-link" data-scroll-target="#geometry-in-one-dimension-higher">3. Geometry in one dimension higher</a></li>
+  <li><a href="#first-order-characterizations" id="toc-first-order-characterizations" class="nav-link" data-scroll-target="#first-order-characterizations">4. First-order characterizations</a>
+  <ul class="collapse">
+  <li><a href="#global-optimization-from-a-first-order-condition" id="toc-global-optimization-from-a-first-order-condition" class="nav-link" data-scroll-target="#global-optimization-from-a-first-order-condition">4.1 Global optimization from a first-order condition</a></li>
+  </ul></li>
+  <li><a href="#second-order-characterizations" id="toc-second-order-characterizations" class="nav-link" data-scroll-target="#second-order-characterizations">5. Second-order characterizations</a></li>
+  <li><a href="#quasiconvexity-and-quasiconcavity" id="toc-quasiconvexity-and-quasiconcavity" class="nav-link" data-scroll-target="#quasiconvexity-and-quasiconcavity">6. Quasiconvexity and quasiconcavity</a>
+  <ul class="collapse">
+  <li><a href="#strict-quasiconcavity-and-uniqueness" id="toc-strict-quasiconcavity-and-uniqueness" class="nav-link" data-scroll-target="#strict-quasiconcavity-and-uniqueness">6.1 Strict quasiconcavity and uniqueness</a></li>
+  <li><a href="#differentiated-quasiconcavity-necessity-and-a-safe-strict-test" id="toc-differentiated-quasiconcavity-necessity-and-a-safe-strict-test" class="nav-link" data-scroll-target="#differentiated-quasiconcavity-necessity-and-a-safe-strict-test">6.2 Differentiated quasiconcavity: necessity and a safe strict test</a></li>
+  </ul></li>
+  <li><a href="#assumption-audit-and-problem-blueprints" id="toc-assumption-audit-and-problem-blueprints" class="nav-link" data-scroll-target="#assumption-audit-and-problem-blueprints">7. Assumption audit and problem blueprints</a>
+  <ul class="collapse">
+  <li><a href="#assumption-audit" id="toc-assumption-audit" class="nav-link" data-scroll-target="#assumption-audit">Assumption audit</a></li>
+  <li><a href="#blueprint-prove-a-global-optimum" id="toc-blueprint-prove-a-global-optimum" class="nav-link" data-scroll-target="#blueprint-prove-a-global-optimum">Blueprint: prove a global optimum</a></li>
+  <li><a href="#blueprint-classify-quasi-shape" id="toc-blueprint-classify-quasi-shape" class="nav-link" data-scroll-target="#blueprint-classify-quasi-shape">Blueprint: classify quasi-shape</a></li>
+  <li><a href="#exit-tickets" id="toc-exit-tickets" class="nav-link" data-scroll-target="#exit-tickets">Exit tickets</a></li>
+  <li><a href="#mastery-checklist" id="toc-mastery-checklist" class="nav-link" data-scroll-target="#mastery-checklist">Mastery checklist</a></li>
+  <li><a href="#sources-and-further-reading" id="toc-sources-and-further-reading" class="nav-link" data-scroll-target="#sources-and-further-reading">Sources and further reading</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/convexity.html">Convexity</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Convexity, Concavity, and Global Optimization</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Lecture 8 of 8</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What problem does convexity solve?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculus finds candidates near one point. Convexity compares every point on a line segment. That simple geometric restriction turns a local first-order condition into a global conclusion, rules out multiple strict optima, and makes many economic choice problems tractable.</p>
+<p>There are three objects to keep separate:</p>
+<ol type="1">
+<li>a <strong>convex feasible set</strong> contains mixtures of its feasible points;</li>
+<li>a <strong>concave objective</strong> rewards mixtures enough to support maximization;</li>
+<li><strong>quasiconcavity</strong> only requires convex upper level sets, so it is weaker and does not carry the same curvature conclusions.</li>
+</ol>
+</div>
+</div>
+<p>This page follows the convex-set material in <a href="https://sites.wustl.edu/nachbar/files/2019/09/convexityrn.pdf">Nachbar, *Convexity in <span class="math inline">\(\mathbb R^N\)</span></a>, the function results in <a href="https://sites.wustl.edu/nachbar/files/2019/09/concavity.pdf">Nachbar, <em>Concave and Convex Functions</em></a>, and the level-set treatment in <a href="https://sites.wustl.edu/nachbar/files/2020/04/QuasiConcavity.pdf">Nachbar, <em>Quasi-concavity</em></a>.</p>
+</section>
+<section id="course-map" class="level2">
+<h2 class="anchored" data-anchor-id="course-map">Course map</h2>
+<pre class="text"><code>line segments in feasible sets
+            |
+            v
+convex combinations and finite mixtures
+            |
+            +--&gt; concavity / convexity --&gt; tangent inequalities --&gt; global FOCs
+            |                                  |
+            |                                  v
+            |                          Hessian tests under C^2
+            |
+            +--&gt; level sets --&gt; quasiconcavity / quasiconvexity</code></pre>
+<p><strong>Before this page:</strong> <a href="../../repo/econ8001/linear-algebra-matrices.html">Linear algebra: matrices</a> for quadratic forms, <a href="../../repo/econ8001/differentiation.html">Differentiation</a> for gradients and Hessians, and <a href="../../repo/econ8001/optimization.html">Optimization</a> for local first- and second-order conditions. <strong>Next step:</strong> return to the <a href="../../repo/econ8001/index.html">course map</a> and use the retrieval route to connect global shape conditions to the preceding optimization results.</p>
+</section>
+<section id="prerequisite-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h2>
+<p>For a scalar <span class="math inline">\(f:\mathbb R^N\to\mathbb R\)</span>, <span class="math inline">\(\nabla f(x)\in\mathbb R^N\)</span> is a column vector and <span class="math inline">\(D^2f(x)\)</span> is an <span class="math inline">\(N\times N\)</span> Hessian. If <span class="math inline">\(v\in\mathbb R^N\)</span>, then <span class="math inline">\(v^\mathsf TD^2f(x)v\)</span> is a scalar.</p>
+<p><strong>Retrieval check.</strong> Why must a theorem about concavity name a convex domain?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The defining inequality evaluates the function at mixtures <span class="math inline">\(\theta x+(1-\theta)y\)</span>. A convex domain guarantees those mixtures remain in the domain. Without it, the statement may not even be well-defined.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="convex-sets-and-mixtures" class="level1">
+<h1>1. Convex sets and mixtures</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: convex set and convex combination">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: convex set and convex combination
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is <strong>convex</strong> if, for every <span class="math inline">\(x,y\in C\)</span> and every <span class="math inline">\(\theta\in[0,1]\)</span>,</p>
+<p><span class="math display">\[
+\theta x+(1-\theta)y\in C.
+\]</span></p>
+<p>The point <span class="math inline">\(\theta x+(1-\theta)y\)</span> is a <strong>convex combination</strong> of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. More generally, if <span class="math inline">\(x_1,\ldots,x_m\in C\)</span> and the weights satisfy <span class="math inline">\(\theta_i\ge0\)</span> and <span class="math inline">\(\sum_{i=1}^m\theta_i=1\)</span>, then <span class="math inline">\(\sum_{i=1}^m\theta_i x_i\)</span> is a finite convex combination.</p>
+</div>
+</div>
+<p>The geometry is direct: <span class="math inline">\(C\)</span> is convex exactly when it contains the complete line segment joining every two of its points. By induction, the two-point definition implies that every finite convex combination stays in <span class="math inline">\(C\)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Examples and nonexamples">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples and nonexamples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Every affine set <span class="math inline">\(\{x:Ax=b\}\)</span>, half-space <span class="math inline">\(\{x:a^\mathsf Tx\le b\}\)</span>, Euclidean ball, and interval is convex.</li>
+<li>Intersections of any collection of convex sets are convex.</li>
+<li>The union of two convex sets need not be convex. For example, <span class="math inline">\([-2,-1]\cup[1,2]\subset\mathbb R\)</span> misses the midpoint of <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>.</li>
+<li>In <span class="math inline">\(\mathbb R\)</span>, a set is convex exactly when it is an interval, with any combination of included or excluded endpoints.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Convexity is not connectedness in higher dimensions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Convexity is not connectedness in higher dimensions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every convex set is connected, but the converse fails in <span class="math inline">\(\mathbb R^N\)</span> for <span class="math inline">\(N\ge2\)</span>. An annulus is connected but its straight chord between two points can pass through the missing center.</p>
+</div>
+</div>
+<section id="finite-mixtures-are-the-operational-form" class="level2">
+<h2 class="anchored" data-anchor-id="finite-mixtures-are-the-operational-form">1.1 Finite mixtures are the operational form</h2>
+<p>The finite-mixture statement is the one used in probability, diversification, and mixed strategies. For a portfolio interpretation, <span class="math inline">\(x_i\)</span> can be feasible portfolios and <span class="math inline">\(\theta_i\)</span> their mixing weights. Convex feasibility means the weighted average portfolio is still available.</p>
+<p><strong>Proof strategy.</strong> The case <span class="math inline">\(m=2\)</span> is the definition. Assume the claim for <span class="math inline">\(m-1\)</span> points. If <span class="math inline">\(\theta_m&lt;1\)</span>, write</p>
+<p><span class="math display">\[
+\sum_{i=1}^m\theta_i x_i
+=(1-\theta_m)
+\left(\sum_{i=1}^{m-1}\frac{\theta_i}{1-\theta_m}x_i\right)
++\theta_mx_m.
+\]</span></p>
+<p>The parenthesized term is a convex combination of the first <span class="math inline">\(m-1\)</span> points, so it belongs to <span class="math inline">\(C\)</span> by induction. One more two-point combination keeps the result in <span class="math inline">\(C\)</span>.</p>
+<p>The remaining case must be handled separately. If <span class="math inline">\(\theta_m=1\)</span>, every other nonnegative weight is zero, so the mixture is <span class="math inline">\(x_m\in C\)</span>. If <span class="math inline">\(\theta_m&lt;1\)</span>, the normalized weights <span class="math inline">\(\theta_i/(1-\theta_m)\)</span> are nonnegative and sum to one, as required in the induction step.</p>
+</section>
+</section>
+<section id="convex-and-concave-functions" class="level1">
+<h1>2. Convex and concave functions</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: convexity, concavity, and strictness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: convexity, concavity, and strictness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty and convex, and let <span class="math inline">\(f:C\to\mathbb R\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(f\)</span> is <strong>convex</strong> if, for all <span class="math inline">\(x,y\in C\)</span> and <span class="math inline">\(\theta\in[0,1]\)</span>,</p>
+<p><span class="math display">\[
+f(\theta x+(1-\theta)y)
+\le \theta f(x)+(1-\theta)f(y).
+\]</span></p></li>
+<li><p><span class="math inline">\(f\)</span> is <strong>concave</strong> if the inequality reverses.</p></li>
+<li><p><span class="math inline">\(f\)</span> is <strong>strictly convex</strong> or <strong>strictly concave</strong> if the respective inequality is strict whenever <span class="math inline">\(x\ne y\)</span> and <span class="math inline">\(\theta\in(0,1)\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<p>For a convex function, the graph lies weakly below its chord. For a concave function, it lies weakly above its chord. An affine function has equality in both directions, so every affine function is both convex and concave.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Basic examples">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Basic examples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(x\mapsto x^2\)</span> is strictly convex on <span class="math inline">\(\mathbb R\)</span>.</li>
+<li><span class="math inline">\(x\mapsto\log x\)</span> is strictly concave on <span class="math inline">\(\mathbb R_{++}\)</span>.</li>
+<li><span class="math inline">\(x\mapsto -\|x\|^2\)</span> is strictly concave on <span class="math inline">\(\mathbb R^N\)</span>.</li>
+<li>Every linear or affine function is both convex and concave, but neither strictly so on a domain containing two distinct points.</li>
+</ul>
+</div>
+</div>
+<section id="jensens-inequality-for-finite-mixtures" class="level2">
+<h2 class="anchored" data-anchor-id="jensens-inequality-for-finite-mixtures">2.1 Jensen’s inequality for finite mixtures</h2>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Jensen’s inequality, finite form
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(f:C\to\mathbb R\)</span> be convex. For <span class="math inline">\(x_1,\ldots,x_m\in C\)</span> and weights <span class="math inline">\(\theta_i\ge0\)</span> satisfying <span class="math inline">\(\sum_{i=1}^m\theta_i=1\)</span>,</p>
+<p><span class="math display">\[
+f\left(\sum_{i=1}^m\theta_i x_i\right)
+\le\sum_{i=1}^m\theta_i f(x_i).
+\]</span></p>
+<p>For a concave function, the inequality reverses. If <span class="math inline">\(f\)</span> is strictly convex and all positive-weight points are not identical, the convex inequality is strict; analogously for strict concavity.</p>
+</div>
+</div>
+<p>The theorem is just the finite-mixture induction again, now applying the two-point function inequality at each step. It is the deterministic ancestor of the probabilistic Jensen inequality <span class="math inline">\(f(\mathbb E[X])\le\mathbb E[f(X)]\)</span>. The random-variable form needs integrability and is an ECON 8002 result.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Diversification calculation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Diversification calculation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(f(x)=-x^2\)</span>, which is concave. For <span class="math inline">\(x_1=-1\)</span>, <span class="math inline">\(x_2=3\)</span>, and equal weights,</p>
+<p><span class="math display">\[
+f\left(\frac{x_1+x_2}{2}\right)=f(1)=-1
+\;&gt;\;
+\frac{f(-1)+f(3)}2=-5.
+\]</span></p>
+<p>The concave payoff of the average exceeds the average payoff. The inequality is strict because the two choices differ and <span class="math inline">\(f\)</span> is strictly concave.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="geometry-in-one-dimension-higher" class="level1">
+<h1>3. Geometry in one dimension higher</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: epigraph and hypograph">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: epigraph and hypograph
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(f:C\to\mathbb R\)</span>, define subsets of <span class="math inline">\(\mathbb R^{N+1}\)</span> by</p>
+<p><span class="math display">\[
+\operatorname{epi}f
+=\{(x,r)\in C\times\mathbb R:r\ge f(x)\},
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{hypo}f
+=\{(x,r)\in C\times\mathbb R:r\le f(x)\}.
+\]</span></p>
+<p>The epigraph is the region on or above the graph; the hypograph is the region on or below it.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Epigraph and hypograph characterization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a function on a convex domain <span class="math inline">\(C\)</span>:</p>
+<p><span class="math display">\[
+f\text{ is convex}\quad\Longleftrightarrow\quad\operatorname{epi}f
+\text{ is convex},
+\]</span></p>
+<p><span class="math display">\[
+f\text{ is concave}\quad\Longleftrightarrow\quad\operatorname{hypo}f
+\text{ is convex}.
+\]</span></p>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> For concavity, take two points <span class="math inline">\((x,r)\)</span> and <span class="math inline">\((y,s)\)</span> in the hypograph. Thus <span class="math inline">\(r\le f(x)\)</span> and <span class="math inline">\(s\le f(y)\)</span>. Concavity gives</p>
+<p><span class="math display">\[
+\theta r+(1-\theta)s
+\le\theta f(x)+(1-\theta)f(y)
+\le f(\theta x+(1-\theta)y),
+\]</span></p>
+<p>so their mixture remains in the hypograph. Conversely, put two graph points <span class="math inline">\((x,f(x))\)</span> and <span class="math inline">\((y,f(y))\)</span> in a convex hypograph. Membership of their mixture is exactly the concavity inequality. Reverse all vertical inequalities for the epigraph and convexity.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="The graph itself is usually not convex">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The graph itself is usually not convex
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a nonaffine function, the line segment between two graph points generally lies above or below the graph rather than on it. Convexity concerns the epigraph or hypograph, not usually the graph.</p>
+</div>
+</div>
+</section>
+<section id="first-order-characterizations" class="level1">
+<h1>4. First-order characterizations</h1>
+<p>The chord definition does not require derivatives. When derivatives exist, it has an equivalent tangent-plane form.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supporting inequalities for differentiable functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is differentiable.</p>
+<p><strong>Conclusions.</strong></p>
+<p><span class="math display">\[
+f\text{ is concave}
+\quad\Longleftrightarrow\quad
+f(y)\le f(x)+\nabla f(x)^\mathsf T(y-x)
+\quad\forall x,y\in C,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+f\text{ is convex}
+\quad\Longleftrightarrow\quad
+f(y)\ge f(x)+\nabla f(x)^\mathsf T(y-x)
+\quad\forall x,y\in C.
+\]</span></p>
+</div>
+</div>
+<p>For concavity, every tangent plane lies weakly <strong>above</strong> the graph. For convexity, every tangent plane lies weakly <strong>below</strong> it. These are global inequalities for every pair <span class="math inline">\((x,y)\)</span>, not merely local Taylor approximations.</p>
+<p><strong>Proof strategy for concavity.</strong> Let <span class="math inline">\(g(t)=f(x+t(y-x))\)</span> for <span class="math inline">\(t\in[0,1]\)</span>. Concavity of <span class="math inline">\(f\)</span> gives a chord inequality for <span class="math inline">\(g\)</span>. Divide by <span class="math inline">\(t&gt;0\)</span> and take <span class="math inline">\(t\downarrow0\)</span> to obtain the tangent inequality. Conversely, set <span class="math inline">\(z=\theta x+(1-\theta)y\)</span> and apply the supporting inequality at <span class="math inline">\(z\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x)&amp;\le f(z)+(1-\theta)\nabla f(z)^\mathsf T(x-y),\\
+f(y)&amp;\le f(z)-\theta\nabla f(z)^\mathsf T(x-y).
+\end{aligned}
+\]</span></p>
+<p>Multiply the first inequality by <span class="math inline">\(\theta\)</span> and the second by <span class="math inline">\(1-\theta\)</span>. The gradient terms cancel, so</p>
+<p><span class="math display">\[
+\theta f(x)+(1-\theta)f(y)\le f(z),
+\]</span></p>
+<p>which is the concavity inequality. The convex proof reverses every inequality.</p>
+<p><strong>Retrieval check.</strong> In the converse proof, why are the multipliers on the two displayed inequalities <span class="math inline">\(\theta\)</span> and <span class="math inline">\(1-\theta\)</span>, rather than the other way around?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>They are the weights in the desired chord expression <span class="math inline">\(\theta f(x)+(1-\theta)f(y)\)</span>. With these weights, the two gradient terms are <span class="math inline">\(\theta(1-\theta)\nabla f(z)^\mathsf T(x-y)\)</span> and its negative, so they cancel.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="A stationary point alone is not a global certificate">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A stationary point alone is not a global certificate
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(f(x)=x^3\)</span>, <span class="math inline">\(f'(0)=0\)</span>, but <span class="math inline">\(0\)</span> is neither a maximum nor a minimum. The tangent inequality, or concavity/convexity plus an appropriate first-order condition, is the missing global structure.</p>
+</div>
+</div>
+<section id="global-optimization-from-a-first-order-condition" class="level2">
+<h2 class="anchored" data-anchor-id="global-optimization-from-a-first-order-condition">4.1 Global optimization from a first-order condition</h2>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Concavity turns a variational inequality into a global maximum
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be convex and let <span class="math inline">\(f\)</span> be differentiable on an open neighborhood of <span class="math inline">\(C\)</span>.</p>
+<p><strong>Sufficient condition.</strong> If <span class="math inline">\(f\)</span> is concave and <span class="math inline">\(x^*\in C\)</span> satisfies</p>
+<p><span class="math display">\[
+\nabla f(x^*)^\mathsf T(y-x^*)\le0
+\qquad\text{for every }y\in C,
+\]</span></p>
+<p>then <span class="math inline">\(x^*\)</span> is a global maximizer of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span>.</p>
+<p><strong>Necessary condition.</strong> If <span class="math inline">\(x^*\)</span> is a global maximizer on <span class="math inline">\(C\)</span>, the displayed inequality holds, whether or not <span class="math inline">\(f\)</span> is concave.</p>
+</div>
+</div>
+<p>For sufficiency, the concave supporting inequality gives</p>
+<p><span class="math display">\[
+f(y)\le f(x^*)+\nabla f(x^*)^\mathsf T(y-x^*)\le f(x^*)
+\]</span></p>
+<p>for every <span class="math inline">\(y\in C\)</span>. For necessity, consider the feasible line <span class="math inline">\(x^*+t(y-x^*)\)</span> for <span class="math inline">\(t\in[0,1]\)</span> and differentiate at <span class="math inline">\(t=0\)</span> from the right.</p>
+<p>If <span class="math inline">\(x^*\)</span> is an interior point of <span class="math inline">\(C\)</span>, the inequality for all feasible directions reduces to <span class="math inline">\(\nabla f(x^*)=0\)</span>. At a boundary point it does not. This is the convex-analysis counterpart of the constrained first-order conditions in <a href="../../repo/econ8001/optimization.html">Optimization</a>.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Existence and uniqueness are separate claims
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\)</span> be convex.</p>
+<ul>
+<li>If <span class="math inline">\(f\)</span> is strictly concave, it has <strong>at most one</strong> global maximizer on <span class="math inline">\(C\)</span>.</li>
+<li>If <span class="math inline">\(f\)</span> is strictly convex, it has <strong>at most one</strong> global minimizer on <span class="math inline">\(C\)</span>.</li>
+<li>If, in addition, <span class="math inline">\(C\)</span> is compact and <span class="math inline">\(f\)</span> is continuous, Weierstrass supplies existence. Thus strict concavity plus those existence hypotheses gives a unique global maximizer.</li>
+</ul>
+</div>
+</div>
+<p><strong>Proof of uniqueness.</strong> If two distinct points <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> both maximize a strictly concave <span class="math inline">\(f\)</span>, their midpoint is feasible and has a strictly greater value than the common maximum, a contradiction. Reverse signs for strict convexity and minimization.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Do not use strictness as an existence condition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do not use strictness as an existence condition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The strictly concave function <span class="math inline">\(f(x)=\log x\)</span> on <span class="math inline">\((0,1)\)</span> has no maximum. Strict concavity or strict convexity gives an at-most-one conclusion. Compactness and continuity are what give existence.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="second-order-characterizations" class="level1">
+<h1>5. Second-order characterizations</h1>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hessian characterization on an open convex domain
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is <span class="math inline">\(C^2\)</span>.</p>
+<p><strong>Conclusions.</strong></p>
+<ul>
+<li><span class="math inline">\(f\)</span> is convex if and only if <span class="math inline">\(D^2f(x)\)</span> is positive semidefinite for every <span class="math inline">\(x\in C\)</span>.</li>
+<li><span class="math inline">\(f\)</span> is concave if and only if <span class="math inline">\(D^2f(x)\)</span> is negative semidefinite for every <span class="math inline">\(x\in C\)</span>.</li>
+<li>Positive definiteness everywhere is sufficient for strict convexity. Negative definiteness everywhere is sufficient for strict concavity.</li>
+</ul>
+</div>
+</div>
+<p>The curvature test examines every scalar restriction</p>
+<p><span class="math display">\[
+h(t)=f\bigl(x+t(y-x)\bigr).
+\]</span></p>
+<p>By the chain rule,</p>
+<p><span class="math display">\[
+h''(t)=(y-x)^\mathsf TD^2f\bigl(x+t(y-x)\bigr)(y-x).
+\]</span></p>
+<p>Thus a positive semidefinite Hessian makes every line restriction convex; negative semidefiniteness makes every such restriction concave.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Strict convexity does not require a positive definite Hessian everywhere">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Strict convexity does not require a positive definite Hessian everywhere
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The function <span class="math inline">\(f(x)=x^4\)</span> is strictly convex on <span class="math inline">\(\mathbb R\)</span>, yet <span class="math inline">\(f''(0)=0\)</span>. Likewise, <span class="math inline">\(-x^4\)</span> is strictly concave, but its Hessian is zero at zero. A definite Hessian everywhere is a strong sufficient condition, not a necessary condition for strictness.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="A one-point semidefinite Hessian says little">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A one-point semidefinite Hessian says little
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(f(x)=x^4\)</span>, the Hessian at zero is <span class="math inline">\(0\)</span>, which is both positive and negative semidefinite. That does not make <span class="math inline">\(f\)</span> concave near zero. The global Hessian characterization requires the sign at every point of an open convex domain.</p>
+</div>
+</div>
+</section>
+<section id="quasiconvexity-and-quasiconcavity" class="level1">
+<h1>6. Quasiconvexity and quasiconcavity</h1>
+<p>Convexity compares values to weighted averages of values. Quasiconcavity only asks whether sufficiently good choices form a convex set.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: upper and lower level sets">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: upper and lower level sets
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be convex and <span class="math inline">\(f:C\to\mathbb R\)</span>. For <span class="math inline">\(a\in\mathbb R\)</span>, define</p>
+<p><span class="math display">\[
+U_a=\{x\in C:f(x)\ge a\},
+\qquad
+L_a=\{x\in C:f(x)\le a\}.
+\]</span></p>
+<p>The function <span class="math inline">\(f\)</span> is <strong>quasiconcave</strong> if every upper level set <span class="math inline">\(U_a\)</span> is convex. It is <strong>quasiconvex</strong> if every lower level set <span class="math inline">\(L_a\)</span> is convex. Empty level sets count as convex.</p>
+</div>
+</div>
+<p>Equivalently, <span class="math inline">\(f\)</span> is quasiconcave if</p>
+<p><span class="math display">\[
+f(\theta x+(1-\theta)y)\ge\min\{f(x),f(y)\}
+\]</span></p>
+<p>for all <span class="math inline">\(x,y\in C\)</span> and <span class="math inline">\(\theta\in[0,1]\)</span>. For quasiconvexity, replace the minimum by the maximum and reverse the inequality.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Concavity implies quasiconcavity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(f\)</span> is concave on a convex set <span class="math inline">\(C\)</span>, then it is quasiconcave. If <span class="math inline">\(f\)</span> is convex, then it is quasiconvex. The converses fail.</p>
+</div>
+</div>
+<p>If <span class="math inline">\(f(x)\ge f(y)\)</span>, concavity gives</p>
+<p><span class="math display">\[
+f(\theta x+(1-\theta)y)
+\ge\theta f(x)+(1-\theta)f(y)
+\ge f(y).
+\]</span></p>
+<p>This is exactly the convexity of the upper level set at level <span class="math inline">\(f(y)\)</span>.</p>
+<p><strong>Retrieval check.</strong> If <span class="math inline">\(f\)</span> is quasiconcave and <span class="math inline">\(f(x),f(y)\ge a\)</span>, what must be true of <span class="math inline">\(f(\theta x+(1-\theta)y)\)</span> for <span class="math inline">\(\theta\in[0,1]\)</span>?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It must be at least <span class="math inline">\(a\)</span>. Both endpoints lie in the upper level set <span class="math inline">\(U_a\)</span>, and quasiconcavity says <span class="math inline">\(U_a\)</span> is convex, so their mixture remains in <span class="math inline">\(U_a\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Examples that mark the boundary">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples that mark the boundary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(f(x)=e^x\)</span> on <span class="math inline">\(\mathbb R\)</span> is strictly convex and quasiconcave. It is quasiconcave because every upper level set is a ray <span class="math inline">\([\log a,\infty)\)</span>, or all of <span class="math inline">\(\mathbb R\)</span> or empty.</li>
+<li><span class="math inline">\(f(x)=x^2\)</span> is not quasiconcave on <span class="math inline">\(\mathbb R\)</span>: for <span class="math inline">\(a&gt;0\)</span>, the upper level set <span class="math inline">\((-\infty,-\sqrt a]\cup[\sqrt a,\infty)\)</span> is not convex.</li>
+<li>Every monotone real-valued function on an interval is both quasiconcave and quasiconvex, even when it has no concavity or convexity.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Quasiconcavity is not a substitute for concavity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Quasiconcavity is not a substitute for concavity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The function <span class="math inline">\(f(x)=x^3\)</span> is strictly increasing, hence quasiconcave on <span class="math inline">\(\mathbb R\)</span>, but its stationary point at zero is not a maximum. Quasiconcavity alone does not make a zero gradient sufficient for a global optimum.</p>
+</div>
+</div>
+<section id="strict-quasiconcavity-and-uniqueness" class="level2">
+<h2 class="anchored" data-anchor-id="strict-quasiconcavity-and-uniqueness">6.1 Strict quasiconcavity and uniqueness</h2>
+<p>Strict quasiconcavity means that for distinct <span class="math inline">\(x,y\)</span> with <span class="math inline">\(f(x)\ge f(y)\)</span>, every proper mixture has value strictly above <span class="math inline">\(f(y)\)</span>. It gives at most one global maximizer on a convex feasible set. The same midpoint contradiction as for strict concavity proves it.</p>
+<p>It remains weaker than strict concavity. The function <span class="math inline">\(f(x)=e^x\)</span> is strictly quasiconcave on <span class="math inline">\(\mathbb R\)</span> because it is strictly increasing, while it is strictly convex rather than concave.</p>
+</section>
+<section id="differentiated-quasiconcavity-necessity-and-a-safe-strict-test" class="level2">
+<h2 class="anchored" data-anchor-id="differentiated-quasiconcavity-necessity-and-a-safe-strict-test">6.2 Differentiated quasiconcavity: necessity and a safe strict test</h2>
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty, open, and convex, and let <span class="math inline">\(f:C\to\mathbb R\)</span> be <span class="math inline">\(C^2\)</span>. Define the tangent space to the level set at <span class="math inline">\(x\)</span> by</p>
+<p><span class="math display">\[
+T_{\nabla f(x)}
+=\{v\in\mathbb R^N:\nabla f(x)^\mathsf Tv=0\}.
+\]</span></p>
+<p>The test examines curvature only along directions tangent to a level set, not all directions.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Necessary tangent-curvature condition for quasiconcavity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is <span class="math inline">\(C^2\)</span> and quasiconcave.</p>
+<p><strong>Conclusion.</strong> For every <span class="math inline">\(x\in C\)</span> and every <span class="math inline">\(v\in T_{\nabla f(x)}\)</span>,</p>
+<p><span class="math display">\[
+v^\mathsf TD^2f(x)v\le0.
+\]</span></p>
+</div>
+</div>
+<p>This is only a necessary condition. Quasiconcavity rules out positive curvature along a direction that is locally tangent to a level set, because that would create a strict local trough on the corresponding line.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Tangent-space semidefiniteness is not sufficient">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tangent-space semidefiniteness is not sufficient
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The converse stated in the cited Nachbar note is incorrect. Let <span class="math inline">\(f(x)=x^4\)</span> on the open convex domain <span class="math inline">\(\mathbb R\)</span>. If <span class="math inline">\(x\ne0\)</span>, then <span class="math inline">\(f'(x)\ne0\)</span>, so the only gradient-orthogonal direction is <span class="math inline">\(v=0\)</span>. At <span class="math inline">\(x=0\)</span>, <span class="math inline">\(f'(0)=0\)</span> and <span class="math inline">\(f''(0)=0\)</span>. Hence <span class="math inline">\(v^\mathsf TD^2f(x)v\le0\)</span> holds for every gradient-orthogonal <span class="math inline">\(v\)</span> at every <span class="math inline">\(x\)</span>. Yet <span class="math inline">\(f\)</span> is not quasiconcave: its upper level set at <span class="math inline">\(a=1\)</span> is <span class="math inline">\((-\infty,-1]\cup[1,\infty)\)</span>, which is not convex.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Safe strict-curvature sufficient condition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is <span class="math inline">\(C^2\)</span>. Suppose that, for every <span class="math inline">\(x\in C\)</span> and every nonzero <span class="math inline">\(v\in\mathbb R^N\)</span> with <span class="math inline">\(\nabla f(x)^\mathsf Tv=0\)</span>,</p>
+<p><span class="math display">\[
+v^\mathsf TD^2f(x)v&lt;0.
+\]</span></p>
+<p><strong>Conclusion.</strong> <span class="math inline">\(f\)</span> is strictly quasiconcave on <span class="math inline">\(C\)</span>.</p>
+</div>
+</div>
+<p><strong>Why this is safe.</strong> Restrict <span class="math inline">\(f\)</span> to any nondegenerate feasible line segment. At an interior stationary point of that restriction, the segment direction is gradient-orthogonal, so the second derivative is strictly negative. Thus a line restriction cannot have an interior local trough: it rises strictly until at most one peak and then falls strictly. This gives strict quasiconcavity on every segment, hence on <span class="math inline">\(C\)</span>. The condition is sufficient, not necessary.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="The gradient-zero case is special">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The gradient-zero case is special
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(\nabla f(x)=0\)</span>, then <span class="math inline">\(T_{\nabla f(x)}=\mathbb R^N\)</span>. The level-set tangent condition then becomes the ordinary all-directions Hessian condition. Do not apply a bordered-Hessian shortcut without checking whether the gradient is nonzero.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="assumption-audit-and-problem-blueprints" class="level1">
+<h1>7. Assumption audit and problem blueprints</h1>
+<section id="assumption-audit" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Claim</th>
+<th>Conditions doing the work</th>
+<th>Conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Finite mixture is feasible</td>
+<td><span class="math inline">\(C\)</span> convex</td>
+<td><span class="math inline">\(\sum_i\theta_i x_i\in C\)</span></td>
+</tr>
+<tr class="even">
+<td>Jensen inequality</td>
+<td><span class="math inline">\(f\)</span> convex or concave on convex <span class="math inline">\(C\)</span></td>
+<td>comparison of value at a mixture</td>
+</tr>
+<tr class="odd">
+<td>Tangent inequality</td>
+<td><span class="math inline">\(C\)</span> open and convex, <span class="math inline">\(f\)</span> differentiable</td>
+<td>global support characterization</td>
+</tr>
+<tr class="even">
+<td>Hessian equivalence</td>
+<td><span class="math inline">\(C\)</span> open and convex, <span class="math inline">\(f\in C^2\)</span></td>
+<td>semidefinite Hessian iff convexity/concavity</td>
+</tr>
+<tr class="odd">
+<td>Global maximum</td>
+<td><span class="math inline">\(C\)</span> convex, <span class="math inline">\(f\)</span> concave, variational inequality</td>
+<td><span class="math inline">\(x^*\)</span> maximizes globally</td>
+</tr>
+<tr class="even">
+<td>Unique maximum</td>
+<td>strict concavity or strict quasiconcavity, <span class="math inline">\(C\)</span> convex</td>
+<td>at most one maximizer</td>
+</tr>
+<tr class="odd">
+<td>Existence</td>
+<td><span class="math inline">\(C\)</span> compact, <span class="math inline">\(f\)</span> continuous</td>
+<td>a maximizer exists</td>
+</tr>
+<tr class="even">
+<td>Quasiconcavity</td>
+<td>convexity of every upper level set</td>
+<td>no weighted-average payoff inequality</td>
+</tr>
+<tr class="odd">
+<td>Strict quasiconcavity, sufficient test</td>
+<td><span class="math inline">\(C\)</span> open and convex, <span class="math inline">\(f\in C^2\)</span>, strict negative curvature in every nonzero gradient-orthogonal direction</td>
+<td>strict quasiconcavity</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="blueprint-prove-a-global-optimum" class="level2">
+<h2 class="anchored" data-anchor-id="blueprint-prove-a-global-optimum">Blueprint: prove a global optimum</h2>
+<ol type="1">
+<li>State the feasible set and prove it is convex.</li>
+<li>Separate existence from characterization. Use compactness and continuity if existence is needed.</li>
+<li>Establish concavity for maximization or convexity for minimization, using a definition, a Hessian test on the whole domain, or a composition rule.</li>
+<li>Write the correct first-order condition. At a boundary, use <span class="math inline">\(\nabla f(x^*)^\mathsf T(y-x^*)\le0\)</span> rather than automatically setting the gradient to zero.</li>
+<li>Apply the supporting inequality to every feasible <span class="math inline">\(y\)</span>.</li>
+<li>Add strictness only to claim uniqueness.</li>
+</ol>
+</section>
+<section id="blueprint-classify-quasi-shape" class="level2">
+<h2 class="anchored" data-anchor-id="blueprint-classify-quasi-shape">Blueprint: classify quasi-shape</h2>
+<ol type="1">
+<li>Write the upper level set for quasiconcavity or lower level set for quasiconvexity.</li>
+<li>Test whether that set is convex for every level.</li>
+<li>Treat tangent-space negative semidefiniteness as necessary only. The <span class="math inline">\(x^4\)</span> counterexample shows it is not sufficient for quasiconcavity.</li>
+<li>For a sufficient strict test, require strict negative curvature in every nonzero gradient-orthogonal direction, with an open convex domain and a <span class="math inline">\(C^2\)</span> objective.</li>
+<li>Do not infer concavity, a global FOC result, or Hessian definiteness merely from a quasi-shape property.</li>
+</ol>
+</section>
+<section id="exit-tickets" class="level2">
+<h2 class="anchored" data-anchor-id="exit-tickets">Exit tickets</h2>
+<ol type="1">
+<li>Is the union of two convex sets necessarily convex? Give a two-point test.</li>
+<li>State the finite-mixture Jensen inequality for a concave function.</li>
+<li>What extra conditions turn a strictly concave objective’s at-most-one result into a unique maximizer result?</li>
+<li>Why does <span class="math inline">\(f'(x^*)=0\)</span> fail to prove a maximum for a quasiconcave function?</li>
+<li>In the <span class="math inline">\(C^2\)</span> Hessian characterization, is positive definiteness everywhere necessary for strict convexity?</li>
+<li>Is nonpositive curvature in every gradient-orthogonal direction sufficient for quasiconcavity?</li>
+</ol>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>No.&nbsp;In <span class="math inline">\([-2,-1]\cup[1,2]\)</span>, both <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> are present but their midpoint <span class="math inline">\(0\)</span> is absent. 2. <span class="math inline">\(f(\sum_i\theta_i x_i)\ge\sum_i\theta_i f(x_i)\)</span>. 3. A compact feasible set and a continuous objective give existence. 4. Quasiconcavity does not produce the tangent supporting inequality; <span class="math inline">\(x^3\)</span> is a counterexample.</li>
+<li>No.&nbsp;<span class="math inline">\(x^4\)</span> is strictly convex although its second derivative is zero at zero.</li>
+<li>No.&nbsp;<span class="math inline">\(x^4\)</span> satisfies that tangent-space semidefinite condition but is not quasiconcave on <span class="math inline">\(\mathbb R\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="mastery-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">I can test convexity of a feasible set from the line-segment definition.</label></li>
+<li><label><input type="checkbox">I can move between two-point mixtures and finite convex combinations.</label></li>
+<li><label><input type="checkbox">I can state Jensen’s inequality with the direction appropriate to the function.</label></li>
+<li><label><input type="checkbox">I can recognize convexity from an epigraph and concavity from a hypograph.</label></li>
+<li><label><input type="checkbox">I can state the domains and differentiability assumptions of the tangent and Hessian characterizations.</label></li>
+<li><label><input type="checkbox">I can separate global optimality, uniqueness, and existence.</label></li>
+<li><label><input type="checkbox">I can define quasiconcavity from upper level sets and say why it is weaker than concavity.</label></li>
+<li><label><input type="checkbox">I can distinguish the necessary tangent-space semidefinite condition from the strict sufficient curvature condition for quasiconcavity.</label></li>
+</ul>
+</section>
+<section id="sources-and-further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="sources-and-further-reading">Sources and further reading</h2>
+<ul>
+<li>John Nachbar, <a href="https://sites.wustl.edu/nachbar/files/2019/09/convexityrn.pdf"><em>Convexity in <span class="math inline">\(\mathbb R^N\)</span></em></a>, for convex sets, finite convex combinations, and separating geometry.</li>
+<li>John Nachbar, <a href="https://sites.wustl.edu/nachbar/files/2019/09/concavity.pdf"><em>Concave and Convex Functions</em></a>, for epigraphs, hypographs, tangent inequalities, and Hessian characterizations.</li>
+<li>John Nachbar, <a href="https://sites.wustl.edu/nachbar/files/2020/04/QuasiConcavity.pdf"><em>Quasi-concavity</em></a>, for level sets. Its statement that tangent-space negative semidefiniteness is sufficient for quasiconcavity is incorrect; the <span class="math inline">\(x^4\)</span> counterexample above shows the failure.</li>
+</ul>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8001/maximum-envelope.html" class="pagination-link" aria-label="Maximum and Envelope Theorems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Maximum and Envelope Theorems</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/babyrudin/index.html" class="pagination-link" aria-label="Math Analysis">
+        <span class="nav-page-text">Math Analysis</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

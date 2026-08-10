@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Optimization – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/econ8001/maximum-envelope.html" rel="next">
+<link href="../../repo/econ8001/differentiation.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../repo.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed econ8001-study">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/optimization.html">Optimization</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
+  <li><a href="#where-this-sits" id="toc-where-this-sits" class="nav-link" data-scroll-target="#where-this-sits">Where this sits</a></li>
+  <li><a href="#prerequisite-retrieval" id="toc-prerequisite-retrieval" class="nav-link" data-scroll-target="#prerequisite-retrieval">Prerequisite retrieval</a></li>
+  <li><a href="#existence-attaining-rather-than-merely-approaching-a-value" id="toc-existence-attaining-rather-than-merely-approaching-a-value" class="nav-link" data-scroll-target="#existence-attaining-rather-than-merely-approaching-a-value">1. Existence: attaining rather than merely approaching a value</a></li>
+  <li><a href="#unconstrained-local-optimization" id="toc-unconstrained-local-optimization" class="nav-link" data-scroll-target="#unconstrained-local-optimization">2. Unconstrained local optimization</a>
+  <ul class="collapse">
+  <li><a href="#second-order-conditions" id="toc-second-order-conditions" class="nav-link" data-scroll-target="#second-order-conditions">Second-order conditions</a></li>
+  </ul></li>
+  <li><a href="#equality-constraints-and-regularity" id="toc-equality-constraints-and-regularity" class="nav-link" data-scroll-target="#equality-constraints-and-regularity">3. Equality constraints and regularity</a>
+  <ul class="collapse">
+  <li><a href="#the-lagrangian-and-candidate-equations" id="toc-the-lagrangian-and-candidate-equations" class="nav-link" data-scroll-target="#the-lagrangian-and-candidate-equations">The Lagrangian and candidate equations</a></li>
+  </ul></li>
+  <li><a href="#tangent-spaces-and-constrained-curvature" id="toc-tangent-spaces-and-constrained-curvature" class="nav-link" data-scroll-target="#tangent-spaces-and-constrained-curvature">4. Tangent spaces and constrained curvature</a>
+  <ul class="collapse">
+  <li><a href="#a-concrete-constrained-curvature-calculation" id="toc-a-concrete-constrained-curvature-calculation" class="nav-link" data-scroll-target="#a-concrete-constrained-curvature-calculation">A concrete constrained curvature calculation</a></li>
+  </ul></li>
+  <li><a href="#assumption-audit" id="toc-assumption-audit" class="nav-link" data-scroll-target="#assumption-audit">Assumption audit</a></li>
+  <li><a href="#calculation-blueprints" id="toc-calculation-blueprints" class="nav-link" data-scroll-target="#calculation-blueprints">Calculation blueprints</a>
+  <ul class="collapse">
+  <li><a href="#unconstrained-problem" id="toc-unconstrained-problem" class="nav-link" data-scroll-target="#unconstrained-problem">Unconstrained problem</a></li>
+  <li><a href="#equality-constrained-problem" id="toc-equality-constrained-problem" class="nav-link" data-scroll-target="#equality-constrained-problem">Equality-constrained problem</a></li>
+  </ul></li>
+  <li><a href="#exit-tickets" id="toc-exit-tickets" class="nav-link" data-scroll-target="#exit-tickets">Exit tickets</a></li>
+  <li><a href="#mastery-checklist" id="toc-mastery-checklist" class="nav-link" data-scroll-target="#mastery-checklist">Mastery checklist</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/optimization.html">Optimization</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Optimization</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Lecture 6 of 8</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What problem does optimization solve?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An economic model often asks for the best feasible action: a portfolio, production plan, contract, or equilibrium choice. Calculus can characterize an interior candidate, but a candidate need not exist, be feasible, be unique, or be optimal. This page separates the tasks:</p>
+<ol type="1">
+<li><strong>existence:</strong> does an optimum occur in the feasible set?</li>
+<li><strong>characterization:</strong> what must an interior or regular constrained optimum satisfy?</li>
+<li><strong>classification:</strong> do those candidates give local maxima, minima, or neither?</li>
+<li><strong>global conclusion:</strong> what additional structure compares all feasible points?</li>
+</ol>
+</div>
+</div>
+<p>This page develops Chapter 4, Sections 4.1 through 4.3. Convexity, maximum theorems, and inequality constraints come later. Do not silently import their global conclusions into the local calculus results here.</p>
+</section>
+<section id="where-this-sits" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-sits">Where this sits</h2>
+<p>Optimization uses compactness and continuity from <a href="../../repo/econ8001/topology.html">Topology</a>, and derivatives and Hessians from <a href="../../repo/econ8001/differentiation.html">Differentiation</a>. Its curvature tests use the quadratic forms developed in <a href="../../repo/econ8001/linear-algebra-matrices.html">Linear algebra: matrices</a>.</p>
+</section>
+<section id="prerequisite-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h2>
+<p>For a scalar function <span class="math inline">\(f:\mathbb R^n\to\mathbb R\)</span>, its gradient is a column vector <span class="math inline">\(\nabla f(x)\in\mathbb R^n\)</span>, its derivative is the row <span class="math inline">\(Df(x)=\nabla f(x)^\mathsf T\)</span>, and its Hessian is an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(D^2f(x)\)</span>. For a symmetric <span class="math inline">\(H\)</span>, the scalar <span class="math inline">\(z^\mathsf THz\)</span> measures curvature in direction <span class="math inline">\(z\in\mathbb R^n\)</span>.</p>
+<p><strong>Retrieval check.</strong> Why cannot <span class="math inline">\(z^\mathsf THz\)</span> be called a vector?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(z\)</span> is <span class="math inline">\(n\times1\)</span> and <span class="math inline">\(H\)</span> is <span class="math inline">\(n\times n\)</span>, then <span class="math inline">\((1\times n)(n\times n)(n\times1)\)</span> has dimension <span class="math inline">\(1\times1\)</span>. It is a scalar.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="existence-attaining-rather-than-merely-approaching-a-value" class="level2">
+<h2 class="anchored" data-anchor-id="existence-attaining-rather-than-merely-approaching-a-value">1. Existence: attaining rather than merely approaching a value</h2>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Weierstrass extreme-value theorem (Theorem 4.1.1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(\varnothing\ne X\subseteq\mathbb R^n\)</span> is compact and <span class="math inline">\(f:X\to\mathbb R\)</span> is continuous.</p>
+<p><strong>Conclusion.</strong> There are <span class="math inline">\(x^{\max},x^{\min}\in X\)</span> such that</p>
+<p><span class="math display">\[
+f(x^{\max})\ge f(x)\ge f(x^{\min})\qquad\text{for every }x\in X.
+\]</span></p>
+</div>
+</div>
+<p>This is an existence theorem. It makes no uniqueness claim and supplies no formula for an optimizer. In Euclidean space, compactness means closed and bounded.</p>
+<p><strong>Proof strategy.</strong> Continuity on compact <span class="math inline">\(X\)</span> makes <span class="math inline">\(f(X)\)</span> bounded: otherwise an unbounded sequence of function values would have inputs with a convergent subsequence, whose images converge and hence are bounded. Thus <span class="math inline">\(s=\sup f(X)\)</span> is finite. Choose <span class="math inline">\(x_j\in X\)</span> with <span class="math inline">\(f(x_j)\to s\)</span>. Compactness gives a convergent subsequence <span class="math inline">\(x_{j_\ell}\to x^{\max}\in X\)</span>; continuity gives <span class="math inline">\(f(x_{j_\ell})\to f(x^{\max})\)</span>, hence <span class="math inline">\(f(x^{\max})=s\)</span>. Apply the same argument to <span class="math inline">\(-f\)</span> for a minimum.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a compact portfolio constraint">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: a compact portfolio constraint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(M\ge1/\sqrt n\)</span> and <span class="math inline">\(X=\{w\in\mathbb R^n:\mathbf1^\mathsf Tw=1,\ \|w\|\le M\}\)</span>, with <span class="math inline">\(f\)</span> continuous. The vector <span class="math inline">\(\mathbf1/n\)</span> belongs to <span class="math inline">\(X\)</span>, so the set is nonempty. The affine equality set is closed, the ball is closed and bounded, so their intersection is compact. A maximum exists. This says nothing yet about how to find it.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Each hypothesis matters">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Each hypothesis matters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>On <span class="math inline">\(X=(0,1)\)</span>, <span class="math inline">\(f(x)=x\)</span> is continuous and bounded above, but no maximum is attained because the feasible set misses <span class="math inline">\(1\)</span>.</li>
+<li>On <span class="math inline">\(X=\mathbb R\)</span>, <span class="math inline">\(f(x)=x\)</span> is continuous but has no maximum because the set is unbounded and the objective can keep rising.</li>
+<li>On <span class="math inline">\(X=[0,1]\)</span>, define <span class="math inline">\(f(0)=0\)</span> and <span class="math inline">\(f(x)=1/x\)</span> for <span class="math inline">\(x&gt;0\)</span>. The domain is compact, but <span class="math inline">\(f\)</span> is not continuous and has no maximum.</li>
+</ul>
+</div>
+</div>
+<p><strong>Retrieval check: Phase 2 preview.</strong> If <span class="math inline">\(f\)</span> is strictly concave on a compact convex feasible set, what does Weierstrass supply and what does strict concavity add?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Weierstrass supplies existence when <span class="math inline">\(f\)</span> is continuous. Strict concavity can add uniqueness of a maximizer on a convex feasible set, but neither property is part of Theorem 4.1.1 itself.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="unconstrained-local-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="unconstrained-local-optimization">2. Unconstrained local optimization</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 4.2.1: local, strict local, and global optima">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.2.1: local, strict local, and global optima
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X\subseteq\mathbb R^n\)</span> and <span class="math inline">\(f:X\to\mathbb R\)</span>.</p>
+<ul>
+<li><span class="math inline">\(x^*\in X\)</span> is a <strong>local maximum</strong> if some <span class="math inline">\(\varepsilon&gt;0\)</span> satisfies <span class="math inline">\(f(x^*)\ge f(x)\)</span> for every <span class="math inline">\(x\in X\cap B_\varepsilon(x^*)\)</span>.</li>
+<li>It is a <strong>strict local maximum</strong> if the inequality is strict for every <span class="math inline">\(x\in X\cap B_\varepsilon(x^*)\setminus\{x^*\}\)</span>.</li>
+<li>It is a <strong>global maximum</strong> if <span class="math inline">\(f(x^*)\ge f(x)\)</span> for every <span class="math inline">\(x\in X\)</span>.</li>
+</ul>
+<p>Replace <span class="math inline">\(\ge\)</span> by <span class="math inline">\(\le\)</span> for minima. The feasible set remains part of every definition: local means local <em>within <span class="math inline">\(X\)</span></em>.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+First-order necessary condition (Theorem 4.2.2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(X\subseteq\mathbb R^n\)</span> is open, <span class="math inline">\(f:X\to\mathbb R\)</span> is differentiable at <span class="math inline">\(x^*\in X\)</span>, and <span class="math inline">\(x^*\)</span> is a local maximum or local minimum.</p>
+<p><strong>Conclusion.</strong> <span class="math inline">\(Df(x^*)=0\)</span>, equivalently <span class="math inline">\(\nabla f(x^*)=0\)</span>.</p>
+</div>
+</div>
+<p><strong>Proof strategy.</strong> For each <span class="math inline">\(v\in\mathbb R^n\)</span>, the one-variable function <span class="math inline">\(q(t)=f(x^*+tv)\)</span> has a local extremum at <span class="math inline">\(0\)</span> for small <span class="math inline">\(t\)</span>, because <span class="math inline">\(X\)</span> is open. Its derivative is <span class="math inline">\(q'(0)=Df(x^*)v\)</span>. At a one-variable local extremum, <span class="math inline">\(q'(0)=0\)</span>. Since this is true for every <span class="math inline">\(v\)</span>, <span class="math inline">\(Df(x^*)=0\)</span>.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="The word necessary has direction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The word necessary has direction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\text{local optimum at an interior point}\quad\Longrightarrow\quad\nabla f(x^*)=0.
+\]</span></p>
+<p>The converse fails. For <span class="math inline">\(f(x)=x^3\)</span>, <span class="math inline">\(f'(0)=0\)</span>, but values on either side of zero are both larger and smaller than <span class="math inline">\(f(0)\)</span>. A stationary point is a candidate, not a classification.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 4.2.3: stationary point">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.2.3: stationary point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A point <span class="math inline">\(x^*\)</span> is stationary when <span class="math inline">\(Df(x^*)=0\)</span>. It need not be an optimum and, if <span class="math inline">\(X\)</span> is not open, an optimum can occur at a boundary point with nonzero gradient.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a boundary maximum has no zero gradient">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: a boundary maximum has no zero gradient
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On <span class="math inline">\(X=[0,1]\)</span>, maximize <span class="math inline">\(f(x)=x\)</span>. The global maximum is <span class="math inline">\(x^*=1\)</span>, but <span class="math inline">\(f'(1)=1\)</span>. The first-order theorem does not apply because <span class="math inline">\(1\)</span> is not an interior point of an open feasible domain.</p>
+</div>
+</div>
+<section id="second-order-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="second-order-conditions">Second-order conditions</h3>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Second-order conditions (Theorem 4.2.4)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(X\subseteq\mathbb R^n\)</span> is open, <span class="math inline">\(f:X\to\mathbb R\)</span> is <span class="math inline">\(C^2\)</span>, and <span class="math inline">\(x^*\)</span> is stationary.</p>
+<p><strong>Necessary conclusions.</strong></p>
+<ol type="1">
+<li>A local maximum implies <span class="math inline">\(D^2f(x^*)\)</span> is negative semidefinite.</li>
+<li>A local minimum implies <span class="math inline">\(D^2f(x^*)\)</span> is positive semidefinite.</li>
+</ol>
+<p><strong>Sufficient conclusions.</strong></p>
+<ol start="3" type="1">
+<li>If <span class="math inline">\(D^2f(x^*)\)</span> is negative definite, then <span class="math inline">\(x^*\)</span> is a strict local maximum.</li>
+<li>If <span class="math inline">\(D^2f(x^*)\)</span> is positive definite, then <span class="math inline">\(x^*\)</span> is a strict local minimum.</li>
+</ol>
+</div>
+</div>
+<p>The distinction between semidefinite and definite is the distinction between a test that a true optimum must pass and one that proves a strict local result. The semidefinite cases are inconclusive.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Examples: strict curvature and a flat test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Examples: strict curvature and a flat test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(f(x,y)=-x^2-2y^2\)</span> has Hessian <span class="math inline">\(\operatorname{diag}(-2,-4)\)</span>, negative definite at <span class="math inline">\((0,0)\)</span>, so <span class="math inline">\((0,0)\)</span> is a strict local maximum.</li>
+<li><span class="math inline">\(f(x)=x^4\)</span> has <span class="math inline">\(f'(0)=0\)</span> and <span class="math inline">\(f''(0)=0\)</span>, yet <span class="math inline">\(0\)</span> is a strict local minimum.</li>
+<li><span class="math inline">\(f(x)=-x^4\)</span> has the same zero second derivative at <span class="math inline">\(0\)</span>, yet it is a strict local maximum.</li>
+</ul>
+<p>Thus a zero or merely semidefinite Hessian does not classify a stationary point.</p>
+</div>
+</div>
+<p>For a <span class="math inline">\(C^2\)</span> scalar objective, Taylor’s expansion near a stationary point is</p>
+<p><span class="math display">\[
+f(x^*+h)=f(x^*)+\frac12h^\mathsf TD^2f(x^*)h+o(\|h\|^2).
+\]</span></p>
+<p>The sign of this quadratic form gives the proof idea for the sufficient parts. Negative definiteness makes the leading nonzero change negative in every direction; positive definiteness reverses the sign.</p>
+</section>
+</section>
+<section id="equality-constraints-and-regularity" class="level2">
+<h2 class="anchored" data-anchor-id="equality-constraints-and-regularity">3. Equality constraints and regularity</h2>
+<p>Let <span class="math inline">\(g=(g_1,\ldots,g_k)^\mathsf T:\mathbb R^n\to\mathbb R^k\)</span> and let <span class="math inline">\(c\in\mathbb R^k\)</span>. The equality-constrained feasible set is</p>
+<p><span class="math display">\[C=U\cap\{x\in\mathbb R^n:g(x)=c\},\]</span></p>
+<p>where <span class="math inline">\(U\subseteq\mathbb R^n\)</span> is open. Its geometry, near a regular point, is governed by the <span class="math inline">\(k\times n\)</span> Jacobian <span class="math inline">\(Dg(x)\)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Constraint qualification: full row rank">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Constraint qualification: full row rank
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The equality constraints satisfy the regularity condition at <span class="math inline">\(x^*\)</span> when</p>
+<p><span class="math display">\[\operatorname{rank}Dg(x^*)=k.\]</span></p>
+<p>Thus <span class="math inline">\(k\le n\)</span>, the <span class="math inline">\(k\)</span> constraint gradients are linearly independent, and <span class="math inline">\(Dg(x^*)\)</span> has full row rank. This condition allows the feasible set to have a well-defined tangent space of dimension <span class="math inline">\(n-k\)</span>. If the rank condition fails, the point is singular and must be checked directly; the multiplier equations need not hold there.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lagrange multiplier theorem (Theorem 4.3.1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(f:\mathbb R^n\to\mathbb R\)</span> and <span class="math inline">\(g_i:\mathbb R^n\to\mathbb R\)</span> be <span class="math inline">\(C^1\)</span>.</p>
+<p><strong>Assumptions.</strong> <span class="math inline">\(x^*\)</span> is a local maximum or minimum of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span> and <span class="math inline">\(\operatorname{rank}Dg(x^*)=k\)</span>.</p>
+<p><strong>Conclusion.</strong> There is <span class="math inline">\(\lambda^*\in\mathbb R^k\)</span> such that</p>
+<p><span class="math display">\[
+Df(x^*)=\lambda^{*\mathsf T}Dg(x^*),
+\quad\text{equivalently}\quad
+\nabla f(x^*)=Dg(x^*)^\mathsf T\lambda^*.
+\tag{L}
+\]</span></p>
+</div>
+</div>
+<p>In (L), the left side is <span class="math inline">\(1\times n\)</span>. Since <span class="math inline">\(\lambda^{*\mathsf T}\)</span> is <span class="math inline">\(1\times k\)</span> and <span class="math inline">\(Dg\)</span> is <span class="math inline">\(k\times n\)</span>, the product is conformable. In gradient form <span class="math inline">\(Dg^\mathsf T\lambda^*\)</span> is <span class="math inline">\(n\times1\)</span>.</p>
+<div class="intuition callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Every feasible first-order displacement <span class="math inline">\(z\)</span> satisfies <span class="math inline">\(Dg(x^*)z=0\)</span>. At an optimum, the objective’s gradient must have zero inner product with every such <span class="math inline">\(z\)</span>. Linear algebra then says it lies in the row space of <span class="math inline">\(Dg(x^*)\)</span>, namely the span of the constraint gradients. The multipliers give its coordinates in that span.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="A multiplier can fail when regularity fails">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A multiplier can fail when regularity fails
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Minimize <span class="math inline">\(f(x)=x\)</span> subject to <span class="math inline">\(g(x)=x^2=0\)</span>. The only feasible point is <span class="math inline">\(0\)</span>, so it is both a constrained maximum and minimum. But <span class="math inline">\(Dg(0)=0\)</span>, and the equation <span class="math inline">\(Df(0)=\lambda Dg(0)\)</span> would read <span class="math inline">\(1=0\)</span>. The rank condition is not decoration.</p>
+</div>
+</div>
+<section id="the-lagrangian-and-candidate-equations" class="level3">
+<h3 class="anchored" data-anchor-id="the-lagrangian-and-candidate-equations">The Lagrangian and candidate equations</h3>
+<p>Choose the convention</p>
+<p><span class="math display">\[
+L(x;\lambda)=f(x)-\lambda^\mathsf T(g(x)-c).
+\]</span></p>
+<p>Then (L) and feasibility become the system</p>
+<p><span class="math display">\[
+D_xL(x;\lambda)=0,\qquad g(x)=c.
+\]</span></p>
+<p>The sign convention is arbitrary if used consistently. It changes the sign of <span class="math inline">\(\lambda\)</span>, not the set of candidate <span class="math inline">\(x\)</span> values.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: maximum on a circle">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: maximum on a circle
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maximize <span class="math inline">\(f(x_1,x_2)=x_1+x_2\)</span> subject to <span class="math inline">\(g(x)=x_1^2+x_2^2=1\)</span>. With <span class="math inline">\(L=x_1+x_2-\lambda(x_1^2+x_2^2-1)\)</span>, the equations are</p>
+<p><span class="math display">\[1-2\lambda x_1=0,\quad1-2\lambda x_2=0,\quad x_1^2+x_2^2=1.\]</span></p>
+<p>They give <span class="math inline">\((x_1,x_2)=\pm(1,1)/\sqrt2\)</span>. Comparing objective values identifies the positive point as the global maximum and the negative point as the global minimum. The multiplier equations alone identify candidates, not which one wins.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong> In the circle example, why is the gradient of <span class="math inline">\(f\)</span> not required to be zero at the constrained optimum?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Feasible moves are restricted to the circle. The correct condition is that <span class="math inline">\(\nabla f\)</span> lies in the span of <span class="math inline">\(\nabla g\)</span>, not that it vanishes. A nonzero gradient can point normal to the feasible curve.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="tangent-spaces-and-constrained-curvature" class="level2">
+<h2 class="anchored" data-anchor-id="tangent-spaces-and-constrained-curvature">4. Tangent spaces and constrained curvature</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: tangent vectors and tangent space">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: tangent vectors and tangent space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A tangent vector at a feasible point <span class="math inline">\(x^*\)</span> is a velocity <span class="math inline">\(z=\gamma'(0)\)</span> of a differentiable feasible curve <span class="math inline">\(\gamma\)</span> with <span class="math inline">\(\gamma(0)=x^*\)</span>. At a regular feasible point, define</p>
+<p><span class="math display">\[
+T(x^*)=\{z\in\mathbb R^n:Dg(x^*)z=0\}.
+\]</span></p>
+<p>It is the kernel of the <span class="math inline">\(k\times n\)</span> Jacobian <span class="math inline">\(Dg(x^*)\)</span>.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Regular-level tangent theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Regular-level tangent theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(g\)</span> is <span class="math inline">\(C^1\)</span> near <span class="math inline">\(x^*\)</span>, <span class="math inline">\(g(x^*)=c\)</span>, and <span class="math inline">\(\operatorname{rank}Dg(x^*)=k\)</span>, then the nearby level set <span class="math inline">\(\{x:g(x)=c\}\)</span> is a <span class="math inline">\(C^1\)</span> manifold of dimension <span class="math inline">\(n-k\)</span> and its tangent space is <span class="math inline">\(\ker Dg(x^*)\)</span>. Thus every feasible curve velocity lies in <span class="math inline">\(T(x^*)\)</span>, and every <span class="math inline">\(z\in T(x^*)\)</span> is the velocity of some local feasible curve.</p>
+</div>
+</div>
+<p>For the unit circle <span class="math inline">\(g(x)=x_1^2+x_2^2\)</span>, at <span class="math inline">\(x^*\)</span> we have</p>
+<p><span class="math display">\[Dg(x^*)=2(x_1^*,x_2^*),\qquad
+T(x^*)=\{z: x_1^*z_1+x_2^*z_2=0\}.\]</span></p>
+<p>The tangent space is one-dimensional. One nonzero tangent vector spans it, which is why checking that vector and its scalar multiples is enough on a circle. This shortcut fails when <span class="math inline">\(\dim T(x^*)&gt;1\)</span>.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Equality-constrained second-order conditions (Theorem 4.3.4)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(f,g_1,\ldots,g_k\)</span> be <span class="math inline">\(C^2\)</span>. Suppose <span class="math inline">\((x^*,\lambda^*)\)</span> satisfies feasibility, the Lagrange first-order condition, and <span class="math inline">\(\operatorname{rank}Dg(x^*)=k\)</span>. Let <span class="math inline">\(L\)</span> be the Lagrangian above.</p>
+<p><strong>Necessary conclusions.</strong></p>
+<ol type="1">
+<li>A constrained local maximum at <span class="math inline">\(x^*\)</span> implies <span class="math inline">\(z^\mathsf TD^2_{xx}L(x^*;\lambda^*)z\le0\)</span> for every <span class="math inline">\(z\in T(x^*)\)</span>.</li>
+<li>A constrained local minimum implies the same quadratic form is at least zero for every <span class="math inline">\(z\in T(x^*)\)</span>.</li>
+</ol>
+<p><strong>Sufficient conclusions.</strong></p>
+<ol start="3" type="1">
+<li>If the quadratic form is strictly negative for every nonzero <span class="math inline">\(z\in T(x^*)\)</span>, then <span class="math inline">\(x^*\)</span> is a strict constrained local maximum.</li>
+<li>If it is strictly positive for every nonzero <span class="math inline">\(z\in T(x^*)\)</span>, then <span class="math inline">\(x^*\)</span> is a strict constrained local minimum.</li>
+</ol>
+</div>
+</div>
+<p>All curvature claims are restricted to <span class="math inline">\(T(x^*)\)</span>. Curvature in a direction that violates the constraints says nothing about nearby feasible values.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Necessary versus sufficient: do not reverse the arrows">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Necessary versus sufficient: do not reverse the arrows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{aligned}
+\text{constrained local maximum}&amp;\Rightarrow Q(z)\le0\quad\forall z\in T(x^*),\\
+Q(z)&lt;0\quad\forall z\in T(x^*)\setminus\{0\}&amp;\Rightarrow\text{strict constrained local maximum},
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(Q(z)=z^\mathsf TD^2_{xx}L(x^*;\lambda^*)z\)</span>. A merely nonpositive quadratic form is necessary but generally not sufficient.</p>
+</div>
+</div>
+<section id="a-concrete-constrained-curvature-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="a-concrete-constrained-curvature-calculation">A concrete constrained curvature calculation</h3>
+<p>Consider <span class="math inline">\(f(x_1,x_2)=x_1^2+2x_2^2\)</span> on the unit circle. At a stationary point <span class="math inline">\(x^*=(1,0)\)</span>, use <span class="math inline">\(L=f-\lambda(x_1^2+x_2^2-1)\)</span>. The first-order condition gives <span class="math inline">\(\lambda^*=1\)</span>, hence</p>
+<p><span class="math display">\[D^2_{xx}L(x^*;\lambda^*)=
+\begin{pmatrix}0&amp;0\\0&amp;2\end{pmatrix}.\]</span></p>
+<p>The tangent space is <span class="math inline">\(T(x^*)=\{(0,t)^\mathsf T:t\in\mathbb R\}\)</span>. For a nonzero tangent vector <span class="math inline">\(z=(0,t)^\mathsf T\)</span>,</p>
+<p><span class="math display">\[z^\mathsf TD^2_{xx}Lz=2t^2&gt;0.\]</span></p>
+<p>Therefore <span class="math inline">\((1,0)\)</span> is a strict constrained local minimum. The ambient Hessian of <span class="math inline">\(f\)</span> is positive definite too, but that fact is not the method: the theorem asks for the Lagrangian Hessian on feasible directions.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Testing one direction is not enough in a higher-dimensional tangent space">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Testing one direction is not enough in a higher-dimensional tangent space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(T(x^*)\subseteq\mathbb R^3\)</span> has dimension two. Finding one tangent direction <span class="math inline">\(v\)</span> with <span class="math inline">\(Q(v)&lt;0\)</span> does not prove a constrained local maximum: another independent tangent direction may have <span class="math inline">\(Q(w)&gt;0\)</span>. To show a constrained saddle, exhibit one feasible tangent direction of each sign. To prove strict curvature, establish the sign for <em>all</em> nonzero tangent directions.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="assumption-audit" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Goal</th>
+<th>Conditions doing the work</th>
+<th>What follows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Optimum exists</td>
+<td>compact <span class="math inline">\(X\)</span>, continuous <span class="math inline">\(f\)</span></td>
+<td>maximum and minimum attained</td>
+</tr>
+<tr class="even">
+<td>Interior local optimum</td>
+<td>open domain, differentiability</td>
+<td>zero gradient</td>
+</tr>
+<tr class="odd">
+<td>Strict unconstrained local optimum</td>
+<td>stationary, <span class="math inline">\(C^2\)</span>, definite Hessian</td>
+<td>strict local result</td>
+</tr>
+<tr class="even">
+<td>Multiplier condition</td>
+<td><span class="math inline">\(C^1\)</span>, local constrained optimum, full row rank</td>
+<td>FOC with <span class="math inline">\(\lambda\)</span></td>
+</tr>
+<tr class="odd">
+<td>Necessary constrained SOC</td>
+<td>constrained local optimum, <span class="math inline">\(C^2\)</span>, FOC, full row rank</td>
+<td>semidefinite sign on <span class="math inline">\(T(x^*)\)</span></td>
+</tr>
+<tr class="even">
+<td>Sufficient constrained SOC</td>
+<td><span class="math inline">\(C^2\)</span>, FOC, full row rank, definite sign on <span class="math inline">\(T(x^*)\)</span></td>
+<td>strict constrained local result</td>
+</tr>
+</tbody>
+</table>
+<p>Do not treat these rows as interchangeable. Weierstrass does not yield first order conditions at a boundary. Lagrange conditions do not establish existence. A stationary point and semidefinite Hessian do not classify an optimum.</p>
+</section>
+<section id="calculation-blueprints" class="level2">
+<h2 class="anchored" data-anchor-id="calculation-blueprints">Calculation blueprints</h2>
+<section id="unconstrained-problem" class="level3">
+<h3 class="anchored" data-anchor-id="unconstrained-problem">Unconstrained problem</h3>
+<ol type="1">
+<li>State the domain and whether the question is local or global.</li>
+<li>For an interior candidate, solve <span class="math inline">\(\nabla f(x)=0\)</span>.</li>
+<li>Compute the Hessian and test definiteness at each candidate.</li>
+<li>If a global claim is needed, separately establish existence and compare candidates or bring in an appropriate global theorem.</li>
+</ol>
+</section>
+<section id="equality-constrained-problem" class="level3">
+<h3 class="anchored" data-anchor-id="equality-constrained-problem">Equality-constrained problem</h3>
+<ol type="1">
+<li>Write <span class="math inline">\(g(x)=c\)</span> with <span class="math inline">\(g:\mathbb R^n\to\mathbb R^k\)</span> and check dimensions.</li>
+<li>Check feasibility and <span class="math inline">\(\operatorname{rank}Dg(x)=k\)</span> at each candidate. If rank fails, treat that singular point directly rather than applying the multiplier equations.</li>
+<li>Form <span class="math inline">\(L(x;\lambda)=f(x)-\lambda^\mathsf T(g(x)-c)\)</span>.</li>
+<li>Solve <span class="math inline">\(D_xL=0\)</span> and <span class="math inline">\(g(x)=c\)</span> at regular candidates.</li>
+<li>Find <span class="math inline">\(T(x^*)=\ker Dg(x^*)\)</span>.</li>
+<li>Evaluate the scalar quadratic form <span class="math inline">\(z^\mathsf TD^2_{xx}L(x^*;\lambda^*)z\)</span> for every tangent direction.</li>
+<li>State the theorem part used and its implication direction.</li>
+</ol>
+</section>
+</section>
+<section id="exit-tickets" class="level2">
+<h2 class="anchored" data-anchor-id="exit-tickets">Exit tickets</h2>
+<ol type="1">
+<li>Give one example where an objective has a finite supremum but no maximum. Name the failed existence hypothesis.</li>
+<li>For <span class="math inline">\(f(x,y)=x^2-y^2\)</span>, classify the stationary point at <span class="math inline">\((0,0)\)</span>.</li>
+<li>With one equality constraint in <span class="math inline">\(\mathbb R^3\)</span>, what dimension should the regular tangent space have?</li>
+<li>In a constrained problem, why is a positive curvature direction outside <span class="math inline">\(T(x^*)\)</span> irrelevant to the second-order theorem?</li>
+</ol>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><span class="math inline">\(f(x)=x\)</span> on <span class="math inline">\((0,1)\)</span> has supremum <span class="math inline">\(1\)</span> but no maximum; compactness fails.</li>
+<li>The Hessian <span class="math inline">\(\operatorname{diag}(2,-2)\)</span> is indefinite, so <span class="math inline">\((0,0)\)</span> is a saddle, not a local optimum. 3. It has dimension <span class="math inline">\(3-1=2\)</span>. 4. It is not the velocity of a feasible curve to first order, so the theorem does not compare nearby feasible objective values in that direction.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="mastery-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">I can distinguish existence, a first-order characterization, and a sufficient local classification.</label></li>
+<li><label><input type="checkbox">I can state every compactness and continuity hypothesis in Weierstrass.</label></li>
+<li><label><input type="checkbox">I know why an unconstrained FOC needs an open domain.</label></li>
+<li><label><input type="checkbox">I can state the direction of each unconstrained SOC implication.</label></li>
+<li><label><input type="checkbox">I can form a Lagrangian with conformable dimensions.</label></li>
+<li><label><input type="checkbox">I can compute a tangent space and restrict the Lagrangian Hessian to it.</label></li>
+<li><label><input type="checkbox">I know why one tangent direction is insufficient unless the tangent space is one-dimensional.</label></li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8001/differentiation.html" class="pagination-link" aria-label="Differentiation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Differentiation</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/econ8001/maximum-envelope.html" class="pagination-link" aria-label="Maximum and Envelope Theorems">
+        <span class="nav-page-text">Maximum and Envelope Theorems</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Central Limit Theorems – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/#microeconomics" rel="next">
+<link href="../../repo/econ8002/lecture8.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-07e8d312e10f4fba377534053a431ef7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="econ8002.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture9.html">Lecture 9: Central Limit Theorems</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
+  <li><a href="#triangular-arrays-and-lindebergs-condition" id="toc-triangular-arrays-and-lindebergs-condition" class="nav-link" data-scroll-target="#triangular-arrays-and-lindebergs-condition">Triangular arrays and Lindeberg’s condition</a></li>
+  <li><a href="#proof-of-the-lindeberg-clt" id="toc-proof-of-the-lindeberg-clt" class="nav-link" data-scroll-target="#proof-of-the-lindeberg-clt">Proof of the Lindeberg CLT</a></li>
+  <li><a href="#scalar-and-multivariate-iid-corollaries" id="toc-scalar-and-multivariate-iid-corollaries" class="nav-link" data-scroll-target="#scalar-and-multivariate-iid-corollaries">Scalar and multivariate IID corollaries</a></li>
+  <li><a href="#studentization-and-asymptotic-normality" id="toc-studentization-and-asymptotic-normality" class="nav-link" data-scroll-target="#studentization-and-asymptotic-normality">Studentization and asymptotic normality</a></li>
+  <li><a href="#applications-and-theorem-selection" id="toc-applications-and-theorem-selection" class="nav-link" data-scroll-target="#applications-and-theorem-selection">Applications and theorem selection</a></li>
+  <li><a href="#synthesis-and-retrieval" id="toc-synthesis-and-retrieval" class="nav-link" data-scroll-target="#synthesis-and-retrieval">Synthesis and retrieval</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/index.html">Probability &amp; Statistics</a></li><li class="breadcrumb-item"><a href="../../repo/econ8002/lecture9.html">Lecture 9: Central Limit Theorems</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Central Limit Theorems</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8002/index.html">ECON 8002 course index</a> · Lecture 9 of 9</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<section id="how-to-use-this-page" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-this-page">How to use this page</h3>
+<p>The Lindeberg proof is a chain, not a formula to memorize. At each step, name the assumption that permits the next arrow.</p>
+<p>Answer every quiz before opening it, and rebuild the proof blueprint after the first pass.</p>
+<div class="source-note">
+Primary source: ECON 8002 Lecture 9, pp.&nbsp;50–54. The sample-variance calculation and definition of asymptotic normality are corrected below.
+</div>
+</section>
+<section id="how-should-i-think-about-lecture-9" class="level3">
+<h3 class="anchored" data-anchor-id="how-should-i-think-about-lecture-9">How should I think about Lecture 9?</h3>
+<div class="mindmap">
+<div class="mind-col">
+<div class="mind-leaf">
+<p>Many independent centered contributions</p>
+</div>
+<div class="mind-leaf">
+<p>No contribution dominates total variance</p>
+</div>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-center">
+<p>After the right normalization, why does the sum acquire a Gaussian law?</p>
+</div>
+<div class="mind-arrow">
+<p><span class="math inline">\(\longrightarrow\)</span></p>
+</div>
+<div class="mind-col">
+<div class="mind-leaf">
+<p>Taylor-expand characteristic functions</p>
+</div>
+<div class="mind-leaf">
+<p>Control large summands</p>
+</div>
+<div class="mind-leaf">
+<p>Studentize for feasible inference</p>
+</div>
+</div>
+</div>
+</section>
+<section id="course-map" class="level3">
+<h3 class="anchored" data-anchor-id="course-map">Course map</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th><strong>9</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>measure spaces</td>
+<td>integration and RN</td>
+<td>distribution properties</td>
+<td>conditioning</td>
+<td>convergence modes</td>
+<td>CMT and Slutsky</td>
+<td>LLN</td>
+<td>weak limits and delta method</td>
+<td><strong>CLT and inference</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example or application
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lecture 8’s Lévy-Cramér theorem identifies the Gaussian limit. Lecture 6’s CMT and Slutsky turn that limit into feasible test statistics.</p>
+</div>
+</div>
+</section>
+<section id="prerequisite-retrieval" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h3>
+<p>You should be able to state:</p>
+<ol type="1">
+<li><span class="math inline">\(\varphi_{U+V}(t)=\varphi_U(t)\varphi_V(t)\)</span> for independent <span class="math inline">\(U,V\)</span>.</li>
+<li>Lévy-Cramér: pointwise characteristic-function convergence to a known law implies weak convergence.</li>
+<li>Cramér-Wold: every scalar projection determines vector weak convergence.</li>
+<li>WLLN for <span class="math inline">\(n^{-1}\sum Y_i\)</span> and <span class="math inline">\(n^{-1}\sum Y_i^2\)</span>.</li>
+<li>Slutsky for a distributional numerator and a constant probability limit.</li>
+</ol>
+</section>
+</section>
+<section id="triangular-arrays-and-lindebergs-condition" class="level2">
+<h2 class="anchored" data-anchor-id="triangular-arrays-and-lindebergs-condition">Triangular arrays and Lindeberg’s condition</h2>
+<section id="motivation-one-normal-theorem-is-not-enough" class="level3">
+<h3 class="anchored" data-anchor-id="motivation-one-normal-theorem-is-not-enough">Motivation: one normal theorem is not enough</h3>
+<p>The IID CLT treats identical contributions. Econometric sums often look like</p>
+<p><span class="math display">\[S_n=\sum_{j=1}^{k_n}w_{nj}\varepsilon_{nj},\]</span></p>
+<p>where weights, variances, and even the number of terms change with <span class="math inline">\(n\)</span>.</p>
+<div class="intuition-box">
+<p>A triangular-array CLT asks for a common principle: after scaling by total standard deviation, no rare or individual contribution should control the sum.</p>
+</div>
+</section>
+<section id="definition-32-triangular-array" class="level3">
+<h3 class="anchored" data-anchor-id="definition-32-triangular-array">Definition 32: triangular array</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For each <span class="math inline">\(n\in\mathbb N\)</span>, let</p>
+<p><span class="math display">\[X_{n1},\ldots,X_{n k_n}\]</span></p>
+<p>be random variables on <span class="math inline">\((\Omega_n,\mathcal F_n,P_n)\)</span>, independent within row <span class="math inline">\(n\)</span>. The collection</p>
+<p><span class="math display">\[\{X_{nj}:1\le j\le k_n,\ n\ge1\}\]</span></p>
+<p>is a <strong>triangular array</strong>.</p>
+</div>
+</div>
+<p>The distributions may vary across <span class="math inline">\(j\)</span> and <span class="math inline">\(n\)</span>.</p>
+</section>
+<section id="what-independence-does-and-does-not-mean" class="level3">
+<h3 class="anchored" data-anchor-id="what-independence-does-and-does-not-mean">What independence does and does not mean</h3>
+<ul>
+<li>Within a fixed row, <span class="math inline">\(X_{n1},\ldots,X_{n k_n}\)</span> are independent.</li>
+<li>Independence between different rows is unnecessary: rows describe different statistics and may even live on different probability spaces.</li>
+<li>Identical distribution within a row is not assumed.</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not silently replace “row-wise independent” with “IID.” The theorem is built to allow heteroskedastic summands.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong></p>
+<p>If <span class="math inline">\(k_n=n\)</span> and <span class="math inline">\(X_{nj}=w_{nj}\varepsilon_j\)</span>, which index selects the statistic and which selects a contribution to it?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(n\)</span> selects the row, hence the statistic or sample size. The index <span class="math inline">\(j\)</span> selects one summand within that row.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-natural-scale-is-total-variance" class="level3">
+<h3 class="anchored" data-anchor-id="the-natural-scale-is-total-variance">The natural scale is total variance</h3>
+<p>Assume every summand has finite variance and define</p>
+<p><span class="math display">\[
+\sigma_{nj}^2=\operatorname{Var}(X_{nj}),
+\qquad
+\sigma_n^2=\sum_{j=1}^{k_n}\sigma_{nj}^2\in(0,\infty).
+\]</span></p>
+<p>Row-wise independence gives</p>
+<p><span class="math display">\[
+\operatorname{Var}\!\left(\sum_{j=1}^{k_n}X_{nj}\right)=\sigma_n^2.
+\]</span></p>
+<p>Thus <span class="math inline">\(\sigma_n\)</span>, not <span class="math inline">\(k_n\)</span>, is the correct general normalizing scale.</p>
+</section>
+<section id="theorem-9.1-lindeberg-clt" class="level3">
+<h3 class="anchored" data-anchor-id="theorem-9.1-lindeberg-clt">Theorem 9.1: Lindeberg CLT</h3>
+<div class="theorem-box">
+<p>Let <span class="math inline">\(\{X_{nj}\}\)</span> be a row-wise independent triangular array with <span class="math inline">\(k_n\to\infty\)</span> and <span class="math inline">\(0&lt;\sigma_n^2&lt;\infty\)</span>. If, for every <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
+<p><span class="math display">\[
+\frac1{\sigma_n^2}\sum_{j=1}^{k_n}
+E\!\left[(X_{nj}-EX_{nj})^2
+\mathbf1\{|X_{nj}-EX_{nj}|&gt;\varepsilon\sigma_n\}\right]\to0,
+\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+\frac1{\sigma_n}\sum_{j=1}^{k_n}(X_{nj}-EX_{nj})
+\xrightarrow{d}N(0,1).
+\]</span></p>
+</div>
+</section>
+<section id="lindeberg-controls-tail-second-moments" class="level3">
+<h3 class="anchored" data-anchor-id="lindeberg-controls-tail-second-moments">Lindeberg controls tail second moments</h3>
+<p>The expression</p>
+<p><span class="math display">\[
+E\!\left[(X_{nj}-EX_{nj})^2
+\mathbf1\{|X_{nj}-EX_{nj}|&gt;\varepsilon\sigma_n\}\right]
+\]</span></p>
+<p>is the tail second-moment contribution from summand <span class="math inline">\(j\)</span> when it is large relative to the row’s total standard deviation.</p>
+<div class="intuition-box">
+<p>Lindeberg says that, for every fixed relative cutoff, all unusually large pieces together contribute a vanishing share of total variance.</p>
+</div>
+</section>
+<section id="fellers-condition-no-dominant-variance" class="level3">
+<h3 class="anchored" data-anchor-id="fellers-condition-no-dominant-variance">Feller’s condition: no dominant variance</h3>
+<p>The <strong>Feller condition</strong> is</p>
+<p><span class="math display">\[
+\max_{1\le j\le k_n}\frac{\sigma_{nj}^2}{\sigma_n^2}\to0.
+\]</span></p>
+<p>It says no single summand owns a positive limiting fraction of total variance.</p>
+<p>Lindeberg implies Feller. Feller alone does not generally imply the CLT because many rare large values can still contribute material tail variance.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Which condition is stronger, Lindeberg or Feller?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lindeberg is stronger. It implies Feller, but Feller controls only the largest individual variance share, not the combined contribution of large tails.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lindeberg-implies-feller" class="level3">
+<h3 class="anchored" data-anchor-id="lindeberg-implies-feller">Lindeberg implies Feller</h3>
+<p>After centering, for any <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
+<p><span class="math display">\[
+\frac{\sigma_{nj}^2}{\sigma_n^2}
+\le
+\varepsilon^2+
+\frac1{\sigma_n^2}
+E[X_{nj}^2\mathbf1\{|X_{nj}|&gt;\varepsilon\sigma_n\}].
+\]</span></p>
+<p>Taking the maximum over <span class="math inline">\(j\)</span> and bounding the final term by the sum over the row gives</p>
+<p><span class="math display">\[
+\limsup_n\max_j\frac{\sigma_{nj}^2}{\sigma_n^2}\le\varepsilon^2.
+\]</span></p>
+<p>Let <span class="math inline">\(\varepsilon\downarrow0\)</span>.</p>
+</section>
+<section id="a-dominating-summand-nonexample" class="level3">
+<h3 class="anchored" data-anchor-id="a-dominating-summand-nonexample">A dominating-summand nonexample</h3>
+<p>Let <span class="math inline">\(X_{n1}=Z\)</span> with <span class="math inline">\(EZ=0\)</span>, <span class="math inline">\(\operatorname{Var}(Z)=1\)</span>, and let every other <span class="math inline">\(X_{nj}=0\)</span>. Then <span class="math inline">\(\sigma_n^2=1\)</span> and</p>
+<p><span class="math display">\[\max_j\frac{\sigma_{nj}^2}{\sigma_n^2}=1.\]</span></p>
+<p>The standardized sum equals <span class="math inline">\(Z\)</span> for every <span class="math inline">\(n\)</span>. It is not asymptotically normal unless <span class="math inline">\(Z\)</span> was already normal.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Counterexample or invalid inference">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample or invalid inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Increasing the number of columns does nothing when one column carries all uncertainty.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="proof-of-the-lindeberg-clt" class="level2">
+<h2 class="anchored" data-anchor-id="proof-of-the-lindeberg-clt">Proof of the Lindeberg CLT</h2>
+<section id="lindeberg-proof-the-full-map" class="level3">
+<h3 class="anchored" data-anchor-id="lindeberg-proof-the-full-map">Lindeberg proof: the full map</h3>
+<ol class="proof-map">
+<li>
+Center and scale the row so its total variance equals one.
+</li>
+<li>
+Approximate each characteristic function by <span class="math inline">\(1-t^2\sigma_{nj}^2/2\)</span>.
+</li>
+<li>
+Use Lindeberg to make the sum of Taylor remainders vanish.
+</li>
+<li>
+Use Feller and a product inequality to combine the approximations.
+</li>
+<li>
+Recognize <span class="math inline">\(e^{-t^2/2}\)</span> and apply Lévy-Cramér.
+</li>
+</ol>
+</section>
+<section id="normalize-without-loss-of-generality" class="level3">
+<h3 class="anchored" data-anchor-id="normalize-without-loss-of-generality">Normalize without loss of generality</h3>
+<p>Define</p>
+<p><span class="math display">\[Z_{nj}=\frac{X_{nj}-EX_{nj}}{\sigma_n}.\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[EZ_{nj}=0,\qquad
+\sum_{j=1}^{k_n}\operatorname{Var}(Z_{nj})=1.\]</span></p>
+<p>Write <span class="math inline">\(s_{nj}^2=\operatorname{Var}(Z_{nj})\)</span>. It is enough to prove</p>
+<p><span class="math display">\[\sum_{j=1}^{k_n}Z_{nj}\xrightarrow{d}N(0,1).\]</span></p>
+<p>Lindeberg now uses the fixed threshold <span class="math inline">\(\varepsilon\)</span>.</p>
+</section>
+<section id="the-characteristic-function-taylor-bound" class="level3">
+<h3 class="anchored" data-anchor-id="the-characteristic-function-taylor-bound">The characteristic-function Taylor bound</h3>
+<p>For real <span class="math inline">\(x,t\)</span>,</p>
+<p><span class="math display">\[
+\left|e^{itx}-\left(1+itx-\frac{t^2x^2}{2}\right)\right|
+\le\min\{|tx|^2,|tx|^3\}.
+\]</span></p>
+<p>Because <span class="math inline">\(EZ_{nj}=0\)</span>,</p>
+<p><span class="math display">\[
+\left|\varphi_{Z_{nj}}(t)-\left(1-\frac{t^2s_{nj}^2}{2}\right)\right|
+\le E\min\{|tZ_{nj}|^2,|tZ_{nj}|^3\}.
+\]</span></p>
+</section>
+<section id="split-small-and-large-values" class="level3">
+<h3 class="anchored" data-anchor-id="split-small-and-large-values">Split small and large values</h3>
+<p>For fixed <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\min\{|tZ_{nj}|^2,|tZ_{nj}|^3\}
+&amp;\le E[|tZ_{nj}|^3\mathbf1\{|Z_{nj}|&lt;\varepsilon\}]\\
+&amp;\quad+E[|tZ_{nj}|^2\mathbf1\{|Z_{nj}|\ge\varepsilon\}]\\
+&amp;\le \varepsilon|t|^3s_{nj}^2
++t^2E[Z_{nj}^2\mathbf1\{|Z_{nj}|\ge\varepsilon\}].
+\end{aligned}
+\]</span></p>
+<p>Small values use <span class="math inline">\(|Z|^3\le\varepsilon Z^2\)</span>; large values invoke Lindeberg.</p>
+</section>
+<section id="sum-the-taylor-errors" class="level3">
+<h3 class="anchored" data-anchor-id="sum-the-taylor-errors">Sum the Taylor errors</h3>
+<p>Summing over <span class="math inline">\(j\)</span> and using <span class="math inline">\(\sum_js_{nj}^2=1\)</span> gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sum_{j=1}^{k_n}
+\left|\varphi_{Z_{nj}}(t)-\left(1-\frac{t^2s_{nj}^2}{2}\right)\right|\\
+&amp;\qquad\le
+\varepsilon|t|^3
++t^2\sum_{j=1}^{k_n}E[Z_{nj}^2\mathbf1\{|Z_{nj}|\ge\varepsilon\}].
+\end{aligned}
+\]</span></p>
+<p>For fixed <span class="math inline">\(\varepsilon\)</span>, the second term tends to zero by Lindeberg.</p>
+</section>
+<section id="the-order-of-limits-matters" class="level3">
+<h3 class="anchored" data-anchor-id="the-order-of-limits-matters">The order of limits matters</h3>
+<p>The preceding bound yields</p>
+<p><span class="math display">\[
+\limsup_{n\to\infty}\sum_j
+\left|\varphi_{Z_{nj}}(t)-\left(1-\frac{t^2s_{nj}^2}{2}\right)\right|
+\le\varepsilon|t|^3.
+\]</span></p>
+<p>Now let <span class="math inline">\(\varepsilon\downarrow0\)</span>.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not write the right side as converging to zero with <span class="math inline">\(n\)</span>. First take the row limit for fixed truncation, then shrink the truncation threshold.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong></p>
+<p>What controls the small-value term, and what controls the large-value term?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The inequality <span class="math inline">\(|Z|^3\le\varepsilon Z^2\)</span> controls small values. Lindeberg’s condition controls the summed large-value variance.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lemma-9.2-compare-products" class="level3">
+<h3 class="anchored" data-anchor-id="lemma-9.2-compare-products">Lemma 9.2: compare products</h3>
+<div class="theorem-box">
+<p>If <span class="math inline">\(|z_j|\le1\)</span> and <span class="math inline">\(|w_j|\le1\)</span> for <span class="math inline">\(j=1,\ldots,m\)</span>, then</p>
+<p><span class="math display">\[
+\left|\prod_{j=1}^mz_j-\prod_{j=1}^mw_j\right|
+\le\sum_{j=1}^m|z_j-w_j|.
+\]</span></p>
+</div>
+<p>Add and subtract the intermediate products <span class="math inline">\(z_1\cdots z_{r-1}w_r\cdots w_m\)</span>. Each remaining factor has modulus at most one.</p>
+</section>
+<section id="independence-turns-sums-into-products" class="level3">
+<h3 class="anchored" data-anchor-id="independence-turns-sums-into-products">Independence turns sums into products</h3>
+<p>Within row <span class="math inline">\(n\)</span>, the normalized variables are independent, so</p>
+<p><span class="math display">\[
+\varphi_{\sum_jZ_{nj}}(t)=\prod_{j=1}^{k_n}\varphi_{Z_{nj}}(t).
+\]</span></p>
+<p>Lemma 9.2 and the vanished Taylor errors imply</p>
+<p><span class="math display">\[
+\prod_j\varphi_{Z_{nj}}(t)
+-\prod_j\left(1-\frac{t^2s_{nj}^2}{2}\right)\to0.
+\]</span></p>
+<p>This is the only step where independence enters the proof.</p>
+</section>
+<section id="replace-linear-factors-by-exponentials" class="level3">
+<h3 class="anchored" data-anchor-id="replace-linear-factors-by-exponentials">Replace linear factors by exponentials</h3>
+<p>Feller gives <span class="math inline">\(\max_js_{nj}^2\to0\)</span>, so for large <span class="math inline">\(n\)</span> all <span class="math inline">\(t^2s_{nj}^2/2\)</span> are small. Using <span class="math inline">\(|e^{-x}-(1-x)|\le x^2/2\)</span> near zero,</p>
+<p><span class="math display">\[
+\sum_j\left|e^{-t^2s_{nj}^2/2}-
+\left(1-\frac{t^2s_{nj}^2}{2}\right)\right|
+\le C_t\sum_js_{nj}^4.
+\]</span></p>
+<p>But <span class="math inline">\(\sum_js_{nj}^4\le(\max_js_{nj}^2)\sum_js_{nj}^2\to0\)</span>.</p>
+</section>
+<section id="the-gaussian-characteristic-function-appears" class="level3">
+<h3 class="anchored" data-anchor-id="the-gaussian-characteristic-function-appears">The Gaussian characteristic function appears</h3>
+<p>Because <span class="math inline">\(\sum_js_{nj}^2=1\)</span>,</p>
+<p><span class="math display">\[
+\prod_{j=1}^{k_n}e^{-t^2s_{nj}^2/2}
+=e^{-t^2/2}.
+\]</span></p>
+<p>Combining the two product approximations gives</p>
+<p><span class="math display">\[
+\varphi_{\sum_jZ_{nj}}(t)\to e^{-t^2/2}.
+\]</span></p>
+<p>The limit is the characteristic function of <span class="math inline">\(N(0,1)\)</span>. Lévy-Cramér completes the proof of Theorem 9.1.</p>
+</section>
+<section id="quick-quiz-4-where-independence-enters" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-4-where-independence-enters">Quick quiz 4: where independence enters</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Which displayed equality in the proof fails without row-wise independence?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The characteristic function of the row sum need not equal the product of the individual characteristic functions.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="scalar-and-multivariate-iid-corollaries" class="level2">
+<h2 class="anchored" data-anchor-id="scalar-and-multivariate-iid-corollaries">Scalar and multivariate IID corollaries</h2>
+<section id="corollary-9.3-scalar-iid-clt" class="level3">
+<h3 class="anchored" data-anchor-id="corollary-9.3-scalar-iid-clt">Corollary 9.3: scalar IID CLT</h3>
+<div class="theorem-box">
+<p>If <span class="math inline">\(X_1,X_2,\ldots\)</span> are IID with</p>
+<p><span class="math display">\[EX_1=\mu,\qquad0&lt;\sigma^2=\operatorname{Var}(X_1)&lt;\infty,\]</span></p>
+<p>then</p>
+<p><span class="math display">\[
+\sqrt n\,\frac{\bar X_n-\mu}{\sigma}
+\xrightarrow{d}N(0,1).
+\]</span></p>
+</div>
+<p>This is Theorem 9.1 with <span class="math inline">\(k_n=n\)</span> and <span class="math inline">\(X_{nj}=X_j\)</span>.</p>
+</section>
+<section id="iid-lindeberg-follows-from-finite-variance" class="level3">
+<h3 class="anchored" data-anchor-id="iid-lindeberg-follows-from-finite-variance">IID Lindeberg follows from finite variance</h3>
+<p>Here <span class="math inline">\(\sigma_n^2=n\sigma^2\)</span>, and Lindeberg becomes</p>
+<p><span class="math display">\[
+\sigma^{-2}E\!\left[(X_1-\mu)^2
+\mathbf1\{|X_1-\mu|&gt;\varepsilon\sigma\sqrt n\}\right]\to0.
+\]</span></p>
+<p>The indicator tends to zero almost surely and the integrand is dominated by the integrable variable <span class="math inline">\((X_1-\mu)^2\)</span>. DCT proves the claim.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example or application
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No finite third or fourth moment is required for the classical IID CLT.</p>
+</div>
+</div>
+</section>
+<section id="quick-quiz-5-moment-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-5-moment-requirements">Quick quiz 5: moment requirements</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Does the IID CLT require <span class="math inline">\(E|X_1|^3&lt;\infty\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;A finite, positive variance is enough. Higher moments support rate refinements such as Berry-Esseen bounds, not the basic CLT.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="boundary-case-infinite-variance" class="level3">
+<h3 class="anchored" data-anchor-id="boundary-case-infinite-variance">Boundary case: infinite variance</h3>
+<p>The preceding theorem does not apply when <span class="math inline">\(\operatorname{Var}(X_1)=\infty\)</span>. Heavy-tailed sums may require a different normalization and may converge to a stable nonnormal law.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Many observations” does not by itself imply a Gaussian limit. The moment and dependence assumptions decide the correct theorem and scaling.</p>
+</div>
+</div>
+</section>
+<section id="corollary-9.4-multivariate-iid-clt" class="level3">
+<h3 class="anchored" data-anchor-id="corollary-9.4-multivariate-iid-clt">Corollary 9.4: multivariate IID CLT</h3>
+<div class="theorem-box">
+<p>Let <span class="math inline">\(X_i\in\mathbb R^k\)</span> be IID with</p>
+<p><span class="math display">\[EX_i=\mu\in\mathbb R^k,\qquad
+\Sigma=\operatorname{Var}(X_i)\]</span></p>
+<p>finite. Then</p>
+<p><span class="math display">\[
+\frac1{\sqrt n}\sum_{i=1}^n(X_i-\mu)
+\xrightarrow{d}N_k(0,\Sigma).
+\]</span></p>
+</div>
+<p><span class="math inline">\(\Sigma\)</span> may be singular.</p>
+</section>
+<section id="multivariate-proof-by-cramér-wold" class="level3">
+<h3 class="anchored" data-anchor-id="multivariate-proof-by-cramér-wold">Multivariate proof by Cramér-Wold</h3>
+<p>For fixed <span class="math inline">\(c\in\mathbb R^k\)</span>,</p>
+<p><span class="math display">\[
+c^\top\frac1{\sqrt n}\sum_{i=1}^n(X_i-\mu)
+=\frac1{\sqrt n}\sum_{i=1}^n c^\top(X_i-\mu).
+\]</span></p>
+<p>The scalar summands are IID with variance <span class="math inline">\(c^\top\Sigma c\)</span>. The scalar CLT gives</p>
+<p><span class="math display">\[
+\frac1{\sqrt n}\sum_i c^\top(X_i-\mu)
+\xrightarrow{d}N(0,c^\top\Sigma c).
+\]</span></p>
+<p>Cramér-Wold yields the vector result.</p>
+</section>
+<section id="singular-covariance-is-allowed" class="level3">
+<h3 class="anchored" data-anchor-id="singular-covariance-is-allowed">Singular covariance is allowed</h3>
+<p>Let <span class="math inline">\(X_i=(Z_i,2Z_i)^\top\)</span> with <span class="math inline">\(EZ_i=0\)</span> and <span class="math inline">\(\operatorname{Var}(Z_i)=1\)</span>. Then</p>
+<p><span class="math display">\[
+\Sigma=\begin{pmatrix}1&amp;2\\2&amp;4\end{pmatrix}
+\]</span></p>
+<p>is singular. The limiting normal vector lies on the line <span class="math inline">\(x_2=2x_1\)</span>.</p>
+<p>If <span class="math inline">\(c^\top\Sigma c=0\)</span>, then <span class="math inline">\(c^\top(X_i-\mu)=0\)</span> almost surely, and that projection converges to the degenerate normal directly.</p>
+</section>
+<section id="quick-quiz-6-a-zero-variance-projection" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-6-a-zero-variance-projection">Quick quiz 6: a zero-variance projection</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Does the multivariate CLT fail if some nonzero <span class="math inline">\(c\)</span> satisfies <span class="math inline">\(c^\top\Sigma c=0\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;That projection is constant almost surely after centering and has a degenerate normal limit. Nonsingularity is not required.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="studentization-and-asymptotic-normality" class="level2">
+<h2 class="anchored" data-anchor-id="studentization-and-asymptotic-normality">Studentization and asymptotic normality</h2>
+<section id="example-21-why-studentize" class="level3">
+<h3 class="anchored" data-anchor-id="example-21-why-studentize">Example 21: why studentize?</h3>
+<p>Suppose <span class="math inline">\(Y_i\)</span> are IID with <span class="math inline">\(EY_i=0\)</span> and <span class="math inline">\(0&lt;\sigma^2=\operatorname{Var}(Y_i)&lt;\infty\)</span>. Define</p>
+<p><span class="math display">\[
+\bar Y_n=\frac1n\sum_{i=1}^nY_i,\qquad
+S_n^2=\frac1{n-1}\sum_{i=1}^n(Y_i-\bar Y_n)^2.
+\]</span></p>
+<p>The CLT uses the unknown <span class="math inline">\(\sigma\)</span>. Studentization replaces it by the observable <span class="math inline">\(S_n\)</span> without changing the limiting law.</p>
+</section>
+<section id="correct-sample-variance-algebra" class="level3">
+<h3 class="anchored" data-anchor-id="correct-sample-variance-algebra">Correct sample-variance algebra</h3>
+<p>Expand around the sample mean:</p>
+<p><span class="math display">\[
+\sum_{i=1}^n(Y_i-\bar Y_n)^2
+=\sum_{i=1}^nY_i^2-n\bar Y_n^2.
+\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[
+S_n^2=\frac{n}{n-1}
+\left(\frac1n\sum_{i=1}^nY_i^2-\bar Y_n^2\right).
+\]</span></p>
+<p>This replaces the incorrect squared expression in the source notes.</p>
+</section>
+<section id="prove-variance-consistency" class="level3">
+<h3 class="anchored" data-anchor-id="prove-variance-consistency">Prove variance consistency</h3>
+<p>Finite variance gives <span class="math inline">\(E[Y_1^2]&lt;\infty\)</span>. The WLLN and CMT imply</p>
+<p><span class="math display">\[
+\frac1n\sum_{i=1}^nY_i^2\xrightarrow{p}E[Y_1^2],
+\qquad
+\bar Y_n^2\xrightarrow{p}(EY_1)^2=0.
+\]</span></p>
+<p>Since <span class="math inline">\(n/(n-1)\to1\)</span>,</p>
+<p><span class="math display">\[S_n^2\xrightarrow{p}E[Y_1^2]-(EY_1)^2=\sigma^2.\]</span></p>
+<p>No fourth moment is needed.</p>
+</section>
+<section id="studentization-by-cmt-and-slutsky" class="level3">
+<h3 class="anchored" data-anchor-id="studentization-by-cmt-and-slutsky">Studentization by CMT and Slutsky</h3>
+<p>CMT gives <span class="math inline">\(S_n\xrightarrow{p}\sigma&gt;0\)</span>. The scalar CLT gives</p>
+<p><span class="math display">\[\frac{\sqrt n\bar Y_n}{\sigma}\xrightarrow{d}N(0,1).\]</span></p>
+<p>Write</p>
+<p><span class="math display">\[
+\frac{\sqrt n\bar Y_n}{S_n}
+=\frac{\sqrt n\bar Y_n}{\sigma}\frac{\sigma}{S_n}.
+\]</span></p>
+<p>Since <span class="math inline">\(\sigma/S_n\xrightarrow{p}1\)</span>, Slutsky yields</p>
+<p><span class="math display">\[\frac{\sqrt n\bar Y_n}{S_n}\xrightarrow{d}N(0,1).\]</span></p>
+</section>
+<section id="finite-sample-zero-denominator" class="level3">
+<h3 class="anchored" data-anchor-id="finite-sample-zero-denominator">Finite-sample zero denominator</h3>
+<p>If <span class="math inline">\(S_n=0\)</span> in a finite sample, define the statistic arbitrarily on that event. Since <span class="math inline">\(S_n\xrightarrow{p}\sigma&gt;0\)</span>, <span class="math inline">\(P(S_n=0)\to0\)</span>, so this convention does not change the limit.</p>
+</section>
+<section id="quick-quiz-7-theorem-chain" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-7-theorem-chain">Quick quiz 7: theorem chain</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Name the tools establishing <span class="math inline">\(S_n^2\xrightarrow{p}\sigma^2\)</span>, <span class="math inline">\(S_n\xrightarrow{p}\sigma\)</span>, and the final studentized limit.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>WLLN plus algebra and CMT; then CMT for the square root; then the scalar CLT and Slutsky for the studentized statistic.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exact-t-law-versus-asymptotic-normality" class="level3">
+<h3 class="anchored" data-anchor-id="exact-t-law-versus-asymptotic-normality">Exact <span class="math inline">\(t\)</span> law versus asymptotic normality</h3>
+<p>If the <span class="math inline">\(Y_i\)</span> are normal, the studentized mean has an exact finite-sample <span class="math inline">\(t_{n-1}\)</span> distribution. Under general IID sampling with finite positive variance, the result proved here is only</p>
+<p><span class="math display">\[\frac{\sqrt n\bar Y_n}{S_n}\xrightarrow{d}N(0,1).\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Studentization does not create an exact <span class="math inline">\(t\)</span> distribution under arbitrary sampling. It creates an asymptotically pivotal statistic.</p>
+</div>
+</div>
+</section>
+<section id="example-22-standardized-weak-convergence" class="level3">
+<h3 class="anchored" data-anchor-id="example-22-standardized-weak-convergence">Example 22: standardized weak convergence</h3>
+<p>Let <span class="math inline">\(Y_n\)</span> have c.d.f. <span class="math inline">\(F_{Y_n}\)</span>, and let <span class="math inline">\(\mu_n\in\mathbb R\)</span> and <span class="math inline">\(\sigma_n&gt;0\)</span> be deterministic. Suppose</p>
+<p><span class="math display">\[Z_n=\frac{Y_n-\mu_n}{\sigma_n}\xrightarrow{d}N(0,1).\]</span></p>
+<p>Then, for every fixed <span class="math inline">\(x\)</span>,</p>
+<p><span class="math display">\[F_{Z_n}(x)\to\Phi(x).\]</span></p>
+<p>The question is whether the normal approximation remains valid uniformly over <span class="math inline">\(x\)</span>.</p>
+</section>
+<section id="pólyas-theorem-supplies-uniformity" class="level3">
+<h3 class="anchored" data-anchor-id="pólyas-theorem-supplies-uniformity">Pólya’s theorem supplies uniformity</h3>
+<div class="theorem-box">
+<p>If c.d.f.s <span class="math inline">\(F_n\)</span> converge pointwise to a continuous c.d.f. <span class="math inline">\(F\)</span>, then</p>
+<p><span class="math display">\[\sup_{x\in\mathbb R}|F_n(x)-F(x)|\to0.\]</span></p>
+</div>
+<p>Since the normal c.d.f. <span class="math inline">\(\Phi\)</span> is continuous,</p>
+<p><span class="math display">\[
+\sup_x|F_{Z_n}(x)-\Phi(x)|\to0.
+\]</span></p>
+<p>Continuity of the limiting c.d.f. is essential for this upgrade.</p>
+</section>
+<section id="return-to-the-unstandardized-statistic" class="level3">
+<h3 class="anchored" data-anchor-id="return-to-the-unstandardized-statistic">Return to the unstandardized statistic</h3>
+<p>Because</p>
+<p><span class="math display">\[
+F_{Z_n}(x)=F_{Y_n}(\mu_n+\sigma_nx),
+\]</span></p>
+<p>Pólya’s theorem is equivalent to</p>
+<p><span class="math display">\[
+\sup_{y\in\mathbb R}
+\left|F_{Y_n}(y)-
+\Phi\!\left(\frac{y-\mu_n}{\sigma_n}\right)\right|\to0.
+\]</span></p>
+<p>The normal c.d.f. is therefore a uniform approximation to the entire finite-sample c.d.f.</p>
+</section>
+<section id="moving-thresholds-need-not-converge" class="level3">
+<h3 class="anchored" data-anchor-id="moving-thresholds-need-not-converge">Moving thresholds need not converge</h3>
+<p>For any deterministic real sequence <span class="math inline">\(y_n\)</span>,</p>
+<p><span class="math display">\[
+\left|F_{Y_n}(y_n)-
+\Phi\!\left(\frac{y_n-\mu_n}{\sigma_n}\right)\right|
+\le
+\sup_y\left|F_{Y_n}(y)-
+\Phi\!\left(\frac{y-\mu_n}{\sigma_n}\right)\right|
+\to0.
+\]</span></p>
+<p>No limit for <span class="math inline">\(y_n\)</span> is required because the approximation is uniform.</p>
+</section>
+<section id="quick-quiz-8-why-moving-thresholds-work" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-8-why-moving-thresholds-work">Quick quiz 8: why moving thresholds work</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Why can <span class="math inline">\(y_n\)</span> vary arbitrarily with <span class="math inline">\(n\)</span> in the preceding conclusion?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Pólya controls the supremum over every threshold. The error at a particular moving threshold is bounded by that uniform error.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="definition-33-asymptotic-normality-repaired" class="level3">
+<h3 class="anchored" data-anchor-id="definition-33-asymptotic-normality-repaired">Definition 33: asymptotic normality, repaired</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition and notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(Y_n\)</span> is <strong>asymptotically normal with centering <span class="math inline">\(\mu_n\)</span> and scaling <span class="math inline">\(\sigma_n&gt;0\)</span></strong> if</p>
+<p><span class="math display">\[\frac{Y_n-\mu_n}{\sigma_n}\xrightarrow{d}N(0,1).\]</span></p>
+</div>
+</div>
+<p>Equivalently, by Pólya,</p>
+<p><span class="math display">\[
+\sup_y\left|F_{Y_n}(y)-
+\Phi\!\left(\frac{y-\mu_n}{\sigma_n}\right)\right|\to0.
+\]</span></p>
+</section>
+<section id="why-the-sources-sequential-wording-is-too-weak" class="level3">
+<h3 class="anchored" data-anchor-id="why-the-sources-sequential-wording-is-too-weak">Why the source’s sequential wording is too weak</h3>
+<p>Approximation at one selected threshold sequence <span class="math inline">\(y_n\)</span> does not characterize an entire distribution. The displayed sequential criterion is correct only if it holds for <strong>every</strong> deterministic sequence <span class="math inline">\(\{y_n\}\)</span>.</p>
+<p>The standardized weak-convergence definition is cleaner and directly names the centering and scale.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Never define asymptotic normality through accuracy at a single cutoff.</p>
+</div>
+</div>
+</section>
+<section id="quick-quiz-9-repair-the-definition" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-9-repair-the-definition">Quick quiz 9: repair the definition</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>What quantifier is missing if asymptotic normality is stated using a sequence of cutoffs <span class="math inline">\(y_n\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The approximation must hold for every deterministic real sequence <span class="math inline">\(\{y_n\}\)</span>, equivalently uniformly over all real cutoffs.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="applications-and-theorem-selection" class="level2">
+<h2 class="anchored" data-anchor-id="applications-and-theorem-selection">Applications and theorem selection</h2>
+<section id="finance-application-a-diversified-weighted-sum" class="level3">
+<h3 class="anchored" data-anchor-id="finance-application-a-diversified-weighted-sum">Finance application: a diversified weighted sum</h3>
+<p>Let</p>
+<p><span class="math display">\[R_n=\sum_{j=1}^{k_n}w_{nj}\varepsilon_j,\]</span></p>
+<p>where the shocks are independent, centered, and have variances <span class="math inline">\(v_j\)</span>. Then</p>
+<p><span class="math display">\[\sigma_n^2=\sum_jw_{nj}^2v_j.\]</span></p>
+<p>A necessary no-dominance check is</p>
+<p><span class="math display">\[
+\max_j\frac{w_{nj}^2v_j}{\sum_\ell w_{n\ell}^2v_\ell}\to0.
+\]</span></p>
+<p>Lindeberg additionally controls extreme weighted shocks.</p>
+</section>
+<section id="quick-quiz-10-diversification-is-not-a-count" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-10-diversification-is-not-a-count">Quick quiz 10: diversification is not a count</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Can <span class="math inline">\(k_n\to\infty\)</span> while Feller’s condition fails?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Yes. One asset can retain a fixed fraction of portfolio variance even while arbitrarily many negligible assets are added.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="econometric-application-score-sums" class="level3">
+<h3 class="anchored" data-anchor-id="econometric-application-score-sums">Econometric application: score sums</h3>
+<p>Many estimators admit an expansion</p>
+<p><span class="math display">\[
+\sqrt n(\hat\theta_n-\theta_0)
+=A_n^{-1}\frac1{\sqrt n}\sum_{i=1}^n\psi_{ni}+o_p(1).
+\]</span></p>
+<ul>
+<li>A CLT handles the score sum.</li>
+<li>An LLN gives <span class="math inline">\(A_n\xrightarrow{p}A\)</span>.</li>
+<li>CMT gives <span class="math inline">\(A_n^{-1}\xrightarrow{p}A^{-1}\)</span> when <span class="math inline">\(A\)</span> is nonsingular.</li>
+<li>Slutsky produces the estimator’s limiting distribution.</li>
+</ul>
+<p>This is the standard inference architecture behind regression and GMM.</p>
+</section>
+<section id="dependence-is-a-theorem-selection-warning" class="level3">
+<h3 class="anchored" data-anchor-id="dependence-is-a-theorem-selection-warning">Dependence is a theorem-selection warning</h3>
+<p>The Lindeberg theorem here assumes independence within each row. Common factors, serial dependence, and clustered observations violate that assumption.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Assumption check">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not “approximately” invoke an independent-array CLT. Use a dependence-robust CLT with its own mixing, martingale, or cluster conditions.</p>
+</div>
+</div>
+<p>The normal limit may still be true, but this theorem no longer proves it.</p>
+</section>
+<section id="quick-quiz-11-diagnose-the-failed-assumption" class="level3">
+<h3 class="anchored" data-anchor-id="quick-quiz-11-diagnose-the-failed-assumption">Quick quiz 11: diagnose the failed assumption</h3>
+<p><strong>Retrieval check.</strong></p>
+<p>Suppose <span class="math inline">\(X_{nj}=\lambda_jF_n+\varepsilon_{nj}\)</span>, where the common factor <span class="math inline">\(F_n\)</span> appears in every summand. Which assumption of Theorem 9.1 fails?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Row-wise independence fails because every pair of summands shares the same random factor.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="synthesis-and-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="synthesis-and-retrieval">Synthesis and retrieval</h2>
+<section id="assumption-audit" class="level3">
+<h3 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumption</th>
+<th>Job</th>
+<th>Failure without it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Row-wise independence</td>
+<td>factors the c.f. of the sum</td>
+<td>product proof collapses</td>
+</tr>
+<tr class="even">
+<td>Finite row variances</td>
+<td>defines <span class="math inline">\(\sigma_n\)</span></td>
+<td>classical normalization may fail</td>
+</tr>
+<tr class="odd">
+<td>Lindeberg for every <span class="math inline">\(\varepsilon\)</span></td>
+<td>removes large-tail variance</td>
+<td>rare jumps can dominate</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma^2&gt;0\)</span> in IID CLT</td>
+<td>nondegenerate scaling</td>
+<td>denominator is zero</td>
+</tr>
+<tr class="odd">
+<td>Finite <span class="math inline">\(E[Y^2]\)</span></td>
+<td>WLLN for <span class="math inline">\(Y_i^2\)</span></td>
+<td>sample variance need not be consistent</td>
+</tr>
+<tr class="even">
+<td>Continuous limit c.d.f.</td>
+<td>Pólya uniformity</td>
+<td>moving-threshold control may fail</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-errors-and-false-converses" class="level3">
+<h3 class="anchored" data-anchor-id="common-errors-and-false-converses">Common errors and false converses</h3>
+<ul>
+<li>A triangular array is not necessarily IID.</li>
+<li><span class="math inline">\(k_n\to\infty\)</span> does not imply no summand dominates.</li>
+<li>Feller does not generally imply Lindeberg.</li>
+<li>The truncation limit must follow the row limit.</li>
+<li>Finite third moments are not required for the IID CLT.</li>
+<li>A singular covariance matrix is allowed in the vector CLT.</li>
+<li>Sample-variance consistency uses <span class="math inline">\(n^{-1}\sum Y_i^2-\bar Y_n^2\)</span>, not a squared difference of those terms.</li>
+<li>Studentization is not an exact finite-sample <span class="math inline">\(t\)</span> result outside normal sampling.</li>
+<li>One threshold sequence cannot define asymptotic normality.</li>
+</ul>
+</section>
+<section id="proof-blueprint" class="level3">
+<h3 class="anchored" data-anchor-id="proof-blueprint">Proof blueprint</h3>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><strong>Lindeberg</strong></p>
+<p>center and scale <span class="math inline">\(\to\)</span> truncate <span class="math inline">\(\to\)</span> control Taylor errors</p>
+</div><div class="column" style="width:33%;">
+<p><strong>Combine</strong></p>
+<p>independence <span class="math inline">\(\to\)</span> product lemma <span class="math inline">\(\to e^{-t^2/2}\)</span></p>
+</div><div class="column" style="width:33%;">
+<p><strong>Inference</strong></p>
+<p>CLT numerator <span class="math inline">\(+\)</span> consistent scale <span class="math inline">\(\to\)</span> Slutsky</p>
+</div>
+</div>
+</section>
+<section id="exit-ticket-1-state-lindeberg-precisely" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-1-state-lindeberg-precisely">Exit ticket 1: state Lindeberg precisely</h3>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For every <span class="math inline">\(\varepsilon&gt;0\)</span>, the sum of truncated centered second moments above <span class="math inline">\(\varepsilon\sigma_n\)</span>, divided by total variance <span class="math inline">\(\sigma_n^2\)</span>, must converge to zero.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-2-rebuild-the-characteristic-function-proof" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-2-rebuild-the-characteristic-function-proof">Exit ticket 2: rebuild the characteristic-function proof</h3>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Normalize; Taylor-expand each characteristic function; use the small/large split and Lindeberg; use independence, Lemma 9.2, and Feller to combine factors; recognize <span class="math inline">\(e^{-t^2/2}\)</span> and apply Lévy-Cramér.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-3-prove-studentization" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-3-prove-studentization">Exit ticket 3: prove studentization</h3>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use <span class="math inline">\(S_n^2=\frac n{n-1}(n^{-1}\sum_iY_i^2-\bar Y_n^2)\xrightarrow{p}\sigma^2\)</span>, then CMT gives <span class="math inline">\(S_n\xrightarrow{p}\sigma\)</span>. Multiply the CLT statistic by <span class="math inline">\(\sigma/S_n\xrightarrow{p}1\)</span> and apply Slutsky.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="mastery-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h3>
+<p>You should now be able to:</p>
+<ul>
+<li>define a triangular array and distinguish row-wise independence from IID;</li>
+<li>state and interpret Lindeberg and Feller conditions;</li>
+<li>rebuild the characteristic-function proof of Theorem 9.1;</li>
+<li>derive scalar and multivariate IID CLTs;</li>
+<li>handle zero-variance projections correctly;</li>
+<li>prove sample-variance consistency with only a finite second moment;</li>
+<li>distinguish exact <span class="math inline">\(t\)</span> inference from asymptotic studentization;</li>
+<li>define asymptotic normality through standardized weak convergence.</li>
+</ul>
+<div class="lecture-nav">
+<p><a href="../../repo/econ8002/lecture8.html">← Lecture 8</a></p>
+<p><a href="../../repo/econ8002/index.html">Course index</a></p>
+<p><a href="../../repo/econ8002/index.html">Return to course index →</a></p>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8002/lecture8.html" class="pagination-link" aria-label="Lecture 8: Characteristic Functions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lecture 8: Characteristic Functions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/#microeconomics" class="pagination-link" aria-label="Microeconomics">
+        <span class="nav-page-text">Microeconomics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

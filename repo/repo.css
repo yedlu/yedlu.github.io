@@ -1,0 +1,27 @@
+/* Shared reading layout for repository notes. Subject-specific styles remain
+   in their own directories. */
+
+main.content {
+  max-width: 920px;
+}
+
+main.content p,
+main.content li {
+  line-height: 1.68;
+}
+
+.math.display,
+div.sourceCode {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.page-navigation {
+  margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  main.content {
+    max-width: 100%;
+  }
+}

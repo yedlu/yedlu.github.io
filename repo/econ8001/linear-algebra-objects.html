@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Linear Algebra: Spaces and Maps – Y. Eddie Lu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../repo/econ8001/linear-algebra-matrices.html" rel="next">
+<link href="../../repo/econ8001/foundations.html" rel="prev">
+<link href="../../my-notion-face-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5K3G6929BP"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5K3G6929BP', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../repo.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed econ8001-study">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Y. Eddie Lu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">vitae</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../repo/index.html" aria-current="page"> 
+<span class="menu-text">repositories</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/linear-algebra-objects.html">Linear Algebra: Spaces and Maps</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repository</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#class-notes" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Class Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability &amp; Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8002: Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 1: Measure Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 2: Integration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 3: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 4: Random Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 5: Expectation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 6: Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 7: Laws of Large Numbers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 8: Characteristic Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8002/lecture9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 9: Central Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#microeconomics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Microeconomics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-u/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro I: Utility Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/cpu2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/vnm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">vNM Axioms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk Aversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/afriat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Afriat’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-u/stochastic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Choice</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/micro-g/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Micro II: Game Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/normal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normal-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/extensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensive-Form Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/repeated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeated Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/bayesian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayesian Games</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/micro-g/pbe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Perfect Bayesian Equilibrium</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#corporate-finance" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/cf/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Corporate Finance Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/cf/capital-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Capital Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ma/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">M&amp;A</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-rationale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Rationale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Process</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/takeover.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Takeover Strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/merger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merger Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/lbo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBO Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/deal-regulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deal Regulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ma/tax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taxation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#asset-pricing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/ap/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Asset Pricing Theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cp2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Consumption II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/cc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contingent Claims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/factor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factor Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/ap/allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Macroeconomic Allocation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stochastic Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/sc/s1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete-Time Finance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/#math-foundations" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ECON 8001: Mathematical Tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foundations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-objects.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Linear Algebra: Spaces and Maps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/linear-algebra-matrices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear Algebra: Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/topology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum and Envelope Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convexity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../repo/babyrudin/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Math Analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../repo/babyrudin/c1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real and Complex Number Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a>
+  <ul class="collapse">
+  <li><a href="#what-problem-does-this-solve" id="toc-what-problem-does-this-solve" class="nav-link" data-scroll-target="#what-problem-does-this-solve">What problem does this solve?</a></li>
+  </ul></li>
+  <li><a href="#where-this-sits" id="toc-where-this-sits" class="nav-link" data-scroll-target="#where-this-sits">Where this sits</a></li>
+  <li><a href="#prerequisite-retrieval" id="toc-prerequisite-retrieval" class="nav-link" data-scroll-target="#prerequisite-retrieval">Prerequisite retrieval</a></li>
+  <li><a href="#vector-spaces-and-subspaces" id="toc-vector-spaces-and-subspaces" class="nav-link" data-scroll-target="#vector-spaces-and-subspaces">Vector spaces and subspaces</a>
+  <ul class="collapse">
+  <li><a href="#proof-strategy-reduce-ten-axioms-to-closure" id="toc-proof-strategy-reduce-ten-axioms-to-closure" class="nav-link" data-scroll-target="#proof-strategy-reduce-ten-axioms-to-closure">Proof strategy: reduce ten axioms to closure</a></li>
+  </ul></li>
+  <li><a href="#span-independence-basis-and-dimension" id="toc-span-independence-basis-and-dimension" class="nav-link" data-scroll-target="#span-independence-basis-and-dimension">Span, independence, basis, and dimension</a>
+  <ul class="collapse">
+  <li><a href="#proof-strategy-use-the-two-parts-of-a-basis-separately" id="toc-proof-strategy-use-the-two-parts-of-a-basis-separately" class="nav-link" data-scroll-target="#proof-strategy-use-the-two-parts-of-a-basis-separately">Proof strategy: use the two parts of a basis separately</a></li>
+  </ul></li>
+  <li><a href="#linear-maps" id="toc-linear-maps" class="nav-link" data-scroll-target="#linear-maps">Linear maps</a></li>
+  <li><a href="#kernel-image-and-rank-nullity" id="toc-kernel-image-and-rank-nullity" class="nav-link" data-scroll-target="#kernel-image-and-rank-nullity">Kernel, image, and rank-nullity</a>
+  <ul class="collapse">
+  <li><a href="#proof-strategy-apply-the-subspace-test-and-linearity" id="toc-proof-strategy-apply-the-subspace-test-and-linearity" class="nav-link" data-scroll-target="#proof-strategy-apply-the-subspace-test-and-linearity">Proof strategy: apply the subspace test and linearity</a></li>
+  <li><a href="#proof-strategy-extend-a-kernel-basis" id="toc-proof-strategy-extend-a-kernel-basis" class="nav-link" data-scroll-target="#proof-strategy-extend-a-kernel-basis">Proof strategy: extend a kernel basis</a></li>
+  </ul></li>
+  <li><a href="#injective-surjective-and-bijective-maps" id="toc-injective-surjective-and-bijective-maps" class="nav-link" data-scroll-target="#injective-surjective-and-bijective-maps">Injective, surjective, and bijective maps</a></li>
+  <li><a href="#economic-and-econometric-use" id="toc-economic-and-econometric-use" class="nav-link" data-scroll-target="#economic-and-econometric-use">Economic and econometric use</a></li>
+  <li><a href="#calculation-blueprint" id="toc-calculation-blueprint" class="nav-link" data-scroll-target="#calculation-blueprint">Calculation blueprint</a></li>
+  <li><a href="#exit-tickets" id="toc-exit-tickets" class="nav-link" data-scroll-target="#exit-tickets">Exit tickets</a></li>
+  <li><a href="#mastery-check" id="toc-mastery-check" class="nav-link" data-scroll-target="#mastery-check">Mastery check</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-foundations">Math Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">ECON 8001: Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/linear-algebra-objects.html">Linear Algebra: Spaces and Maps</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Linear Algebra: Spaces and Maps</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Y. Eddie Lu</em>, Summer 2026</p>
+<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Lecture 2 of 8</p>
+<section id="orientation" class="level2">
+<h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
+<section id="what-problem-does-this-solve" class="level3">
+<h3 class="anchored" data-anchor-id="what-problem-does-this-solve">What problem does this solve?</h3>
+<p>Many economic objects can be combined and rescaled: portfolio positions, payoff vectors, factor exposures, perturbations of a parameter, and local changes in an equilibrium condition. Linear algebra asks which directions are available and what a transformation preserves or destroys.</p>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled" title="The central picture">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The central picture
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A vector space is a collection of feasible directions through an origin. A linear map takes directions in one space to directions in another while respecting combinations. Its kernel records directions that disappear; its image records output directions that can actually be reached.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="where-this-sits" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-sits">Where this sits</h2>
+<p>This page uses the logic and function language from <a href="../../repo/econ8001/foundations.html">Foundations</a>. It supplies the coordinate-free objects that matrices represent on the next linear-algebra page. It also prepares the Jacobian, Hessian, and tangent-space arguments later in the course.</p>
+</section>
+<section id="prerequisite-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h2>
+<p><strong>Retrieval check.</strong> Why is <span class="math inline">\(\{(x,y)^\top\in\mathbb R^2:x+y=1\}\)</span> not a vector subspace of <span class="math inline">\(\mathbb R^2\)</span>?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It does not contain the zero vector: <span class="math inline">\(0+0\ne1\)</span>. It is an affine line, not a subspace. Closure under addition also fails, since <span class="math inline">\((1,0)^\top\)</span> added to itself is not in the set.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="vector-spaces-and-subspaces" class="level2">
+<h2 class="anchored" data-anchor-id="vector-spaces-and-subspaces">Vector spaces and subspaces</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: vector space">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: vector space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\mathbb F\in\{\mathbb R,\mathbb C\}\)</span>. A vector space over <span class="math inline">\(\mathbb F\)</span> is a set <span class="math inline">\(V\)</span> with operations</p>
+<p>[ +:VVV,:FVV, ]</p>
+<p>such that, for every <span class="math inline">\(u,v,w\in V\)</span> and <span class="math inline">\(r,s\in\mathbb F\)</span>:</p>
+[
+<span class="math display">\[\begin{aligned}
+u+v&amp;=v+u, &amp; (u+v)+w&amp;=u+(v+w),\\
+\exists 0\in V:\ v+0&amp;=v, &amp; \exists(-v)\in V:\ v+(-v)&amp;=0,\\
+r(u+v)&amp;=ru+rv, &amp; (r+s)v&amp;=rv+sv,\\
+r(sv)&amp;=(rs)v, &amp; 1v&amp;=v.
+\end{aligned}\]</span>
+<p>]</p>
+<p>The operations must also be closed: <span class="math inline">\(u+v\in V\)</span> and <span class="math inline">\(rv\in V\)</span>.</p>
+</div>
+</div>
+<p>The axioms say that we may add feasible directions, undo a direction by taking its negative, and scale a direction without leaving the space.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: portfolios with unrestricted positions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: portfolios with unrestricted positions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The set <span class="math inline">\(\mathbb R^n\)</span> of column vectors is a vector space over <span class="math inline">\(\mathbb R\)</span>. If <span class="math inline">\(x,y\in\mathbb R^n\)</span> are portfolios and <span class="math inline">\(a,b\in\mathbb R\)</span>, then <span class="math inline">\(ax+by\in\mathbb R^n\)</span>. Short positions are what make multiplication by a negative scalar feasible.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Nonexample: a no-short-sale cone">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nonexample: a no-short-sale cone
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The set <span class="math inline">\(\mathbb R^n_+:=\{x\in\mathbb R^n:x\geq0\}\)</span> is not a vector space when <span class="math inline">\(n\geq1\)</span>. It is closed under addition and multiplication by nonnegative scalars, but <span class="math inline">\(x\in\mathbb R^n_+\)</span> with <span class="math inline">\(x\ne0\)</span> implies <span class="math inline">\(-x\notin\mathbb R^n_+\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: vector subspace">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: vector subspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(V\)</span> is a vector space, a subset <span class="math inline">\(U\subseteq V\)</span> is a vector subspace when <span class="math inline">\(U\)</span>, with the operations inherited from <span class="math inline">\(V\)</span>, is itself a vector space.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="Subspace test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Subspace test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> is a vector space over <span class="math inline">\(\mathbb F\)</span>, and <span class="math inline">\(U\subseteq V\)</span> is nonempty.</p>
+<p><strong>Conclusion.</strong> <span class="math inline">\(U\)</span> is a vector subspace of <span class="math inline">\(V\)</span> if and only if</p>
+<p>[ u,vU;a,bF:au+bvU. ]</p>
+</div>
+</div>
+<section id="proof-strategy-reduce-ten-axioms-to-closure" class="level3">
+<h3 class="anchored" data-anchor-id="proof-strategy-reduce-ten-axioms-to-closure">Proof strategy: reduce ten axioms to closure</h3>
+<p>The ambient space <span class="math inline">\(V\)</span> already supplies associativity, commutativity, distributivity, and scalar identities. For <span class="math inline">\(U\)</span>, it remains to ensure that the inherited operations never leave <span class="math inline">\(U\)</span>. Nonemptiness plus closure under all linear combinations gives the zero vector and additive inverses automatically.</p>
+<p><strong>Proof.</strong> If <span class="math inline">\(U\)</span> is a subspace, closure under <span class="math inline">\(au+bv\)</span> is immediate. Conversely, choose <span class="math inline">\(u_0\in U\)</span>, which exists by nonemptiness. Then <span class="math inline">\(0=0u_0+0u_0\in U\)</span>. For each <span class="math inline">\(u\in U\)</span>, <span class="math inline">\(-u=(-1)u+0\in U\)</span>. Taking <span class="math inline">\(a=b=1\)</span> gives closure under addition, and taking <span class="math inline">\(b=0\)</span> gives closure under scalar multiplication. The remaining axioms are inherited from <span class="math inline">\(V\)</span>. <span class="math inline">\(\square\)</span></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a homogeneous restriction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: a homogeneous restriction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(U:=\{(x,y,z)^\top\in\mathbb R^3:x+y+z=0\}\)</span>. If <span class="math inline">\(u,v\in U\)</span> and <span class="math inline">\(a,b\in\mathbb R\)</span>, then the coordinates of <span class="math inline">\(au+bv\)</span> sum to <span class="math inline">\(a\cdot0+b\cdot0=0\)</span>. Thus <span class="math inline">\(U\)</span> is a subspace. Homogeneous linear restrictions typically define subspaces.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Boundary case: an affine restriction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boundary case: an affine restriction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Replacing the right-hand side by <span class="math inline">\(1\)</span> creates <span class="math inline">\(\{(x,y,z)^\top:x+y+z=1\}\)</span>. The zero vector fails the restriction, so the set is not a subspace. It is a translate of a subspace, called an affine set.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="span-independence-basis-and-dimension" class="level2">
+<h2 class="anchored" data-anchor-id="span-independence-basis-and-dimension">Span, independence, basis, and dimension</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: span">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: span
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For vectors <span class="math inline">\(v_1,\ldots,v_k\in V\)</span>,</p>
+<p>[ (v_1,,v_k) :={_{j=1}^k a_jv_j:a_1,,a_kF}. ]</p>
+<p>It is the smallest vector subspace of <span class="math inline">\(V\)</span> containing every <span class="math inline">\(v_j\)</span>.</p>
+</div>
+</div>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled" title="Span means reachable directions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Span means reachable directions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One nonzero vector in <span class="math inline">\(\mathbb R^2\)</span> spans a line through the origin. Two vectors that do not point along the same line span the plane. Span answers whether a proposed collection is sufficient to construct the vectors of interest.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: linear independence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: linear independence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The list <span class="math inline">\(v_1,\ldots,v_k\in V\)</span> is linearly independent if</p>
+<p>[ _{j=1}^k a_jv_j=0 a_1==a_k=0. ]</p>
+<p>It is linearly dependent if there is a solution to this equation with at least one <span class="math inline">\(a_j\ne0\)</span>.</p>
+</div>
+</div>
+<p>Independence means that no listed direction can be generated from the others. Dependence does not prevent a list from spanning a space. It tells you that the spanning list includes a redundant vector.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: dependent but spanning">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: dependent but spanning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The list <span class="math inline">\((1,0)^\top,(0,1)^\top,(1,1)^\top\)</span> spans <span class="math inline">\(\mathbb R^2\)</span>, because the first two vectors do. It is dependent because</p>
+<p>[ (1,0)<sup>+(0,1)</sup>-(1,1)^. ]</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: basis and dimension">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: basis and dimension
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A list <span class="math inline">\(v_1,\ldots,v_k\)</span> is a basis of <span class="math inline">\(V\)</span> if it spans <span class="math inline">\(V\)</span> and is linearly independent. A vector space is finite-dimensional if it has a finite basis. Its dimension, denoted <span class="math inline">\(\dim V\)</span>, is the number of vectors in any basis of <span class="math inline">\(V\)</span>.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="Coordinates relative to a basis">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Coordinates relative to a basis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(v_1,\ldots,v_k\)</span> is a basis of <span class="math inline">\(V\)</span>.</p>
+<p><strong>Conclusion.</strong> Every <span class="math inline">\(v\in V\)</span> has a unique coordinate representation</p>
+<p>[ v=a_1v_1++a_kv_k ]</p>
+<p>for scalars <span class="math inline">\(a_1,\ldots,a_k\in\mathbb F\)</span>.</p>
+</div>
+</div>
+<section id="proof-strategy-use-the-two-parts-of-a-basis-separately" class="level3">
+<h3 class="anchored" data-anchor-id="proof-strategy-use-the-two-parts-of-a-basis-separately">Proof strategy: use the two parts of a basis separately</h3>
+<p>Spanning gives existence of a representation. Independence gives uniqueness, because the difference of two representations is a linear combination equal to zero.</p>
+<p><strong>Proof.</strong> Since the list spans <span class="math inline">\(V\)</span>, at least one representation exists. If both <span class="math inline">\(\sum_j a_jv_j\)</span> and <span class="math inline">\(\sum_j b_jv_j\)</span> equal <span class="math inline">\(v\)</span>, subtracting gives <span class="math inline">\(\sum_j(a_j-b_j)v_j=0\)</span>. Linear independence implies <span class="math inline">\(a_j-b_j=0\)</span> for all <span class="math inline">\(j\)</span>, so <span class="math inline">\(a_j=b_j\)</span> for all <span class="math inline">\(j\)</span>. <span class="math inline">\(\square\)</span></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked example: a basis for a constrained plane">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Worked example: a basis for a constrained plane
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(U=\{(x,y,z)^\top\in\mathbb R^3:x+y+z=0\}\)</span>,</p>
+<p>[ (x,y,z)<sup>=x(1,0,-1)</sup>+y(0,1,-1)^. ]</p>
+<p>The two displayed vectors span <span class="math inline">\(U\)</span>. If <span class="math inline">\(a(1,0,-1)^\top+b(0,1,-1)^\top=0\)</span>, the first two coordinates give <span class="math inline">\(a=b=0\)</span>, so they are independent. Therefore they form a basis and <span class="math inline">\(\dim U=2\)</span>.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong> What does each half of the word “basis” contribute: span and independence?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Span gives existence of coordinates: every vector can be represented. Independence gives uniqueness: no vector has two different coordinate lists relative to the basis.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="linear-maps" class="level2">
+<h2 class="anchored" data-anchor-id="linear-maps">Linear maps</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: linear map">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: linear map
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be vector spaces over the same field <span class="math inline">\(\mathbb F\)</span>. A function <span class="math inline">\(L:V\to W\)</span> is linear if, for every <span class="math inline">\(u,v\in V\)</span> and <span class="math inline">\(a,b\in\mathbb F\)</span>,</p>
+<p>[ L(au+bv)=aL(u)+bL(v). ]</p>
+<p>Equivalently, <span class="math inline">\(L(u+v)=L(u)+L(v)\)</span> and <span class="math inline">\(L(av)=aL(v)\)</span> hold for all permitted inputs and scalars.</p>
+</div>
+</div>
+<p>Every linear map satisfies <span class="math inline">\(L(0)=0\)</span>. Indeed, <span class="math inline">\(L(0)=L(0+0)=L(0)+L(0)\)</span>, and additive cancellation in <span class="math inline">\(W\)</span> gives the result.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a factor-exposure map">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: a factor-exposure map
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(B\in\mathbb R^{m\times n}\)</span> and define <span class="math inline">\(L:\mathbb R^n\to\mathbb R^m\)</span> by <span class="math inline">\(L(x)=Bx\)</span>. Here <span class="math inline">\(x\)</span> is an <span class="math inline">\(n\times1\)</span> position vector and <span class="math inline">\(Bx\)</span> is an <span class="math inline">\(m\times1\)</span> vector of factor exposures. For <span class="math inline">\(a,b\in\mathbb R\)</span> and <span class="math inline">\(x,y\in\mathbb R^n\)</span>, matrix distributivity gives <span class="math inline">\(B(ax+by)=aBx+bBy\)</span>, so <span class="math inline">\(L\)</span> is linear.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Nonexample: an intercept destroys linearity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nonexample: an intercept destroys linearity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The affine map <span class="math inline">\(f:\mathbb R^n\to\mathbb R^m\)</span> given by <span class="math inline">\(f(x)=Bx+c\)</span> is not linear when <span class="math inline">\(c\ne0\)</span>, because <span class="math inline">\(f(0)=c\ne0\)</span>. Its derivative is the linear map <span class="math inline">\(x\mapsto Bx\)</span>, but the function itself is not linear.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="The space of linear maps">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The space of linear maps
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> are vector spaces over <span class="math inline">\(\mathbb F\)</span>. Let <span class="math inline">\(\mathcal L(V,W)\)</span> be the set of linear maps from <span class="math inline">\(V\)</span> to <span class="math inline">\(W\)</span>. For <span class="math inline">\(L_1,L_2\in\mathcal L(V,W)\)</span> and <span class="math inline">\(a\in\mathbb F\)</span>, define</p>
+<p>[ (L_1+L_2)(v):=L_1(v)+L_2(v),(aL_1)(v):=aL_1(v). ]</p>
+<p><strong>Conclusion.</strong> With these pointwise operations, <span class="math inline">\(\mathcal L(V,W)\)</span> is a vector space.</p>
+</div>
+</div>
+<p>The important operational point is closure: a linear combination of linear maps is again linear. This permits one to treat a parameterized family of maps as an ordinary vector space.</p>
+</section>
+<section id="kernel-image-and-rank-nullity" class="level2">
+<h2 class="anchored" data-anchor-id="kernel-image-and-rank-nullity">Kernel, image, and rank-nullity</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: kernel and image">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: kernel and image
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a linear map <span class="math inline">\(L:V\to W\)</span>,</p>
+<p>[ L:={vV:L(v)=0}, L:={L(v):vV}W. ]</p>
+<p>The kernel is a subset of the domain <span class="math inline">\(V\)</span>. The image is a subset of the codomain <span class="math inline">\(W\)</span>.</p>
+</div>
+</div>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled" title="Information accounting">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Information accounting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If two inputs differ by a vector in <span class="math inline">\(\ker L\)</span>, then they have the same output. Thus a nonzero kernel records lost distinctions. The image records the output directions that remain available after the transformation.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="Kernel and image are subspaces">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Kernel and image are subspaces
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(L:V\to W\)</span> is a linear map.</p>
+<p><strong>Conclusion.</strong> <span class="math inline">\(\ker L\)</span> is a vector subspace of <span class="math inline">\(V\)</span>, and <span class="math inline">\(\operatorname{im}L\)</span> is a vector subspace of <span class="math inline">\(W\)</span>.</p>
+</div>
+</div>
+<section id="proof-strategy-apply-the-subspace-test-and-linearity" class="level3">
+<h3 class="anchored" data-anchor-id="proof-strategy-apply-the-subspace-test-and-linearity">Proof strategy: apply the subspace test and linearity</h3>
+<p>For the kernel, show that a linear combination of inputs mapped to zero is again mapped to zero. For the image, write two output vectors as images of inputs and combine those inputs before applying <span class="math inline">\(L\)</span>.</p>
+<p><strong>Proof.</strong> If <span class="math inline">\(u,v\in\ker L\)</span> and <span class="math inline">\(a,b\in\mathbb F\)</span>, then <span class="math inline">\(L(au+bv)=aL(u)+bL(v)=0\)</span>, so <span class="math inline">\(au+bv\in\ker L\)</span>. If <span class="math inline">\(y_1,y_2\in\operatorname{im}L\)</span>, choose <span class="math inline">\(u,v\in V\)</span> with <span class="math inline">\(y_1=L(u)\)</span> and <span class="math inline">\(y_2=L(v)\)</span>. Then <span class="math inline">\(ay_1+by_2=L(au+bv)\in\operatorname{im}L\)</span>. The subspace test applies in both cases. <span class="math inline">\(\square\)</span></p>
+<div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="Rank-nullity theorem">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rank-nullity theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> is finite-dimensional, <span class="math inline">\(W\)</span> is a vector space over the same field, and <span class="math inline">\(L:V\to W\)</span> is linear.</p>
+<p><strong>Conclusion.</strong> <span class="math inline">\(\operatorname{im}L\)</span> is finite-dimensional and</p>
+<p>[ V=(L)+(L). ]</p>
+<p>The quantity <span class="math inline">\(\dim(\operatorname{im}L)\)</span> is the rank of <span class="math inline">\(L\)</span>; <span class="math inline">\(\dim(\ker L)\)</span> is its nullity.</p>
+</div>
+</div>
+</section>
+<section id="proof-strategy-extend-a-kernel-basis" class="level3">
+<h3 class="anchored" data-anchor-id="proof-strategy-extend-a-kernel-basis">Proof strategy: extend a kernel basis</h3>
+<p>Start with a basis of <span class="math inline">\(\ker L\)</span>. Extend it to a basis of <span class="math inline">\(V\)</span>. Under <span class="math inline">\(L\)</span>, the added basis vectors become a basis of the image: they span because the kernel coordinates disappear, and they are independent because a zero combination would place their preimage in the kernel. Counting the two blocks yields the identity.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked example: a map from $\mathbb R^3$ to $\mathbb R^2$">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Worked example: a map from <span class="math inline">\(\mathbb R^3\)</span> to <span class="math inline">\(\mathbb R^2\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(L:\mathbb R^3\to\mathbb R^2\)</span> be</p>
+<p>[ L(x,y,z)<sup>=(x+y,z)</sup>. ]</p>
+<p>The equation <span class="math inline">\(L(x,y,z)^\top=0\)</span> gives <span class="math inline">\(x=-y\)</span> and <span class="math inline">\(z=0\)</span>, so</p>
+<p>[ L={(1,-1,0)^}. ]</p>
+<p>Given any <span class="math inline">\((a,b)^\top\in\mathbb R^2\)</span>, choose <span class="math inline">\((x,y,z)^\top=(a,0,b)^\top\)</span>. Hence <span class="math inline">\(\operatorname{im}L=\mathbb R^2\)</span>. The dimensions satisfy <span class="math inline">\(3=1+2\)</span>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="injective-surjective-and-bijective-maps" class="level2">
+<h2 class="anchored" data-anchor-id="injective-surjective-and-bijective-maps">Injective, surjective, and bijective maps</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: injective and surjective">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: injective and surjective
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">\(f:X\to Y\)</span> is injective if</p>
+<p>[ x_1,x_2X:f(x_1)=f(x_2)x_1=x_2. ]</p>
+<p>It is surjective if <span class="math inline">\(f(X)=Y\)</span>. It is bijective if it is both injective and surjective.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="Injectivity and the kernel">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Injectivity and the kernel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(L:V\to W\)</span> is linear.</p>
+<p><strong>Conclusion.</strong> <span class="math inline">\(L\)</span> is injective if and only if <span class="math inline">\(\ker L=\{0\}\)</span>.</p>
+</div>
+</div>
+<p><strong>Proof.</strong> If <span class="math inline">\(L\)</span> is injective and <span class="math inline">\(v\in\ker L\)</span>, then <span class="math inline">\(L(v)=0=L(0)\)</span>, so <span class="math inline">\(v=0\)</span>. Conversely, suppose <span class="math inline">\(\ker L=\{0\}\)</span> and <span class="math inline">\(L(u)=L(v)\)</span>. Linearity gives <span class="math inline">\(L(u-v)=0\)</span>, so <span class="math inline">\(u-v=0\)</span> and <span class="math inline">\(u=v\)</span>. <span class="math inline">\(\square\)</span></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Assumption audit: codomain versus image">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assumption audit: codomain versus image
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(L:V\to W\)</span>, surjectivity is the equality <span class="math inline">\(\operatorname{im}L=W\)</span>. A map may have a perfectly well-defined codomain much larger than its image. Do not label it surjective merely because the formula produces outputs in <span class="math inline">\(W\)</span>.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="Dimension constraints">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dimension constraints
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> are finite-dimensional vector spaces and <span class="math inline">\(L:V\to W\)</span> is linear.</p>
+<p><strong>Conclusion.</strong> If <span class="math inline">\(\dim V&gt;\dim W\)</span>, then <span class="math inline">\(L\)</span> cannot be injective. If <span class="math inline">\(\dim V&lt;\dim W\)</span>, then <span class="math inline">\(L\)</span> cannot be surjective.</p>
+</div>
+</div>
+<p>For the first claim, rank-nullity implies <span class="math inline">\(\dim\ker L\geq\dim V-\dim W&gt;0\)</span>. For the second, <span class="math inline">\(\dim\operatorname{im}L\leq\dim V&lt;\dim W\)</span>, so the image cannot equal <span class="math inline">\(W\)</span>.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Invalid inference: dimensions alone do not guarantee surjectivity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Invalid inference: dimensions alone do not guarantee surjectivity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When <span class="math inline">\(\dim V=\dim W\)</span>, a linear map may still fail to be injective and surjective. The zero map from <span class="math inline">\(\mathbb R^2\)</span> to <span class="math inline">\(\mathbb R^2\)</span> has equal domain and codomain dimensions but rank zero. Equality of dimensions makes injectivity and surjectivity equivalent for a particular linear map; it does not make either automatic.</p>
+</div>
+</div>
+</section>
+<section id="economic-and-econometric-use" class="level2">
+<h2 class="anchored" data-anchor-id="economic-and-econometric-use">Economic and econometric use</h2>
+<p>In a linear regression, the column space of a regressor matrix contains fitted-value directions. Its null space contains coefficient perturbations that do not alter fitted values. Full column rank removes this ambiguity and is an identification condition for the coefficient vector. In constrained optimization, a tangent space is a subspace of feasible local directions; the second-order condition examines a quadratic form only along those directions.</p>
+</section>
+<section id="calculation-blueprint" class="level2">
+<h2 class="anchored" data-anchor-id="calculation-blueprint">Calculation blueprint</h2>
+<p>For a linear map <span class="math inline">\(L:V\to W\)</span>:</p>
+<ol type="1">
+<li>State the domain and codomain, including dimensions in coordinate spaces.</li>
+<li>To find <span class="math inline">\(\ker L\)</span>, solve <span class="math inline">\(L(v)=0\)</span> and express all solutions as a span.</li>
+<li>To find <span class="math inline">\(\operatorname{im}L\)</span>, characterize all reachable outputs or span the images of a basis.</li>
+<li>Check rank-nullity when <span class="math inline">\(V\)</span> is finite-dimensional.</li>
+<li>State injectivity and surjectivity as conclusions about the kernel and image, not as guesses from the formula.</li>
+</ol>
+</section>
+<section id="exit-tickets" class="level2">
+<h2 class="anchored" data-anchor-id="exit-tickets">Exit tickets</h2>
+<ol type="1">
+<li>Is <span class="math inline">\(U=\{(x,y)^\top\in\mathbb R^2:2x-y=0\}\)</span> a subspace? Give the shortest valid proof.</li>
+<li>Let <span class="math inline">\(L:\mathbb R^3\to\mathbb R^2\)</span> satisfy <span class="math inline">\(L(x,y,z)^\top=(x-z,y-z)^\top\)</span>. Find a basis for <span class="math inline">\(\ker L\)</span>, determine whether <span class="math inline">\(L\)</span> is surjective, and verify rank-nullity.</li>
+<li>State the exact difference between an injective map and a surjective map without using an example.</li>
+</ol>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Yes. It is nonempty and, if <span class="math inline">\(2x-y=0\)</span> and <span class="math inline">\(2x'-y'=0\)</span>, then <span class="math inline">\(2(ax+bx')-(ay+by')=0\)</span> for all <span class="math inline">\(a,b\in\mathbb R\)</span>. The subspace test applies.</p></li>
+<li><p>The equations <span class="math inline">\(x-z=0\)</span> and <span class="math inline">\(y-z=0\)</span> give <span class="math inline">\(x=y=z\)</span>, so <span class="math inline">\(\ker L=\operatorname{span}\{(1,1,1)^\top\}\)</span>. The map is surjective because <span class="math inline">\((a,b)^\top=L(a,b,0)^\top\)</span> for every <span class="math inline">\((a,b)^\top\in\mathbb R^2\)</span>. Thus <span class="math inline">\(3=1+2\)</span>.</p></li>
+<li><p>Injective means equal outputs imply equal inputs. Surjective means every element of the declared codomain has at least one preimage.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="mastery-check" class="level2">
+<h2 class="anchored" data-anchor-id="mastery-check">Mastery check</h2>
+<p>You should now be able to apply the subspace test, separate span from independence, prove coordinate uniqueness from a basis, define kernel and image with the correct ambient spaces, and use rank-nullity to audit a dimension claim. The next page will express these objects in coordinates and matrices.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<footer style="text-align: center; margin-top: 40px; padding: 10px 0; font-size: 0.9em; color: #666;">
+  © <script>document.write(new Date().getFullYear());</script> Y. Eddie Lu | Last updated:
+  <script>document.write(new Date(document.lastModified).toLocaleDateString());</script> |
+  <a href="https://quarto.org" target="_blank" style="text-decoration: none; color: #18BC9C; font-weight: bold;">Made
+    with Quarto</a>
+</footer>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../repo/econ8001/foundations.html" class="pagination-link" aria-label="Foundations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Foundations</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../repo/econ8001/linear-algebra-matrices.html" class="pagination-link" aria-label="Linear Algebra: Matrices">
+        <span class="nav-page-text">Linear Algebra: Matrices</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
