@@ -694,33 +694,15 @@ Source: ECON 8002 Lecture 5, pp.&nbsp;35–37. The source’s implication theore
 </section>
 <section id="course-map" class="level3">
 <h3 class="anchored" data-anchor-id="course-map">Course map</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>1–4</th>
-<th><strong>5</strong></th>
-<th>6</th>
-<th>7</th>
-<th>8–9</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>probability and conditioning</td>
-<td><strong>modes and rates</strong></td>
-<td>transformations</td>
-<td>LLN</td>
-<td>CLT and inference</td>
-</tr>
-</tbody>
-</table>
+<div class="course-sequence">
+<ol type="1">
+<li>Lectures 1–4: probability and conditioning</li>
+<li><strong>Lecture 5: convergence modes and rates</strong> <em>(current lecture)</em></li>
+<li>Lecture 6: transformations</li>
+<li>Lecture 7: laws of large numbers</li>
+<li>Lectures 8–9: weak limits, central limit theorems, and inference</li>
+</ol>
+</div>
 </section>
 <section id="prerequisite-retrieval" class="level3">
 <h3 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h3>
@@ -808,7 +790,18 @@ X_n\xrightarrow{L^r}X&amp;\nearrow
 \end{aligned}
 \]</span></p>
 <p>None of the displayed implications reverses in general.</p>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="proof-lr-implies-probability" class="level3">
 <h3 class="anchored" data-anchor-id="proof-lr-implies-probability">Proof: <span class="math inline">\(L^r\)</span> implies probability</h3>
 <p>Markov’s inequality gives, for every <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
@@ -844,6 +837,10 @@ Show answer
 <h3 class="anchored" data-anchor-id="probability-implies-distribution">Probability implies distribution</h3>
 <p>Use the Portmanteau theorem or bounded continuous test functions. A small input error makes <span class="math inline">\(g(X_n)-g(X)\)</span> small in probability for bounded uniformly continuous <span class="math inline">\(g\)</span>, hence <span class="math inline">\(E[g(X_n)]-E[g(X)]\to0\)</span>.</p>
 </section>
+</div>
+</div>
+</div>
+</section>
 <section id="nonexample-rare-enormous-errors" class="level3">
 <h3 class="anchored" data-anchor-id="nonexample-rare-enormous-errors">Nonexample: rare, enormous errors</h3>
 <p>Let <span class="math inline">\(U\sim\mathrm{Uniform}(0,1)\)</span> and <span class="math inline">\(X_n=n\mathbf1_{\{U\le1/n\}}\)</span>. Then</p>
@@ -851,37 +848,6 @@ Show answer
 <p>Thus convergence in probability need not imply <span class="math inline">\(L^1\)</span> convergence or convergence of means.</p>
 <p><strong>Retrieval check.</strong></p>
 <p>What feature prevents <span class="math inline">\(L^1\)</span> convergence in the moving-spike example?</p>
-<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The vanishing probability is exactly offset by an exploding magnitude.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="nonexample-probability-without-a.s." class="level3">
-<h3 class="anchored" data-anchor-id="nonexample-probability-without-a.s.">Nonexample: probability without a.s.</h3>
-<p>For independent <span class="math inline">\(A_n\)</span> with <span class="math inline">\(P(A_n)=1/n\)</span>, <span class="math inline">\(\mathbf1_{A_n}\to_p0\)</span> but not a.s.: Borel–Cantelli gives infinitely many spikes almost surely.</p>
-</section>
-<section id="distribution-without-probability" class="level3">
-<h3 class="anchored" data-anchor-id="distribution-without-probability">Distribution without probability</h3>
-<p>Let <span class="math inline">\(X,X_1,X_2,\ldots\)</span> be independent <span class="math inline">\(N(0,1)\)</span> variables. Then <span class="math inline">\(X_n\Rightarrow X\)</span> because their laws coincide, but <span class="math inline">\(X_n-X\not\to_p0\)</span>.</p>
-</section>
-<section id="a-constant-limit-is-special" class="level3">
-<h3 class="anchored" data-anchor-id="a-constant-limit-is-special">A constant limit is special</h3>
-<p><span class="math display">\[X_n\xrightarrow{d}c\quad\Longleftrightarrow\quad X_n\xrightarrow{p}c.\]</span></p>
-<p>The equivalence fails for a nondegenerate random limit. This fact will turn a Slutsky conclusion into an LLN conclusion in Lecture 7.</p>
-<p><strong>Retrieval check.</strong></p>
-<p>Why does <span class="math inline">\(X_n\Rightarrow X\)</span> not generally imply <span class="math inline">\(X_n\to_pX\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -893,6 +859,37 @@ Show answer
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The vanishing probability is exactly offset by an exploding magnitude.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="nonexample-probability-without-a.s." class="level3">
+<h3 class="anchored" data-anchor-id="nonexample-probability-without-a.s.">Nonexample: probability without a.s.</h3>
+<p>For independent <span class="math inline">\(A_n\)</span> with <span class="math inline">\(P(A_n)=1/n\)</span>, <span class="math inline">\(\mathbf1_{A_n}\xrightarrow{p}0\)</span> but not almost surely: Borel–Cantelli gives infinitely many spikes almost surely.</p>
+</section>
+<section id="distribution-without-probability" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-without-probability">Distribution without probability</h3>
+<p>Let <span class="math inline">\(X,X_1,X_2,\ldots\)</span> be independent <span class="math inline">\(N(0,1)\)</span> variables. Then <span class="math inline">\(X_n\xrightarrow{d}X\)</span> because their laws coincide, but <span class="math inline">\(X_n-X\)</span> does not converge in probability to zero.</p>
+</section>
+<section id="a-constant-limit-is-special" class="level3">
+<h3 class="anchored" data-anchor-id="a-constant-limit-is-special">A constant limit is special</h3>
+<p><span class="math display">\[X_n\xrightarrow{d}c\quad\Longleftrightarrow\quad X_n\xrightarrow{p}c.\]</span></p>
+<p>The equivalence fails for a nondegenerate random limit. This fact will turn a Slutsky conclusion into an LLN conclusion in Lecture 7.</p>
+<p><strong>Retrieval check.</strong></p>
+<p>Why does <span class="math inline">\(X_n\xrightarrow{d}X\)</span> not generally imply <span class="math inline">\(X_n\xrightarrow{p}X\)</span>?</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Distribution ignores how <span class="math inline">\(X_n\)</span> and <span class="math inline">\(X\)</span> are coupled on the probability space.</p>
 </div>
@@ -910,7 +907,7 @@ Show answer
 </section>
 <section id="skorokhod-representation-a-warning-label" class="level3">
 <h3 class="anchored" data-anchor-id="skorokhod-representation-a-warning-label">Skorokhod representation: a warning label</h3>
-<p><span class="math inline">\(X_n\Rightarrow X\)</span> permits construction of <em>new</em> variables <span class="math inline">\(Y_n,Y\)</span> with the same respective laws and <span class="math inline">\(Y_n\to Y\)</span> a.s. It does not prove a.s. convergence of the original <span class="math inline">\(X_n\)</span>.</p>
+<p><span class="math inline">\(X_n\xrightarrow{d}X\)</span> permits construction of <em>new</em> variables <span class="math inline">\(Y_n,Y\)</span> with the same respective laws and <span class="math inline">\(Y_n\to Y\)</span> a.s. It does not prove a.s. convergence of the original <span class="math inline">\(X_n\)</span>.</p>
 </section>
 <section id="borelcantelli-sufficient-condition" class="level3">
 <h3 class="anchored" data-anchor-id="borelcantelli-sufficient-condition">Borel–Cantelli sufficient condition</h3>
@@ -918,9 +915,9 @@ Show answer
 <p><span class="math display">\[\sum_{n=1}^{\infty}P(\|X_n-X\|&gt;\varepsilon)&lt;\infty,\]</span></p>
 <p>then <span class="math inline">\(X_n\to X\)</span> a.s. No independence is required for this direction.</p>
 <p><strong>Retrieval check.</strong></p>
-<p>Does <span class="math inline">\(X_n\to_pX\)</span> alone make the displayed probability series summable?</p>
+<p>Does <span class="math inline">\(X_n\xrightarrow{p}X\)</span> alone make the displayed probability series summable?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -929,7 +926,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;Terms can tend to zero while their series diverges.</p>
 </div>
@@ -948,13 +945,13 @@ Show answer
 </section>
 <section id="uniform-integrability-theorem" class="level3">
 <h3 class="anchored" data-anchor-id="uniform-integrability-theorem">Uniform-integrability theorem</h3>
-<p>For <span class="math inline">\(r&gt;0\)</span>, if <span class="math inline">\(X_n\Rightarrow X\)</span>, then</p>
+<p>For <span class="math inline">\(r&gt;0\)</span>, if <span class="math inline">\(X_n\xrightarrow{d}X\)</span>, then</p>
 <p><span class="math display">\[E|X_n|^r\to E|X|^r&lt;\infty\]</span></p>
 <p>iff <span class="math inline">\(\{|X_n|^r\}\)</span> is uniformly integrable. Treat this as a tail theorem, not a mechanical add-on.</p>
 <p><strong>Retrieval check.</strong></p>
-<p>Does <span class="math inline">\(X_n\Rightarrow0\)</span> imply <span class="math inline">\(E[X_n^2]\to0\)</span>?</p>
+<p>Does <span class="math inline">\(X_n\xrightarrow{d}0\)</span> imply <span class="math inline">\(E[X_n^2]\to0\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -963,7 +960,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;A rare-spike sequence can violate it; uniform integrability is needed.</p>
 </div>
@@ -999,7 +996,7 @@ P\!\left(\limsup_n\|X_n/a_n\|&lt;\infty\right)=1.\]</span></p>
 <p><strong>Retrieval check.</strong></p>
 <p>Under a nondegenerate CLT, classify <span class="math inline">\(\sqrt n(\bar X_n-\mu)\)</span>.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1008,7 +1005,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It is <span class="math inline">\(O_p(1)\)</span>, but generally not <span class="math inline">\(o_p(1)\)</span>.</p>
 </div>
@@ -1017,14 +1014,30 @@ Show answer
 </section>
 <section id="order-algebra" class="level3">
 <h3 class="anchored" data-anchor-id="order-algebra">Order algebra</h3>
-<p><span class="math display">\[o_p(a_n)\Rightarrow O_p(a_n),\qquad X_n\Rightarrow X\Rightarrow X_n=O_p(1).\]</span></p>
+<p><span class="math display">\[
+o_p(a_n)\implies O_p(a_n),
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+X_n\xrightarrow{d}X\implies X_n=O_p(1).
+\]</span></p>
 <p>If <span class="math inline">\(X_n=O_p(a_n)\)</span> and <span class="math inline">\(a_n=O(b_n)\)</span>, then <span class="math inline">\(X_n=O_p(b_n)\)</span>.</p>
 <p>For compatible scalar, vector, or matrix products,</p>
 <p><span class="math display">\[O_p(1)o_p(1)=o_p(1),\]</span></p>
 <p>and random-scale transitivity gives</p>
 <p><span class="math display">\[X_n=O_p(Y_n),\quad Y_n=O_p(Z_n)\implies X_n=O_p(Z_n).\]</span></p>
-</section>
-<section id="proof-of-the-product-rule" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<section id="proof-of-the-product-rule" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-of-the-product-rule">Proof of the product rule</h3>
 <p>Let <span class="math inline">\(Z_n=O_p(1)\)</span> and <span class="math inline">\(R_n=o_p(1)\)</span>. Fix <span class="math inline">\(\varepsilon,\eta&gt;0\)</span>. Choose <span class="math inline">\(M&lt;\infty\)</span> so <span class="math inline">\(P(\|Z_n\|&gt;M)&lt;\eta/2\)</span> eventually. Then</p>
 <p><span class="math display">\[
@@ -1032,6 +1045,9 @@ P(\|Z_nR_n\|&gt;\varepsilon)
 \le P(\|Z_n\|&gt;M)+P(\|R_n\|&gt;\varepsilon/M)&lt;\eta
 \]</span></p>
 <p>eventually. Hence <span class="math inline">\(Z_nR_n=o_p(1)\)</span>.</p>
+</section>
+</div>
+</div>
 </section>
 </section>
 <section id="synthesis-and-retrieval" class="level2">
@@ -1051,11 +1067,11 @@ P(\|Z_nR_n\|&gt;\varepsilon)
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(L^r\Rightarrow p\)</span></td>
+<td><span class="math inline">\(L^r\implies p\)</span></td>
 <td>finite <span class="math inline">\(r\)</span>-loss and Markov</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(p\Rightarrow d\)</span></td>
+<td><span class="math inline">\(p\implies d\)</span></td>
 <td>common-space closeness / Portmanteau</td>
 </tr>
 <tr class="odd">
@@ -1115,13 +1131,13 @@ Counterexample or invalid inference
 </section>
 <section id="exit-ticket-3" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-3">Exit ticket 3</h3>
-<p>Explain in one sentence why <span class="math inline">\(X_n\Rightarrow c\)</span> implies <span class="math inline">\(X_n\to_pc\)</span>.</p>
+<p>Explain in one sentence why <span class="math inline">\(X_n\xrightarrow{d}c\)</span> implies <span class="math inline">\(X_n\xrightarrow{p}c\)</span>.</p>
 </section>
 <section id="mastery-checklist" class="level3">
 <h3 class="anchored" data-anchor-id="mastery-checklist">Mastery checklist</h3>
 <ul>
 <li>I can define all four convergence modes.</li>
-<li>I can prove <span class="math inline">\(L^r\Rightarrow p\)</span> and explain <span class="math inline">\(p\Rightarrow d\)</span>.</li>
+<li>I can prove <span class="math inline">\(L^r\implies p\)</span> and explain <span class="math inline">\(p\implies d\)</span>.</li>
 <li>I can construct failures of reverse implications.</li>
 <li>I can state the role of uniform integrability.</li>
 <li>I can interpret <span class="math inline">\(O_p\)</span> and <span class="math inline">\(o_p\)</span> at an estimator scale.</li>

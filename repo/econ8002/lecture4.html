@@ -694,47 +694,19 @@ Source: ECON 8002 Lecture 4, pp.&nbsp;30–34. Notation and a few proof details 
 </section>
 <section id="course-map" class="level3">
 <h3 class="anchored" data-anchor-id="course-map">Course map</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Lecture 1</th>
-<th>Lecture 2</th>
-<th>Lecture 3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>measure spaces</td>
-<td>integration and RN</td>
-<td>distribution properties</td>
-</tr>
-<tr class="even">
-<td><strong>Lecture 4</strong></td>
-<td>Lecture 5</td>
-<td>Lecture 6</td>
-</tr>
-<tr class="odd">
-<td><strong>conditioning and independence</strong></td>
-<td>convergence modes</td>
-<td>transformations and Slutsky</td>
-</tr>
-<tr class="even">
-<td>Lecture 7</td>
-<td>Lecture 8</td>
-<td>Lecture 9</td>
-</tr>
-<tr class="odd">
-<td>laws of large numbers</td>
-<td>weak limits and delta method</td>
-<td>CLT and inference</td>
-</tr>
-</tbody>
-</table>
+<div class="course-sequence">
+<ol type="1">
+<li>Measure spaces</li>
+<li>Integration and Radon–Nikodym derivatives</li>
+<li>Distribution properties</li>
+<li><strong>Conditioning and independence</strong> <em>(current lecture)</em></li>
+<li>Convergence modes</li>
+<li>Transformations and Slutsky</li>
+<li>Laws of large numbers</li>
+<li>Weak limits and the delta method</li>
+<li>Central limit theorems and inference</li>
+</ol>
+</div>
 <p>Today supplies the information and independence language used in LLNs and causal identification.</p>
 </section>
 <section id="prerequisite-retrieval" class="level3">
@@ -788,14 +760,27 @@ Assumption check
 <p>Let <span class="math inline">\(Y\in L^1(P)\)</span>. A conditional expectation <span class="math inline">\(Z=E[Y\mid\mathcal A]\)</span> is an <span class="math inline">\(\mathcal A\)</span>-measurable random variable such that</p>
 <p><span class="math display">\[\int_A Z\,dP=\int_A Y\,dP\qquad\text{for every }A\in\mathcal A.\]</span></p>
 <p>It is unique up to equality almost surely.</p>
-</section>
-<section id="why-existence-and-uniqueness-hold" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<section id="why-existence-and-uniqueness-hold" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="why-existence-and-uniqueness-hold">Why existence and uniqueness hold</h3>
 <p>Apply the nonnegative Radon–Nikodym theorem separately to <span class="math inline">\(Y^+=\max\{Y,0\}\)</span> and <span class="math inline">\(Y^-=\max\{-Y,0\}\)</span>. The finite measures</p>
 <p><span class="math display">\[\nu^\pm(A)=\int_A Y^\pm\,dP\]</span></p>
 <p>are absolutely continuous with respect to <span class="math inline">\(P|_{\mathcal A}\)</span>, so they have <span class="math inline">\(\mathcal A\)</span>-measurable densities <span class="math inline">\(Z^\pm\)</span>. Then <span class="math inline">\(Z=Z^+-Z^-\)</span> satisfies the defining integral identity, which constructs one version. If <span class="math inline">\(Z\)</span> and <span class="math inline">\(\widetilde Z\)</span> both satisfy the defining identity, then</p>
 <p><span class="math display">\[\int_A(Z-\widetilde Z)\,dP=0\qquad\forall A\in\mathcal A,\]</span></p>
 <p>so Corollary 2.10 gives <span class="math inline">\(Z=\widetilde Z\)</span> almost surely.</p>
+</section>
+</div>
+</div>
 </section>
 <section id="every-phrase-has-a-job" class="level3">
 <h3 class="anchored" data-anchor-id="every-phrase-has-a-job">Every phrase has a job</h3>
@@ -819,7 +804,7 @@ Definition and notation
 <p><strong>Retrieval check.</strong></p>
 <p>Does <span class="math inline">\(E[Y\mid\mathcal A]=Y\)</span> always hold because their unconditional means agree?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -828,7 +813,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;It holds only if <span class="math inline">\(Y\)</span> is <span class="math inline">\(\mathcal A\)</span>-measurable. Matching one unconditional integral is far weaker than matching every <span class="math inline">\(A\in\mathcal A\)</span>.</p>
 </div>
@@ -855,7 +840,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Which is random before <span class="math inline">\(X\)</span> is observed: <span class="math inline">\(E[Y\mid X]\)</span> or <span class="math inline">\(E[Y\mid X=x]\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -864,7 +849,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(E[Y\mid X]=m(X)\)</span> is random. For fixed <span class="math inline">\(x\)</span>, <span class="math inline">\(E[Y\mid X=x]=m(x)\)</span> is a number.</p>
 </div>
@@ -908,7 +893,7 @@ E[Y\mid\mathcal A]\le E[W\mid\mathcal A]\ \mathrm{a.s.}\]</span></p>
 <p><strong>Retrieval check.</strong></p>
 <p>May one replace <span class="math inline">\(E[E[Y\mid X]\mid Z]\)</span> by <span class="math inline">\(E[Y\mid Z]\)</span> for arbitrary <span class="math inline">\(X,Z\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -917,7 +902,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;One needs <span class="math inline">\(\sigma(Z)\subseteq\sigma(X)\)</span>, or another argument establishing the equality.</p>
 </div>
@@ -956,16 +941,29 @@ Example or application
 <p>This is the population regression function. OLS is the best <em>linear</em> approximation to it.</p>
 </div>
 </div>
-</section>
-<section id="proof-blueprint-projection-identity" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<section id="proof-blueprint-projection-identity" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-blueprint-projection-identity">Proof blueprint: projection identity</h3>
 <p>For any square-integrable <span class="math inline">\(g(X)\)</span>, write <span class="math inline">\(m(X)=E[Y\mid X]\)</span>:</p>
 <p><span class="math display">\[E[(Y-g)^2]=E[(Y-m)^2]+E[(m-g)^2]+2E[(Y-m)(m-g)].\]</span></p>
 <p>The final term is zero by conditioning on <span class="math inline">\(X\)</span> and pulling out <span class="math inline">\(m(X)-g(X)\)</span>.</p>
+</section>
+</div>
+</div>
 <p><strong>Retrieval check.</strong></p>
 <p>Why is <span class="math inline">\(E[(Y-m(X))(m(X)-g(X))\mid X]=0\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -974,7 +972,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The second factor is <span class="math inline">\(\sigma(X)\)</span>-measurable and <span class="math inline">\(E[Y-m(X)\mid X]=0\)</span>.</p>
 </div>
@@ -1000,7 +998,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>If <span class="math inline">\(U,V\)</span> are independent <span class="math inline">\(\operatorname{Bernoulli}(1/2)\)</span> variables, are <span class="math inline">\(U,V,U\oplus V\)</span> mutually independent?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1009,7 +1007,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;They are pairwise independent, but <span class="math inline">\(U\oplus V\)</span> is determined by <span class="math inline">\(U,V\)</span>.</p>
 </div>
@@ -1037,7 +1035,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Does <span class="math inline">\(Y\perp X_2\)</span> alone imply <span class="math inline">\(E[Y\mid X_1,X_2]=E[Y\mid X_1]\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1046,7 +1044,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;<span class="math inline">\(X_2\)</span> can add information about <span class="math inline">\(Y\)</span> jointly with <span class="math inline">\(X_1\)</span> unless the stronger joint-independence condition holds.</p>
 </div>
@@ -1127,56 +1125,6 @@ Counterexample or invalid inference
 <p><strong>Retrieval check.</strong></p>
 <p>Does <span class="math inline">\(E[Y\mid X]=E[Y]\)</span> prove <span class="math inline">\(Y\perp X\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Not in general. It states mean independence; full independence requires the analogous condition for all bounded measurable functions of <span class="math inline">\(Y\)</span>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="proof-and-calculation-blueprint" class="level3">
-<h3 class="anchored" data-anchor-id="proof-and-calculation-blueprint">Proof and calculation blueprint</h3>
-<ol type="1">
-<li>State the information set <span class="math inline">\(\mathcal A\)</span>.</li>
-<li>Verify measurability of the candidate forecast.</li>
-<li>Verify its integral identity on every <span class="math inline">\(A\in\mathcal A\)</span>.</li>
-<li>For a best-prediction claim, expand the square and kill the cross term by the tower property.</li>
-<li>For causal interpretation, state the potential-outcome independence assumption before simplifying.</li>
-</ol>
-</section>
-<section id="exit-ticket-1" class="level3">
-<h3 class="anchored" data-anchor-id="exit-ticket-1">Exit ticket 1</h3>
-<p>Let <span class="math inline">\(P(B)=1/2\)</span>, <span class="math inline">\(E[Y\mid B]=4\)</span>, and <span class="math inline">\(E[Y\mid B^c]=0\)</span>. Write <span class="math inline">\(E[Y\mid\sigma(B)]\)</span> and <span class="math inline">\(E[Y]\)</span>.</p>
-<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(E[Y\mid\sigma(B)]=4\mathbf1_B\)</span> and <span class="math inline">\(E[Y]=2\)</span>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="exit-ticket-2" class="level3">
-<h3 class="anchored" data-anchor-id="exit-ticket-2">Exit ticket 2</h3>
-<p>State the two defining properties of <span class="math inline">\(E[Y\mid\mathcal A]\)</span> without looking.</p>
-<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1188,6 +1136,69 @@ Show answer
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>Not in general. It states mean independence; full independence requires the analogous condition for all bounded measurable functions of <span class="math inline">\(Y\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<section id="proof-and-calculation-blueprint" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="proof-and-calculation-blueprint">Proof and calculation blueprint</h3>
+<ol type="1">
+<li>State the information set <span class="math inline">\(\mathcal A\)</span>.</li>
+<li>Verify measurability of the candidate forecast.</li>
+<li>Verify its integral identity on every <span class="math inline">\(A\in\mathcal A\)</span>.</li>
+<li>For a best-prediction claim, expand the square and kill the cross term by the tower property.</li>
+<li>For causal interpretation, state the potential-outcome independence assumption before simplifying.</li>
+</ol>
+</section>
+</div>
+</div>
+</section>
+<section id="exit-ticket-1" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-1">Exit ticket 1</h3>
+<p>Let <span class="math inline">\(P(B)=1/2\)</span>, <span class="math inline">\(E[Y\mid B]=4\)</span>, and <span class="math inline">\(E[Y\mid B^c]=0\)</span>. Write <span class="math inline">\(E[Y\mid\sigma(B)]\)</span> and <span class="math inline">\(E[Y]\)</span>.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(E[Y\mid\sigma(B)]=4\mathbf1_B\)</span> and <span class="math inline">\(E[Y]=2\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exit-ticket-2" class="level3">
+<h3 class="anchored" data-anchor-id="exit-ticket-2">Exit ticket 2</h3>
+<p>State the two defining properties of <span class="math inline">\(E[Y\mid\mathcal A]\)</span> without looking.</p>
+<div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>It is <span class="math inline">\(\mathcal A\)</span>-measurable and satisfies <span class="math inline">\(\int_AE[Y\mid\mathcal A]\,dP=\int_A Y\,dP\)</span> for every <span class="math inline">\(A\in\mathcal A\)</span>.</p>
 </div>
 </div>
@@ -1197,7 +1208,7 @@ Show answer
 <h3 class="anchored" data-anchor-id="exit-ticket-3">Exit ticket 3</h3>
 <p>Give one condition sufficient for <span class="math inline">\(E[Y\mid X,Z]=E[Y\mid X]\)</span>.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1206,7 +1217,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>One sufficient condition is <span class="math inline">\((Y,X)\perp Z\)</span>, with <span class="math inline">\(Y\)</span> integrable.</p>
 </div>

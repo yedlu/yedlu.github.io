@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-317a3602a608e5c64810202e2edb152a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -700,22 +700,20 @@ What problem does convexity solve?
 </section>
 <section id="course-map" class="level2">
 <h2 class="anchored" data-anchor-id="course-map">Course map</h2>
-<pre class="text"><code>line segments in feasible sets
-            |
-            v
-convex combinations and finite mixtures
-            |
-            +--&gt; concavity / convexity --&gt; tangent inequalities --&gt; global FOCs
-            |                                  |
-            |                                  v
-            |                          Hessian tests under C^2
-            |
-            +--&gt; level sets --&gt; quasiconcavity / quasiconvexity</code></pre>
+<ol type="1">
+<li><p>Begin with line segments in feasible sets.</p></li>
+<li><p>Extend two-point mixtures to finite convex combinations.</p></li>
+<li><p>Study two distinct consequences:</p>
+<ul>
+<li>concavity or convexity leads to tangent inequalities, global first-order conditions, and Hessian tests under <span class="math inline">\(C^2\)</span> smoothness;</li>
+<li>convex level sets lead to quasiconcavity or quasiconvexity.</li>
+</ul></li>
+</ol>
 <p><strong>Before this page:</strong> <a href="../../repo/econ8001/linear-algebra-matrices.html">Linear algebra: matrices</a> for quadratic forms, <a href="../../repo/econ8001/differentiation.html">Differentiation</a> for gradients and Hessians, and <a href="../../repo/econ8001/optimization.html">Optimization</a> for local first- and second-order conditions. <strong>Next step:</strong> return to the <a href="../../repo/econ8001/index.html">course map</a> and use the retrieval route to connect global shape conditions to the preceding optimization results.</p>
 </section>
 <section id="prerequisite-retrieval" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h2>
-<p>For a scalar <span class="math inline">\(f:\mathbb R^N\to\mathbb R\)</span>, <span class="math inline">\(\nabla f(x)\in\mathbb R^N\)</span> is a column vector and <span class="math inline">\(D^2f(x)\)</span> is an <span class="math inline">\(N\times N\)</span> Hessian. If <span class="math inline">\(v\in\mathbb R^N\)</span>, then <span class="math inline">\(v^\mathsf TD^2f(x)v\)</span> is a scalar.</p>
+<p>For a scalar <span class="math inline">\(f:\mathbb R^N\to\mathbb R\)</span>, <span class="math inline">\(\nabla f(x)\in\mathbb R^N\)</span> is a column vector and <span class="math inline">\(D^2f(x)\)</span> is an <span class="math inline">\(N\times N\)</span> Hessian. If <span class="math inline">\(v\in\mathbb R^N\)</span>, then <span class="math inline">\(v^{\mathsf{T}}D^2f(x)v\)</span> is a scalar.</p>
 <p><strong>Retrieval check.</strong> Why must a theorem about concavity name a convex domain?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -765,7 +763,7 @@ Examples and nonexamples
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Every affine set <span class="math inline">\(\{x:Ax=b\}\)</span>, half-space <span class="math inline">\(\{x:a^\mathsf Tx\le b\}\)</span>, Euclidean ball, and interval is convex.</li>
+<li>Every affine set <span class="math inline">\(\{x:Ax=b\}\)</span>, half-space <span class="math inline">\(\{x:a^{\mathsf{T}}x\le b\}\)</span>, Euclidean ball, and interval is convex.</li>
 <li>Intersections of any collection of convex sets are convex.</li>
 <li>The union of two convex sets need not be convex. For example, <span class="math inline">\([-2,-1]\cup[1,2]\subset\mathbb R\)</span> misses the midpoint of <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>.</li>
 <li>In <span class="math inline">\(\mathbb R\)</span>, a set is convex exactly when it is an interval, with any combination of included or excluded endpoints.</li>
@@ -788,6 +786,18 @@ Convexity is not connectedness in higher dimensions
 <section id="finite-mixtures-are-the-operational-form" class="level2">
 <h2 class="anchored" data-anchor-id="finite-mixtures-are-the-operational-form">1.1 Finite mixtures are the operational form</h2>
 <p>The finite-mixture statement is the one used in probability, diversification, and mixed strategies. For a portfolio interpretation, <span class="math inline">\(x_i\)</span> can be feasible portfolios and <span class="math inline">\(\theta_i\)</span> their mixing weights. Convex feasibility means the weighted average portfolio is still available.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> The case <span class="math inline">\(m=2\)</span> is the definition. Assume the claim for <span class="math inline">\(m-1\)</span> points. If <span class="math inline">\(\theta_m&lt;1\)</span>, write</p>
 <p><span class="math display">\[
 \sum_{i=1}^m\theta_i x_i
@@ -797,6 +807,9 @@ Convexity is not connectedness in higher dimensions
 \]</span></p>
 <p>The parenthesized term is a convex combination of the first <span class="math inline">\(m-1\)</span> points, so it belongs to <span class="math inline">\(C\)</span> by induction. One more two-point combination keeps the result in <span class="math inline">\(C\)</span>.</p>
 <p>The remaining case must be handled separately. If <span class="math inline">\(\theta_m=1\)</span>, every other nonnegative weight is zero, so the mixture is <span class="math inline">\(x_m\in C\)</span>. If <span class="math inline">\(\theta_m&lt;1\)</span>, the normalized weights <span class="math inline">\(\theta_i/(1-\theta_m)\)</span> are nonnegative and sum to one, as required in the induction step.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="convex-and-concave-functions" class="level1">
@@ -929,6 +942,18 @@ f\text{ is concave}\quad\Longleftrightarrow\quad\operatorname{hypo}f
 \]</span></p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> For concavity, take two points <span class="math inline">\((x,r)\)</span> and <span class="math inline">\((y,s)\)</span> in the hypograph. Thus <span class="math inline">\(r\le f(x)\)</span> and <span class="math inline">\(s\le f(y)\)</span>. Concavity gives</p>
 <p><span class="math display">\[
 \theta r+(1-\theta)s
@@ -936,6 +961,9 @@ f\text{ is concave}\quad\Longleftrightarrow\quad\operatorname{hypo}f
 \le f(\theta x+(1-\theta)y),
 \]</span></p>
 <p>so their mixture remains in the hypograph. Conversely, put two graph points <span class="math inline">\((x,f(x))\)</span> and <span class="math inline">\((y,f(y))\)</span> in a convex hypograph. Membership of their mixture is exactly the concavity inequality. Reverse all vertical inequalities for the epigraph and convexity.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="The graph itself is usually not convex">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -968,24 +996,36 @@ Supporting inequalities for differentiable functions
 <p><span class="math display">\[
 f\text{ is concave}
 \quad\Longleftrightarrow\quad
-f(y)\le f(x)+\nabla f(x)^\mathsf T(y-x)
+f(y)\le f(x)+\nabla f(x)^{\mathsf{T}}(y-x)
 \quad\forall x,y\in C,
 \]</span></p>
 <p>and</p>
 <p><span class="math display">\[
 f\text{ is convex}
 \quad\Longleftrightarrow\quad
-f(y)\ge f(x)+\nabla f(x)^\mathsf T(y-x)
+f(y)\ge f(x)+\nabla f(x)^{\mathsf{T}}(y-x)
 \quad\forall x,y\in C.
 \]</span></p>
 </div>
 </div>
 <p>For concavity, every tangent plane lies weakly <strong>above</strong> the graph. For convexity, every tangent plane lies weakly <strong>below</strong> it. These are global inequalities for every pair <span class="math inline">\((x,y)\)</span>, not merely local Taylor approximations.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy for concavity.</strong> Let <span class="math inline">\(g(t)=f(x+t(y-x))\)</span> for <span class="math inline">\(t\in[0,1]\)</span>. Concavity of <span class="math inline">\(f\)</span> gives a chord inequality for <span class="math inline">\(g\)</span>. Divide by <span class="math inline">\(t&gt;0\)</span> and take <span class="math inline">\(t\downarrow0\)</span> to obtain the tangent inequality. Conversely, set <span class="math inline">\(z=\theta x+(1-\theta)y\)</span> and apply the supporting inequality at <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-f(x)&amp;\le f(z)+(1-\theta)\nabla f(z)^\mathsf T(x-y),\\
-f(y)&amp;\le f(z)-\theta\nabla f(z)^\mathsf T(x-y).
+f(x)&amp;\le f(z)+(1-\theta)\nabla f(z)^{\mathsf{T}}(x-y),\\
+f(y)&amp;\le f(z)-\theta\nabla f(z)^{\mathsf{T}}(x-y).
 \end{aligned}
 \]</span></p>
 <p>Multiply the first inequality by <span class="math inline">\(\theta\)</span> and the second by <span class="math inline">\(1-\theta\)</span>. The gradient terms cancel, so</p>
@@ -993,9 +1033,12 @@ f(y)&amp;\le f(z)-\theta\nabla f(z)^\mathsf T(x-y).
 \theta f(x)+(1-\theta)f(y)\le f(z),
 \]</span></p>
 <p>which is the concavity inequality. The convex proof reverses every inequality.</p>
+</div>
+</div>
+</div>
 <p><strong>Retrieval check.</strong> In the converse proof, why are the multipliers on the two displayed inequalities <span class="math inline">\(\theta\)</span> and <span class="math inline">\(1-\theta\)</span>, rather than the other way around?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1004,9 +1047,9 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>They are the weights in the desired chord expression <span class="math inline">\(\theta f(x)+(1-\theta)f(y)\)</span>. With these weights, the two gradient terms are <span class="math inline">\(\theta(1-\theta)\nabla f(z)^\mathsf T(x-y)\)</span> and its negative, so they cancel.</p>
+<p>They are the weights in the desired chord expression <span class="math inline">\(\theta f(x)+(1-\theta)f(y)\)</span>. With these weights, the two gradient terms are <span class="math inline">\(\theta(1-\theta)\nabla f(z)^{\mathsf{T}}(x-y)\)</span> and its negative, so they cancel.</p>
 </div>
 </div>
 </div>
@@ -1038,7 +1081,7 @@ Concavity turns a variational inequality into a global maximum
 <p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be convex and let <span class="math inline">\(f\)</span> be differentiable on an open neighborhood of <span class="math inline">\(C\)</span>.</p>
 <p><strong>Sufficient condition.</strong> If <span class="math inline">\(f\)</span> is concave and <span class="math inline">\(x^*\in C\)</span> satisfies</p>
 <p><span class="math display">\[
-\nabla f(x^*)^\mathsf T(y-x^*)\le0
+\nabla f(x^*)^{\mathsf{T}}(y-x^*)\le0
 \qquad\text{for every }y\in C,
 \]</span></p>
 <p>then <span class="math inline">\(x^*\)</span> is a global maximizer of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span>.</p>
@@ -1047,7 +1090,7 @@ Concavity turns a variational inequality into a global maximum
 </div>
 <p>For sufficiency, the concave supporting inequality gives</p>
 <p><span class="math display">\[
-f(y)\le f(x^*)+\nabla f(x^*)^\mathsf T(y-x^*)\le f(x^*)
+f(y)\le f(x^*)+\nabla f(x^*)^{\mathsf{T}}(y-x^*)\le f(x^*)
 \]</span></p>
 <p>for every <span class="math inline">\(y\in C\)</span>. For necessity, consider the feasible line <span class="math inline">\(x^*+t(y-x^*)\)</span> for <span class="math inline">\(t\in[0,1]\)</span> and differentiate at <span class="math inline">\(t=0\)</span> from the right.</p>
 <p>If <span class="math inline">\(x^*\)</span> is an interior point of <span class="math inline">\(C\)</span>, the inequality for all feasible directions reduces to <span class="math inline">\(\nabla f(x^*)=0\)</span>. At a boundary point it does not. This is the convex-analysis counterpart of the constrained first-order conditions in <a href="../../repo/econ8001/optimization.html">Optimization</a>.</p>
@@ -1069,7 +1112,22 @@ Existence and uniqueness are separate claims
 </ul>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof of uniqueness.</strong> If two distinct points <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> both maximize a strictly concave <span class="math inline">\(f\)</span>, their midpoint is feasible and has a strictly greater value than the common maximum, a contradiction. Reverse signs for strict convexity and minimization.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="Do not use strictness as an existence condition">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1112,7 +1170,7 @@ h(t)=f\bigl(x+t(y-x)\bigr).
 \]</span></p>
 <p>By the chain rule,</p>
 <p><span class="math display">\[
-h''(t)=(y-x)^\mathsf TD^2f\bigl(x+t(y-x)\bigr)(y-x).
+h''(t)=(y-x)^{\mathsf{T}}D^2f\bigl(x+t(y-x)\bigr)(y-x).
 \]</span></p>
 <p>Thus a positive semidefinite Hessian makes every line restriction convex; negative semidefiniteness makes every such restriction concave.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled" title="Strict convexity does not require a positive definite Hessian everywhere">
@@ -1191,7 +1249,7 @@ f(\theta x+(1-\theta)y)
 <p>This is exactly the convexity of the upper level set at level <span class="math inline">\(f(y)\)</span>.</p>
 <p><strong>Retrieval check.</strong> If <span class="math inline">\(f\)</span> is quasiconcave and <span class="math inline">\(f(x),f(y)\ge a\)</span>, what must be true of <span class="math inline">\(f(\theta x+(1-\theta)y)\)</span> for <span class="math inline">\(\theta\in[0,1]\)</span>?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1200,7 +1258,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It must be at least <span class="math inline">\(a\)</span>. Both endpoints lie in the upper level set <span class="math inline">\(U_a\)</span>, and quasiconcavity says <span class="math inline">\(U_a\)</span> is convex, so their mixture remains in <span class="math inline">\(U_a\)</span>.</p>
 </div>
@@ -1246,7 +1304,7 @@ Quasiconcavity is not a substitute for concavity
 <p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty, open, and convex, and let <span class="math inline">\(f:C\to\mathbb R\)</span> be <span class="math inline">\(C^2\)</span>. Define the tangent space to the level set at <span class="math inline">\(x\)</span> by</p>
 <p><span class="math display">\[
 T_{\nabla f(x)}
-=\{v\in\mathbb R^N:\nabla f(x)^\mathsf Tv=0\}.
+=\{v\in\mathbb R^N:\nabla f(x)^{\mathsf{T}}v=0\}.
 \]</span></p>
 <p>The test examines curvature only along directions tangent to a level set, not all directions.</p>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
@@ -1262,7 +1320,7 @@ Necessary tangent-curvature condition for quasiconcavity
 <p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is <span class="math inline">\(C^2\)</span> and quasiconcave.</p>
 <p><strong>Conclusion.</strong> For every <span class="math inline">\(x\in C\)</span> and every <span class="math inline">\(v\in T_{\nabla f(x)}\)</span>,</p>
 <p><span class="math display">\[
-v^\mathsf TD^2f(x)v\le0.
+v^{\mathsf{T}}D^2f(x)v\le0.
 \]</span></p>
 </div>
 </div>
@@ -1277,7 +1335,7 @@ Tangent-space semidefiniteness is not sufficient
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The converse stated in the cited Nachbar note is incorrect. Let <span class="math inline">\(f(x)=x^4\)</span> on the open convex domain <span class="math inline">\(\mathbb R\)</span>. If <span class="math inline">\(x\ne0\)</span>, then <span class="math inline">\(f'(x)\ne0\)</span>, so the only gradient-orthogonal direction is <span class="math inline">\(v=0\)</span>. At <span class="math inline">\(x=0\)</span>, <span class="math inline">\(f'(0)=0\)</span> and <span class="math inline">\(f''(0)=0\)</span>. Hence <span class="math inline">\(v^\mathsf TD^2f(x)v\le0\)</span> holds for every gradient-orthogonal <span class="math inline">\(v\)</span> at every <span class="math inline">\(x\)</span>. Yet <span class="math inline">\(f\)</span> is not quasiconcave: its upper level set at <span class="math inline">\(a=1\)</span> is <span class="math inline">\((-\infty,-1]\cup[1,\infty)\)</span>, which is not convex.</p>
+<p>The converse stated in the cited Nachbar note is incorrect. Let <span class="math inline">\(f(x)=x^4\)</span> on the open convex domain <span class="math inline">\(\mathbb R\)</span>. If <span class="math inline">\(x\ne0\)</span>, then <span class="math inline">\(f'(x)\ne0\)</span>, so the only gradient-orthogonal direction is <span class="math inline">\(v=0\)</span>. At <span class="math inline">\(x=0\)</span>, <span class="math inline">\(f'(0)=0\)</span> and <span class="math inline">\(f''(0)=0\)</span>. Hence <span class="math inline">\(v^{\mathsf{T}}D^2f(x)v\le0\)</span> holds for every gradient-orthogonal <span class="math inline">\(v\)</span> at every <span class="math inline">\(x\)</span>. Yet <span class="math inline">\(f\)</span> is not quasiconcave: its upper level set at <span class="math inline">\(a=1\)</span> is <span class="math inline">\((-\infty,-1]\cup[1,\infty)\)</span>, which is not convex.</p>
 </div>
 </div>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
@@ -1290,14 +1348,29 @@ Safe strict-curvature sufficient condition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is <span class="math inline">\(C^2\)</span>. Suppose that, for every <span class="math inline">\(x\in C\)</span> and every nonzero <span class="math inline">\(v\in\mathbb R^N\)</span> with <span class="math inline">\(\nabla f(x)^\mathsf Tv=0\)</span>,</p>
+<p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is <span class="math inline">\(C^2\)</span>. Suppose that, for every <span class="math inline">\(x\in C\)</span> and every nonzero <span class="math inline">\(v\in\mathbb R^N\)</span> with <span class="math inline">\(\nabla f(x)^{\mathsf{T}}v=0\)</span>,</p>
 <p><span class="math display">\[
-v^\mathsf TD^2f(x)v&lt;0.
+v^{\mathsf{T}}D^2f(x)v&lt;0.
 \]</span></p>
 <p><strong>Conclusion.</strong> <span class="math inline">\(f\)</span> is strictly quasiconcave on <span class="math inline">\(C\)</span>.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Why this is safe.</strong> Restrict <span class="math inline">\(f\)</span> to any nondegenerate feasible line segment. At an interior stationary point of that restriction, the segment direction is gradient-orthogonal, so the second derivative is strictly negative. Thus a line restriction cannot have an interior local trough: it rises strictly until at most one peak and then falls strictly. This gives strict quasiconcavity on every segment, hence on <span class="math inline">\(C\)</span>. The condition is sufficient, not necessary.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="The gradient-zero case is special">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1385,7 +1458,7 @@ The gradient-zero case is special
 <li>State the feasible set and prove it is convex.</li>
 <li>Separate existence from characterization. Use compactness and continuity if existence is needed.</li>
 <li>Establish concavity for maximization or convexity for minimization, using a definition, a Hessian test on the whole domain, or a composition rule.</li>
-<li>Write the correct first-order condition. At a boundary, use <span class="math inline">\(\nabla f(x^*)^\mathsf T(y-x^*)\le0\)</span> rather than automatically setting the gradient to zero.</li>
+<li>Write the correct first-order condition. At a boundary, use <span class="math inline">\(\nabla f(x^*)^{\mathsf{T}}(y-x^*)\le0\)</span> rather than automatically setting the gradient to zero.</li>
 <li>Apply the supporting inequality to every feasible <span class="math inline">\(y\)</span>.</li>
 <li>Add strictness only to claim uniqueness.</li>
 </ol>
@@ -1411,7 +1484,7 @@ The gradient-zero case is special
 <li>Is nonpositive curvature in every gradient-orthogonal direction sufficient for quasiconcavity?</li>
 </ol>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1420,7 +1493,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>No.&nbsp;In <span class="math inline">\([-2,-1]\cup[1,2]\)</span>, both <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> are present but their midpoint <span class="math inline">\(0\)</span> is absent. 2. <span class="math inline">\(f(\sum_i\theta_i x_i)\ge\sum_i\theta_i f(x_i)\)</span>. 3. A compact feasible set and a continuous objective give existence. 4. Quasiconcavity does not produce the tangent supporting inequality; <span class="math inline">\(x^3\)</span> is a counterexample.</li>

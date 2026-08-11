@@ -692,57 +692,18 @@ window.Quarto = {
 </section>
 <section id="where-this-lecture-sits" class="level3">
 <h3 class="anchored" data-anchor-id="where-this-lecture-sits">Where this lecture sits</h3>
-<div class="flow">
-<div class="node">
-<p>1 Measure spaces</p>
-</div>
-<div class="arrow">
-<p><span class="math inline">\(\to\)</span></p>
-</div>
-<div class="node">
-<p>2 Integration</p>
-</div>
-<div class="arrow">
-<p><span class="math inline">\(\to\)</span></p>
-</div>
-<div class="node">
-<p>3 Distributions</p>
-</div>
-<div class="arrow">
-<p><span class="math inline">\(\to\)</span></p>
-</div>
-<div class="node">
-<p>4 Conditioning</p>
-</div>
-<div class="arrow">
-<p><span class="math inline">\(\to\)</span></p>
-</div>
-<div class="node">
-<p>5 Convergence</p>
-</div>
-<div class="arrow">
-<p><span class="math inline">\(\to\)</span></p>
-</div>
-<div class="node current">
-<p>6 Transform limits</p>
-</div>
-</div>
-<div class="flow">
-<div class="node">
-<p>7 LLN</p>
-</div>
-<div class="arrow">
-<p><span class="math inline">\(\to\)</span></p>
-</div>
-<div class="node">
-<p>8 Weak convergence tools</p>
-</div>
-<div class="arrow">
-<p><span class="math inline">\(\to\)</span></p>
-</div>
-<div class="node">
-<p>9 CLT and delta method</p>
-</div>
+<div class="course-sequence">
+<ol type="1">
+<li>Measure spaces</li>
+<li>Integration</li>
+<li>Distribution properties</li>
+<li>Conditioning</li>
+<li>Convergence modes</li>
+<li><strong>Transform known limits</strong> <em>(current lecture)</em></li>
+<li>Laws of large numbers</li>
+<li>Weak-convergence tools</li>
+<li>Central limit theorems and the delta method</li>
+</ol>
 </div>
 </section>
 <section id="prerequisite-retrieval" class="level3">
@@ -931,7 +892,18 @@ Assumption check
 <p>CMT keeps the input convergence mode. It does not strengthen it.</p>
 </div>
 </div>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="almost-sure-proof-work-path-by-path" class="level3">
 <h3 class="anchored" data-anchor-id="almost-sure-proof-work-path-by-path">Almost-sure proof: work path by path</h3>
 <p>Let</p>
@@ -959,11 +931,15 @@ B=\{\omega:X(\omega)\notin D_g\}.\]</span></p>
 <p><span class="math display">\[g(X_{n_{j_\ell}})\xrightarrow{\mathrm{a.s.}}g(X),\]</span></p>
 <p>hence also convergence in probability. Every subsequence has such a further subsequence, so the converse half of the subsequence principle yields <span class="math inline">\(g(X_n)\xrightarrow{p}g(X)\)</span>.</p>
 </section>
+</div>
+</div>
+</div>
+</section>
 <section id="quick-quiz-3-diagnose-the-proof" class="level3">
 <h3 class="anchored" data-anchor-id="quick-quiz-3-diagnose-the-proof">Quick quiz 3: diagnose the proof</h3>
 <p>A proof says, “Since <span class="math inline">\(X_n\xrightarrow{p}X\)</span>, we have <span class="math inline">\(g(X_n)\xrightarrow{p}g(X)\)</span>.” What is missing?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -972,13 +948,24 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The proof must state that <span class="math inline">\(g\)</span> is measurable and continuous at <span class="math inline">\(X\)</span> almost surely. Convergence alone need not survive a discontinuous transformation.</p>
 </div>
 </div>
 </div>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="weak-proof-pull-back-and-close" class="level3">
 <h3 class="anchored" data-anchor-id="weak-proof-pull-back-and-close">Weak proof: pull back and close</h3>
 <p>Let <span class="math inline">\(F\subseteq\mathbb R^m\)</span> be closed and put <span class="math inline">\(C=D_g^c\)</span>. Since <span class="math inline">\(g\)</span> is continuous on <span class="math inline">\(C\)</span>,</p>
@@ -1001,6 +988,10 @@ Show answer
 \end{aligned}
 \]</span></p>
 <p>The closed-set form of Portmanteau yields <span class="math inline">\(g(X_n)\xrightarrow{d}g(X)\)</span>.</p>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="canonical-example-normal-to-chi-square" class="level3">
 <h3 class="anchored" data-anchor-id="canonical-example-normal-to-chi-square">Canonical example: normal to chi-square</h3>
@@ -1069,7 +1060,7 @@ Assumption check
 <h3 class="anchored" data-anchor-id="quick-quiz-4-matrix-inversion">Quick quiz 4: matrix inversion</h3>
 <p>Suppose <span class="math inline">\(A_n\xrightarrow{p}A\)</span> for random <span class="math inline">\(k\times k\)</span> matrices. What condition makes <span class="math inline">\(A_n^{-1}\xrightarrow{p}A^{-1}\)</span> a valid CMT conclusion?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1078,7 +1069,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(P(\det A\ne0)=1\)</span>. Matrix inversion is continuous on the nonsingular matrices. The sample inverse must also be defined, perhaps arbitrarily on a vanishing exceptional event.</p>
 </div>
@@ -1107,7 +1098,7 @@ Counterexample or invalid inference
 <h3 class="anchored" data-anchor-id="quick-quiz-5-one-map-or-two-variables">Quick quiz 5: one map or two variables?</h3>
 <p>Suppose only <span class="math inline">\(X_n\xrightarrow{d}X\)</span> and <span class="math inline">\(Y_n\xrightarrow{d}Y\)</span>. Can CMT be applied to <span class="math inline">\(g(x,y)=xy\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1116,7 +1107,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Not from the marginal limits alone. CMT needs joint convergence <span class="math inline">\((X_n,Y_n)\xrightarrow{d}(X,Y)\)</span>. The product limit depends on the limiting dependence structure.</p>
 </div>
@@ -1172,7 +1163,7 @@ X_n\xrightarrow{d}X,\quad Y_n\xrightarrow{p}c
 <h3 class="anchored" data-anchor-id="quick-quiz-6-is-independence-required">Quick quiz 6: is independence required?</h3>
 <p>Suppose <span class="math inline">\(X_n\xrightarrow{d}X\)</span> and <span class="math inline">\(Y_n\xrightarrow{p}3\)</span>, but <span class="math inline">\(X_n\)</span> and <span class="math inline">\(Y_n\)</span> are dependent for every <span class="math inline">\(n\)</span>. Find the product limit.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1181,14 +1172,25 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[X_nY_n\xrightarrow{d}3X.\]</span></p>
 <p>Slutsky needs no independence because the second limiting coordinate is constant.</p>
 </div>
 </div>
 </div>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="additive-proof-bracket-the-c.d.f." class="level3">
 <h3 class="anchored" data-anchor-id="additive-proof-bracket-the-c.d.f.">Additive proof: bracket the c.d.f.</h3>
 <p>Fix <span class="math inline">\(t\in\mathbb R\)</span> and <span class="math inline">\(\varepsilon&gt;0\)</span>. On <span class="math inline">\(\{|Y_n-c|&lt;\varepsilon\}\)</span>,</p>
@@ -1214,6 +1216,21 @@ F_X(t-c-\varepsilon_m)
 <p><span class="math display">\[F_{X_n+Y_n}(t)\to F_X(t-c)=F_{X+c}(t).\]</span></p>
 <p>Hence <span class="math inline">\(X_n+Y_n\xrightarrow{d}X+c\)</span>.</p>
 </section>
+</div>
+</div>
+</div>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="the-stochastic-order-route" class="level3">
 <h3 class="anchored" data-anchor-id="the-stochastic-order-route">The stochastic-order route</h3>
 <p>Two facts compress the product proof:</p>
@@ -1239,11 +1256,25 @@ P(\|Z_nR_n\|&gt;\varepsilon)
 <p><span class="math display">\[|X_n|\xrightarrow{d}|X|,\]</span></p>
 <p>so <span class="math inline">\(P(|X_n|&gt;M)\to P(|X|&gt;M)&lt;\eta/2\)</span>. Therefore <span class="math inline">\(P(|X_n|&gt;M)&lt;\eta\)</span> eventually.</p>
 <p>If the definition uses <span class="math inline">\(\sup_n\)</span> rather than an eventual bound, enlarge <span class="math inline">\(M\)</span> to absorb the finitely many earlier laws.</p>
+</section>
+</div>
+</div>
+</div>
 <div class="intuition-box">
 <p><span class="math inline">\(O_p(1)\)</span> means that mass cannot drift arbitrarily far away. It does not impose an almost-sure finite cap.</p>
 </div>
-</section>
-<section id="product-proof-from-the-decomposition" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<section id="product-proof-from-the-decomposition" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="product-proof-from-the-decomposition">Product proof from the decomposition</h3>
 <p>Write</p>
 <p><span class="math display">\[Y_nX_n=cX_n+(Y_n-c)X_n.\]</span></p>
@@ -1255,11 +1286,14 @@ P(\|Z_nR_n\|&gt;\varepsilon)
 </ol>
 <p>This decomposition is a reusable proof pattern for feasible asymptotic statistics.</p>
 </section>
+</div>
+</div>
+</section>
 <section id="quick-quiz-7-repair-the-rate-statement" class="level3">
 <h3 class="anchored" data-anchor-id="quick-quiz-7-repair-the-rate-statement">Quick quiz 7: repair the rate statement</h3>
 <p>Why is “<span class="math inline">\(X_n=O_p(1)\)</span> means <span class="math inline">\(X_n\)</span> is finitely capped” incorrect?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1268,20 +1302,33 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(O_p(1)\)</span> is a high-probability bound: for every <span class="math inline">\(\eta&gt;0\)</span>, there is a finite <span class="math inline">\(M\)</span> such that <span class="math inline">\(P(|X_n|&gt;M)&lt;\eta\)</span> for all sufficiently large <span class="math inline">\(n\)</span>. It is not an almost-sure deterministic bound.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="ratio-proof-reciprocal-first" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<section id="ratio-proof-reciprocal-first" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="ratio-proof-reciprocal-first">Ratio proof: reciprocal first</h3>
 <p>Assume <span class="math inline">\(c\ne0\)</span>. The reciprocal is continuous at <span class="math inline">\(c\)</span>, so CMT gives</p>
 <p><span class="math display">\[Y_n^{-1}\xrightarrow{p}c^{-1}.\]</span></p>
 <p>Then the product part of Slutsky gives</p>
 <p><span class="math display">\[Y_n^{-1}X_n\xrightarrow{d}c^{-1}X.\]</span></p>
 <p>The condition <span class="math inline">\(c\ne0\)</span> supplies continuity at the limit. Defining <span class="math inline">\(Y_n^{-1}\)</span> also requires <span class="math inline">\(Y_n\ne0\)</span>, at least outside an event whose probability vanishes.</p>
+</section>
+</div>
+</div>
 </section>
 <section id="quick-quiz-8-name-both-tools" class="level3">
 <h3 class="anchored" data-anchor-id="quick-quiz-8-name-both-tools">Quick quiz 8: name both tools</h3>
@@ -1290,7 +1337,7 @@ Show answer
 \quad\Rightarrow\quad Y_n^{-1}\xrightarrow{p}c^{-1}
 \quad\Rightarrow\quad Y_n^{-1}X_n\xrightarrow{d}c^{-1}X.\]</span></p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1299,7 +1346,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The first arrow is CMT with <span class="math inline">\(r(y)=1/y\)</span>. The second arrow is Slutsky’s product result together with <span class="math inline">\(X_n\xrightarrow{d}X\)</span>.</p>
 </div>
@@ -1387,7 +1434,7 @@ Counterexample or invalid inference
 <h3 class="anchored" data-anchor-id="quick-quiz-9-mixed-theorem-selection">Quick quiz 9: mixed theorem selection</h3>
 <p>Suppose <span class="math inline">\(Z_n\xrightarrow{d}N(0,1)\)</span> and <span class="math inline">\(S_n\xrightarrow{p}2\)</span>. Find the limit of <span class="math inline">\(Z_n/S_n\)</span>.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1396,7 +1443,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>By CMT, <span class="math inline">\(S_n^{-1}\xrightarrow{p}1/2\)</span>. By Slutsky,</p>
 <p><span class="math display">\[\frac{Z_n}{S_n}\xrightarrow{d}N\left(0,\frac14\right).\]</span></p>
@@ -1418,8 +1465,18 @@ Show answer
 <li>If I divide or invert, is the limiting denominator nonsingular?</li>
 <li>Am I claiming only convergence of random objects, or have I smuggled in an expectation or rate conclusion?</li>
 </ol>
-</section>
-<section id="proof-blueprints" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<section id="proof-blueprints" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-blueprints">Proof blueprints</h3>
 <div class="grid-3">
 <div class="callout callout-style-default callout-note callout-titled" title="Definition and notation">
@@ -1456,6 +1513,9 @@ Example or application
 </div>
 </div>
 </section>
+</div>
+</div>
+</section>
 <section id="common-errors" class="level3">
 <h3 class="anchored" data-anchor-id="common-errors">Common errors</h3>
 <ul>
@@ -1478,7 +1538,7 @@ Example or application
 <li><span class="math inline">\(X_n\xrightarrow{d}X\)</span>, <span class="math inline">\(Y_n\xrightarrow{p}0\)</span>; find <span class="math inline">\(X_n+Y_n\)</span>.</li>
 </ol>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1487,7 +1547,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>CMT: <span class="math inline">\(A_n^{-1}\xrightarrow{p}A^{-1}\)</span>.</li>
@@ -1502,7 +1562,7 @@ Show answer
 <h3 class="anchored" data-anchor-id="exit-ticket-1">Exit ticket 1</h3>
 <p>State CMT for distributional convergence, including dimensions, measurability, and the exact continuity requirement.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1511,7 +1571,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If <span class="math inline">\(X_n\xrightarrow{d}X\)</span> in <span class="math inline">\(\mathbb R^k\)</span> and measurable <span class="math inline">\(g:\mathbb R^k\to\mathbb R^m\)</span> is continuous at every <span class="math inline">\(x\in C\)</span> as a map on <span class="math inline">\(\mathbb R^k\)</span>, with <span class="math inline">\(P(X\in C)=1\)</span>, then <span class="math inline">\(g(X_n)\xrightarrow{d}g(X)\)</span>.</p>
 </div>
@@ -1522,7 +1582,7 @@ Show answer
 <h3 class="anchored" data-anchor-id="exit-ticket-2">Exit ticket 2</h3>
 <p>Rebuild the product proof from <span class="math inline">\(X_n\xrightarrow{d}X\)</span> and <span class="math inline">\(Y_n\xrightarrow{p}c\)</span>.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1531,7 +1591,7 @@ Show proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(X_n=O_p(1)\)</span> and <span class="math inline">\(Y_n-c=o_p(1)\)</span>, so <span class="math inline">\((Y_n-c)X_n=o_p(1)\)</span>. Also <span class="math inline">\(cX_n\xrightarrow{d}cX\)</span>. Since <span class="math inline">\(Y_nX_n=cX_n+(Y_n-c)X_n\)</span>, additive Slutsky yields the conclusion.</p>
 </div>
@@ -1542,7 +1602,7 @@ Show proof
 <h3 class="anchored" data-anchor-id="exit-ticket-3">Exit ticket 3</h3>
 <p>Explain why Slutsky does not require independence.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1551,7 +1611,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Because <span class="math inline">\(Y_n\xrightarrow{p}c\)</span> makes the second limiting coordinate constant. The pair converges jointly to <span class="math inline">\((X,c)\)</span>, so no nontrivial limiting dependence remains to identify.</p>
 </div>

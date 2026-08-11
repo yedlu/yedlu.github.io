@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-317a3602a608e5c64810202e2edb152a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -623,20 +623,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#where-this-sits" id="toc-where-this-sits" class="nav-link" data-scroll-target="#where-this-sits">Where this sits</a></li>
   <li><a href="#prerequisite-retrieval" id="toc-prerequisite-retrieval" class="nav-link" data-scroll-target="#prerequisite-retrieval">Prerequisite retrieval</a></li>
-  <li><a href="#vector-spaces-and-subspaces" id="toc-vector-spaces-and-subspaces" class="nav-link" data-scroll-target="#vector-spaces-and-subspaces">Vector spaces and subspaces</a>
-  <ul class="collapse">
-  <li><a href="#proof-strategy-reduce-ten-axioms-to-closure" id="toc-proof-strategy-reduce-ten-axioms-to-closure" class="nav-link" data-scroll-target="#proof-strategy-reduce-ten-axioms-to-closure">Proof strategy: reduce ten axioms to closure</a></li>
-  </ul></li>
-  <li><a href="#span-independence-basis-and-dimension" id="toc-span-independence-basis-and-dimension" class="nav-link" data-scroll-target="#span-independence-basis-and-dimension">Span, independence, basis, and dimension</a>
-  <ul class="collapse">
-  <li><a href="#proof-strategy-use-the-two-parts-of-a-basis-separately" id="toc-proof-strategy-use-the-two-parts-of-a-basis-separately" class="nav-link" data-scroll-target="#proof-strategy-use-the-two-parts-of-a-basis-separately">Proof strategy: use the two parts of a basis separately</a></li>
-  </ul></li>
+  <li><a href="#vector-spaces-and-subspaces" id="toc-vector-spaces-and-subspaces" class="nav-link" data-scroll-target="#vector-spaces-and-subspaces">Vector spaces and subspaces</a></li>
+  <li><a href="#span-independence-basis-and-dimension" id="toc-span-independence-basis-and-dimension" class="nav-link" data-scroll-target="#span-independence-basis-and-dimension">Span, independence, basis, and dimension</a></li>
   <li><a href="#linear-maps" id="toc-linear-maps" class="nav-link" data-scroll-target="#linear-maps">Linear maps</a></li>
-  <li><a href="#kernel-image-and-rank-nullity" id="toc-kernel-image-and-rank-nullity" class="nav-link" data-scroll-target="#kernel-image-and-rank-nullity">Kernel, image, and rank-nullity</a>
-  <ul class="collapse">
-  <li><a href="#proof-strategy-apply-the-subspace-test-and-linearity" id="toc-proof-strategy-apply-the-subspace-test-and-linearity" class="nav-link" data-scroll-target="#proof-strategy-apply-the-subspace-test-and-linearity">Proof strategy: apply the subspace test and linearity</a></li>
-  <li><a href="#proof-strategy-extend-a-kernel-basis" id="toc-proof-strategy-extend-a-kernel-basis" class="nav-link" data-scroll-target="#proof-strategy-extend-a-kernel-basis">Proof strategy: extend a kernel basis</a></li>
-  </ul></li>
+  <li><a href="#kernel-image-and-rank-nullity" id="toc-kernel-image-and-rank-nullity" class="nav-link" data-scroll-target="#kernel-image-and-rank-nullity">Kernel, image, and rank-nullity</a></li>
   <li><a href="#injective-surjective-and-bijective-maps" id="toc-injective-surjective-and-bijective-maps" class="nav-link" data-scroll-target="#injective-surjective-and-bijective-maps">Injective, surjective, and bijective maps</a></li>
   <li><a href="#economic-and-econometric-use" id="toc-economic-and-econometric-use" class="nav-link" data-scroll-target="#economic-and-econometric-use">Economic and econometric use</a></li>
   <li><a href="#calculation-blueprint" id="toc-calculation-blueprint" class="nav-link" data-scroll-target="#calculation-blueprint">Calculation blueprint</a></li>
@@ -798,10 +788,24 @@ Subspace test
 \]</span></p>
 </div>
 </div>
-<section id="proof-strategy-reduce-ten-axioms-to-closure" class="level3">
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<section id="proof-strategy-reduce-ten-axioms-to-closure" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-strategy-reduce-ten-axioms-to-closure">Proof strategy: reduce ten axioms to closure</h3>
 <p>The ambient space <span class="math inline">\(V\)</span> already supplies associativity, commutativity, distributivity, and scalar identities. For <span class="math inline">\(U\)</span>, it remains to ensure that the inherited operations never leave <span class="math inline">\(U\)</span>. Nonemptiness plus closure under all linear combinations gives the zero vector and additive inverses automatically.</p>
 <p><strong>Proof.</strong> If <span class="math inline">\(U\)</span> is a subspace, closure under <span class="math inline">\(au+bv\)</span> is immediate. Conversely, choose <span class="math inline">\(u_0\in U\)</span>, which exists by nonemptiness. Then <span class="math inline">\(0=0u_0+0u_0\in U\)</span>. For each <span class="math inline">\(u\in U\)</span>, <span class="math inline">\(-u=(-1)u+0\in U\)</span>. Taking <span class="math inline">\(a=b=1\)</span> gives closure under addition, and taking <span class="math inline">\(b=0\)</span> gives closure under scalar multiplication. The remaining axioms are inherited from <span class="math inline">\(V\)</span>. <span class="math inline">\(\square\)</span></p>
+</section>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a homogeneous restriction">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -828,7 +832,6 @@ Boundary case: an affine restriction
 <p>Replacing the right-hand side by <span class="math inline">\(1\)</span> creates <span class="math inline">\(\{(x,y,z)^\top:x+y+z=1\}\)</span>. The zero vector fails the restriction, so the set is not a subspace. It is a translate of a subspace, called an affine set.</p>
 </div>
 </div>
-</section>
 </section>
 <section id="span-independence-basis-and-dimension" class="level2">
 <h2 class="anchored" data-anchor-id="span-independence-basis-and-dimension">Span, independence, basis, and dimension</h2>
@@ -930,10 +933,24 @@ v=a_1v_1+\cdots+a_kv_k
 <p>for scalars <span class="math inline">\(a_1,\ldots,a_k\in\mathbb F\)</span>.</p>
 </div>
 </div>
-<section id="proof-strategy-use-the-two-parts-of-a-basis-separately" class="level3">
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<section id="proof-strategy-use-the-two-parts-of-a-basis-separately" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-strategy-use-the-two-parts-of-a-basis-separately">Proof strategy: use the two parts of a basis separately</h3>
 <p>Spanning gives existence of a representation. Independence gives uniqueness, because the difference of two representations is a linear combination equal to zero.</p>
 <p><strong>Proof.</strong> Since the list spans <span class="math inline">\(V\)</span>, at least one representation exists. If both <span class="math inline">\(\sum_j a_jv_j\)</span> and <span class="math inline">\(\sum_j b_jv_j\)</span> equal <span class="math inline">\(v\)</span>, subtracting gives <span class="math inline">\(\sum_j(a_j-b_j)v_j=0\)</span>. Linear independence implies <span class="math inline">\(a_j-b_j=0\)</span> for all <span class="math inline">\(j\)</span>, so <span class="math inline">\(a_j=b_j\)</span> for all <span class="math inline">\(j\)</span>. <span class="math inline">\(\square\)</span></p>
+</section>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked example: a basis for a constrained plane">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -953,7 +970,7 @@ Worked example: a basis for a constrained plane
 </div>
 <p><strong>Retrieval check.</strong> What does each half of the word “basis” contribute: span and independence?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -962,13 +979,12 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Span gives existence of coordinates: every vector can be represented. Independence gives uniqueness: no vector has two different coordinate lists relative to the basis.</p>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="linear-maps" class="level2">
 <h2 class="anchored" data-anchor-id="linear-maps">Linear maps</h2>
@@ -1082,10 +1098,24 @@ Kernel and image are subspaces
 <p><strong>Conclusion.</strong> <span class="math inline">\(\ker L\)</span> is a vector subspace of <span class="math inline">\(V\)</span>, and <span class="math inline">\(\operatorname{im}L\)</span> is a vector subspace of <span class="math inline">\(W\)</span>.</p>
 </div>
 </div>
-<section id="proof-strategy-apply-the-subspace-test-and-linearity" class="level3">
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<section id="proof-strategy-apply-the-subspace-test-and-linearity" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-strategy-apply-the-subspace-test-and-linearity">Proof strategy: apply the subspace test and linearity</h3>
 <p>For the kernel, show that a linear combination of inputs mapped to zero is again mapped to zero. For the image, write two output vectors as images of inputs and combine those inputs before applying <span class="math inline">\(L\)</span>.</p>
 <p><strong>Proof.</strong> If <span class="math inline">\(u,v\in\ker L\)</span> and <span class="math inline">\(a,b\in\mathbb F\)</span>, then <span class="math inline">\(L(au+bv)=aL(u)+bL(v)=0\)</span>, so <span class="math inline">\(au+bv\in\ker L\)</span>. If <span class="math inline">\(y_1,y_2\in\operatorname{im}L\)</span>, choose <span class="math inline">\(u,v\in V\)</span> with <span class="math inline">\(y_1=L(u)\)</span> and <span class="math inline">\(y_2=L(v)\)</span>. Then <span class="math inline">\(ay_1+by_2=L(au+bv)\in\operatorname{im}L\)</span>. The subspace test applies in both cases. <span class="math inline">\(\square\)</span></p>
+</section>
+</div>
+</div>
 <div class="theorem callout callout-style-simple callout-none no-icon callout-titled" title="Rank-nullity theorem">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1104,10 +1134,23 @@ Rank-nullity theorem
 <p>The quantity <span class="math inline">\(\dim(\operatorname{im}L)\)</span> is the rank of <span class="math inline">\(L\)</span>; <span class="math inline">\(\dim(\ker L)\)</span> is its nullity.</p>
 </div>
 </div>
-</section>
-<section id="proof-strategy-extend-a-kernel-basis" class="level3">
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<section id="proof-strategy-extend-a-kernel-basis" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-strategy-extend-a-kernel-basis">Proof strategy: extend a kernel basis</h3>
 <p>Start with a basis of <span class="math inline">\(\ker L\)</span>. Extend it to a basis of <span class="math inline">\(V\)</span>. Under <span class="math inline">\(L\)</span>, the added basis vectors become a basis of the image: they span because the kernel coordinates disappear, and they are independent because a zero combination would place their preimage in the kernel. Counting the two blocks yields the identity.</p>
+</section>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked example: a map from $\mathbb R^3$ to $\mathbb R^2$">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1129,7 +1172,6 @@ L(x,y,z)^\top=(x+y,z)^\top.
 <p>Given any <span class="math inline">\((a,b)^\top\in\mathbb R^2\)</span>, choose <span class="math inline">\((x,y,z)^\top=(a,0,b)^\top\)</span>. Hence <span class="math inline">\(\operatorname{im}L=\mathbb R^2\)</span>. The dimensions satisfy <span class="math inline">\(3=1+2\)</span>.</p>
 </div>
 </div>
-</section>
 </section>
 <section id="injective-surjective-and-bijective-maps" class="level2">
 <h2 class="anchored" data-anchor-id="injective-surjective-and-bijective-maps">Injective, surjective, and bijective maps</h2>
@@ -1164,7 +1206,22 @@ Injectivity and the kernel
 <p><strong>Conclusion.</strong> <span class="math inline">\(L\)</span> is injective if and only if <span class="math inline">\(\ker L=\{0\}\)</span>.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof.</strong> If <span class="math inline">\(L\)</span> is injective and <span class="math inline">\(v\in\ker L\)</span>, then <span class="math inline">\(L(v)=0=L(0)\)</span>, so <span class="math inline">\(v=0\)</span>. Conversely, suppose <span class="math inline">\(\ker L=\{0\}\)</span> and <span class="math inline">\(L(u)=L(v)\)</span>. Linearity gives <span class="math inline">\(L(u-v)=0\)</span>, so <span class="math inline">\(u-v=0\)</span> and <span class="math inline">\(u=v\)</span>. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="Assumption audit: codomain versus image">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1230,7 +1287,7 @@ Invalid inference: dimensions alone do not guarantee surjectivity
 <li>State the exact difference between an injective map and a surjective map without using an example.</li>
 </ol>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1239,7 +1296,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Yes. It is nonempty and, if <span class="math inline">\(2x-y=0\)</span> and <span class="math inline">\(2x'-y'=0\)</span>, then <span class="math inline">\(2(ax+bx')-(ay+by')=0\)</span> for all <span class="math inline">\(a,b\in\mathbb R\)</span>. The subspace test applies.</p></li>

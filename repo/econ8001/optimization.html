@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-317a3602a608e5c64810202e2edb152a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -633,11 +633,21 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#a-concrete-constrained-curvature-calculation" id="toc-a-concrete-constrained-curvature-calculation" class="nav-link" data-scroll-target="#a-concrete-constrained-curvature-calculation">A concrete constrained curvature calculation</a></li>
   </ul></li>
+  <li><a href="#inequality-constraints-and-kkt-conditions" id="toc-inequality-constraints-and-kkt-conditions" class="nav-link" data-scroll-target="#inequality-constraints-and-kkt-conditions">5. Inequality constraints and KKT conditions</a>
+  <ul class="collapse">
+  <li><a href="#why-an-inequality-needs-a-new-multiplier-rule" id="toc-why-an-inequality-needs-a-new-multiplier-rule" class="nav-link" data-scroll-target="#why-an-inequality-needs-a-new-multiplier-rule">Why an inequality needs a new multiplier rule</a></li>
+  <li><a href="#second-order-conditions-and-the-critical-cone" id="toc-second-order-conditions-and-the-critical-cone" class="nav-link" data-scroll-target="#second-order-conditions-and-the-critical-cone">Second-order conditions and the critical cone</a></li>
+  </ul></li>
+  <li><a href="#mixed-equality-and-inequality-constraints" id="toc-mixed-equality-and-inequality-constraints" class="nav-link" data-scroll-target="#mixed-equality-and-inequality-constraints">6. Mixed equality and inequality constraints</a>
+  <ul class="collapse">
+  <li><a href="#kkt-calculation-blueprint" id="toc-kkt-calculation-blueprint" class="nav-link" data-scroll-target="#kkt-calculation-blueprint">KKT calculation blueprint</a></li>
+  </ul></li>
   <li><a href="#assumption-audit" id="toc-assumption-audit" class="nav-link" data-scroll-target="#assumption-audit">Assumption audit</a></li>
   <li><a href="#calculation-blueprints" id="toc-calculation-blueprints" class="nav-link" data-scroll-target="#calculation-blueprints">Calculation blueprints</a>
   <ul class="collapse">
   <li><a href="#unconstrained-problem" id="toc-unconstrained-problem" class="nav-link" data-scroll-target="#unconstrained-problem">Unconstrained problem</a></li>
   <li><a href="#equality-constrained-problem" id="toc-equality-constrained-problem" class="nav-link" data-scroll-target="#equality-constrained-problem">Equality-constrained problem</a></li>
+  <li><a href="#inequality-or-mixed-constraint-problem" id="toc-inequality-or-mixed-constraint-problem" class="nav-link" data-scroll-target="#inequality-or-mixed-constraint-problem">Inequality or mixed-constraint problem</a></li>
   </ul></li>
   <li><a href="#exit-tickets" id="toc-exit-tickets" class="nav-link" data-scroll-target="#exit-tickets">Exit tickets</a></li>
   <li><a href="#mastery-checklist" id="toc-mastery-checklist" class="nav-link" data-scroll-target="#mastery-checklist">Mastery checklist</a></li>
@@ -689,7 +699,7 @@ What problem does optimization solve?
 </ol>
 </div>
 </div>
-<p>This page develops Chapter 4, Sections 4.1 through 4.3. Convexity, maximum theorems, and inequality constraints come later. Do not silently import their global conclusions into the local calculus results here.</p>
+<p>This page develops Chapter 4, Sections 4.1 through 4.5: existence, unconstrained optimization, equality constraints, KKT conditions for inequalities, and mixed constraints. Convexity and maximum theorems come on later pages. Do not silently import their global conclusions into the local calculus results here.</p>
 </section>
 <section id="where-this-sits" class="level2">
 <h2 class="anchored" data-anchor-id="where-this-sits">Where this sits</h2>
@@ -697,8 +707,8 @@ What problem does optimization solve?
 </section>
 <section id="prerequisite-retrieval" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h2>
-<p>For a scalar function <span class="math inline">\(f:\mathbb R^n\to\mathbb R\)</span>, its gradient is a column vector <span class="math inline">\(\nabla f(x)\in\mathbb R^n\)</span>, its derivative is the row <span class="math inline">\(Df(x)=\nabla f(x)^\mathsf T\)</span>, and its Hessian is an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(D^2f(x)\)</span>. For a symmetric <span class="math inline">\(H\)</span>, the scalar <span class="math inline">\(z^\mathsf THz\)</span> measures curvature in direction <span class="math inline">\(z\in\mathbb R^n\)</span>.</p>
-<p><strong>Retrieval check.</strong> Why cannot <span class="math inline">\(z^\mathsf THz\)</span> be called a vector?</p>
+<p>For a scalar function <span class="math inline">\(f:\mathbb R^n\to\mathbb R\)</span>, its gradient is a column vector <span class="math inline">\(\nabla f(x)\in\mathbb R^n\)</span>, its derivative is the row <span class="math inline">\(Df(x)=\nabla f(x)^{\mathsf{T}}\)</span>, and its Hessian is an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(D^2f(x)\)</span>. For a symmetric <span class="math inline">\(H\)</span>, the scalar <span class="math inline">\(z^{\mathsf{T}}Hz\)</span> measures curvature in direction <span class="math inline">\(z\in\mathbb R^n\)</span>.</p>
+<p><strong>Retrieval check.</strong> Why cannot <span class="math inline">\(z^{\mathsf{T}}Hz\)</span> be called a vector?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -736,7 +746,22 @@ f(x^{\max})\ge f(x)\ge f(x^{\min})\qquad\text{for every }x\in X.
 </div>
 </div>
 <p>This is an existence theorem. It makes no uniqueness claim and supplies no formula for an optimizer. In Euclidean space, compactness means closed and bounded.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> Continuity on compact <span class="math inline">\(X\)</span> makes <span class="math inline">\(f(X)\)</span> bounded: otherwise an unbounded sequence of function values would have inputs with a convergent subsequence, whose images converge and hence are bounded. Thus <span class="math inline">\(s=\sup f(X)\)</span> is finite. Choose <span class="math inline">\(x_j\in X\)</span> with <span class="math inline">\(f(x_j)\to s\)</span>. Compactness gives a convergent subsequence <span class="math inline">\(x_{j_\ell}\to x^{\max}\in X\)</span>; continuity gives <span class="math inline">\(f(x_{j_\ell})\to f(x^{\max})\)</span>, hence <span class="math inline">\(f(x^{\max})=s\)</span>. Apply the same argument to <span class="math inline">\(-f\)</span> for a minimum.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a compact portfolio constraint">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -747,7 +772,7 @@ Example: a compact portfolio constraint
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose <span class="math inline">\(M\ge1/\sqrt n\)</span> and <span class="math inline">\(X=\{w\in\mathbb R^n:\mathbf1^\mathsf Tw=1,\ \|w\|\le M\}\)</span>, with <span class="math inline">\(f\)</span> continuous. The vector <span class="math inline">\(\mathbf1/n\)</span> belongs to <span class="math inline">\(X\)</span>, so the set is nonempty. The affine equality set is closed, the ball is closed and bounded, so their intersection is compact. A maximum exists. This says nothing yet about how to find it.</p>
+<p>Suppose <span class="math inline">\(M\ge1/\sqrt n\)</span> and <span class="math inline">\(X=\{w\in\mathbb R^n:\mathbf1^{\mathsf{T}}w=1,\ \|w\|\le M\}\)</span>, with <span class="math inline">\(f\)</span> continuous. The vector <span class="math inline">\(\mathbf1/n\)</span> belongs to <span class="math inline">\(X\)</span>, so the set is nonempty. The affine equality set is closed, the ball is closed and bounded, so their intersection is compact. A maximum exists. This says nothing yet about how to find it.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important no-icon callout-titled" title="Each hypothesis matters">
@@ -769,7 +794,7 @@ Each hypothesis matters
 </div>
 <p><strong>Retrieval check: Phase 2 preview.</strong> If <span class="math inline">\(f\)</span> is strictly concave on a compact convex feasible set, what does Weierstrass supply and what does strict concavity add?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -778,7 +803,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Weierstrass supplies existence when <span class="math inline">\(f\)</span> is continuous. Strict concavity can add uniqueness of a maximizer on a convex feasible set, but neither property is part of Theorem 4.1.1 itself.</p>
 </div>
@@ -820,7 +845,22 @@ First-order necessary condition (Theorem 4.2.2)
 <p><strong>Conclusion.</strong> <span class="math inline">\(Df(x^*)=0\)</span>, equivalently <span class="math inline">\(\nabla f(x^*)=0\)</span>.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> For each <span class="math inline">\(v\in\mathbb R^n\)</span>, the one-variable function <span class="math inline">\(q(t)=f(x^*+tv)\)</span> has a local extremum at <span class="math inline">\(0\)</span> for small <span class="math inline">\(t\)</span>, because <span class="math inline">\(X\)</span> is open. Its derivative is <span class="math inline">\(q'(0)=Df(x^*)v\)</span>. At a one-variable local extremum, <span class="math inline">\(q'(0)=0\)</span>. Since this is true for every <span class="math inline">\(v\)</span>, <span class="math inline">\(Df(x^*)=0\)</span>.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="The word necessary has direction">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -909,14 +949,14 @@ Examples: strict curvature and a flat test
 </div>
 <p>For a <span class="math inline">\(C^2\)</span> scalar objective, Taylor’s expansion near a stationary point is</p>
 <p><span class="math display">\[
-f(x^*+h)=f(x^*)+\frac12h^\mathsf TD^2f(x^*)h+o(\|h\|^2).
+f(x^*+h)=f(x^*)+\frac12h^{\mathsf{T}}D^2f(x^*)h+o(\|h\|^2).
 \]</span></p>
 <p>The sign of this quadratic form gives the proof idea for the sufficient parts. Negative definiteness makes the leading nonzero change negative in every direction; positive definiteness reverses the sign.</p>
 </section>
 </section>
 <section id="equality-constraints-and-regularity" class="level2">
 <h2 class="anchored" data-anchor-id="equality-constraints-and-regularity">3. Equality constraints and regularity</h2>
-<p>Let <span class="math inline">\(g=(g_1,\ldots,g_k)^\mathsf T:\mathbb R^n\to\mathbb R^k\)</span> and let <span class="math inline">\(c\in\mathbb R^k\)</span>. The equality-constrained feasible set is</p>
+<p>Let <span class="math inline">\(g=(g_1,\ldots,g_k)^{\mathsf{T}}:\mathbb R^n\to\mathbb R^k\)</span> and let <span class="math inline">\(c\in\mathbb R^k\)</span>. The equality-constrained feasible set is</p>
 <p><span class="math display">\[C=U\cap\{x\in\mathbb R^n:g(x)=c\},\]</span></p>
 <p>where <span class="math inline">\(U\subseteq\mathbb R^n\)</span> is open. Its geometry, near a regular point, is governed by the <span class="math inline">\(k\times n\)</span> Jacobian <span class="math inline">\(Dg(x)\)</span>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Constraint qualification: full row rank">
@@ -950,12 +990,12 @@ Lagrange multiplier theorem (Theorem 4.3.1)
 <p><span class="math display">\[
 Df(x^*)=\lambda^{*\mathsf T}Dg(x^*),
 \quad\text{equivalently}\quad
-\nabla f(x^*)=Dg(x^*)^\mathsf T\lambda^*.
+\nabla f(x^*)=Dg(x^*)^{\mathsf{T}}\lambda^*.
 \tag{L}
 \]</span></p>
 </div>
 </div>
-<p>In (L), the left side is <span class="math inline">\(1\times n\)</span>. Since <span class="math inline">\(\lambda^{*\mathsf T}\)</span> is <span class="math inline">\(1\times k\)</span> and <span class="math inline">\(Dg\)</span> is <span class="math inline">\(k\times n\)</span>, the product is conformable. In gradient form <span class="math inline">\(Dg^\mathsf T\lambda^*\)</span> is <span class="math inline">\(n\times1\)</span>.</p>
+<p>In (L), the left side is <span class="math inline">\(1\times n\)</span>. Since <span class="math inline">\(\lambda^{*\mathsf T}\)</span> is <span class="math inline">\(1\times k\)</span> and <span class="math inline">\(Dg\)</span> is <span class="math inline">\(k\times n\)</span>, the product is conformable. In gradient form <span class="math inline">\(Dg^{\mathsf{T}}\lambda^*\)</span> is <span class="math inline">\(n\times1\)</span>.</p>
 <div class="intuition callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -983,7 +1023,7 @@ A multiplier can fail when regularity fails
 <h3 class="anchored" data-anchor-id="the-lagrangian-and-candidate-equations">The Lagrangian and candidate equations</h3>
 <p>Choose the convention</p>
 <p><span class="math display">\[
-L(x;\lambda)=f(x)-\lambda^\mathsf T(g(x)-c).
+L(x;\lambda)=f(x)-\lambda^{\mathsf{T}}(g(x)-c).
 \]</span></p>
 <p>Then (L) and feasibility become the system</p>
 <p><span class="math display">\[
@@ -1007,7 +1047,7 @@ Example: maximum on a circle
 </div>
 <p><strong>Retrieval check.</strong> In the circle example, why is the gradient of <span class="math inline">\(f\)</span> not required to be zero at the constrained optimum?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1016,7 +1056,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Feasible moves are restricted to the circle. The correct condition is that <span class="math inline">\(\nabla f\)</span> lies in the span of <span class="math inline">\(\nabla g\)</span>, not that it vanishes. A nonzero gradient can point normal to the feasible curve.</p>
 </div>
@@ -1073,7 +1113,7 @@ Equality-constrained second-order conditions (Theorem 4.3.4)
 <p>Let <span class="math inline">\(f,g_1,\ldots,g_k\)</span> be <span class="math inline">\(C^2\)</span>. Suppose <span class="math inline">\((x^*,\lambda^*)\)</span> satisfies feasibility, the Lagrange first-order condition, and <span class="math inline">\(\operatorname{rank}Dg(x^*)=k\)</span>. Let <span class="math inline">\(L\)</span> be the Lagrangian above.</p>
 <p><strong>Necessary conclusions.</strong></p>
 <ol type="1">
-<li>A constrained local maximum at <span class="math inline">\(x^*\)</span> implies <span class="math inline">\(z^\mathsf TD^2_{xx}L(x^*;\lambda^*)z\le0\)</span> for every <span class="math inline">\(z\in T(x^*)\)</span>.</li>
+<li>A constrained local maximum at <span class="math inline">\(x^*\)</span> implies <span class="math inline">\(z^{\mathsf{T}}D^2_{xx}L(x^*;\lambda^*)z\le0\)</span> for every <span class="math inline">\(z\in T(x^*)\)</span>.</li>
 <li>A constrained local minimum implies the same quadratic form is at least zero for every <span class="math inline">\(z\in T(x^*)\)</span>.</li>
 </ol>
 <p><strong>Sufficient conclusions.</strong></p>
@@ -1100,7 +1140,7 @@ Necessary versus sufficient: do not reverse the arrows
 Q(z)&lt;0\quad\forall z\in T(x^*)\setminus\{0\}&amp;\Rightarrow\text{strict constrained local maximum},
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(Q(z)=z^\mathsf TD^2_{xx}L(x^*;\lambda^*)z\)</span>. A merely nonpositive quadratic form is necessary but generally not sufficient.</p>
+<p>where <span class="math inline">\(Q(z)=z^{\mathsf{T}}D^2_{xx}L(x^*;\lambda^*)z\)</span>. A merely nonpositive quadratic form is necessary but generally not sufficient.</p>
 </div>
 </div>
 <section id="a-concrete-constrained-curvature-calculation" class="level3">
@@ -1108,8 +1148,8 @@ Q(z)&lt;0\quad\forall z\in T(x^*)\setminus\{0\}&amp;\Rightarrow\text{strict cons
 <p>Consider <span class="math inline">\(f(x_1,x_2)=x_1^2+2x_2^2\)</span> on the unit circle. At a stationary point <span class="math inline">\(x^*=(1,0)\)</span>, use <span class="math inline">\(L=f-\lambda(x_1^2+x_2^2-1)\)</span>. The first-order condition gives <span class="math inline">\(\lambda^*=1\)</span>, hence</p>
 <p><span class="math display">\[D^2_{xx}L(x^*;\lambda^*)=
 \begin{pmatrix}0&amp;0\\0&amp;2\end{pmatrix}.\]</span></p>
-<p>The tangent space is <span class="math inline">\(T(x^*)=\{(0,t)^\mathsf T:t\in\mathbb R\}\)</span>. For a nonzero tangent vector <span class="math inline">\(z=(0,t)^\mathsf T\)</span>,</p>
-<p><span class="math display">\[z^\mathsf TD^2_{xx}Lz=2t^2&gt;0.\]</span></p>
+<p>The tangent space is <span class="math inline">\(T(x^*)=\{(0,t)^{\mathsf{T}}:t\in\mathbb R\}\)</span>. For a nonzero tangent vector <span class="math inline">\(z=(0,t)^{\mathsf{T}}\)</span>,</p>
+<p><span class="math display">\[z^{\mathsf{T}}D^2_{xx}Lz=2t^2&gt;0.\]</span></p>
 <p>Therefore <span class="math inline">\((1,0)\)</span> is a strict constrained local minimum. The ambient Hessian of <span class="math inline">\(f\)</span> is positive definite too, but that fact is not the method: the theorem asks for the Lagrangian Hessian on feasible directions.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled" title="Testing one direction is not enough in a higher-dimensional tangent space">
 <div class="callout-header d-flex align-content-center">
@@ -1126,54 +1166,356 @@ Testing one direction is not enough in a higher-dimensional tangent space
 </div>
 </section>
 </section>
+<section id="inequality-constraints-and-kkt-conditions" class="level2">
+<h2 class="anchored" data-anchor-id="inequality-constraints-and-kkt-conditions">5. Inequality constraints and KKT conditions</h2>
+<section id="why-an-inequality-needs-a-new-multiplier-rule" class="level3">
+<h3 class="anchored" data-anchor-id="why-an-inequality-needs-a-new-multiplier-rule">Why an inequality needs a new multiplier rule</h3>
+<p>Consider</p>
+<p><span class="math display">\[
+\max_{x_1,x_2}\;-(x_1-2)^2-(x_2-2)^2
+\quad\text{subject to}\quad x_1+x_2\le 2.
+\]</span></p>
+<p>The unconstrained maximizer <span class="math inline">\((2,2)\)</span> is infeasible. The constrained maximizer is <span class="math inline">\((1,1)\)</span>, where the gradient is <span class="math inline">\((2,2)^{\mathsf{T}}\)</span>, not zero. It points in the normal direction to the binding boundary. A nonnegative multiplier records how strongly that boundary restrains the objective.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: active constraint and slack">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: active constraint and slack
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(h=(h_1,\ldots,h_l):\mathbb R^n\to\mathbb R^l\)</span> and impose <span class="math inline">\(h(x)\le c\)</span> componentwise.</p>
+<p>For a feasible point <span class="math inline">\(x^*\)</span>:</p>
+<ol type="1">
+<li><p>the slack of constraint <span class="math inline">\(i\)</span> is <span class="math inline">\(c_i-h_i(x^*)\ge0\)</span>;</p></li>
+<li><p>constraint <span class="math inline">\(i\)</span> is <strong>active</strong> when <span class="math inline">\(h_i(x^*)=c_i\)</span>;</p></li>
+<li><p>the active set is</p>
+<p><span class="math display">\[
+A(x^*)=\{i:h_i(x^*)=c_i\}.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled" title="Complementary slackness pairs pressure with scarcity">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Complementary slackness pairs pressure with scarcity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An inactive constraint leaves room for a small move, so its multiplier must be zero. A positive multiplier can occur only when the constraint binds. The product of multiplier and slack encodes both cases in one equation.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+KKT necessary conditions for inequalities (Theorem 4.4.1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> Let <span class="math inline">\(f:\mathbb R^n\to\mathbb R\)</span> and <span class="math inline">\(h_i:\mathbb R^n\to\mathbb R\)</span> be <span class="math inline">\(C^1\)</span>. Suppose <span class="math inline">\(x^*\)</span> is a local maximizer of <span class="math inline">\(f\)</span> on</p>
+<p><span class="math display">\[
+F=\{x\in\mathbb R^n:h(x)\le c\}.
+\]</span></p>
+<p>Assume the gradients of the active constraints are linearly independent:</p>
+<p><span class="math display">\[
+\operatorname{rank}Dh_{A(x^*)}(x^*)=|A(x^*)|.
+\]</span></p>
+<p><strong>Conclusion.</strong> There is <span class="math inline">\(\lambda^*\in\mathbb R^l\)</span> such that:</p>
+<ol type="1">
+<li><p><strong>stationarity</strong></p>
+<p><span class="math display">\[
+Df(x^*)=\lambda^{*\mathsf{T}}Dh(x^*);
+\]</span></p></li>
+<li><p><strong>dual feasibility</strong></p>
+<p><span class="math display">\[
+\lambda_i^*\ge0\qquad(i=1,\ldots,l);
+\]</span></p></li>
+<li><p><strong>complementary slackness</strong></p>
+<p><span class="math display">\[
+\lambda_i^*\bigl[c_i-h_i(x^*)\bigr]=0
+\qquad(i=1,\ldots,l).
+\]</span></p></li>
+</ol>
+</div>
+</div>
+<p>The rank condition is the linear independence constraint qualification, or LICQ. It is a condition on the active gradients only. Inactive constraints do not define the local boundary at <span class="math inline">\(x^*\)</span>.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof strategy">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof strategy
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The feasible first-order directions form a cone cut out by the active gradients. At a local maximum, no feasible direction can have a positive directional derivative. A finite-dimensional separation result represents <span class="math inline">\(Df(x^*)\)</span> as a nonnegative combination of the active constraint gradients. Assign multiplier zero to every inactive constraint. This gives stationarity, dual feasibility, and complementary slackness.</p>
+<p>The separation step is the inequality analogue of the normal-space argument behind equality-constrained multipliers.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked example: a binding resource constraint">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Worked example: a binding resource constraint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the opening problem, let <span class="math inline">\(h(x)=x_1+x_2\)</span> and <span class="math inline">\(c=2\)</span>. At <span class="math inline">\(x^*=(1,1)^{\mathsf{T}}\)</span>,</p>
+<p><span class="math display">\[
+Df(x^*)=(2,2),\qquad Dh(x^*)=(1,1).
+\]</span></p>
+<p>Stationarity gives <span class="math inline">\(\lambda^*=2\)</span>. The constraint binds, so complementary slackness holds. The multiplier is positive because relaxing the resource limit raises the optimized value locally.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="KKT conditions are necessary here, not automatically sufficient">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+KKT conditions are necessary here, not automatically sufficient
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Theorem 4.4.1 says</p>
+<p><span class="math display">\[
+\text{regular local maximum}\implies\text{KKT conditions}.
+\]</span></p>
+<p>A KKT point can fail to maximize a nonconcave objective. Global concavity and convex feasibility can turn KKT conditions into a global certificate, but that is a separate result.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Minimization sign convention">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Minimization sign convention
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To minimize <span class="math inline">\(f\)</span> under <span class="math inline">\(h(x)\le c\)</span>, apply the maximization theorem to <span class="math inline">\(-f\)</span>. With the Lagrangian convention used here, this changes the sign of the objective term. Do not change the sign of a multiplier condition by memory; write the chosen Lagrangian first and differentiate it.</p>
+</div>
+</div>
+</section>
+<section id="second-order-conditions-and-the-critical-cone" class="level3">
+<h3 class="anchored" data-anchor-id="second-order-conditions-and-the-critical-cone">Second-order conditions and the critical cone</h3>
+<p>Let</p>
+<p><span class="math display">\[
+L(x;\lambda)=f(x)-\lambda^{\mathsf{T}}(h(x)-c).
+\]</span></p>
+<p>Among the active constraints, define the strongly active set</p>
+<p><span class="math display">\[
+B(x^*,\lambda^*)=\{i\in A(x^*):\lambda_i^*&gt;0\}.
+\]</span></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: critical cone">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition: critical cone
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the usual feasible-direction convention for <span class="math inline">\(h(x)\le c\)</span>, define</p>
+<p><span class="math display">\[
+\begin{aligned}
+C(x^*,\lambda^*)=\{z\in\mathbb R^n:
+&amp;\ Dh_i(x^*)z=0 &amp;&amp;\text{for }i\in B(x^*,\lambda^*),\\
+&amp;\ Dh_i(x^*)z\le0 &amp;&amp;\text{for }i\in A(x^*)\setminus B(x^*,\lambda^*)\}.
+\end{aligned}
+\]</span></p>
+<p>Strongly active constraints must remain tangent in a critical direction. A weakly active constraint, whose multiplier is zero, may move into its feasible side.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Sign convention in the Section 4.4 slides">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sign convention in the Section 4.4 slides
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The slides write <span class="math inline">\(Dh_i(x^*)z\ge0\)</span> for weakly active constraints. Their <span class="math inline">\(z\)</span> is the negative of the standard feasible direction used above. The two cones are negatives of each other, and</p>
+<p><span class="math display">\[
+(-z)^{\mathsf{T}}D_{xx}^2L(-z)
+=z^{\mathsf{T}}D_{xx}^2Lz.
+\]</span></p>
+<p>Therefore the second-order sign test is identical under either convention.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Inequality-constrained second-order conditions (Theorem 4.4.5)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> The functions <span class="math inline">\(f,h_1,\ldots,h_l\)</span> are <span class="math inline">\(C^2\)</span>, <span class="math inline">\((x^*,\lambda^*)\)</span> satisfies KKT, and LICQ holds at <span class="math inline">\(x^*\)</span>.</p>
+<p><strong>Necessary conclusion.</strong> If <span class="math inline">\(x^*\)</span> is a constrained local maximum, then</p>
+<p><span class="math display">\[
+z^{\mathsf{T}}D_{xx}^2L(x^*;\lambda^*)z\le0
+\qquad\text{for every }z\in C(x^*,\lambda^*).
+\]</span></p>
+<p><strong>Sufficient conclusion.</strong> If</p>
+<p><span class="math display">\[
+z^{\mathsf{T}}D_{xx}^2L(x^*;\lambda^*)z&lt;0
+\qquad\text{for every nonzero }z\in C(x^*,\lambda^*),
+\]</span></p>
+<p>then <span class="math inline">\(x^*\)</span> is a strict constrained local maximum.</p>
+</div>
+</div>
+<p>The critical cone replaces the equality-constrained tangent space. It keeps only directions that are feasible to first order and neutral with respect to the first-order objective change.</p>
+<p><strong>Retrieval check.</strong> Why does an inactive constraint have multiplier zero?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Its slack is positive. Complementary slackness requires <span class="math inline">\(\lambda_i^*[c_i-h_i(x^*)]=0\)</span>, so the multiplier must be zero.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="mixed-equality-and-inequality-constraints" class="level2">
+<h2 class="anchored" data-anchor-id="mixed-equality-and-inequality-constraints">6. Mixed equality and inequality constraints</h2>
+<p>Consider</p>
+<p><span class="math display">\[
+\max_x f(x)
+\quad\text{subject to}\quad
+g(x)=b,\qquad h(x)\le c,
+\]</span></p>
+<p>where <span class="math inline">\(g:\mathbb R^n\to\mathbb R^k\)</span> and <span class="math inline">\(h:\mathbb R^n\to\mathbb R^l\)</span>.</p>
+<p>Use separate multipliers:</p>
+<p><span class="math display">\[
+L(x;\mu,\lambda)
+=f(x)-\mu^{\mathsf{T}}(g(x)-b)
+-\lambda^{\mathsf{T}}(h(x)-c).
+\]</span></p>
+<p>The equality multiplier <span class="math inline">\(\mu\in\mathbb R^k\)</span> is unrestricted in sign. The inequality multiplier <span class="math inline">\(\lambda\in\mathbb R^l\)</span> must be nonnegative.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+KKT necessary conditions for mixed constraints (Theorem 4.5.1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Assumptions.</strong> The objective and constraints are <span class="math inline">\(C^1\)</span>, <span class="math inline">\(x^*\)</span> is a local maximum, and the gradients of all equality constraints together with the active inequality constraints are linearly independent.</p>
+<p><strong>Conclusion.</strong> There are <span class="math inline">\(\mu^*\in\mathbb R^k\)</span> and <span class="math inline">\(\lambda^*\in\mathbb R^l\)</span> such that:</p>
+<ol type="1">
+<li><span class="math inline">\(g(x^*)=b\)</span> and <span class="math inline">\(h(x^*)\le c\)</span>;</li>
+<li><span class="math inline">\(D_xL(x^*;\mu^*,\lambda^*)=0\)</span>;</li>
+<li><span class="math inline">\(\lambda_i^*\ge0\)</span> for every inequality constraint;</li>
+<li><span class="math inline">\(\lambda_i^*[c_i-h_i(x^*)]=0\)</span> for every inequality constraint.</li>
+</ol>
+</div>
+</div>
+<p>Equality constraints are always active. Inequality constraints enter the local normal space only when they bind.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mixed-constraint second-order conditions (Theorem 4.5.2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Define the critical cone by requiring</p>
+<ol type="1">
+<li><span class="math inline">\(Dg(x^*)z=0\)</span> for every equality constraint;</li>
+<li><span class="math inline">\(Dh_i(x^*)z=0\)</span> for each active inequality with <span class="math inline">\(\lambda_i^*&gt;0\)</span>;</li>
+<li><span class="math inline">\(Dh_i(x^*)z\le0\)</span> for each active inequality with <span class="math inline">\(\lambda_i^*=0\)</span>.</li>
+</ol>
+<p>Under <span class="math inline">\(C^2\)</span> smoothness, KKT, and LICQ:</p>
+<ul>
+<li>a local maximum requires <span class="math inline">\(z^{\mathsf{T}}D_{xx}^2Lz\le0\)</span> for every critical direction;</li>
+<li>strict negativity for every nonzero critical direction is sufficient for a strict local maximum.</li>
+</ul>
+</div>
+</div>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled" title="One cone combines both kinds of local restriction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+One cone combines both kinds of local restriction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Equality constraints remove directions in both signs, so they impose tangent equalities. A binding inequality removes only the direction that exits the feasible set. Complementary slackness determines whether that one-sided restriction matters to the first-order objective.</p>
+</div>
+</div>
+<section id="kkt-calculation-blueprint" class="level3">
+<h3 class="anchored" data-anchor-id="kkt-calculation-blueprint">KKT calculation blueprint</h3>
+<ol type="1">
+<li>Put every inequality in one declared direction, here <span class="math inline">\(h_i(x)\le c_i\)</span>.</li>
+<li>Check primal feasibility and identify the active set.</li>
+<li>Check LICQ using the equality and active-inequality gradients.</li>
+<li>Write the Lagrangian and its sign convention.</li>
+<li>Solve stationarity, dual feasibility, and complementary slackness together.</li>
+<li>Discard candidates that violate primal or dual feasibility.</li>
+<li>For a second-order claim, construct the critical cone and test the Lagrangian Hessian only on that cone.</li>
+<li>State whether the condition used is necessary or sufficient.</li>
+</ol>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Do not guess which inequalities bind">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do not guess which inequalities bind
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An inequality may be active with a zero multiplier, active with a positive multiplier, or inactive with a zero multiplier. Solve cases systematically and check every candidate against all KKT conditions.</p>
+</div>
+</div>
+</section>
+</section>
 <section id="assumption-audit" class="level2">
 <h2 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Goal</th>
-<th>Conditions doing the work</th>
-<th>What follows</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Optimum exists</td>
-<td>compact <span class="math inline">\(X\)</span>, continuous <span class="math inline">\(f\)</span></td>
-<td>maximum and minimum attained</td>
-</tr>
-<tr class="even">
-<td>Interior local optimum</td>
-<td>open domain, differentiability</td>
-<td>zero gradient</td>
-</tr>
-<tr class="odd">
-<td>Strict unconstrained local optimum</td>
-<td>stationary, <span class="math inline">\(C^2\)</span>, definite Hessian</td>
-<td>strict local result</td>
-</tr>
-<tr class="even">
-<td>Multiplier condition</td>
-<td><span class="math inline">\(C^1\)</span>, local constrained optimum, full row rank</td>
-<td>FOC with <span class="math inline">\(\lambda\)</span></td>
-</tr>
-<tr class="odd">
-<td>Necessary constrained SOC</td>
-<td>constrained local optimum, <span class="math inline">\(C^2\)</span>, FOC, full row rank</td>
-<td>semidefinite sign on <span class="math inline">\(T(x^*)\)</span></td>
-</tr>
-<tr class="even">
-<td>Sufficient constrained SOC</td>
-<td><span class="math inline">\(C^2\)</span>, FOC, full row rank, definite sign on <span class="math inline">\(T(x^*)\)</span></td>
-<td>strict constrained local result</td>
-</tr>
-</tbody>
-</table>
+<ol type="1">
+<li><strong>Existence:</strong> compact <span class="math inline">\(X\)</span> and continuous <span class="math inline">\(f\)</span> imply that maxima and minima are attained.</li>
+<li><strong>Interior first-order condition:</strong> an open domain and differentiability imply a zero gradient at an unconstrained local optimum.</li>
+<li><strong>Equality multiplier condition:</strong> <span class="math inline">\(C^1\)</span> constraints and full row rank give a Lagrange multiplier at a regular local constrained optimum.</li>
+<li><strong>KKT condition:</strong> <span class="math inline">\(C^1\)</span> constraints and LICQ give stationarity, dual feasibility, and complementary slackness at a regular local optimum.</li>
+<li><strong>Necessary constrained curvature:</strong> <span class="math inline">\(C^2\)</span> smoothness, KKT, and LICQ imply a semidefinite sign on the tangent space or critical cone.</li>
+<li><strong>Sufficient constrained curvature:</strong> a strict sign on every nonzero tangent or critical direction gives a strict local result.</li>
+</ol>
 <p>Do not treat these rows as interchangeable. Weierstrass does not yield first order conditions at a boundary. Lagrange conditions do not establish existence. A stationary point and semidefinite Hessian do not classify an optimum.</p>
 </section>
 <section id="calculation-blueprints" class="level2">
@@ -1192,11 +1534,22 @@ Testing one direction is not enough in a higher-dimensional tangent space
 <ol type="1">
 <li>Write <span class="math inline">\(g(x)=c\)</span> with <span class="math inline">\(g:\mathbb R^n\to\mathbb R^k\)</span> and check dimensions.</li>
 <li>Check feasibility and <span class="math inline">\(\operatorname{rank}Dg(x)=k\)</span> at each candidate. If rank fails, treat that singular point directly rather than applying the multiplier equations.</li>
-<li>Form <span class="math inline">\(L(x;\lambda)=f(x)-\lambda^\mathsf T(g(x)-c)\)</span>.</li>
+<li>Form <span class="math inline">\(L(x;\lambda)=f(x)-\lambda^{\mathsf{T}}(g(x)-c)\)</span>.</li>
 <li>Solve <span class="math inline">\(D_xL=0\)</span> and <span class="math inline">\(g(x)=c\)</span> at regular candidates.</li>
 <li>Find <span class="math inline">\(T(x^*)=\ker Dg(x^*)\)</span>.</li>
-<li>Evaluate the scalar quadratic form <span class="math inline">\(z^\mathsf TD^2_{xx}L(x^*;\lambda^*)z\)</span> for every tangent direction.</li>
+<li>Evaluate the scalar quadratic form <span class="math inline">\(z^{\mathsf{T}}D^2_{xx}L(x^*;\lambda^*)z\)</span> for every tangent direction.</li>
 <li>State the theorem part used and its implication direction.</li>
+</ol>
+</section>
+<section id="inequality-or-mixed-constraint-problem" class="level3">
+<h3 class="anchored" data-anchor-id="inequality-or-mixed-constraint-problem">Inequality or mixed-constraint problem</h3>
+<ol type="1">
+<li>Standardize the inequality directions and write the Lagrangian convention.</li>
+<li>Identify active constraints and check LICQ.</li>
+<li>Solve primal feasibility, stationarity, dual feasibility, and complementary slackness together.</li>
+<li>Build the critical cone at each surviving candidate.</li>
+<li>Test the Lagrangian Hessian on that cone.</li>
+<li>State the exact necessary or sufficient result used.</li>
 </ol>
 </section>
 </section>
@@ -1207,9 +1560,10 @@ Testing one direction is not enough in a higher-dimensional tangent space
 <li>For <span class="math inline">\(f(x,y)=x^2-y^2\)</span>, classify the stationary point at <span class="math inline">\((0,0)\)</span>.</li>
 <li>With one equality constraint in <span class="math inline">\(\mathbb R^3\)</span>, what dimension should the regular tangent space have?</li>
 <li>In a constrained problem, why is a positive curvature direction outside <span class="math inline">\(T(x^*)\)</span> irrelevant to the second-order theorem?</li>
+<li>For a maximization problem with <span class="math inline">\(h_i(x)\le c_i\)</span>, what sign must the KKT multiplier have, and when must it equal zero?</li>
 </ol>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1218,11 +1572,11 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><span class="math inline">\(f(x)=x\)</span> on <span class="math inline">\((0,1)\)</span> has supremum <span class="math inline">\(1\)</span> but no maximum; compactness fails.</li>
-<li>The Hessian <span class="math inline">\(\operatorname{diag}(2,-2)\)</span> is indefinite, so <span class="math inline">\((0,0)\)</span> is a saddle, not a local optimum. 3. It has dimension <span class="math inline">\(3-1=2\)</span>. 4. It is not the velocity of a feasible curve to first order, so the theorem does not compare nearby feasible objective values in that direction.</li>
+<li>The Hessian <span class="math inline">\(\operatorname{diag}(2,-2)\)</span> is indefinite, so <span class="math inline">\((0,0)\)</span> is a saddle, not a local optimum. 3. It has dimension <span class="math inline">\(3-1=2\)</span>. 4. It is not the velocity of a feasible curve to first order, so the theorem does not compare nearby feasible objective values in that direction. 5. The multiplier is nonnegative, and complementary slackness forces it to zero whenever the constraint is inactive.</li>
 </ol>
 </div>
 </div>
@@ -1238,6 +1592,9 @@ Show answer
 <li><label><input type="checkbox">I can form a Lagrangian with conformable dimensions.</label></li>
 <li><label><input type="checkbox">I can compute a tangent space and restrict the Lagrangian Hessian to it.</label></li>
 <li><label><input type="checkbox">I know why one tangent direction is insufficient unless the tangent space is one-dimensional.</label></li>
+<li><label><input type="checkbox">I can distinguish primal feasibility, dual feasibility, stationarity, and complementary slackness.</label></li>
+<li><label><input type="checkbox">I can identify an active set and construct the KKT critical cone.</label></li>
+<li><label><input type="checkbox">I can state the KKT and second-order implication directions for pure inequality and mixed constraints.</label></li>
 </ul>
 
 

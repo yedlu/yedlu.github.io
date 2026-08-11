@@ -696,45 +696,19 @@ Primary source: ECON 8002 Lecture 9, pp.&nbsp;50–54. The sample-variance calcu
 </section>
 <section id="course-map" class="level3">
 <h3 class="anchored" data-anchor-id="course-map">Course map</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th><strong>9</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>measure spaces</td>
-<td>integration and RN</td>
-<td>distribution properties</td>
-<td>conditioning</td>
-<td>convergence modes</td>
-<td>CMT and Slutsky</td>
-<td>LLN</td>
-<td>weak limits and delta method</td>
-<td><strong>CLT and inference</strong></td>
-</tr>
-</tbody>
-</table>
+<div class="course-sequence">
+<ol type="1">
+<li>Measure spaces</li>
+<li>Integration and Radon–Nikodym derivatives</li>
+<li>Distribution properties</li>
+<li>Conditioning</li>
+<li>Convergence modes</li>
+<li>Continuous mapping and Slutsky</li>
+<li>Laws of large numbers</li>
+<li>Weak limits and the delta method</li>
+<li><strong>Central limit theorems and inference</strong> <em>(current lecture)</em></li>
+</ol>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -852,12 +826,12 @@ Show answer
 <p>Let <span class="math inline">\(\{X_{nj}\}\)</span> be a row-wise independent triangular array with <span class="math inline">\(k_n\to\infty\)</span> and <span class="math inline">\(0&lt;\sigma_n^2&lt;\infty\)</span>. If, for every <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
 <p><span class="math display">\[
 \frac1{\sigma_n^2}\sum_{j=1}^{k_n}
-E\!\left[(X_{nj}-EX_{nj})^2
-\mathbf1\{|X_{nj}-EX_{nj}|&gt;\varepsilon\sigma_n\}\right]\to0,
+E\!\left[(X_{nj}-E[X_{nj}])^2
+\mathbf1\{|X_{nj}-E[X_{nj}]|&gt;\varepsilon\sigma_n\}\right]\to0,
 \]</span></p>
 <p>then</p>
 <p><span class="math display">\[
-\frac1{\sigma_n}\sum_{j=1}^{k_n}(X_{nj}-EX_{nj})
+\frac1{\sigma_n}\sum_{j=1}^{k_n}(X_{nj}-E[X_{nj}])
 \xrightarrow{d}N(0,1).
 \]</span></p>
 </div>
@@ -866,8 +840,8 @@ E\!\left[(X_{nj}-EX_{nj})^2
 <h3 class="anchored" data-anchor-id="lindeberg-controls-tail-second-moments">Lindeberg controls tail second moments</h3>
 <p>The expression</p>
 <p><span class="math display">\[
-E\!\left[(X_{nj}-EX_{nj})^2
-\mathbf1\{|X_{nj}-EX_{nj}|&gt;\varepsilon\sigma_n\}\right]
+E\!\left[(X_{nj}-E[X_{nj}])^2
+\mathbf1\{|X_{nj}-E[X_{nj}]|&gt;\varepsilon\sigma_n\}\right]
 \]</span></p>
 <p>is the tail second-moment contribution from summand <span class="math inline">\(j\)</span> when it is large relative to the row’s total standard deviation.</p>
 <div class="intuition-box">
@@ -900,8 +874,18 @@ Show answer
 </div>
 </div>
 </div>
-</section>
-<section id="lindeberg-implies-feller" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<section id="lindeberg-implies-feller" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="lindeberg-implies-feller">Lindeberg implies Feller</h3>
 <p>After centering, for any <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
 <p><span class="math display">\[
@@ -917,9 +901,12 @@ E[X_{nj}^2\mathbf1\{|X_{nj}|&gt;\varepsilon\sigma_n\}].
 \]</span></p>
 <p>Let <span class="math inline">\(\varepsilon\downarrow0\)</span>.</p>
 </section>
+</div>
+</div>
+</section>
 <section id="a-dominating-summand-nonexample" class="level3">
 <h3 class="anchored" data-anchor-id="a-dominating-summand-nonexample">A dominating-summand nonexample</h3>
-<p>Let <span class="math inline">\(X_{n1}=Z\)</span> with <span class="math inline">\(EZ=0\)</span>, <span class="math inline">\(\operatorname{Var}(Z)=1\)</span>, and let every other <span class="math inline">\(X_{nj}=0\)</span>. Then <span class="math inline">\(\sigma_n^2=1\)</span> and</p>
+<p>Let <span class="math inline">\(X_{n1}=Z\)</span> with <span class="math inline">\(E[Z]=0\)</span>, <span class="math inline">\(\operatorname{Var}(Z)=1\)</span>, and let every other <span class="math inline">\(X_{nj}=0\)</span>. Then <span class="math inline">\(\sigma_n^2=1\)</span> and</p>
 <p><span class="math display">\[\max_j\frac{\sigma_{nj}^2}{\sigma_n^2}=1.\]</span></p>
 <p>The standardized sum equals <span class="math inline">\(Z\)</span> for every <span class="math inline">\(n\)</span>. It is not asymptotically normal unless <span class="math inline">\(Z\)</span> was already normal.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Counterexample or invalid inference">
@@ -939,32 +926,34 @@ Counterexample or invalid inference
 </section>
 <section id="proof-of-the-lindeberg-clt" class="level2">
 <h2 class="anchored" data-anchor-id="proof-of-the-lindeberg-clt">Proof of the Lindeberg CLT</h2>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="lindeberg-proof-the-full-map" class="level3">
 <h3 class="anchored" data-anchor-id="lindeberg-proof-the-full-map">Lindeberg proof: the full map</h3>
-<ol class="proof-map">
-<li>
-Center and scale the row so its total variance equals one.
-</li>
-<li>
-Approximate each characteristic function by <span class="math inline">\(1-t^2\sigma_{nj}^2/2\)</span>.
-</li>
-<li>
-Use Lindeberg to make the sum of Taylor remainders vanish.
-</li>
-<li>
-Use Feller and a product inequality to combine the approximations.
-</li>
-<li>
-Recognize <span class="math inline">\(e^{-t^2/2}\)</span> and apply Lévy-Cramér.
-</li>
+<ol type="1">
+<li>Center and scale the row so its total variance equals one.</li>
+<li>Approximate each characteristic function by <span class="math inline">\(1-t^2\sigma_{nj}^2/2\)</span>.</li>
+<li>Use Lindeberg to make the sum of Taylor remainders vanish.</li>
+<li>Use Feller and a product inequality to combine the approximations.</li>
+<li>Recognize <span class="math inline">\(e^{-t^2/2}\)</span> and apply Lévy-Cramér.</li>
 </ol>
 </section>
 <section id="normalize-without-loss-of-generality" class="level3">
 <h3 class="anchored" data-anchor-id="normalize-without-loss-of-generality">Normalize without loss of generality</h3>
 <p>Define</p>
-<p><span class="math display">\[Z_{nj}=\frac{X_{nj}-EX_{nj}}{\sigma_n}.\]</span></p>
+<p><span class="math display">\[Z_{nj}=\frac{X_{nj}-E[X_{nj}]}{\sigma_n}.\]</span></p>
 <p>Then</p>
-<p><span class="math display">\[EZ_{nj}=0,\qquad
+<p><span class="math display">\[E[Z_{nj}]=0,\qquad
 \sum_{j=1}^{k_n}\operatorname{Var}(Z_{nj})=1.\]</span></p>
 <p>Write <span class="math inline">\(s_{nj}^2=\operatorname{Var}(Z_{nj})\)</span>. It is enough to prove</p>
 <p><span class="math display">\[\sum_{j=1}^{k_n}Z_{nj}\xrightarrow{d}N(0,1).\]</span></p>
@@ -977,7 +966,7 @@ Recognize <span class="math inline">\(e^{-t^2/2}\)</span> and apply Lévy-Cramé
 \left|e^{itx}-\left(1+itx-\frac{t^2x^2}{2}\right)\right|
 \le\min\{|tx|^2,|tx|^3\}.
 \]</span></p>
-<p>Because <span class="math inline">\(EZ_{nj}=0\)</span>,</p>
+<p>Because <span class="math inline">\(E[Z_{nj}]=0\)</span>,</p>
 <p><span class="math display">\[
 \left|\varphi_{Z_{nj}}(t)-\left(1-\frac{t^2s_{nj}^2}{2}\right)\right|
 \le E\min\{|tZ_{nj}|^2,|tZ_{nj}|^3\}.
@@ -1033,10 +1022,14 @@ Assumption check
 <p>Do not write the right side as converging to zero with <span class="math inline">\(n\)</span>. First take the row limit for fixed truncation, then shrink the truncation threshold.</p>
 </div>
 </div>
+</section>
+</div>
+</div>
+</div>
 <p><strong>Retrieval check.</strong></p>
 <p>What controls the small-value term, and what controls the large-value term?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1045,13 +1038,12 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The inequality <span class="math inline">\(|Z|^3\le\varepsilon Z^2\)</span> controls small values. Lindeberg’s condition controls the summed large-value variance.</p>
 </div>
 </div>
 </div>
-</section>
 <section id="lemma-9.2-compare-products" class="level3">
 <h3 class="anchored" data-anchor-id="lemma-9.2-compare-products">Lemma 9.2: compare products</h3>
 <div class="theorem-box">
@@ -1061,8 +1053,19 @@ Show answer
 \le\sum_{j=1}^m|z_j-w_j|.
 \]</span></p>
 </div>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Add and subtract the intermediate products <span class="math inline">\(z_1\cdots z_{r-1}w_r\cdots w_m\)</span>. Each remaining factor has modulus at most one.</p>
-</section>
 <section id="independence-turns-sums-into-products" class="level3">
 <h3 class="anchored" data-anchor-id="independence-turns-sums-into-products">Independence turns sums into products</h3>
 <p>Within row <span class="math inline">\(n\)</span>, the normalized variables are independent, so</p>
@@ -1099,12 +1102,16 @@ Show answer
 \]</span></p>
 <p>The limit is the characteristic function of <span class="math inline">\(N(0,1)\)</span>. Lévy-Cramér completes the proof of Theorem 9.1.</p>
 </section>
+</div>
+</div>
+</div>
+</section>
 <section id="quick-quiz-4-where-independence-enters" class="level3">
 <h3 class="anchored" data-anchor-id="quick-quiz-4-where-independence-enters">Quick quiz 4: where independence enters</h3>
 <p><strong>Retrieval check.</strong></p>
 <p>Which displayed equality in the proof fails without row-wise independence?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1113,7 +1120,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The characteristic function of the row sum need not equal the product of the individual characteristic functions.</p>
 </div>
@@ -1127,7 +1134,7 @@ Show answer
 <h3 class="anchored" data-anchor-id="corollary-9.3-scalar-iid-clt">Corollary 9.3: scalar IID CLT</h3>
 <div class="theorem-box">
 <p>If <span class="math inline">\(X_1,X_2,\ldots\)</span> are IID with</p>
-<p><span class="math display">\[EX_1=\mu,\qquad0&lt;\sigma^2=\operatorname{Var}(X_1)&lt;\infty,\]</span></p>
+<p><span class="math display">\[E[X_1]=\mu,\qquad0&lt;\sigma^2=\operatorname{Var}(X_1)&lt;\infty,\]</span></p>
 <p>then</p>
 <p><span class="math display">\[
 \sqrt n\,\frac{\bar X_n-\mu}{\sigma}
@@ -1135,8 +1142,18 @@ Show answer
 \]</span></p>
 </div>
 <p>This is Theorem 9.1 with <span class="math inline">\(k_n=n\)</span> and <span class="math inline">\(X_{nj}=X_j\)</span>.</p>
-</section>
-<section id="iid-lindeberg-follows-from-finite-variance" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<section id="iid-lindeberg-follows-from-finite-variance" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="iid-lindeberg-follows-from-finite-variance">IID Lindeberg follows from finite variance</h3>
 <p>Here <span class="math inline">\(\sigma_n^2=n\sigma^2\)</span>, and Lindeberg becomes</p>
 <p><span class="math display">\[
@@ -1144,6 +1161,9 @@ Show answer
 \mathbf1\{|X_1-\mu|&gt;\varepsilon\sigma\sqrt n\}\right]\to0.
 \]</span></p>
 <p>The indicator tends to zero almost surely and the integrand is dominated by the integrable variable <span class="math inline">\((X_1-\mu)^2\)</span>. DCT proves the claim.</p>
+</section>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1163,7 +1183,7 @@ Example or application
 <p><strong>Retrieval check.</strong></p>
 <p>Does the IID CLT require <span class="math inline">\(E|X_1|^3&lt;\infty\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1172,7 +1192,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;A finite, positive variance is enough. Higher moments support rate refinements such as Berry-Esseen bounds, not the basic CLT.</p>
 </div>
@@ -1200,7 +1220,7 @@ Assumption check
 <h3 class="anchored" data-anchor-id="corollary-9.4-multivariate-iid-clt">Corollary 9.4: multivariate IID CLT</h3>
 <div class="theorem-box">
 <p>Let <span class="math inline">\(X_i\in\mathbb R^k\)</span> be IID with</p>
-<p><span class="math display">\[EX_i=\mu\in\mathbb R^k,\qquad
+<p><span class="math display">\[E[X_i]=\mu\in\mathbb R^k,\qquad
 \Sigma=\operatorname{Var}(X_i)\]</span></p>
 <p>finite. Then</p>
 <p><span class="math display">\[
@@ -1209,8 +1229,18 @@ Assumption check
 \]</span></p>
 </div>
 <p><span class="math inline">\(\Sigma\)</span> may be singular.</p>
-</section>
-<section id="multivariate-proof-by-cramér-wold" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<section id="multivariate-proof-by-cramér-wold" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="multivariate-proof-by-cramér-wold">Multivariate proof by Cramér-Wold</h3>
 <p>For fixed <span class="math inline">\(c\in\mathbb R^k\)</span>,</p>
 <p><span class="math display">\[
@@ -1224,9 +1254,12 @@ c^\top\frac1{\sqrt n}\sum_{i=1}^n(X_i-\mu)
 \]</span></p>
 <p>Cramér-Wold yields the vector result.</p>
 </section>
+</div>
+</div>
+</section>
 <section id="singular-covariance-is-allowed" class="level3">
 <h3 class="anchored" data-anchor-id="singular-covariance-is-allowed">Singular covariance is allowed</h3>
-<p>Let <span class="math inline">\(X_i=(Z_i,2Z_i)^\top\)</span> with <span class="math inline">\(EZ_i=0\)</span> and <span class="math inline">\(\operatorname{Var}(Z_i)=1\)</span>. Then</p>
+<p>Let <span class="math inline">\(X_i=(Z_i,2Z_i)^\top\)</span> with <span class="math inline">\(E[Z_i]=0\)</span> and <span class="math inline">\(\operatorname{Var}(Z_i)=1\)</span>. Then</p>
 <p><span class="math display">\[
 \Sigma=\begin{pmatrix}1&amp;2\\2&amp;4\end{pmatrix}
 \]</span></p>
@@ -1238,7 +1271,7 @@ c^\top\frac1{\sqrt n}\sum_{i=1}^n(X_i-\mu)
 <p><strong>Retrieval check.</strong></p>
 <p>Does the multivariate CLT fail if some nonzero <span class="math inline">\(c\)</span> satisfies <span class="math inline">\(c^\top\Sigma c=0\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1247,7 +1280,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;That projection is constant almost surely after centering and has a degenerate normal limit. Nonsingularity is not required.</p>
 </div>
@@ -1259,7 +1292,7 @@ Show answer
 <h2 class="anchored" data-anchor-id="studentization-and-asymptotic-normality">Studentization and asymptotic normality</h2>
 <section id="example-21-why-studentize" class="level3">
 <h3 class="anchored" data-anchor-id="example-21-why-studentize">Example 21: why studentize?</h3>
-<p>Suppose <span class="math inline">\(Y_i\)</span> are IID with <span class="math inline">\(EY_i=0\)</span> and <span class="math inline">\(0&lt;\sigma^2=\operatorname{Var}(Y_i)&lt;\infty\)</span>. Define</p>
+<p>Suppose <span class="math inline">\(Y_i\)</span> are IID with <span class="math inline">\(E[Y_i]=0\)</span> and <span class="math inline">\(0&lt;\sigma^2=\operatorname{Var}(Y_i)&lt;\infty\)</span>. Define</p>
 <p><span class="math display">\[
 \bar Y_n=\frac1n\sum_{i=1}^nY_i,\qquad
 S_n^2=\frac1{n-1}\sum_{i=1}^n(Y_i-\bar Y_n)^2.
@@ -1279,17 +1312,28 @@ S_n^2=\frac{n}{n-1}
 \left(\frac1n\sum_{i=1}^nY_i^2-\bar Y_n^2\right).
 \]</span></p>
 <p>This replaces the incorrect squared expression in the source notes.</p>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="prove-variance-consistency" class="level3">
 <h3 class="anchored" data-anchor-id="prove-variance-consistency">Prove variance consistency</h3>
 <p>Finite variance gives <span class="math inline">\(E[Y_1^2]&lt;\infty\)</span>. The WLLN and CMT imply</p>
 <p><span class="math display">\[
 \frac1n\sum_{i=1}^nY_i^2\xrightarrow{p}E[Y_1^2],
 \qquad
-\bar Y_n^2\xrightarrow{p}(EY_1)^2=0.
+\bar Y_n^2\xrightarrow{p}(E[Y_1])^2=0.
 \]</span></p>
 <p>Since <span class="math inline">\(n/(n-1)\to1\)</span>,</p>
-<p><span class="math display">\[S_n^2\xrightarrow{p}E[Y_1^2]-(EY_1)^2=\sigma^2.\]</span></p>
+<p><span class="math display">\[S_n^2\xrightarrow{p}E[Y_1^2]-(E[Y_1])^2=\sigma^2.\]</span></p>
 <p>No fourth moment is needed.</p>
 </section>
 <section id="studentization-by-cmt-and-slutsky" class="level3">
@@ -1304,6 +1348,10 @@ S_n^2=\frac{n}{n-1}
 <p>Since <span class="math inline">\(\sigma/S_n\xrightarrow{p}1\)</span>, Slutsky yields</p>
 <p><span class="math display">\[\frac{\sqrt n\bar Y_n}{S_n}\xrightarrow{d}N(0,1).\]</span></p>
 </section>
+</div>
+</div>
+</div>
+</section>
 <section id="finite-sample-zero-denominator" class="level3">
 <h3 class="anchored" data-anchor-id="finite-sample-zero-denominator">Finite-sample zero denominator</h3>
 <p>If <span class="math inline">\(S_n=0\)</span> in a finite sample, define the statistic arbitrarily on that event. Since <span class="math inline">\(S_n\xrightarrow{p}\sigma&gt;0\)</span>, <span class="math inline">\(P(S_n=0)\to0\)</span>, so this convention does not change the limit.</p>
@@ -1313,7 +1361,7 @@ S_n^2=\frac{n}{n-1}
 <p><strong>Retrieval check.</strong></p>
 <p>Name the tools establishing <span class="math inline">\(S_n^2\xrightarrow{p}\sigma^2\)</span>, <span class="math inline">\(S_n\xrightarrow{p}\sigma\)</span>, and the final studentized limit.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1322,7 +1370,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>WLLN plus algebra and CMT; then CMT for the square root; then the scalar CLT and Slutsky for the studentized statistic.</p>
 </div>
@@ -1399,7 +1447,7 @@ F_{Z_n}(x)=F_{Y_n}(\mu_n+\sigma_nx),
 <p><strong>Retrieval check.</strong></p>
 <p>Why can <span class="math inline">\(y_n\)</span> vary arbitrarily with <span class="math inline">\(n\)</span> in the preceding conclusion?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1408,7 +1456,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pólya controls the supremum over every threshold. The error at a particular moving threshold is bounded by that uniform error.</p>
 </div>
@@ -1460,7 +1508,7 @@ Assumption check
 <p><strong>Retrieval check.</strong></p>
 <p>What quantifier is missing if asymptotic normality is stated using a sequence of cutoffs <span class="math inline">\(y_n\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1469,7 +1517,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The approximation must hold for every deterministic real sequence <span class="math inline">\(\{y_n\}\)</span>, equivalently uniformly over all real cutoffs.</p>
 </div>
@@ -1496,7 +1544,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Can <span class="math inline">\(k_n\to\infty\)</span> while Feller’s condition fails?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1505,7 +1553,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Yes. One asset can retain a fixed fraction of portfolio variance even while arbitrarily many negligible assets are added.</p>
 </div>
@@ -1550,7 +1598,7 @@ Assumption check
 <p><strong>Retrieval check.</strong></p>
 <p>Suppose <span class="math inline">\(X_{nj}=\lambda_jF_n+\varepsilon_{nj}\)</span>, where the common factor <span class="math inline">\(F_n\)</span> appears in every summand. Which assumption of Theorem 9.1 fails?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1559,7 +1607,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Row-wise independence fails because every pair of summands shares the same random factor.</p>
 </div>
@@ -1631,8 +1679,18 @@ Show answer
 <li>Studentization is not an exact finite-sample <span class="math inline">\(t\)</span> result outside normal sampling.</li>
 <li>One threshold sequence cannot define asymptotic normality.</li>
 </ul>
-</section>
-<section id="proof-blueprint" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<section id="proof-blueprint" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-blueprint">Proof blueprint</h3>
 <div class="columns">
 <div class="column" style="width:33%;">
@@ -1647,10 +1705,13 @@ Show answer
 </div>
 </div>
 </section>
+</div>
+</div>
+</section>
 <section id="exit-ticket-1-state-lindeberg-precisely" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-1-state-lindeberg-precisely">Exit ticket 1: state Lindeberg precisely</h3>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1659,7 +1720,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For every <span class="math inline">\(\varepsilon&gt;0\)</span>, the sum of truncated centered second moments above <span class="math inline">\(\varepsilon\sigma_n\)</span>, divided by total variance <span class="math inline">\(\sigma_n^2\)</span>, must converge to zero.</p>
 </div>
@@ -1669,7 +1730,7 @@ Show answer
 <section id="exit-ticket-2-rebuild-the-characteristic-function-proof" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-2-rebuild-the-characteristic-function-proof">Exit ticket 2: rebuild the characteristic-function proof</h3>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1678,7 +1739,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Normalize; Taylor-expand each characteristic function; use the small/large split and Lindeberg; use independence, Lemma 9.2, and Feller to combine factors; recognize <span class="math inline">\(e^{-t^2/2}\)</span> and apply Lévy-Cramér.</p>
 </div>
@@ -1688,7 +1749,7 @@ Show answer
 <section id="exit-ticket-3-prove-studentization" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-3-prove-studentization">Exit ticket 3: prove studentization</h3>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1697,7 +1758,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use <span class="math inline">\(S_n^2=\frac n{n-1}(n^{-1}\sum_iY_i^2-\bar Y_n^2)\xrightarrow{p}\sigma^2\)</span>, then CMT gives <span class="math inline">\(S_n\xrightarrow{p}\sigma\)</span>. Multiply the CLT statistic by <span class="math inline">\(\sigma/S_n\xrightarrow{p}1\)</span> and apply Slutsky.</p>
 </div>

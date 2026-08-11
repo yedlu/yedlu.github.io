@@ -695,33 +695,15 @@ Source: ECON 8002 Lecture 7, pp.&nbsp;41–43. Example 20’s necessity argument
 </section>
 <section id="course-map" class="level3">
 <h3 class="anchored" data-anchor-id="course-map">Course map</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>1–4</th>
-<th>5</th>
-<th>6</th>
-<th><strong>7</strong></th>
-<th>8–9</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>probability and conditioning</td>
-<td>modes</td>
-<td>transformations</td>
-<td><strong>LLNs</strong></td>
-<td>CLTs and inference</td>
-</tr>
-</tbody>
-</table>
+<div class="course-sequence">
+<ol type="1">
+<li>Lectures 1–4: probability and conditioning</li>
+<li>Lecture 5: convergence modes</li>
+<li>Lecture 6: transformations</li>
+<li><strong>Lecture 7: laws of large numbers</strong> <em>(current lecture)</em></li>
+<li>Lectures 8–9: weak limits, central limit theorems, and inference</li>
+</ol>
+</div>
 </section>
 <section id="prerequisite-retrieval" class="level3">
 <h3 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h3>
@@ -881,7 +863,18 @@ Show answer
 </div>
 </div>
 </div>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="proof-strategy-make-dispersion-vanish" class="level3">
 <h3 class="anchored" data-anchor-id="proof-strategy-make-dispersion-vanish">Proof strategy: make dispersion vanish</h3>
 <p>Set <span class="math inline">\(S_n=\sum_{i=1}^nX_i\)</span>. Chebyshev reduces the task to showing</p>
@@ -899,10 +892,14 @@ Show answer
 <p><span class="math display">\[\operatorname{Var}(S_n)=\sum_{i=1}^n\operatorname{Var}(X_i)
 \le nC,\]</span></p>
 <p>because covariances vanish under independence. Therefore the preceding probability is at most <span class="math inline">\(C/(\varepsilon^2n)\to0\)</span>.</p>
+</section>
+</div>
+</div>
+</div>
 <p><strong>Retrieval check.</strong></p>
 <p>Which equality fails if the observations are correlated?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -911,7 +908,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\operatorname{Var}(S_n)=\sum_i\operatorname{Var}(X_i)\)</span>; covariance terms remain.</p>
 </div>
@@ -933,7 +930,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Does a WLLN by itself imply <span class="math inline">\(\sqrt n(\bar X_n-\mu)=O_p(1)\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -942,7 +939,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;That is a rate claim requiring stronger information, often a CLT.</p>
 </div>
@@ -958,7 +955,18 @@ Show answer
 <p><span class="math display">\[\frac{\sum_{i=1}^n(X_i-E[X_i])}{\sigma_n}\xrightarrow{d}N(0,1),
 \qquad \sigma_n^2=\operatorname{Var}(S_n).\]</span></p>
 <p>Then the centered average converges in probability to zero iff <span class="math inline">\(\sigma_n/n\to0\)</span>.</p>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="sufficiency-use-slutsky" class="level3">
 <h3 class="anchored" data-anchor-id="sufficiency-use-slutsky">Sufficiency: use Slutsky</h3>
 <p>If <span class="math inline">\(\sigma_n/n\to0\)</span>, then</p>
@@ -972,7 +980,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>What compactness step is needed after selecting <span class="math inline">\(n_k\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -981,7 +989,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Extract a further subsequence on which <span class="math inline">\(\sigma_{n_k}/n_k\to\psi\in[\varepsilon,\infty]\)</span> in the extended nonnegative line.</p>
 </div>
@@ -998,6 +1006,10 @@ Show answer
 <section id="necessity-infinite-subsequential-limit" class="level3">
 <h3 class="anchored" data-anchor-id="necessity-infinite-subsequential-limit">Necessity: infinite subsequential limit</h3>
 <p>If <span class="math inline">\(\sigma_{n_k}/n_k\to\infty\)</span>, choose <span class="math inline">\(M&gt;0\)</span> with <span class="math inline">\(P(|Z|&gt;2M)&gt;0\)</span>. By c.d.f. convergence, the standardized sums exceed <span class="math inline">\(M\)</span> in magnitude with probability bounded away from zero eventually; multiplying by the diverging scale rules out convergence in probability to zero.</p>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="why-this-repair-matters" class="level3">
 <h3 class="anchored" data-anchor-id="why-this-repair-matters">Why this repair matters</h3>
@@ -1019,7 +1031,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>In the Chebyshev proof, what order must <span class="math inline">\(\operatorname{Var}(S_n)\)</span> have relative to <span class="math inline">\(n^2\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1028,7 +1040,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It must be <span class="math inline">\(o(n^2)\)</span>. Uniformly bounded individual variances under independence give the stronger <span class="math inline">\(O(n)\)</span> bound.</p>
 </div>
@@ -1093,8 +1105,18 @@ Counterexample or invalid inference
 </ul>
 </div>
 </div>
-</section>
-<section id="lln-proof-blueprint" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<section id="lln-proof-blueprint" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="lln-proof-blueprint">LLN proof blueprint</h3>
 <ol type="1">
 <li>State the average and its centering.</li>
@@ -1104,6 +1126,9 @@ Counterexample or invalid inference
 <li>Check its order relative to <span class="math inline">\(n^2\)</span>.</li>
 <li>For a CLT argument, separate the normalized random term from its deterministic scale.</li>
 </ol>
+</section>
+</div>
+</div>
 </section>
 <section id="exit-ticket-1" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-1">Exit ticket 1</h3>

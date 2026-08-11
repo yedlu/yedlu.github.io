@@ -695,45 +695,19 @@ Primary source: ECON 8002 Lecture 8, pp.&nbsp;44–49. This page completes omitt
 </section>
 <section id="course-map" class="level3">
 <h3 class="anchored" data-anchor-id="course-map">Course map</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th><strong>8</strong></th>
-<th>9</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>measure spaces</td>
-<td>integration and RN</td>
-<td>distribution properties</td>
-<td>conditioning</td>
-<td>convergence modes</td>
-<td>CMT and Slutsky</td>
-<td>LLN</td>
-<td><strong>weak limits and delta method</strong></td>
-<td>CLT and inference</td>
-</tr>
-</tbody>
-</table>
+<div class="course-sequence">
+<ol type="1">
+<li>Measure spaces</li>
+<li>Integration and Radon–Nikodym derivatives</li>
+<li>Distribution properties</li>
+<li>Conditioning</li>
+<li>Convergence modes</li>
+<li>Continuous mapping and Slutsky</li>
+<li>Laws of large numbers</li>
+<li><strong>Weak limits and the delta method</strong> <em>(current lecture)</em></li>
+<li>Central limit theorems and inference</li>
+</ol>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -910,8 +884,18 @@ Show answer
 </ol>
 </div>
 <p>Part 1 is the finite-dimensional form of Prokhorov’s theorem.</p>
-</section>
-<section id="why-one-subsequential-limit-is-enough" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<section id="why-one-subsequential-limit-is-enough" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="why-one-subsequential-limit-is-enough">Why one subsequential limit is enough</h3>
 <p>Suppose <span class="math inline">\(P_n\)</span> did not converge weakly to <span class="math inline">\(P\)</span>. Then some weak neighborhood <span class="math inline">\(U\)</span> of <span class="math inline">\(P\)</span> would contain infinitely few <span class="math inline">\(P_n\)</span>.</p>
 <ol type="1">
@@ -920,6 +904,9 @@ Show answer
 <li>Its limit must be <span class="math inline">\(P\)</span> by hypothesis.</li>
 <li>A sequence converging to <span class="math inline">\(P\)</span> must eventually lie in <span class="math inline">\(U\)</span>, a contradiction.</li>
 </ol>
+</section>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example or application">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -952,7 +939,7 @@ Example or application
 <p><strong>Retrieval check.</strong></p>
 <p>Which c.d.f. property can fail in Helly’s theorem when the sequence is not tight?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -961,7 +948,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Total mass can be lost: the selected limit need not approach one as <span class="math inline">\(x\to+\infty\)</span> or zero as <span class="math inline">\(x\to-\infty\)</span>.</p>
 </div>
@@ -1029,7 +1016,7 @@ Assumption check
 <p><strong>Retrieval check.</strong></p>
 <p>If <span class="math inline">\(X\sim N(0,1)\)</span>, is <span class="math inline">\(B=(-\infty,2]\)</span> a continuity set of <span class="math inline">\(P_X\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1038,13 +1025,24 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Yes. Its boundary is <span class="math inline">\(\{2\}\)</span>, and a continuous distribution assigns zero probability to every singleton.</p>
 </div>
 </div>
 </div>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="complete-portmanteau-proof-map" class="level3">
 <h3 class="anchored" data-anchor-id="complete-portmanteau-proof-map">Complete Portmanteau proof map</h3>
 <div class="theorem-box">
@@ -1112,10 +1110,14 @@ P(X\in B^\circ)\le\liminf_nP(X_n\in B)
 <p>If <span class="math inline">\(x\)</span> is a continuity point of the multivariate c.d.f., then <span class="math inline">\(P_X(\partial B_x)=0\)</span>. Thus <span class="math inline">\(B_x\)</span> is a <span class="math inline">\(P_X\)</span>-continuity set. Starting from condition (7), convergence on continuity sets gives</p>
 <p><span class="math display">\[F_{X_n}(x)\to F_X(x).\]</span></p>
 <p>This is exactly c.d.f. convergence at every continuity point, condition (1), so it proves the promised arrow <span class="math inline">\((7)\Rightarrow(1)\)</span> and closes the cycle.</p>
+</section>
+</div>
+</div>
+</div>
 <p><strong>Retrieval check.</strong></p>
 <p>If <span class="math inline">\(C\)</span> is closed, complete the statement: <span class="math inline">\(\limsup_nP(X_n\in C)\ \square\ P(X\in C)\)</span>.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1124,7 +1126,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The symbol is <span class="math inline">\(\le\)</span>. Closed sets may retain boundary mass that disappears in the limit, so Portmanteau gives an upper bound.</p>
 </div>
@@ -1172,7 +1174,18 @@ X_n\xrightarrow{d}X
 \]</span></p>
 </div>
 <p>Necessity is an application of Portmanteau. Sufficiency requires showing that pointwise Fourier convergence cannot hide mass escaping to infinity.</p>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="lévy-necessity-use-real-test-functions" class="level3">
 <h3 class="anchored" data-anchor-id="lévy-necessity-use-real-test-functions">Lévy necessity: use real test functions</h3>
 <p>For fixed <span class="math inline">\(t\)</span>,</p>
@@ -1183,22 +1196,12 @@ X_n\xrightarrow{d}X
 </section>
 <section id="lévy-sufficiency-proof-map" class="level3">
 <h3 class="anchored" data-anchor-id="lévy-sufficiency-proof-map">Lévy sufficiency: proof map</h3>
-<ol class="proof-map">
-<li>
-Use a symmetric Fourier average near zero to prove tightness.
-</li>
-<li>
-Extract a weakly convergent further subsequence.
-</li>
-<li>
-Apply the necessity direction to its characteristic functions.
-</li>
-<li>
-Use uniqueness to identify the subsequential limit as <span class="math inline">\(P_X\)</span>.
-</li>
-<li>
-Use Proposition 8.1(ii) to recover convergence of the full sequence.
-</li>
+<ol type="1">
+<li>Use a symmetric Fourier average near zero to prove tightness.</li>
+<li>Extract a weakly convergent further subsequence.</li>
+<li>Apply the necessity direction to its characteristic functions.</li>
+<li>Use uniqueness to identify the subsequential limit as <span class="math inline">\(P_X\)</span>.</li>
+<li>Use Proposition 8.1(ii) to recover convergence of the full sequence.</li>
 </ol>
 <p>The delicate step is uniform tail control.</p>
 </section>
@@ -1231,12 +1234,16 @@ P(|X_n|&gt;2/u)
 <p>The original hypothesis gives the same limit <span class="math inline">\(\varphi_X(t)\)</span>. Thus <span class="math inline">\(\varphi_P=\varphi_X\)</span>, and uniqueness implies <span class="math inline">\(P=P_X\)</span>.</p>
 <p>Every convergent subsequence has limit <span class="math inline">\(P_X\)</span>, so <span class="math inline">\(X_n\xrightarrow{d}X\)</span>.</p>
 </section>
+</div>
+</div>
+</div>
+</section>
 <section id="quick-quiz-6-locate-tightness" class="level3">
 <h3 class="anchored" data-anchor-id="quick-quiz-6-locate-tightness">Quick quiz 6: locate tightness</h3>
 <p><strong>Retrieval check.</strong></p>
 <p>Why does pointwise convergence of characteristic functions not finish the sufficiency proof immediately?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1245,7 +1252,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>One must first ensure that the sequence has a weakly convergent subsequence. The Fourier bound supplies tightness, which supplies that subsequence.</p>
 </div>
@@ -1264,8 +1271,18 @@ c^\top X_n\xrightarrow{d}c^\top X
 \]</span></p>
 </div>
 <p>Every one-dimensional direction must converge. Checking only the coordinates does not identify the dependence structure.</p>
-</section>
-<section id="cramér-wold-proof" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<section id="cramér-wold-proof" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="cramér-wold-proof">Cramér-Wold proof</h3>
 <p>For <span class="math inline">\(u\in\mathbb R\)</span> and <span class="math inline">\(c\in\mathbb R^k\)</span>,</p>
 <p><span class="math display">\[\varphi_{c^\top X_n}(u)=\varphi_{X_n}(uc).\]</span></p>
@@ -1275,6 +1292,9 @@ c^\top X_n\xrightarrow{d}c^\top X
 <li>Set <span class="math inline">\(u=1\)</span> and <span class="math inline">\(c=t\)</span> to obtain convergence at every <span class="math inline">\(t\in\mathbb R^k\)</span>.</li>
 <li>Lévy-Cramér then gives <span class="math inline">\(X_n\xrightarrow{d}X\)</span>.</li>
 </ul>
+</section>
+</div>
+</div>
 </section>
 <section id="coordinates-alone-are-not-enough" class="level3">
 <h3 class="anchored" data-anchor-id="coordinates-alone-are-not-enough">Coordinates alone are not enough</h3>
@@ -1298,7 +1318,7 @@ Counterexample or invalid inference
 <p><strong>Retrieval check.</strong></p>
 <p>To apply Cramér-Wold in <span class="math inline">\(\mathbb R^3\)</span>, is it enough to check <span class="math inline">\(c=e_1,e_2,e_3\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1307,7 +1327,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;Those directions identify only the marginals. The theorem requires every fixed <span class="math inline">\(c\in\mathbb R^3\)</span> to recover the joint law.</p>
 </div>
@@ -1326,8 +1346,18 @@ Show answer
 <p><span class="math display">\[\int|f_n-f|\,d\lambda\to0.\]</span></p>
 </div>
 <p>The condition that <span class="math inline">\(f\)</span> integrate to one prevents mass from disappearing.</p>
-</section>
-<section id="scheffé-the-corrected-proof" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<section id="scheffé-the-corrected-proof" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="scheffé-the-corrected-proof">Scheffé: the corrected proof</h3>
 <p>Since <span class="math inline">\((f-f_n)^+\le f\)</span> and <span class="math inline">\((f-f_n)^+\to0\)</span> almost everywhere, DCT gives</p>
 <p><span class="math display">\[\int(f-f_n)^+\,d\lambda\to0.\]</span></p>
@@ -1338,6 +1368,9 @@ Show answer
 \int|f_n-f|\,d\lambda
 =2\int(f-f_n)^+\,d\lambda\to0.
 \]</span></p>
+</section>
+</div>
+</div>
 </section>
 <section id="scheffé-is-stronger-than-weak-convergence" class="level3">
 <h3 class="anchored" data-anchor-id="scheffé-is-stronger-than-weak-convergence">Scheffé is stronger than weak convergence</h3>
@@ -1355,7 +1388,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Why is the assumption “<span class="math inline">\(f\)</span> is a density” essential in Scheffé’s theorem?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1364,7 +1397,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pointwise convergence can lose mass. Equality of the total integrals forces the positive and negative errors to balance and makes <span class="math inline">\(L^1\)</span> convergence possible.</p>
 </div>
@@ -1393,7 +1426,18 @@ a_n[g(X_n)-g(c)]
 \xrightarrow{d}\nabla g(c)^\top Y.
 \]</span></p>
 </div>
-</section>
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="differentiability-supplies-the-exact-remainder" class="level3">
 <h3 class="anchored" data-anchor-id="differentiability-supplies-the-exact-remainder">Differentiability supplies the exact remainder</h3>
 <p>Differentiability at <span class="math inline">\(c\)</span> means</p>
@@ -1419,12 +1463,16 @@ a_n[g(X_n)-g(c)]
 <p><span class="math display">\[a_nr(X_n-c)=O_p(1)o_p(1)=o_p(1).\]</span></p>
 <p>Cramér-Wold handles the linear term; Slutsky adds the negligible remainder.</p>
 </section>
+</div>
+</div>
+</div>
+</section>
 <section id="quick-quiz-9-first-order-transformation" class="level3">
 <h3 class="anchored" data-anchor-id="quick-quiz-9-first-order-transformation">Quick quiz 9: first-order transformation</h3>
 <p><strong>Retrieval check.</strong></p>
 <p>If <span class="math inline">\(\sqrt n(\hat\theta_n-\theta)\xrightarrow{d}N(0,V)\)</span> and <span class="math inline">\(\theta&gt;0\)</span>, find the limit of <span class="math inline">\(\sqrt n(\log\hat\theta_n-\log\theta)\)</span>.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1433,7 +1481,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Since <span class="math inline">\(g'(\theta)=1/\theta\)</span>, <span class="math inline">\(\sqrt n(\log\hat\theta_n-\log\theta)\xrightarrow{d}N(0,V/\theta^2)\)</span>.</p>
 </div>
@@ -1451,8 +1499,18 @@ a_n^m[g(X_n)-g(c)]
 \frac1{m!}D^mg(c)[Y,\ldots,Y].
 \]</span></p>
 <p>Continuous <span class="math inline">\(m\)</span>th partial derivatives on a neighborhood are a standard sufficient condition for the required remainder. A nonzero <span class="math inline">\(D^mg(c)\)</span> makes the leading term nontrivial.</p>
-</section>
-<section id="higher-order-remainder-proof" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<section id="higher-order-remainder-proof" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="higher-order-remainder-proof">Higher-order remainder proof</h3>
 <p>Put <span class="math inline">\(H_n=a_n(X_n-c)\)</span>. Weak convergence gives <span class="math inline">\(H_n=O_p(1)\)</span>, and <span class="math inline">\(X_n\xrightarrow{p}c\)</span>. With the quotient defined as zero at <span class="math inline">\(h=0\)</span>,</p>
 <p><span class="math display">\[
@@ -1462,6 +1520,9 @@ a_n^m r(X_n-c)
 =O_p(1)o_p(1)=o_p(1).
 \]</span></p>
 <p>CMT sends the continuous <span class="math inline">\(m\)</span>-linear leading term to <span class="math inline">\(m!^{-1}D^mg(c)[Y,\ldots,Y]\)</span>. Slutsky adds the negligible remainder.</p>
+</section>
+</div>
+</div>
 </section>
 <section id="zero-gradient-first-order-can-say-nothing" class="level3">
 <h3 class="anchored" data-anchor-id="zero-gradient-first-order-can-say-nothing">Zero gradient: first order can say nothing</h3>
@@ -1476,7 +1537,7 @@ a_n^m r(X_n-c)
 <p><strong>Retrieval check.</strong></p>
 <p>If <span class="math inline">\(g'(c)=0\)</span> but <span class="math inline">\(g''(c)\ne0\)</span>, what scaling is suggested when <span class="math inline">\(\sqrt n(X_n-c)=O_p(1)\)</span>?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1485,7 +1546,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use <span class="math inline">\(n\)</span>, because <span class="math inline">\((X_n-c)^2=O_p(n^{-1})\)</span>. The second-order delta method produces <span class="math inline">\(\tfrac12g''(c)Y^2\)</span>.</p>
 </div>
@@ -1593,8 +1654,18 @@ Assumption check
 <li>A zero gradient does not prove the transformed statistic has no uncertainty.</li>
 <li>Nonsingularity of <span class="math inline">\(\Sigma\)</span> is not required for a linear normal image.</li>
 </ul>
-</section>
-<section id="proof-blueprints" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<section id="proof-blueprints" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-blueprints">Proof blueprints</h3>
 <div class="columns">
 <div class="column" style="width:33%;">
@@ -1609,12 +1680,15 @@ Assumption check
 </div>
 </div>
 </section>
+</div>
+</div>
+</section>
 <section id="quick-quiz-12-theorem-selection" class="level3">
 <h3 class="anchored" data-anchor-id="quick-quiz-12-theorem-selection">Quick quiz 12: theorem selection</h3>
 <p><strong>Retrieval check.</strong></p>
 <p>Match each task to a theorem: identify a vector limit from every projection; upgrade density convergence to uniform probability approximation; transform a <span class="math inline">\(\sqrt n\)</span>-scaled estimator through a smooth nonlinear map.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1623,7 +1697,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Cramér-Wold; Scheffé; the delta method, respectively.</p>
 </div>
@@ -1633,7 +1707,7 @@ Show answer
 <section id="exit-ticket-1-state-portmanteau" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-1-state-portmanteau">Exit ticket 1: state Portmanteau</h3>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1642,7 +1716,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>State c.d.f. convergence, bounded-continuous expectation convergence, the open-set <span class="math inline">\(\liminf\)</span> inequality, and the closed-set <span class="math inline">\(\limsup\)</span> inequality. For probability convergence on a Borel set, add <span class="math inline">\(P(X\in\partial B)=0\)</span>.</p>
 </div>
@@ -1652,7 +1726,7 @@ Show answer
 <section id="exit-ticket-2-rebuild-lévy-sufficiency" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-2-rebuild-lévy-sufficiency">Exit ticket 2: rebuild Lévy sufficiency</h3>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1661,7 +1735,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Fourier averaging proves eventual tail control; finitely many early laws are absorbed into a larger compact set; tightness gives a convergent subsequence; characteristic-function uniqueness identifies its limit; the subsequence criterion gives convergence of the full sequence.</p>
 </div>
@@ -1671,7 +1745,7 @@ Show answer
 <section id="exit-ticket-3-prove-the-delta-remainder-is-negligible" class="level3">
 <h3 class="anchored" data-anchor-id="exit-ticket-3-prove-the-delta-remainder-is-negligible">Exit ticket 3: prove the delta remainder is negligible</h3>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1680,7 +1754,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Write</p>
 <p><span class="math display">\[a_nr(X_n-c)=a_n\|X_n-c\|\frac{r(X_n-c)}{\|X_n-c\|}.\]</span></p>

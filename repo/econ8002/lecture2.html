@@ -688,45 +688,19 @@ window.Quarto = {
 </section>
 <section id="course-map" class="level3">
 <h3 class="anchored" data-anchor-id="course-map">Course map</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Measure spaces</td>
-<td><strong>Integration and RN</strong></td>
-<td>Distribution properties</td>
-<td>Conditional expectation</td>
-<td>Convergence modes</td>
-<td>CMT and Slutsky</td>
-<td>LLN</td>
-<td>Weak limits and delta method</td>
-<td>CLT and inference</td>
-</tr>
-</tbody>
-</table>
+<div class="course-sequence">
+<ol type="1">
+<li>Measure spaces</li>
+<li><strong>Integration and Radon–Nikodym derivatives</strong> <em>(current lecture)</em></li>
+<li>Distribution properties</li>
+<li>Conditional expectation</li>
+<li>Convergence modes</li>
+<li>Continuous mapping and Slutsky</li>
+<li>Laws of large numbers</li>
+<li>Weak limits and the delta method</li>
+<li>Central limit theorems and inference</li>
+</ol>
+</div>
 </section>
 <section id="prerequisite-retrieval" class="level3">
 <h3 class="anchored" data-anchor-id="prerequisite-retrieval">Prerequisite retrieval</h3>
@@ -899,8 +873,18 @@ Show answer
 <div class="theorem-box">
 <p>If measurable <span class="math inline">\(f_n\)</span> satisfy <span class="math inline">\(f_n\to f\)</span> a.e. and one measurable, integrable <span class="math inline">\(g\)</span> satisfies <span class="math inline">\(|f_n|\le g\)</span> a.e. for every <span class="math inline">\(n\)</span>, then <span class="math inline">\(f\)</span> is measurable and integrable and <span class="math display">\[\lim_{n\to\infty}\int f_n\,d\mu=\int f\,d\mu.\]</span></p>
 </div>
-</section>
-<section id="dct-proof-map" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<section id="dct-proof-map" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="dct-proof-map">DCT proof map</h3>
 <div class="proof-map">
 <ol type="1">
@@ -910,10 +894,13 @@ Show answer
 <li>The bounds meet.</li>
 </ol>
 </div>
+</section>
+</div>
+</div>
 <p><strong>Retrieval check.</strong></p>
 <p>For <span class="math inline">\(f_n(x)=x^n\)</span> on <span class="math inline">\([0,1]\)</span>, name an integrable dominator.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -922,7 +909,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(g(x)=1\)</span>. Thus DCT gives <span class="math inline">\(\int_0^1x^n dx\to0\)</span>.</p>
 </div>
@@ -938,14 +925,27 @@ Show answer
 <section id="differentiation-under-the-integral-sign" class="level3">
 <h3 class="anchored" data-anchor-id="differentiation-under-the-integral-sign">Differentiation under the integral sign</h3>
 <p>Fix an open interval <span class="math inline">\(I\)</span>. Assume <span class="math inline">\(h(\cdot,t)\)</span> is measurable for every <span class="math inline">\(t\in I\)</span>, <span class="math inline">\(h(\cdot,t_*)\)</span> is integrable for some <span class="math inline">\(t_*\in I\)</span>, and there is one measurable <span class="math inline">\(N\)</span> with <span class="math inline">\(\mu(N)=0\)</span> such that, for every <span class="math inline">\(\omega\notin N\)</span>, <span class="math inline">\(t\mapsto h(\omega,t)\)</span> is differentiable throughout <span class="math inline">\(I\)</span>. Assume one <span class="math inline">\(g\in L^1(\mu)\)</span> satisfies <span class="math display">\[|\partial_t h(\omega,t)|\le g(\omega)\quad\text{for every }t\in I,\ \omega\notin N.\]</span> Then <span class="math inline">\(H(t)=\int h(\omega,t)\,d\mu\)</span> is finite and differentiable on <span class="math inline">\(I\)</span>, with <span class="math display">\[H'(t)=\int\partial_th(\omega,t)\,d\mu.\]</span></p>
-</section>
-<section id="why-dct-proves-it" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<section id="why-dct-proves-it" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="why-dct-proves-it">Why DCT proves it</h3>
 <p>The difference quotient converges pointwise to <span class="math inline">\(\partial_th\)</span>. The mean-value theorem bounds each quotient by <span class="math inline">\(g\)</span>. DCT then passes its limit through the integral.</p>
+</section>
+</div>
+</div>
 <p><strong>Retrieval check.</strong></p>
 <p>What is the role of the mean-value theorem here?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -954,7 +954,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It turns a difference quotient into a derivative evaluated at an intermediate point, so the derivative bound supplies the DCT dominator.</p>
 </div>
@@ -969,10 +969,23 @@ Show answer
 <div class="theorem-box">
 <p>For measurable <span class="math inline">\(T:(\Omega,\mathcal F)\to(S,\mathcal G)\)</span> and measurable <span class="math inline">\(g:S\to\mathbb R\)</span>, <span class="math display">\[\int_\Omega g(T(\omega))\,d\mu(\omega)=\int_Sg(s)\,d(\mu\circ T^{-1})(s),\]</span> whenever either side exists.</p>
 </div>
-</section>
-<section id="proof-architecture-for-change-of-variables" class="level3">
+<div class="proof-extra callout callout-style-default callout-note callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<section id="proof-architecture-for-change-of-variables" class="level3 callout-body-container callout-body">
 <h3 class="anchored" data-anchor-id="proof-architecture-for-change-of-variables">Proof architecture for change of variables</h3>
 <p>Prove it for <span class="math inline">\(g=\mathbf1_B\)</span>, extend by linearity to nonnegative simple <span class="math inline">\(g\)</span>, use MCT for nonnegative measurable <span class="math inline">\(g\)</span>, and subtract positive/negative parts for signed <span class="math inline">\(g\)</span>. This is why Lecture 1 built simple approximations.</p>
+</section>
+</div>
+</div>
 </section>
 <section id="expectation-depends-on-the-law" class="level3">
 <h3 class="anchored" data-anchor-id="expectation-depends-on-the-law">Expectation depends on the law</h3>
@@ -980,7 +993,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Does change of variables require <span class="math inline">\(T\)</span> to be one-to-one?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -989,7 +1002,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;It uses the induced measure <span class="math inline">\(\mu\circ T^{-1}\)</span>, not an inverse map or Jacobian formula.</p>
 </div>
@@ -1046,7 +1059,7 @@ Definition and notation
 <p><strong>Retrieval check.</strong></p>
 <p>Is <span class="math inline">\(\nu\ll\mu\)</span> symmetric?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1055,7 +1068,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>No.&nbsp;It says only that <span class="math inline">\(\mu\)</span>-null sets are also <span class="math inline">\(\nu\)</span>-null. Mutual absolute continuity requires both directions.</p>
 </div>
@@ -1138,7 +1151,7 @@ Counterexample or invalid inference
 <p><strong>Retrieval check.</strong></p>
 <p>State DCT with every assumption.</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1147,7 +1160,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If <span class="math inline">\(f_n\to f\)</span> a.e. and <span class="math inline">\(|f_n|\le g\)</span> a.e. for one integrable <span class="math inline">\(g\)</span>, then <span class="math inline">\(\int f_n d\mu\to\int f d\mu\)</span>.</p>
 </div>
@@ -1159,7 +1172,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Which theorem applies to <span class="math inline">\(0\le f_n\uparrow f\)</span> when no integrable dominator is known?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1168,7 +1181,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>MCT. Its monotonicity and nonnegativity replace domination.</p>
 </div>
@@ -1180,7 +1193,7 @@ Show answer
 <p><strong>Retrieval check.</strong></p>
 <p>Why can a discrete PMF be called a density?</p>
 <div class="answer callout callout-style-default callout-note callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1189,7 +1202,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It is the RN derivative of its probability measure with respect to counting measure.</p>
 </div>

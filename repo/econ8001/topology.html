@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0371a6d3ca612a5c9c622551febbb051.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-317a3602a608e5c64810202e2edb152a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -717,7 +717,7 @@ Definition 2.1.1: Euclidean norm and metric
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For <span class="math inline">\(x=(x_1,\ldots,x_n)^\mathsf T\in\mathbb R^n\)</span>, define <span class="math display">\[\|x\|=\left(\sum_{i=1}^n x_i^2\right)^{1/2}.\]</span> For <span class="math inline">\(x,y\in\mathbb R^n\)</span>, the Euclidean metric is <span class="math display">\[d(x,y)=\|x-y\|. \]</span> It measures distance and obeys nonnegativity, symmetry, and the triangle inequality, with <span class="math inline">\(d(x,y)=0\)</span> if and only if <span class="math inline">\(x=y\)</span>.</p>
+<p>For <span class="math inline">\(x=(x_1,\ldots,x_n)^{\mathsf{T}}\in\mathbb R^n\)</span>, define <span class="math display">\[\|x\|=\left(\sum_{i=1}^n x_i^2\right)^{1/2}.\]</span> For <span class="math inline">\(x,y\in\mathbb R^n\)</span>, the Euclidean metric is <span class="math display">\[d(x,y)=\|x-y\|. \]</span> It measures distance and obeys nonnegativity, symmetry, and the triangle inequality, with <span class="math inline">\(d(x,y)=0\)</span> if and only if <span class="math inline">\(x=y\)</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Definitions 2.2.1--2.2.4: balls, interiors, open sets, neighborhoods">
@@ -831,11 +831,26 @@ Theorems 2.3.5–2.3.7: basic sequence facts
 <ul>
 <li>A convergent sequence in <span class="math inline">\(\mathbb R^n\)</span> has a unique limit.</li>
 <li>Every subsequence of a sequence converging to <span class="math inline">\(x^*\)</span> also converges to <span class="math inline">\(x^*\)</span>.</li>
-<li>For <span class="math inline">\(x_k=(x_{k,1},\ldots,x_{k,n})^\mathsf T\)</span> and <span class="math inline">\(x^*=(x_1^*,\ldots,x_n^*)^\mathsf T\)</span>, <span class="math inline">\(x_k\to x^*\)</span> if and only if <span class="math inline">\(x_{k,i}\to x_i^*\)</span> for every <span class="math inline">\(i=1,\ldots,n\)</span>.</li>
+<li>For <span class="math inline">\(x_k=(x_{k,1},\ldots,x_{k,n})^{\mathsf{T}}\)</span> and <span class="math inline">\(x^*=(x_1^*,\ldots,x_n^*)^{\mathsf{T}}\)</span>, <span class="math inline">\(x_k\to x^*\)</span> if and only if <span class="math inline">\(x_{k,i}\to x_i^*\)</span> for every <span class="math inline">\(i=1,\ldots,n\)</span>.</li>
 </ul>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> For uniqueness, suppose a sequence converges to <span class="math inline">\(x^*\)</span> and <span class="math inline">\(y^*\)</span> and use the triangle inequality with two balls of radius <span class="math inline">\(\varepsilon/2\)</span>. For subsequences, an increasing index eventually exceeds the original <span class="math inline">\(K\)</span>. For componentwise convergence, bound the Euclidean norm by the coordinate errors, and conversely use <span class="math inline">\(|x_{k,i}-x_i^*|\le\|x_k-x^*\|\)</span>.</p>
+</div>
+</div>
+</div>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 2.3.8: Bolzano--Weierstrass">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -849,7 +864,23 @@ Theorem 2.3.8: Bolzano–Weierstrass
 <p>Every bounded sequence in <span class="math inline">\(\mathbb R^n\)</span> has a convergent subsequence.</p>
 </div>
 </div>
-<p><strong>Proof strategy.</strong> In one dimension, repeatedly bisect a bounded interval and retain a half containing infinitely many terms; the nested intervals identify a convergent subsequence. In <span class="math inline">\(\mathbb R^n\)</span>, apply the one-dimensional result coordinate by coordinate and retain subsequences. Boundedness is the assumption that starts this extraction.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Proof strategy.</strong> In one dimension, repeatedly bisect a bounded interval and retain a half containing infinitely many terms; the nested intervals identify a convergent subsequence. In <span class="math inline">\(\mathbb R^n\)</span>, apply the one-dimensional result coordinate by coordinate and retain subsequences. Boundedness is the</p>
+</div>
+</div>
+</div>
+<p>assumption that starts this extraction.</p>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 2.3.9: sequential characterization of closedness">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -867,10 +898,25 @@ Theorem 2.3.9: sequential characterization of closedness
 </ol>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> If <span class="math inline">\(X\)</span> contains all its limit points, any limit of a sequence from <span class="math inline">\(X\)</span> is either one of its terms or a limit point. Conversely, if <span class="math inline">\(X\)</span> omits a limit point <span class="math inline">\(x\)</span>, choose a point of <span class="math inline">\(X\setminus\{x\}\)</span> from each ball <span class="math inline">\(B_{1/k}(x)\)</span>; the resulting sequence converges to <span class="math inline">\(x\)</span> and violates the sequential condition.</p>
+</div>
+</div>
+</div>
 <p><strong>Retrieval check.</strong> Why does the alternating sequence <span class="math inline">\((-1)^k\)</span> fail to converge?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -879,7 +925,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Its even subsequence converges to <span class="math inline">\(1\)</span> and its odd subsequence to <span class="math inline">\(-1\)</span>. If the original sequence converged, both subsequences would have the same limit by Theorem 2.3.6.</p>
 </div>
@@ -918,7 +964,22 @@ Theorem 2.4.2: sequential compactness
 </ol>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> If <span class="math inline">\(X\)</span> is closed and bounded, Bolzano–Weierstrass gives a convergent subsequence and closedness keeps its limit in <span class="math inline">\(X\)</span>. Conversely, failure of boundedness creates a sequence whose norms diverge; failure of closedness creates a sequence approaching a missing limit point. Either failure contradicts the sequential property.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example and nonexample">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -978,7 +1039,22 @@ Sequential continuity criterion
 <p>For <span class="math inline">\(f:X\to\mathbb R^m\)</span> and <span class="math inline">\(x_0\in X\)</span>, <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x_0\)</span> if and only if every sequence <span class="math inline">\(x_k\in X\)</span> satisfying <span class="math inline">\(x_k\to x_0\)</span> also satisfies <span class="math inline">\(f(x_k)\to f(x_0)\)</span>.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> The forward implication substitutes a convergent sequence into the <span class="math inline">\(\varepsilon\)</span>–<span class="math inline">\(\delta\)</span> definition. For the reverse implication, negate continuity: if a fixed <span class="math inline">\(\varepsilon\)</span> defeats every <span class="math inline">\(\delta\)</span>, select <span class="math inline">\(x_k\)</span> within <span class="math inline">\(1/k\)</span> of <span class="math inline">\(x_0\)</span> whose image remains at least <span class="math inline">\(\varepsilon\)</span> away.</p>
+</div>
+</div>
+</div>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Theorem 2.5.3: Intermediate Value Theorem">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1005,7 +1081,22 @@ Correction
 <p>The conclusion is <span class="math inline">\(f(c)=y\)</span>, not <span class="math inline">\(f(c)=c\)</span>. The point <span class="math inline">\(c\)</span> is an input chosen to hit the target output level <span class="math inline">\(y\)</span>.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> Suppose <span class="math inline">\(f(a)\le y\le f(b)\)</span> and let <span class="math inline">\(S=\{x\in[a,b]:f(x)\le y\}\)</span>. Completeness gives <span class="math inline">\(c=\sup S\)</span>. Continuity rules out both <span class="math inline">\(f(c)&lt;y\)</span> and <span class="math inline">\(f(c)&gt;y\)</span>, so <span class="math inline">\(f(c)=y\)</span>. Reverse the inequalities when <span class="math inline">\(f(b)\le y\le f(a)\)</span>.</p>
+</div>
+</div>
+</div>
 <section id="semicontinuity" class="level3">
 <h3 class="anchored" data-anchor-id="semicontinuity">Semicontinuity</h3>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 2.5.4: upper and lower semicontinuity">
@@ -1047,7 +1138,22 @@ Theorem 2.5.5: continuity is two-sided
 <p>A real-valued function is continuous if and only if it is both upper semicontinuous and lower semicontinuous.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> If <span class="math inline">\(f(x_k)\to f(x_0)\)</span>, then its limsup and liminf both equal <span class="math inline">\(f(x_0)\)</span>. Conversely, the two inequalities force limsup and liminf of <span class="math inline">\(f(x_k)\)</span> to agree with <span class="math inline">\(f(x_0)\)</span>, which gives sequential continuity.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Diagnostic example">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1107,10 +1213,25 @@ Theorem 2.5.8: compact domain gives uniform continuity
 <p>If <span class="math inline">\(X\subseteq\mathbb R^n\)</span> is compact and <span class="math inline">\(f:X\to\mathbb R^m\)</span> is continuous, then <span class="math inline">\(f\)</span> is uniformly continuous.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> If uniform continuity failed, choose pairs <span class="math inline">\(x_k,y_k\in X\)</span> with <span class="math inline">\(\|x_k-y_k\|&lt;1/k\)</span> but outputs separated by a fixed <span class="math inline">\(\varepsilon&gt;0\)</span>. Compactness gives a subsequence <span class="math inline">\(x_{k_j}\to x^*\in X\)</span>. The paired points also converge to <span class="math inline">\(x^*\)</span> by the triangle inequality, so continuity makes the output distance tend to zero, a contradiction.</p>
+</div>
+</div>
+</div>
 <p><strong>Retrieval check.</strong> Which is stronger on a noncompact domain: continuity or uniform continuity?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1119,7 +1240,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Uniform continuity. It requires one <span class="math inline">\(\delta\)</span> for every pair of points in the domain; ordinary continuity chooses a possibly different <span class="math inline">\(\delta\)</span> at each center point.</p>
 </div>
@@ -1209,9 +1330,24 @@ Closed-graph lemma for compact-valued upper hemicontinuity
 <p>Let <span class="math inline">\(\varphi:X\rightrightarrows Y\)</span> be upper hemicontinuous and compact-valued. If <span class="math inline">\(x_k\to x^*\)</span> in <span class="math inline">\(X\)</span>, <span class="math inline">\(y_k\to y^*\)</span> in <span class="math inline">\(Y\)</span>, and <span class="math inline">\(y_k\in\varphi(x_k)\)</span> for every <span class="math inline">\(k\)</span>, then <span class="math inline">\(y^*\in\varphi(x^*)\)</span>.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Proof.</strong> Suppose instead that <span class="math inline">\(y^*\notin\varphi(x^*)\)</span>. Since <span class="math inline">\(\varphi(x^*)\)</span> is compact, its distance from <span class="math inline">\(y^*\)</span> is positive. Choose <span class="math inline">\(0&lt;r&lt;\operatorname{dist}(y^*,\varphi(x^*))\)</span> and let</p>
 <p><span class="math display">\[V=\{y\in Y:\operatorname{dist}(y,\varphi(x^*))&lt;r\}.\]</span></p>
 <p>This set is open in <span class="math inline">\(Y\)</span>, contains <span class="math inline">\(\varphi(x^*)\)</span>, and has closure disjoint from a neighborhood of <span class="math inline">\(y^*\)</span>. Upper hemicontinuity gives <span class="math inline">\(\varphi(x_k)\subseteq V\)</span> eventually, hence <span class="math inline">\(y_k\in V\)</span> eventually. But <span class="math inline">\(y_k\to y^*\)</span> eventually places <span class="math inline">\(y_k\)</span> in that disjoint neighborhood, a contradiction.</p>
+</div>
+</div>
+</div>
 <section id="compact-images-under-upper-hemicontinuity" class="level3">
 <h3 class="anchored" data-anchor-id="compact-images-under-upper-hemicontinuity">Compact images under upper hemicontinuity</h3>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Compact-image theorem">
@@ -1227,7 +1363,22 @@ Compact-image theorem
 <p>Let <span class="math inline">\(\varphi:X\rightrightarrows Y\)</span> be compact-valued and upper hemicontinuous, where <span class="math inline">\(X\subseteq\mathbb R^n\)</span> and <span class="math inline">\(Y\subseteq\mathbb R^m\)</span>. If <span class="math inline">\(S\subseteq X\)</span> is compact, then <span class="math display">\[\varphi(S):=\bigcup_{x\in S}\varphi(x)\]</span> is compact in <span class="math inline">\(Y\)</span>.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Blueprint.</strong> Start with an arbitrary sequence in <span class="math inline">\(\varphi(S)\)</span> and choose its input witnesses in <span class="math inline">\(S\)</span>. Compactness supplies a convergent input subsequence. Upper hemicontinuity confines the corresponding output values to a bounded neighborhood of the limiting value set; extract a convergent output subsequence, then use the closed-graph lemma to retain its limit in the image.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="Assumption audit">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1281,7 +1432,7 @@ Assumption audit
 <li>Why does compactness of the domain matter for turning continuity into uniform continuity?</li>
 </ol>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1290,7 +1441,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><span class="math inline">\(x_k=1/(k+1)\in(0,1)\)</span> converges to <span class="math inline">\(0\notin(0,1)\)</span>. 2. Usc controls upward jumps of numerical values; uhc prevents nearby value <strong>sets</strong> from acquiring points outside any open neighborhood of the limiting value set. 3. It lets one extract a convergent subsequence from a purported failure of uniform control, which continuity then contradicts.</li>
