@@ -739,9 +739,9 @@ Weierstrass extreme-value theorem (Theorem 4.1.1)
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> <span class="math inline">\(\varnothing\ne X\subseteq\mathbb R^n\)</span> is compact and <span class="math inline">\(f:X\to\mathbb R\)</span> is continuous.</p>
-<p><strong>Conclusion.</strong> There are <span class="math inline">\(x^{\max},x^{\min}\in X\)</span> such that</p>
+<p><strong>Conclusion.</strong> There are <span class="math inline">\(x^{\max},x^{\min}\in X\)</span> such that, for every <span class="math inline">\(x\in X\)</span>,</p>
 <p><span class="math display">\[
-f(x^{\max})\ge f(x)\ge f(x^{\min})\qquad\text{for every }x\in X.
+f(x^{\max})\ge f(x)\ge f(x^{\min}).
 \]</span></p>
 </div>
 </div>
@@ -871,8 +871,9 @@ The word necessary has direction
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>At a local optimum in the interior, the necessary condition is</p>
 <p><span class="math display">\[
-\text{local optimum at an interior point}\quad\Longrightarrow\quad\nabla f(x^*)=0.
+\nabla f(x^*)=0.
 \]</span></p>
 <p>The converse fails. For <span class="math inline">\(f(x)=x^3\)</span>, <span class="math inline">\(f'(0)=0\)</span>, but values on either side of zero are both larger and smaller than <span class="math inline">\(f(0)\)</span>. A stationary point is a candidate, not a classification.</p>
 </div>
@@ -949,7 +950,12 @@ Examples: strict curvature and a flat test
 </div>
 <p>For a <span class="math inline">\(C^2\)</span> scalar objective, Taylor’s expansion near a stationary point is</p>
 <p><span class="math display">\[
-f(x^*+h)=f(x^*)+\frac12h^{\mathsf{T}}D^2f(x^*)h+o(\|h\|^2).
+\begin{aligned}
+f(x^*+h)
+&amp;=f(x^*)\\
+&amp;\quad+\frac12h^{\mathsf{T}}D^2f(x^*)h\\
+&amp;\quad+o(\|h\|^2).
+\end{aligned}
 \]</span></p>
 <p>The sign of this quadratic form gives the proof idea for the sufficient parts. Negative definiteness makes the leading nonzero change negative in every direction; positive definiteness reverses the sign.</p>
 </section>
@@ -988,10 +994,12 @@ Lagrange multiplier theorem (Theorem 4.3.1)
 <p><strong>Assumptions.</strong> <span class="math inline">\(x^*\)</span> is a local maximum or minimum of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span> and <span class="math inline">\(\operatorname{rank}Dg(x^*)=k\)</span>.</p>
 <p><strong>Conclusion.</strong> There is <span class="math inline">\(\lambda^*\in\mathbb R^k\)</span> such that</p>
 <p><span class="math display">\[
-Df(x^*)=\lambda^{*\mathsf T}Dg(x^*),
-\quad\text{equivalently}\quad
-\nabla f(x^*)=Dg(x^*)^{\mathsf{T}}\lambda^*.
+Df(x^*)=\lambda^{*\mathsf T}Dg(x^*).
 \tag{L}
+\]</span></p>
+<p>Equivalently, in gradient form,</p>
+<p><span class="math display">\[
+\nabla f(x^*)=Dg(x^*)^{\mathsf{T}}\lambda^*.
 \]</span></p>
 </div>
 </div>
@@ -1027,7 +1035,10 @@ L(x;\lambda)=f(x)-\lambda^{\mathsf{T}}(g(x)-c).
 \]</span></p>
 <p>Then (L) and feasibility become the system</p>
 <p><span class="math display">\[
-D_xL(x;\lambda)=0,\qquad g(x)=c.
+\begin{aligned}
+D_xL(x;\lambda)&amp;=0,\\
+g(x)&amp;=c.
+\end{aligned}
 \]</span></p>
 <p>The sign convention is arbitrary if used consistently. It changes the sign of <span class="math inline">\(\lambda\)</span>, not the set of candidate <span class="math inline">\(x\)</span> values.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: maximum on a circle">
@@ -1041,7 +1052,13 @@ Example: maximum on a circle
 </div>
 <div class="callout-body-container callout-body">
 <p>Maximize <span class="math inline">\(f(x_1,x_2)=x_1+x_2\)</span> subject to <span class="math inline">\(g(x)=x_1^2+x_2^2=1\)</span>. With <span class="math inline">\(L=x_1+x_2-\lambda(x_1^2+x_2^2-1)\)</span>, the equations are</p>
-<p><span class="math display">\[1-2\lambda x_1=0,\quad1-2\lambda x_2=0,\quad x_1^2+x_2^2=1.\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+1-2\lambda x_1&amp;=0,\\
+1-2\lambda x_2&amp;=0,\\
+x_1^2+x_2^2&amp;=1.
+\end{aligned}
+\]</span></p>
 <p>They give <span class="math inline">\((x_1,x_2)=\pm(1,1)/\sqrt2\)</span>. Comparing objective values identifies the positive point as the global maximum and the negative point as the global minimum. The multiplier equations alone identify candidates, not which one wins.</p>
 </div>
 </div>
@@ -1097,8 +1114,13 @@ Regular-level tangent theorem
 </div>
 </div>
 <p>For the unit circle <span class="math inline">\(g(x)=x_1^2+x_2^2\)</span>, at <span class="math inline">\(x^*\)</span> we have</p>
-<p><span class="math display">\[Dg(x^*)=2(x_1^*,x_2^*),\qquad
-T(x^*)=\{z: x_1^*z_1+x_2^*z_2=0\}.\]</span></p>
+<p><span class="math display">\[
+Dg(x^*)=2(x_1^*,x_2^*).
+\]</span></p>
+<p>The tangent space is</p>
+<p><span class="math display">\[
+T(x^*)={z:x_1^*z_1+x_2^*z_2=0\}.
+\]</span></p>
 <p>The tangent space is one-dimensional. One nonzero tangent vector spans it, which is why checking that vector and its scalar multiples is enough on a circle. This shortcut fails when <span class="math inline">\(\dim T(x^*)&gt;1\)</span>.</p>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1134,12 +1156,17 @@ Necessary versus sufficient: do not reverse the arrows
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>A constrained local maximum implies</p>
 <p><span class="math display">\[
-\begin{aligned}
-\text{constrained local maximum}&amp;\Rightarrow Q(z)\le0\quad\forall z\in T(x^*),\\
-Q(z)&lt;0\quad\forall z\in T(x^*)\setminus\{0\}&amp;\Rightarrow\text{strict constrained local maximum},
-\end{aligned}
+Q(z)\le0
+\quad\text{for every }z\in T(x^*).
 \]</span></p>
+<p>In the other direction, if</p>
+<p><span class="math display">\[
+Q(z)&lt;0
+\quad\text{for every nonzero }z\in T(x^*),
+\]</span></p>
+<p>then the point is a strict constrained local maximum.</p>
 <p>where <span class="math inline">\(Q(z)=z^{\mathsf{T}}D^2_{xx}L(x^*;\lambda^*)z\)</span>. A merely nonpositive quadratic form is necessary but generally not sufficient.</p>
 </div>
 </div>
@@ -1172,8 +1199,12 @@ Testing one direction is not enough in a higher-dimensional tangent space
 <h3 class="anchored" data-anchor-id="why-an-inequality-needs-a-new-multiplier-rule">Why an inequality needs a new multiplier rule</h3>
 <p>Consider</p>
 <p><span class="math display">\[
-\max_{x_1,x_2}\;-(x_1-2)^2-(x_2-2)^2
-\quad\text{subject to}\quad x_1+x_2\le 2.
+\begin{aligned}
+&amp;\max_{x_1,x_2}
+&amp;&amp;-(x_1-2)^2-(x_2-2)^2\\
+&amp;\text{s.t.}
+&amp;&amp;x_1+x_2\le2.
+\end{aligned}
 \]</span></p>
 <p>The unconstrained maximizer <span class="math inline">\((2,2)\)</span> is infeasible. The constrained maximizer is <span class="math inline">\((1,1)\)</span>, where the gradient is <span class="math inline">\((2,2)^{\mathsf{T}}\)</span>, not zero. It points in the normal direction to the binding boundary. A nonnegative multiplier records how strongly that boundary restrains the objective.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: active constraint and slack">
@@ -1235,14 +1266,13 @@ F=\{x\in\mathbb R^n:h(x)\le c\}.
 <p><span class="math display">\[
 Df(x^*)=\lambda^{*\mathsf{T}}Dh(x^*);
 \]</span></p></li>
-<li><p><strong>dual feasibility</strong></p>
+<li><p><strong>dual feasibility</strong>, for <span class="math inline">\(i=1,\ldots,l\)</span>,</p>
 <p><span class="math display">\[
-\lambda_i^*\ge0\qquad(i=1,\ldots,l);
+\lambda_i^*\ge0;
 \]</span></p></li>
-<li><p><strong>complementary slackness</strong></p>
+<li><p><strong>complementary slackness</strong>, for <span class="math inline">\(i=1,\ldots,l\)</span>,</p>
 <p><span class="math display">\[
-\lambda_i^*\bigl[c_i-h_i(x^*)\bigr]=0
-\qquad(i=1,\ldots,l).
+\lambda_i^*\bigl[c_i-h_i(x^*)\bigr]=0.
 \]</span></p></li>
 </ol>
 </div>
@@ -1277,7 +1307,10 @@ Worked example: a binding resource constraint
 <div class="callout-body-container callout-body">
 <p>For the opening problem, let <span class="math inline">\(h(x)=x_1+x_2\)</span> and <span class="math inline">\(c=2\)</span>. At <span class="math inline">\(x^*=(1,1)^{\mathsf{T}}\)</span>,</p>
 <p><span class="math display">\[
-Df(x^*)=(2,2),\qquad Dh(x^*)=(1,1).
+\begin{aligned}
+Df(x^*)&amp;=(2,2),\\
+Dh(x^*)&amp;=(1,1).
+\end{aligned}
 \]</span></p>
 <p>Stationarity gives <span class="math inline">\(\lambda^*=2\)</span>. The constraint binds, so complementary slackness holds. The multiplier is positive because relaxing the resource limit raises the optimized value locally.</p>
 </div>
@@ -1292,10 +1325,7 @@ KKT conditions are necessary here, not automatically sufficient
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Theorem 4.4.1 says</p>
-<p><span class="math display">\[
-\text{regular local maximum}\implies\text{KKT conditions}.
-\]</span></p>
+<p>Theorem 4.4.1 says that every regular local maximum satisfies the KKT conditions.</p>
 <p>A KKT point can fail to maximize a nonconcave objective. Global concavity and convex feasibility can turn KKT conditions into a global certificate, but that is a separate result.</p>
 </div>
 </div>
@@ -1333,14 +1363,11 @@ Definition: critical cone
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the usual feasible-direction convention for <span class="math inline">\(h(x)\le c\)</span>, define</p>
-<p><span class="math display">\[
-\begin{aligned}
-C(x^*,\lambda^*)=\{z\in\mathbb R^n:
-&amp;\ Dh_i(x^*)z=0 &amp;&amp;\text{for }i\in B(x^*,\lambda^*),\\
-&amp;\ Dh_i(x^*)z\le0 &amp;&amp;\text{for }i\in A(x^*)\setminus B(x^*,\lambda^*)\}.
-\end{aligned}
-\]</span></p>
+<p>Using the usual feasible-direction convention for <span class="math inline">\(h(x)\le c\)</span>, <span class="math inline">\(C(x^*,\lambda^*)\)</span> is the set of <span class="math inline">\(z\in\mathbb R^n\)</span> satisfying:</p>
+<ol type="1">
+<li><span class="math inline">\(Dh_i(x^*)z=0\)</span> for <span class="math inline">\(i\in B(x^*,\lambda^*)\)</span>.</li>
+<li><span class="math inline">\(Dh_i(x^*)z\le0\)</span> for <span class="math inline">\(i\in A(x^*)\setminus B(x^*,\lambda^*)\)</span>.</li>
+</ol>
 <p>Strongly active constraints must remain tangent in a critical direction. A weakly active constraint, whose multiplier is zero, may move into its feasible side.</p>
 </div>
 </div>
@@ -1373,15 +1400,13 @@ Inequality-constrained second-order conditions (Theorem 4.4.5)
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> The functions <span class="math inline">\(f,h_1,\ldots,h_l\)</span> are <span class="math inline">\(C^2\)</span>, <span class="math inline">\((x^*,\lambda^*)\)</span> satisfies KKT, and LICQ holds at <span class="math inline">\(x^*\)</span>.</p>
-<p><strong>Necessary conclusion.</strong> If <span class="math inline">\(x^*\)</span> is a constrained local maximum, then</p>
+<p><strong>Necessary conclusion.</strong> If <span class="math inline">\(x^*\)</span> is a constrained local maximum, then, for every <span class="math inline">\(z\in C(x^*,\lambda^*)\)</span>,</p>
 <p><span class="math display">\[
-z^{\mathsf{T}}D_{xx}^2L(x^*;\lambda^*)z\le0
-\qquad\text{for every }z\in C(x^*,\lambda^*).
+z^{\mathsf{T}}D_{xx}^2L(x^*;\lambda^*)z\le0.
 \]</span></p>
-<p><strong>Sufficient conclusion.</strong> If</p>
+<p><strong>Sufficient conclusion.</strong> If, for every nonzero <span class="math inline">\(z\in C(x^*,\lambda^*)\)</span>,</p>
 <p><span class="math display">\[
-z^{\mathsf{T}}D_{xx}^2L(x^*;\lambda^*)z&lt;0
-\qquad\text{for every nonzero }z\in C(x^*,\lambda^*),
+z^{\mathsf{T}}D_{xx}^2L(x^*;\lambda^*)z&lt;0,
 \]</span></p>
 <p>then <span class="math inline">\(x^*\)</span> is a strict constrained local maximum.</p>
 </div>
@@ -1410,16 +1435,20 @@ Show answer
 <h2 class="anchored" data-anchor-id="mixed-equality-and-inequality-constraints">6. Mixed equality and inequality constraints</h2>
 <p>Consider</p>
 <p><span class="math display">\[
-\max_x f(x)
-\quad\text{subject to}\quad
-g(x)=b,\qquad h(x)\le c,
+\begin{aligned}
+&amp;\max_x &amp;&amp; f(x)\\
+&amp;\text{s.t.}&amp;&amp; g(x)=b,\\
+&amp;&amp;&amp;h(x)\le c.
+\end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(g:\mathbb R^n\to\mathbb R^k\)</span> and <span class="math inline">\(h:\mathbb R^n\to\mathbb R^l\)</span>.</p>
 <p>Use separate multipliers:</p>
 <p><span class="math display">\[
+\begin{aligned}
 L(x;\mu,\lambda)
-=f(x)-\mu^{\mathsf{T}}(g(x)-b)
--\lambda^{\mathsf{T}}(h(x)-c).
+&amp;=f(x)-\mu^{\mathsf{T}}(g(x)-b)\\
+&amp;\quad-\lambda^{\mathsf{T}}(h(x)-c).
+\end{aligned}
 \]</span></p>
 <p>The equality multiplier <span class="math inline">\(\mu\in\mathbb R^k\)</span> is unrestricted in sign. The inequality multiplier <span class="math inline">\(\lambda\in\mathbb R^l\)</span> must be nonnegative.</p>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">

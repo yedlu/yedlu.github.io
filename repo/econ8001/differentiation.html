@@ -722,12 +722,12 @@ Definition 3.1.1: derivative in one variable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(X\subseteq\mathbb R\)</span>, let <span class="math inline">\(x_0\in\operatorname{int}X\)</span>, and let <span class="math inline">\(f:X\to\mathbb R\)</span>. We say that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x_0\)</span> if the limit</p>
+<p>Let <span class="math inline">\(X\subseteq\mathbb R\)</span>, let <span class="math inline">\(x_0\in\operatorname{int}X\)</span>, and let <span class="math inline">\(f:X\to\mathbb R\)</span>. We say that <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x_0\)</span> if the following limit, taken through <span class="math inline">\(x\in X\setminus\{x_0\}\)</span>, exists as a finite real number:</p>
 <p><span class="math display">\[
-f'(x_0)=\lim_{x\to x_0,\,x\in X\setminus\{x_0\}}
-\frac{f(x)-f(x_0)}{x-x_0}
+f'(x_0)=\lim_{x\to x_0}
+\frac{f(x)-f(x_0)}{x-x_0}.
 \]</span></p>
-<p>exists as a finite real number. Equivalently, with <span class="math inline">\(h\to0\)</span>,</p>
+<p>Equivalently, with <span class="math inline">\(h\to0\)</span>,</p>
 <p><span class="math display">\[
 f'(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}{h}.
 \]</span></p>
@@ -854,8 +854,12 @@ Partial derivatives need not give total differentiability
 <p><span class="math display">\[f(x,y)=\frac{x^2y}{x^4+y^2}\quad\text{when }(x,y)\ne(0,0).\]</span></p>
 <p>Both coordinate partial derivatives at <span class="math inline">\((0,0)\)</span> equal <span class="math inline">\(0\)</span>: along either axis, <span class="math inline">\(f\)</span> is zero. But along <span class="math inline">\(y=x^2\)</span>, <span class="math inline">\(f(x,x^2)=1/2\)</span>, so <span class="math inline">\(f\)</span> is not even continuous at the origin, hence cannot be differentiable there. In fact every <em>two-sided</em> directional derivative exists. For <span class="math inline">\(v=(a,b)^{\mathsf{T}}\)</span>, if <span class="math inline">\(b\ne0\)</span>, then</p>
 <p><span class="math display">\[
-D_v^{\pm}f(0,0)=\lim_{t\to0}\frac{f(ta,tb)}{t}
-=\lim_{t\to0}\frac{a^2b}{t^2a^4+b^2}=\frac{a^2}{b};
+\begin{aligned}
+D_v^{\pm}f(0,0)
+&amp;=\lim_{t\to0}\frac{f(ta,tb)}{t},\\
+&amp;=\lim_{t\to0}\frac{a^2b}{t^2a^4+b^2},\\
+&amp;=\frac{a^2}{b}.
+\end{aligned}
 \]</span></p>
 <p>if <span class="math inline">\(b=0\)</span>, the quotient is identically zero. Directional tests still miss curved approaches.</p>
 </div>
@@ -922,8 +926,9 @@ Definition: Jacobian and <span class="math inline">\(C^1\)</span>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(X\subseteq\mathbb R^n\)</span> be open and <span class="math inline">\(f:X\to\mathbb R^m\)</span>. If <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\in X\)</span>, its Jacobian at <span class="math inline">\(x\)</span> is the <span class="math inline">\(m\times n\)</span> matrix</p>
 <p><span class="math display">\[
-Df(x)=\left[\frac{\partial f_i}{\partial x_j}(x)\right]_{i=1,\ldots,m;\,j=1,\ldots,n}.
+Df(x)=\left[\frac{\partial f_i}{\partial x_j}(x)\right].
 \]</span></p>
+<p>Here <span class="math inline">\(i=1,\ldots,m\)</span> indexes outputs and <span class="math inline">\(j=1,\ldots,n\)</span> indexes inputs.</p>
 <p>The function is <span class="math inline">\(C^1\)</span> on <span class="math inline">\(X\)</span> if it is differentiable at every <span class="math inline">\(x\in X\)</span> and <span class="math inline">\(Df:X\to\mathbb R^{m\times n}\)</span> is continuous.</p>
 </div>
 </div>
@@ -977,9 +982,12 @@ D_v^{\pm}f(x_0)=\lim_{t\to0}\frac{f(x_0+tv)-f(x_0)}{t},
 \]</span></p>
 <p>when it exists. Under this convention, Definition 3.2.9’s partial derivative is the special case along the <span class="math inline">\(j\)</span>th standard basis vector <span class="math inline">\(e_j\)</span>:</p>
 <p><span class="math display">\[
+\begin{aligned}
 \frac{\partial f}{\partial x_j}(x_0)
-=D_{e_j}^{\pm}f(x_0)
-=\lim_{t\to0}\frac{f(x_0+te_j)-f(x_0)}{t}.
+&amp;=D_{e_j}^{\pm}f(x_0),\\
+&amp;=\lim_{t\to0}
+\frac{f(x_0+te_j)-f(x_0)}{t}.
+\end{aligned}
 \]</span></p>
 <p>It is an <span class="math inline">\(m\times1\)</span> vector when <span class="math inline">\(f\)</span> has <span class="math inline">\(m\)</span> outputs.</p>
 </div>
@@ -1079,10 +1087,15 @@ Theorem 3.2.15: implicit function theorem
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(F:X\to\mathbb R^m\)</span> be <span class="math inline">\(C^1\)</span> on an open <span class="math inline">\(X\subseteq\mathbb R^{n+m}\)</span>. Write a point as <span class="math inline">\((x,y)\)</span> with <span class="math inline">\(x\in\mathbb R^n\)</span> and <span class="math inline">\(y\in\mathbb R^m\)</span>.</p>
 <p><strong>Assumptions.</strong> <span class="math inline">\(F(x^*,y^*)=0\)</span>, <span class="math inline">\((x^*,y^*)\in X\)</span>, and the <span class="math inline">\(m\times m\)</span> block <span class="math inline">\(D_yF(x^*,y^*)\)</span> is invertible.</p>
-<p><strong>Conclusion.</strong> There are neighborhoods <span class="math inline">\(U\)</span> of <span class="math inline">\(x^*\)</span> and <span class="math inline">\(V\)</span> of <span class="math inline">\(y^*\)</span> and a unique <span class="math inline">\(C^1\)</span> function <span class="math inline">\(g:U\to V\)</span> with <span class="math inline">\(g(x^*)=y^*\)</span> such that</p>
+<p><strong>Conclusion.</strong> There are neighborhoods <span class="math inline">\(U\)</span> of <span class="math inline">\(x^*\)</span> and <span class="math inline">\(V\)</span> of <span class="math inline">\(y^*\)</span> and a unique <span class="math inline">\(C^1\)</span> function <span class="math inline">\(g:U\to V\)</span> with <span class="math inline">\(g(x^*)=y^*\)</span> such that:</p>
+<ul>
+<li><span class="math inline">\(F(x,g(x))=0\)</span> for every <span class="math inline">\(x\in U\)</span>;</li>
+<li>if <span class="math inline">\((x,y)\in U\times V\)</span> and <span class="math inline">\(F(x,y)=0\)</span>, then <span class="math inline">\(y=g(x)\)</span>.</li>
+</ul>
+<p>For every <span class="math inline">\(x\in U\)</span>, its derivative is</p>
 <p><span class="math display">\[
-\{(x,y)\in U\times V:F(x,y)=0\}=\{(x,g(x)):x\in U\},\qquad
-Dg(x)=-[D_yF(x,g(x))]^{-1}D_xF(x,g(x)).\]</span></p>
+Dg(x)=-[D_yF(x,g(x))]^{-1}D_xF(x,g(x)).
+\]</span></p>
 </div>
 </div>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
@@ -1130,8 +1143,15 @@ Definition 3.2.16: gradient
 </div>
 <div class="callout-body-container callout-body">
 <p>For differentiable <span class="math inline">\(f:X\subseteq\mathbb R^n\to\mathbb R\)</span>, define the column gradient</p>
-<p><span class="math display">\[\nabla f(x)=\left(\frac{\partial f}{\partial x_1}(x),\ldots,
-\frac{\partial f}{\partial x_n}(x)\right)^{\mathsf{T}}\in\mathbb R^n.\]</span></p>
+<p><span class="math display">\[
+\nabla f(x)=
+\begin{pmatrix}
+\dfrac{\partial f}{\partial x_1}(x)\\
+\vdots\\
+\dfrac{\partial f}{\partial x_n}(x)
+\end{pmatrix}
+\in\mathbb R^n.
+\]</span></p>
 <p>The derivative is the row matrix <span class="math inline">\(Df(x)=\nabla f(x)^{\mathsf{T}}\)</span>, so <span class="math inline">\(Df(x)h=\nabla f(x)^{\mathsf{T}}h\)</span> is a scalar.</p>
 </div>
 </div>
@@ -1147,7 +1167,10 @@ Definition: Hessian and <span class="math inline">\(C^2\)</span>
 </div>
 <div class="callout-body-container callout-body">
 <p>If <span class="math inline">\(f:X\to\mathbb R\)</span> is <span class="math inline">\(C^1\)</span> on open <span class="math inline">\(X\subseteq\mathbb R^n\)</span> and <span class="math inline">\(Df\)</span> is differentiable at <span class="math inline">\(x\)</span>, the Hessian is the <span class="math inline">\(n\times n\)</span> matrix</p>
-<p><span class="math display">\[D^2f(x)=\left[\frac{\partial^2 f}{\partial x_i\partial x_j}(x)\right]_{i,j=1}^n.\]</span></p>
+<p><span class="math display">\[
+D^2f(x)=\left[\frac{\partial^2 f}{\partial x_i\partial x_j}(x)\right].
+\]</span></p>
+<p>The row and column indices satisfy <span class="math inline">\(i,j=1,\ldots,n\)</span>.</p>
 <p>The function is <span class="math inline">\(C^2\)</span> if <span class="math inline">\(D^2f\)</span> exists and is continuous on <span class="math inline">\(X\)</span>.</p>
 </div>
 </div>

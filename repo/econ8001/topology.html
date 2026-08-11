@@ -799,10 +799,12 @@ Definitions 2.3.1, 2.3.3, and 2.3.4
 </div>
 <div class="callout-body-container callout-body">
 <p>A sequence in a set <span class="math inline">\(X\)</span> is a function from <span class="math inline">\(\mathbb N\)</span> to <span class="math inline">\(X\)</span>, written <span class="math inline">\((x_k)_{k\in\mathbb N}\)</span>. A subsequence is <span class="math inline">\((x_{k_j})_{j\in\mathbb N}\)</span> where <span class="math inline">\(k_1&lt;k_2&lt;\cdots\)</span> are positive integers. A sequence in <span class="math inline">\(\mathbb R^n\)</span> is bounded if there is <span class="math inline">\(M&lt;\infty\)</span> such that <span class="math inline">\(\|x_k\|\le M\)</span> for every <span class="math inline">\(k\)</span>.</p>
-<p>The sequence converges to <span class="math inline">\(x^*\in\mathbb R^n\)</span>, written <span class="math inline">\(x_k\to x^*\)</span>, if <span class="math display">\[
-\forall\varepsilon&gt;0\ \exists K\in\mathbb N\ \text{such that}\quad
-k\ge K\ \Longrightarrow\ \|x_k-x^*\|&lt;\varepsilon.
-\]</span></p>
+<p>The sequence converges to <span class="math inline">\(x^*\in\mathbb R^n\)</span>, written <span class="math inline">\(x_k\to x^*\)</span>, if:</p>
+<ul>
+<li>for every <span class="math inline">\(\varepsilon&gt;0\)</span>,</li>
+<li>there exists <span class="math inline">\(K\in\mathbb N\)</span> s.t.,</li>
+<li>for every <span class="math inline">\(k\ge K\)</span>, we have <span class="math inline">\(\|x_k-x^*\|&lt;\varepsilon\)</span>.</li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a convergent sequence">
@@ -1019,16 +1021,17 @@ Definition 2.5.1: continuity
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(X\subseteq\mathbb R^n\)</span> and <span class="math inline">\(f:X\to\mathbb R^m\)</span>. The function is continuous at <span class="math inline">\(x_0\in X\)</span> if <span class="math display">\[
-\forall \varepsilon&gt;0,\quad
-\exists \delta&gt;0\ \text{s.t.}
-\]</span></p>
-<p><span class="math display">\[
-\forall x\in X,\quad
-\|x-x_0\|&lt;\delta
-\quad\Longrightarrow\quad
-\|f(x)-f(x_0)\|&lt;\varepsilon.
-\]</span> It is continuous on <span class="math inline">\(X\)</span> if it is continuous at every <span class="math inline">\(x_0\in X\)</span>.</p>
+<p>Let <span class="math inline">\(X\subseteq\mathbb R^n\)</span> and <span class="math inline">\(f:X\to\mathbb R^m\)</span>. The function is continuous at <span class="math inline">\(x_0\in X\)</span> if:</p>
+<ul>
+<li>for every <span class="math inline">\(\varepsilon&gt;0\)</span>,</li>
+<li>there exists <span class="math inline">\(\delta&gt;0\)</span> s.t.,</li>
+<li>for every <span class="math inline">\(x\in X\)</span>:
+<ul>
+<li>if <span class="math inline">\(\|x-x_0\|&lt;\delta\)</span>,</li>
+<li>then <span class="math inline">\(\|f(x)-f(x_0)\|&lt;\varepsilon\)</span>.</li>
+</ul></li>
+</ul>
+<p>It is continuous on <span class="math inline">\(X\)</span> if it is continuous at every <span class="math inline">\(x_0\in X\)</span>.</p>
 </div>
 </div>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled" title="Sequential continuity criterion">
@@ -1185,11 +1188,17 @@ Definition 2.5.6: uniform continuity
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For <span class="math inline">\(f:X\to\mathbb R^m\)</span>, uniform continuity means <span class="math display">\[
-\forall\varepsilon&gt;0\ \exists\delta&gt;0\ \text{such that}\quad
-\forall x,y\in X,\ \|x-y\|&lt;\delta\Longrightarrow
-\|f(x)-f(y)\|&lt;\varepsilon.
-\]</span> The chosen <span class="math inline">\(\delta\)</span> may depend on <span class="math inline">\(\varepsilon\)</span> but not on the location in <span class="math inline">\(X\)</span>. Ordinary continuity allows <span class="math inline">\(\delta\)</span> to depend on <span class="math inline">\(x_0\)</span>.</p>
+<p>For <span class="math inline">\(f:X\to\mathbb R^m\)</span>, uniform continuity means:</p>
+<ul>
+<li>for every <span class="math inline">\(\varepsilon&gt;0\)</span>,</li>
+<li>there exists <span class="math inline">\(\delta&gt;0\)</span> s.t.,</li>
+<li>for every <span class="math inline">\(x,y\in X\)</span>:
+<ul>
+<li>if <span class="math inline">\(\|x-y\|&lt;\delta\)</span>,</li>
+<li>then <span class="math inline">\(\|f(x)-f(y)\|&lt;\varepsilon\)</span>.</li>
+</ul></li>
+</ul>
+<p>The chosen <span class="math inline">\(\delta\)</span> may depend on <span class="math inline">\(\varepsilon\)</span> but not on the location in <span class="math inline">\(X\)</span>. Ordinary continuity allows <span class="math inline">\(\delta\)</span> to depend on <span class="math inline">\(x_0\)</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 2.5.7: continuous but not uniform">

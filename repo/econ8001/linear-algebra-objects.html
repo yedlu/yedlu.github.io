@@ -717,15 +717,22 @@ Definition: vector space
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\mathbb F\in\{\mathbb R,\mathbb C\}\)</span>. A vector space over <span class="math inline">\(\mathbb F\)</span> is a set <span class="math inline">\(V\)</span> with operations</p>
 <p><span class="math display">\[
-+:V\times V\to V,\qquad \cdot:\mathbb F\times V\to V,
+\begin{aligned}
++&amp;:V\times V\to V,\\
+\cdot&amp;:\mathbb F\times V\to V.
+\end{aligned}
 \]</span></p>
 <p>such that, for every <span class="math inline">\(u,v,w\in V\)</span> and <span class="math inline">\(r,s\in\mathbb F\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-u+v&amp;=v+u, &amp; (u+v)+w&amp;=u+(v+w),\\
-\exists 0\in V:\ v+0&amp;=v, &amp; \exists(-v)\in V:\ v+(-v)&amp;=0,\\
-r(u+v)&amp;=ru+rv, &amp; (r+s)v&amp;=rv+sv,\\
-r(sv)&amp;=(rs)v, &amp; 1v&amp;=v.
+u+v&amp;=v+u,\\
+(u+v)+w&amp;=u+(v+w),\\
+\exists 0\in V:\quad v+0&amp;=v,\\
+\exists(-v)\in V:\quad v+(-v)&amp;=0,\\
+r(u+v)&amp;=ru+rv,\\
+(r+s)v&amp;=rv+sv,\\
+r(sv)&amp;=(rs)v,\\
+1v&amp;=v.
 \end{aligned}
 \]</span></p>
 <p>The operations must also be closed: <span class="math inline">\(u+v\in V\)</span> and <span class="math inline">\(rv\in V\)</span>.</p>
@@ -848,8 +855,12 @@ Definition: span
 <p>For vectors <span class="math inline">\(v_1,\ldots,v_k\in V\)</span>,</p>
 <p><span class="math display">\[
 \operatorname{span}(v_1,\ldots,v_k)
-:=\left\{\sum_{j=1}^k a_jv_j:a_1,\ldots,a_k\in\mathbb F\right\}.
 \]</span></p>
+<p>is the set of all vectors of the form</p>
+<p><span class="math display">\[
+\sum_{j=1}^k a_jv_j,
+\]</span></p>
+<p>where <span class="math inline">\(a_1,\ldots,a_k\in\mathbb F\)</span>.</p>
 <p>It is the smallest vector subspace of <span class="math inline">\(V\)</span> containing every <span class="math inline">\(v_j\)</span>.</p>
 </div>
 </div>
@@ -1044,7 +1055,10 @@ The space of linear maps
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> are vector spaces over <span class="math inline">\(\mathbb F\)</span>. Let <span class="math inline">\(\mathcal L(V,W)\)</span> be the set of linear maps from <span class="math inline">\(V\)</span> to <span class="math inline">\(W\)</span>. For <span class="math inline">\(L_1,L_2\in\mathcal L(V,W)\)</span> and <span class="math inline">\(a\in\mathbb F\)</span>, define</p>
 <p><span class="math display">\[
-(L_1+L_2)(v):=L_1(v)+L_2(v),\qquad (aL_1)(v):=aL_1(v).
+\begin{aligned}
+(L_1+L_2)(v)&amp;:=L_1(v)+L_2(v),\\
+(aL_1)(v)&amp;:=aL_1(v).
+\end{aligned}
 \]</span></p>
 <p><strong>Conclusion.</strong> With these pointwise operations, <span class="math inline">\(\mathcal L(V,W)\)</span> is a vector space.</p>
 </div>
@@ -1065,8 +1079,10 @@ Definition: kernel and image
 <div class="callout-body-container callout-body">
 <p>For a linear map <span class="math inline">\(L:V\to W\)</span>,</p>
 <p><span class="math display">\[
-\ker L:=\{v\in V:L(v)=0\},\qquad
-\operatorname{im}L:=\{L(v):v\in V\}\subseteq W.
+\begin{aligned}
+\ker L&amp;:=\{v\in V:L(v)=0\},\\
+\operatorname{im}L&amp;:=\{L(v):v\in V\}\subseteq W.
+\end{aligned}
 \]</span></p>
 <p>The kernel is a subset of the domain <span class="math inline">\(V\)</span>. The image is a subset of the codomain <span class="math inline">\(W\)</span>.</p>
 </div>

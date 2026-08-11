@@ -751,8 +751,9 @@ Keep the objects distinct
 <h2 class="anchored" data-anchor-id="set-up-and-the-three-conclusions">1.1 Set-up and the three conclusions</h2>
 <p>Let <span class="math inline">\(U\subseteq\mathbb R^L\)</span> be open. Let <span class="math inline">\(u:U\times\mathbb R^N\to\mathbb R\)</span> be continuous and let <span class="math inline">\(\Psi:U\rightrightarrows\mathbb R^N\)</span> be a feasibility correspondence. Define</p>
 <p><span class="math display">\[
-V(q)=\max_{x\in\Psi(q)}u(q,x),
-\qquad
+V(q)=\max_{x\in\Psi(q)}u(q,x).
+\]</span></p>
+<p><span class="math display">\[
 A(q)=\operatorname*{arg\,max}_{x\in\Psi(q)}u(q,x).
 \]</span></p>
 <p>The notation above presumes that the maximum is attained. Berge’s theorem supplies precisely that fact under its hypotheses.</p>
@@ -1036,8 +1037,9 @@ Example: a quadratic value
 </div>
 <div class="callout-body-container callout-body">
 <p>Let</p>
+<p>For <span class="math inline">\(x,q\in\mathbb R\)</span>, let</p>
 <p><span class="math display">\[
-f(x,q)=qx-\frac{x^2}{2},\qquad x,q\in\mathbb R.
+f(x,q)=qx-\frac{x^2}{2}.
 \]</span></p>
 <p>The unique optimizer is <span class="math inline">\(\phi(q)=q\)</span>, so <span class="math inline">\(V(q)=q^2/2\)</span>. Directly, <span class="math inline">\(V'(q)=q\)</span>. The partial derivative holding <span class="math inline">\(x\)</span> fixed is <span class="math inline">\(f_q(x,q)=x\)</span>; evaluated at <span class="math inline">\(x=\phi(q)=q\)</span>, it is also <span class="math inline">\(q\)</span>. The term involving <span class="math inline">\(\phi'(q)\)</span> drops out because <span class="math inline">\(f_x(q,q)=q-q=0\)</span>.</p>
 </div>
@@ -1060,26 +1062,39 @@ Constrained envelope formula
 <ol type="1">
 <li><p><span class="math inline">\(\phi:U\to\mathbb R^N\)</span> is differentiable at <span class="math inline">\(q^*\)</span>, <span class="math inline">\(x^*=\phi(q^*)\)</span>, and <span class="math inline">\((\phi(q),q)\in\mathcal O\)</span> for every <span class="math inline">\(q\)</span> near <span class="math inline">\(q^*\)</span>;</p></li>
 <li><p>for every such <span class="math inline">\(q\)</span>, <span class="math inline">\(\phi(q)\)</span> is a feasible optimizer of</p>
+<p>For <span class="math inline">\(k=1,\ldots,K\)</span>, the problem is</p>
 <p><span class="math display">\[
-\max_x f(x,q)\quad\text{subject to}\quad g_k(x,q)\le0,
-\quad k=1,\ldots,K,
+\begin{aligned}
+&amp;\max_x &amp;&amp; f(x,q)\\
+&amp;\text{s.t.}&amp;&amp; g_k(x,q)\le0.
+\end{aligned}
 \]</span></p>
 <p>so <span class="math inline">\(g_k(\phi(q),q)\le0\)</span> for every <span class="math inline">\(k\)</span>;</p></li>
 <li><p>a multiplier <span class="math inline">\(\lambda^*\in\mathbb R_+^K\)</span> satisfies, at <span class="math inline">\((x^*,q^*)\)</span>,</p>
+<ul>
+<li><p><strong>Feasibility:</strong> <span class="math inline">\(g_k(x^*,q^*)\le0\)</span> for every <span class="math inline">\(k\)</span>.</p></li>
+<li><p><strong>Stationarity:</strong></p>
 <p><span class="math display">\[
-\begin{aligned}
-g_k(x^*,q^*)&amp;\le0 &amp;&amp;\text{(feasibility)},\\
-D_xf(x^*,q^*)-\sum_{k=1}^K\lambda_k^*D_xg_k(x^*,q^*)&amp;=0
-  &amp;&amp;\text{(stationarity)},\\
-\lambda_k^*g_k(x^*,q^*)&amp;=0 &amp;&amp;\text{(complementarity)}.
-\end{aligned}
+\begin{gathered}
+D_xf(x^*,q^*)\\
+=\\
+\displaystyle\sum_{k=1}^K
+\lambda_k^*D_xg_k(x^*,q^*).
+\end{gathered}
 \]</span></p></li>
+<li><p><strong>Complementarity:</strong> <span class="math inline">\(\lambda_k^*g_k(x^*,q^*)=0\)</span> for every <span class="math inline">\(k\)</span>.</p></li>
+</ul></li>
 </ol>
 <p>Set <span class="math inline">\(V(q)=f(\phi(q),q)\)</span>.</p>
 <p><strong>Conclusion.</strong> <span class="math inline">\(V\)</span> is differentiable at <span class="math inline">\(q^*\)</span> and, with <span class="math inline">\(J^*=\{k:g_k(x^*,q^*)=0\}\)</span>,</p>
 <p><span class="math display">\[
-DV(q^*)=D_qf(x^*,q^*)-
-\sum_{k\in J^*}\lambda_k^*D_qg_k(x^*,q^*).
+\begin{aligned}
+DV(q^*)
+&amp;=D_qf(x^*,q^*)\\
+&amp;\quad-
+\sum_{k\in J^*}
+\lambda_k^*D_qg_k(x^*,q^*).
+\end{aligned}
 \]</span></p>
 </div>
 </div>
@@ -1099,11 +1114,14 @@ Show proof
 <p><span class="math display">\[
 \begin{aligned}
 DV(q^*)
-&amp;=D_xf(x^*,q^*)D\phi(q^*)+D_qf(x^*,q^*)\\
+&amp;=D_xf(x^*,q^*)D\phi(q^*)\\
+&amp;\quad+D_qf(x^*,q^*)\\
 &amp;=D_qf(x^*,q^*)-
   \sum_{k=1}^K\lambda_k^*D_qg_k(x^*,q^*)\\
-&amp;\quad+\sum_{k=1}^K\lambda_k^*
-  \bigl[D_xg_k(x^*,q^*)D\phi(q^*)+D_qg_k(x^*,q^*)\bigr].
+&amp;\quad+\sum_{k=1}^K
+  \lambda_k^*D_xg_k(x^*,q^*)D\phi(q^*)\\
+&amp;\quad+\sum_{k=1}^K
+  \lambda_k^*D_qg_k(x^*,q^*).
 \end{aligned}
 \]</span></p>
 <p>For each <span class="math inline">\(k\)</span> with <span class="math inline">\(\lambda_k^*&gt;0\)</span>, complementarity makes the constraint bind at <span class="math inline">\(q^*\)</span>. The differentiable function <span class="math inline">\(q\mapsto g_k(\phi(q),q)\)</span> is at most zero near the interior point <span class="math inline">\(q^*\)</span> and equals zero there, so it has derivative zero at <span class="math inline">\(q^*\)</span>. Thus the final sum vanishes. Constraints with <span class="math inline">\(\lambda_k^*=0\)</span> contribute nothing, leaving the displayed formula.</p>
@@ -1143,8 +1161,9 @@ Binding parameterized constraints add a correction
 <p>The baseline theorem assumes a differentiable optimizer. That assumption can be too strong: optimizers can jump, multiple optima can coexist, and an economic choice set may lack convenient topological or convex structure. Milgrom and Segal separate the envelope identity from the task of proving differentiability of the value.</p>
 <p>Let <span class="math inline">\(X\)</span> be any set, let <span class="math inline">\(f:X\times[0,1]\to\mathbb R\)</span>, and define</p>
 <p><span class="math display">\[
-V(t)=\sup_{x\in X}f(x,t),
-\qquad
+V(t)=\sup_{x\in X}f(x,t).
+\]</span></p>
+<p><span class="math display">\[
 X^*(t)=\{x\in X:f(x,t)=V(t)\}.
 \]</span></p>
 <p>The set <span class="math inline">\(X^*(t)\)</span> can be empty: a supremum need not be attained. Every use of an optimizer below therefore explicitly assumes <span class="math inline">\(X^*(t)\ne\varnothing\)</span>.</p>
@@ -1225,14 +1244,11 @@ f_t(x,t)\text{ exists and }\lvert f_t(x,t)\rvert\le b(t).
 V(t)=V(0)+\int_0^t f_t(x^*(s),s)\,ds.
 \]</span></p>
 <p>The absolute-value bound is uniform over choices: a separate integrable bound depending on <span class="math inline">\(x\)</span> would not deliver this conclusion.</p>
-<p>For this course, keep the logical order straight:</p>
-<p><span class="math display">\[
-\text{smooth objective functions}
-\not\Rightarrow
-\text{differentiable value function}
-\not\Rightarrow
-\text{envelope equality without its premises}.
-\]</span></p>
+<p>For this course, keep two failed implications straight:</p>
+<ul>
+<li>Smooth objective functions do <strong>not</strong> imply a differentiable value function.</li>
+<li>A differentiable value function does <strong>not</strong> imply an envelope equality when the equality’s other premises fail.</li>
+</ul>
 </section>
 <section id="assumption-audit" class="level2">
 <h2 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h2>

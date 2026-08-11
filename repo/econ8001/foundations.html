@@ -717,9 +717,11 @@ Definition: logical connectives
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
-\neg P \text{ means “not }P\text{”},\qquad
-P\land Q \text{ means “}P\text{ and }Q\text{”},\qquad
-P\lor Q \text{ means “}P\text{ or }Q\text{”}.
+\begin{aligned}
+\neg P &amp;\text{ means “not }P\text{”},\\
+P\land Q &amp;\text{ means “}P\text{ and }Q\text{”},\\
+P\lor Q &amp;\text{ means “}P\text{ or }Q\text{”}.
+\end{aligned}
 \]</span></p>
 <p>The implication <span class="math inline">\(P\Rightarrow Q\)</span> says: whenever <span class="math inline">\(P\)</span> holds, <span class="math inline">\(Q\)</span> must hold. The equivalence <span class="math inline">\(P\Leftrightarrow Q\)</span> means both <span class="math inline">\(P\Rightarrow Q\)</span> and <span class="math inline">\(Q\Rightarrow P\)</span>.</p>
 </div>
@@ -767,10 +769,12 @@ Definition: universal and existential claims
 </div>
 <p>Negating a quantified statement reverses the quantifier:</p>
 <p><span class="math display">\[
+\begin{aligned}
 \neg\bigl(\forall s\in S: P(s)\bigr)
-\Leftrightarrow \exists s\in S: \neg P(s),\qquad
+&amp;\Leftrightarrow \exists s\in S: \neg P(s),\\
 \neg\bigl(\exists s\in S: P(s)\bigr)
-\Leftrightarrow \forall s\in S: \neg P(s).
+&amp;\Leftrightarrow \forall s\in S: \neg P(s).
+\end{aligned}
 \]</span></p>
 <p>This rule is the engine behind many counterexamples. To refute a universal statement, one example suffices. To refute an existential statement, one must rule out every candidate.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: an assumption audit in miniature">
@@ -870,9 +874,9 @@ Definition: coordinatewise order
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For <span class="math inline">\(x=(x_1,\ldots,x_n)^\top\)</span> and <span class="math inline">\(y=(y_1,\ldots,y_n)^\top\)</span> in <span class="math inline">\(\mathbb R^n\)</span>,</p>
+<p>For <span class="math inline">\(x=(x_1,\ldots,x_n)^\top\)</span> and <span class="math inline">\(y=(y_1,\ldots,y_n)^\top\)</span> in <span class="math inline">\(\mathbb R^n\)</span>, <span class="math inline">\(x\geq y\)</span> means that, for every <span class="math inline">\(i\in\{1,\ldots,n\}\)</span>,</p>
 <p><span class="math display">\[
-x\geq y \quad\Longleftrightarrow\quad \forall i\in\{1,\ldots,n\}:x_i\geq y_i.
+x_i\geq y_i.
 \]</span></p>
 <p>Similarly, <span class="math inline">\(x&gt;y\)</span> means <span class="math inline">\(x_i&gt;y_i\)</span> for every coordinate <span class="math inline">\(i\)</span>. If <span class="math inline">\(S\subseteq\mathbb R\)</span>, then <span class="math inline">\(S_+:=\{s\in S:s\geq0\}\)</span> and <span class="math inline">\(S_{++}:=\{s\in S:s&gt;0\}\)</span>.</p>
 </div>

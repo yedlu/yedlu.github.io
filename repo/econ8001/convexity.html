@@ -800,10 +800,15 @@ Show proof
 <div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> The case <span class="math inline">\(m=2\)</span> is the definition. Assume the claim for <span class="math inline">\(m-1\)</span> points. If <span class="math inline">\(\theta_m&lt;1\)</span>, write</p>
 <p><span class="math display">\[
+\begin{aligned}
 \sum_{i=1}^m\theta_i x_i
-=(1-\theta_m)
-\left(\sum_{i=1}^{m-1}\frac{\theta_i}{1-\theta_m}x_i\right)
-+\theta_mx_m.
+&amp;=(1-\theta_m)
+\left(
+\sum_{i=1}^{m-1}
+\frac{\theta_i}{1-\theta_m}x_i
+\right)\\
+&amp;\quad+\theta_mx_m.
+\end{aligned}
 \]</span></p>
 <p>The parenthesized term is a convex combination of the first <span class="math inline">\(m-1\)</span> points, so it belongs to <span class="math inline">\(C\)</span> by induction. One more two-point combination keeps the result in <span class="math inline">\(C\)</span>.</p>
 <p>The remaining case must be handled separately. If <span class="math inline">\(\theta_m=1\)</span>, every other nonnegative weight is zero, so the mixture is <span class="math inline">\(x_m\in C\)</span>. If <span class="math inline">\(\theta_m&lt;1\)</span>, the normalized weights <span class="math inline">\(\theta_i/(1-\theta_m)\)</span> are nonnegative and sum to one, as required in the induction step.</p>
@@ -828,8 +833,11 @@ Definition: convexity, concavity, and strictness
 <ul>
 <li><p><span class="math inline">\(f\)</span> is <strong>convex</strong> if, for all <span class="math inline">\(x,y\in C\)</span> and <span class="math inline">\(\theta\in[0,1]\)</span>,</p>
 <p><span class="math display">\[
-f(\theta x+(1-\theta)y)
-\le \theta f(x)+(1-\theta)f(y).
+\begin{gathered}
+f(\theta x+(1-\theta)y)\\
+\le\\
+\theta f(x)+(1-\theta)f(y).
+\end{gathered}
 \]</span></p></li>
 <li><p><span class="math inline">\(f\)</span> is <strong>concave</strong> if the inequality reverses.</p></li>
 <li><p><span class="math inline">\(f\)</span> is <strong>strictly convex</strong> or <strong>strictly concave</strong> if the respective inequality is strict whenever <span class="math inline">\(x\ne y\)</span> and <span class="math inline">\(\theta\in(0,1)\)</span>.</p></li>
@@ -888,11 +896,13 @@ Diversification calculation
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(f(x)=-x^2\)</span>, which is concave. For <span class="math inline">\(x_1=-1\)</span>, <span class="math inline">\(x_2=3\)</span>, and equal weights,</p>
 <p><span class="math display">\[
-f\left(\frac{x_1+x_2}{2}\right)=f(1)=-1
-\;&gt;\;
-\frac{f(-1)+f(3)}2=-5.
+\begin{aligned}
+f\left(\frac{x_1+x_2}{2}\right)
+&amp;=f(1)=-1,\\
+\frac{f(-1)+f(3)}2&amp;=-5.
+\end{aligned}
 \]</span></p>
-<p>The concave payoff of the average exceeds the average payoff. The inequality is strict because the two choices differ and <span class="math inline">\(f\)</span> is strictly concave.</p>
+<p>Therefore <span class="math inline">\(-1&gt;-5\)</span>: the concave payoff of the average exceeds the average payoff. The inequality is strict because the two choices differ and <span class="math inline">\(f\)</span> is strictly concave.</p>
 </div>
 </div>
 </section>
@@ -931,14 +941,13 @@ Epigraph and hypograph characterization
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For a function on a convex domain <span class="math inline">\(C\)</span>:</p>
+<p>For a function on a convex domain <span class="math inline">\(C\)</span>, <span class="math inline">\(f\)</span> is convex if and only if</p>
 <p><span class="math display">\[
-f\text{ is convex}\quad\Longleftrightarrow\quad\operatorname{epi}f
-\text{ is convex},
+\operatorname{epi}f\text{ is convex}.
 \]</span></p>
+<p><span class="math inline">\(f\)</span> is concave if and only if</p>
 <p><span class="math display">\[
-f\text{ is concave}\quad\Longleftrightarrow\quad\operatorname{hypo}f
-\text{ is convex}.
+\operatorname{hypo}f\text{ is convex}.
 \]</span></p>
 </div>
 </div>
@@ -992,19 +1001,13 @@ Supporting inequalities for differentiable functions
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> <span class="math inline">\(C\subseteq\mathbb R^N\)</span> is nonempty, open, and convex, and <span class="math inline">\(f:C\to\mathbb R\)</span> is differentiable.</p>
-<p><strong>Conclusions.</strong></p>
+<p><strong>Concavity.</strong> The function <span class="math inline">\(f\)</span> is concave if and only if, for every <span class="math inline">\(x,y\in C\)</span>,</p>
 <p><span class="math display">\[
-f\text{ is concave}
-\quad\Longleftrightarrow\quad
-f(y)\le f(x)+\nabla f(x)^{\mathsf{T}}(y-x)
-\quad\forall x,y\in C,
+f(y)\le f(x)+\nabla f(x)^{\mathsf{T}}(y-x).
 \]</span></p>
-<p>and</p>
+<p><strong>Convexity.</strong> The function <span class="math inline">\(f\)</span> is convex if and only if, for every <span class="math inline">\(x,y\in C\)</span>,</p>
 <p><span class="math display">\[
-f\text{ is convex}
-\quad\Longleftrightarrow\quad
-f(y)\ge f(x)+\nabla f(x)^{\mathsf{T}}(y-x)
-\quad\forall x,y\in C.
+f(y)\ge f(x)+\nabla f(x)^{\mathsf{T}}(y-x).
 \]</span></p>
 </div>
 </div>
@@ -1024,8 +1027,12 @@ Show proof
 <p><strong>Proof strategy for concavity.</strong> Let <span class="math inline">\(g(t)=f(x+t(y-x))\)</span> for <span class="math inline">\(t\in[0,1]\)</span>. Concavity of <span class="math inline">\(f\)</span> gives a chord inequality for <span class="math inline">\(g\)</span>. Divide by <span class="math inline">\(t&gt;0\)</span> and take <span class="math inline">\(t\downarrow0\)</span> to obtain the tangent inequality. Conversely, set <span class="math inline">\(z=\theta x+(1-\theta)y\)</span> and apply the supporting inequality at <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-f(x)&amp;\le f(z)+(1-\theta)\nabla f(z)^{\mathsf{T}}(x-y),\\
-f(y)&amp;\le f(z)-\theta\nabla f(z)^{\mathsf{T}}(x-y).
+f(x)
+&amp;\le f(z)
++(1-\theta)\nabla f(z)^{\mathsf{T}}(x-y),\\
+f(y)
+&amp;\le f(z)
+-\theta\nabla f(z)^{\mathsf{T}}(x-y).
 \end{aligned}
 \]</span></p>
 <p>Multiply the first inequality by <span class="math inline">\(\theta\)</span> and the second by <span class="math inline">\(1-\theta\)</span>. The gradient terms cancel, so</p>
@@ -1079,10 +1086,9 @@ Concavity turns a variational inequality into a global maximum
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be convex and let <span class="math inline">\(f\)</span> be differentiable on an open neighborhood of <span class="math inline">\(C\)</span>.</p>
-<p><strong>Sufficient condition.</strong> If <span class="math inline">\(f\)</span> is concave and <span class="math inline">\(x^*\in C\)</span> satisfies</p>
+<p><strong>Sufficient condition.</strong> If <span class="math inline">\(f\)</span> is concave and <span class="math inline">\(x^*\in C\)</span> satisfies, for every <span class="math inline">\(y\in C\)</span>,</p>
 <p><span class="math display">\[
-\nabla f(x^*)^{\mathsf{T}}(y-x^*)\le0
-\qquad\text{for every }y\in C,
+\nabla f(x^*)^{\mathsf{T}}(y-x^*)\le0,
 \]</span></p>
 <p>then <span class="math inline">\(x^*\)</span> is a global maximizer of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span>.</p>
 <p><strong>Necessary condition.</strong> If <span class="math inline">\(x^*\)</span> is a global maximizer on <span class="math inline">\(C\)</span>, the displayed inequality holds, whether or not <span class="math inline">\(f\)</span> is concave.</p>
@@ -1090,7 +1096,13 @@ Concavity turns a variational inequality into a global maximum
 </div>
 <p>For sufficiency, the concave supporting inequality gives</p>
 <p><span class="math display">\[
-f(y)\le f(x^*)+\nabla f(x^*)^{\mathsf{T}}(y-x^*)\le f(x^*)
+\begin{gathered}
+f(y)\\
+\le\\
+f(x^*)+\nabla f(x^*)^{\mathsf{T}}(y-x^*)\\
+\le\\
+f(x^*).
+\end{gathered}
 \]</span></p>
 <p>for every <span class="math inline">\(y\in C\)</span>. For necessity, consider the feasible line <span class="math inline">\(x^*+t(y-x^*)\)</span> for <span class="math inline">\(t\in[0,1]\)</span> and differentiate at <span class="math inline">\(t=0\)</span> from the right.</p>
 <p>If <span class="math inline">\(x^*\)</span> is an interior point of <span class="math inline">\(C\)</span>, the inequality for all feasible directions reduces to <span class="math inline">\(\nabla f(x^*)=0\)</span>. At a boundary point it does not. This is the convex-analysis counterpart of the constrained first-order conditions in <a href="../../repo/econ8001/optimization.html">Optimization</a>.</p>
@@ -1168,9 +1180,9 @@ Hessian characterization on an open convex domain
 <p><span class="math display">\[
 h(t)=f\bigl(x+t(y-x)\bigr).
 \]</span></p>
-<p>By the chain rule,</p>
+<p>Put <span class="math inline">\(z(t)=x+t(y-x)\)</span>. By the chain rule,</p>
 <p><span class="math display">\[
-h''(t)=(y-x)^{\mathsf{T}}D^2f\bigl(x+t(y-x)\bigr)(y-x).
+h''(t)=(y-x)^{\mathsf{T}}D^2f\bigl(z(t)\bigr)(y-x).
 \]</span></p>
 <p>Thus a positive semidefinite Hessian makes every line restriction convex; negative semidefiniteness makes every such restriction concave.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled" title="Strict convexity does not require a positive definite Hessian everywhere">
@@ -1215,9 +1227,10 @@ Definition: upper and lower level sets
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be convex and <span class="math inline">\(f:C\to\mathbb R\)</span>. For <span class="math inline">\(a\in\mathbb R\)</span>, define</p>
 <p><span class="math display">\[
-U_a=\{x\in C:f(x)\ge a\},
-\qquad
-L_a=\{x\in C:f(x)\le a\}.
+\begin{aligned}
+U_a&amp;=\{x\in C:f(x)\ge a\},\\
+L_a&amp;=\{x\in C:f(x)\le a\}.
+\end{aligned}
 \]</span></p>
 <p>The function <span class="math inline">\(f\)</span> is <strong>quasiconcave</strong> if every upper level set <span class="math inline">\(U_a\)</span> is convex. It is <strong>quasiconvex</strong> if every lower level set <span class="math inline">\(L_a\)</span> is convex. Empty level sets count as convex.</p>
 </div>
@@ -1242,9 +1255,12 @@ Concavity implies quasiconcavity
 </div>
 <p>If <span class="math inline">\(f(x)\ge f(y)\)</span>, concavity gives</p>
 <p><span class="math display">\[
+\begin{gathered}
 f(\theta x+(1-\theta)y)
-\ge\theta f(x)+(1-\theta)f(y)
+\\
+\ge\theta f(x)+(1-\theta)f(y)\\
 \ge f(y).
+\end{gathered}
 \]</span></p>
 <p>This is exactly the convexity of the upper level set at level <span class="math inline">\(f(y)\)</span>.</p>
 <p><strong>Retrieval check.</strong> If <span class="math inline">\(f\)</span> is quasiconcave and <span class="math inline">\(f(x),f(y)\ge a\)</span>, what must be true of <span class="math inline">\(f(\theta x+(1-\theta)y)\)</span> for <span class="math inline">\(\theta\in[0,1]\)</span>?</p>
