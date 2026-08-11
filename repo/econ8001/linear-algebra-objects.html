@@ -726,16 +726,18 @@ Definition: vector space
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\mathbb F\in\{\mathbb R,\mathbb C\}\)</span>. A vector space over <span class="math inline">\(\mathbb F\)</span> is a set <span class="math inline">\(V\)</span> with operations</p>
-<p>[ +:VVV,:FVV, ]</p>
+<p><span class="math display">\[
++:V\times V\to V,\qquad \cdot:\mathbb F\times V\to V,
+\]</span></p>
 <p>such that, for every <span class="math inline">\(u,v,w\in V\)</span> and <span class="math inline">\(r,s\in\mathbb F\)</span>:</p>
-[
-<span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 u+v&amp;=v+u, &amp; (u+v)+w&amp;=u+(v+w),\\
 \exists 0\in V:\ v+0&amp;=v, &amp; \exists(-v)\in V:\ v+(-v)&amp;=0,\\
 r(u+v)&amp;=ru+rv, &amp; (r+s)v&amp;=rv+sv,\\
 r(sv)&amp;=(rs)v, &amp; 1v&amp;=v.
-\end{aligned}\]</span>
-<p>]</p>
+\end{aligned}
+\]</span></p>
 <p>The operations must also be closed: <span class="math inline">\(u+v\in V\)</span> and <span class="math inline">\(rv\in V\)</span>.</p>
 </div>
 </div>
@@ -791,7 +793,9 @@ Subspace test
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> is a vector space over <span class="math inline">\(\mathbb F\)</span>, and <span class="math inline">\(U\subseteq V\)</span> is nonempty.</p>
 <p><strong>Conclusion.</strong> <span class="math inline">\(U\)</span> is a vector subspace of <span class="math inline">\(V\)</span> if and only if</p>
-<p>[ u,vU;a,bF:au+bvU. ]</p>
+<p><span class="math display">\[
+\forall u,v\in U\;\forall a,b\in\mathbb F:\quad au+bv\in U.
+\]</span></p>
 </div>
 </div>
 <section id="proof-strategy-reduce-ten-axioms-to-closure" class="level3">
@@ -839,7 +843,10 @@ Definition: span
 </div>
 <div class="callout-body-container callout-body">
 <p>For vectors <span class="math inline">\(v_1,\ldots,v_k\in V\)</span>,</p>
-<p>[ (v_1,,v_k) :={_{j=1}^k a_jv_j:a_1,,a_kF}. ]</p>
+<p><span class="math display">\[
+\operatorname{span}(v_1,\ldots,v_k)
+:=\left\{\sum_{j=1}^k a_jv_j:a_1,\ldots,a_k\in\mathbb F\right\}.
+\]</span></p>
 <p>It is the smallest vector subspace of <span class="math inline">\(V\)</span> containing every <span class="math inline">\(v_j\)</span>.</p>
 </div>
 </div>
@@ -867,7 +874,11 @@ Definition: linear independence
 </div>
 <div class="callout-body-container callout-body">
 <p>The list <span class="math inline">\(v_1,\ldots,v_k\in V\)</span> is linearly independent if</p>
-<p>[ _{j=1}^k a_jv_j=0 a_1==a_k=0. ]</p>
+<p><span class="math display">\[
+\sum_{j=1}^k a_jv_j=0
+\quad\Longrightarrow\quad
+a_1=\cdots=a_k=0.
+\]</span></p>
 <p>It is linearly dependent if there is a solution to this equation with at least one <span class="math inline">\(a_j\ne0\)</span>.</p>
 </div>
 </div>
@@ -883,7 +894,9 @@ Example: dependent but spanning
 </div>
 <div class="callout-body-container callout-body">
 <p>The list <span class="math inline">\((1,0)^\top,(0,1)^\top,(1,1)^\top\)</span> spans <span class="math inline">\(\mathbb R^2\)</span>, because the first two vectors do. It is dependent because</p>
-<p>[ (1,0)<sup>+(0,1)</sup>-(1,1)^. ]</p>
+<p><span class="math display">\[
+(1,0)^\top+(0,1)^\top-(1,1)^\top=0.
+\]</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: basis and dimension">
@@ -911,7 +924,9 @@ Coordinates relative to a basis
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> <span class="math inline">\(v_1,\ldots,v_k\)</span> is a basis of <span class="math inline">\(V\)</span>.</p>
 <p><strong>Conclusion.</strong> Every <span class="math inline">\(v\in V\)</span> has a unique coordinate representation</p>
-<p>[ v=a_1v_1++a_kv_k ]</p>
+<p><span class="math display">\[
+v=a_1v_1+\cdots+a_kv_k
+\]</span></p>
 <p>for scalars <span class="math inline">\(a_1,\ldots,a_k\in\mathbb F\)</span>.</p>
 </div>
 </div>
@@ -930,7 +945,9 @@ Worked example: a basis for a constrained plane
 </div>
 <div class="callout-body-container callout-body">
 <p>For <span class="math inline">\(U=\{(x,y,z)^\top\in\mathbb R^3:x+y+z=0\}\)</span>,</p>
-<p>[ (x,y,z)<sup>=x(1,0,-1)</sup>+y(0,1,-1)^. ]</p>
+<p><span class="math display">\[
+(x,y,z)^\top=x(1,0,-1)^\top+y(0,1,-1)^\top.
+\]</span></p>
 <p>The two displayed vectors span <span class="math inline">\(U\)</span>. If <span class="math inline">\(a(1,0,-1)^\top+b(0,1,-1)^\top=0\)</span>, the first two coordinates give <span class="math inline">\(a=b=0\)</span>, so they are independent. Therefore they form a basis and <span class="math inline">\(\dim U=2\)</span>.</p>
 </div>
 </div>
@@ -966,7 +983,9 @@ Definition: linear map
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be vector spaces over the same field <span class="math inline">\(\mathbb F\)</span>. A function <span class="math inline">\(L:V\to W\)</span> is linear if, for every <span class="math inline">\(u,v\in V\)</span> and <span class="math inline">\(a,b\in\mathbb F\)</span>,</p>
-<p>[ L(au+bv)=aL(u)+bL(v). ]</p>
+<p><span class="math display">\[
+L(au+bv)=aL(u)+bL(v).
+\]</span></p>
 <p>Equivalently, <span class="math inline">\(L(u+v)=L(u)+L(v)\)</span> and <span class="math inline">\(L(av)=aL(v)\)</span> hold for all permitted inputs and scalars.</p>
 </div>
 </div>
@@ -1008,7 +1027,9 @@ The space of linear maps
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> are vector spaces over <span class="math inline">\(\mathbb F\)</span>. Let <span class="math inline">\(\mathcal L(V,W)\)</span> be the set of linear maps from <span class="math inline">\(V\)</span> to <span class="math inline">\(W\)</span>. For <span class="math inline">\(L_1,L_2\in\mathcal L(V,W)\)</span> and <span class="math inline">\(a\in\mathbb F\)</span>, define</p>
-<p>[ (L_1+L_2)(v):=L_1(v)+L_2(v),(aL_1)(v):=aL_1(v). ]</p>
+<p><span class="math display">\[
+(L_1+L_2)(v):=L_1(v)+L_2(v),\qquad (aL_1)(v):=aL_1(v).
+\]</span></p>
 <p><strong>Conclusion.</strong> With these pointwise operations, <span class="math inline">\(\mathcal L(V,W)\)</span> is a vector space.</p>
 </div>
 </div>
@@ -1027,7 +1048,10 @@ Definition: kernel and image
 </div>
 <div class="callout-body-container callout-body">
 <p>For a linear map <span class="math inline">\(L:V\to W\)</span>,</p>
-<p>[ L:={vV:L(v)=0}, L:={L(v):vV}W. ]</p>
+<p><span class="math display">\[
+\ker L:=\{v\in V:L(v)=0\},\qquad
+\operatorname{im}L:=\{L(v):v\in V\}\subseteq W.
+\]</span></p>
 <p>The kernel is a subset of the domain <span class="math inline">\(V\)</span>. The image is a subset of the codomain <span class="math inline">\(W\)</span>.</p>
 </div>
 </div>
@@ -1074,7 +1098,9 @@ Rank-nullity theorem
 <div class="callout-body-container callout-body">
 <p><strong>Assumptions.</strong> <span class="math inline">\(V\)</span> is finite-dimensional, <span class="math inline">\(W\)</span> is a vector space over the same field, and <span class="math inline">\(L:V\to W\)</span> is linear.</p>
 <p><strong>Conclusion.</strong> <span class="math inline">\(\operatorname{im}L\)</span> is finite-dimensional and</p>
-<p>[ V=(L)+(L). ]</p>
+<p><span class="math display">\[
+\dim V=\dim(\ker L)+\dim(\operatorname{im}L).
+\]</span></p>
 <p>The quantity <span class="math inline">\(\dim(\operatorname{im}L)\)</span> is the rank of <span class="math inline">\(L\)</span>; <span class="math inline">\(\dim(\ker L)\)</span> is its nullity.</p>
 </div>
 </div>
@@ -1093,9 +1119,13 @@ Worked example: a map from <span class="math inline">\(\mathbb R^3\)</span> to <
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(L:\mathbb R^3\to\mathbb R^2\)</span> be</p>
-<p>[ L(x,y,z)<sup>=(x+y,z)</sup>. ]</p>
+<p><span class="math display">\[
+L(x,y,z)^\top=(x+y,z)^\top.
+\]</span></p>
 <p>The equation <span class="math inline">\(L(x,y,z)^\top=0\)</span> gives <span class="math inline">\(x=-y\)</span> and <span class="math inline">\(z=0\)</span>, so</p>
-<p>[ L={(1,-1,0)^}. ]</p>
+<p><span class="math display">\[
+\ker L=\operatorname{span}\{(1,-1,0)^\top\}.
+\]</span></p>
 <p>Given any <span class="math inline">\((a,b)^\top\in\mathbb R^2\)</span>, choose <span class="math inline">\((x,y,z)^\top=(a,0,b)^\top\)</span>. Hence <span class="math inline">\(\operatorname{im}L=\mathbb R^2\)</span>. The dimensions satisfy <span class="math inline">\(3=1+2\)</span>.</p>
 </div>
 </div>
@@ -1114,7 +1144,9 @@ Definition: injective and surjective
 </div>
 <div class="callout-body-container callout-body">
 <p>A function <span class="math inline">\(f:X\to Y\)</span> is injective if</p>
-<p>[ x_1,x_2X:f(x_1)=f(x_2)x_1=x_2. ]</p>
+<p><span class="math display">\[
+\forall x_1,x_2\in X:\quad f(x_1)=f(x_2)\Rightarrow x_1=x_2.
+\]</span></p>
 <p>It is surjective if <span class="math inline">\(f(X)=Y\)</span>. It is bijective if it is both injective and surjective.</p>
 </div>
 </div>
