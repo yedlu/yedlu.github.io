@@ -930,6 +930,52 @@ Second-order conditions (Theorem 4.2.4)
 </div>
 </div>
 <p>The distinction between semidefinite and definite is the distinction between a test that a true optimum must pass and one that proves a strict local result. The semidefinite cases are inconclusive.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked calculation: solve the FOC, then use the SOC">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Worked calculation: solve the FOC, then use the SOC
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maximize</p>
+<p><span class="math display">\[
+f(x,y)=6x+4y-x^2-2y^2
+\]</span></p>
+<p>over <span class="math inline">\(\mathbb R^2\)</span>.</p>
+<p><strong>Step 1: solve the first-order conditions.</strong> Because the domain is open, an interior optimum must satisfy</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial f}{\partial x}&amp;=6-2x=0,\\
+\frac{\partial f}{\partial y}&amp;=4-4y=0.
+\end{aligned}
+\]</span></p>
+<p>Hence the only stationary point is</p>
+<p><span class="math display">\[
+(x^*,y^*)=(3,1).
+\]</span></p>
+<p><strong>Step 2: classify the candidate with the Hessian.</strong> We have</p>
+<p><span class="math display">\[
+D^2f(x,y)=
+\begin{pmatrix}
+-2&amp;0\\
+0&amp;-4
+\end{pmatrix}.
+\]</span></p>
+<p>For every nonzero direction <span class="math inline">\(z=(z_1,z_2)^{\mathsf{T}}\)</span>,</p>
+<p><span class="math display">\[
+z^{\mathsf{T}}D^2f(x,y)z=-2z_1^2-4z_2^2&lt;0.
+\]</span></p>
+<p>The Hessian is negative definite, so <span class="math inline">\((3,1)\)</span> is a strict local maximum.</p>
+<p><strong>Step 3: check the result independently.</strong> Completing squares gives</p>
+<p><span class="math display">\[
+f(x,y)=11-(x-3)^2-2(y-1)^2\le11.
+\]</span></p>
+<p>Equality holds only at <span class="math inline">\((3,1)\)</span>. Thus the same point is the unique global maximum. The FOC found the candidate; the SOC classified it; completing squares established the global claim.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Examples: strict curvature and a flat test">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1064,7 +1110,7 @@ x_1^2+x_2^2&amp;=1.
 </div>
 <p><strong>Retrieval check.</strong> In the circle example, why is the gradient of <span class="math inline">\(f\)</span> not required to be zero at the constrained optimum?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1073,7 +1119,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Feasible moves are restricted to the circle. The correct condition is that <span class="math inline">\(\nabla f\)</span> lies in the span of <span class="math inline">\(\nabla g\)</span>, not that it vanishes. A nonzero gradient can point normal to the feasible curve.</p>
 </div>
@@ -1242,6 +1288,46 @@ Complementary slackness pairs pressure with scarcity
 <p>An inactive constraint leaves room for a small move, so its multiplier must be zero. A positive multiplier can occur only when the constraint binds. The product of multiplier and slack encodes both cases in one equation.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="KKT sign dictionary for maximization">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+KKT sign dictionary for maximization
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The convention on this page is:</p>
+<ul>
+<li><p>maximize <span class="math inline">\(f(x)\)</span>;</p></li>
+<li><p>write every inequality as <span class="math inline">\(h_i(x)\le c_i\)</span>;</p></li>
+<li><p>use</p>
+<p><span class="math display">\[
+L(x;\lambda)
+=f(x)-\sum_i\lambda_i\bigl(h_i(x)-c_i\bigr);
+\]</span></p></li>
+<li><p>require <span class="math inline">\(\lambda_i\ge0\)</span>.</p></li>
+</ul>
+<p>Stationarity then reads</p>
+<p><span class="math display">\[
+\nabla f(x^*)
+=\sum_i\lambda_i^*\nabla h_i(x^*).
+\]</span></p>
+<p>The multiplier is nonnegative because the objective gradient at a constrained maximum is a nonnegative combination of the outward normals <span class="math inline">\(\nabla h_i(x^*)\)</span>.</p>
+<p>Two common translations are:</p>
+<ol type="1">
+<li><p>A lower bound <span class="math inline">\(q(x)\ge b\)</span> becomes <span class="math inline">\(-q(x)\le-b\)</span>. Its Lagrangian term is <span class="math inline">\(+\lambda[q(x)-b]\)</span>.</p></li>
+<li><p>For a minimization problem with <span class="math inline">\(h_i(x)\le c_i\)</span>, the usual convention is <span class="math inline">\(L_{\min}=f+\sum_i\lambda_i(h_i-c_i)\)</span> with <span class="math inline">\(\lambda_i\ge0\)</span>. In fact,</p>
+<p><span class="math display">\[
+L_{\min}(f,\lambda)
+=-L_{\max}(-f,\lambda).
+\]</span></p>
+<p>The Hessian sign test reverses as well: a strict local minimum requires positive curvature on the relevant directions.</p></li>
+</ol>
+<p>Do not memorize a multiplier sign without the objective direction, inequality direction, and displayed Lagrangian. Those three choices determine the sign.</p>
+</div>
+</div>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1262,6 +1348,10 @@ F=\{x\in\mathbb R^n:h(x)\le c\}.
 \]</span></p>
 <p><strong>Conclusion.</strong> There is <span class="math inline">\(\lambda^*\in\mathbb R^l\)</span> such that:</p>
 <ol type="1">
+<li><p><strong>primal feasibility</strong></p>
+<p><span class="math display">\[
+h(x^*)\le c;
+\]</span></p></li>
 <li><p><strong>stationarity</strong></p>
 <p><span class="math display">\[
 Df(x^*)=\lambda^{*\mathsf{T}}Dh(x^*);
@@ -1279,7 +1369,7 @@ Df(x^*)=\lambda^{*\mathsf{T}}Dh(x^*);
 </div>
 <p>The rank condition is the linear independence constraint qualification, or LICQ. It is a condition on the active gradients only. Inactive constraints do not define the local boundary at <span class="math inline">\(x^*\)</span>.</p>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof strategy">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1288,31 +1378,66 @@ Show proof strategy
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The feasible first-order directions form a cone cut out by the active gradients. At a local maximum, no feasible direction can have a positive directional derivative. A finite-dimensional separation result represents <span class="math inline">\(Df(x^*)\)</span> as a nonnegative combination of the active constraint gradients. Assign multiplier zero to every inactive constraint. This gives stationarity, dual feasibility, and complementary slackness.</p>
 <p>The separation step is the inequality analogue of the normal-space argument behind equality-constrained multipliers.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked example: a binding resource constraint">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked calculation: solve KKT by active-set cases">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Worked example: a binding resource constraint
+Worked calculation: solve KKT by active-set cases
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For the opening problem, let <span class="math inline">\(h(x)=x_1+x_2\)</span> and <span class="math inline">\(c=2\)</span>. At <span class="math inline">\(x^*=(1,1)^{\mathsf{T}}\)</span>,</p>
+<p>Consider</p>
 <p><span class="math display">\[
 \begin{aligned}
-Df(x^*)&amp;=(2,2),\\
-Dh(x^*)&amp;=(1,1).
+&amp;\max_{x,y}
+&amp;&amp;-(x-2)^2-y^2\\
+&amp;\text{s.t.}
+&amp;&amp;x\le1,\\
+&amp;&amp;&amp;y\le2.
 \end{aligned}
 \]</span></p>
-<p>Stationarity gives <span class="math inline">\(\lambda^*=2\)</span>. The constraint binds, so complementary slackness holds. The multiplier is positive because relaxing the resource limit raises the optimized value locally.</p>
+<p>Both constraints already have the form <span class="math inline">\(h_i\le c_i\)</span>. With multipliers <span class="math inline">\(\lambda_1,\lambda_2\ge0\)</span>, use</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(x,y;\lambda_1,\lambda_2)
+&amp;=-(x-2)^2-y^2\\
+&amp;\quad-\lambda_1(x-1)\\
+&amp;\quad-\lambda_2(y-2).
+\end{aligned}
+\]</span></p>
+<p>The KKT conditions are:</p>
+<ol type="1">
+<li><p><strong>Stationarity</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+-2(x-2)-\lambda_1&amp;=0,\\
+-2y-\lambda_2&amp;=0.
+\end{aligned}
+\]</span></p></li>
+<li><p><strong>Primal feasibility:</strong> <span class="math inline">\(x\le1\)</span> and <span class="math inline">\(y\le2\)</span>.</p></li>
+<li><p><strong>Dual feasibility:</strong> <span class="math inline">\(\lambda_1\ge0\)</span> and <span class="math inline">\(\lambda_2\ge0\)</span>.</p></li>
+<li><p><strong>Complementary slackness:</strong> <span class="math inline">\(\lambda_1(1-x)=0\)</span> and <span class="math inline">\(\lambda_2(2-y)=0\)</span>.</p></li>
+</ol>
+<p>Now solve the cases without guessing:</p>
+<ul>
+<li>If <span class="math inline">\(y=2\)</span> were active, stationarity would give <span class="math inline">\(\lambda_2=-4\)</span>, violating dual feasibility. Therefore it is inactive. Complementary slackness gives <span class="math inline">\(\lambda_2=0\)</span>, and stationarity gives <span class="math inline">\(y=0\)</span>.</li>
+<li>If <span class="math inline">\(x&lt;1\)</span> were inactive, then <span class="math inline">\(\lambda_1=0\)</span> and stationarity would give <span class="math inline">\(x=2\)</span>, violating primal feasibility. Therefore it is active: <span class="math inline">\(x=1\)</span>, and stationarity gives <span class="math inline">\(\lambda_1=2\)</span>.</li>
+</ul>
+<p>The only KKT point is</p>
+<p><span class="math display">\[
+(x^*,y^*;\lambda_1^*,\lambda_2^*)=(1,0;2,0).
+\]</span></p>
+<p>The active set is <span class="math inline">\(A(x^*)=\{1\}\)</span>. Since <span class="math inline">\(\nabla h_1=(1,0)^{\mathsf{T}}\ne0\)</span>, the active-gradient matrix has rank one, so LICQ holds.</p>
+<p>Substitution verifies zero stationarity residuals, primal feasibility, nonnegative multipliers, and both complementary-slackness products. The binding <span class="math inline">\(x\)</span> constraint has a positive multiplier; the slack <span class="math inline">\(y\)</span> constraint has multiplier zero.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="KKT conditions are necessary here, not automatically sufficient">
@@ -1369,6 +1494,15 @@ Definition: critical cone
 <li><span class="math inline">\(Dh_i(x^*)z\le0\)</span> for <span class="math inline">\(i\in A(x^*)\setminus B(x^*,\lambda^*)\)</span>.</li>
 </ol>
 <p>Strongly active constraints must remain tangent in a critical direction. A weakly active constraint, whose multiplier is zero, may move into its feasible side.</p>
+<p>Stationarity makes every critical direction neutral to first order:</p>
+<p><span class="math display">\[
+\begin{aligned}
+Df(x^*)z
+&amp;=\sum_i\lambda_i^*Dh_i(x^*)z\\
+&amp;=0.
+\end{aligned}
+\]</span></p>
+<p>For strongly active constraints, <span class="math inline">\(Dh_i(x^*)z=0\)</span>. Every other multiplier is zero, so no term remains in the sum.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="Sign convention in the Section 4.4 slides">
@@ -1412,9 +1546,40 @@ z^{\mathsf{T}}D_{xx}^2L(x^*;\lambda^*)z&lt;0,
 </div>
 </div>
 <p>The critical cone replaces the equality-constrained tangent space. It keeps only directions that are feasible to first order and neutral with respect to the first-order objective change.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Worked calculation: SOC on the KKT critical cone">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Worked calculation: SOC on the KKT critical cone
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Continue the preceding KKT example. Only the first constraint is active, and <span class="math inline">\(\lambda_1^*=2&gt;0\)</span>. Thus it is strongly active. A critical direction <span class="math inline">\(z=(z_1,z_2)^{\mathsf{T}}\)</span> must satisfy</p>
+<p><span class="math display">\[
+z_1=0.
+\]</span></p>
+<p>Hence</p>
+<p><span class="math display">\[
+C(x^*,\lambda^*)
+=\{(0,t)^{\mathsf{T}}:t\in\mathbb R\}.
+\]</span></p>
+<p>The constraints are linear, so they add no curvature to the Lagrangian:</p>
+<p><span class="math display">\[
+D^2_{xx}L(x^*;\lambda^*)=-2I_2.
+\]</span></p>
+<p>For every nonzero critical direction <span class="math inline">\(z=(0,t)^{\mathsf{T}}\)</span>,</p>
+<p><span class="math display">\[
+z^{\mathsf{T}}D^2_{xx}Lz=-2t^2&lt;0.
+\]</span></p>
+<p>The strict inequality-constrained SOC therefore proves that <span class="math inline">\((1,0)\)</span> is a strict constrained local maximum.</p>
+<p>As a global check, <span class="math inline">\(x\le1\)</span> makes <span class="math inline">\(x=1\)</span> the feasible point closest to <span class="math inline">\(2\)</span>, and <span class="math inline">\(y=0\)</span> maximizes <span class="math inline">\(-y^2\)</span> while satisfying <span class="math inline">\(y\le2\)</span>. Thus <span class="math inline">\((1,0)\)</span> is also the unique global maximum. The SOC itself gives only the strict local conclusion.</p>
+</div>
+</div>
 <p><strong>Retrieval check.</strong> Why does an inactive constraint have multiplier zero?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1423,7 +1588,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Its slack is positive. Complementary slackness requires <span class="math inline">\(\lambda_i^*[c_i-h_i(x^*)]=0\)</span>, so the multiplier must be zero.</p>
 </div>
@@ -1592,7 +1757,7 @@ Do not guess which inequalities bind
 <li>For a maximization problem with <span class="math inline">\(h_i(x)\le c_i\)</span>, what sign must the KKT multiplier have, and when must it equal zero?</li>
 </ol>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1601,7 +1766,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><span class="math inline">\(f(x)=x\)</span> on <span class="math inline">\((0,1)\)</span> has supremum <span class="math inline">\(1\)</span> but no maximum; compactness fails.</li>
