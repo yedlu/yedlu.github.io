@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Convexity, Concavity, and Global Optimization – Y. Eddie Lu</title>
+<title>Convexity and Global Optimization – Y. Eddie Lu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -154,7 +154,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/convexity.html">Convexity</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/convexity.html">Chapter 5.1–5.3: Convexity</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -496,19 +496,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optimization</span></a>
+ <span class="menu-text">Chapter 4.1–4.5: Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Maximum and Envelope Theorems</span></a>
+ <span class="menu-text">Chapter 4.6–4.7: Maximum and Envelope</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Convexity</span></a>
+ <span class="menu-text">Chapter 5.1–5.3: Convexity</span></a>
   </div>
 </li>
       </ul>
@@ -620,30 +620,35 @@ window.Quarto = {
   <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
   <li><a href="#course-map" id="toc-course-map" class="nav-link" data-scroll-target="#course-map">Course map</a></li>
   <li><a href="#prerequisite-retrieval" id="toc-prerequisite-retrieval" class="nav-link" data-scroll-target="#prerequisite-retrieval">Prerequisite retrieval</a></li>
-  <li><a href="#convex-sets-and-mixtures" id="toc-convex-sets-and-mixtures" class="nav-link" data-scroll-target="#convex-sets-and-mixtures">1. Convex sets and mixtures</a>
+  <li><a href="#convex-sets" id="toc-convex-sets" class="nav-link" data-scroll-target="#convex-sets">5.1 Convex sets</a>
   <ul class="collapse">
-  <li><a href="#finite-mixtures-are-the-operational-form" id="toc-finite-mixtures-are-the-operational-form" class="nav-link" data-scroll-target="#finite-mixtures-are-the-operational-form">1.1 Finite mixtures are the operational form</a></li>
+  <li><a href="#finite-mixtures-are-the-operational-form" id="toc-finite-mixtures-are-the-operational-form" class="nav-link" data-scroll-target="#finite-mixtures-are-the-operational-form">Finite mixtures are the operational form</a></li>
+  <li><a href="#separation-and-support" id="toc-separation-and-support" class="nav-link" data-scroll-target="#separation-and-support">Separation and support</a></li>
   </ul></li>
-  <li><a href="#convex-and-concave-functions" id="toc-convex-and-concave-functions" class="nav-link" data-scroll-target="#convex-and-concave-functions">2. Convex and concave functions</a>
+  <li><a href="#concave-and-convex-functions" id="toc-concave-and-convex-functions" class="nav-link" data-scroll-target="#concave-and-convex-functions">5.2 Concave and convex functions</a>
   <ul class="collapse">
-  <li><a href="#jensens-inequality-for-finite-mixtures" id="toc-jensens-inequality-for-finite-mixtures" class="nav-link" data-scroll-target="#jensens-inequality-for-finite-mixtures">2.1 Jensen’s inequality for finite mixtures</a></li>
+  <li><a href="#jensens-inequality-for-finite-mixtures" id="toc-jensens-inequality-for-finite-mixtures" class="nav-link" data-scroll-target="#jensens-inequality-for-finite-mixtures">Jensen’s inequality for finite mixtures</a></li>
+  <li><a href="#epigraphs-and-hypographs" id="toc-epigraphs-and-hypographs" class="nav-link" data-scroll-target="#epigraphs-and-hypographs">Epigraphs and hypographs</a></li>
+  <li><a href="#first-order-characterization" id="toc-first-order-characterization" class="nav-link" data-scroll-target="#first-order-characterization">First-order characterization</a></li>
+  <li><a href="#second-order-characterization" id="toc-second-order-characterization" class="nav-link" data-scroll-target="#second-order-characterization">Second-order characterization</a></li>
+  <li><a href="#affine-functions-and-continuity" id="toc-affine-functions-and-continuity" class="nav-link" data-scroll-target="#affine-functions-and-continuity">Affine functions and continuity</a></li>
   </ul></li>
-  <li><a href="#geometry-in-one-dimension-higher" id="toc-geometry-in-one-dimension-higher" class="nav-link" data-scroll-target="#geometry-in-one-dimension-higher">3. Geometry in one dimension higher</a></li>
-  <li><a href="#first-order-characterizations" id="toc-first-order-characterizations" class="nav-link" data-scroll-target="#first-order-characterizations">4. First-order characterizations</a>
+  <li><a href="#convex-optimization" id="toc-convex-optimization" class="nav-link" data-scroll-target="#convex-optimization">5.3 Convex optimization</a>
   <ul class="collapse">
-  <li><a href="#global-optimization-from-a-first-order-condition" id="toc-global-optimization-from-a-first-order-condition" class="nav-link" data-scroll-target="#global-optimization-from-a-first-order-condition">4.1 Global optimization from a first-order condition</a></li>
+  <li><a href="#the-safe-first-order-condition" id="toc-the-safe-first-order-condition" class="nav-link" data-scroll-target="#the-safe-first-order-condition">The safe first-order condition</a></li>
+  <li><a href="#kkt-as-a-global-certificate" id="toc-kkt-as-a-global-certificate" class="nav-link" data-scroll-target="#kkt-as-a-global-certificate">KKT as a global certificate</a></li>
   </ul></li>
-  <li><a href="#second-order-characterizations" id="toc-second-order-characterizations" class="nav-link" data-scroll-target="#second-order-characterizations">5. Second-order characterizations</a></li>
-  <li><a href="#quasiconvexity-and-quasiconcavity" id="toc-quasiconvexity-and-quasiconcavity" class="nav-link" data-scroll-target="#quasiconvexity-and-quasiconcavity">6. Quasiconvexity and quasiconcavity</a>
+  <li><a href="#extension-quasiconvexity-and-quasiconcavity" id="toc-extension-quasiconvexity-and-quasiconcavity" class="nav-link" data-scroll-target="#extension-quasiconvexity-and-quasiconcavity">Extension: quasiconvexity and quasiconcavity</a>
   <ul class="collapse">
-  <li><a href="#strict-quasiconcavity-and-uniqueness" id="toc-strict-quasiconcavity-and-uniqueness" class="nav-link" data-scroll-target="#strict-quasiconcavity-and-uniqueness">6.1 Strict quasiconcavity and uniqueness</a></li>
-  <li><a href="#differentiated-quasiconcavity-necessity-and-a-safe-strict-test" id="toc-differentiated-quasiconcavity-necessity-and-a-safe-strict-test" class="nav-link" data-scroll-target="#differentiated-quasiconcavity-necessity-and-a-safe-strict-test">6.2 Differentiated quasiconcavity: necessity and a safe strict test</a></li>
+  <li><a href="#extension-1-strict-quasiconcavity-and-uniqueness" id="toc-extension-1-strict-quasiconcavity-and-uniqueness" class="nav-link" data-scroll-target="#extension-1-strict-quasiconcavity-and-uniqueness">Extension 1: strict quasiconcavity and uniqueness</a></li>
+  <li><a href="#extension-2-differentiated-quasiconcavity" id="toc-extension-2-differentiated-quasiconcavity" class="nav-link" data-scroll-target="#extension-2-differentiated-quasiconcavity">Extension 2: differentiated quasiconcavity</a></li>
   </ul></li>
-  <li><a href="#assumption-audit-and-problem-blueprints" id="toc-assumption-audit-and-problem-blueprints" class="nav-link" data-scroll-target="#assumption-audit-and-problem-blueprints">7. Assumption audit and problem blueprints</a>
+  <li><a href="#assumption-audit-and-problem-blueprints" id="toc-assumption-audit-and-problem-blueprints" class="nav-link" data-scroll-target="#assumption-audit-and-problem-blueprints">Assumption audit and problem blueprints</a>
   <ul class="collapse">
   <li><a href="#assumption-audit" id="toc-assumption-audit" class="nav-link" data-scroll-target="#assumption-audit">Assumption audit</a></li>
   <li><a href="#blueprint-prove-a-global-optimum" id="toc-blueprint-prove-a-global-optimum" class="nav-link" data-scroll-target="#blueprint-prove-a-global-optimum">Blueprint: prove a global optimum</a></li>
   <li><a href="#blueprint-classify-quasi-shape" id="toc-blueprint-classify-quasi-shape" class="nav-link" data-scroll-target="#blueprint-classify-quasi-shape">Blueprint: classify quasi-shape</a></li>
+  <li><a href="#blueprint-certify-a-convex-program-with-kkt" id="toc-blueprint-certify-a-convex-program-with-kkt" class="nav-link" data-scroll-target="#blueprint-certify-a-convex-program-with-kkt">Blueprint: certify a convex program with KKT</a></li>
   <li><a href="#exit-tickets" id="toc-exit-tickets" class="nav-link" data-scroll-target="#exit-tickets">Exit tickets</a></li>
   <li><a href="#mastery-checklist" id="toc-mastery-checklist" class="nav-link" data-scroll-target="#mastery-checklist">Mastery checklist</a></li>
   <li><a href="#sources-and-further-reading" id="toc-sources-and-further-reading" class="nav-link" data-scroll-target="#sources-and-further-reading">Sources and further reading</a></li>
@@ -654,9 +659,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/convexity.html">Convexity</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/convexity.html">Chapter 5.1–5.3: Convexity</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Convexity, Concavity, and Global Optimization</h1>
+<h1 class="title">Convexity and Global Optimization</h1>
 </div>
 
 
@@ -674,7 +679,7 @@ window.Quarto = {
 
 
 <p><em>Y. Eddie Lu</em>, Summer 2026</p>
-<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Lecture 8 of 8</p>
+<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Chapter 5, Sections 5.1–5.3</p>
 <section id="orientation" class="level2">
 <h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
 <div class="intuition callout callout-style-simple callout-none no-icon callout-titled">
@@ -688,12 +693,13 @@ What problem does convexity solve?
 </div>
 <div class="callout-body-container callout-body">
 <p>Calculus finds candidates near one point. Convexity compares every point on a line segment. That simple geometric restriction turns a local first-order condition into a global conclusion, rules out multiple strict optima, and makes many economic choice problems tractable.</p>
-<p>There are three objects to keep separate:</p>
+<p>The chapter has three layers:</p>
 <ol type="1">
-<li>a <strong>convex feasible set</strong> contains mixtures of its feasible points;</li>
-<li>a <strong>concave objective</strong> rewards mixtures enough to support maximization;</li>
-<li><strong>quasiconcavity</strong> only requires convex upper level sets, so it is weaker and does not carry the same curvature conclusions.</li>
+<li><strong>Section 5.1:</strong> convex sets contain mixtures of feasible points, and hyperplanes describe their boundaries and separation.</li>
+<li><strong>Section 5.2:</strong> concave and convex functions turn chord geometry into global tangent and Hessian inequalities.</li>
+<li><strong>Section 5.3:</strong> convex feasibility plus a concave objective turns local and KKT conditions into global certificates.</li>
 </ol>
+<p>The final extension treats <strong>quasiconcavity</strong>. It only requires convex upper level sets, so it is weaker and does not carry the same curvature conclusions.</p>
 </div>
 </div>
 <p>This page follows the convex-set material in <a href="https://sites.wustl.edu/nachbar/files/2019/09/convexityrn.pdf">Nachbar, *Convexity in <span class="math inline">\(\mathbb R^N\)</span></a>, the function results in <a href="https://sites.wustl.edu/nachbar/files/2019/09/concavity.pdf">Nachbar, <em>Concave and Convex Functions</em></a>, and the level-set treatment in <a href="https://sites.wustl.edu/nachbar/files/2020/04/QuasiConcavity.pdf">Nachbar, <em>Quasi-concavity</em></a>.</p>
@@ -732,15 +738,15 @@ Show answer
 </div>
 </div>
 </section>
-<section id="convex-sets-and-mixtures" class="level1">
-<h1>1. Convex sets and mixtures</h1>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: convex set and convex combination">
+<section id="convex-sets" class="level1">
+<h1>5.1 Convex sets</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 5.1.1: convex combinations and convex sets">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition: convex set and convex combination
+Definition 5.1.1: convex combinations and convex sets
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -784,7 +790,7 @@ Convexity is not connectedness in higher dimensions
 </div>
 </div>
 <section id="finite-mixtures-are-the-operational-form" class="level2">
-<h2 class="anchored" data-anchor-id="finite-mixtures-are-the-operational-form">1.1 Finite mixtures are the operational form</h2>
+<h2 class="anchored" data-anchor-id="finite-mixtures-are-the-operational-form">Finite mixtures are the operational form</h2>
 <p>The finite-mixture statement is the one used in probability, diversification, and mixed strategies. For a portfolio interpretation, <span class="math inline">\(x_i\)</span> can be feasible portfolios and <span class="math inline">\(\theta_i\)</span> their mixing weights. Convex feasibility means the weighted average portfolio is still available.</p>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -816,16 +822,137 @@ Show proof
 </div>
 </div>
 </section>
-</section>
-<section id="convex-and-concave-functions" class="level1">
-<h1>2. Convex and concave functions</h1>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: convexity, concavity, and strictness">
+<section id="separation-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="separation-and-support">Separation and support</h2>
+<p>A hyperplane is a level set of a nonconstant affine function:</p>
+<p><span class="math display">\[
+H(a,b)
+=\{z\in\mathbb R^N:a^{\mathsf T}z=b\}.
+\]</span></p>
+<p>Here <span class="math inline">\(a\ne0\)</span>. The vector <span class="math inline">\(a\)</span> is normal to the hyperplane. Changing <span class="math inline">\(b\)</span> slides the hyperplane without rotating it.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition: convexity, concavity, and strictness
+Theorem 5.1.3: separating hyperplane theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C,D\subseteq\mathbb R^N\)</span> be nonempty, disjoint, and convex. Then there are <span class="math inline">\(a\in\mathbb R^N\setminus\{0\}\)</span> and <span class="math inline">\(b\in\mathbb R\)</span> such that</p>
+<p><span class="math display">\[
+a^{\mathsf T}x\ge b
+\qquad\text{for every }x\in C,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+a^{\mathsf T}y\le b
+\qquad\text{for every }y\in D.
+\]</span></p>
+</div>
+</div>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What separation means
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Project every point onto the one-dimensional axis <span class="math inline">\(a\)</span>. The theorem says that the projected values from <span class="math inline">\(C\)</span> lie on one side of <span class="math inline">\(b\)</span>, while those from <span class="math inline">\(D\)</span> lie on the other. The inequalities may be equal at limit points. Strict separation needs stronger hypotheses, such as positive distance between the sets.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: separating two disks">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: separating two disks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let</p>
+<p><span class="math display">\[
+C=\{z\in\mathbb R^2:\|z\|\le1\},
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+D=\{z\in\mathbb R^2:\|z-(3,0)\|\le1\}.
+\]</span></p>
+<p>Choose <span class="math inline">\(a=(-1,0)^{\mathsf T}\)</span> and <span class="math inline">\(b=-3/2\)</span>. Then every <span class="math inline">\(x\in C\)</span> satisfies <span class="math inline">\(a^{\mathsf T}x\ge-1\ge b\)</span>, while every <span class="math inline">\(y\in D\)</span> satisfies <span class="math inline">\(a^{\mathsf T}y\le-2\le b\)</span>. The vertical line <span class="math inline">\(z_1=3/2\)</span> lies between the two disks.</p>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5.1.4: supporting hyperplane theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty and convex, and let <span class="math inline">\(x_0\)</span> be a boundary point of <span class="math inline">\(C\)</span>. Then there are <span class="math inline">\(a\in\mathbb R^N\setminus\{0\}\)</span> and <span class="math inline">\(b\in\mathbb R\)</span> such that</p>
+<p><span class="math display">\[
+a^{\mathsf T}x_0=b,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+a^{\mathsf T}x\ge b
+\qquad\text{for every }x\in C.
+\]</span></p>
+</div>
+</div>
+<p>The hyperplane touches <span class="math inline">\(C\)</span> at <span class="math inline">\(x_0\)</span> and leaves the whole set in one closed half-space. For the unit ball and <span class="math inline">\(x_0=(1,0)\)</span>, take <span class="math inline">\(a=(-1,0)^{\mathsf T}\)</span> and <span class="math inline">\(b=-1\)</span>. The supporting line is <span class="math inline">\(z_1=1\)</span>.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof strategy">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof strategy
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For the full separation theorem, pass to relative interiors and separate the origin from the appropriate open convex difference set. The separating linear functional supplies <span class="math inline">\(a\)</span>, and its offset supplies <span class="math inline">\(b\)</span>. The familiar closest-pair proof is a useful special case when the distance between the sets is attained, but it is not the general proof for arbitrary nonclosed or unbounded convex sets.</p>
+<p>For support at <span class="math inline">\(x_0\)</span>, separate <span class="math inline">\(C\)</span> from a sequence of exterior points tending to <span class="math inline">\(x_0\)</span>, normalize the separating normals, and take a convergent subsequence. The limiting hyperplane passes through <span class="math inline">\(x_0\)</span>.</p>
+</div>
+</div>
+</div>
+<p><strong>Retrieval check.</strong> What is the difference between a separating hyperplane and a supporting hyperplane?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A separating hyperplane puts two disjoint convex sets in opposite closed half-spaces. A supporting hyperplane passes through a specified boundary point of one convex set and leaves that set in one closed half-space.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="concave-and-convex-functions" class="level1">
+<h1>5.2 Concave and convex functions</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 5.2.1: convexity, concavity, and strictness">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 5.2.1: convexity, concavity, and strictness
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -864,7 +991,7 @@ Basic examples
 </div>
 </div>
 <section id="jensens-inequality-for-finite-mixtures" class="level2">
-<h2 class="anchored" data-anchor-id="jensens-inequality-for-finite-mixtures">2.1 Jensen’s inequality for finite mixtures</h2>
+<h2 class="anchored" data-anchor-id="jensens-inequality-for-finite-mixtures">Jensen’s inequality for finite mixtures</h2>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -906,16 +1033,15 @@ f\left(\frac{x_1+x_2}{2}\right)
 </div>
 </div>
 </section>
-</section>
-<section id="geometry-in-one-dimension-higher" class="level1">
-<h1>3. Geometry in one dimension higher</h1>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: epigraph and hypograph">
+<section id="epigraphs-and-hypographs" class="level2">
+<h2 class="anchored" data-anchor-id="epigraphs-and-hypographs">Epigraphs and hypographs</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 5.2.2: epigraph and hypograph">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition: epigraph and hypograph
+Definition 5.2.2: epigraph and hypograph
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -937,7 +1063,7 @@ Definition: epigraph and hypograph
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Epigraph and hypograph characterization
+Theorem 5.2.3: epigraph and hypograph characterization
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -952,7 +1078,7 @@ Epigraph and hypograph characterization
 </div>
 </div>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -961,7 +1087,7 @@ Show proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> For concavity, take two points <span class="math inline">\((x,r)\)</span> and <span class="math inline">\((y,s)\)</span> in the hypograph. Thus <span class="math inline">\(r\le f(x)\)</span> and <span class="math inline">\(s\le f(y)\)</span>. Concavity gives</p>
 <p><span class="math display">\[
@@ -987,8 +1113,8 @@ The graph itself is usually not convex
 </div>
 </div>
 </section>
-<section id="first-order-characterizations" class="level1">
-<h1>4. First-order characterizations</h1>
+<section id="first-order-characterization" class="level2">
+<h2 class="anchored" data-anchor-id="first-order-characterization">First-order characterization</h2>
 <p>The chord definition does not require derivatives. When derivatives exist, it has an equivalent tangent-plane form.</p>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -996,7 +1122,7 @@ The graph itself is usually not convex
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Supporting inequalities for differentiable functions
+Theorem 5.2.4: supporting inequalities
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1009,11 +1135,12 @@ f(y)\le f(x)+\nabla f(x)^{\mathsf{T}}(y-x).
 <p><span class="math display">\[
 f(y)\ge f(x)+\nabla f(x)^{\mathsf{T}}(y-x).
 \]</span></p>
+<p><strong>Strict versions.</strong> The function is strictly concave if and only if the concave supporting inequality is strict whenever <span class="math inline">\(x\ne y\)</span>. It is strictly convex if and only if the convex supporting inequality is strict whenever <span class="math inline">\(x\ne y\)</span>.</p>
 </div>
 </div>
 <p>For concavity, every tangent plane lies weakly <strong>above</strong> the graph. For convexity, every tangent plane lies weakly <strong>below</strong> it. These are global inequalities for every pair <span class="math inline">\((x,y)\)</span>, not merely local Taylor approximations.</p>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1022,7 +1149,7 @@ Show proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Proof strategy for concavity.</strong> Let <span class="math inline">\(g(t)=f(x+t(y-x))\)</span> for <span class="math inline">\(t\in[0,1]\)</span>. Concavity of <span class="math inline">\(f\)</span> gives a chord inequality for <span class="math inline">\(g\)</span>. Divide by <span class="math inline">\(t&gt;0\)</span> and take <span class="math inline">\(t\downarrow0\)</span> to obtain the tangent inequality. Conversely, set <span class="math inline">\(z=\theta x+(1-\theta)y\)</span> and apply the supporting inequality at <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
@@ -1045,7 +1172,7 @@ f(y)
 </div>
 <p><strong>Retrieval check.</strong> In the converse proof, why are the multipliers on the two displayed inequalities <span class="math inline">\(\theta\)</span> and <span class="math inline">\(1-\theta\)</span>, rather than the other way around?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1054,7 +1181,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>They are the weights in the desired chord expression <span class="math inline">\(\theta f(x)+(1-\theta)f(y)\)</span>. With these weights, the two gradient terms are <span class="math inline">\(\theta(1-\theta)\nabla f(z)^{\mathsf{T}}(x-y)\)</span> and its negative, so they cancel.</p>
 </div>
@@ -1073,97 +1200,16 @@ A stationary point alone is not a global certificate
 <p>For <span class="math inline">\(f(x)=x^3\)</span>, <span class="math inline">\(f'(0)=0\)</span>, but <span class="math inline">\(0\)</span> is neither a maximum nor a minimum. The tangent inequality, or concavity/convexity plus an appropriate first-order condition, is the missing global structure.</p>
 </div>
 </div>
-<section id="global-optimization-from-a-first-order-condition" class="level2">
-<h2 class="anchored" data-anchor-id="global-optimization-from-a-first-order-condition">4.1 Global optimization from a first-order condition</h2>
-<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Concavity turns a variational inequality into a global maximum
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be convex and let <span class="math inline">\(f\)</span> be differentiable on an open neighborhood of <span class="math inline">\(C\)</span>.</p>
-<p><strong>Sufficient condition.</strong> If <span class="math inline">\(f\)</span> is concave and <span class="math inline">\(x^*\in C\)</span> satisfies, for every <span class="math inline">\(y\in C\)</span>,</p>
-<p><span class="math display">\[
-\nabla f(x^*)^{\mathsf{T}}(y-x^*)\le0,
-\]</span></p>
-<p>then <span class="math inline">\(x^*\)</span> is a global maximizer of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span>.</p>
-<p><strong>Necessary condition.</strong> If <span class="math inline">\(x^*\)</span> is a global maximizer on <span class="math inline">\(C\)</span>, the displayed inequality holds, whether or not <span class="math inline">\(f\)</span> is concave.</p>
-</div>
-</div>
-<p>For sufficiency, the concave supporting inequality gives</p>
-<p><span class="math display">\[
-\begin{gathered}
-f(y)\\
-\le\\
-f(x^*)+\nabla f(x^*)^{\mathsf{T}}(y-x^*)\\
-\le\\
-f(x^*).
-\end{gathered}
-\]</span></p>
-<p>for every <span class="math inline">\(y\in C\)</span>. For necessity, consider the feasible line <span class="math inline">\(x^*+t(y-x^*)\)</span> for <span class="math inline">\(t\in[0,1]\)</span> and differentiate at <span class="math inline">\(t=0\)</span> from the right.</p>
-<p>If <span class="math inline">\(x^*\)</span> is an interior point of <span class="math inline">\(C\)</span>, the inequality for all feasible directions reduces to <span class="math inline">\(\nabla f(x^*)=0\)</span>. At a boundary point it does not. This is the convex-analysis counterpart of the constrained first-order conditions in <a href="../../repo/econ8001/optimization.html">Optimization</a>.</p>
-<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Existence and uniqueness are separate claims
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(C\)</span> be convex.</p>
-<ul>
-<li>If <span class="math inline">\(f\)</span> is strictly concave, it has <strong>at most one</strong> global maximizer on <span class="math inline">\(C\)</span>.</li>
-<li>If <span class="math inline">\(f\)</span> is strictly convex, it has <strong>at most one</strong> global minimizer on <span class="math inline">\(C\)</span>.</li>
-<li>If, in addition, <span class="math inline">\(C\)</span> is compact and <span class="math inline">\(f\)</span> is continuous, Weierstrass supplies existence. Thus strict concavity plus those existence hypotheses gives a unique global maximizer.</li>
-</ul>
-</div>
-</div>
-<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Show proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Proof of uniqueness.</strong> If two distinct points <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> both maximize a strictly concave <span class="math inline">\(f\)</span>, their midpoint is feasible and has a strictly greater value than the common maximum, a contradiction. Reverse signs for strict convexity and minimization.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Do not use strictness as an existence condition">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Do not use strictness as an existence condition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The strictly concave function <span class="math inline">\(f(x)=\log x\)</span> on <span class="math inline">\((0,1)\)</span> has no maximum. Strict concavity or strict convexity gives an at-most-one conclusion. Compactness and continuity are what give existence.</p>
-</div>
-</div>
 </section>
-</section>
-<section id="second-order-characterizations" class="level1">
-<h1>5. Second-order characterizations</h1>
+<section id="second-order-characterization" class="level2">
+<h2 class="anchored" data-anchor-id="second-order-characterization">Second-order characterization</h2>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hessian characterization on an open convex domain
+Theorem 5.2.5: Hessian characterization
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1176,7 +1222,20 @@ Hessian characterization on an open convex domain
 </ul>
 </div>
 </div>
-<p>The curvature test examines every scalar restriction</p>
+<p>The Hessian test works because its sign controls the curvature of every line restriction through the domain.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(x,y\in C\)</span>, examine the scalar restriction</p>
 <p><span class="math display">\[
 h(t)=f\bigl(x+t(y-x)\bigr).
 \]</span></p>
@@ -1185,6 +1244,9 @@ h(t)=f\bigl(x+t(y-x)\bigr).
 h''(t)=(y-x)^{\mathsf{T}}D^2f\bigl(z(t)\bigr)(y-x).
 \]</span></p>
 <p>Thus a positive semidefinite Hessian makes every line restriction convex; negative semidefiniteness makes every such restriction concave.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important no-icon callout-titled" title="Strict convexity does not require a positive definite Hessian everywhere">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1212,8 +1274,488 @@ A one-point semidefinite Hessian says little
 </div>
 </div>
 </section>
-<section id="quasiconvexity-and-quasiconcavity" class="level1">
-<h1>6. Quasiconvexity and quasiconcavity</h1>
+<section id="affine-functions-and-continuity" class="level2">
+<h2 class="anchored" data-anchor-id="affine-functions-and-continuity">Affine functions and continuity</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition 5.2.7: affine function">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 5.2.7: affine function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">\(f:\mathbb R^N\to\mathbb R\)</span> is <strong>affine</strong> if there are <span class="math inline">\(a\in\mathbb R^N\)</span> and <span class="math inline">\(b\in\mathbb R\)</span> such that</p>
+<p><span class="math display">\[
+f(x)=a^{\mathsf T}x+b
+\qquad\text{for every }x\in\mathbb R^N.
+\]</span></p>
+</div>
+</div>
+<p>The constant <span class="math inline">\(b\)</span> shifts the graph but does not change its slope. For every <span class="math inline">\(x,y\)</span> and <span class="math inline">\(\theta\in[0,1]\)</span>,</p>
+<p><span class="math display">\[
+f\bigl(\theta x+(1-\theta)y\bigr)
+=\theta f(x)+(1-\theta)f(y).
+\]</span></p>
+<p>Thus an affine function satisfies both chord inequalities with equality.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5.2.8: characterization of affine functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">\(f:\mathbb R^N\to\mathbb R\)</span> is affine if and only if it is both convex and concave.</p>
+</div>
+</div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The forward direction follows from the displayed mixture equality. Conversely, convexity and concavity force equality for every two-point mixture. This gives linearity along every line segment. The finite-dimensional Jensen functional equation, together with the regularity already implied by finite-valued convexity on the open domain <span class="math inline">\(\mathbb R^N\)</span>, yields <span class="math inline">\(f(x)=a^{\mathsf T}x+b\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5.2.9: interior continuity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty, open, and convex. Every finite-valued convex or concave function <span class="math inline">\(f:C\to\mathbb R\)</span> is continuous on <span class="math inline">\(C\)</span>.</p>
+</div>
+</div>
+<p>Convexity bounds the slope of a chord through an interior point by slopes to nearby points in finitely many coordinate directions. Those bounds prevent a finite-valued convex function from jumping inside its domain. Apply the result to <span class="math inline">\(-f\)</span> for concavity.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Continuity at the boundary is not automatic">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Continuity at the boundary is not automatic
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The open-domain assumption matters. Define <span class="math inline">\(f:[0,1]\to\mathbb R\)</span> by <span class="math inline">\(f(0)=1\)</span> and <span class="math inline">\(f(x)=0\)</span> for <span class="math inline">\(x&gt;0\)</span>. This function is convex but discontinuous at <span class="math inline">\(0\)</span>. Convexity guarantees continuity on the relative interior, not at every included boundary point without more assumptions.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="convex-optimization" class="level1">
+<h1>5.3 Convex optimization</h1>
+<p>In a maximization problem, the standard global-shape pair is a convex feasible set and a concave objective. The word <em>convex optimization</em> includes this maximization form, or equivalently minimization of the convex function <span class="math inline">\(-f\)</span>.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5.3.1: local maxima are global
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty and convex, and let <span class="math inline">\(f:C\to\mathbb R\)</span> be concave.</p>
+<ol type="1">
+<li><p>Every local maximizer of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span> is a global maximizer.</p></li>
+<li><p>The set</p>
+<p><span class="math display">\[
+\operatorname*{arg\,max}_{x\in C}f(x)
+\]</span></p>
+<p>is convex, with the empty set counted as convex.</p></li>
+</ol>
+</div>
+</div>
+<div class="intuition callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why a better distant point would contradict local optimality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(y\)</span> had a higher value than a local maximizer <span class="math inline">\(x^*\)</span>, every sufficiently small move from <span class="math inline">\(x^*\)</span> toward <span class="math inline">\(y\)</span> would remain feasible. Concavity would make that nearby mixture better than <span class="math inline">\(x^*\)</span>, contradicting local maximality.</p>
+<p>If two points both attain the maximum, concavity says every mixture of them attains at least that same value. It cannot exceed the maximum, so the whole segment also maximizes.</p>
+</div>
+</div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">\(x^*\)</span> is a local maximizer but <span class="math inline">\(f(y)&gt;f(x^*)\)</span> for some <span class="math inline">\(y\in C\)</span>. For <span class="math inline">\(t\in(0,1)\)</span>, convexity gives</p>
+<p><span class="math display">\[
+x_t=(1-t)x^*+ty\in C.
+\]</span></p>
+<p>Concavity gives</p>
+<p><span class="math display">\[
+f(x_t)
+\ge(1-t)f(x^*)+tf(y)
+&gt;f(x^*).
+\]</span></p>
+<p>For small <span class="math inline">\(t\)</span>, <span class="math inline">\(x_t\)</span> is arbitrarily close to <span class="math inline">\(x^*\)</span>, a contradiction.</p>
+<p>For the argmax claim, take maximizers <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> with common value <span class="math inline">\(M\)</span>. Concavity gives <span class="math inline">\(f(\theta x+(1-\theta)y)\ge M\)</span>, while the definition of <span class="math inline">\(M\)</span> gives the reverse inequality.</p>
+</div>
+</div>
+</div>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5.3.2: strict concavity gives at most one maximizer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty and convex. If <span class="math inline">\(f:C\to\mathbb R\)</span> is strictly concave, then</p>
+<p><span class="math display">\[
+\left|
+\operatorname*{arg\,max}_{x\in C}f(x)
+\right|\le1.
+\]</span></p>
+</div>
+</div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If distinct <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> both maximize <span class="math inline">\(f\)</span>, their midpoint is feasible and strict concavity makes its value strictly greater than the common maximum. This is impossible.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Uniqueness is not existence">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Uniqueness is not existence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Strict concavity gives <strong>at most one</strong> maximizer. The strictly concave function <span class="math inline">\(f(x)=\log x\)</span> on <span class="math inline">\((0,1)\)</span> has none. A compact feasible set and a continuous objective would supply existence through Weierstrass.</p>
+</div>
+</div>
+<section id="the-safe-first-order-condition" class="level2">
+<h2 class="anchored" data-anchor-id="the-safe-first-order-condition">The safe first-order condition</h2>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5.3.3: variational first-order condition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty and convex. Suppose <span class="math inline">\(f\)</span> is differentiable on an open neighborhood of <span class="math inline">\(C\)</span>, and let <span class="math inline">\(x^*\in C\)</span>.</p>
+<p><strong>Necessity.</strong> If <span class="math inline">\(x^*\)</span> maximizes <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span>, then</p>
+<p><span class="math display">\[
+\nabla f(x^*)^{\mathsf T}(y-x^*)\le0
+\qquad\text{for every }y\in C.
+\]</span></p>
+<p><strong>Sufficiency.</strong> If <span class="math inline">\(f\)</span> is concave and the displayed inequality holds, then <span class="math inline">\(x^*\)</span> is a global maximizer of <span class="math inline">\(f\)</span> on <span class="math inline">\(C\)</span>.</p>
+<p><strong>Interior special case.</strong> If <span class="math inline">\(x^*\)</span> is interior to <span class="math inline">\(C\)</span>, the displayed condition is equivalent to</p>
+<p><span class="math display">\[
+\nabla f(x^*)=0.
+\]</span></p>
+</div>
+</div>
+<p>At a boundary optimum, the gradient need not vanish. It only needs to have a nonpositive inner product with every feasible displacement. For example, <span class="math inline">\(f(x)=x\)</span> on <span class="math inline">\(C=[0,1]\)</span> is concave and is maximized at <span class="math inline">\(x^*=1\)</span>, where <span class="math inline">\(f'(1)=1\ne0\)</span>. Yet <span class="math inline">\(f'(1)(y-1)\le0\)</span> for every <span class="math inline">\(y\in[0,1]\)</span>.</p>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For necessity, fix <span class="math inline">\(y\in C\)</span> and define <span class="math inline">\(\phi(t)=f(x^*+t(y-x^*))\)</span> on <span class="math inline">\([0,1]\)</span>. A maximum at <span class="math inline">\(t=0\)</span> requires <span class="math inline">\(\phi'(0^+)\le0\)</span>, which is the variational inequality.</p>
+<p>For sufficiency, the concave supporting inequality gives</p>
+<p><span class="math display">\[
+f(y)
+\le f(x^*)+\nabla f(x^*)^{\mathsf T}(y-x^*)
+\le f(x^*)
+\]</span></p>
+<p>for every feasible <span class="math inline">\(y\)</span>.</p>
+<p>At an interior point, both <span class="math inline">\(x^*+te_j\)</span> and <span class="math inline">\(x^*-te_j\)</span> are feasible for small <span class="math inline">\(t&gt;0\)</span>. Applying the variational inequality to both signs makes every component of the gradient zero.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 5.3.4: calculate and certify an interior maximum">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 5.3.4: calculate and certify an interior maximum
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maximize</p>
+<p><span class="math display">\[
+f(x_1,x_2)
+=-(x_1-2)^2-2(x_2+1)^2
+\]</span></p>
+<p>over <span class="math inline">\(\mathbb R^2\)</span>. The first-order equations are</p>
+<p><span class="math display">\[
+-2(x_1-2)=0,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+-4(x_2+1)=0.
+\]</span></p>
+<p>Thus <span class="math inline">\(x^*=(2,-1)\)</span>. Since</p>
+<p><span class="math display">\[
+D^2f(x)=
+\begin{pmatrix}
+-2&amp;0\\
+0&amp;-4
+\end{pmatrix}
+\prec0,
+\]</span></p>
+<p><span class="math inline">\(f\)</span> is strictly concave on <span class="math inline">\(\mathbb R^2\)</span>. The zero gradient is therefore a global certificate, and strict concavity gives uniqueness. The Hessian is not being used only as a local SOC here: its sign on the whole convex domain establishes global concavity.</p>
+</div>
+</div>
+</section>
+<section id="kkt-as-a-global-certificate" class="level2">
+<h2 class="anchored" data-anchor-id="kkt-as-a-global-certificate">KKT as a global certificate</h2>
+<p>Consider</p>
+<p><span class="math display">\[
+\max_{x\in\mathbb R^N} f(x)
+\]</span></p>
+<p>subject to</p>
+<p><span class="math display">\[
+Ax=b,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+h_i(x)\le c_i,
+\qquad i=1,\ldots,m.
+\]</span></p>
+<p>Use the maximization Lagrangian</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(x;\mu,\lambda)
+={}&amp;f(x)\\
+&amp;-\mu^{\mathsf T}(Ax-b)\\
+&amp;-\sum_{i=1}^m\lambda_i\bigl(h_i(x)-c_i\bigr).
+\end{aligned}
+\]</span></p>
+<p>The equality multiplier <span class="math inline">\(\mu\)</span> is unrestricted in sign. The inequality multipliers satisfy <span class="math inline">\(\lambda_i\ge0\)</span>. Those signs follow from the displayed Lagrangian and the direction <span class="math inline">\(h_i\le c_i\)</span>.</p>
+<div class="theorem callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5.3.5: KKT sufficiency and KKT necessity under Slater
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Assume <span class="math inline">\(f\)</span> is concave and <span class="math inline">\(C^1\)</span>, each <span class="math inline">\(h_i\)</span> is convex and <span class="math inline">\(C^1\)</span>, and the equality constraints are affine.</p>
+<p>Suppose a feasible <span class="math inline">\(x^*\)</span> has multipliers <span class="math inline">\(\mu^*\)</span> and <span class="math inline">\(\lambda^*\)</span> satisfying:</p>
+<ol type="1">
+<li><p><strong>Stationarity</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\nabla f(x^*)-A^{\mathsf T}\mu^*\\
+&amp;\qquad-\sum_{i=1}^m
+\lambda_i^*\nabla h_i(x^*)=0.
+\end{aligned}
+\]</span></p></li>
+<li><p><strong>Dual feasibility</strong></p>
+<p><span class="math display">\[
+\lambda_i^*\ge0,
+\qquad i=1,\ldots,m.
+\]</span></p></li>
+<li><p><strong>Complementary slackness</strong></p>
+<p><span class="math display">\[
+\lambda_i^*\bigl(c_i-h_i(x^*)\bigr)=0.
+\]</span></p>
+<p>This condition holds for each <span class="math inline">\(i=1,\ldots,m\)</span>.</p></li>
+</ol>
+<p>Then <span class="math inline">\(x^*\)</span> is a global maximizer. This sufficiency direction does <strong>not</strong> need Slater’s condition.</p>
+<p>Conversely, suppose <span class="math inline">\(x^*\)</span> is a maximizer and there is a strictly feasible point <span class="math inline">\(\bar x\)</span> such that</p>
+<p><span class="math display">\[
+A\bar x=b,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+h_i(\bar x)&lt;c_i,
+\qquad i=1,\ldots,m.
+\]</span></p>
+<p>Then suitable KKT multipliers exist. This strict-feasibility assumption is Slater’s condition; it is a constraint qualification for the <strong>necessity</strong> direction.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Do not attach a sign restriction to an equality multiplier">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do not attach a sign restriction to an equality multiplier
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The equation <span class="math inline">\(Ax=b\)</span> can be written as either <span class="math inline">\(Ax-b=0\)</span> or <span class="math inline">\(b-Ax=0\)</span>. Reversing that normalization reverses <span class="math inline">\(\mu\)</span> but changes no feasible point. Therefore <span class="math inline">\(\mu\)</span> must be free in sign. Only the multiplier on the standardized inequality <span class="math inline">\(h_i(x)-c_i\le0\)</span> is required to be nonnegative here.</p>
+</div>
+</div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show global-certificate proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show global-certificate proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(y\)</span> be any feasible point. Concavity gives</p>
+<p><span class="math display">\[
+f(y)-f(x^*)
+\le\nabla f(x^*)^{\mathsf T}(y-x^*).
+\]</span></p>
+<p>Substitute stationarity. The equality term vanishes because <span class="math inline">\(Ay=Ax^*=b\)</span>. Convexity of each <span class="math inline">\(h_i\)</span> gives</p>
+<p><span class="math display">\[
+\nabla h_i(x^*)^{\mathsf T}(y-x^*)
+\le h_i(y)-h_i(x^*)
+\le c_i-h_i(x^*).
+\]</span></p>
+<p>After multiplying by <span class="math inline">\(\lambda_i^*\ge0\)</span> and summing, complementary slackness makes the upper bound zero. Hence <span class="math inline">\(f(y)\le f(x^*)\)</span> for every feasible <span class="math inline">\(y\)</span>.</p>
+<p>Slater’s role is different. Strict feasibility permits a separating-hyperplane argument between attainable constraint-objective values and the set of values that would strictly improve on the optimum. The separating normal supplies the multipliers. It is not needed once multipliers satisfying KKT are already in hand.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 5.3.6: solve KKT and obtain a global certificate">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 5.3.6: solve KKT and obtain a global certificate
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maximize</p>
+<p><span class="math display">\[
+f(x,y)=-(x-2)^2-(y-1)^2
+\]</span></p>
+<p>subject to</p>
+<p><span class="math display">\[
+x+y=1,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+x\le\frac12.
+\]</span></p>
+<p>The problem has a concave objective, an affine equality, and a convex affine inequality. Use</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(x,y;\mu,\lambda)
+={}&amp;f(x,y)\\
+&amp;-\mu(x+y-1)\\
+&amp;-\lambda\left(x-\frac12\right),
+\end{aligned}
+\]</span></p>
+<p>with <span class="math inline">\(\mu\in\mathbb R\)</span> and <span class="math inline">\(\lambda\ge0\)</span>. Stationarity gives</p>
+<p><span class="math display">\[
+-2(x-2)-\mu-\lambda=0,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+-2(y-1)-\mu=0.
+\]</span></p>
+<p>The unconstrained solution on the equality has <span class="math inline">\(x=1\)</span>, so the upper bound must bind. Set <span class="math inline">\(x^*=y^*=1/2\)</span>. The second stationarity equation gives <span class="math inline">\(\mu^*=1\)</span>; the first then gives <span class="math inline">\(\lambda^*=2\)</span>. Thus</p>
+<p><span class="math display">\[
+(x^*,y^*;\mu^*,\lambda^*)
+=\left(\frac12,\frac12;1,2\right).
+\]</span></p>
+<p>All KKT conditions hold. The theorem certifies a global maximum, and strict concavity certifies uniqueness. Slater also holds, for example at <span class="math inline">\((0,1)\)</span>, but it is only needed to guarantee that a maximizer admits multipliers.</p>
+<p>For a direct check, substitute <span class="math inline">\(y=1-x\)</span>. For every feasible <span class="math inline">\(x\le1/2\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;f\left(\frac12,\frac12\right)
+-f(x,1-x)\\
+&amp;\qquad=\left(\frac12-x\right)(3-2x)\\
+&amp;\qquad\ge0.
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 5.3.7: inactive means zero multiplier">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 5.3.7: inactive means zero multiplier
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the upper bound in the preceding problem changes to <span class="math inline">\(x\le2\)</span>, the equality-only solution <span class="math inline">\((1,0)\)</span> is feasible and the inequality is slack. Complementary slackness forces <span class="math inline">\(\lambda^*=0\)</span>. Stationarity then gives the free equality multiplier <span class="math inline">\(\mu^*=2\)</span>.</p>
+</div>
+</div>
+<p><strong>Retrieval check.</strong> Which direction of Theorem 5.3.5 uses Slater’s condition?</p>
+<div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Slater is used to guarantee necessity: a global maximizer has KKT multipliers. It is not needed for sufficiency. Once a feasible point and multipliers satisfy KKT in a concave maximization problem with convex constraints, they already form a global certificate.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="extension-quasiconvexity-and-quasiconcavity" class="level1">
+<h1>Extension: quasiconvexity and quasiconcavity</h1>
 <p>Convexity compares values to weighted averages of values. Quasiconcavity only asks whether sufficiently good choices form a convex set.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Definition: upper and lower level sets">
 <div class="callout-header d-flex align-content-center">
@@ -1253,6 +1795,18 @@ Concavity implies quasiconcavity
 <p>If <span class="math inline">\(f\)</span> is concave on a convex set <span class="math inline">\(C\)</span>, then it is quasiconcave. If <span class="math inline">\(f\)</span> is convex, then it is quasiconvex. The converses fail.</p>
 </div>
 </div>
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>If <span class="math inline">\(f(x)\ge f(y)\)</span>, concavity gives</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -1263,9 +1817,12 @@ f(\theta x+(1-\theta)y)
 \end{gathered}
 \]</span></p>
 <p>This is exactly the convexity of the upper level set at level <span class="math inline">\(f(y)\)</span>.</p>
+</div>
+</div>
+</div>
 <p><strong>Retrieval check.</strong> If <span class="math inline">\(f\)</span> is quasiconcave and <span class="math inline">\(f(x),f(y)\ge a\)</span>, what must be true of <span class="math inline">\(f(\theta x+(1-\theta)y)\)</span> for <span class="math inline">\(\theta\in[0,1]\)</span>?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1274,7 +1831,7 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It must be at least <span class="math inline">\(a\)</span>. Both endpoints lie in the upper level set <span class="math inline">\(U_a\)</span>, and quasiconcavity says <span class="math inline">\(U_a\)</span> is convex, so their mixture remains in <span class="math inline">\(U_a\)</span>.</p>
 </div>
@@ -1310,13 +1867,13 @@ Quasiconcavity is not a substitute for concavity
 <p>The function <span class="math inline">\(f(x)=x^3\)</span> is strictly increasing, hence quasiconcave on <span class="math inline">\(\mathbb R\)</span>, but its stationary point at zero is not a maximum. Quasiconcavity alone does not make a zero gradient sufficient for a global optimum.</p>
 </div>
 </div>
-<section id="strict-quasiconcavity-and-uniqueness" class="level2">
-<h2 class="anchored" data-anchor-id="strict-quasiconcavity-and-uniqueness">6.1 Strict quasiconcavity and uniqueness</h2>
+<section id="extension-1-strict-quasiconcavity-and-uniqueness" class="level2">
+<h2 class="anchored" data-anchor-id="extension-1-strict-quasiconcavity-and-uniqueness">Extension 1: strict quasiconcavity and uniqueness</h2>
 <p>Strict quasiconcavity means that for distinct <span class="math inline">\(x,y\)</span> with <span class="math inline">\(f(x)\ge f(y)\)</span>, every proper mixture has value strictly above <span class="math inline">\(f(y)\)</span>. It gives at most one global maximizer on a convex feasible set. The same midpoint contradiction as for strict concavity proves it.</p>
 <p>It remains weaker than strict concavity. The function <span class="math inline">\(f(x)=e^x\)</span> is strictly quasiconcave on <span class="math inline">\(\mathbb R\)</span> because it is strictly increasing, while it is strictly convex rather than concave.</p>
 </section>
-<section id="differentiated-quasiconcavity-necessity-and-a-safe-strict-test" class="level2">
-<h2 class="anchored" data-anchor-id="differentiated-quasiconcavity-necessity-and-a-safe-strict-test">6.2 Differentiated quasiconcavity: necessity and a safe strict test</h2>
+<section id="extension-2-differentiated-quasiconcavity" class="level2">
+<h2 class="anchored" data-anchor-id="extension-2-differentiated-quasiconcavity">Extension 2: differentiated quasiconcavity</h2>
 <p>Let <span class="math inline">\(C\subseteq\mathbb R^N\)</span> be nonempty, open, and convex, and let <span class="math inline">\(f:C\to\mathbb R\)</span> be <span class="math inline">\(C^2\)</span>. Define the tangent space to the level set at <span class="math inline">\(x\)</span> by</p>
 <p><span class="math display">\[
 T_{\nabla f(x)}
@@ -1372,7 +1929,7 @@ v^{\mathsf{T}}D^2f(x)v&lt;0.
 </div>
 </div>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1381,7 +1938,7 @@ Show proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-58" class="callout-58-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Why this is safe.</strong> Restrict <span class="math inline">\(f\)</span> to any nondegenerate feasible line segment. At an interior stationary point of that restriction, the segment direction is gradient-orthogonal, so the second derivative is strictly negative. Thus a line restriction cannot have an interior local trough: it rises strictly until at most one peak and then falls strictly. This gives strict quasiconcavity on every segment, hence on <span class="math inline">\(C\)</span>. The condition is sufficient, not necessary.</p>
 </div>
@@ -1403,70 +1960,66 @@ The gradient-zero case is special
 </section>
 </section>
 <section id="assumption-audit-and-problem-blueprints" class="level1">
-<h1>7. Assumption audit and problem blueprints</h1>
+<h1>Assumption audit and problem blueprints</h1>
 <section id="assumption-audit" class="level2">
 <h2 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Claim</th>
-<th>Conditions doing the work</th>
-<th>Conclusion</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Finite mixture is feasible</td>
-<td><span class="math inline">\(C\)</span> convex</td>
-<td><span class="math inline">\(\sum_i\theta_i x_i\in C\)</span></td>
-</tr>
-<tr class="even">
-<td>Jensen inequality</td>
-<td><span class="math inline">\(f\)</span> convex or concave on convex <span class="math inline">\(C\)</span></td>
-<td>comparison of value at a mixture</td>
-</tr>
-<tr class="odd">
-<td>Tangent inequality</td>
-<td><span class="math inline">\(C\)</span> open and convex, <span class="math inline">\(f\)</span> differentiable</td>
-<td>global support characterization</td>
-</tr>
-<tr class="even">
-<td>Hessian equivalence</td>
-<td><span class="math inline">\(C\)</span> open and convex, <span class="math inline">\(f\in C^2\)</span></td>
-<td>semidefinite Hessian iff convexity/concavity</td>
-</tr>
-<tr class="odd">
-<td>Global maximum</td>
-<td><span class="math inline">\(C\)</span> convex, <span class="math inline">\(f\)</span> concave, variational inequality</td>
-<td><span class="math inline">\(x^*\)</span> maximizes globally</td>
-</tr>
-<tr class="even">
-<td>Unique maximum</td>
-<td>strict concavity or strict quasiconcavity, <span class="math inline">\(C\)</span> convex</td>
-<td>at most one maximizer</td>
-</tr>
-<tr class="odd">
-<td>Existence</td>
-<td><span class="math inline">\(C\)</span> compact, <span class="math inline">\(f\)</span> continuous</td>
-<td>a maximizer exists</td>
-</tr>
-<tr class="even">
-<td>Quasiconcavity</td>
-<td>convexity of every upper level set</td>
-<td>no weighted-average payoff inequality</td>
-</tr>
-<tr class="odd">
-<td>Strict quasiconcavity, sufficient test</td>
-<td><span class="math inline">\(C\)</span> open and convex, <span class="math inline">\(f\in C^2\)</span>, strict negative curvature in every nonzero gradient-orthogonal direction</td>
-<td>strict quasiconcavity</td>
-</tr>
-</tbody>
-</table>
+<ol type="1">
+<li><p><strong>Finite-mixture feasibility</strong></p>
+<ul>
+<li><strong>Condition:</strong> <span class="math inline">\(C\)</span> is convex.</li>
+<li><strong>Conclusion:</strong> every finite convex combination remains in <span class="math inline">\(C\)</span>.</li>
+</ul></li>
+<li><p><strong>Jensen inequality</strong></p>
+<ul>
+<li><strong>Condition:</strong> <span class="math inline">\(f\)</span> is convex or concave on a convex domain.</li>
+<li><strong>Conclusion:</strong> the value at a mixture is compared with the mixture of values in the appropriate direction.</li>
+</ul></li>
+<li><p><strong>Tangent inequality</strong></p>
+<ul>
+<li><strong>Conditions:</strong> <span class="math inline">\(C\)</span> is open and convex, and <span class="math inline">\(f\)</span> is differentiable.</li>
+<li><strong>Conclusion:</strong> the tangent plane globally supports the graph.</li>
+</ul></li>
+<li><p><strong>Hessian equivalence</strong></p>
+<ul>
+<li><strong>Conditions:</strong> <span class="math inline">\(C\)</span> is open and convex, and <span class="math inline">\(f\in C^2\)</span>.</li>
+<li><strong>Conclusion:</strong> a semidefinite Hessian everywhere is equivalent to convexity or concavity in the corresponding direction.</li>
+</ul></li>
+<li><p><strong>Global maximization certificate</strong></p>
+<ul>
+<li><strong>Conditions:</strong> <span class="math inline">\(C\)</span> is convex, <span class="math inline">\(f\)</span> is concave, and the variational inequality holds at <span class="math inline">\(x^*\)</span>.</li>
+<li><strong>Conclusion:</strong> <span class="math inline">\(x^*\)</span> is a global maximizer.</li>
+</ul></li>
+<li><p><strong>Uniqueness</strong></p>
+<ul>
+<li><strong>Conditions:</strong> <span class="math inline">\(C\)</span> is convex and <span class="math inline">\(f\)</span> is strictly concave, or strictly quasiconcave.</li>
+<li><strong>Conclusion:</strong> there is at most one maximizer.</li>
+</ul></li>
+<li><p><strong>Existence</strong></p>
+<ul>
+<li><strong>Conditions:</strong> <span class="math inline">\(C\)</span> is compact and <span class="math inline">\(f\)</span> is continuous.</li>
+<li><strong>Conclusion:</strong> a maximizer exists.</li>
+</ul></li>
+<li><p><strong>KKT global certificate</strong></p>
+<ul>
+<li><strong>Conditions:</strong> <span class="math inline">\(f\)</span> is concave, the inequalities are convex, the equalities are affine, and a feasible point satisfies KKT.</li>
+<li><strong>Conclusion:</strong> that point is a global maximizer.</li>
+</ul></li>
+<li><p><strong>KKT necessity</strong></p>
+<ul>
+<li><strong>Condition:</strong> the convex program satisfies Slater’s condition.</li>
+<li><strong>Conclusion:</strong> KKT multipliers exist at a maximizer.</li>
+</ul></li>
+<li><p><strong>Quasiconcavity</strong></p>
+<ul>
+<li><strong>Condition:</strong> every upper level set is convex.</li>
+<li><strong>Conclusion:</strong> mixtures do not fall below the worse endpoint, but no weighted-average payoff inequality follows.</li>
+</ul></li>
+<li><p><strong>Strict quasiconcavity from curvature</strong></p>
+<ul>
+<li><strong>Conditions:</strong> <span class="math inline">\(C\)</span> is open and convex, <span class="math inline">\(f\in C^2\)</span>, and curvature is strictly negative in every nonzero gradient-orthogonal direction.</li>
+<li><strong>Conclusion:</strong> <span class="math inline">\(f\)</span> is strictly quasiconcave.</li>
+</ul></li>
+</ol>
 </section>
 <section id="blueprint-prove-a-global-optimum" class="level2">
 <h2 class="anchored" data-anchor-id="blueprint-prove-a-global-optimum">Blueprint: prove a global optimum</h2>
@@ -1489,6 +2042,16 @@ The gradient-zero case is special
 <li>Do not infer concavity, a global FOC result, or Hessian definiteness merely from a quasi-shape property.</li>
 </ol>
 </section>
+<section id="blueprint-certify-a-convex-program-with-kkt" class="level2">
+<h2 class="anchored" data-anchor-id="blueprint-certify-a-convex-program-with-kkt">Blueprint: certify a convex program with KKT</h2>
+<ol type="1">
+<li>Standardize every inequality as <span class="math inline">\(h_i(x)\le c_i\)</span>.</li>
+<li>Write the displayed Lagrangian before assigning multiplier signs.</li>
+<li>Solve primal feasibility, stationarity, dual feasibility, and complementary slackness together.</li>
+<li>Check that the objective is concave, inequalities are convex, and equalities are affine. Then KKT is sufficient globally.</li>
+<li>Invoke Slater only if you need to argue that a maximizer must have KKT multipliers.</li>
+</ol>
+</section>
 <section id="exit-tickets" class="level2">
 <h2 class="anchored" data-anchor-id="exit-tickets">Exit tickets</h2>
 <ol type="1">
@@ -1498,9 +2061,10 @@ The gradient-zero case is special
 <li>Why does <span class="math inline">\(f'(x^*)=0\)</span> fail to prove a maximum for a quasiconcave function?</li>
 <li>In the <span class="math inline">\(C^2\)</span> Hessian characterization, is positive definiteness everywhere necessary for strict convexity?</li>
 <li>Is nonpositive curvature in every gradient-orthogonal direction sufficient for quasiconcavity?</li>
+<li>In a concave maximization problem, does KKT sufficiency require Slater?</li>
 </ol>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1509,12 +2073,12 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-60" class="callout-60-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>No.&nbsp;In <span class="math inline">\([-2,-1]\cup[1,2]\)</span>, both <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> are present but their midpoint <span class="math inline">\(0\)</span> is absent. 2. <span class="math inline">\(f(\sum_i\theta_i x_i)\ge\sum_i\theta_i f(x_i)\)</span>. 3. A compact feasible set and a continuous objective give existence. 4. Quasiconcavity does not produce the tangent supporting inequality; <span class="math inline">\(x^3\)</span> is a counterexample.</li>
 <li>No.&nbsp;<span class="math inline">\(x^4\)</span> is strictly convex although its second derivative is zero at zero.</li>
-<li>No.&nbsp;<span class="math inline">\(x^4\)</span> satisfies that tangent-space semidefinite condition but is not quasiconcave on <span class="math inline">\(\mathbb R\)</span>.</li>
+<li>No.&nbsp;<span class="math inline">\(x^4\)</span> satisfies that tangent-space semidefinite condition but is not quasiconcave on <span class="math inline">\(\mathbb R\)</span>. 7. No.&nbsp;Slater supports necessity, meaning the existence of multipliers at an optimum.</li>
 </ol>
 </div>
 </div>
@@ -1529,6 +2093,8 @@ Show answer
 <li><label><input type="checkbox">I can recognize convexity from an epigraph and concavity from a hypograph.</label></li>
 <li><label><input type="checkbox">I can state the domains and differentiability assumptions of the tangent and Hessian characterizations.</label></li>
 <li><label><input type="checkbox">I can separate global optimality, uniqueness, and existence.</label></li>
+<li><label><input type="checkbox">I can use the variational inequality at a boundary rather than imposing a false zero-gradient condition.</label></li>
+<li><label><input type="checkbox">I can distinguish KKT sufficiency from KKT necessity and state exactly where Slater enters.</label></li>
 <li><label><input type="checkbox">I can define quasiconcavity from upper level sets and say why it is weaker than concavity.</label></li>
 <li><label><input type="checkbox">I can distinguish the necessary tangent-space semidefinite condition from the strict sufficient curvature condition for quasiconcavity.</label></li>
 </ul>
@@ -1976,8 +2542,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../repo/econ8001/maximum-envelope.html" class="pagination-link" aria-label="Maximum and Envelope Theorems">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Maximum and Envelope Theorems</span>
+      <a href="../../repo/econ8001/maximum-envelope.html" class="pagination-link" aria-label="Chapter 4.6–4.7: Maximum and Envelope">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapter 4.6–4.7: Maximum and Envelope</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

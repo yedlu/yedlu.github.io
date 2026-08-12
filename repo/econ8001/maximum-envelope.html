@@ -154,7 +154,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/maximum-envelope.html">Maximum and Envelope Theorems</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/maximum-envelope.html">Chapter 4.6–4.7: Maximum and Envelope</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -496,19 +496,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/econ8001/optimization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Optimization</span></a>
+ <span class="menu-text">Chapter 4.1–4.5: Optimization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/econ8001/maximum-envelope.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Maximum and Envelope Theorems</span></a>
+ <span class="menu-text">Chapter 4.6–4.7: Maximum and Envelope</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../repo/econ8001/convexity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Convexity</span></a>
+ <span class="menu-text">Chapter 5.1–5.3: Convexity</span></a>
   </div>
 </li>
       </ul>
@@ -620,22 +620,22 @@ window.Quarto = {
   <li><a href="#orientation" id="toc-orientation" class="nav-link active" data-scroll-target="#orientation">Orientation</a></li>
   <li><a href="#course-map" id="toc-course-map" class="nav-link" data-scroll-target="#course-map">Course map</a></li>
   <li><a href="#prerequisite-retrieval" id="toc-prerequisite-retrieval" class="nav-link" data-scroll-target="#prerequisite-retrieval">Prerequisite retrieval</a></li>
-  <li><a href="#the-maximum-theorem" id="toc-the-maximum-theorem" class="nav-link" data-scroll-target="#the-maximum-theorem">1. The maximum theorem</a>
+  <li><a href="#the-maximum-theorem" id="toc-the-maximum-theorem" class="nav-link" data-scroll-target="#the-maximum-theorem">4.6 The maximum theorem</a>
   <ul class="collapse">
-  <li><a href="#set-up-and-the-three-conclusions" id="toc-set-up-and-the-three-conclusions" class="nav-link" data-scroll-target="#set-up-and-the-three-conclusions">1.1 Set-up and the three conclusions</a></li>
-  <li><a href="#corollary-each-argmax-set-is-nonempty-and-compact" id="toc-corollary-each-argmax-set-is-nonempty-and-compact" class="nav-link" data-scroll-target="#corollary-each-argmax-set-is-nonempty-and-compact">1.2 Corollary: each argmax set is nonempty and compact</a></li>
-  <li><a href="#why-the-argmax-is-only-upper-hemicontinuous" id="toc-why-the-argmax-is-only-upper-hemicontinuous" class="nav-link" data-scroll-target="#why-the-argmax-is-only-upper-hemicontinuous">1.3 Why the argmax is only upper hemicontinuous</a></li>
-  <li><a href="#why-the-value-is-continuous" id="toc-why-the-value-is-continuous" class="nav-link" data-scroll-target="#why-the-value-is-continuous">1.4 Why the value is continuous</a></li>
-  <li><a href="#assumption-audit-for-berge" id="toc-assumption-audit-for-berge" class="nav-link" data-scroll-target="#assumption-audit-for-berge">1.5 Assumption audit for Berge</a></li>
+  <li><a href="#set-up-and-the-three-conclusions" id="toc-set-up-and-the-three-conclusions" class="nav-link" data-scroll-target="#set-up-and-the-three-conclusions">4.6.1 Set-up and the three conclusions</a></li>
+  <li><a href="#why-each-argmax-set-is-nonempty-and-compact" id="toc-why-each-argmax-set-is-nonempty-and-compact" class="nav-link" data-scroll-target="#why-each-argmax-set-is-nonempty-and-compact">Why each argmax set is nonempty and compact</a></li>
+  <li><a href="#why-the-argmax-is-only-upper-hemicontinuous" id="toc-why-the-argmax-is-only-upper-hemicontinuous" class="nav-link" data-scroll-target="#why-the-argmax-is-only-upper-hemicontinuous">Why the argmax is only upper hemicontinuous</a></li>
+  <li><a href="#why-the-value-is-continuous" id="toc-why-the-value-is-continuous" class="nav-link" data-scroll-target="#why-the-value-is-continuous">Why the value is continuous</a></li>
+  <li><a href="#assumption-audit-for-theorem-4.6.1" id="toc-assumption-audit-for-theorem-4.6.1" class="nav-link" data-scroll-target="#assumption-audit-for-theorem-4.6.1">Assumption audit for Theorem 4.6.1</a></li>
   </ul></li>
-  <li><a href="#the-baseline-envelope-calculation" id="toc-the-baseline-envelope-calculation" class="nav-link" data-scroll-target="#the-baseline-envelope-calculation">2. The baseline envelope calculation</a>
+  <li><a href="#the-envelope-theorem" id="toc-the-envelope-theorem" class="nav-link" data-scroll-target="#the-envelope-theorem">4.7 The envelope theorem</a>
   <ul class="collapse">
-  <li><a href="#an-unconstrained-differentiable-selection" id="toc-an-unconstrained-differentiable-selection" class="nav-link" data-scroll-target="#an-unconstrained-differentiable-selection">2.1 An unconstrained differentiable selection</a></li>
-  <li><a href="#binding-constraints-a-self-contained-local-formula" id="toc-binding-constraints-a-self-contained-local-formula" class="nav-link" data-scroll-target="#binding-constraints-a-self-contained-local-formula">2.2 Binding constraints: a self-contained local formula</a></li>
+  <li><a href="#unconstrained-envelope-theorem" id="toc-unconstrained-envelope-theorem" class="nav-link" data-scroll-target="#unconstrained-envelope-theorem">4.7.1 Unconstrained envelope theorem</a></li>
+  <li><a href="#constrained-envelope-theorem" id="toc-constrained-envelope-theorem" class="nav-link" data-scroll-target="#constrained-envelope-theorem">4.7.2 Constrained envelope theorem</a></li>
+  <li><a href="#beyond-section-4.7-arbitrary-choice-sets" id="toc-beyond-section-4.7-arbitrary-choice-sets" class="nav-link" data-scroll-target="#beyond-section-4.7-arbitrary-choice-sets">Beyond Section 4.7: arbitrary choice sets</a>
+  <ul class="collapse">
+  <li><a href="#a-useful-stronger-conclusion" id="toc-a-useful-stronger-conclusion" class="nav-link" data-scroll-target="#a-useful-stronger-conclusion">A useful stronger conclusion</a></li>
   </ul></li>
-  <li><a href="#milgrom-and-segal-the-arbitrary-choice-set-extension" id="toc-milgrom-and-segal-the-arbitrary-choice-set-extension" class="nav-link" data-scroll-target="#milgrom-and-segal-the-arbitrary-choice-set-extension">3. Milgrom and Segal: the arbitrary-choice-set extension</a>
-  <ul class="collapse">
-  <li><a href="#a-useful-stronger-conclusion" id="toc-a-useful-stronger-conclusion" class="nav-link" data-scroll-target="#a-useful-stronger-conclusion">3.1 A useful stronger conclusion</a></li>
   <li><a href="#assumption-audit" id="toc-assumption-audit" class="nav-link" data-scroll-target="#assumption-audit">Assumption audit</a></li>
   <li><a href="#proof-blueprints" id="toc-proof-blueprints" class="nav-link" data-scroll-target="#proof-blueprints">Proof blueprints</a>
   <ul class="collapse">
@@ -652,7 +652,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/maximum-envelope.html">Maximum and Envelope Theorems</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../repo/index.html">Repository</a></li><li class="breadcrumb-item"><a href="../../repo/#class-notes">Class Notes</a></li><li class="breadcrumb-item"><a href="../../repo/#math-statistics-foundations">Math &amp; Statistics Foundations</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/index.html">Mathematical Tools</a></li><li class="breadcrumb-item"><a href="../../repo/econ8001/maximum-envelope.html">Chapter 4.6–4.7: Maximum and Envelope</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Maximum and Envelope Theorems</h1>
 </div>
@@ -672,7 +672,7 @@ window.Quarto = {
 
 
 <p><em>Y. Eddie Lu</em>, Summer 2026</p>
-<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Lecture 7 of 8</p>
+<p><a href="../../repo/econ8001/index.html">ECON 8001 course index</a> · Chapter 4, Sections 4.6–4.7</p>
 <section id="orientation" class="level2">
 <h2 class="anchored" data-anchor-id="orientation">Orientation</h2>
 <div class="intuition callout callout-style-simple callout-none no-icon callout-titled">
@@ -746,9 +746,9 @@ Keep the objects distinct
 </div>
 </section>
 <section id="the-maximum-theorem" class="level1">
-<h1>1. The maximum theorem</h1>
+<h1>4.6 The maximum theorem</h1>
 <section id="set-up-and-the-three-conclusions" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-and-the-three-conclusions">1.1 Set-up and the three conclusions</h2>
+<h2 class="anchored" data-anchor-id="set-up-and-the-three-conclusions">4.6.1 Set-up and the three conclusions</h2>
 <p>Let <span class="math inline">\(U\subseteq\mathbb R^L\)</span> be open. Let <span class="math inline">\(u:U\times\mathbb R^N\to\mathbb R\)</span> be continuous and let <span class="math inline">\(\Psi:U\rightrightarrows\mathbb R^N\)</span> be a feasibility correspondence. Define</p>
 <p><span class="math display">\[
 V(q)=\max_{x\in\Psi(q)}u(q,x).
@@ -763,27 +763,37 @@ A(q)=\operatorname*{arg\,max}_{x\in\Psi(q)}u(q,x).
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Berge maximum theorem
+Theorem 4.6.1: maximum theorem
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(X\subseteq\mathbb R^N\)</span> and <span class="math inline">\(\Theta\subseteq\mathbb R^L\)</span>. Define</p>
+<p><span class="math display">\[
+f^*(\theta)
+=\max_{x\in\varphi(\theta)}f(x,\theta)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\varphi^*(\theta)
+=\operatorname*{arg\,max}_{x\in\varphi(\theta)}f(x,\theta).
+\]</span></p>
 <p><strong>Assumptions.</strong></p>
 <ol type="1">
-<li><span class="math inline">\(u:U\times\mathbb R^N\to\mathbb R\)</span> is continuous.</li>
-<li><span class="math inline">\(\Psi:U\rightrightarrows\mathbb R^N\)</span> is nonempty-valued, compact-valued, and continuous, meaning both upper and lower hemicontinuous.</li>
+<li><span class="math inline">\(f:X\times\Theta\to\mathbb R\)</span> is continuous.</li>
+<li><span class="math inline">\(\varphi:\Theta\rightrightarrows X\)</span> is nonempty-valued, compact-valued, and continuous, meaning both upper and lower hemicontinuous.</li>
 </ol>
-<p><strong>Conclusions.</strong> For every <span class="math inline">\(q\in U\)</span>:</p>
+<p><strong>Conclusions.</strong> On <span class="math inline">\(\Theta\)</span>:</p>
 <ol type="1">
-<li><span class="math inline">\(A(q)\)</span> is nonempty.</li>
-<li><span class="math inline">\(V:U\to\mathbb R\)</span> is continuous.</li>
-<li><span class="math inline">\(A:U\rightrightarrows\mathbb R^N\)</span> is upper hemicontinuous.</li>
+<li><span class="math inline">\(f^*\)</span> is continuous.</li>
+<li><span class="math inline">\(\varphi^*\)</span> is nonempty-valued and compact-valued.</li>
+<li><span class="math inline">\(\varphi^*\)</span> is upper hemicontinuous.</li>
 </ol>
 </div>
 </div>
 <p>The version proved in <a href="https://sites.wustl.edu/nachbar/files/2019/09/thmofmax.pdf">Nachbar’s <em>Theorem of the Maximum</em></a> holds <span class="math inline">\(u(q,x)=f(x)\)</span> fixed in <span class="math inline">\(q\)</span>. The displayed version is the usual joint- continuous formulation of Berge’s theorem. It has the same three conclusions.</p>
 </section>
-<section id="corollary-each-argmax-set-is-nonempty-and-compact" class="level2">
-<h2 class="anchored" data-anchor-id="corollary-each-argmax-set-is-nonempty-and-compact">1.2 Corollary: each argmax set is nonempty and compact</h2>
+<section id="why-each-argmax-set-is-nonempty-and-compact" class="level2">
+<h2 class="anchored" data-anchor-id="why-each-argmax-set-is-nonempty-and-compact">Why each argmax set is nonempty and compact</h2>
 <p>For a fixed <span class="math inline">\(q\)</span>, nonemptiness is the extreme-value theorem: <span class="math inline">\(\Psi(q)\)</span> is nonempty and compact, and <span class="math inline">\(x\mapsto u(q,x)\)</span> is continuous. Therefore <span class="math inline">\(u(q,\cdot)\)</span> attains a maximum on <span class="math inline">\(\Psi(q)\)</span>. The set of all such maximizers is nonempty. It is compact because it is a closed subset of the compact set <span class="math inline">\(\Psi(q)\)</span>.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled" title="What compact-valuedness is doing">
 <div class="callout-header d-flex align-content-center">
@@ -813,7 +823,7 @@ A finite supremum need not be a maximum
 </div>
 </section>
 <section id="why-the-argmax-is-only-upper-hemicontinuous" class="level2">
-<h2 class="anchored" data-anchor-id="why-the-argmax-is-only-upper-hemicontinuous">1.3 Why the argmax is only upper hemicontinuous</h2>
+<h2 class="anchored" data-anchor-id="why-the-argmax-is-only-upper-hemicontinuous">Why the argmax is only upper hemicontinuous</h2>
 <p>Upper hemicontinuity says that if <span class="math inline">\(q_j\to q\)</span> and <span class="math inline">\(x_j\in A(q_j)\)</span>, then every convergent subsequence of <span class="math inline">\((x_j)\)</span> can only limit to a member of <span class="math inline">\(A(q)\)</span>. In the finite-dimensional compact setting, this is the right stability statement: optimizers cannot suddenly acquire a remote limit outside the old argmax set.</p>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -829,32 +839,11 @@ Show proof
 <div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> Take a convergent parameter sequence <span class="math inline">\(q_j\to q\)</span> and maximizers <span class="math inline">\(x_j\in A(q_j)\)</span>. Upper hemicontinuity and compact-valuedness of <span class="math inline">\(\Psi\)</span> supply a subsequence <span class="math inline">\(x_{j_k}\to x\in\Psi(q)\)</span>. If <span class="math inline">\(x\)</span> were not optimal at <span class="math inline">\(q\)</span>, choose a better feasible point <span class="math inline">\(\hat x\in\Psi(q)\)</span>. Lower hemicontinuity produces nearby feasible competitors <span class="math inline">\(\hat x_{j_k}\)</span> tending to <span class="math inline">\(\hat x\)</span>. Continuity of <span class="math inline">\(u\)</span> then eventually makes <span class="math inline">\(u(q_{j_k},\hat x_{j_k})&gt;u(q_{j_k},x_{j_k})\)</span>, contradicting optimality.</p>
 <p>This proof has a useful division of labor:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Ingredient</th>
-<th>Job in the proof</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Compact-valued and upper hemicontinuous <span class="math inline">\(\Psi\)</span></td>
-<td>Extract a feasible limit from nearby maximizers.</td>
-</tr>
-<tr class="even">
-<td>Lower hemicontinuous <span class="math inline">\(\Psi\)</span></td>
-<td>Keep a strictly better limiting competitor feasible nearby.</td>
-</tr>
-<tr class="odd">
-<td>Continuity of <span class="math inline">\(u\)</span></td>
-<td>Preserve the strict value comparison.</td>
-</tr>
-</tbody>
-</table>
+<ol type="1">
+<li><strong>Compact values and upper hemicontinuity of <span class="math inline">\(\Psi\)</span>:</strong> extract a feasible limit from nearby maximizers.</li>
+<li><strong>Lower hemicontinuity of <span class="math inline">\(\Psi\)</span>:</strong> keep a strictly better limiting competitor feasible nearby.</li>
+<li><strong>Continuity of <span class="math inline">\(u\)</span>:</strong> preserve the strict value comparison.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -882,16 +871,31 @@ A(q)=
 </div>
 </section>
 <section id="why-the-value-is-continuous" class="level2">
-<h2 class="anchored" data-anchor-id="why-the-value-is-continuous">1.4 Why the value is continuous</h2>
+<h2 class="anchored" data-anchor-id="why-the-value-is-continuous">Why the value is continuous</h2>
 <p>For values, the theorem controls both directions of variation. Nearby maximizers cannot produce values much above <span class="math inline">\(V(q)\)</span>, because their subsequential limits are maximizers at <span class="math inline">\(q\)</span>. Lower hemicontinuity lets a maximizer at <span class="math inline">\(q\)</span> be approximated by feasible choices at nearby parameters, so nearby values cannot fall much below <span class="math inline">\(V(q)\)</span>.</p>
-<p>The source proof is especially clean in its fixed-objective version. First it uses the argument above to prove that <span class="math inline">\(A\)</span> is upper hemicontinuous. Then an open neighborhood of the compact set <span class="math inline">\(A(q)\)</span> on which <span class="math inline">\(f\)</span> is close to <span class="math inline">\(V(q)\)</span> catches all nearby argmax sets. Hence all nearby maximizing values are close to <span class="math inline">\(V(q)\)</span>.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a budget correspondence">
+<div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Show proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Fix a parameter <span class="math inline">\(q\)</span>. Upper hemicontinuity of <span class="math inline">\(A\)</span> puts every nearby argmax set inside any chosen open neighborhood of the compact set <span class="math inline">\(A(q)\)</span>. Continuity of the objective makes its values uniformly close to <span class="math inline">\(V(q)\)</span> on a sufficiently small neighborhood of <span class="math inline">\(A(q)\)</span>. Hence every nearby maximizing value is close to <span class="math inline">\(V(q)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 4.6.2: a budget correspondence">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example: a budget correspondence
+Example 4.6.2: a budget correspondence
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -904,7 +908,7 @@ Example: a budget correspondence
 </div>
 <p><strong>Retrieval check.</strong> In the maximum theorem, which property retrieves a nearby feasible approximation to a fixed <span class="math inline">\(x\in\Psi(q)\)</span>?</p>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -913,86 +917,64 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Lower hemicontinuity of <span class="math inline">\(\Psi\)</span>. It says that every open set meeting <span class="math inline">\(\Psi(q)\)</span> continues to meet <span class="math inline">\(\Psi(q')\)</span> for all <span class="math inline">\(q'\)</span> sufficiently close to <span class="math inline">\(q\)</span>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="assumption-audit-for-berge" class="level2">
-<h2 class="anchored" data-anchor-id="assumption-audit-for-berge">1.5 Assumption audit for Berge</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>If this fails</th>
-<th>What can fail</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Nonempty values</td>
-<td>There may be no feasible optimization problem.</td>
-</tr>
-<tr class="even">
-<td>Compact values</td>
-<td>The supremum may not be attained.</td>
-</tr>
-<tr class="odd">
-<td>Continuity of <span class="math inline">\(u\)</span></td>
-<td>A limit of optimizing choices need not preserve a value comparison.</td>
-</tr>
-<tr class="even">
-<td>UHC of <span class="math inline">\(\Psi\)</span></td>
-<td>Nearby optimizers can acquire limiting points outside the limiting feasible set.</td>
-</tr>
-<tr class="odd">
-<td>LHC of <span class="math inline">\(\Psi\)</span></td>
-<td>A limiting competitor can disappear under arbitrarily small parameter changes.</td>
-</tr>
-</tbody>
-</table>
+<section id="assumption-audit-for-theorem-4.6.1" class="level2">
+<h2 class="anchored" data-anchor-id="assumption-audit-for-theorem-4.6.1">Assumption audit for Theorem 4.6.1</h2>
+<ol type="1">
+<li><strong>Nonempty values:</strong> without them, there may be no feasible optimization problem.</li>
+<li><strong>Compact values:</strong> without them, the supremum may not be attained.</li>
+<li><strong>Continuity of the objective:</strong> without it, a limit of optimizing choices need not preserve a value comparison.</li>
+<li><strong>Upper hemicontinuity of feasibility:</strong> without it, nearby optimizers can acquire limiting points outside the limiting feasible set.</li>
+<li><strong>Lower hemicontinuity of feasibility:</strong> without it, a limiting competitor can disappear after an arbitrarily small parameter change.</li>
+</ol>
 <p>The theorem has no uniqueness hypothesis. If strict concavity of <span class="math inline">\(x\mapsto u(q,x)\)</span> on a convex feasible set makes <span class="math inline">\(A(q)\)</span> a singleton for every <span class="math inline">\(q\)</span>, then Berge’s upper hemicontinuity makes the unique optimizer continuous. This conclusion needs uniqueness throughout the relevant parameter set, not merely at one parameter value.</p>
 </section>
 </section>
-<section id="the-baseline-envelope-calculation" class="level1">
-<h1>2. The baseline envelope calculation</h1>
-<section id="an-unconstrained-differentiable-selection" class="level2">
-<h2 class="anchored" data-anchor-id="an-unconstrained-differentiable-selection">2.1 An unconstrained differentiable selection</h2>
-<p>Now fix a parameter set <span class="math inline">\(U\subseteq\mathbb R^L\)</span> that is open and consider</p>
-<p><span class="math display">\[
-V(q)=f(\phi(q),q),
-\]</span></p>
-<p>where <span class="math inline">\(f:\mathbb R^N\times U\to\mathbb R\)</span> is differentiable and <span class="math inline">\(\phi(q)\)</span> is an optimizer of the unconstrained problem <span class="math inline">\(\max_{x\in\mathbb R^N} f(x,q)\)</span>, or of the corresponding minimization problem. There must be no binding constraint at the selected optimizer.</p>
+<section id="the-envelope-theorem" class="level1">
+<h1>4.7 The envelope theorem</h1>
+<section id="unconstrained-envelope-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="unconstrained-envelope-theorem">4.7.1 Unconstrained envelope theorem</h2>
+<p>The optimizer may move when <span class="math inline">\(\theta\)</span> changes. The envelope theorem says that, at a parameter with a unique optimizer, the first-order movement in optimized value is found by holding that optimizer fixed and differentiating only the primitive objective.</p>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Baseline envelope formula
+Theorem 4.7.1: envelope theorem, fixed feasible set
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Assumptions.</strong> Let <span class="math inline">\(q^*\in U\)</span>, set <span class="math inline">\(x^*=\phi(q^*)\)</span>, and suppose:</p>
-<ol type="1">
-<li><span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\((x^*,q^*)\)</span>;</li>
-<li><span class="math inline">\(\phi:U\to\mathbb R^N\)</span> is differentiable at <span class="math inline">\(q^*\)</span>;</li>
-<li><span class="math inline">\(x^*\)</span> is an unconstrained local optimum, so <span class="math inline">\(D_xf(x^*,q^*)=0\)</span>.</li>
-</ol>
-<p><strong>Conclusion.</strong> <span class="math inline">\(V\)</span> is differentiable at <span class="math inline">\(q^*\)</span> and</p>
+<p>Let <span class="math inline">\(X\subseteq\mathbb R^N\)</span> be compact and let <span class="math inline">\(\Theta\subseteq\mathbb R^L\)</span> be open. Define</p>
 <p><span class="math display">\[
-DV(q^*)=D_qf(x^*,q^*).
+f^*(\theta)=\max_{x\in X}f(x,\theta)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+X^*(\theta)=\operatorname*{arg\,max}_{x\in X}f(x,\theta).
+\]</span></p>
+<p><strong>Assumptions.</strong></p>
+<ol type="1">
+<li><span class="math inline">\(f:X\times\Theta\to\mathbb R\)</span> is jointly continuous.</li>
+<li>For each <span class="math inline">\(x\in X\)</span>, <span class="math inline">\(f(x,\cdot)\)</span> is <span class="math inline">\(C^1\)</span> on <span class="math inline">\(\Theta\)</span>.</li>
+<li><span class="math inline">\(D_\theta f(x,\theta)\)</span> is jointly continuous in <span class="math inline">\((x,\theta)\)</span>.</li>
+<li>At the parameter <span class="math inline">\(\theta_0\in\Theta\)</span>, the optimizer is unique: <span class="math inline">\(X^*(\theta_0)=\{x^*\}\)</span>.</li>
+</ol>
+<p><strong>Conclusion.</strong> <span class="math inline">\(f^*\)</span> is differentiable at <span class="math inline">\(\theta_0\)</span> and</p>
+<p><span class="math display">\[
+Df^*(\theta_0)=D_\theta f(x^*,\theta_0).
 \]</span></p>
 </div>
 </div>
-<p>Here <span class="math inline">\(D_xf\)</span> is a <span class="math inline">\(1\times N\)</span> row vector, <span class="math inline">\(D\phi\)</span> is an <span class="math inline">\(N\times L\)</span> matrix, and <span class="math inline">\(D_qf\)</span> is a <span class="math inline">\(1\times L\)</span> row vector. The formula is dimensionally valid.</p>
+<p>Here both sides are <span class="math inline">\(1\times L\)</span> row vectors. Notice what the theorem does <em>not</em> assume: it does not require a differentiable optimizer selection.</p>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1001,105 +983,161 @@ Show proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Proof.</strong> The chain rule gives</p>
+<p><strong>Proof strategy.</strong> Compare the new value with the payoff from keeping the old optimizer <span class="math inline">\(x^*\)</span>, then compare it with the payoff from a new optimizer <span class="math inline">\(x_h\)</span>. The maximum theorem and uniqueness imply <span class="math inline">\(x_h\to x^*\)</span> as <span class="math inline">\(h\to0\)</span>.</p>
+<p>Choose <span class="math inline">\(x_h\in X^*(\theta_0+h)\)</span>. Optimality gives the two bounds</p>
 <p><span class="math display">\[
-DV(q^*)
-=D_xf(x^*,q^*)D\phi(q^*)+D_qf(x^*,q^*).
+\begin{aligned}
+f(x^*,\theta_0+h)-f(x^*,\theta_0)
+&amp;\le f^*(\theta_0+h)-f^*(\theta_0),\\
+f^*(\theta_0+h)-f^*(\theta_0)
+&amp;\le f(x_h,\theta_0+h)-f(x_h,\theta_0).
+\end{aligned}
 \]</span></p>
-<p>The first term is zero by the unconstrained first-order condition. This leaves <span class="math inline">\(DV(q^*)=D_qf(x^*,q^*)\)</span>. <span class="math inline">\(\square\)</span></p>
+<p>The fundamental theorem of calculus in the parameter and joint continuity of <span class="math inline">\(D_\theta f\)</span> make both outside expressions equal to</p>
+<p><span class="math display">\[
+D_\theta f(x^*,\theta_0)h+o(\lVert h\rVert).
+\]</span></p>
+<p>The middle expression is therefore squeezed to the same first-order expansion. <span class="math inline">\(\square\)</span></p>
 </div>
 </div>
 </div>
-<p>This is the baseline result in <a href="https://sites.wustl.edu/nachbar/files/2023/09/Envelope.pdf">Nachbar’s <em>Envelope Theorem</em></a>. Its differentiability condition belongs at <span class="math inline">\(q^*\)</span>, because <span class="math inline">\(\phi\)</span> has domain <span class="math inline">\(U\)</span> and the proof evaluates <span class="math inline">\(D\phi(q^*)\)</span>.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled" title="The optimizer derivative has not been proved irrelevant in general">
+<p>This fixed-feasible-set result is stronger than the elementary chain-rule version because differentiability of an optimizer selection is not assumed. Compactness, upper hemicontinuity of the argmax, and uniqueness at <span class="math inline">\(\theta_0\)</span> control the optimizing choices used in the difference quotient.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Do not use the interior-FOC story at a boundary">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The optimizer derivative has not been proved irrelevant in general
+Do not use the interior-FOC story at a boundary
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The term <span class="math inline">\(D_xf\,D\phi\)</span> vanishes only because the selected choice satisfies an interior first-order condition. A boundary solution, a kink, a nondifferentiable selection, or a changing active constraint can invalidate this chain-rule proof.</p>
+<p>For a differentiable interior optimizer, the chain-rule term <span class="math inline">\(D_xf\,Dx^*\)</span> vanishes because <span class="math inline">\(D_xf=0\)</span>. Theorem 4.7.1 does not rely on that story. In a constrained problem, <span class="math inline">\(D_xf\)</span> need not vanish, and the multiplier correction in Theorem 4.7.2 must be retained.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: a quadratic value">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Calculation example: a quadratic value">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example: a quadratic value
+Calculation example: a quadratic value
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let</p>
-<p>For <span class="math inline">\(x,q\in\mathbb R\)</span>, let</p>
+<p>Fix <span class="math inline">\(M&gt;0\)</span>, take <span class="math inline">\(X=[-M,M]\)</span> and <span class="math inline">\(\Theta=(-M,M)\)</span>, and let</p>
 <p><span class="math display">\[
-f(x,q)=qx-\frac{x^2}{2}.
+f(x,\theta)=\theta x-\frac{x^2}{2}.
 \]</span></p>
-<p>The unique optimizer is <span class="math inline">\(\phi(q)=q\)</span>, so <span class="math inline">\(V(q)=q^2/2\)</span>. Directly, <span class="math inline">\(V'(q)=q\)</span>. The partial derivative holding <span class="math inline">\(x\)</span> fixed is <span class="math inline">\(f_q(x,q)=x\)</span>; evaluated at <span class="math inline">\(x=\phi(q)=q\)</span>, it is also <span class="math inline">\(q\)</span>. The term involving <span class="math inline">\(\phi'(q)\)</span> drops out because <span class="math inline">\(f_x(q,q)=q-q=0\)</span>.</p>
+<p>The unique optimizer is <span class="math inline">\(x^*(\theta)=\theta\)</span>, so <span class="math inline">\(f^*(\theta)=\theta^2/2\)</span>. Directly, <span class="math inline">\((f^*)'(\theta)=\theta\)</span>. The envelope calculation holds <span class="math inline">\(x\)</span> fixed:</p>
+<p><span class="math display">\[
+f_\theta(x,\theta)=x
+\quad\Longrightarrow\quad
+f_\theta(x^*(\theta),\theta)=\theta.
+\]</span></p>
+<p>The theorem reaches this derivative without differentiating <span class="math inline">\(x^*(\theta)\)</span>.</p>
 </div>
 </div>
 </section>
-<section id="binding-constraints-a-self-contained-local-formula" class="level2">
-<h2 class="anchored" data-anchor-id="binding-constraints-a-self-contained-local-formula">2.2 Binding constraints: a self-contained local formula</h2>
-<p>The constraint term has a sign and a source. The following statement includes the regularity needed for the usual chain-rule derivation.</p>
+<section id="constrained-envelope-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="constrained-envelope-theorem">4.7.2 Constrained envelope theorem</h2>
+<p>The constraint term has a sign and a source. We use the maximization convention</p>
+<p><span class="math display">\[
+\mathcal L(x,\lambda;\theta)
+=f(x,\theta)-\lambda^{\mathsf T}G(x,\theta).
+\]</span></p>
+<p>Thus multipliers on active inequalities of the form <span class="math inline">\(h_j\le0\)</span> are nonnegative. Equality multipliers remain unrestricted.</p>
 <div class="theorem callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Constrained envelope formula
+Theorem 4.7.2: envelope theorem with constraints
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Assumptions.</strong> Let <span class="math inline">\(U\subseteq\mathbb R^L\)</span> be open, let <span class="math inline">\(q^*\in U\)</span> and <span class="math inline">\(x^*\in\mathbb R^N\)</span>, and let <span class="math inline">\(\mathcal O\subseteq\mathbb R^N\times\mathbb R^L\)</span> be an open neighborhood of <span class="math inline">\((x^*,q^*)\)</span>. Let <span class="math inline">\(f,g_1,\ldots,g_K:\mathcal O\to\mathbb R\)</span> be differentiable. Suppose that:</p>
-<ol type="1">
-<li><p><span class="math inline">\(\phi:U\to\mathbb R^N\)</span> is differentiable at <span class="math inline">\(q^*\)</span>, <span class="math inline">\(x^*=\phi(q^*)\)</span>, and <span class="math inline">\((\phi(q),q)\in\mathcal O\)</span> for every <span class="math inline">\(q\)</span> near <span class="math inline">\(q^*\)</span>;</p></li>
-<li><p>for every such <span class="math inline">\(q\)</span>, <span class="math inline">\(\phi(q)\)</span> is a feasible optimizer of</p>
-<p>For <span class="math inline">\(k=1,\ldots,K\)</span>, the problem is</p>
+<p>Let <span class="math inline">\(X\subseteq\mathbb R^N\)</span> be open and let <span class="math inline">\(\Theta\subseteq\mathbb R^L\)</span> be open. For each <span class="math inline">\(\theta\)</span>, consider</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\max_x &amp;&amp; f(x,q)\\
-&amp;\text{s.t.}&amp;&amp; g_k(x,q)\le0.
+\max_{x\in X}\quad &amp;f(x,\theta)\\
+\text{s.t.}\quad &amp;g_i(x,\theta)=0,
+&amp;&amp;i=1,\ldots,k,\\
+&amp;h_j(x,\theta)\le0,
+&amp;&amp;j=1,\ldots,\ell.
 \end{aligned}
 \]</span></p>
-<p>so <span class="math inline">\(g_k(\phi(q),q)\le0\)</span> for every <span class="math inline">\(k\)</span>;</p></li>
-<li><p>a multiplier <span class="math inline">\(\lambda^*\in\mathbb R_+^K\)</span> satisfies, at <span class="math inline">\((x^*,q^*)\)</span>,</p>
-<ul>
-<li><p><strong>Feasibility:</strong> <span class="math inline">\(g_k(x^*,q^*)\le0\)</span> for every <span class="math inline">\(k\)</span>.</p></li>
-<li><p><strong>Stationarity:</strong></p>
+<p>Define the feasible correspondence</p>
 <p><span class="math display">\[
-\begin{gathered}
-D_xf(x^*,q^*)\\
-=\\
-\displaystyle\sum_{k=1}^K
-\lambda_k^*D_xg_k(x^*,q^*).
-\end{gathered}
+F(\theta)
+=
+\left\{x\in X:
+\begin{array}{l}
+g_i(x,\theta)=0,\\
+i=1,\ldots,k,\\[3pt]
+h_j(x,\theta)\le0,\\
+j=1,\ldots,\ell
+\end{array}
+\right\},
+\]</span></p>
+<p>the value <span class="math inline">\(f^*(\theta)\)</span>, and the argmax <span class="math inline">\(X^*(\theta)\)</span> by optimizing over <span class="math inline">\(F(\theta)\)</span>. Combine the constraints as</p>
+<p><span class="math display">\[
+G_r(x,\theta)=g_r(x,\theta),
+\qquad r=1,\ldots,k,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+G_{k+j}(x,\theta)=h_j(x,\theta),
+\qquad j=1,\ldots,\ell.
+\]</span></p>
+<p><strong>Assumptions.</strong></p>
+<ol type="1">
+<li><p><span class="math inline">\(f\)</span>, every <span class="math inline">\(g_i\)</span>, and every <span class="math inline">\(h_j\)</span> are <span class="math inline">\(C^1\)</span>.</p></li>
+<li><p><span class="math inline">\(F\)</span> is nonempty-valued, compact-valued, and continuous.</p></li>
+<li><p><span class="math inline">\(X^*(\theta)\)</span> is a singleton for every <span class="math inline">\(\theta\in\Theta\)</span>; write its unique element as <span class="math inline">\(x^*(\theta)\)</span>.</p></li>
+<li><p>At each <span class="math inline">\(\theta\)</span>, the gradients in <span class="math inline">\(x\)</span> of the active constraints are linearly independent:</p>
+<p><span class="math display">\[
+\operatorname{rank}
+D_xG_{A(\theta)}(x^*(\theta),\theta)
+=|A(\theta)|,
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+A(\theta)=
+\{r:G_r(x^*(\theta),\theta)=0\}.
 \]</span></p></li>
-<li><p><strong>Complementarity:</strong> <span class="math inline">\(\lambda_k^*g_k(x^*,q^*)=0\)</span> for every <span class="math inline">\(k\)</span>.</p></li>
-</ul></li>
+<li><p>The optimizer <span class="math inline">\(x^*(\theta)\)</span> is differentiable at the parameter of interest <span class="math inline">\(\theta_0\)</span>.</p></li>
 </ol>
-<p>Set <span class="math inline">\(V(q)=f(\phi(q),q)\)</span>.</p>
-<p><strong>Conclusion.</strong> <span class="math inline">\(V\)</span> is differentiable at <span class="math inline">\(q^*\)</span> and, with <span class="math inline">\(J^*=\{k:g_k(x^*,q^*)=0\}\)</span>,</p>
+<p>Let <span class="math inline">\(\lambda^*(\theta_0)\in\mathbb R^{k+\ell}\)</span> be the associated KKT multipliers, with inactive inequality multipliers set to zero.</p>
+<p><strong>Conclusion.</strong> <span class="math inline">\(f^*\)</span> is differentiable at <span class="math inline">\(\theta_0\)</span>, and</p>
 <p><span class="math display">\[
 \begin{aligned}
-DV(q^*)
-&amp;=D_qf(x^*,q^*)\\
+Df^*(\theta_0)
+&amp;=D_\theta f(x^*(\theta_0),\theta_0)\\
 &amp;\quad-
-\sum_{k\in J^*}
-\lambda_k^*D_qg_k(x^*,q^*).
+\lambda^*(\theta_0)^{\mathsf T}
+D_\theta G(x^*(\theta_0),\theta_0).
 \end{aligned}
 \]</span></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="The ambient set must not hide another boundary">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The ambient set must not hide another boundary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The slide states only that <span class="math inline">\(X\)</span> is a set. The displayed KKT system is valid as written when the optimizer is interior to the ambient choice domain, which is why this page takes <span class="math inline">\(X\)</span> to be open. If <span class="math inline">\(X\)</span> itself imposes an additional boundary, encode that boundary among <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> or add its normal-cone term. Otherwise stationarity can omit a binding restriction.</p>
+</div>
+</div>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1108,56 +1146,81 @@ Show proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Derivation.</strong> The chain rule and stationarity give</p>
+<p><strong>Proof strategy.</strong> Differentiate the value through the optimizer, use KKT stationarity to replace <span class="math inline">\(D_xf\)</span>, and then differentiate every active constraint identity.</p>
+<p>Write <span class="math inline">\(x_0^*=x^*(\theta_0)\)</span> and <span class="math inline">\(\lambda_0^*=\lambda^*(\theta_0)\)</span>. The chain rule gives</p>
+<p><span class="math display">\[
+Df^*(\theta_0)
+=D_xf(x_0^*,\theta_0)Dx^*(\theta_0)
++D_\theta f(x_0^*,\theta_0).
+\]</span></p>
+<p>KKT stationarity gives</p>
+<p><span class="math display">\[
+D_xf(x_0^*,\theta_0)
+=\lambda_0^{*\mathsf T}D_xG(x_0^*,\theta_0).
+\]</span></p>
+<p>For an equality constraint, its identity along the optimizer has derivative zero. An active inequality with a nonzero multiplier also has derivative zero: its value along the feasible optimizer is at most zero near the interior point <span class="math inline">\(\theta_0\)</span> and equals zero at <span class="math inline">\(\theta_0\)</span>. Thus, for every constraint that contributes to the multiplier term,</p>
+<p><span class="math display">\[
+D_xG_r(x_0^*,\theta_0)Dx^*(\theta_0)
++D_\theta G_r(x_0^*,\theta_0)=0.
+\]</span></p>
+<p>Substitution yields the stated multiplier correction. Inactive constraints have zero multipliers and contribute nothing. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Track the sign through the Lagrangian">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Track the sign through the Lagrangian
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Under <span class="math inline">\(\mathcal L=f-\lambda^{\mathsf T}G\)</span>, the correction is <span class="math inline">\(-\lambda^{\mathsf T}D_\theta G\)</span>. If instead you normalize a maximization constraint as <span class="math inline">\(G\ge0\)</span> and write <span class="math inline">\(\mathcal L=f+\lambda^{\mathsf T}G\)</span>, the displayed sign changes with the convention. The numerical derivative does not.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example 4.7.3: a parameterized resource cap">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.7.3: a parameterized resource cap
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(\theta&gt;0\)</span>, solve</p>
 <p><span class="math display">\[
 \begin{aligned}
-DV(q^*)
-&amp;=D_xf(x^*,q^*)D\phi(q^*)\\
-&amp;\quad+D_qf(x^*,q^*)\\
-&amp;=D_qf(x^*,q^*)-
-  \sum_{k=1}^K\lambda_k^*D_qg_k(x^*,q^*)\\
-&amp;\quad+\sum_{k=1}^K
-  \lambda_k^*D_xg_k(x^*,q^*)D\phi(q^*)\\
-&amp;\quad+\sum_{k=1}^K
-  \lambda_k^*D_qg_k(x^*,q^*).
+\max_{x&gt;0}\quad &amp;\log x\\
+\text{s.t.}\quad &amp;x-\theta\le0.
 \end{aligned}
 \]</span></p>
-<p>For each <span class="math inline">\(k\)</span> with <span class="math inline">\(\lambda_k^*&gt;0\)</span>, complementarity makes the constraint bind at <span class="math inline">\(q^*\)</span>. The differentiable function <span class="math inline">\(q\mapsto g_k(\phi(q),q)\)</span> is at most zero near the interior point <span class="math inline">\(q^*\)</span> and equals zero there, so it has derivative zero at <span class="math inline">\(q^*\)</span>. Thus the final sum vanishes. Constraints with <span class="math inline">\(\lambda_k^*=0\)</span> contribute nothing, leaving the displayed formula.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled" title="Why the cancellation needs more than pointwise complementarity">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Why the cancellation needs more than pointwise complementarity
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Complementarity at <span class="math inline">\((x^*,q^*)\)</span> alone does not say that <span class="math inline">\(D[g_k(\phi(q),q)]_{q=q^*}=0\)</span>. The cancellation also uses an optimizer selection that remains feasible on a full open neighborhood of <span class="math inline">\(q^*\)</span>. At a one-sided parameter boundary, with a selection that is not differentiable, or without nearby feasibility, this chain-rule argument does not apply unchanged.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important no-icon callout-titled" title="Binding parameterized constraints add a correction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Binding parameterized constraints add a correction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do not take <span class="math inline">\(DV=D_qf\)</span> when a parameterized constraint has a positive multiplier. With the Lagrangian convention <span class="math inline">\(\mathcal L=f-\sum_k\lambda_k g_k\)</span>, the correction is <span class="math inline">\(-\sum_k\lambda_k^*D_qg_k\)</span>. This is a local sensitivity result, not an existence theorem or a claim of global uniqueness.</p>
+<p>With <span class="math inline">\(h(x,\theta)=x-\theta\)</span> and <span class="math inline">\(\mathcal L=\log x-\lambda(x-\theta)\)</span>, stationarity and complementarity give</p>
+<p><span class="math display">\[
+x^*(\theta)=\theta,
+\qquad
+\lambda^*(\theta)=\frac1\theta.
+\]</span></p>
+<p>The envelope calculation is</p>
+<p><span class="math display">\[
+\begin{aligned}
+(f^*)'(\theta)
+&amp;=f_\theta(x^*(\theta),\theta)
+-\lambda^*(\theta)h_\theta(x^*(\theta),\theta)\\
+&amp;=0-\frac1\theta(-1)\\
+&amp;=\frac1\theta.
+\end{aligned}
+\]</span></p>
+<p>Directly, <span class="math inline">\(f^*(\theta)=\log\theta\)</span>, so the derivative agrees. The positive multiplier is the marginal value of relaxing the upper bound.</p>
 </div>
 </div>
 </section>
-</section>
-<section id="milgrom-and-segal-the-arbitrary-choice-set-extension" class="level1">
-<h1>3. Milgrom and Segal: the arbitrary-choice-set extension</h1>
+<section id="beyond-section-4.7-arbitrary-choice-sets" class="level2">
+<h2 class="anchored" data-anchor-id="beyond-section-4.7-arbitrary-choice-sets">Beyond Section 4.7: arbitrary choice sets</h2>
 <p>The baseline theorem assumes a differentiable optimizer. That assumption can be too strong: optimizers can jump, multiple optima can coexist, and an economic choice set may lack convenient topological or convex structure. Milgrom and Segal separate the envelope identity from the task of proving differentiability of the value.</p>
 <p>Let <span class="math inline">\(X\)</span> be any set, let <span class="math inline">\(f:X\times[0,1]\to\mathbb R\)</span>, and define</p>
 <p><span class="math display">\[
@@ -1188,7 +1251,7 @@ Milgrom-Segal envelope theorem, Theorem 1
 </div>
 <p>This statement is <a href="https://milgrom.people.stanford.edu/wp-content/uploads/2002/03/Envelope-Theorems.pdf">Theorem 1 of Milgrom and Segal (2002)</a>. It imposes no topology, convexity, or continuity on <span class="math inline">\(X\)</span>. It also does <strong>not</strong> say that <span class="math inline">\(V\)</span> is differentiable. Differentiability of <span class="math inline">\(V\)</span> is an explicit premise of the equality conclusion.</p>
 <div class="proof-extra callout callout-style-default callout-note no-icon callout-titled" title="Show proof">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1197,7 +1260,7 @@ Show proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Proof strategy.</strong> Optimality at <span class="math inline">\(t\)</span> gives, for every nearby <span class="math inline">\(t'\)</span>,</p>
 <p><span class="math display">\[
@@ -1233,8 +1296,8 @@ A kink is compatible with smooth objectives
 <p>Let <span class="math inline">\(X=\{-1,1\}\)</span> and <span class="math inline">\(f(x,t)=xt\)</span>. Then <span class="math inline">\(V(t)=|t|\)</span>. Each function <span class="math inline">\(t\mapsto f(x,t)\)</span> is differentiable, but <span class="math inline">\(V\)</span> is not differentiable at <span class="math inline">\(0\)</span>. At <span class="math inline">\(t=0\)</span>, both choices optimize and their partial derivatives are <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. There is no single derivative of the value for an envelope formula to identify.</p>
 </div>
 </div>
-<section id="a-useful-stronger-conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="a-useful-stronger-conclusion">3.1 A useful stronger conclusion</h2>
+<section id="a-useful-stronger-conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="a-useful-stronger-conclusion">A useful stronger conclusion</h3>
 <p>Milgrom and Segal’s Theorem 2 gives conditions for absolute continuity of <span class="math inline">\(V\)</span>. Suppose <span class="math inline">\(V(0)\in\mathbb R\)</span>, every <span class="math inline">\(f(x,\cdot)\)</span> is absolutely continuous, and there is a function <span class="math inline">\(b\in L^1([0,1])\)</span> and a null set <span class="math inline">\(N\)</span> such that, for every <span class="math inline">\(t\in[0,1]\setminus N\)</span> and every <span class="math inline">\(x\in X\)</span>,</p>
 <p><span class="math display">\[
 f_t(x,t)\text{ exists and }\lvert f_t(x,t)\rvert\le b(t).
@@ -1250,54 +1313,17 @@ V(t)=V(0)+\int_0^t f_t(x^*(s),s)\,ds.
 <li>A differentiable value function does <strong>not</strong> imply an envelope equality when the equality’s other premises fail.</li>
 </ul>
 </section>
+</section>
 <section id="assumption-audit" class="level2">
 <h2 class="anchored" data-anchor-id="assumption-audit">Assumption audit</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Goal</th>
-<th>Conditions doing the work</th>
-<th>What follows</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>An optimizer exists</td>
-<td>nonempty compact feasibility, continuous objective</td>
-<td><span class="math inline">\(A(q)\ne\varnothing\)</span></td>
-</tr>
-<tr class="even">
-<td>Value is continuous</td>
-<td>continuous objective, nonempty compact-valued continuous feasibility</td>
-<td><span class="math inline">\(V\)</span> continuous</td>
-</tr>
-<tr class="odd">
-<td>Argmax is stable from above</td>
-<td>same Berge conditions</td>
-<td><span class="math inline">\(A\)</span> is UHC</td>
-</tr>
-<tr class="even">
-<td>Baseline derivative formula</td>
-<td>differentiable <span class="math inline">\(f\)</span>, differentiable interior optimizer</td>
-<td><span class="math inline">\(DV=D_qf\)</span></td>
-</tr>
-<tr class="odd">
-<td>Constrained derivative formula</td>
-<td>KKT, differentiability, active constraints accounted for</td>
-<td>multiplier correction</td>
-</tr>
-<tr class="even">
-<td>Arbitrary-set equality</td>
-<td>optimizer exists, <span class="math inline">\(f_t\)</span> exists, and <span class="math inline">\(V\)</span> differentiable</td>
-<td><span class="math inline">\(V'=f_t\)</span></td>
-</tr>
-</tbody>
-</table>
+<ol type="1">
+<li><strong>Existence:</strong> nonempty compact feasibility and a continuous objective give <span class="math inline">\(A(q)\ne\varnothing\)</span>.</li>
+<li><strong>Continuity of value:</strong> a continuous objective and a nonempty, compact-valued, continuous feasibility correspondence give continuous <span class="math inline">\(V\)</span>.</li>
+<li><strong>Upper stability of choices:</strong> the same maximum-theorem assumptions make <span class="math inline">\(A\)</span> upper hemicontinuous.</li>
+<li><strong>Theorem 4.7.1:</strong> a compact fixed choice set, joint continuity, continuous parameter derivatives, and a unique optimizer at <span class="math inline">\(\theta_0\)</span> give the envelope derivative there.</li>
+<li><strong>Theorem 4.7.2:</strong> KKT regularity, differentiability of the optimizer, and the active parameterized constraints give the multiplier correction.</li>
+<li><strong>Arbitrary-set equality:</strong> an optimizer, the partial derivative <span class="math inline">\(f_t\)</span>, and differentiability of <span class="math inline">\(V\)</span> give <span class="math inline">\(V'=f_t\)</span>.</li>
+</ol>
 </section>
 <section id="proof-blueprints" class="level2">
 <h2 class="anchored" data-anchor-id="proof-blueprints">Proof blueprints</h2>
@@ -1318,8 +1344,8 @@ V(t)=V(0)+\int_0^t f_t(x^*(s),s)\,ds.
 <li>Define the value function before differentiating it.</li>
 <li>Identify whether the choice is unconstrained, constrained, or arbitrary.</li>
 <li>State exactly what makes <span class="math inline">\(V\)</span> differentiable. Do not assume it from a smooth objective alone.</li>
-<li>For the baseline result, check the optimizer is differentiable at the parameter, not at the choice.</li>
-<li>For constraints, write the Lagrangian convention and retain the multiplier terms.</li>
+<li>For Theorem 4.7.1, check compactness, uniqueness at the parameter of interest, and continuity of the parameter derivative. A differentiable optimizer is not required.</li>
+<li>For Theorem 4.7.2, check that the optimizer is differentiable at the parameter, write the Lagrangian convention, and retain the multiplier terms.</li>
 </ol>
 </section>
 </section>
@@ -1328,11 +1354,11 @@ V(t)=V(0)+\int_0^t f_t(x^*(s),s)\,ds.
 <ol type="1">
 <li>Which maximum-theorem hypothesis prevents a better limiting competitor from disappearing when the parameter changes?</li>
 <li>Give a one-sentence reason that continuity of <span class="math inline">\(V\)</span> does not imply differentiability of <span class="math inline">\(V\)</span>.</li>
-<li>In the baseline envelope proof, which exact factor kills the term involving <span class="math inline">\(D\phi(q^*)\)</span>?</li>
+<li>In Theorem 4.7.1, what replaces the chain-rule argument involving an optimizer derivative?</li>
 <li>State the missing premise in the false sentence: “<span class="math inline">\(f_t\)</span> exists, so <span class="math inline">\(V'(t)=f_t(x^*,t)\)</span>.”</li>
 </ol>
 <div class="answer callout callout-style-default callout-note no-icon callout-titled" title="Show answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1341,10 +1367,10 @@ Show answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Lower hemicontinuity of the feasible correspondence. 2. A continuous value can have a kink, as <span class="math inline">\(|t|\)</span> does at zero. 3. The unconstrained first-order condition <span class="math inline">\(D_xf(x^*,q^*)=0\)</span>. 4. The value function itself must be differentiable at <span class="math inline">\(t\)</span> for the equality in Milgrom-Segal Theorem 1.</li>
+<li>Lower hemicontinuity of the feasible correspondence. 2. A continuous value can have a kink, as <span class="math inline">\(|t|\)</span> does at zero. 3. Two optimality bounds squeeze the value change between payoff changes at the old and new optimizers; compactness, upper hemicontinuity, and uniqueness make the new optimizer converge to the old one. 4. The value function itself must be differentiable at <span class="math inline">\(t\)</span> for the equality in Milgrom-Segal Theorem 1.</li>
 </ol>
 </div>
 </div>
@@ -1804,13 +1830,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../repo/econ8001/optimization.html" class="pagination-link" aria-label="Optimization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Optimization</span>
+      <a href="../../repo/econ8001/optimization.html" class="pagination-link" aria-label="Chapter 4.1–4.5: Optimization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapter 4.1–4.5: Optimization</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../repo/econ8001/convexity.html" class="pagination-link" aria-label="Convexity">
-        <span class="nav-page-text">Convexity</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../repo/econ8001/convexity.html" class="pagination-link" aria-label="Chapter 5.1–5.3: Convexity">
+        <span class="nav-page-text">Chapter 5.1–5.3: Convexity</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
