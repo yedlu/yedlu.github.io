@@ -109,8 +109,9 @@ format:
   *Ernst & Young (EY)*  
   2021.12 - 2022.01
 
-## Honors
+## Honors and Grants {#honors}
 
+- 2026, Sonar Research Grant Program (in-kind), Sonar
 - 2024, Outstanding Student Award, Washington University in St. Louis
 - 2024, Charles F. Knight Scholar, Washington University in St. Louis
 - 2024, Beta Gamma Sigma
