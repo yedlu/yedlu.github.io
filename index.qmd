@@ -9,7 +9,7 @@ format:
     toc: false
 ---
 
-<img src="profilepic.jpg" alt="Yanhe Eddie Lu" style="float: right; width: 200px; margin-left: 20px; border-radius: 5px;">
+<img src="profilepic.png" alt="Yanhe Eddie Lu" style="float: right; width: 200px; margin-left: 20px; border-radius: 5px;">
 
 I am a Finance PhD student at [Washington University Olin Business School](https://olin.washu.edu).
 
