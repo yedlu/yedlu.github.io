@@ -1,5 +1,23 @@
 /* css styles */
 
+.home-headshot {
+  display: block;
+  float: right;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0 0 20px 20px;
+  border-radius: 5px;
+}
+
+@media (max-width: 599.98px) {
+  .home-headshot {
+    float: none;
+    margin: 0 auto 24px;
+  }
+}
+
 /* Placards */
 .card-container {
   display: flex;
