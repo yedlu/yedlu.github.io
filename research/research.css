@@ -1,0 +1,55 @@
+#quarto-document-content {
+  width: 100%;
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.research-paper-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "chart"
+    "copy";
+  gap: 1.5rem;
+}
+
+.research-paper-chart {
+  grid-area: chart;
+  justify-self: center;
+  width: 100%;
+  max-width: 36rem;
+}
+
+.research-paper-chart img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.research-paper-copy {
+  grid-area: copy;
+}
+
+.research-paper-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.research-paper-link {
+  color: #117461;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.research-paper-support {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 57rem) {
+  .research-paper-body {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-areas: "copy chart";
+    gap: clamp(1.5rem, 3vw, 2.75rem);
+    align-items: start;
+  }
+}

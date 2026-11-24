@@ -2444,7 +2444,7 @@
     "href": "index.html",
     "title": "About Me",
     "section": "",
-    "text": "I am a Finance PhD student at Washington University Olin Business School.\nMy main research interest is in corporate finance. I’m broadly interested in how frictions and incentives shape decision-making across agents. I work with both empirical causal inferences and theoretical modeling.\nThis website hosts my brief introduction of experiences in vitae section. You can also explore my repositories.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu / y.eddie.lu@gmail.com \nLinkedIn:  linkedin.com/in/yeddielu \n\n\n\n\n\n\n Back to top"
+    "text": "I am a Finance PhD student at Washington University Olin Business School.\nMy main research interest is in corporate finance. I’m broadly interested in how frictions and incentives shape decision-making across agents. I work with both empirical causal inferences and theoretical modeling.\nYou can find my research, vitae, and repositories on this site.\n\n\nContact Information\nFeel free to reach out (click to copy):\nEmail:  eddie.lu@wustl.edu / y.eddie.lu@gmail.com \nLinkedIn:  linkedin.com/in/yeddielu \n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "repo/sc/s1.html",
@@ -4889,5 +4889,19 @@
       "Math & Statistics Foundations",
       "Math Analysis"
     ]
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Research",
+    "section": "",
+    "text": "With João Dimas and Labros Pnevmatikos\n\n\n\n\n\nDoes writing code faster with AI make software harder to maintain? After we first detected AI use, firms’ public software projects saw faster codebase growth and declines in both code issues and estimated repair costs per line, relative to comparable projects. The biggest quality gains came in projects that started with weaker development discipline, such as less established routines for testing and reviewing code. Those same projects expanded their testing after AI use first appeared, with test files making up a larger share of their code files.\n\n\n\nSupported by Sonar Research Program"
+  },
+  {
+    "objectID": "research/index.html#working-papers",
+    "href": "research/index.html#working-papers",
+    "title": "Research",
+    "section": "",
+    "text": "With João Dimas and Labros Pnevmatikos\n\n\n\n\n\nDoes writing code faster with AI make software harder to maintain? After we first detected AI use, firms’ public software projects saw faster codebase growth and declines in both code issues and estimated repair costs per line, relative to comparable projects. The biggest quality gains came in projects that started with weaker development discipline, such as less established routines for testing and reviewing code. Those same projects expanded their testing after AI use first appeared, with test files making up a larger share of their code files.\n\n\n\nSupported by Sonar Research Program"
   }
 ]
