@@ -1,0 +1,32 @@
+---
+title: "Research"
+sidebar: false
+toc: false
+page-navigation: false
+format:
+  html:
+    page-layout: full
+    css: research.css
+---
+
+## Working Papers
+
+### [AI and Technical Debt: Evidence From 4 Billion Lines of Code](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7685808){.research-paper-link}
+
+With João Dimas and Labros Pnevmatikos
+
+:::: {.research-paper-body}
+
+::: {.research-paper-chart}
+<img src="ai-development-discipline.png" alt="After first detected AI use, code issues per line fall more in projects with weaker initial development practices. Estimates are scaled by each group's pre-detection mean. Error bars show 95% confidence intervals.">
+:::
+
+::: {.research-paper-copy}
+Does writing code faster with AI make software harder to maintain? After we first detected AI use, firms’ public software projects saw faster codebase growth and declines in both code issues and estimated repair costs per line, relative to comparable projects. The biggest quality gains came in projects that started with weaker development discipline, such as less established routines for testing and reviewing code. Those same projects expanded their testing after AI use first appeared, with test files making up a larger share of their code files.
+:::
+
+::::
+
+::: {.research-paper-support}
+[Supported by Sonar Research Program](https://www.sonarsource.com/research-grant/){.research-paper-link}
+:::
